@@ -8,6 +8,9 @@ services:
     environment:
       JAVA_XMS: 1024m
       JAVA_XMX: 2g
+    volumes:
+      - /var/blazegraph:/var/lib/blazegraph
+      - ./docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.triplestore.entrypoints=http"
