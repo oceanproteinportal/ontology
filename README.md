@@ -1,5 +1,9 @@
 # Ocean Protein Portal Ontology
 
+## KG
+
+Lightsail on 8 GB RAM, 2 vCPUs, 160 GB SSD
+
 ## COMPETENCY QUESTIONS
 
 __1. What cruises are there data for?__
