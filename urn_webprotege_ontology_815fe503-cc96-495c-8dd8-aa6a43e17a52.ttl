@@ -1,0 +1,195 @@
+@prefix : <urn:webprotege:ontology:815fe503-cc96-495c-8dd8-aa6a43e17a52#> .
+@prefix sf: <http://www.opengis.net/ont/sf#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix schema: <http://schema.org/> .
+@base <urn:webprotege:ontology:815fe503-cc96-495c-8dd8-aa6a43e17a52> .
+
+<urn:webprotege:ontology:815fe503-cc96-495c-8dd8-aa6a43e17a52> rdf:type owl:Ontology .
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://schema.oceanproteinportal.org/v2/Agent
+<http://schema.oceanproteinportal.org/v2/Agent> rdf:type owl:Class ;
+                                                rdfs:comment "An abstract class for specifying a person, organization or software entity that performs some action acting in some predefined role."^^xsd:string ;
+                                                rdfs:label "Agent"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v2/AgentRole
+<http://schema.oceanproteinportal.org/v2/AgentRole> rdf:type owl:Class ;
+                                                    rdfs:comment "An agent performing some Role over a certain period of time (which may be unbounded)."^^xsd:string ;
+                                                    rdfs:label "AgentRole"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v2/Cruise
+<http://schema.oceanproteinportal.org/v2/Cruise> rdf:type owl:Class ;
+                                                 rdfs:subClassOf sosa:Deployment ;
+                                                 rdfs:comment "A deployment of some seagoing vessel on which one or more scientific objectives are studied."^^xsd:string ;
+                                                 rdfs:label "Cruise"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataGraphFunction
+<http://schema.oceanproteinportal.org/v2/DataGraphFunction> rdf:type owl:Class ;
+                                                            rdfs:subClassOf <http://schema.oceanproteinportal.org/v2/PortalFunction> ;
+                                                            rdfs:comment "A portal function that graphs data."^^xsd:string ;
+                                                            rdfs:label "DataGraphFunction"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataViewFunction
+<http://schema.oceanproteinportal.org/v2/DataViewFunction> rdf:type owl:Class ;
+                                                           rdfs:subClassOf <http://schema.oceanproteinportal.org/v2/PortalFunction> ;
+                                                           rdfs:comment "A portal function that views the raw data of a Dataset."^^xsd:string ;
+                                                           rdfs:label "DataViewFunction"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v2/DatasetType
+<http://schema.oceanproteinportal.org/v2/DatasetType> rdf:type owl:Class ;
+                                                      rdfs:comment "Specifies the type of dataset. This will determine which functionality is available from the portal."^^xsd:string ;
+                                                      rdfs:label "DatasetType"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v2/Depth
+<http://schema.oceanproteinportal.org/v2/Depth> rdf:type owl:Class ;
+                                                rdfs:subClassOf sosa:ObservableProperty ;
+                                                rdfs:comment "A depth beneath the seafloor."^^xsd:string ;
+                                                rdfs:label "Depth"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v2/Identifier
+<http://schema.oceanproteinportal.org/v2/Identifier> rdf:type owl:Class ;
+                                                     rdfs:label "Identifier"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v2/IdentifierScheme
+<http://schema.oceanproteinportal.org/v2/IdentifierScheme> rdf:type owl:Class ;
+                                                           rdfs:comment "A realm or domain in which an Identifier is unique."^^xsd:string ;
+                                                           rdfs:label "IdentifierScheme"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v2/InstrumentType
+<http://schema.oceanproteinportal.org/v2/InstrumentType> rdf:type owl:Class ;
+                                                         rdfs:comment "A type of Instrument used in sampling."^^xsd:string ;
+                                                         rdfs:label "InstrumentType"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v2/PortalFunction
+<http://schema.oceanproteinportal.org/v2/PortalFunction> rdf:type owl:Class ;
+                                                         rdfs:subClassOf owl:Thing ;
+                                                         rdfs:comment "Specifies a specific function that can be performed on a Dataset from the Portal"^^xsd:string ;
+                                                         rdfs:label "PortalFunction"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v2/Role
+<http://schema.oceanproteinportal.org/v2/Role> rdf:type owl:Class ;
+                                               rdfs:comment "A certain status, or position, played by some Agent that qualifies/contextualizes the actions performed by that Agent."^^xsd:string ;
+                                               rdfs:label "Role"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v2/SamplerFilter
+<http://schema.oceanproteinportal.org/v2/SamplerFilter> rdf:type owl:Class ;
+                                                        rdfs:comment "A specific type of filter used in sampling."^^xsd:string ;
+                                                        rdfs:label "SamplerFilter"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v2/Station
+<http://schema.oceanproteinportal.org/v2/Station> rdf:type owl:Class ;
+                                                  rdfs:comment "A generally agreed upon location at which sampling occurred. This agreement enables the comparison of collected data over different reference frames such as time."^^xsd:string ;
+                                                  rdfs:label "Station"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v2/UO_0000008
+<http://schema.oceanproteinportal.org/v2/UO_0000008> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://schema.oceanproteinportal.org/v2/UnitOfMeasurement> ;
+                                                     rdfs:label "Meter"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v2/UnitOfMeasurement
+<http://schema.oceanproteinportal.org/v2/UnitOfMeasurement> rdf:type owl:Class ;
+                                                            rdfs:comment "A unit of measurement"^^xsd:string ;
+                                                            rdfs:label "UnitOfMeasurement"@en-us .
+
+
+###  http://schema.org/DataType
+schema:DataType rdf:type owl:Class ;
+                rdfs:label "DataType"@en-us .
+
+
+###  http://schema.org/Dataset
+schema:Dataset rdf:type owl:Class ;
+               rdfs:label "Dataset"@en-us .
+
+
+###  http://schema.org/Number
+schema:Number rdf:type owl:Class ;
+              rdfs:subClassOf schema:DataType ;
+              rdfs:label "Number"@en-us .
+
+
+###  http://schema.org/Organization
+schema:Organization rdf:type owl:Class ;
+                    rdfs:subClassOf <http://schema.oceanproteinportal.org/v2/Agent> ;
+                    rdfs:label "Organization"@en-us .
+
+
+###  http://schema.org/Person
+schema:Person rdf:type owl:Class ;
+              rdfs:subClassOf <http://schema.oceanproteinportal.org/v2/Agent> ;
+              rdfs:label "Person"@en-us .
+
+
+###  http://schema.org/PropertyValue
+schema:PropertyValue rdf:type owl:Class ;
+                     rdfs:label "PropertyValue"@en-us .
+
+
+###  http://www.w3.org/2006/time#Instant
+time:Instant rdf:type owl:Class ;
+             rdfs:label "Instant"@en-us .
+
+
+###  http://www.w3.org/ns/sosa/Deployment
+sosa:Deployment rdf:type owl:Class ;
+                rdfs:label "Deployment"@en-us .
+
+
+###  http://www.w3.org/ns/sosa/FeatureOfInterest
+sosa:FeatureOfInterest rdf:type owl:Class ;
+                       rdfs:label "FeatureOfInterest"@en-us .
+
+
+###  http://www.w3.org/ns/sosa/ObservableProperty
+sosa:ObservableProperty rdf:type owl:Class ;
+                        rdfs:label "ObservableProperty"@en-us .
+
+
+###  http://www.w3.org/ns/sosa/Procedure
+sosa:Procedure rdf:type owl:Class ;
+               rdfs:label "Procedure"@en-us .
+
+
+###  http://www.w3.org/ns/sosa/Sample
+sosa:Sample rdf:type owl:Class ;
+            rdfs:label "Sample"@en-us .
+
+
+###  http://www.w3.org/ns/sosa/Sampler
+sosa:Sampler rdf:type owl:Class ;
+             rdfs:label "Sampler"@en-us .
+
+
+###  http://www.w3.org/ns/sosa/Sampling
+sosa:Sampling rdf:type owl:Class ;
+              rdfs:label "Sampling"@en-us .
+
+
+###  Generated by the OWL API (version 4.5.13) https://github.com/owlcs/owlapi
