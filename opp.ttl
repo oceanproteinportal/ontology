@@ -1,7 +1,7 @@
 @prefix : <http://schema.oceanproteinportal.org/v2/> .
-@prefix sf: <http://www.opengis.net/ont/sf#> .
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
 @prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix opp: <http://schema.oceanproteinportal.org/v2/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix ssn: <http://www.w3.org/ns/ssn/> .
@@ -12,13 +12,38 @@
 @prefix time: <http://www.w3.org/2006/time#> .
 @prefix schema: <http://schema.org/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ssn-system: <http://www.w3.org/ns/ssn/systems/> .
 @base <http://schema.oceanproteinportal.org/v2/> .
 
 <http://schema.oceanproteinportal.org/v2/> rdf:type owl:Ontology .
 
 #################################################################
+#    Annotation properties
+#################################################################
+
+###  http://schema.oceanproteinportal.org/v2/hasValueRestriction
+opp:hasValueRestriction rdf:type owl:AnnotationProperty ;
+                        rdfs:comment "Requirements for which values of the property must conform to"@en-us ;
+                        rdfs:label "hasValueRestriction"@en-us ;
+                        rdfs:range opp:PropertyRestriction ;
+                        rdfs:domain ssn:Property .
+
+
+###  http://schema.org/unitCode
+schema:unitCode rdf:type owl:AnnotationProperty .
+
+
+###  http://schema.org/value
+schema:value rdf:type owl:AnnotationProperty .
+
+
+#################################################################
 #    Datatypes
 #################################################################
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
+
 
 ###  http://www.w3.org/2001/XMLSchema#str
 xsd:str rdf:type rdfs:Datatype ;
@@ -29,310 +54,378 @@ xsd:str rdf:type rdfs:Datatype ;
 #    Object Properties
 #################################################################
 
-###  http://schema.oceanproteinportal.org/v2/affordsFunction
-:affordsFunction rdf:type owl:ObjectProperty ;
-                 rdfs:subPropertyOf owl:topObjectProperty ;
-                 rdfs:domain :DatasetType ;
-                 rdfs:range :PortalFunction ;
-                 rdfs:label "affordsFunction"@en-us .
+###  http://schema.oceanproteinportal.org/v2/aminoAcidChain
+opp:aminoAcidChain rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf opp:identifier ;
+                   rdfs:label "aminoAcidChain"@en-us .
 
 
-###  http://schema.oceanproteinportal.org/v2/annotatesSampleWithPeptide
-:annotatesSampleWithPeptide rdf:type owl:ObjectProperty ;
-                            rdfs:subPropertyOf owl:topObjectProperty ;
-                            rdfs:domain :Peptide ;
-                            rdfs:range sosa:Sample ;
-                            rdfs:label "annotatesSampleWithPeptide"@en-us .
-
-
-###  http://schema.oceanproteinportal.org/v2/atLocation
-:atLocation rdf:type owl:ObjectProperty ;
-            rdfs:subPropertyOf owl:topObjectProperty ;
-            rdfs:domain sosa:FeatureOfInterest ;
-            rdfs:range sf:Point ;
-            rdfs:label "atLocation"@en-us .
+###  http://schema.oceanproteinportal.org/v2/annotatesIdentifier
+opp:annotatesIdentifier rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf owl:topObjectProperty ;
+                        rdfs:domain opp:IdentifierMetadata ;
+                        rdfs:range opp:Identifier ;
+                        rdfs:label "annotatesIdentifier"@en-us .
 
 
 ###  http://schema.oceanproteinportal.org/v2/datasetType
-:datasetType rdf:type owl:ObjectProperty ;
-             rdfs:subPropertyOf owl:topObjectProperty ;
-             rdfs:domain schema:Dataset ;
-             rdfs:range :DatasetType ;
-             rdfs:label "datasetType"@en-us .
+opp:datasetType rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf owl:topObjectProperty ;
+                rdfs:domain schema:Dataset ;
+                rdfs:range opp:DatasetType ;
+                rdfs:label "datasetType"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v2/defaultUnitOfMeasure
+opp:defaultUnitOfMeasure rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf opp:hasAcceptedUnits ;
+                         rdf:type owl:FunctionalProperty ;
+                         rdfs:domain opp:PropertyRestriction ;
+                         rdfs:range opp:UnitOfMeasurement ;
+                         rdfs:label "defaultUnitOfMeasure"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v2/definesIdentifierScheme
+opp:definesIdentifierScheme rdf:type owl:ObjectProperty ;
+                            rdfs:subPropertyOf owl:topObjectProperty ;
+                            rdfs:domain owl:Thing ;
+                            rdfs:range opp:IdentifierScheme ;
+                            rdfs:comment "Some thing that defines a certain Identifier scheme. This thing could be a localized dataset or an organization."^^xsd:string ;
+                            rdfs:label "definesIdentifierScheme"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v2/depth
+opp:depth rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf ssn:hasProperty ;
+          rdf:type owl:FunctionalProperty ;
+          rdfs:domain sosa:FeatureOfInterest ;
+          rdfs:range opp:Depth ;
+          rdfs:label "depth"@en-us .
 
 
 ###  http://schema.oceanproteinportal.org/v2/describedInDataset
-:describedInDataset rdf:type owl:ObjectProperty ;
-                    rdfs:subPropertyOf owl:topObjectProperty ;
-                    rdfs:domain sosa:Sample ;
-                    rdfs:range schema:Dataset ;
-                    rdfs:label "describedInDataset"@en-us .
+opp:describedInDataset rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf owl:topObjectProperty ;
+                       rdfs:domain sosa:Sample ;
+                       rdfs:range schema:Dataset ;
+                       rdfs:label "describedInDataset"@en-us .
 
 
 ###  http://schema.oceanproteinportal.org/v2/enzymeCommissionIdentifier
-:enzymeCommissionIdentifier rdf:type owl:ObjectProperty ;
-                            rdfs:subPropertyOf :identifier ;
-                            rdfs:domain :Protein ;
-                            rdfs:range :EnzymeCommissionIdentifier ;
-                            rdfs:label "enzymeCommissionIdentifier"@en-us .
+opp:enzymeCommissionIdentifier rdf:type owl:ObjectProperty ;
+                               rdfs:subPropertyOf opp:identifier ;
+                               rdfs:domain opp:Protein ;
+                               rdfs:range opp:EnzymeCommissionIdentifier ;
+                               rdfs:label "enzymeCommissionIdentifier"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v2/hasAcceptedDataType
+opp:hasAcceptedDataType rdf:type owl:ObjectProperty ;
+                        rdfs:domain opp:PropertyRestriction ;
+                        rdfs:range schema:DataType ;
+                        rdfs:label "hasAcceptedDataType"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v2/hasAcceptedUnits
+opp:hasAcceptedUnits rdf:type owl:ObjectProperty ;
+                     rdfs:domain opp:PropertyRestriction ;
+                     rdfs:range opp:UnitOfMeasurement ;
+                     rdfs:label "hasAcceptedUnits"@en-us .
 
 
 ###  http://schema.oceanproteinportal.org/v2/hasAgentRole
-:hasAgentRole rdf:type owl:ObjectProperty ;
-              rdfs:subPropertyOf owl:topObjectProperty ;
-              rdfs:domain schema:Dataset ;
-              rdfs:range :AgentRole ;
-              rdfs:label "hasAgentRole"@en-us .
+opp:hasAgentRole rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf owl:topObjectProperty ;
+                 rdfs:domain owl:Thing ;
+                 rdfs:range opp:AgentRole ;
+                 rdfs:label "hasAgentRole"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v2/hasFilterSize
+opp:hasFilterSize rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf ssn-system:hasSystemCapability ;
+                  rdf:type owl:FunctionalProperty ;
+                  rdfs:domain sosa:Sampler ;
+                  rdfs:range opp:FilterSize ;
+                  rdfs:label "hasFilterSize"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v2/hasProteinIdentification
+opp:hasProteinIdentification rdf:type owl:ObjectProperty ;
+                             rdfs:subPropertyOf owl:topObjectProperty ;
+                             rdfs:domain opp:Peptide ;
+                             rdfs:range opp:ProteinIdentification ;
+                             rdfs:label "hasProteinIdentification"@en-us .
 
 
 ###  http://schema.oceanproteinportal.org/v2/identifiedProtein
-:identifiedProtein rdf:type owl:ObjectProperty ;
-                   rdfs:subPropertyOf owl:topObjectProperty ;
-                   rdfs:domain :Peptide ;
-                   rdfs:range :Protein ;
-                   rdfs:label "identifiedProtein"@en-us .
+opp:identifiedProtein rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf owl:topObjectProperty ;
+                      rdfs:domain opp:ProteinIdentification ;
+                      rdfs:range opp:Protein .
 
 
 ###  http://schema.oceanproteinportal.org/v2/identifier
-:identifier rdf:type owl:ObjectProperty ;
-            rdfs:subPropertyOf owl:topObjectProperty ;
-            rdfs:domain owl:Thing ;
-            rdfs:range :Identifier ;
-            rdfs:label "identifier"@en-us .
-
-
-###  http://schema.oceanproteinportal.org/v2/identifierScheme
-:identifierScheme rdf:type owl:ObjectProperty ;
-                  rdfs:domain :Identifier ;
-                  rdfs:range :IdentifierScheme ;
-                  rdfs:label "identifierScheme"@en-us .
+opp:identifier rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               rdfs:domain owl:Thing ;
+               rdfs:range opp:Identifier ;
+               rdfs:label "identifier"@en-us .
 
 
 ###  http://schema.oceanproteinportal.org/v2/inRole
-:inRole rdf:type owl:ObjectProperty ;
-        rdfs:domain :AgentRole ;
-        rdfs:range :Role ;
-        rdfs:label "inRole"@en-us .
+opp:inRole rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           rdfs:domain opp:AgentRole ;
+           rdfs:range opp:Role ;
+           rdfs:label "inRole"@en-us .
 
 
 ###  http://schema.oceanproteinportal.org/v2/inVicinityOfStation
-:inVicinityOfStation rdf:type owl:ObjectProperty ;
-                     rdfs:subPropertyOf owl:topObjectProperty ;
-                     rdfs:domain sosa:FeatureOfInterest ;
-                     rdfs:range :Station ;
-                     rdfs:label "inVicinityOfStation"@en-us .
+opp:inVicinityOfStation rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf owl:topObjectProperty ;
+                        rdfs:domain sosa:FeatureOfInterest ;
+                        rdfs:range opp:Station ;
+                        rdfs:label "inVicinityOfStation"@en-us .
 
 
-###  http://schema.oceanproteinportal.org/v2/instrumentType
-:instrumentType rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf owl:topObjectProperty ;
-                rdfs:domain sosa:Sampler ;
-                rdfs:range :InstrumentType ;
-                rdfs:label "instrumentType"@en-us .
+###  http://schema.oceanproteinportal.org/v2/isAgentRoleFor
+opp:isAgentRoleFor rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf owl:topObjectProperty ;
+                   rdfs:domain opp:AgentRole ;
+                   rdfs:range owl:Thing ;
+                   rdfs:label "isAgentRoleFor"@en-us .
 
 
 ###  http://schema.oceanproteinportal.org/v2/keggIdentifier
-:keggIdentifier rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf :identifier ;
-                rdfs:domain :Protein ;
-                rdfs:range :KeggIdentifier ;
-                rdfs:label "keggIdentifier"@en-us .
+opp:keggIdentifier rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf opp:identifier ;
+                   rdfs:domain opp:Protein ;
+                   rdfs:range opp:KeggIdentifier ;
+                   rdfs:label "keggIdentifier"@en-us .
 
 
 ###  http://schema.oceanproteinportal.org/v2/keggPathway
-:keggPathway rdf:type owl:ObjectProperty ;
-             rdfs:subPropertyOf owl:topObjectProperty ;
-             rdfs:domain :KeggIdentifier ;
-             rdfs:range :KeggPathway ;
-             rdfs:label "keggPathway"@en-us .
+opp:keggPathway rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf opp:annotatesIdentifier ;
+                rdf:type owl:FunctionalProperty ;
+                rdfs:domain opp:KeggIdentifier ;
+                rdfs:range opp:KeggPathway ;
+                rdfs:label "keggPathway"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v2/molecularWeight
+opp:molecularWeight rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf ssn:hasProperty ;
+                    rdfs:domain opp:Protein ;
+                    rdfs:range opp:MolecularWeight ;
+                    rdfs:label "molecularWeight"@en-us .
 
 
 ###  http://schema.oceanproteinportal.org/v2/ncbiTaxonIdentifier
-:ncbiTaxonIdentifier rdf:type owl:ObjectProperty ;
-                     rdfs:subPropertyOf :identifier ;
-                     rdfs:domain :Protein ;
-                     rdfs:range :NCBITaxonIdentifier ;
-                     rdfs:label "ncbiTaxonIdentifier"@en-us .
+opp:ncbiTaxonIdentifier rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf opp:identifier ;
+                        rdfs:domain opp:Protein ;
+                        rdfs:range opp:NCBITaxonIdentifier ;
+                        rdfs:label "ncbiTaxonIdentifier"@en-us .
 
 
-###  http://schema.oceanproteinportal.org/v2/onBehalfOf
-:onBehalfOf rdf:type owl:ObjectProperty ;
-            rdfs:domain :AgentRole ;
-            rdfs:range :Agent ;
-            rdfs:label "onBehalfOf"@en-us .
+###  http://schema.oceanproteinportal.org/v2/ncbiTaxonName
+opp:ncbiTaxonName rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf opp:annotatesIdentifier ;
+                  rdf:type owl:FunctionalProperty ;
+                  rdfs:domain opp:NCBITaxonIdentifier ;
+                  rdfs:range opp:NCBITaxonName .
 
 
 ###  http://schema.oceanproteinportal.org/v2/otherIdentifiedProtein
-:otherIdentifiedProtein rdf:type owl:ObjectProperty ;
-                        rdfs:subPropertyOf owl:topObjectProperty ;
-                        rdfs:domain :Protein ;
-                        rdfs:range :ProteinIdentifier ;
-                        rdfs:comment "Points to the identifier of some other Protein which may or may not be available."^^xsd:string ;
-                        rdfs:label "otherIdentifiedProtein"@en-us .
+opp:otherIdentifiedProtein rdf:type owl:ObjectProperty ;
+                           rdfs:subPropertyOf owl:topObjectProperty ;
+                           rdfs:domain opp:Protein ;
+                           rdfs:range opp:Protein ;
+                           rdfs:comment "Is this really identified via the Peptide? And we already have this captued in ProteinIdentification?"^^xsd:string ;
+                           rdfs:label "otherIdentifiedProtein"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v2/peptideInSample
+opp:peptideInSample rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf owl:topObjectProperty ;
+                    rdfs:domain opp:Peptide ;
+                    rdfs:range sosa:Sample ;
+                    rdfs:label "peptideInSample"@en-us .
 
 
 ###  http://schema.oceanproteinportal.org/v2/peptideSequence
-:peptideSequence rdf:type owl:ObjectProperty ;
-                 rdfs:subPropertyOf owl:topObjectProperty ;
-                 rdfs:domain :Peptide ,
-                             :Protein ;
-                 rdfs:range :PeptideSequence ;
-                 rdfs:label "peptideSequence"@en-us .
+opp:peptideSequence rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf opp:aminoAcidChain ;
+                    rdfs:domain opp:Peptide ;
+                    rdfs:range opp:PeptideSequence ;
+                    rdfs:label "peptideSequence"@en-us .
 
 
-###  http://schema.oceanproteinportal.org/v2/performedAt
-:performedAt rdf:type owl:ObjectProperty ;
-             rdfs:domain :AgentRole ;
-             rdfs:range schema:Organization ;
-             rdfs:label "performedAt"@en-us .
+###  http://schema.oceanproteinportal.org/v2/performedAtOrganization
+opp:performedAtOrganization rdf:type owl:ObjectProperty ;
+                            rdfs:subPropertyOf owl:topObjectProperty ;
+                            rdfs:domain opp:AgentRole ;
+                            rdfs:range schema:Organization ;
+                            rdfs:label "performedAtOrganization"@en-us .
 
 
 ###  http://schema.oceanproteinportal.org/v2/performedBy
-:performedBy rdf:type owl:ObjectProperty ;
-             rdfs:domain :AgentRole ;
-             rdfs:range :Agent ;
-             rdfs:label "performedBy"@en-us .
+opp:performedBy rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf owl:topObjectProperty ;
+                rdfs:domain opp:AgentRole ;
+                rdfs:range opp:Agent ;
+                rdfs:label "performedBy"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v2/performedOnBehalfOf
+opp:performedOnBehalfOf rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf owl:topObjectProperty ;
+                        rdfs:domain opp:AgentRole ;
+                        rdfs:range opp:Agent ;
+                        rdfs:label "performedOnBehalfOf"@en-us .
 
 
 ###  http://schema.oceanproteinportal.org/v2/pfamsIdentifier
-:pfamsIdentifier rdf:type owl:ObjectProperty ;
-                 rdfs:subPropertyOf :identifier ;
-                 rdfs:domain :Protein ;
-                 rdfs:range :PFamsIdentifier ;
-                 rdfs:label "pfamsIdentifier"@en-us .
+opp:pfamsIdentifier rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf opp:identifier ;
+                    rdfs:domain opp:Protein ;
+                    rdfs:range opp:PFamsIdentifier ;
+                    rdfs:label "pfamsIdentifier"@en-us .
 
 
 ###  http://schema.oceanproteinportal.org/v2/proteinIdentifier
-:proteinIdentifier rdf:type owl:ObjectProperty ;
-                   rdfs:subPropertyOf :identifier ;
-                   rdfs:domain :Protein ;
-                   rdfs:range :Identifier ;
-                   rdfs:label "proteinIdentifier"@en-us .
+opp:proteinIdentifier rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf opp:identifier ;
+                      rdfs:domain opp:Protein ;
+                      rdfs:range opp:Identifier ;
+                      rdfs:label "proteinIdentifier"@en-us .
 
 
 ###  http://schema.oceanproteinportal.org/v2/proteinInSample
-:proteinInSample rdf:type owl:ObjectProperty ;
-                 rdfs:subPropertyOf owl:topObjectProperty ;
-                 rdfs:domain sosa:Sample ;
-                 rdfs:range :Protein ;
-                 rdfs:label "proteinInSample"@en-us .
+opp:proteinInSample rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf owl:topObjectProperty ;
+                    rdfs:domain sosa:Sample ;
+                    rdfs:range opp:Protein ;
+                    rdfs:label "proteinInSample"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v2/proteinSampleIdentifier
+opp:proteinSampleIdentifier rdf:type owl:ObjectProperty ;
+                            rdfs:subPropertyOf opp:identifier ;
+                            rdf:type owl:FunctionalProperty ;
+                            rdfs:domain opp:Protein ;
+                            rdfs:range opp:ProteinSampleIdentifier ;
+                            rdfs:label "proteinSampleIdentifier"@en-us .
 
 
 ###  http://schema.oceanproteinportal.org/v2/proteinSequence
-:proteinSequence rdf:type owl:ObjectProperty ;
-                 rdfs:subPropertyOf owl:topObjectProperty ;
-                 rdfs:domain :Protein ;
-                 rdfs:range :ProteinSequence ;
-                 rdfs:label "proteinSequence"@en-us .
+opp:proteinSequence rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf opp:aminoAcidChain ;
+                    rdfs:domain opp:Protein ;
+                    rdfs:range opp:ProteinSequence ;
+                    rdfs:label "proteinSequence"@en-us .
 
 
 ###  http://schema.oceanproteinportal.org/v2/proteinTotalSpectralCount
-:proteinTotalSpectralCount rdf:type owl:ObjectProperty ;
-                           rdfs:subPropertyOf owl:topObjectProperty ;
-                           rdfs:domain :Protein ;
-                           rdfs:range :ProteinTotalSpectralCount ;
-                           rdfs:label "proteinTotalSpectralCount"@en-us .
+opp:proteinTotalSpectralCount rdf:type owl:ObjectProperty ;
+                              rdfs:subPropertyOf owl:topObjectProperty ;
+                              rdfs:domain opp:Protein ;
+                              rdfs:range opp:ProteinTotalSpectralCount ;
+                              rdfs:label "proteinTotalSpectralCount"@en-us .
 
 
 ###  http://schema.oceanproteinportal.org/v2/providesRole
-:providesRole rdf:type owl:ObjectProperty ;
-              rdfs:domain owl:Thing ;
-              rdfs:range :Role ;
-              rdfs:label "providesRole"@en-us .
+opp:providesRole rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf owl:topObjectProperty ;
+                 rdfs:domain owl:Thing ;
+                 rdfs:range opp:Role ;
+                 rdfs:label "providesRole"@en-us .
 
 
-###  http://schema.oceanproteinportal.org/v2/sampleDepth
-:sampleDepth rdf:type owl:ObjectProperty ;
-             rdfs:subPropertyOf owl:topObjectProperty ;
-             rdfs:domain sosa:Sample ;
-             rdfs:range :Variable ;
-             rdfs:label "sampleDepth"@en-us .
+###  http://schema.oceanproteinportal.org/v2/storesResultsForSample
+opp:storesResultsForSample rdf:type owl:ObjectProperty ;
+                           rdfs:domain schema:Dataset ;
+                           rdfs:range sosa:Sample ;
+                           rdfs:label "storesResultsForSample"@en-us .
 
 
-###  http://schema.oceanproteinportal.org/v2/samplingTime
-:samplingTime rdf:type owl:ObjectProperty ;
-              rdfs:subPropertyOf owl:topObjectProperty ;
-              rdfs:domain sosa:Sampling ;
-              rdfs:range time:Instant ;
-              rdfs:label "samplingTime"@en-us .
-
-
-###  http://schema.oceanproteinportal.org/v2/subjectOfAgentRole
-:subjectOfAgentRole rdf:type owl:ObjectProperty ;
-                    rdfs:domain :AgentRole ;
-                    rdfs:range owl:Thing ;
-                    rdfs:label "subjectOfAgentRole"@en-us .
+###  http://schema.oceanproteinportal.org/v2/totalSpectralCount
+opp:totalSpectralCount rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf ssn:hasProperty ;
+                       rdfs:domain opp:Protein ;
+                       rdfs:range opp:TotalSpectralCount ;
+                       rdfs:label "totalSpectralCount"@en-us .
 
 
 ###  http://schema.oceanproteinportal.org/v2/uniprotIdentifier
-:uniprotIdentifier rdf:type owl:ObjectProperty ;
-                   rdfs:subPropertyOf :identifier ;
-                   rdfs:domain :Protein ;
-                   rdfs:range :UniprotIdentifier ;
-                   rdfs:label "uniprotIdentifier"@en-us .
-
-
-###  http://schema.oceanproteinportal.org/v2/usesSamplerFilter
-:usesSamplerFilter rdf:type owl:ObjectProperty ;
-                   rdfs:subPropertyOf owl:topObjectProperty ;
-                   rdfs:domain sosa:Sampler ;
-                   rdfs:range :SamplerFilter ;
-                   rdfs:label "usesSamplerFilter"@en-us .
+opp:uniprotIdentifier rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf opp:identifier ;
+                      rdfs:domain opp:Protein ;
+                      rdfs:range opp:UniprotIdentifier ;
+                      rdfs:label "uniprotIdentifier"@en-us .
 
 
 ###  http://schema.org/unitCode
-schema:unitCode rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf owl:topObjectProperty ;
-                rdfs:domain schema:PropertyValue ;
-                rdfs:range :UnitOfMeasurement ;
-                rdfs:label "unitCode"@en-us .
+schema:unitCode rdf:type owl:ObjectProperty .
 
 
 ###  http://schema.org/value
-schema:value rdf:type owl:ObjectProperty ;
-             rdfs:subPropertyOf owl:topObjectProperty ;
-             rdfs:domain schema:PropertyValue ;
-             rdfs:label "value"@en-us .
-
-
-###  http://schema.org/variableMeasured
-schema:variableMeasured rdf:type owl:ObjectProperty ;
-                        rdfs:subPropertyOf owl:topObjectProperty ;
-                        rdfs:domain schema:Dataset ;
-                        rdfs:range :Variable ;
-                        rdfs:label "variableMeasured"@en-us .
+schema:value rdf:type owl:ObjectProperty .
 
 
 ###  http://www.w3.org/ns/sosa/hasDeployment
-sosa:hasDeployment rdf:type owl:ObjectProperty ;
-                   rdfs:subPropertyOf owl:topObjectProperty ;
-                   rdfs:domain sosa:Sampler ;
-                   rdfs:range :Cruise ;
-                   rdfs:label "hasDeployment"@en-us .
+sosa:hasDeployment rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/ns/sosa/hasFeatureOfInterest
+sosa:hasFeatureOfInterest rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/ns/sosa/isFeatureOfInterestOf
+sosa:isFeatureOfInterestOf rdf:type owl:ObjectProperty .
 
 
 ###  http://www.w3.org/ns/sosa/isResultOf
-sosa:isResultOf rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf owl:topObjectProperty ;
-                rdfs:domain sosa:Sample ;
-                rdfs:range sosa:Sampling ;
-                rdfs:label "isResultOf"@en-us .
+sosa:isResultOf rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/ns/sosa/isSampleOf
+sosa:isSampleOf rdf:type owl:ObjectProperty .
 
 
 ###  http://www.w3.org/ns/sosa/madeBySampler
-sosa:madeBySampler rdf:type owl:ObjectProperty ;
-                   rdfs:subPropertyOf owl:topObjectProperty ;
-                   rdfs:domain sosa:Sampling ;
-                   rdfs:range sosa:Sampler ;
-                   rdfs:label "madeBySampler"@en-us .
+sosa:madeBySampler rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/ns/sosa/madeBySensor
+sosa:madeBySensor rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/ns/sosa/observedProperty
+sosa:observedProperty rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf sosa:isFeatureOfInterestOf .
+
+
+###  http://www.w3.org/ns/sosa/phenomenonTime
+sosa:phenomenonTime rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/ns/sosa/usedProcedure
+sosa:usedProcedure rdf:type owl:ObjectProperty .
 
 
 ###  http://www.w3.org/ns/ssn/forProperty
-ssn:forProperty rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf owl:topObjectProperty ;
-                rdfs:domain :Variable ;
-                rdfs:range sosa:ObservableProperty ;
-                rdfs:label "forProperty"@en-us .
+ssn:forProperty rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/ns/ssn/hasProperty
+ssn:hasProperty rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/ns/ssn/systems/hasSystemCapability
+ssn-system:hasSystemCapability rdf:type owl:ObjectProperty .
 
 
 #################################################################
@@ -340,594 +433,851 @@ ssn:forProperty rdf:type owl:ObjectProperty ;
 #################################################################
 
 ###  http://purl.org/dc/terms/bibliographicCitation
-dcterms:bibliographicCitation rdf:type owl:DatatypeProperty ;
-                              rdfs:subPropertyOf owl:topDataProperty ;
-                              rdf:type owl:FunctionalProperty ;
-                              rdfs:domain schema:Dataset ;
-                              rdfs:range xsd:string ;
-                              rdfs:label "bibliographicCitation"@en-us .
+dcterms:bibliographicCitation rdf:type owl:DatatypeProperty .
+
+
+###  http://schema.oceanproteinportal.org/v2/bestIdentificationProbability
+opp:bestIdentificationProbability rdf:type owl:DatatypeProperty ;
+                                  rdfs:subPropertyOf opp:identificationProbability ;
+                                  rdf:type owl:FunctionalProperty ;
+                                  rdfs:domain opp:BestProteinIdentification ;
+                                  rdfs:range xsd:float .
 
 
 ###  http://schema.oceanproteinportal.org/v2/cruiseID
-:cruiseID rdf:type owl:DatatypeProperty ;
-          rdfs:subPropertyOf owl:topDataProperty ;
-          rdf:type owl:FunctionalProperty ;
-          rdfs:domain :Cruise ;
-          rdfs:range xsd:string ;
-          rdfs:label "cruiseID"@en-us .
+opp:cruiseID rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf owl:topDataProperty ;
+             rdf:type owl:FunctionalProperty ;
+             rdfs:domain opp:Cruise ;
+             rdfs:range xsd:string ;
+             rdfs:label "cruiseID"@en-us .
 
 
 ###  http://schema.oceanproteinportal.org/v2/datasetName
-:datasetName rdf:type owl:DatatypeProperty ;
-             rdfs:subPropertyOf owl:topDataProperty ;
-             rdf:type owl:FunctionalProperty ;
-             rdfs:domain schema:Dataset ;
-             rdfs:range xsd:string ;
-             rdfs:label "datasetName"@en-us .
-
-
-###  http://schema.oceanproteinportal.org/v2/datasetShortName
-:datasetShortName rdf:type owl:DatatypeProperty ;
-                  rdfs:subPropertyOf owl:topDataProperty ;
-                  rdf:type owl:FunctionalProperty ;
-                  rdfs:domain schema:Dataset ;
-                  rdfs:range xsd:string ;
-                  rdfs:label "datasetShortName"@en-us .
-
-
-###  http://schema.oceanproteinportal.org/v2/datasetVersion
-:datasetVersion rdf:type owl:DatatypeProperty ;
+opp:datasetName rdf:type owl:DatatypeProperty ;
                 rdfs:subPropertyOf owl:topDataProperty ;
                 rdf:type owl:FunctionalProperty ;
                 rdfs:domain schema:Dataset ;
-                rdfs:range xsd:token ;
-                rdfs:label "datasetVersion"@en-us .
+                rdfs:range xsd:string ;
+                rdfs:label "datasetName"@en-us .
 
 
-###  http://schema.oceanproteinportal.org/v2/homepage
-:homepage rdf:type owl:DatatypeProperty ;
-          rdfs:subPropertyOf owl:topDataProperty ;
-          rdf:type owl:FunctionalProperty ;
-          rdfs:domain schema:Dataset ;
-          rdfs:range xsd:anyURI ;
-          rdfs:label "homepage"@en-us .
+###  http://schema.oceanproteinportal.org/v2/datasetShortName
+opp:datasetShortName rdf:type owl:DatatypeProperty ;
+                     rdfs:subPropertyOf owl:topDataProperty ;
+                     rdf:type owl:FunctionalProperty ;
+                     rdfs:domain schema:Dataset ;
+                     rdfs:range xsd:string ;
+                     rdfs:label "datasetShortName"@en-us .
 
 
-###  http://schema.oceanproteinportal.org/v2/identifierValue
-:identifierValue rdf:type owl:DatatypeProperty ;
-                 rdfs:subPropertyOf owl:topDataProperty ;
-                 rdf:type owl:FunctionalProperty ;
-                 rdfs:domain :Identifier ;
-                 rdfs:range xsd:token ;
-                 rdfs:label "identifierValue"@en-us .
-
-
-###  http://schema.oceanproteinportal.org/v2/keggPathwayIndex
-:keggPathwayIndex rdf:type owl:DatatypeProperty ;
-                  rdfs:subPropertyOf owl:topDataProperty ;
-                  rdfs:domain :KeggPathway ;
-                  rdfs:range xsd:integer ;
-                  rdfs:label "keggPathwayIndex"@en-us .
-
-
-###  http://schema.oceanproteinportal.org/v2/keggPathwayName
-:keggPathwayName rdf:type owl:DatatypeProperty ;
-                 rdfs:subPropertyOf :keggPathwayIndex ;
-                 rdf:type owl:FunctionalProperty ;
-                 rdfs:domain :KeggPathway ;
-                 rdfs:range xsd:token ;
-                 rdfs:label "keggPathwayName"@en-us .
-
-
-###  http://schema.oceanproteinportal.org/v2/maximumFilterSize
-:maximumFilterSize rdf:type owl:DatatypeProperty ;
-                   rdfs:subPropertyOf owl:topDataProperty ;
-                   rdf:type owl:FunctionalProperty ;
-                   rdfs:domain :SamplerFilter ;
-                   rdfs:range xsd:float ;
-                   rdfs:label "maximumFilterSize"@en-us .
-
-
-###  http://schema.oceanproteinportal.org/v2/minimumFilterSize
-:minimumFilterSize rdf:type owl:DatatypeProperty ;
-                   rdfs:subPropertyOf owl:topDataProperty ;
-                   rdf:type owl:FunctionalProperty ;
-                   rdfs:domain :SamplerFilter ;
-                   rdfs:range xsd:float ;
-                   rdfs:label "minimumFilterSize"@en-us .
-
-
-###  http://schema.oceanproteinportal.org/v2/ncbiTaxonName
-:ncbiTaxonName rdf:type owl:DatatypeProperty ;
-               rdfs:subPropertyOf owl:topDataProperty ;
-               rdf:type owl:FunctionalProperty ;
-               rdfs:domain :NCBITaxonIdentifier ;
-               rdfs:label "ncbiTaxonName"@en-us .
-
-
-###  http://schema.oceanproteinportal.org/v2/proteinName
-:proteinName rdf:type owl:DatatypeProperty ;
-             rdfs:subPropertyOf owl:topDataProperty ;
-             rdfs:domain :Protein ;
-             rdfs:range xsd:token ;
-             rdfs:label "proteinName"@en-us .
-
-
-###  http://schema.oceanproteinportal.org/v2/sampleID
-:sampleID rdf:type owl:DatatypeProperty ;
-          rdfs:subPropertyOf owl:topDataProperty ;
-          rdf:type owl:FunctionalProperty ;
-          rdfs:domain sosa:Sample ;
-          rdfs:range xsd:string ;
-          rdfs:label "sampleID"@en-us .
-
-
-###  http://schema.oceanproteinportal.org/v2/sequenceString
-:sequenceString rdf:type owl:DatatypeProperty ;
-                rdfs:subPropertyOf :identifierValue ;
-                rdf:type owl:FunctionalProperty ;
-                rdfs:domain :GeneticSequenceIdentifier ;
-                rdfs:range xsd:token ;
-                rdfs:label "sequenceString"@en-us .
-
-
-###  http://schema.oceanproteinportal.org/v2/startIndex
-:startIndex rdf:type owl:DatatypeProperty ;
-            rdfs:subPropertyOf owl:topDataProperty ;
-            rdf:type owl:FunctionalProperty ;
-            rdfs:domain :GeneticSequenceIdentifier ;
-            rdfs:range xsd:integer ;
-            rdfs:label "startIndex"@en-us .
-
-
-###  http://schema.oceanproteinportal.org/v2/stationName
-:stationName rdf:type owl:DatatypeProperty ;
-             rdfs:subPropertyOf owl:topDataProperty ;
-             rdf:type owl:FunctionalProperty ;
-             rdfs:domain :Station ;
-             rdfs:range xsd:string ;
-             rdfs:label "stationName"@en-us .
-
-
-###  http://schema.oceanproteinportal.org/v2/stopIndex
-:stopIndex rdf:type owl:DatatypeProperty ;
-           rdfs:subPropertyOf owl:topDataProperty ;
-           rdf:type owl:FunctionalProperty ;
-           rdfs:domain :GeneticSequenceIdentifier ;
-           rdfs:range xsd:integer ;
-           rdfs:label "stopIndex"@en-us .
-
-
-###  http://schema.org/description
-schema:description rdf:type owl:DatatypeProperty ;
+###  http://schema.oceanproteinportal.org/v2/datasetVersion
+opp:datasetVersion rdf:type owl:DatatypeProperty ;
                    rdfs:subPropertyOf owl:topDataProperty ;
                    rdf:type owl:FunctionalProperty ;
                    rdfs:domain schema:Dataset ;
-                   rdfs:range xsd:string ;
-                   rdfs:label "description"@en-us .
+                   rdfs:range xsd:token ;
+                   rdfs:label "datasetVersion"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v2/homepage
+opp:homepage rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf owl:topDataProperty ;
+             rdf:type owl:FunctionalProperty ;
+             rdfs:domain schema:Dataset ;
+             rdfs:range xsd:anyURI ;
+             rdfs:label "homepage"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v2/identificationProbability
+opp:identificationProbability rdf:type owl:DatatypeProperty ;
+                              rdfs:subPropertyOf owl:topDataProperty ;
+                              rdf:type owl:FunctionalProperty ;
+                              rdfs:domain opp:ProteinIdentification ;
+                              rdfs:range xsd:float ;
+                              rdfs:label "identificationProbability"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v2/identifierValue
+opp:identifierValue rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf owl:topDataProperty ;
+                    rdf:type owl:FunctionalProperty ;
+                    rdfs:domain opp:Identifier ;
+                    rdfs:range xsd:token ;
+                    rdfs:label "identifierValue"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v2/keggPathwayIndex
+opp:keggPathwayIndex rdf:type owl:DatatypeProperty ;
+                     rdfs:subPropertyOf owl:topDataProperty ;
+                     rdfs:domain opp:KeggPathway ;
+                     rdfs:range xsd:integer ;
+                     rdfs:label "keggPathwayIndex"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v2/keggPathwayName
+opp:keggPathwayName rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf schema:name ;
+                    rdf:type owl:FunctionalProperty ;
+                    rdfs:domain opp:KeggPathway ;
+                    rdfs:range xsd:token ;
+                    rdfs:label "keggPathwayName"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v2/maxFilterSize
+opp:maxFilterSize rdf:type owl:DatatypeProperty ;
+                  rdfs:subPropertyOf schema:maxValue ;
+                  rdf:type owl:FunctionalProperty ;
+                  rdfs:domain opp:FilterSize ;
+                  rdfs:range xsd:float ;
+                  rdfs:label "maxFilterSize"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v2/minFilterSize
+opp:minFilterSize rdf:type owl:DatatypeProperty ;
+                  rdfs:subPropertyOf schema:minValue ;
+                  rdfs:domain opp:FilterSize ;
+                  rdfs:range xsd:float ;
+                  rdfs:label "minFilterSize"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v2/ncbiTaxonName
+opp:ncbiTaxonName rdf:type owl:DatatypeProperty ;
+                  rdfs:subPropertyOf owl:topDataProperty ;
+                  rdf:type owl:FunctionalProperty .
+
+
+###  http://schema.oceanproteinportal.org/v2/proteinName
+opp:proteinName rdf:type owl:DatatypeProperty ;
+                rdfs:domain opp:Protein ;
+                rdfs:range xsd:string ;
+                rdfs:label "proteinName"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v2/sampleID
+opp:sampleID rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf owl:topDataProperty ;
+             rdf:type owl:FunctionalProperty ;
+             rdfs:domain sosa:Sample ;
+             rdfs:range xsd:string ;
+             rdfs:label "sampleID"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v2/sequenceString
+opp:sequenceString rdf:type owl:DatatypeProperty ;
+                   rdfs:subPropertyOf opp:identifierValue ;
+                   rdf:type owl:FunctionalProperty ;
+                   rdfs:domain opp:AminoAcidSequenceIdentifier ;
+                   rdfs:range xsd:token ;
+                   rdfs:label "sequenceString"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v2/startIndex
+opp:startIndex rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf owl:topDataProperty ;
+               rdf:type owl:FunctionalProperty ;
+               rdfs:domain opp:PeptideSequence ;
+               rdfs:range xsd:integer ;
+               rdfs:label "startIndex"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v2/stationName
+opp:stationName rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf owl:topDataProperty ;
+                rdf:type owl:FunctionalProperty ;
+                rdfs:domain opp:Station ;
+                rdfs:range xsd:string ;
+                rdfs:label "stationName"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v2/stopIndex
+opp:stopIndex rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf owl:topDataProperty ;
+              rdf:type owl:FunctionalProperty ;
+              rdfs:domain opp:PeptideSequence ;
+              rdfs:range xsd:integer ;
+              rdfs:label "stopIndex"@en-us .
+
+
+###  http://schema.org/description
+schema:description rdf:type owl:DatatypeProperty .
 
 
 ###  http://schema.org/keyword
-schema:keyword rdf:type owl:DatatypeProperty ;
-               rdfs:subPropertyOf owl:topDataProperty ;
-               rdfs:domain schema:Dataset ;
-               rdfs:range xsd:token ;
-               rdfs:label "keyword"@en-us .
+schema:keyword rdf:type owl:DatatypeProperty .
+
+
+###  http://schema.org/maxValue
+schema:maxValue rdf:type owl:DatatypeProperty .
+
+
+###  http://schema.org/minValue
+schema:minValue rdf:type owl:DatatypeProperty .
+
+
+###  http://schema.org/name
+schema:name rdf:type owl:DatatypeProperty .
+
+
+###  http://schema.org/value
+schema:value rdf:type owl:DatatypeProperty ;
+             rdfs:domain opp:DatasetParameter .
+
+
+###  http://www.w3.org/2003/01/geo/wgs84_pos#lat
+<http://www.w3.org/2003/01/geo/wgs84_pos#lat> rdf:type owl:DatatypeProperty .
+
+
+###  http://www.w3.org/2003/01/geo/wgs84_pos#lon
+<http://www.w3.org/2003/01/geo/wgs84_pos#lon> rdf:type owl:DatatypeProperty .
 
 
 ###  http://www.w3.org/2006/time#inXSDDate
-time:inXSDDate rdf:type owl:DatatypeProperty ;
-               rdfs:subPropertyOf owl:topDataProperty ;
-               rdf:type owl:FunctionalProperty ;
-               rdfs:domain time:Instant ;
-               rdfs:label "inXSDDate"@en-us .
+time:inXSDDate rdf:type owl:DatatypeProperty .
 
 
 ###  http://www.w3.org/2006/time#inXSDDateTimeStamp
-time:inXSDDateTimeStamp rdf:type owl:DatatypeProperty ;
-                        rdfs:subPropertyOf owl:topDataProperty ;
-                        rdf:type owl:FunctionalProperty ;
-                        rdfs:domain time:Instant ;
-                        rdfs:range xsd:dateTimeStamp ;
-                        rdfs:label "inXSDDateTimeStamp"@en-us .
+time:inXSDDateTimeStamp rdf:type owl:DatatypeProperty .
 
 
 #################################################################
 #    Classes
 #################################################################
 
-###  http://purl.obolibrary.org/obo/UO_0000222
-obo:UO_0000222 rdf:type owl:Class ;
-               rdfs:subClassOf :UnitOfMeasurement ;
-               rdfs:label "kilodalton"@en-us .
-
-
-###  http://schema.oceanproteinportal.org/v2/AbsoluteUnitsInFemtomolePerLiter
-:AbsoluteUnitsInFemtomolePerLiter rdf:type owl:Class ;
-                                  rdfs:subClassOf sosa:ObservableProperty ;
-                                  rdfs:label "AbsoluteUnitsInFemtomolePerLiter"@en-us .
+###  http://schema.oceanproteinportal.org/v2/AbsoluteUnits
+opp:AbsoluteUnits rdf:type owl:Class ;
+                  rdfs:subClassOf opp:DatasetParameter ;
+                  opp:hasValueRestriction opp:PropertyRestriction_FemtomolesPerLiter ;
+                  rdfs:label "AbsoluteUnits"@en-us .
 
 
 ###  http://schema.oceanproteinportal.org/v2/Agent
-:Agent rdf:type owl:Class ;
-       rdfs:subClassOf owl:Thing ;
-       rdfs:comment "An abstract class for specifying a person, organization or software entity that performs some action acting in some predefined role."^^xsd:string ;
-       rdfs:label "Agent"@en-us .
+opp:Agent rdf:type owl:Class ;
+          rdfs:subClassOf owl:Thing ;
+          rdfs:comment "An abstract class for specifying a person, organization or software entity that performs some action acting in some predefined role."^^xsd:string ;
+          rdfs:label "Agent"@en-us .
 
 
 ###  http://schema.oceanproteinportal.org/v2/AgentRole
-:AgentRole rdf:type owl:Class ;
-           rdfs:comment "An agent performing some Role over a certain period of time (which may be unbounded)."^^xsd:string ;
-           rdfs:label "AgentRole"@en-us .
+opp:AgentRole rdf:type owl:Class ;
+              rdfs:comment "An agent performing some Role over a certain period of time (which may be unbounded)."^^xsd:string ;
+              rdfs:label "AgentRole"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v2/AminoAcidSequenceIdentifier
+opp:AminoAcidSequenceIdentifier rdf:type owl:Class ;
+                                rdfs:subClassOf opp:Identifier ;
+                                rdfs:label "AminoAcidSequenceIdentifier"@en-us ;
+                                rdfs:seeAlso obo:PR_000018263 .
+
+
+###  http://schema.oceanproteinportal.org/v2/AminoAcidSequenceIdentifierScheme
+opp:AminoAcidSequenceIdentifierScheme rdf:type owl:Class ;
+                                      rdfs:subClassOf opp:IdentifierScheme .
 
 
 ###  http://schema.oceanproteinportal.org/v2/BestIdentificationProbability
-:BestIdentificationProbability rdf:type owl:Class ;
-                               rdfs:subClassOf sosa:ObservableProperty ;
-                               rdfs:label "BestIdentificationProbability"@en-us .
+opp:BestIdentificationProbability rdf:type owl:Class ;
+                                  rdfs:subClassOf opp:DatasetParameter ;
+                                  opp:hasValueRestriction opp:PropertyRestriction_Probability ;
+                                  rdfs:label "BestIdentificationProbability"@en-us .
 
 
-###  http://schema.oceanproteinportal.org/v2/BestIdentifiedProtein
-:BestIdentifiedProtein rdf:type owl:Class ;
-                       rdfs:subClassOf :Protein ;
-                       rdfs:comment "The best identification of a Protein in a given Sample."^^xsd:string ;
-                       rdfs:label "BestIdentifiedProtein"@en-us .
+###  http://schema.oceanproteinportal.org/v2/BestProteinIdentification
+opp:BestProteinIdentification rdf:type owl:Class ;
+                              rdfs:subClassOf opp:ProteinIdentification ;
+                              owl:disjointWith opp:OtherProteinIdentification ;
+                              rdfs:label "BestProteinIdentification"@en-us .
 
 
 ###  http://schema.oceanproteinportal.org/v2/BestSequestDcnScore
-:BestSequestDcnScore rdf:type owl:Class ;
-                     rdfs:subClassOf sosa:ObservableProperty ;
-                     rdfs:label "BestSequestDcnScore"@en-us .
+opp:BestSequestDcnScore rdf:type owl:Class ;
+                        rdfs:subClassOf opp:DatasetParameter ;
+                        rdfs:label "BestSequestDcnScore"@en-us .
 
 
 ###  http://schema.oceanproteinportal.org/v2/BestSequestXCorrScore
-:BestSequestXCorrScore rdf:type owl:Class ;
-                       rdfs:subClassOf sosa:ObservableProperty ;
-                       rdfs:label "BestSequestXCorrScore"@en-us .
+opp:BestSequestXCorrScore rdf:type owl:Class ;
+                          rdfs:subClassOf opp:DatasetParameter ;
+                          rdfs:label "BestSequestXCorrScore"@en-us .
 
 
 ###  http://schema.oceanproteinportal.org/v2/Cruise
-:Cruise rdf:type owl:Class ;
-        rdfs:subClassOf sosa:Deployment ;
-        rdfs:comment "A deployment of some seagoing vessel on which one or more scientific objectives are studied."^^xsd:string ;
-        rdfs:label "Cruise"@en-us .
-
-
-###  http://schema.oceanproteinportal.org/v2/DataGraphFunction
-:DataGraphFunction rdf:type owl:Class ;
-                   rdfs:subClassOf :PortalFunction ;
-                   rdfs:comment "A portal function that graphs data."^^xsd:string ;
-                   rdfs:label "DataGraphFunction"@en-us .
-
-
-###  http://schema.oceanproteinportal.org/v2/DataViewFunction
-:DataViewFunction rdf:type owl:Class ;
-                  rdfs:subClassOf :PortalFunction ;
-                  rdfs:comment "A portal function that views the raw data of a Dataset."^^xsd:string ;
-                  rdfs:label "DataViewFunction"@en-us .
+opp:Cruise rdf:type owl:Class ;
+           rdfs:subClassOf sosa:Deployment ;
+           rdfs:comment "A deployment of some seagoing vessel on which one or more scientific objectives are studied."^^xsd:string ;
+           rdfs:label "Cruise"@en-us .
 
 
 ###  http://schema.oceanproteinportal.org/v2/DatasetIdentifierScheme
-:DatasetIdentifierScheme rdf:type owl:Class ;
-                         rdfs:subClassOf :IdentifierScheme ;
-                         rdfs:comment "Each individual dataset acts as a realm itself. Protein identifiers will be unique to this dataset."^^xsd:string ;
-                         rdfs:label "DatasetIdentifierScheme"@en-us .
+opp:DatasetIdentifierScheme rdf:type owl:Class ;
+                            rdfs:subClassOf opp:IdentifierScheme ;
+                            rdfs:comment "An identifier scheme for a localized dataset."^^xsd:string ;
+                            rdfs:label "DatasetIdentifierScheme"^^xsd:string .
+
+
+###  http://schema.oceanproteinportal.org/v2/DatasetParameter
+opp:DatasetParameter rdf:type owl:Class ;
+                     rdfs:subClassOf schema:PropertyValue ,
+                                     ssn:Property .
 
 
 ###  http://schema.oceanproteinportal.org/v2/DatasetType
-:DatasetType rdf:type owl:Class ;
-             rdfs:comment "Specifies the type of dataset. This will determine which functionality is available from the portal."^^xsd:string ;
-             rdfs:label "DatasetType"@en-us .
+opp:DatasetType rdf:type owl:Class ;
+                rdfs:comment "Specifies the type of dataset. This will determine which functionality is available from the portal."^^xsd:string ;
+                rdfs:label "DatasetType"@en-us .
 
 
 ###  http://schema.oceanproteinportal.org/v2/Depth
-:Depth rdf:type owl:Class ;
-       rdfs:subClassOf sosa:ObservableProperty ;
-       rdfs:comment "A depth beneath the seafloor."^^xsd:string ;
-       rdfs:label "Depth"@en-us .
+opp:Depth rdf:type owl:Class ;
+          rdfs:subClassOf opp:DatasetParameter ;
+          opp:hasValueRestriction opp:PropertyRestriction_DepthInMeters ;
+          rdfs:comment "A depth beneath the sea surface."@en-us ;
+          rdfs:label "Depth"@en-us .
 
 
 ###  http://schema.oceanproteinportal.org/v2/EnzymeCommissionIdentifier
-:EnzymeCommissionIdentifier rdf:type owl:Class ;
-                            rdfs:subClassOf :Identifier ;
-                            rdfs:label "EnzymeCommissionIdentifier"@en-us .
+opp:EnzymeCommissionIdentifier rdf:type owl:Class ;
+                               rdfs:subClassOf opp:ProteinIdentifier ;
+                               opp:hasValueRestriction opp:PropertyRestriction_Token ;
+                               rdfs:label "EnzymeCommissionIdentifier"@en-us .
 
 
-###  http://schema.oceanproteinportal.org/v2/GeneticSequenceIdentifier
-:GeneticSequenceIdentifier rdf:type owl:Class ;
-                           rdfs:subClassOf :Identifier ;
-                           rdfs:label "GeneticSequenceIdentifier"@en-us .
+###  http://schema.oceanproteinportal.org/v2/FilterSize
+opp:FilterSize rdf:type owl:Class ;
+               rdfs:subClassOf schema:PropertyValue ,
+                               ssn-system:SystemCapability ;
+               schema:unitCode opp:Unit_Microns ;
+               rdfs:comment "The filter size in microns of the sampler."@en-us ;
+               rdfs:label "FilterSize"@en-us .
 
 
 ###  http://schema.oceanproteinportal.org/v2/Identifier
-:Identifier rdf:type owl:Class ;
-            rdfs:label "Identifier"@en-us .
+opp:Identifier rdf:type owl:Class ;
+               rdfs:subClassOf opp:DatasetParameter ;
+               rdfs:label "Identifier"@en-us .
 
 
 ###  http://schema.oceanproteinportal.org/v2/IdentifierMetadata
-:IdentifierMetadata rdf:type owl:Class ;
-                    rdfs:label "IdentifierMetadata"@en-us .
+opp:IdentifierMetadata rdf:type owl:Class ;
+                       rdfs:label "IdentifierMetadata"@en-us .
 
 
 ###  http://schema.oceanproteinportal.org/v2/IdentifierScheme
-:IdentifierScheme rdf:type owl:Class ;
-                  rdfs:comment "A realm or domain in which an Identifier is unique."^^xsd:string ;
-                  rdfs:label "IdentifierScheme"@en-us .
-
-
-###  http://schema.oceanproteinportal.org/v2/InstrumentType
-:InstrumentType rdf:type owl:Class ;
-                rdfs:comment "A type of Instrument used in sampling."^^xsd:string ;
-                rdfs:label "InstrumentType"@en-us .
+opp:IdentifierScheme rdf:type owl:Class ;
+                     rdfs:comment "A realm or domain in which an Identifier is unique."^^xsd:string ;
+                     rdfs:label "IdentifierScheme"@en-us .
 
 
 ###  http://schema.oceanproteinportal.org/v2/KeggIdentifier
-:KeggIdentifier rdf:type owl:Class ;
-                rdfs:subClassOf :Identifier ;
-                rdfs:label "KeggIdentifier"@en-us .
+opp:KeggIdentifier rdf:type owl:Class ;
+                   rdfs:subClassOf opp:ProteinIdentifier ;
+                   opp:hasValueRestriction opp:PropertyRestriction_Token ;
+                   rdfs:label "KeggIdentifier"@en-us .
 
 
 ###  http://schema.oceanproteinportal.org/v2/KeggPathway
-:KeggPathway rdf:type owl:Class ;
-             rdfs:subClassOf :IdentifierMetadata ;
-             rdfs:label "KeggPathway"@en-us .
+opp:KeggPathway rdf:type owl:Class ;
+                rdfs:subClassOf opp:IdentifierMetadata ;
+                rdfs:label "KeggPathway"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v2/MassSpectrometer
+opp:MassSpectrometer rdf:type owl:Class ;
+                     rdfs:subClassOf sosa:Sensor ;
+                     rdfs:label "MassSpectrometer"@en-us .
 
 
 ###  http://schema.oceanproteinportal.org/v2/MedianRetentionTime
-:MedianRetentionTime rdf:type owl:Class ;
-                     rdfs:subClassOf sosa:ObservableProperty ;
-                     rdfs:label "MedianRetentionTime"@en-us .
+opp:MedianRetentionTime rdf:type owl:Class ;
+                        rdfs:subClassOf opp:DatasetParameter ;
+                        rdfs:label "MedianRetentionTime"@en-us .
 
 
 ###  http://schema.oceanproteinportal.org/v2/MolecularWeight
-:MolecularWeight rdf:type owl:Class ;
-                 rdfs:subClassOf sosa:ObservableProperty ;
-                 rdfs:label "MolecularWeight"@en-us .
-
-
-###  http://schema.oceanproteinportal.org/v2/MolecularWeightInKiloDaltons
-:MolecularWeightInKiloDaltons rdf:type owl:Class ;
-                              rdfs:subClassOf :MolecularWeight ;
-                              rdfs:label "MolecularWeightInKiloDaltons"@en-us .
+opp:MolecularWeight rdf:type owl:Class ;
+                    rdfs:subClassOf opp:DatasetParameter ;
+                    opp:hasValueRestriction opp:PropertyRestriction_KiloDaltons ;
+                    rdfs:label "MolecularWeight"@en-us .
 
 
 ###  http://schema.oceanproteinportal.org/v2/NCBITaxonIdentifier
-:NCBITaxonIdentifier rdf:type owl:Class ;
-                     rdfs:subClassOf :Identifier ;
-                     rdfs:label "NCBITaxonIdentifier"@en-us .
+opp:NCBITaxonIdentifier rdf:type owl:Class ;
+                        rdfs:subClassOf opp:ProteinIdentifier ;
+                        opp:hasValueRestriction opp:PropertyRestriction_Token ;
+                        rdfs:label "NCBITaxonIdentifier"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v2/NCBITaxonName
+opp:NCBITaxonName rdf:type owl:Class ;
+                  rdfs:subClassOf opp:IdentifierMetadata ;
+                  rdfs:label "NCBITaxonName"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v2/OtherProteinIdentification
+opp:OtherProteinIdentification rdf:type owl:Class ;
+                               rdfs:subClassOf opp:ProteinIdentification ;
+                               rdfs:label "OtherProteinIdentification"@en-us .
 
 
 ###  http://schema.oceanproteinportal.org/v2/PFamsIdentifier
-:PFamsIdentifier rdf:type owl:Class ;
-                 rdfs:subClassOf :Identifier ;
-                 rdfs:label "PFamsIdentifier"@en-us .
+opp:PFamsIdentifier rdf:type owl:Class ;
+                    rdfs:subClassOf opp:ProteinIdentifier ;
+                    opp:hasValueRestriction opp:PropertyRestriction_Token ;
+                    rdfs:label "PFamsIdentifier"@en-us .
 
 
 ###  http://schema.oceanproteinportal.org/v2/Peptide
-:Peptide rdf:type owl:Class ;
-         rdfs:comment "A peptide identified in a protein."^^xsd:string ;
-         rdfs:label "Peptide"@en-us .
+opp:Peptide rdf:type owl:Class ;
+            rdfs:comment "A peptide identified in a protein."^^xsd:string ;
+            rdfs:label "Peptide"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v2/PeptideIdentification
+opp:PeptideIdentification rdf:type owl:Class ;
+                          rdfs:subClassOf sosa:Result ;
+                          rdfs:label "PeptideIdentification"@en-us .
 
 
 ###  http://schema.oceanproteinportal.org/v2/PeptideSequence
-:PeptideSequence rdf:type owl:Class ;
-                 rdfs:subClassOf :GeneticSequenceIdentifier ;
-                 rdfs:label "PeptideSequence"@en-us .
+opp:PeptideSequence rdf:type owl:Class ;
+                    rdfs:subClassOf opp:AminoAcidSequenceIdentifier ;
+                    opp:hasValueRestriction opp:PropertyRestriction_Token ;
+                    rdfs:label "PeptideSequence"@en-us .
 
 
 ###  http://schema.oceanproteinportal.org/v2/Plus2HSpectraCount
-:Plus2HSpectraCount rdf:type owl:Class ;
-                    rdfs:subClassOf sosa:ObservableProperty ;
-                    rdfs:label "Plus2HSpectraCount"@en-us .
+opp:Plus2HSpectraCount rdf:type owl:Class ;
+                       rdfs:subClassOf opp:DatasetParameter ;
+                       opp:hasValueRestriction opp:PropertyRestriction_Count ;
+                       rdfs:label "Plus2HSpectraCount"@en-us .
 
 
 ###  http://schema.oceanproteinportal.org/v2/Plus3HSpectraCount
-:Plus3HSpectraCount rdf:type owl:Class ;
-                    rdfs:subClassOf sosa:ObservableProperty ;
-                    rdfs:label "Plus3HSpectraCount"@en-us .
+opp:Plus3HSpectraCount rdf:type owl:Class ;
+                       rdfs:subClassOf opp:DatasetParameter ;
+                       opp:hasValueRestriction opp:PropertyRestriction_Count ;
+                       rdfs:label "Plus3HSpectraCount"@en-us .
 
 
 ###  http://schema.oceanproteinportal.org/v2/Plus4HSpectraCount
-:Plus4HSpectraCount rdf:type owl:Class ;
-                    rdfs:subClassOf sosa:ObservableProperty ;
-                    rdfs:label "Plus4HSpectraCount"@en-us .
+opp:Plus4HSpectraCount rdf:type owl:Class ;
+                       rdfs:subClassOf opp:DatasetParameter ;
+                       opp:hasValueRestriction opp:PropertyRestriction_Count ;
+                       rdfs:label "Plus4HSpectraCount"@en-us .
 
 
-###  http://schema.oceanproteinportal.org/v2/PortalFunction
-:PortalFunction rdf:type owl:Class ;
-                rdfs:subClassOf owl:Thing ;
-                rdfs:comment "Specifies a specific function that can be performed on a Dataset from the Portal"^^xsd:string ;
-                rdfs:label "PortalFunction"@en-us .
+###  http://schema.oceanproteinportal.org/v2/PropertyRestriction
+opp:PropertyRestriction rdf:type owl:Class ;
+                        rdfs:subClassOf schema:PropertyValueSpecification ;
+                        rdfs:label "PropertyRestriction"@en-us .
 
 
 ###  http://schema.oceanproteinportal.org/v2/Protein
-:Protein rdf:type owl:Class ;
-         rdfs:comment "A protein identified within a Sample."^^xsd:string ;
-         rdfs:label "Protein"@en-us .
+opp:Protein rdf:type owl:Class ;
+            rdfs:comment "A protein identified within a Sample."^^xsd:string ;
+            rdfs:label "Protein"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v2/ProteinIdentification
+opp:ProteinIdentification rdf:type owl:Class ;
+                          rdfs:subClassOf sosa:Result ;
+                          rdfs:comment "An identification of a protein based on a tryptic peptide"^^xsd:string ;
+                          rdfs:label "ProteinIdentification"@en-us .
 
 
 ###  http://schema.oceanproteinportal.org/v2/ProteinIdentifier
-:ProteinIdentifier rdf:type owl:Class ;
-                   rdfs:subClassOf :Identifier ;
-                   rdfs:label "ProteinIdentifier"@en-us .
+opp:ProteinIdentifier rdf:type owl:Class ;
+                      rdfs:subClassOf opp:Identifier ;
+                      rdfs:label "ProteinIdentifier"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v2/ProteinIdentifierScheme
+opp:ProteinIdentifierScheme rdf:type owl:Class ;
+                            rdfs:subClassOf opp:IdentifierScheme ;
+                            rdfs:comment "Used for identifying proteins"^^xsd:string ;
+                            rdfs:label "ProteinIdentifierScheme"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v2/ProteinSampleIdentifier
+opp:ProteinSampleIdentifier rdf:type owl:Class ;
+                            rdfs:subClassOf opp:ProteinIdentifier ;
+                            opp:hasValueRestriction opp:PropertyRestriction_Token ;
+                            rdfs:comment "The dataset-specific identifier for an identified protein in a sample."@en-us ;
+                            rdfs:label "ProteinSampleIdentifier"@en-us .
 
 
 ###  http://schema.oceanproteinportal.org/v2/ProteinSequence
-:ProteinSequence rdf:type owl:Class ;
-                 rdfs:subClassOf :GeneticSequenceIdentifier ;
-                 rdfs:label "ProteinSequence"@en-us .
+opp:ProteinSequence rdf:type owl:Class ;
+                    rdfs:subClassOf opp:AminoAcidSequenceIdentifier ;
+                    opp:hasValueRestriction opp:PropertyRestriction_Token ;
+                    rdfs:label "ProteinSequence"@en-us .
 
 
 ###  http://schema.oceanproteinportal.org/v2/ProteinTotalSpectralCount
-:ProteinTotalSpectralCount rdf:type owl:Class ;
-                           rdfs:subClassOf :TotalSpectralCount ;
-                           rdfs:label "ProteinTotalSpectralCount"@en-us .
+opp:ProteinTotalSpectralCount rdf:type owl:Class ;
+                              rdfs:subClassOf opp:TotalSpectralCount ;
+                              opp:hasValueRestriction opp:PropertyRestriction_Count ;
+                              rdfs:label "ProteinTotalSpectralCount"@en-us .
 
 
 ###  http://schema.oceanproteinportal.org/v2/Role
-:Role rdf:type owl:Class ;
-      rdfs:comment "A certain status, or position, played by some Agent that qualifies/contextualizes the actions performed by that Agent."^^xsd:string ;
-      rdfs:label "Role"@en-us .
-
-
-###  http://schema.oceanproteinportal.org/v2/SamplerFilter
-:SamplerFilter rdf:type owl:Class ;
-               rdfs:comment "A specific type of filter used in sampling."^^xsd:string ;
-               rdfs:label "SamplerFilter"@en-us .
+opp:Role rdf:type owl:Class ;
+         rdfs:comment "A certain status, or position, played by some Agent that qualifies/contextualizes the actions performed by that Agent."^^xsd:string ;
+         rdfs:label "Role"@en-us .
 
 
 ###  http://schema.oceanproteinportal.org/v2/SpectralCountSum
-:SpectralCountSum rdf:type owl:Class ;
-                  rdfs:subClassOf sosa:ObservableProperty ;
-                  rdfs:label "SpectralCountSum"@en-us .
+opp:SpectralCountSum rdf:type owl:Class ;
+                     rdfs:subClassOf opp:DatasetParameter ;
+                     opp:hasValueRestriction opp:PropertyRestriction_Count ;
+                     rdfs:label "SpectralCountSum"@en-us .
 
 
 ###  http://schema.oceanproteinportal.org/v2/Station
-:Station rdf:type owl:Class ;
-         rdfs:comment "A generally agreed upon location at which sampling occurred. This agreement enables the comparison of collected data over different reference frames such as time."^^xsd:string ;
-         rdfs:label "Station"@en-us .
+opp:Station rdf:type owl:Class ;
+            rdfs:comment "A generally agreed upon location at which sampling occurred. This agreement enables the comparison of collected data over different reference frames such as time."^^xsd:string ;
+            rdfs:label "Station"@en-us .
 
 
 ###  http://schema.oceanproteinportal.org/v2/TotalPrecursorIntensity
-:TotalPrecursorIntensity rdf:type owl:Class ;
-                         rdfs:subClassOf sosa:ObservableProperty ;
-                         rdfs:label "TotalPrecursorIntensity"@en-us .
+opp:TotalPrecursorIntensity rdf:type owl:Class ;
+                            rdfs:subClassOf opp:DatasetParameter ;
+                            rdfs:label "TotalPrecursorIntensity"@en-us .
 
 
 ###  http://schema.oceanproteinportal.org/v2/TotalSpectralCount
-:TotalSpectralCount rdf:type owl:Class ;
-                    rdfs:subClassOf sosa:ObservableProperty ;
-                    rdfs:label "TotalSpectralCount"@en-us .
+opp:TotalSpectralCount rdf:type owl:Class ;
+                       rdfs:subClassOf opp:DatasetParameter ;
+                       opp:hasValueRestriction opp:PropertyRestriction_Count ;
+                       rdfs:label "TotalSpectralCount"@en-us .
 
 
 ###  http://schema.oceanproteinportal.org/v2/TotalTIC
-:TotalTIC rdf:type owl:Class ;
-          rdfs:subClassOf sosa:ObservableProperty ;
-          rdfs:comment "Total Ion Chromatogram (TIC)"^^xsd:string ;
-          rdfs:label "TotalTIC"@en-us .
-
-
-###  http://schema.oceanproteinportal.org/v2/UO_0000008
-:UO_0000008 rdf:type owl:Class ;
-            rdfs:subClassOf :UnitOfMeasurement ;
-            rdfs:label "meter"@en-us .
+opp:TotalTIC rdf:type owl:Class ;
+             rdfs:subClassOf opp:DatasetParameter ;
+             rdfs:comment "Total Ion Chromatogram (TIC)"^^xsd:string ;
+             rdfs:label "TotalTIC"@en-us .
 
 
 ###  http://schema.oceanproteinportal.org/v2/UniprotIdentifier
-:UniprotIdentifier rdf:type owl:Class ;
-                   rdfs:subClassOf :Identifier ;
-                   rdfs:label "UniprotIdentifier"@en-us .
+opp:UniprotIdentifier rdf:type owl:Class ;
+                      rdfs:subClassOf opp:ProteinIdentifier ;
+                      opp:hasValueRestriction opp:PropertyRestriction_Token ;
+                      rdfs:label "UniprotIdentifier"@en-us .
 
 
 ###  http://schema.oceanproteinportal.org/v2/UnitOfMeasurement
-:UnitOfMeasurement rdf:type owl:Class ;
-                   rdfs:comment "A unit of measurement"^^xsd:string ;
-                   rdfs:label "UnitOfMeasurement"@en-us .
-
-
-###  http://schema.oceanproteinportal.org/v2/Variable
-:Variable rdf:type owl:Class ;
-          rdfs:subClassOf schema:PropertyValue ;
-          rdfs:label "Variable"@en-us .
-
-
-###  http://schema.oceanproteinportal.org/v2/femtomoles_per_liter
-:femtomoles_per_liter rdf:type owl:Class ;
-                      rdfs:subClassOf :UnitOfMeasurement ;
-                      rdfs:label "femtomoles_per_liter"@en-us ;
-                      rdfs:seeAlso "obo:UO_0000043"^^xsd:string ,
-                                   "obo:UO_0000179"^^xsd:string .
+opp:UnitOfMeasurement rdf:type owl:Class ;
+                      rdfs:comment "A unit of measurement"^^xsd:string ;
+                      rdfs:label "UnitOfMeasurement"@en-us .
 
 
 ###  http://schema.org/Boolean
 schema:Boolean rdf:type owl:Class ;
-               rdfs:subClassOf schema:DataType ;
-               rdfs:label "Boolean"@en-us .
+               rdfs:subClassOf schema:DataType .
 
 
 ###  http://schema.org/DataType
-schema:DataType rdf:type owl:Class ;
-                rdfs:label "DataType"@en-us .
+schema:DataType rdf:type owl:Class .
 
 
 ###  http://schema.org/Dataset
-schema:Dataset rdf:type owl:Class ;
-               rdfs:label "Dataset"@en-us .
+schema:Dataset rdf:type owl:Class .
+
+
+###  http://schema.org/Date
+schema:Date rdf:type owl:Class ;
+            rdfs:subClassOf schema:DataType .
+
+
+###  http://schema.org/DateTime
+schema:DateTime rdf:type owl:Class ;
+                rdfs:subClassOf schema:DataType .
+
+
+###  http://schema.org/Float
+schema:Float rdf:type owl:Class ;
+             rdfs:subClassOf schema:Number .
+
+
+###  http://schema.org/Integer
+schema:Integer rdf:type owl:Class ;
+               rdfs:subClassOf schema:Number .
 
 
 ###  http://schema.org/Number
 schema:Number rdf:type owl:Class ;
-              rdfs:subClassOf schema:DataType ;
-              rdfs:label "Number"@en-us .
+              rdfs:subClassOf schema:DataType .
 
 
 ###  http://schema.org/Organization
 schema:Organization rdf:type owl:Class ;
-                    rdfs:subClassOf :Agent ;
-                    rdfs:label "Organization"@en-us .
+                    rdfs:subClassOf opp:Agent .
 
 
 ###  http://schema.org/Person
 schema:Person rdf:type owl:Class ;
-              rdfs:subClassOf :Agent ;
-              rdfs:label "Person"@en-us .
+              rdfs:subClassOf opp:Agent .
 
 
 ###  http://schema.org/PropertyValue
-schema:PropertyValue rdf:type owl:Class ;
-                     rdfs:label "PropertyValue"@en-us .
+schema:PropertyValue rdf:type owl:Class .
+
+
+###  http://schema.org/PropertyValueSpecification
+schema:PropertyValueSpecification rdf:type owl:Class .
 
 
 ###  http://schema.org/Text
 schema:Text rdf:type owl:Class ;
-            rdfs:subClassOf schema:DataType ;
-            rdfs:label "Text"@en-us .
+            rdfs:subClassOf schema:DataType .
 
 
-###  http://www.opengis.net/ont/sf#Point
-sf:Point rdf:type owl:Class ;
-         rdfs:subClassOf owl:Thing ;
-         rdfs:label "Point"@en-us .
+###  http://schema.org/URL
+schema:URL rdf:type owl:Class ;
+           rdfs:subClassOf schema:Text .
 
 
 ###  http://www.w3.org/2006/time#Instant
-time:Instant rdf:type owl:Class ;
-             rdfs:label "Instant"@en-us .
+time:Instant rdf:type owl:Class .
 
 
 ###  http://www.w3.org/ns/sosa/Deployment
-sosa:Deployment rdf:type owl:Class ;
-                rdfs:label "Deployment"@en-us .
+sosa:Deployment rdf:type owl:Class .
 
 
 ###  http://www.w3.org/ns/sosa/FeatureOfInterest
-sosa:FeatureOfInterest rdf:type owl:Class ;
-                       rdfs:label "FeatureOfInterest"@en-us .
+sosa:FeatureOfInterest rdf:type owl:Class .
 
 
-###  http://www.w3.org/ns/sosa/ObservableProperty
-sosa:ObservableProperty rdf:type owl:Class ;
-                        rdfs:label "ObservableProperty"@en-us .
+###  http://www.w3.org/ns/sosa/Observation
+sosa:Observation rdf:type owl:Class .
 
 
 ###  http://www.w3.org/ns/sosa/Procedure
-sosa:Procedure rdf:type owl:Class ;
-               rdfs:label "Procedure"@en-us .
+sosa:Procedure rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/sosa/Result
+sosa:Result rdf:type owl:Class .
 
 
 ###  http://www.w3.org/ns/sosa/Sample
-sosa:Sample rdf:type owl:Class ;
-            rdfs:label "Sample"@en-us .
+sosa:Sample rdf:type owl:Class .
 
 
 ###  http://www.w3.org/ns/sosa/Sampler
-sosa:Sampler rdf:type owl:Class ;
-             rdfs:label "Sampler"@en-us .
+sosa:Sampler rdf:type owl:Class .
 
 
 ###  http://www.w3.org/ns/sosa/Sampling
-sosa:Sampling rdf:type owl:Class ;
-              rdfs:label "Sampling"@en-us .
+sosa:Sampling rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/sosa/Sensor
+sosa:Sensor rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/ssn/Property
+ssn:Property rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/ssn/systems/SystemCapability
+ssn-system:SystemCapability rdf:type owl:Class ;
+                            rdfs:subClassOf ssn:Property .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://schema.oceanproteinportal.org/v2/DatasetType_PeptideTotalSpectralCount
+opp:DatasetType_PeptideTotalSpectralCount rdf:type owl:NamedIndividual ,
+                                                   opp:DatasetType ;
+                                          rdfs:label "DatasetType_PeptideTotalSpectralCount"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v2/DatasetType_ProteinTotalSpectralCount
+opp:DatasetType_ProteinTotalSpectralCount rdf:type owl:NamedIndividual ,
+                                                   opp:DatasetType ;
+                                          rdfs:label "DatasetType_ProteinTotalSpectralCount"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v2/IdentifierScheme_EnzymeCommission
+opp:IdentifierScheme_EnzymeCommission rdf:type owl:NamedIndividual ,
+                                               opp:ProteinIdentifierScheme ;
+                                      rdfs:label "IdentifierScheme_EnzymeCommission"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v2/IdentifierScheme_Kegg
+opp:IdentifierScheme_Kegg rdf:type owl:NamedIndividual ,
+                                   opp:ProteinIdentifierScheme ;
+                          rdfs:label "IdentifierScheme_Kegg"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v2/IdentifierScheme_NCBITaxon
+opp:IdentifierScheme_NCBITaxon rdf:type owl:NamedIndividual ,
+                                        opp:ProteinIdentifierScheme ;
+                               rdfs:label "IdentifierScheme_NCBITaxon"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v2/IdentifierScheme_PFams
+opp:IdentifierScheme_PFams rdf:type owl:NamedIndividual ,
+                                    opp:ProteinIdentifierScheme ;
+                           rdfs:label "IdentifierScheme_PFams"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v2/IdentifierScheme_PeptideSequence
+opp:IdentifierScheme_PeptideSequence rdf:type owl:NamedIndividual ,
+                                              opp:AminoAcidSequenceIdentifierScheme ;
+                                     rdfs:label "IdentifierScheme_PeptideSequence"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v2/IdentifierScheme_ProteinSequence
+opp:IdentifierScheme_ProteinSequence rdf:type owl:NamedIndividual ,
+                                              opp:AminoAcidSequenceIdentifierScheme ;
+                                     rdfs:label "IdentifierScheme_ProteinSequence"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v2/IdentifierScheme_Uniprot
+opp:IdentifierScheme_Uniprot rdf:type owl:NamedIndividual ,
+                                      opp:ProteinIdentifierScheme ;
+                             rdfs:label "IdentifierScheme_Uniprot"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v2/PropertyRestriction_Count
+opp:PropertyRestriction_Count rdf:type owl:NamedIndividual ,
+                                       opp:PropertyRestriction ;
+                              opp:hasAcceptedDataType schema:Integer ;
+                              schema:minValue 0 ;
+                              rdfs:comment "A non-negative integer representing the number of occurrences of some Thing."@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v2/PropertyRestriction_DepthInMeters
+opp:PropertyRestriction_DepthInMeters rdf:type owl:NamedIndividual ,
+                                               opp:PropertyRestriction ;
+                                      opp:defaultUnitOfMeasure opp:Unit_Meter ;
+                                      opp:hasAcceptedDataType schema:Float ;
+                                      schema:minValue "0.0"^^xsd:float .
+
+
+###  http://schema.oceanproteinportal.org/v2/PropertyRestriction_FemtomolesPerLiter
+opp:PropertyRestriction_FemtomolesPerLiter rdf:type owl:NamedIndividual ,
+                                                    opp:PropertyRestriction ;
+                                           opp:defaultUnitOfMeasure opp:Unit_FemtomolesPerLiter ;
+                                           opp:hasAcceptedDataType schema:Float .
+
+
+###  http://schema.oceanproteinportal.org/v2/PropertyRestriction_KiloDaltons
+opp:PropertyRestriction_KiloDaltons rdf:type owl:NamedIndividual ,
+                                             opp:PropertyRestriction ;
+                                    opp:defaultUnitOfMeasure opp:Unit_KiloDalton ;
+                                    opp:hasAcceptedDataType schema:Float .
+
+
+###  http://schema.oceanproteinportal.org/v2/PropertyRestriction_Probability
+opp:PropertyRestriction_Probability rdf:type owl:NamedIndividual ,
+                                             opp:PropertyRestriction ;
+                                    opp:hasAcceptedDataType schema:Float ;
+                                    schema:maxValue "1.0"^^xsd:float ;
+                                    schema:minValue "0.0"^^xsd:float .
+
+
+###  http://schema.oceanproteinportal.org/v2/PropertyRestriction_Token
+opp:PropertyRestriction_Token rdf:type owl:NamedIndividual ,
+                                       opp:PropertyRestriction ;
+                              opp:hasAcceptedDataType schema:Float .
+
+
+###  http://schema.oceanproteinportal.org/v2/Role_Author
+opp:Role_Author rdf:type owl:NamedIndividual ,
+                         opp:Role ;
+                rdfs:comment "An author of some Thing"^^xsd:string ;
+                rdfs:label "Role_Author"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v2/Role_Contact
+opp:Role_Contact rdf:type owl:NamedIndividual ,
+                          opp:Role ;
+                 rdfs:label "Role_Contact"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v2/Role_Contributor
+opp:Role_Contributor rdf:type owl:NamedIndividual ,
+                              opp:Role ;
+                     rdfs:label "Role_Contributor"@en-us .
+
+
+###  http://schema.oceanproteinportal.org/v2/Unit_FemtomolesPerLiter
+opp:Unit_FemtomolesPerLiter rdf:type owl:NamedIndividual ,
+                                     opp:UnitOfMeasurement ;
+                            rdfs:label "Unit_FemtomolesPerLiter"@en-us ;
+                            rdfs:seeAlso obo:UO_0000043 ,
+                                         obo:UO_0000179 .
+
+
+###  http://schema.oceanproteinportal.org/v2/Unit_KiloDalton
+opp:Unit_KiloDalton rdf:type owl:NamedIndividual ,
+                             opp:UnitOfMeasurement ;
+                    rdfs:label "Unit_KiloDalton"@en-us ;
+                    rdfs:seeAlso obo:UO_0000222 .
+
+
+###  http://schema.oceanproteinportal.org/v2/Unit_Meter
+opp:Unit_Meter rdf:type owl:NamedIndividual ,
+                        opp:UnitOfMeasurement ;
+               rdfs:label "Unit_Meter"@en-us ;
+               rdfs:seeAlso obo:UO_0000008 .
+
+
+###  http://schema.oceanproteinportal.org/v2/Unit_Microns
+opp:Unit_Microns rdf:type owl:NamedIndividual ,
+                          opp:UnitOfMeasurement ;
+                 rdfs:label "Microns"@en-us ;
+                 rdfs:seeAlso obo:UO_0000241 .
+
+
+###  http://schema.org/Boolean
+schema:Boolean rdf:type owl:NamedIndividual .
+
+
+###  http://schema.org/Date
+schema:Date rdf:type owl:NamedIndividual .
+
+
+###  http://schema.org/DateTime
+schema:DateTime rdf:type owl:NamedIndividual .
+
+
+###  http://schema.org/Float
+schema:Float rdf:type owl:NamedIndividual .
+
+
+###  http://schema.org/Integer
+schema:Integer rdf:type owl:NamedIndividual .
+
+
+###  http://schema.org/Number
+schema:Number rdf:type owl:NamedIndividual .
+
+
+###  http://schema.org/Text
+schema:Text rdf:type owl:NamedIndividual .
+
+
+###  http://schema.org/URL
+schema:URL rdf:type owl:NamedIndividual .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+opp:ncbiTaxonName rdfs:label "ncbiTaxonName"@en-us .
+
+
+schema:value rdfs:comment "Used by DatasetParameter instances to store the observed value."@en-us .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
