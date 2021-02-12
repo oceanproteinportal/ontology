@@ -1,1188 +1,760 @@
 <?xml version="1.0"?>
-<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+<rdf:RDF xmlns="http://schema.oceanproteinportal.org/v2/"
      xml:base="http://schema.oceanproteinportal.org/v2/"
+     xmlns:geo="http://www.opengis.net/ont/geosparql#"
+     xmlns:obo="http://purl.obolibrary.org/obo/"
+     xmlns:opp="http://schema.oceanproteinportal.org/v2/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:ssn="http://www.w3.org/ns/ssn/"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     ontologyIRI="http://schema.oceanproteinportal.org/v2/"
-     versionIRI="http://schema.oceanproteinportal.org/v2/opp.owl">
-    <Prefix name="" IRI="http://schema.oceanproteinportal.org/v2/"/>
-    <Prefix name="geo" IRI="http://www.opengis.net/ont/geosparql#"/>
-    <Prefix name="obo" IRI="http://purl.obolibrary.org/obo/"/>
-    <Prefix name="opp" IRI="http://schema.oceanproteinportal.org/v2/"/>
-    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
-    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
-    <Prefix name="ssn" IRI="http://www.w3.org/ns/ssn/"/>
-    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
-    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
-    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
-    <Prefix name="sosa" IRI="http://www.w3.org/ns/sosa/"/>
-    <Prefix name="time" IRI="http://www.w3.org/2006/time#"/>
-    <Prefix name="schema" IRI="http://schema.org/"/>
-    <Prefix name="dcterms" IRI="http://purl.org/dc/terms/"/>
-    <Prefix name="ssn-system" IRI="http://www.w3.org/ns/ssn/systems/"/>
-    <Declaration>
-        <Class IRI="Agent"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="AgentRole"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="AminoAcidChain"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="AminoAcidIdentification"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="BestProteinIdentification"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="Cruise"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="DatasetIdentifierScheme"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="EnzymeCommissionIdentifier"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="FilterSize"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="Identifier"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="IdentifierMetadata"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="IdentifierScheme"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="KeggIdentifier"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="KeggPathway"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="NCBITaxonIdentifier"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="NCBITaxonName"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="PFamsIdentifier"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="Peptide"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="PeptideIdentification"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="PeptideSampleIdentifier"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="Protein"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="ProteinIdentification"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="ProteinIdentifier"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="ProteinIdentifierScheme"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="ProteineSampleIdentifier"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="Role"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="SampleIdentifier"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="Station"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="UniprotIdentifier"/>
-    </Declaration>
-    <Declaration>
-        <Class abbreviatedIRI="schema:Dataset"/>
-    </Declaration>
-    <Declaration>
-        <Class abbreviatedIRI="schema:Organization"/>
-    </Declaration>
-    <Declaration>
-        <Class abbreviatedIRI="schema:Person"/>
-    </Declaration>
-    <Declaration>
-        <Class abbreviatedIRI="schema:PropertyValue"/>
-    </Declaration>
-    <Declaration>
-        <Class abbreviatedIRI="sosa:Deployment"/>
-    </Declaration>
-    <Declaration>
-        <Class abbreviatedIRI="sosa:FeatureOfInterest"/>
-    </Declaration>
-    <Declaration>
-        <Class abbreviatedIRI="sosa:Sample"/>
-    </Declaration>
-    <Declaration>
-        <Class abbreviatedIRI="sosa:Sampler"/>
-    </Declaration>
-    <Declaration>
-        <Class abbreviatedIRI="ssn:Property"/>
-    </Declaration>
-    <Declaration>
-        <Class abbreviatedIRI="ssn-system:SystemCapability"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="annotatesIdentifier"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="definesIdentifierScheme"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="describesAminoAcid"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="describesPeptide"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="describesProtein"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="hasAgentRole"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="hasFilterSize"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="identifier"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="identifierMetadata"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="identifierScheme"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="inRole"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="inVicinityOfStation"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="isAgentRoleFor"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="keggPathway"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="ncbiTaxonName"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="observedPeptide"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="performedAtOrganization"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="performedBy"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="performedOnBehalfOf"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="providesRole"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="storesResultsForSample"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty abbreviatedIRI="ssn-system:hasSystemCapability"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="cruiseID"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="depth"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="identifierValue"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="maximumFilterSize"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="minimumFilterSize"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="peptideSequence"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="proteinSequence"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="stationName"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty abbreviatedIRI="schema:maxValue"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty abbreviatedIRI="schema:minValue"/>
-    </Declaration>
-    <SubClassOf>
-        <Class IRI="BestProteinIdentification"/>
-        <Class IRI="ProteinIdentification"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="Cruise"/>
-        <Class abbreviatedIRI="sosa:Deployment"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="DatasetIdentifierScheme"/>
-        <Class IRI="IdentifierScheme"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="EnzymeCommissionIdentifier"/>
-        <Class IRI="ProteinIdentifier"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="FilterSize"/>
-        <Class abbreviatedIRI="schema:PropertyValue"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="FilterSize"/>
-        <Class abbreviatedIRI="ssn-system:SystemCapability"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="KeggIdentifier"/>
-        <Class IRI="ProteinIdentifier"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="KeggPathway"/>
-        <Class IRI="IdentifierMetadata"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="NCBITaxonIdentifier"/>
-        <Class IRI="ProteinIdentifier"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="NCBITaxonName"/>
-        <Class IRI="IdentifierMetadata"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="PFamsIdentifier"/>
-        <Class IRI="ProteinIdentifier"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="Peptide"/>
-        <Class IRI="AminoAcidChain"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="PeptideIdentification"/>
-        <Class IRI="AminoAcidIdentification"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="PeptideSampleIdentifier"/>
-        <Class IRI="ProteinIdentifier"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="Protein"/>
-        <Class IRI="AminoAcidChain"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="ProteinIdentification"/>
-        <Class IRI="AminoAcidIdentification"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="ProteinIdentifier"/>
-        <Class IRI="Identifier"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="ProteinIdentifierScheme"/>
-        <Class IRI="IdentifierScheme"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="ProteineSampleIdentifier"/>
-        <Class IRI="ProteinIdentifier"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="SampleIdentifier"/>
-        <Class IRI="Identifier"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="UniprotIdentifier"/>
-        <Class IRI="ProteinIdentifier"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="schema:Organization"/>
-        <Class IRI="Agent"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="schema:Person"/>
-        <Class IRI="Agent"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class abbreviatedIRI="ssn-system:SystemCapability"/>
-        <Class abbreviatedIRI="ssn:Property"/>
-    </SubClassOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="annotatesIdentifier"/>
-        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="describesPeptide"/>
-        <ObjectProperty IRI="describesAminoAcid"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="describesProtein"/>
-        <ObjectProperty IRI="describesAminoAcid"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="hasAgentRole"/>
-        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="hasFilterSize"/>
-        <ObjectProperty abbreviatedIRI="ssn-system:hasSystemCapability"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="identifier"/>
-        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="inRole"/>
-        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="inVicinityOfStation"/>
-        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="isAgentRoleFor"/>
-        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="keggPathway"/>
-        <ObjectProperty IRI="identifierMetadata"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="ncbiTaxonName"/>
-        <ObjectProperty IRI="identifierMetadata"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="performedAtOrganization"/>
-        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="performedBy"/>
-        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="performedOnBehalfOf"/>
-        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="providesRole"/>
-        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty abbreviatedIRI="ssn-system:hasSystemCapability"/>
-        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <InverseObjectProperties>
-        <ObjectProperty IRI="annotatesIdentifier"/>
-        <ObjectProperty IRI="identifierMetadata"/>
-    </InverseObjectProperties>
-    <FunctionalObjectProperty>
-        <ObjectProperty IRI="describesAminoAcid"/>
-    </FunctionalObjectProperty>
-    <FunctionalObjectProperty>
-        <ObjectProperty IRI="describesPeptide"/>
-    </FunctionalObjectProperty>
-    <FunctionalObjectProperty>
-        <ObjectProperty IRI="describesProtein"/>
-    </FunctionalObjectProperty>
-    <FunctionalObjectProperty>
-        <ObjectProperty IRI="hasFilterSize"/>
-    </FunctionalObjectProperty>
-    <FunctionalObjectProperty>
-        <ObjectProperty IRI="identifierScheme"/>
-    </FunctionalObjectProperty>
-    <FunctionalObjectProperty>
-        <ObjectProperty IRI="inVicinityOfStation"/>
-    </FunctionalObjectProperty>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="annotatesIdentifier"/>
-        <Class IRI="IdentifierMetadata"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="describesAminoAcid"/>
-        <Class IRI="AminoAcidIdentification"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="describesPeptide"/>
-        <Class IRI="PeptideIdentification"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="describesProtein"/>
-        <Class IRI="ProteinIdentification"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="hasAgentRole"/>
-        <Class abbreviatedIRI="owl:Thing"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="hasFilterSize"/>
-        <Class abbreviatedIRI="sosa:Sampler"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="identifier"/>
-        <Class abbreviatedIRI="owl:Thing"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="identifierMetadata"/>
-        <Class IRI="Identifier"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="identifierScheme"/>
-        <Class IRI="Identifier"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="inRole"/>
-        <Class IRI="AgentRole"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="inVicinityOfStation"/>
-        <Class abbreviatedIRI="sosa:FeatureOfInterest"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="isAgentRoleFor"/>
-        <Class IRI="AgentRole"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="keggPathway"/>
-        <Class IRI="KeggIdentifier"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="ncbiTaxonName"/>
-        <Class IRI="NCBITaxonIdentifier"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="observedPeptide"/>
-        <Class abbreviatedIRI="sosa:Sample"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="performedAtOrganization"/>
-        <Class IRI="AgentRole"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="performedBy"/>
-        <Class IRI="AgentRole"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="performedOnBehalfOf"/>
-        <Class IRI="AgentRole"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="providesRole"/>
-        <Class abbreviatedIRI="owl:Thing"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="storesResultsForSample"/>
-        <Class abbreviatedIRI="schema:Dataset"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="annotatesIdentifier"/>
-        <Class IRI="Identifier"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="describesAminoAcid"/>
-        <Class IRI="AminoAcidChain"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="describesPeptide"/>
-        <Class IRI="Peptide"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="describesProtein"/>
-        <Class IRI="Protein"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="hasAgentRole"/>
-        <Class IRI="AgentRole"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="hasFilterSize"/>
-        <Class IRI="FilterSize"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="identifier"/>
-        <Class IRI="Identifier"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="identifierMetadata"/>
-        <Class IRI="IdentifierMetadata"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="identifierScheme"/>
-        <Class IRI="IdentifierScheme"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="inRole"/>
-        <Class IRI="Role"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="inVicinityOfStation"/>
-        <Class IRI="Station"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="isAgentRoleFor"/>
-        <Class abbreviatedIRI="owl:Thing"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="keggPathway"/>
-        <Class IRI="KeggPathway"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="ncbiTaxonName"/>
-        <Class IRI="NCBITaxonName"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="observedPeptide"/>
-        <Class IRI="PeptideIdentification"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="performedAtOrganization"/>
-        <Class abbreviatedIRI="schema:Organization"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="performedBy"/>
-        <Class IRI="Agent"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="performedOnBehalfOf"/>
-        <Class IRI="Agent"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="providesRole"/>
-        <Class IRI="Role"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="storesResultsForSample"/>
-        <Class abbreviatedIRI="sosa:Sample"/>
-    </ObjectPropertyRange>
-    <SubDataPropertyOf>
-        <DataProperty IRI="depth"/>
-        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
-    </SubDataPropertyOf>
-    <SubDataPropertyOf>
-        <DataProperty IRI="maximumFilterSize"/>
-        <DataProperty abbreviatedIRI="schema:maxValue"/>
-    </SubDataPropertyOf>
-    <SubDataPropertyOf>
-        <DataProperty IRI="minimumFilterSize"/>
-        <DataProperty abbreviatedIRI="schema:minValue"/>
-    </SubDataPropertyOf>
-    <SubDataPropertyOf>
-        <DataProperty abbreviatedIRI="schema:maxValue"/>
-        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
-    </SubDataPropertyOf>
-    <SubDataPropertyOf>
-        <DataProperty abbreviatedIRI="schema:minValue"/>
-        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
-    </SubDataPropertyOf>
-    <FunctionalDataProperty>
-        <DataProperty IRI="peptideSequence"/>
-    </FunctionalDataProperty>
-    <FunctionalDataProperty>
-        <DataProperty IRI="proteinSequence"/>
-    </FunctionalDataProperty>
-    <DataPropertyDomain>
-        <DataProperty IRI="cruiseID"/>
-        <Class IRI="Cruise"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="depth"/>
-        <Class abbreviatedIRI="sosa:FeatureOfInterest"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="identifierValue"/>
-        <Class IRI="Identifier"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="maximumFilterSize"/>
-        <Class IRI="FilterSize"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="minimumFilterSize"/>
-        <Class IRI="FilterSize"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="peptideSequence"/>
-        <Class IRI="Peptide"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="proteinSequence"/>
-        <Class IRI="Protein"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="stationName"/>
-        <Class IRI="Station"/>
-    </DataPropertyDomain>
-    <DataPropertyRange>
-        <DataProperty IRI="cruiseID"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="depth"/>
-        <Datatype abbreviatedIRI="xsd:float"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="identifierValue"/>
-        <Datatype abbreviatedIRI="xsd:token"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="maximumFilterSize"/>
-        <Datatype abbreviatedIRI="xsd:float"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="minimumFilterSize"/>
-        <Datatype abbreviatedIRI="xsd:float"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="peptideSequence"/>
-        <Datatype abbreviatedIRI="xsd:token"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="proteinSequence"/>
-        <Datatype abbreviatedIRI="xsd:token"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="stationName"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>Agent</IRI>
-        <Literal>An abstract class for specifying a person, organization or software entity that performs some action acting in some predefined role.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>Agent</IRI>
-        <Literal>Agent</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>AgentRole</IRI>
-        <Literal>An agent performing some Role over a certain period of time (which may be unbounded).</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>AgentRole</IRI>
-        <Literal>AgentRole</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>AminoAcidChain</IRI>
-        <Literal>AminoAcidChain</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>AminoAcidIdentification</IRI>
-        <Literal>An informationobject for storing data about an amino acid.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>AminoAcidIdentification</IRI>
-        <Literal>AminoAcidIdentification</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>BestProteinIdentification</IRI>
-        <Literal>The best/selected identification of a specific Protein based on information in a PeptideIdentification. This means that a PeptideIdentification may have multiple Proteins that it identifies but that one of those proteins has been selected (identifiedBy) as the best identification.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>BestProteinIdentification</IRI>
-        <Literal>BestProteinIdentification</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>Cruise</IRI>
-        <Literal>A deploymeent of some seagoing vessel on which one or more scientific objectives are studied.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>Cruise</IRI>
-        <Literal>Cruise</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>DatasetIdentifierScheme</IRI>
-        <Literal>The identifierScheme for a singular OPP dataset. The dataset itself is the realm in which other identifiers such as Station names, protein names, etc. are unique (but that may not be unqiue acorss other OPP datasets). This helps ensure that identifiers in a Dataset are not automatically assumed to be equivalent to each other.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>DatasetIdentifierScheme</IRI>
-        <Literal>DatasetIdentifierScheme</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>EnzymeCommissionIdentifier</IRI>
-        <Literal>EnzymeCommissionIdentifier</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>FilterSize</IRI>
-        <Literal>The filter size in micons of the sampler.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>FilterSize</IRI>
-        <Literal>FilterSize</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>Identifier</IRI>
-        <Literal>Identifier</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>IdentifierMetadata</IRI>
-        <Literal>Information about an identifier that helps comprehend, reuse, or contextualize the Thing being identified. This could be a non-unique label or description.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>IdentifierMetadata</IRI>
-        <Literal>IdentifierMetadata</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>IdentifierScheme</IRI>
-        <Literal>A realm or domain in which a specific Identifier has a unqiue value from all the other possible Identifiers within that domain.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>IdentifierScheme</IRI>
-        <Literal>IdentifierScheme</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>KeggIdentifier</IRI>
-        <Literal>KeggIdentifier</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>KeggPathway</IRI>
-        <Literal>KeggPathway</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>NCBITaxonIdentifier</IRI>
-        <Literal>NCBITaxonIdentifier</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>NCBITaxonName</IRI>
-        <Literal>NCBITaxonName</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>PFamsIdentifier</IRI>
-        <Literal>PFamsIdentifier</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>Peptide</IRI>
-        <Literal>A peptide identified in a sample.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>Peptide</IRI>
-        <Literal>Peptide</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>PeptideIdentification</IRI>
-        <Literal>An information object where a dataset can store observations about an identified peptide in a sample. These observations may vary across many datasets claiming to identify the same peptide, so this entity serves as a way to store these observations separate from other peptide identifiation observations while still allowing these PeptideIdentification objeect to describe the same, singular Peptide.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>PeptideIdentification</IRI>
-        <Literal>PeptideIdentification</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>PeptideSampleIdentifier</IRI>
-        <Literal>PeptideSampleIdentifier</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>Protein</IRI>
-        <Literal>The actual Protein being identified in datasets. This real-world Protein is identified by a single amino acid sequence regardless of variations across  ProteinIdentifications that describe this same, single Protein</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>Protein</IRI>
-        <Literal>Protein</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>ProteinIdentification</IRI>
-        <Literal>A protein identification made based on information of a peptide identification. This entity serves as an information object used within a Dataset to identify and describe an actual Protein. Where a Protein has a single amino acid sequence that will not vary across datasets submitted to the OPP, th ereported protien names, molecular weights, etc may slightly vary across these datasets. ProteinIdentification exists so that individual datasets can report their findings and remain separate from other ProteinIdentification while still describing the exact same Protein with the same amino acid sequence.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>ProteinIdentification</IRI>
-        <Literal>ProteinIdentification</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>ProteinIdentifier</IRI>
-        <Literal>ProteinIdentifier</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>ProteinIdentifierScheme</IRI>
-        <Literal>A class of identifier schemes used to unqiuely identify proteins.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>ProteinIdentifierScheme</IRI>
-        <Literal>ProteinIdentifierScheme</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>ProteineSampleIdentifier</IRI>
-        <Literal>ProteineSampleIdentifier</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>Role</IRI>
-        <Literal>A certain status, or position, played by some Agent that qualifies/contextualizes the actions performed by that Agent.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>Role</IRI>
-        <Literal>Role</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>SampleIdentifier</IRI>
-        <Literal>An identifier for a sample within a Dataset. The IdentifierScheme for this sample would be provides by the Dataset. See opp:definesIdentifierScheme</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>SampleIdentifier</IRI>
-        <Literal>SampleIdentifier</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>Station</IRI>
-        <Literal>A generally agreed upon location at which sampling occurred. This agreement enables the comparison of collected data over different reference frames such as time.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>Station</IRI>
-        <Literal>Station</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>UniprotIdentifier</IRI>
-        <Literal>UniprotIdentifier</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>annotatesIdentifier</IRI>
-        <Literal>The identifer for which this information object annotates</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>annotatesIdentifier</IRI>
-        <Literal>annotatesIdentifier</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>cruiseID</IRI>
-        <Literal>Some label for a certain cruise on which an OPP Dataset was collected.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>cruiseID</IRI>
-        <Literal>cruiseID</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>definesIdentifierScheme</IRI>
-        <Literal>The IdentifierScheme defined by some Thing. In the case fo the OPP, a single Dataset defines an IdentifierScheme for its local identifiers.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>definesIdentifierScheme</IRI>
-        <Literal>definesIdentifierScheme</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>depth</IRI>
-        <Literal>The depth in meters where some sample was collected.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>depth</IRI>
-        <Literal>depth</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
-        <IRI>depth</IRI>
-        <IRI>ssn:hasProperty</IRI>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>describesAminoAcid</IRI>
-        <Literal>The AminoAcidChain being described by this information.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>describesAminoAcid</IRI>
-        <Literal>describesAminoAcid</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>describesPeptide</IRI>
-        <Literal>The actual Peptide being described by this information.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>describesPeptide</IRI>
-        <Literal>describesPeptide</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>describesProtein</IRI>
-        <Literal>The actual Protein being described by this Protien information.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>describesProtein</IRI>
-        <Literal>describesProtein</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>hasAgentRole</IRI>
-        <Literal>An AgentRole in which an Agent performs some Role on this particular Thing.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>hasAgentRole</IRI>
-        <Literal>hasAgentRole</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>identifier</IRI>
-        <Literal>An Identifier with a known IdentifierScheme for some Thing.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>identifier</IRI>
-        <Literal>identifier</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>identifierMetadata</IRI>
-        <Literal>An information record that annotated or further describes this Identifier.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>identifierMetadata</IRI>
-        <Literal>identifierMetadata</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>identifierScheme</IRI>
-        <Literal>The scheme in which this Identifier has a unique value.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>identifierScheme</IRI>
-        <Literal>identifierScheme</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>identifierValue</IRI>
-        <Literal>The unique value in some IdentifierScheme</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>identifierValue</IRI>
-        <Literal>identifierValue</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>inRole</IRI>
-        <Literal>Role being performed by some Agent</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>inRole</IRI>
-        <Literal>inRole</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>inVicinityOfStation</IRI>
-        <Literal>The one, named or mutally agreed upon location at which Sampling occurred. This usually means a single coordinate at which sampling occurs depsite any variance in the location of the sensor at the time of measurement. This Station helps to normalize the intent of sampling at a certain location for cross-comparison between datasets.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>inVicinityOfStation</IRI>
-        <Literal>inVicinityOfStation</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>isAgentRoleFor</IRI>
-        <Literal>The Thing on/in which an Agent performs some Role.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>isAgentRoleFor</IRI>
-        <Literal>isAgentRoleFor</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>keggPathway</IRI>
-        <Literal>The Kegg Identifier for which this KeggPathway describes.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>keggPathway</IRI>
-        <Literal>keggPathway</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>maximumFilterSize</IRI>
-        <Literal>The maximum size of the filter used during sampling. Measured in microns.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>maximumFilterSize</IRI>
-        <Literal>maximumFilterSize</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>minimumFilterSize</IRI>
-        <Literal>The minimum size of a filter used during sampling. Mesaured in microns.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>minimumFilterSize</IRI>
-        <Literal>minimumFilterSize</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>ncbiTaxonName</IRI>
-        <Literal>The NCBI Identifier for which this name describes.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>ncbiTaxonName</IRI>
-        <Literal>ncbiTaxonName</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>observedPeptide</IRI>
-        <Literal>The PeptideIdentification being asserted by the observer of some Sample.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>observedPeptide</IRI>
-        <Literal>observedPeptide</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>peptideSequence</IRI>
-        <Literal>The amino acid chain, written as a string of characters, that identifies a specific Peptide.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>peptideSequence</IRI>
-        <Literal>peptideSequence</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>performedAtOrganization</IRI>
-        <Literal>The Organization at which the acting Agent performed the Role</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>performedAtOrganization</IRI>
-        <Literal>performedAtOrganization</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>performedBy</IRI>
-        <Literal>The Agent acting in some Role.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>performedBy</IRI>
-        <Literal>performedBy</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>performedOnBehalfOf</IRI>
-        <Literal>The Agent for which the performing Agent is acting in a certain Role.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>performedOnBehalfOf</IRI>
-        <Literal>performedOnBehalfOf</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>proteinSequence</IRI>
-        <Literal>The amino acid chain, written as a string of characters, that identifies a specific Protein.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>proteinSequence</IRI>
-        <Literal>proteinSequence</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>providesRole</IRI>
-        <Literal>The existence of some Thing provides the ability for some Agent to perform this Role.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>providesRole</IRI>
-        <Literal>providesRole</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>stationName</IRI>
-        <Literal>The name of some Station.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>stationName</IRI>
-        <Literal>stationName</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>storesResultsForSample</IRI>
-        <Literal>A sample for which this Dataset stores observations results for.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>storesResultsForSample</IRI>
-        <Literal>storesResultsForSample</Literal>
-    </AnnotationAssertion>
-</Ontology>
+     xmlns:sosa="http://www.w3.org/ns/sosa/"
+     xmlns:time="http://www.w3.org/2006/time#"
+     xmlns:schema="http://schema.org/"
+     xmlns:dcterms="http://purl.org/dc/terms/"
+     xmlns:ssn-system="http://www.w3.org/ns/ssn/systems/">
+    <owl:Ontology rdf:about="http://schema.oceanproteinportal.org/v2/">
+        <owl:versionIRI rdf:resource="http://schema.oceanproteinportal.org/v2/opp.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/annotatesIdentifier -->
+
+    <owl:ObjectProperty rdf:about="http://schema.oceanproteinportal.org/v2/annotatesIdentifier">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://schema.oceanproteinportal.org/v2/identifierMetadata"/>
+        <rdfs:domain rdf:resource="http://schema.oceanproteinportal.org/v2/IdentifierMetadata"/>
+        <rdfs:range rdf:resource="http://schema.oceanproteinportal.org/v2/Identifier"/>
+        <rdfs:comment>The identifer for which this information object annotates</rdfs:comment>
+        <rdfs:label>annotatesIdentifier</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/definesIdentifierScheme -->
+
+    <owl:ObjectProperty rdf:about="http://schema.oceanproteinportal.org/v2/definesIdentifierScheme">
+        <rdfs:comment>The IdentifierScheme defined by some Thing. In the case fo the OPP, a single Dataset defines an IdentifierScheme for its local identifiers.</rdfs:comment>
+        <rdfs:label>definesIdentifierScheme</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/describesAminoAcid -->
+
+    <owl:ObjectProperty rdf:about="http://schema.oceanproteinportal.org/v2/describesAminoAcid">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://schema.oceanproteinportal.org/v2/AminoAcidIdentification"/>
+        <rdfs:range rdf:resource="http://schema.oceanproteinportal.org/v2/AminoAcidChain"/>
+        <rdfs:comment>The AminoAcidChain being described by this information.</rdfs:comment>
+        <rdfs:label>describesAminoAcid</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/describesPeptide -->
+
+    <owl:ObjectProperty rdf:about="http://schema.oceanproteinportal.org/v2/describesPeptide">
+        <rdfs:subPropertyOf rdf:resource="http://schema.oceanproteinportal.org/v2/describesAminoAcid"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://schema.oceanproteinportal.org/v2/PeptideIdentification"/>
+        <rdfs:range rdf:resource="http://schema.oceanproteinportal.org/v2/Peptide"/>
+        <rdfs:comment>The actual Peptide being described by this information.</rdfs:comment>
+        <rdfs:label>describesPeptide</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/describesProtein -->
+
+    <owl:ObjectProperty rdf:about="http://schema.oceanproteinportal.org/v2/describesProtein">
+        <rdfs:subPropertyOf rdf:resource="http://schema.oceanproteinportal.org/v2/describesAminoAcid"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://schema.oceanproteinportal.org/v2/ProteinIdentification"/>
+        <rdfs:range rdf:resource="http://schema.oceanproteinportal.org/v2/Protein"/>
+        <rdfs:comment>The actual Protein being described by this Protien information.</rdfs:comment>
+        <rdfs:label>describesProtein</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/hasAgentRole -->
+
+    <owl:ObjectProperty rdf:about="http://schema.oceanproteinportal.org/v2/hasAgentRole">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://schema.oceanproteinportal.org/v2/AgentRole"/>
+        <rdfs:comment>An AgentRole in which an Agent performs some Role on this particular Thing.</rdfs:comment>
+        <rdfs:label>hasAgentRole</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/hasFilterSize -->
+
+    <owl:ObjectProperty rdf:about="http://schema.oceanproteinportal.org/v2/hasFilterSize">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/ssn/systems/hasSystemCapability"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/Sampler"/>
+        <rdfs:range rdf:resource="http://schema.oceanproteinportal.org/v2/FilterSize"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/identifier -->
+
+    <owl:ObjectProperty rdf:about="http://schema.oceanproteinportal.org/v2/identifier">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://schema.oceanproteinportal.org/v2/Identifier"/>
+        <rdfs:comment>An Identifier with a known IdentifierScheme for some Thing.</rdfs:comment>
+        <rdfs:label>identifier</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/identifierMetadata -->
+
+    <owl:ObjectProperty rdf:about="http://schema.oceanproteinportal.org/v2/identifierMetadata">
+        <rdfs:domain rdf:resource="http://schema.oceanproteinportal.org/v2/Identifier"/>
+        <rdfs:range rdf:resource="http://schema.oceanproteinportal.org/v2/IdentifierMetadata"/>
+        <rdfs:comment>An information record that annotated or further describes this Identifier.</rdfs:comment>
+        <rdfs:label>identifierMetadata</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/identifierScheme -->
+
+    <owl:ObjectProperty rdf:about="http://schema.oceanproteinportal.org/v2/identifierScheme">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://schema.oceanproteinportal.org/v2/Identifier"/>
+        <rdfs:range rdf:resource="http://schema.oceanproteinportal.org/v2/IdentifierScheme"/>
+        <rdfs:comment>The scheme in which this Identifier has a unique value.</rdfs:comment>
+        <rdfs:label>identifierScheme</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/inRole -->
+
+    <owl:ObjectProperty rdf:about="http://schema.oceanproteinportal.org/v2/inRole">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://schema.oceanproteinportal.org/v2/AgentRole"/>
+        <rdfs:range rdf:resource="http://schema.oceanproteinportal.org/v2/Role"/>
+        <rdfs:comment>Role being performed by some Agent</rdfs:comment>
+        <rdfs:label>inRole</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/inVicinityOfStation -->
+
+    <owl:ObjectProperty rdf:about="http://schema.oceanproteinportal.org/v2/inVicinityOfStation">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/FeatureOfInterest"/>
+        <rdfs:range rdf:resource="http://schema.oceanproteinportal.org/v2/Station"/>
+        <rdfs:comment>The one, named or mutally agreed upon location at which Sampling occurred. This usually means a single coordinate at which sampling occurs depsite any variance in the location of the sensor at the time of measurement. This Station helps to normalize the intent of sampling at a certain location for cross-comparison between datasets.</rdfs:comment>
+        <rdfs:label>inVicinityOfStation</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/isAgentRoleFor -->
+
+    <owl:ObjectProperty rdf:about="http://schema.oceanproteinportal.org/v2/isAgentRoleFor">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://schema.oceanproteinportal.org/v2/AgentRole"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment>The Thing on/in which an Agent performs some Role.</rdfs:comment>
+        <rdfs:label>isAgentRoleFor</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/keggPathway -->
+
+    <owl:ObjectProperty rdf:about="http://schema.oceanproteinportal.org/v2/keggPathway">
+        <rdfs:subPropertyOf rdf:resource="http://schema.oceanproteinportal.org/v2/identifierMetadata"/>
+        <rdfs:domain rdf:resource="http://schema.oceanproteinportal.org/v2/KeggIdentifier"/>
+        <rdfs:range rdf:resource="http://schema.oceanproteinportal.org/v2/KeggPathway"/>
+        <rdfs:comment>The Kegg Identifier for which this KeggPathway describes.</rdfs:comment>
+        <rdfs:label>keggPathway</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/ncbiTaxonName -->
+
+    <owl:ObjectProperty rdf:about="http://schema.oceanproteinportal.org/v2/ncbiTaxonName">
+        <rdfs:subPropertyOf rdf:resource="http://schema.oceanproteinportal.org/v2/identifierMetadata"/>
+        <rdfs:domain rdf:resource="http://schema.oceanproteinportal.org/v2/NCBITaxonIdentifier"/>
+        <rdfs:range rdf:resource="http://schema.oceanproteinportal.org/v2/NCBITaxonName"/>
+        <rdfs:comment>The NCBI Identifier for which this name describes.</rdfs:comment>
+        <rdfs:label>ncbiTaxonName</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/observedPeptide -->
+
+    <owl:ObjectProperty rdf:about="http://schema.oceanproteinportal.org/v2/observedPeptide">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/Sample"/>
+        <rdfs:range rdf:resource="http://schema.oceanproteinportal.org/v2/PeptideIdentification"/>
+        <rdfs:comment>The PeptideIdentification being asserted by the observer of some Sample.</rdfs:comment>
+        <rdfs:label>observedPeptide</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/performedAtOrganization -->
+
+    <owl:ObjectProperty rdf:about="http://schema.oceanproteinportal.org/v2/performedAtOrganization">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://schema.oceanproteinportal.org/v2/AgentRole"/>
+        <rdfs:range rdf:resource="http://schema.org/Organization"/>
+        <rdfs:comment>The Organization at which the acting Agent performed the Role</rdfs:comment>
+        <rdfs:label>performedAtOrganization</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/performedBy -->
+
+    <owl:ObjectProperty rdf:about="http://schema.oceanproteinportal.org/v2/performedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://schema.oceanproteinportal.org/v2/AgentRole"/>
+        <rdfs:range rdf:resource="http://schema.oceanproteinportal.org/v2/Agent"/>
+        <rdfs:comment>The Agent acting in some Role.</rdfs:comment>
+        <rdfs:label>performedBy</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/performedOnBehalfOf -->
+
+    <owl:ObjectProperty rdf:about="http://schema.oceanproteinportal.org/v2/performedOnBehalfOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://schema.oceanproteinportal.org/v2/AgentRole"/>
+        <rdfs:range rdf:resource="http://schema.oceanproteinportal.org/v2/Agent"/>
+        <rdfs:comment>The Agent for which the performing Agent is acting in a certain Role.</rdfs:comment>
+        <rdfs:label>performedOnBehalfOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/providesRole -->
+
+    <owl:ObjectProperty rdf:about="http://schema.oceanproteinportal.org/v2/providesRole">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://schema.oceanproteinportal.org/v2/Role"/>
+        <rdfs:comment>The existence of some Thing provides the ability for some Agent to perform this Role.</rdfs:comment>
+        <rdfs:label>providesRole</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/storesResultsForSample -->
+
+    <owl:ObjectProperty rdf:about="http://schema.oceanproteinportal.org/v2/storesResultsForSample">
+        <rdfs:domain rdf:resource="http://schema.org/Dataset"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/sosa/Sample"/>
+        <rdfs:comment>A sample for which this Dataset stores observations results for.</rdfs:comment>
+        <rdfs:label>storesResultsForSample</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/ssn/systems/hasSystemCapability -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/ssn/systems/hasSystemCapability">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/cruiseID -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.oceanproteinportal.org/v2/cruiseID">
+        <rdfs:domain rdf:resource="http://schema.oceanproteinportal.org/v2/Cruise"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Some label for a certain cruise on which an OPP Dataset was collected.</rdfs:comment>
+        <rdfs:label>cruiseID</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/depth -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.oceanproteinportal.org/v2/depth">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/FeatureOfInterest"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>The depth in meters where some sample was collected.</rdfs:comment>
+        <rdfs:label>depth</rdfs:label>
+        <rdfs:seeAlso rdf:resource="ssn:hasProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/identifierValue -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.oceanproteinportal.org/v2/identifierValue">
+        <rdfs:domain rdf:resource="http://schema.oceanproteinportal.org/v2/Identifier"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#token"/>
+        <rdfs:comment>The unique value in some IdentifierScheme</rdfs:comment>
+        <rdfs:label>identifierValue</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/maximumFilterSize -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.oceanproteinportal.org/v2/maximumFilterSize">
+        <rdfs:subPropertyOf rdf:resource="http://schema.org/maxValue"/>
+        <rdfs:domain rdf:resource="http://schema.oceanproteinportal.org/v2/FilterSize"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>The maximum size of the filter used during sampling. Measured in microns.</rdfs:comment>
+        <rdfs:label>maximumFilterSize</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/minimumFilterSize -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.oceanproteinportal.org/v2/minimumFilterSize">
+        <rdfs:subPropertyOf rdf:resource="http://schema.org/minValue"/>
+        <rdfs:domain rdf:resource="http://schema.oceanproteinportal.org/v2/FilterSize"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>The minimum size of a filter used during sampling. Mesaured in microns.</rdfs:comment>
+        <rdfs:label>minimumFilterSize</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/peptideSequence -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.oceanproteinportal.org/v2/peptideSequence">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://schema.oceanproteinportal.org/v2/Peptide"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#token"/>
+        <rdfs:comment>The amino acid chain, written as a string of characters, that identifies a specific Peptide.</rdfs:comment>
+        <rdfs:label>peptideSequence</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/proteinSequence -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.oceanproteinportal.org/v2/proteinSequence">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://schema.oceanproteinportal.org/v2/Protein"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#token"/>
+        <rdfs:comment>The amino acid chain, written as a string of characters, that identifies a specific Protein.</rdfs:comment>
+        <rdfs:label>proteinSequence</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/stationName -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.oceanproteinportal.org/v2/stationName">
+        <rdfs:domain rdf:resource="http://schema.oceanproteinportal.org/v2/Station"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The name of some Station.</rdfs:comment>
+        <rdfs:label>stationName</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.org/maxValue -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.org/maxValue">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.org/minValue -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.org/minValue">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/Agent -->
+
+    <owl:Class rdf:about="http://schema.oceanproteinportal.org/v2/Agent">
+        <rdfs:comment>An abstract class for specifying a person, organization or software entity that performs some action acting in some predefined role.</rdfs:comment>
+        <rdfs:label>Agent</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/AgentRole -->
+
+    <owl:Class rdf:about="http://schema.oceanproteinportal.org/v2/AgentRole">
+        <rdfs:comment>An agent performing some Role over a certain period of time (which may be unbounded).</rdfs:comment>
+        <rdfs:label>AgentRole</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/AminoAcidChain -->
+
+    <owl:Class rdf:about="http://schema.oceanproteinportal.org/v2/AminoAcidChain">
+        <rdfs:label>AminoAcidChain</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/AminoAcidIdentification -->
+
+    <owl:Class rdf:about="http://schema.oceanproteinportal.org/v2/AminoAcidIdentification">
+        <rdfs:comment>An informationobject for storing data about an amino acid.</rdfs:comment>
+        <rdfs:label>AminoAcidIdentification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/BestProteinIdentification -->
+
+    <owl:Class rdf:about="http://schema.oceanproteinportal.org/v2/BestProteinIdentification">
+        <rdfs:subClassOf rdf:resource="http://schema.oceanproteinportal.org/v2/ProteinIdentification"/>
+        <rdfs:comment>The best/selected identification of a specific Protein based on information in a PeptideIdentification. This means that a PeptideIdentification may have multiple Proteins that it identifies but that one of those proteins has been selected (identifiedBy) as the best identification.</rdfs:comment>
+        <rdfs:label>BestProteinIdentification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/Cruise -->
+
+    <owl:Class rdf:about="http://schema.oceanproteinportal.org/v2/Cruise">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Deployment"/>
+        <rdfs:comment>A deploymeent of some seagoing vessel on which one or more scientific objectives are studied.</rdfs:comment>
+        <rdfs:label>Cruise</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DatasetIdentifierScheme -->
+
+    <owl:Class rdf:about="http://schema.oceanproteinportal.org/v2/DatasetIdentifierScheme">
+        <rdfs:subClassOf rdf:resource="http://schema.oceanproteinportal.org/v2/IdentifierScheme"/>
+        <rdfs:comment>The identifierScheme for a singular OPP dataset. The dataset itself is the realm in which other identifiers such as Station names, protein names, etc. are unique (but that may not be unqiue acorss other OPP datasets). This helps ensure that identifiers in a Dataset are not automatically assumed to be equivalent to each other.</rdfs:comment>
+        <rdfs:label>DatasetIdentifierScheme</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/EnzymeCommissionIdentifier -->
+
+    <owl:Class rdf:about="http://schema.oceanproteinportal.org/v2/EnzymeCommissionIdentifier">
+        <rdfs:subClassOf rdf:resource="http://schema.oceanproteinportal.org/v2/ProteinIdentifier"/>
+        <rdfs:label>EnzymeCommissionIdentifier</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/FilterSize -->
+
+    <owl:Class rdf:about="http://schema.oceanproteinportal.org/v2/FilterSize">
+        <rdfs:subClassOf rdf:resource="http://schema.org/PropertyValue"/>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/ssn/systems/SystemCapability"/>
+        <rdfs:comment>The filter size in micons of the sampler.</rdfs:comment>
+        <rdfs:label>FilterSize</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/Identifier -->
+
+    <owl:Class rdf:about="http://schema.oceanproteinportal.org/v2/Identifier">
+        <rdfs:label>Identifier</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/IdentifierMetadata -->
+
+    <owl:Class rdf:about="http://schema.oceanproteinportal.org/v2/IdentifierMetadata">
+        <rdfs:comment>Information about an identifier that helps comprehend, reuse, or contextualize the Thing being identified. This could be a non-unique label or description.</rdfs:comment>
+        <rdfs:label>IdentifierMetadata</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/IdentifierScheme -->
+
+    <owl:Class rdf:about="http://schema.oceanproteinportal.org/v2/IdentifierScheme">
+        <rdfs:comment>A realm or domain in which a specific Identifier has a unqiue value from all the other possible Identifiers within that domain.</rdfs:comment>
+        <rdfs:label>IdentifierScheme</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/KeggIdentifier -->
+
+    <owl:Class rdf:about="http://schema.oceanproteinportal.org/v2/KeggIdentifier">
+        <rdfs:subClassOf rdf:resource="http://schema.oceanproteinportal.org/v2/ProteinIdentifier"/>
+        <rdfs:label>KeggIdentifier</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/KeggPathway -->
+
+    <owl:Class rdf:about="http://schema.oceanproteinportal.org/v2/KeggPathway">
+        <rdfs:subClassOf rdf:resource="http://schema.oceanproteinportal.org/v2/IdentifierMetadata"/>
+        <rdfs:label>KeggPathway</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/NCBITaxonIdentifier -->
+
+    <owl:Class rdf:about="http://schema.oceanproteinportal.org/v2/NCBITaxonIdentifier">
+        <rdfs:subClassOf rdf:resource="http://schema.oceanproteinportal.org/v2/ProteinIdentifier"/>
+        <rdfs:label>NCBITaxonIdentifier</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/NCBITaxonName -->
+
+    <owl:Class rdf:about="http://schema.oceanproteinportal.org/v2/NCBITaxonName">
+        <rdfs:subClassOf rdf:resource="http://schema.oceanproteinportal.org/v2/IdentifierMetadata"/>
+        <rdfs:label>NCBITaxonName</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/PFamsIdentifier -->
+
+    <owl:Class rdf:about="http://schema.oceanproteinportal.org/v2/PFamsIdentifier">
+        <rdfs:subClassOf rdf:resource="http://schema.oceanproteinportal.org/v2/ProteinIdentifier"/>
+        <rdfs:label>PFamsIdentifier</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/Peptide -->
+
+    <owl:Class rdf:about="http://schema.oceanproteinportal.org/v2/Peptide">
+        <rdfs:subClassOf rdf:resource="http://schema.oceanproteinportal.org/v2/AminoAcidChain"/>
+        <rdfs:comment>A peptide identified in a sample.</rdfs:comment>
+        <rdfs:label>Peptide</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/PeptideIdentification -->
+
+    <owl:Class rdf:about="http://schema.oceanproteinportal.org/v2/PeptideIdentification">
+        <rdfs:subClassOf rdf:resource="http://schema.oceanproteinportal.org/v2/AminoAcidIdentification"/>
+        <rdfs:comment>An information object where a dataset can store observations about an identified peptide in a sample. These observations may vary across many datasets claiming to identify the same peptide, so this entity serves as a way to store these observations separate from other peptide identifiation observations while still allowing these PeptideIdentification objeect to describe the same, singular Peptide.</rdfs:comment>
+        <rdfs:label>PeptideIdentification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/PeptideSampleIdentifier -->
+
+    <owl:Class rdf:about="http://schema.oceanproteinportal.org/v2/PeptideSampleIdentifier">
+        <rdfs:subClassOf rdf:resource="http://schema.oceanproteinportal.org/v2/ProteinIdentifier"/>
+        <rdfs:label>PeptideSampleIdentifier</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/Protein -->
+
+    <owl:Class rdf:about="http://schema.oceanproteinportal.org/v2/Protein">
+        <rdfs:subClassOf rdf:resource="http://schema.oceanproteinportal.org/v2/AminoAcidChain"/>
+        <rdfs:comment>The actual Protein being identified in datasets. This real-world Protein is identified by a single amino acid sequence regardless of variations across  ProteinIdentifications that describe this same, single Protein</rdfs:comment>
+        <rdfs:label>Protein</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/ProteinIdentification -->
+
+    <owl:Class rdf:about="http://schema.oceanproteinportal.org/v2/ProteinIdentification">
+        <rdfs:subClassOf rdf:resource="http://schema.oceanproteinportal.org/v2/AminoAcidIdentification"/>
+        <rdfs:comment>A protein identification made based on information of a peptide identification. This entity serves as an information object used within a Dataset to identify and describe an actual Protein. Where a Protein has a single amino acid sequence that will not vary across datasets submitted to the OPP, th ereported protien names, molecular weights, etc may slightly vary across these datasets. ProteinIdentification exists so that individual datasets can report their findings and remain separate from other ProteinIdentification while still describing the exact same Protein with the same amino acid sequence.</rdfs:comment>
+        <rdfs:label>ProteinIdentification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/ProteinIdentifier -->
+
+    <owl:Class rdf:about="http://schema.oceanproteinportal.org/v2/ProteinIdentifier">
+        <rdfs:subClassOf rdf:resource="http://schema.oceanproteinportal.org/v2/Identifier"/>
+        <rdfs:label>ProteinIdentifier</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/ProteinIdentifierScheme -->
+
+    <owl:Class rdf:about="http://schema.oceanproteinportal.org/v2/ProteinIdentifierScheme">
+        <rdfs:subClassOf rdf:resource="http://schema.oceanproteinportal.org/v2/IdentifierScheme"/>
+        <rdfs:comment>A class of identifier schemes used to unqiuely identify proteins.</rdfs:comment>
+        <rdfs:label>ProteinIdentifierScheme</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/ProteineSampleIdentifier -->
+
+    <owl:Class rdf:about="http://schema.oceanproteinportal.org/v2/ProteineSampleIdentifier">
+        <rdfs:subClassOf rdf:resource="http://schema.oceanproteinportal.org/v2/ProteinIdentifier"/>
+        <rdfs:label>ProteineSampleIdentifier</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/Role -->
+
+    <owl:Class rdf:about="http://schema.oceanproteinportal.org/v2/Role">
+        <rdfs:comment>A certain status, or position, played by some Agent that qualifies/contextualizes the actions performed by that Agent.</rdfs:comment>
+        <rdfs:label>Role</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/SampleIdentifier -->
+
+    <owl:Class rdf:about="http://schema.oceanproteinportal.org/v2/SampleIdentifier">
+        <rdfs:subClassOf rdf:resource="http://schema.oceanproteinportal.org/v2/Identifier"/>
+        <rdfs:comment>An identifier for a sample within a Dataset. The IdentifierScheme for this sample would be provides by the Dataset. See opp:definesIdentifierScheme</rdfs:comment>
+        <rdfs:label>SampleIdentifier</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/Station -->
+
+    <owl:Class rdf:about="http://schema.oceanproteinportal.org/v2/Station">
+        <rdfs:comment>A generally agreed upon location at which sampling occurred. This agreement enables the comparison of collected data over different reference frames such as time.</rdfs:comment>
+        <rdfs:label>Station</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/UniprotIdentifier -->
+
+    <owl:Class rdf:about="http://schema.oceanproteinportal.org/v2/UniprotIdentifier">
+        <rdfs:subClassOf rdf:resource="http://schema.oceanproteinportal.org/v2/ProteinIdentifier"/>
+        <rdfs:label>UniprotIdentifier</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/Dataset -->
+
+    <owl:Class rdf:about="http://schema.org/Dataset"/>
+    
+
+
+    <!-- http://schema.org/Organization -->
+
+    <owl:Class rdf:about="http://schema.org/Organization">
+        <rdfs:subClassOf rdf:resource="http://schema.oceanproteinportal.org/v2/Agent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/Person -->
+
+    <owl:Class rdf:about="http://schema.org/Person">
+        <rdfs:subClassOf rdf:resource="http://schema.oceanproteinportal.org/v2/Agent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/PropertyValue -->
+
+    <owl:Class rdf:about="http://schema.org/PropertyValue"/>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/Deployment -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/sosa/Deployment"/>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/FeatureOfInterest -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/sosa/FeatureOfInterest"/>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/Sample -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/sosa/Sample"/>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/Sampler -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/sosa/Sampler"/>
+    
+
+
+    <!-- http://www.w3.org/ns/ssn/Property -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/ssn/Property"/>
+    
+
+
+    <!-- http://www.w3.org/ns/ssn/systems/SystemCapability -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/ssn/systems/SystemCapability">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/ssn/Property"/>
+    </owl:Class>
+</rdf:RDF>
 
 
 
