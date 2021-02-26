@@ -36,6 +36,14 @@
 # #################################################################
 # 
 # 
+# http://schema.oceanproteinportal.org/v2/aboutIdentifier
+<http://schema.oceanproteinportal.org/v2/aboutIdentifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://schema.oceanproteinportal.org/v2/aboutIdentifier> <http://www.w3.org/2002/07/owl#inverseOf> <http://schema.oceanproteinportal.org/v2/identifierMetadata> .
+<http://schema.oceanproteinportal.org/v2/aboutIdentifier> <http://www.w3.org/2000/01/rdf-schema#domain> <http://schema.oceanproteinportal.org/v2/IdentifierMetadata> .
+<http://schema.oceanproteinportal.org/v2/aboutIdentifier> <http://www.w3.org/2000/01/rdf-schema#range> <http://schema.oceanproteinportal.org/v2/Identifier> .
+<http://schema.oceanproteinportal.org/v2/aboutIdentifier> <http://www.w3.org/2000/01/rdf-schema#comment> "This metadata is about the specified Identifier" .
+<http://schema.oceanproteinportal.org/v2/aboutIdentifier> <http://www.w3.org/2000/01/rdf-schema#label> "aboutIdentifier" .
+# 
 # http://schema.oceanproteinportal.org/v2/annotatesIdentifier
 <http://schema.oceanproteinportal.org/v2/annotatesIdentifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://schema.oceanproteinportal.org/v2/annotatesIdentifier> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
@@ -54,8 +62,18 @@
 # 
 # http://schema.oceanproteinportal.org/v2/definesIdentifierScheme
 <http://schema.oceanproteinportal.org/v2/definesIdentifierScheme> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://schema.oceanproteinportal.org/v2/definesIdentifierScheme> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/2002/07/owl#Thing> .
+<http://schema.oceanproteinportal.org/v2/definesIdentifierScheme> <http://www.w3.org/2000/01/rdf-schema#range> <http://schema.oceanproteinportal.org/v2/IdentifierScheme> .
 <http://schema.oceanproteinportal.org/v2/definesIdentifierScheme> <http://www.w3.org/2000/01/rdf-schema#comment> "The IdentifierScheme defined by some Thing. In the case fo the OPP, a single Dataset defines an IdentifierScheme for its local identifiers." .
 <http://schema.oceanproteinportal.org/v2/definesIdentifierScheme> <http://www.w3.org/2000/01/rdf-schema#label> "definesIdentifierScheme" .
+# 
+# http://schema.oceanproteinportal.org/v2/describedByIdentification
+<http://schema.oceanproteinportal.org/v2/describedByIdentification> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://schema.oceanproteinportal.org/v2/describedByIdentification> <http://www.w3.org/2002/07/owl#inverseOf> <http://schema.oceanproteinportal.org/v2/describesAminoAcid> .
+<http://schema.oceanproteinportal.org/v2/describedByIdentification> <http://www.w3.org/2000/01/rdf-schema#domain> <http://schema.oceanproteinportal.org/v2/AminoAcidChain> .
+<http://schema.oceanproteinportal.org/v2/describedByIdentification> <http://www.w3.org/2000/01/rdf-schema#range> <http://schema.oceanproteinportal.org/v2/AminoAcidIdentification> .
+<http://schema.oceanproteinportal.org/v2/describedByIdentification> <http://www.w3.org/2000/01/rdf-schema#comment> "The  identification that describes this amino acid" .
+<http://schema.oceanproteinportal.org/v2/describedByIdentification> <http://www.w3.org/2000/01/rdf-schema#label> "describedByIdentification" .
 # 
 # http://schema.oceanproteinportal.org/v2/describesAminoAcid
 <http://schema.oceanproteinportal.org/v2/describesAminoAcid> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -110,6 +128,7 @@
 # http://schema.oceanproteinportal.org/v2/identifier
 <http://schema.oceanproteinportal.org/v2/identifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://schema.oceanproteinportal.org/v2/identifier> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://schema.oceanproteinportal.org/v2/identifier> <http://www.w3.org/2002/07/owl#inverseOf> <http://schema.oceanproteinportal.org/v2/isIdentifierOf> .
 <http://schema.oceanproteinportal.org/v2/identifier> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/2002/07/owl#Thing> .
 <http://schema.oceanproteinportal.org/v2/identifier> <http://www.w3.org/2000/01/rdf-schema#range> <http://schema.oceanproteinportal.org/v2/Identifier> .
 <http://schema.oceanproteinportal.org/v2/identifier> <http://www.w3.org/2000/01/rdf-schema#comment> "An Identifier with a known IdentifierScheme for some Thing." .
@@ -124,7 +143,9 @@
 # 
 # http://schema.oceanproteinportal.org/v2/identifierScheme
 <http://schema.oceanproteinportal.org/v2/identifierScheme> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://schema.oceanproteinportal.org/v2/identifierScheme> <http://www.w3.org/2002/07/owl#inverseOf> <http://schema.oceanproteinportal.org/v2/isIdentifierSchemeFor> .
 <http://schema.oceanproteinportal.org/v2/identifierScheme> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://schema.oceanproteinportal.org/v2/identifierScheme> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#IrreflexiveProperty> .
 <http://schema.oceanproteinportal.org/v2/identifierScheme> <http://www.w3.org/2000/01/rdf-schema#domain> <http://schema.oceanproteinportal.org/v2/Identifier> .
 <http://schema.oceanproteinportal.org/v2/identifierScheme> <http://www.w3.org/2000/01/rdf-schema#range> <http://schema.oceanproteinportal.org/v2/IdentifierScheme> .
 <http://schema.oceanproteinportal.org/v2/identifierScheme> <http://www.w3.org/2000/01/rdf-schema#comment> "The scheme in which this Identifier has a unique value." .
@@ -133,6 +154,8 @@
 # http://schema.oceanproteinportal.org/v2/inRole
 <http://schema.oceanproteinportal.org/v2/inRole> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://schema.oceanproteinportal.org/v2/inRole> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://schema.oceanproteinportal.org/v2/inRole> <http://www.w3.org/2002/07/owl#inverseOf> <http://schema.oceanproteinportal.org/v2/roleFor> .
+<http://schema.oceanproteinportal.org/v2/inRole> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#IrreflexiveProperty> .
 <http://schema.oceanproteinportal.org/v2/inRole> <http://www.w3.org/2000/01/rdf-schema#domain> <http://schema.oceanproteinportal.org/v2/AgentRole> .
 <http://schema.oceanproteinportal.org/v2/inRole> <http://www.w3.org/2000/01/rdf-schema#range> <http://schema.oceanproteinportal.org/v2/Role> .
 <http://schema.oceanproteinportal.org/v2/inRole> <http://www.w3.org/2000/01/rdf-schema#comment> "Role being performed by some Agent" .
@@ -154,6 +177,22 @@
 <http://schema.oceanproteinportal.org/v2/isAgentRoleFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2002/07/owl#Thing> .
 <http://schema.oceanproteinportal.org/v2/isAgentRoleFor> <http://www.w3.org/2000/01/rdf-schema#comment> "The Thing on/in which an Agent performs some Role." .
 <http://schema.oceanproteinportal.org/v2/isAgentRoleFor> <http://www.w3.org/2000/01/rdf-schema#label> "isAgentRoleFor" .
+# 
+# http://schema.oceanproteinportal.org/v2/isIdentifierOf
+<http://schema.oceanproteinportal.org/v2/isIdentifierOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://schema.oceanproteinportal.org/v2/isIdentifierOf> <http://www.w3.org/2000/01/rdf-schema#domain> <http://schema.oceanproteinportal.org/v2/Identifier> .
+<http://schema.oceanproteinportal.org/v2/isIdentifierOf> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2002/07/owl#Thing> .
+<http://schema.oceanproteinportal.org/v2/isIdentifierOf> <http://www.w3.org/2000/01/rdf-schema#comment> "The thing being identified" .
+<http://schema.oceanproteinportal.org/v2/isIdentifierOf> <http://www.w3.org/2000/01/rdf-schema#label> "isIdentifierOf" .
+# 
+# http://schema.oceanproteinportal.org/v2/isIdentifierSchemeFor
+<http://schema.oceanproteinportal.org/v2/isIdentifierSchemeFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://schema.oceanproteinportal.org/v2/isIdentifierSchemeFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> .
+<http://schema.oceanproteinportal.org/v2/isIdentifierSchemeFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#IrreflexiveProperty> .
+<http://schema.oceanproteinportal.org/v2/isIdentifierSchemeFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://schema.oceanproteinportal.org/v2/IdentifierScheme> .
+<http://schema.oceanproteinportal.org/v2/isIdentifierSchemeFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://schema.oceanproteinportal.org/v2/Identifier> .
+<http://schema.oceanproteinportal.org/v2/isIdentifierSchemeFor> <http://www.w3.org/2000/01/rdf-schema#comment> "An Identifier that bleongs within this scheme." .
+<http://schema.oceanproteinportal.org/v2/isIdentifierSchemeFor> <http://www.w3.org/2000/01/rdf-schema#label> "isIdentifierSchemeFor" .
 # 
 # http://schema.oceanproteinportal.org/v2/keggPathway
 <http://schema.oceanproteinportal.org/v2/keggPathway> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -186,9 +225,19 @@
 <http://schema.oceanproteinportal.org/v2/observedPeptide> <http://www.w3.org/2000/01/rdf-schema#comment> "The PeptideIdentification being asserted by the observer of some Sample." .
 <http://schema.oceanproteinportal.org/v2/observedPeptide> <http://www.w3.org/2000/01/rdf-schema#label> "observedPeptide" .
 # 
+# http://schema.oceanproteinportal.org/v2/performedAgentRole
+<http://schema.oceanproteinportal.org/v2/performedAgentRole> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://schema.oceanproteinportal.org/v2/performedAgentRole> <http://www.w3.org/2002/07/owl#inverseOf> <http://schema.oceanproteinportal.org/v2/performedBy> .
+<http://schema.oceanproteinportal.org/v2/performedAgentRole> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#IrreflexiveProperty> .
+<http://schema.oceanproteinportal.org/v2/performedAgentRole> <http://www.w3.org/2000/01/rdf-schema#domain> <http://schema.oceanproteinportal.org/v2/Agent> .
+<http://schema.oceanproteinportal.org/v2/performedAgentRole> <http://www.w3.org/2000/01/rdf-schema#range> <http://schema.oceanproteinportal.org/v2/AgentRole> .
+<http://schema.oceanproteinportal.org/v2/performedAgentRole> <http://www.w3.org/2000/01/rdf-schema#comment> "The AgentRole which was performed by this Agent" .
+<http://schema.oceanproteinportal.org/v2/performedAgentRole> <http://www.w3.org/2000/01/rdf-schema#label> "performedAgentRole" .
+# 
 # http://schema.oceanproteinportal.org/v2/performedAtOrganization
 <http://schema.oceanproteinportal.org/v2/performedAtOrganization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://schema.oceanproteinportal.org/v2/performedAtOrganization> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://schema.oceanproteinportal.org/v2/performedAtOrganization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#IrreflexiveProperty> .
 <http://schema.oceanproteinportal.org/v2/performedAtOrganization> <http://www.w3.org/2000/01/rdf-schema#domain> <http://schema.oceanproteinportal.org/v2/AgentRole> .
 <http://schema.oceanproteinportal.org/v2/performedAtOrganization> <http://www.w3.org/2000/01/rdf-schema#range> <http://schema.org/Organization> .
 <http://schema.oceanproteinportal.org/v2/performedAtOrganization> <http://www.w3.org/2000/01/rdf-schema#comment> "The Organization at which the acting Agent performed the Role" .
@@ -197,6 +246,7 @@
 # http://schema.oceanproteinportal.org/v2/performedBy
 <http://schema.oceanproteinportal.org/v2/performedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://schema.oceanproteinportal.org/v2/performedBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://schema.oceanproteinportal.org/v2/performedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#IrreflexiveProperty> .
 <http://schema.oceanproteinportal.org/v2/performedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://schema.oceanproteinportal.org/v2/AgentRole> .
 <http://schema.oceanproteinportal.org/v2/performedBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://schema.oceanproteinportal.org/v2/Agent> .
 <http://schema.oceanproteinportal.org/v2/performedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "The Agent acting in some Role." .
@@ -222,9 +272,18 @@
 <http://schema.oceanproteinportal.org/v2/providesRole> <http://www.w3.org/2000/01/rdf-schema#comment> "The existence of some Thing provides the ability for some Agent to perform this Role." .
 <http://schema.oceanproteinportal.org/v2/providesRole> <http://www.w3.org/2000/01/rdf-schema#label> "providesRole" .
 # 
+# http://schema.oceanproteinportal.org/v2/roleFor
+<http://schema.oceanproteinportal.org/v2/roleFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://schema.oceanproteinportal.org/v2/roleFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#IrreflexiveProperty> .
+<http://schema.oceanproteinportal.org/v2/roleFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://schema.oceanproteinportal.org/v2/Role> .
+<http://schema.oceanproteinportal.org/v2/roleFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://schema.oceanproteinportal.org/v2/AgentRole> .
+<http://schema.oceanproteinportal.org/v2/roleFor> <http://www.w3.org/2000/01/rdf-schema#comment> "An AgentRole performing this specific Role" .
+<http://schema.oceanproteinportal.org/v2/roleFor> <http://www.w3.org/2000/01/rdf-schema#label> "roleFor" .
+# 
 # http://schema.oceanproteinportal.org/v2/sampleAminoAcidProperty
 <http://schema.oceanproteinportal.org/v2/sampleAminoAcidProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://schema.oceanproteinportal.org/v2/sampleAminoAcidProperty> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/ns/sosa/observedProperty> .
+<http://schema.oceanproteinportal.org/v2/sampleAminoAcidProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#IrreflexiveProperty> .
 <http://schema.oceanproteinportal.org/v2/sampleAminoAcidProperty> <http://www.w3.org/2000/01/rdf-schema#domain> <http://schema.oceanproteinportal.org/v2/AminoAcidIdentification> .
 <http://schema.oceanproteinportal.org/v2/sampleAminoAcidProperty> <http://www.w3.org/2000/01/rdf-schema#range> <http://schema.oceanproteinportal.org/v2/AminoAcidSampleObservation> .
 <http://schema.oceanproteinportal.org/v2/sampleAminoAcidProperty> <http://www.w3.org/2000/01/rdf-schema#comment> "An observation made from a single Sample about an identified amino acid" .
@@ -436,6 +495,8 @@
 <http://schema.oceanproteinportal.org/v2/scoreValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <http://schema.oceanproteinportal.org/v2/scoreValue> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://schema.org/value> .
 <http://schema.oceanproteinportal.org/v2/scoreValue> <http://www.w3.org/2000/01/rdf-schema#domain> <http://schema.oceanproteinportal.org/v2/IdentificationScore> .
+<http://schema.oceanproteinportal.org/v2/scoreValue> <http://www.w3.org/2000/01/rdf-schema#comment> "The value of some score using a scoring method to identify an amino acid." .
+<http://schema.oceanproteinportal.org/v2/scoreValue> <http://www.w3.org/2000/01/rdf-schema#label> "scoreValue" .
 # 
 # http://schema.oceanproteinportal.org/v2/spectralCountSum
 <http://schema.oceanproteinportal.org/v2/spectralCountSum> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
@@ -537,6 +598,7 @@ _:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 _:genid8 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/aminoAcidSequence> .
 _:genid8 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
 _:genid8 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XMLSchema#token> .
+<http://schema.oceanproteinportal.org/v2/AminoAcidChain> <http://www.w3.org/2002/07/owl#disjointWith> <http://schema.oceanproteinportal.org/v2/AminoAcidIdentification> .
 <http://schema.oceanproteinportal.org/v2/AminoAcidChain> <http://schema.oceanproteinportal.org/v2/describedinConceptualModelOf> <http://schema.oceanproteinportal.org/v2/AminoAcidIdentification> .
 <http://schema.oceanproteinportal.org/v2/AminoAcidChain> <http://www.w3.org/2000/01/rdf-schema#comment> "An actual amino acid. This is not to contain information that helps identify an amino acid, but represents the amino acid being identified. Any information here, should be shared by all other representations of the amino acid."^^<http://www.w3.org/2001/XMLSchema#anyURI> .
 <http://schema.oceanproteinportal.org/v2/AminoAcidChain> <http://www.w3.org/2000/01/rdf-schema#label> "AminoAcidChain" .
@@ -600,6 +662,7 @@ _:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 _:genid13 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/cruiseID> .
 _:genid13 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
 _:genid13 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XMLSchema#string> .
+<http://schema.oceanproteinportal.org/v2/Cruise> <http://www.w3.org/2002/07/owl#disjointWith> <http://schema.oceanproteinportal.org/v2/Station> .
 <http://schema.oceanproteinportal.org/v2/Cruise> <http://www.w3.org/2000/01/rdf-schema#comment> "A deployment of some seagoing vessel on which one or more scientific objectives are studied." .
 <http://schema.oceanproteinportal.org/v2/Cruise> <http://www.w3.org/2000/01/rdf-schema#label> "Cruise" .
 # 
@@ -909,5 +972,38 @@ _:genid26 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XM
 # 
 <http://schema.oceanproteinportal.org/v2/profileObservation> <http://www.w3.org/2000/01/rdf-schema#comment> "An observation that will be present in the results." .
 <http://schema.oceanproteinportal.org/v2/profileObservation> <http://www.w3.org/2000/01/rdf-schema#label> "profileObservation" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    General axioms
+# #
+# #################################################################
+# 
+# 
+_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDisjointClasses> .
+_:genid27 <http://www.w3.org/2002/07/owl#members> _:genid30 .
+_:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://schema.oceanproteinportal.org/v2/Agent> .
+_:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid29 .
+_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://schema.oceanproteinportal.org/v2/AgentRole> .
+_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid28 .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://schema.oceanproteinportal.org/v2/Role> .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+# 
+_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDisjointClasses> .
+_:genid31 <http://www.w3.org/2002/07/owl#members> _:genid34 .
+_:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://schema.oceanproteinportal.org/v2/Identifier> .
+_:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid33 .
+_:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://schema.oceanproteinportal.org/v2/IdentifierMetadata> .
+_:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid32 .
+_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://schema.oceanproteinportal.org/v2/IdentifierScheme> .
+_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
 # 
 # Generated by the OWL API (version 5.1.14) https://github.com/owlcs/owlapi/

@@ -38,6 +38,15 @@
 #    Object Properties
 #################################################################
 
+###  http://schema.oceanproteinportal.org/v2/aboutIdentifier
+:aboutIdentifier rdf:type owl:ObjectProperty ;
+                 owl:inverseOf :identifierMetadata ;
+                 rdfs:domain :IdentifierMetadata ;
+                 rdfs:range :Identifier ;
+                 rdfs:comment "This metadata is about the specified Identifier" ;
+                 rdfs:label "aboutIdentifier" .
+
+
 ###  http://schema.oceanproteinportal.org/v2/annotatesIdentifier
 :annotatesIdentifier rdf:type owl:ObjectProperty ;
                      rdfs:subPropertyOf owl:topObjectProperty ;
@@ -58,8 +67,19 @@
 
 ###  http://schema.oceanproteinportal.org/v2/definesIdentifierScheme
 :definesIdentifierScheme rdf:type owl:ObjectProperty ;
+                         rdfs:domain owl:Thing ;
+                         rdfs:range :IdentifierScheme ;
                          rdfs:comment "The IdentifierScheme defined by some Thing. In the case fo the OPP, a single Dataset defines an IdentifierScheme for its local identifiers." ;
                          rdfs:label "definesIdentifierScheme" .
+
+
+###  http://schema.oceanproteinportal.org/v2/describedByIdentification
+:describedByIdentification rdf:type owl:ObjectProperty ;
+                           owl:inverseOf :describesAminoAcid ;
+                           rdfs:domain :AminoAcidChain ;
+                           rdfs:range :AminoAcidIdentification ;
+                           rdfs:comment "The  identification that describes this amino acid" ;
+                           rdfs:label "describedByIdentification" .
 
 
 ###  http://schema.oceanproteinportal.org/v2/describesAminoAcid
@@ -121,6 +141,7 @@
 ###  http://schema.oceanproteinportal.org/v2/identifier
 :identifier rdf:type owl:ObjectProperty ;
             rdfs:subPropertyOf owl:topObjectProperty ;
+            owl:inverseOf :isIdentifierOf ;
             rdfs:domain owl:Thing ;
             rdfs:range :Identifier ;
             rdfs:comment "An Identifier with a known IdentifierScheme for some Thing." ;
@@ -136,8 +157,10 @@
 
 
 ###  http://schema.oceanproteinportal.org/v2/identifierScheme
-:identifierScheme rdf:type owl:ObjectProperty ,
-                           owl:FunctionalProperty ;
+:identifierScheme rdf:type owl:ObjectProperty ;
+                  owl:inverseOf :isIdentifierSchemeFor ;
+                  rdf:type owl:FunctionalProperty ,
+                           owl:IrreflexiveProperty ;
                   rdfs:domain :Identifier ;
                   rdfs:range :IdentifierScheme ;
                   rdfs:comment "The scheme in which this Identifier has a unique value." ;
@@ -147,6 +170,8 @@
 ###  http://schema.oceanproteinportal.org/v2/inRole
 :inRole rdf:type owl:ObjectProperty ;
         rdfs:subPropertyOf owl:topObjectProperty ;
+        owl:inverseOf :roleFor ;
+        rdf:type owl:IrreflexiveProperty ;
         rdfs:domain :AgentRole ;
         rdfs:range :Role ;
         rdfs:comment "Role being performed by some Agent" ;
@@ -170,6 +195,24 @@
                 rdfs:range owl:Thing ;
                 rdfs:comment "The Thing on/in which an Agent performs some Role." ;
                 rdfs:label "isAgentRoleFor" .
+
+
+###  http://schema.oceanproteinportal.org/v2/isIdentifierOf
+:isIdentifierOf rdf:type owl:ObjectProperty ;
+                rdfs:domain :Identifier ;
+                rdfs:range owl:Thing ;
+                rdfs:comment "The thing being identified" ;
+                rdfs:label "isIdentifierOf" .
+
+
+###  http://schema.oceanproteinportal.org/v2/isIdentifierSchemeFor
+:isIdentifierSchemeFor rdf:type owl:ObjectProperty ,
+                                owl:InverseFunctionalProperty ,
+                                owl:IrreflexiveProperty ;
+                       rdfs:domain :IdentifierScheme ;
+                       rdfs:range :Identifier ;
+                       rdfs:comment "An Identifier that bleongs within this scheme." ;
+                       rdfs:label "isIdentifierSchemeFor" .
 
 
 ###  http://schema.oceanproteinportal.org/v2/keggPathway
@@ -207,9 +250,20 @@
                  rdfs:label "observedPeptide" .
 
 
+###  http://schema.oceanproteinportal.org/v2/performedAgentRole
+:performedAgentRole rdf:type owl:ObjectProperty ;
+                    owl:inverseOf :performedBy ;
+                    rdf:type owl:IrreflexiveProperty ;
+                    rdfs:domain :Agent ;
+                    rdfs:range :AgentRole ;
+                    rdfs:comment "The AgentRole which was performed by this Agent" ;
+                    rdfs:label "performedAgentRole" .
+
+
 ###  http://schema.oceanproteinportal.org/v2/performedAtOrganization
 :performedAtOrganization rdf:type owl:ObjectProperty ;
                          rdfs:subPropertyOf owl:topObjectProperty ;
+                         rdf:type owl:IrreflexiveProperty ;
                          rdfs:domain :AgentRole ;
                          rdfs:range <http://schema.org/Organization> ;
                          rdfs:comment "The Organization at which the acting Agent performed the Role" ;
@@ -219,6 +273,7 @@
 ###  http://schema.oceanproteinportal.org/v2/performedBy
 :performedBy rdf:type owl:ObjectProperty ;
              rdfs:subPropertyOf owl:topObjectProperty ;
+             rdf:type owl:IrreflexiveProperty ;
              rdfs:domain :AgentRole ;
              rdfs:range :Agent ;
              rdfs:comment "The Agent acting in some Role." ;
@@ -248,9 +303,19 @@
               rdfs:label "providesRole" .
 
 
+###  http://schema.oceanproteinportal.org/v2/roleFor
+:roleFor rdf:type owl:ObjectProperty ,
+                  owl:IrreflexiveProperty ;
+         rdfs:domain :Role ;
+         rdfs:range :AgentRole ;
+         rdfs:comment "An AgentRole performing this specific Role" ;
+         rdfs:label "roleFor" .
+
+
 ###  http://schema.oceanproteinportal.org/v2/sampleAminoAcidProperty
 :sampleAminoAcidProperty rdf:type owl:ObjectProperty ;
                          rdfs:subPropertyOf <http://www.w3.org/ns/sosa/observedProperty> ;
+                         rdf:type owl:IrreflexiveProperty ;
                          rdfs:domain :AminoAcidIdentification ;
                          rdfs:range :AminoAcidSampleObservation ;
                          rdfs:comment "An observation made from a single Sample about an identified amino acid" ;
@@ -483,7 +548,9 @@
 ###  http://schema.oceanproteinportal.org/v2/scoreValue
 :scoreValue rdf:type owl:DatatypeProperty ;
             rdfs:subPropertyOf <http://schema.org/value> ;
-            rdfs:domain :IdentificationScore .
+            rdfs:domain :IdentificationScore ;
+            rdfs:comment "The value of some score using a scoring method to identify an amino acid." ;
+            rdfs:label "scoreValue" .
 
 
 ###  http://schema.oceanproteinportal.org/v2/spectralCountSum
@@ -590,6 +657,7 @@
                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                   owl:onDataRange xsd:token
                                 ] ;
+                owl:disjointWith :AminoAcidIdentification ;
                 :describedinConceptualModelOf :AminoAcidIdentification ;
                 rdfs:comment "An actual amino acid. This is not to contain information that helps identify an amino acid, but represents the amino acid being identified. Any information here, should be shared by all other representations of the amino acid."^^xsd:anyURI ;
                 rdfs:label "AminoAcidChain" .
@@ -659,6 +727,7 @@
                           owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                           owl:onDataRange xsd:string
                         ] ;
+        owl:disjointWith :Station ;
         rdfs:comment "A deployment of some seagoing vessel on which one or more scientific objectives are studied." ;
         rdfs:label "Cruise" .
 
@@ -1002,6 +1071,26 @@
 
 :profileObservation rdfs:comment "An observation that will be present in the results." ;
                     rdfs:label "profileObservation" .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Agent
+                :AgentRole
+                :Role
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Identifier
+                :IdentifierMetadata
+                :IdentifierScheme
+              )
+] .
 
 
 ###  Generated by the OWL API (version 5.1.14) https://github.com/owlcs/owlapi/
