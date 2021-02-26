@@ -1,0 +1,1007 @@
+@prefix : <http://schema.oceanproteinportal.org/v2/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://schema.oceanproteinportal.org/v2/> .
+
+<http://schema.oceanproteinportal.org/v2/> rdf:type owl:Ontology ;
+                                            owl:versionIRI :opp.owl .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://schema.oceanproteinportal.org/v2/conceptualModel
+:conceptualModel rdf:type owl:AnnotationProperty ;
+                 rdfs:comment "A link to a visual drawing of the conceputal model for a certain class" ;
+                 rdfs:label "conceptualModel" ;
+                 rdfs:range xsd:anyURI ;
+                 rdfs:domain owl:Thing .
+
+
+###  http://schema.oceanproteinportal.org/v2/describedinConceptualModelOf
+:describedinConceptualModelOf rdf:type owl:AnnotationProperty ;
+                              rdfs:comment "The conceptual model the describes this class can be found as an annotation of the following target class." ;
+                              rdfs:label "describedinConceptualModelOf" ;
+                              rdfs:range owl:Thing ;
+                              rdfs:domain owl:Thing .
+
+
+###  http://schema.oceanproteinportal.org/v2/profileObservation
+:profileObservation rdf:type owl:AnnotationProperty ;
+                    rdfs:range <http://www.w3.org/ns/ssn/Property> .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://schema.oceanproteinportal.org/v2/annotatesIdentifier
+:annotatesIdentifier rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf owl:topObjectProperty ;
+                     owl:inverseOf :identifierMetadata ;
+                     rdfs:domain :IdentifierMetadata ;
+                     rdfs:range :Identifier ;
+                     rdfs:comment "The identifer for which this information object annotates" ;
+                     rdfs:label "annotatesIdentifier" .
+
+
+###  http://schema.oceanproteinportal.org/v2/conformsToProfile
+:conformsToProfile rdf:type owl:ObjectProperty ;
+                   rdfs:domain <http://schema.org/Dataset> ;
+                   rdfs:range :DatasetProfile ;
+                   rdfs:comment "The dataset conforms to the Dataset Profile. Meaning to presents the profile's expected observations." ;
+                   rdfs:label "conformsToProfile" .
+
+
+###  http://schema.oceanproteinportal.org/v2/definesIdentifierScheme
+:definesIdentifierScheme rdf:type owl:ObjectProperty ;
+                         rdfs:comment "The IdentifierScheme defined by some Thing. In the case fo the OPP, a single Dataset defines an IdentifierScheme for its local identifiers." ;
+                         rdfs:label "definesIdentifierScheme" .
+
+
+###  http://schema.oceanproteinportal.org/v2/describesAminoAcid
+:describesAminoAcid rdf:type owl:ObjectProperty ,
+                             owl:FunctionalProperty ;
+                    rdfs:domain :AminoAcidIdentification ;
+                    rdfs:range :AminoAcidChain ;
+                    rdfs:comment "The AminoAcidChain being described by this information." ;
+                    rdfs:label "describesAminoAcid" .
+
+
+###  http://schema.oceanproteinportal.org/v2/describesPeptide
+:describesPeptide rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :describesAminoAcid ;
+                  rdf:type owl:FunctionalProperty ;
+                  rdfs:domain :PeptideIdentification ;
+                  rdfs:range :Peptide ;
+                  rdfs:comment "The actual Peptide being described by this information." ;
+                  rdfs:label "describesPeptide" .
+
+
+###  http://schema.oceanproteinportal.org/v2/describesProtein
+:describesProtein rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :describesAminoAcid ;
+                  rdf:type owl:FunctionalProperty ;
+                  rdfs:domain :ProteinIdentification ;
+                  rdfs:range :Protein ;
+                  rdfs:comment "The actual Protein being described by this Protien information." ;
+                  rdfs:label "describesProtein" .
+
+
+###  http://schema.oceanproteinportal.org/v2/hasAgentRole
+:hasAgentRole rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdfs:domain owl:Thing ;
+              rdfs:range :AgentRole ;
+              rdfs:comment "An AgentRole in which an Agent performs some Role on this particular Thing." ;
+              rdfs:label "hasAgentRole" .
+
+
+###  http://schema.oceanproteinportal.org/v2/hasFilterSize
+:hasFilterSize rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf <http://www.w3.org/ns/ssn/systems/hasSystemCapability> ;
+               rdf:type owl:FunctionalProperty ;
+               rdfs:domain <http://www.w3.org/ns/sosa/Sampler> ;
+               rdfs:range :FilterSize ;
+               rdfs:comment "The size of the filter(s) being used during the sampling process. This could be a single value using schema:value property or a range of sizes using schema:minValue & schema:maxValue." ;
+               rdfs:label "hasFilterSize" .
+
+
+###  http://schema.oceanproteinportal.org/v2/identificationBasedOnScore
+:identificationBasedOnScore rdf:type owl:ObjectProperty ;
+                            rdfs:domain :AminoAcidIdentification ;
+                            rdfs:range :IdentificationScore ;
+                            rdfs:comment "The score used to determine an amino acid's identification" ;
+                            rdfs:label "identificationBasedOnScore" .
+
+
+###  http://schema.oceanproteinportal.org/v2/identifier
+:identifier rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdfs:domain owl:Thing ;
+            rdfs:range :Identifier ;
+            rdfs:comment "An Identifier with a known IdentifierScheme for some Thing." ;
+            rdfs:label "identifier" .
+
+
+###  http://schema.oceanproteinportal.org/v2/identifierMetadata
+:identifierMetadata rdf:type owl:ObjectProperty ;
+                    rdfs:domain :Identifier ;
+                    rdfs:range :IdentifierMetadata ;
+                    rdfs:comment "An information record that annotated or further describes this Identifier." ;
+                    rdfs:label "identifierMetadata" .
+
+
+###  http://schema.oceanproteinportal.org/v2/identifierScheme
+:identifierScheme rdf:type owl:ObjectProperty ,
+                           owl:FunctionalProperty ;
+                  rdfs:domain :Identifier ;
+                  rdfs:range :IdentifierScheme ;
+                  rdfs:comment "The scheme in which this Identifier has a unique value." ;
+                  rdfs:label "identifierScheme" .
+
+
+###  http://schema.oceanproteinportal.org/v2/inRole
+:inRole rdf:type owl:ObjectProperty ;
+        rdfs:subPropertyOf owl:topObjectProperty ;
+        rdfs:domain :AgentRole ;
+        rdfs:range :Role ;
+        rdfs:comment "Role being performed by some Agent" ;
+        rdfs:label "inRole" .
+
+
+###  http://schema.oceanproteinportal.org/v2/inVicinityOfStation
+:inVicinityOfStation rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf owl:topObjectProperty ;
+                     rdf:type owl:FunctionalProperty ;
+                     rdfs:domain <http://www.w3.org/ns/sosa/FeatureOfInterest> ;
+                     rdfs:range :Station ;
+                     rdfs:comment "The one, named or mutally agreed upon location at which Sampling occurred. This usually means a single coordinate at which sampling occurs depsite any variance in the location of the sensor at the time of measurement. This Station helps to normalize the intent of sampling at a certain location for cross-comparison between datasets." ;
+                     rdfs:label "inVicinityOfStation" .
+
+
+###  http://schema.oceanproteinportal.org/v2/isAgentRoleFor
+:isAgentRoleFor rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf owl:topObjectProperty ;
+                rdfs:domain :AgentRole ;
+                rdfs:range owl:Thing ;
+                rdfs:comment "The Thing on/in which an Agent performs some Role." ;
+                rdfs:label "isAgentRoleFor" .
+
+
+###  http://schema.oceanproteinportal.org/v2/keggPathway
+:keggPathway rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf :identifierMetadata ;
+             rdfs:domain :KeggIdentifier ;
+             rdfs:range :KeggPathway ;
+             rdfs:comment "The Kegg Identifier for which this KeggPathway describes." ;
+             rdfs:label "keggPathway" .
+
+
+###  http://schema.oceanproteinportal.org/v2/ncbiTaxonName
+:ncbiTaxonName rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :identifierMetadata ;
+               rdfs:domain :NCBITaxonIdentifier ;
+               rdfs:range :NCBITaxonName ;
+               rdfs:comment "The NCBI Identifier for which this name describes." ;
+               rdfs:label "ncbiTaxonName" .
+
+
+###  http://schema.oceanproteinportal.org/v2/observationInSample
+:observationInSample rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf <http://www.w3.org/ns/sosa/hasFeatureOfInterest> ;
+                     rdfs:domain :AminoAcidSampleObservation ;
+                     rdfs:range <http://www.w3.org/ns/sosa/Sample> ;
+                     rdfs:comment "An observation made about a single Sample for some identified amino acid." ;
+                     rdfs:label "observationInSample" .
+
+
+###  http://schema.oceanproteinportal.org/v2/observedPeptide
+:observedPeptide rdf:type owl:ObjectProperty ;
+                 rdfs:domain <http://www.w3.org/ns/sosa/Sample> ;
+                 rdfs:range :PeptideIdentification ;
+                 rdfs:comment "The PeptideIdentification being asserted by the observer of some Sample." ;
+                 rdfs:label "observedPeptide" .
+
+
+###  http://schema.oceanproteinportal.org/v2/performedAtOrganization
+:performedAtOrganization rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf owl:topObjectProperty ;
+                         rdfs:domain :AgentRole ;
+                         rdfs:range <http://schema.org/Organization> ;
+                         rdfs:comment "The Organization at which the acting Agent performed the Role" ;
+                         rdfs:label "performedAtOrganization" .
+
+
+###  http://schema.oceanproteinportal.org/v2/performedBy
+:performedBy rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdfs:domain :AgentRole ;
+             rdfs:range :Agent ;
+             rdfs:comment "The Agent acting in some Role." ;
+             rdfs:label "performedBy" .
+
+
+###  http://schema.oceanproteinportal.org/v2/performedOnBehalfOf
+:performedOnBehalfOf rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf owl:topObjectProperty ;
+                     rdfs:domain :AgentRole ;
+                     rdfs:range :Agent ;
+                     rdfs:comment "The Agent for which the performing Agent is acting in a certain Role." ;
+                     rdfs:label "performedOnBehalfOf" .
+
+
+###  http://schema.oceanproteinportal.org/v2/profileObservation
+:profileObservation rdf:type owl:ObjectProperty ;
+                    rdfs:domain :DatasetProfile .
+
+
+###  http://schema.oceanproteinportal.org/v2/providesRole
+:providesRole rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdfs:domain owl:Thing ;
+              rdfs:range :Role ;
+              rdfs:comment "The existence of some Thing provides the ability for some Agent to perform this Role." ;
+              rdfs:label "providesRole" .
+
+
+###  http://schema.oceanproteinportal.org/v2/sampleAminoAcidProperty
+:sampleAminoAcidProperty rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf <http://www.w3.org/ns/sosa/observedProperty> ;
+                         rdfs:domain :AminoAcidIdentification ;
+                         rdfs:range :AminoAcidSampleObservation ;
+                         rdfs:comment "An observation made from a single Sample about an identified amino acid" ;
+                         rdfs:label "sampleAminoAcidProperty" .
+
+
+###  http://schema.oceanproteinportal.org/v2/samplePeptideProperty
+:samplePeptideProperty rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf :sampleAminoAcidProperty ;
+                       rdfs:domain :PeptideIdentification ;
+                       rdfs:range :PeptideSampleObservation ;
+                       rdfs:comment "An observation made from a single Sample about an identified peptide" ;
+                       rdfs:label "samplePeptideProperty" .
+
+
+###  http://schema.oceanproteinportal.org/v2/sampleProteinProperty
+:sampleProteinProperty rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf :sampleAminoAcidProperty ;
+                       rdfs:domain :ProteinIdentification ;
+                       rdfs:range :ProteinSampleObservation ;
+                       rdfs:comment "An observation made from a single Sample about an identified protein" ;
+                       rdfs:label "sampleProteinProperty" .
+
+
+###  http://schema.oceanproteinportal.org/v2/storesResultsForSample
+:storesResultsForSample rdf:type owl:ObjectProperty ;
+                        rdfs:domain <http://schema.org/Dataset> ;
+                        rdfs:range <http://www.w3.org/ns/sosa/Sample> ;
+                        rdfs:comment "A sample for which this Dataset stores observations results for." ;
+                        rdfs:label "storesResultsForSample" .
+
+
+###  http://www.w3.org/ns/sosa/hasFeatureOfInterest
+<http://www.w3.org/ns/sosa/hasFeatureOfInterest> rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/ns/sosa/observedProperty
+<http://www.w3.org/ns/sosa/observedProperty> rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/ns/ssn/systems/hasSystemCapability
+<http://www.w3.org/ns/ssn/systems/hasSystemCapability> rdf:type owl:ObjectProperty ;
+                                                       rdfs:subPropertyOf owl:topObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://schema.oceanproteinportal.org/v2/absoluteUnits
+:absoluteUnits rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf <http://schema.org/value> ;
+               rdf:type owl:FunctionalProperty ;
+               rdfs:domain :AminoAcidIdentification ;
+               rdfs:range xsd:float ;
+               rdfs:comment "absolute units of a peptide or protein identification measured in fmol/liter" ;
+               rdfs:label "absoluteUnits" .
+
+
+###  http://schema.oceanproteinportal.org/v2/aminoAcidName
+:aminoAcidName rdf:type owl:DatatypeProperty ,
+                        owl:FunctionalProperty ;
+               rdfs:domain :AminoAcidIdentification ;
+               rdfs:range xsd:string ;
+               rdfs:comment "The name given to the amino acid being identified by some identifying agent." ;
+               rdfs:label "aminoAcidName" .
+
+
+###  http://schema.oceanproteinportal.org/v2/aminoAcidSequence
+:aminoAcidSequence rdf:type owl:DatatypeProperty ,
+                            owl:FunctionalProperty ;
+                   rdfs:domain :AminoAcidChain ;
+                   rdfs:range xsd:token ;
+                   rdfs:comment "The amino acid chain, written as a string of characters, that identifies a specific amino acid." ;
+                   rdfs:label "aminoAcidSequence" .
+
+
+###  http://schema.oceanproteinportal.org/v2/bestSEQUESTDCnScore
+:bestSEQUESTDCnScore rdf:type owl:DatatypeProperty ,
+                              owl:FunctionalProperty ;
+                     rdfs:domain :PeptideIdentification ;
+                     rdfs:range xsd:float ;
+                     rdfs:comment "The best SEQUEST DCn score" ;
+                     rdfs:label "bestSEQUESTDCnScore" .
+
+
+###  http://schema.oceanproteinportal.org/v2/bestSEQUESTXCorrScore
+:bestSEQUESTXCorrScore rdf:type owl:DatatypeProperty ,
+                                owl:FunctionalProperty ;
+                       rdfs:domain :PeptideIdentification ;
+                       rdfs:range xsd:float ;
+                       rdfs:comment "The best SEQUEST XCorr score" ;
+                       rdfs:label "bestSEQUESTXCorrScore" .
+
+
+###  http://schema.oceanproteinportal.org/v2/cruiseID
+:cruiseID rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Cruise ;
+          rdfs:range xsd:string ;
+          rdfs:comment "Some label for a certain cruise on which an OPP Dataset was collected." ;
+          rdfs:label "cruiseID" .
+
+
+###  http://schema.oceanproteinportal.org/v2/depth
+:depth rdf:type owl:DatatypeProperty ;
+       rdfs:subPropertyOf owl:topDataProperty ;
+       rdf:type owl:FunctionalProperty ;
+       rdfs:domain <http://www.w3.org/ns/sosa/FeatureOfInterest> ;
+       rdfs:range xsd:float ;
+       rdfs:comment "The depth in meters where some sample was collected." ;
+       rdfs:label "depth" ;
+       rdfs:seeAlso <ssn:hasProperty> .
+
+
+###  http://schema.oceanproteinportal.org/v2/identificationProbability
+:identificationProbability rdf:type owl:DatatypeProperty ,
+                                    owl:FunctionalProperty ;
+                           rdfs:domain :AminoAcidIdentification ;
+                           rdfs:range xsd:float ;
+                           rdfs:comment "Thee probability of the correctness/confidence of the identification" ;
+                           rdfs:label "identificationProbability" .
+
+
+###  http://schema.oceanproteinportal.org/v2/identifierValue
+:identifierValue rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Identifier ;
+                 rdfs:range xsd:token ;
+                 rdfs:comment "The unique value in some IdentifierScheme" ;
+                 rdfs:label "identifierValue" .
+
+
+###  http://schema.oceanproteinportal.org/v2/maximumFilterSize
+:maximumFilterSize rdf:type owl:DatatypeProperty ;
+                   rdfs:subPropertyOf <http://schema.org/maxValue> ;
+                   rdfs:domain :FilterSize ;
+                   rdfs:range xsd:float ;
+                   rdfs:comment "The maximum size of the filter used during sampling. Measured in microns." ;
+                   rdfs:label "maximumFilterSize" .
+
+
+###  http://schema.oceanproteinportal.org/v2/medianRetentionTime
+:medianRetentionTime rdf:type owl:DatatypeProperty ,
+                              owl:FunctionalProperty ;
+                     rdfs:domain :PeptideIdentification ;
+                     rdfs:range xsd:float ;
+                     rdfs:label "medianRetentionTime" .
+
+
+###  http://schema.oceanproteinportal.org/v2/minimumFilterSize
+:minimumFilterSize rdf:type owl:DatatypeProperty ;
+                   rdfs:subPropertyOf <http://schema.org/minValue> ;
+                   rdfs:domain :FilterSize ;
+                   rdfs:range xsd:float ;
+                   rdfs:comment "The minimum size of a filter used during sampling. Mesaured in microns." ;
+                   rdfs:label "minimumFilterSize" .
+
+
+###  http://schema.oceanproteinportal.org/v2/molecularWeight
+:molecularWeight rdf:type owl:DatatypeProperty ,
+                          owl:FunctionalProperty ;
+                 rdfs:domain :AminoAcidIdentification ;
+                 rdfs:range xsd:float ;
+                 rdfs:comment "A protein's molecular weight measured in kiloDaltons" ;
+                 rdfs:label "molecularWeight" .
+
+
+###  http://schema.oceanproteinportal.org/v2/peptideSequence
+:peptideSequence rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf :aminoAcidSequence ;
+                 rdf:type owl:FunctionalProperty ;
+                 rdfs:domain :Peptide ;
+                 rdfs:range xsd:token ;
+                 rdfs:comment "The amino acid chain, written as a string of characters, that identifies a specific Peptide." ;
+                 rdfs:label "peptideSequence" .
+
+
+###  http://schema.oceanproteinportal.org/v2/plus2HSpectraCount
+:plus2HSpectraCount rdf:type owl:DatatypeProperty ,
+                             owl:FunctionalProperty ;
+                    rdfs:domain :PeptideSpectralCountSum ;
+                    rdfs:range xsd:float ;
+                    rdfs:label "plus2HSpectraCount" .
+
+
+###  http://schema.oceanproteinportal.org/v2/plus3HSpectraCount
+:plus3HSpectraCount rdf:type owl:DatatypeProperty ,
+                             owl:FunctionalProperty ;
+                    rdfs:domain :PeptideSpectralCountSum ;
+                    rdfs:range xsd:float ;
+                    rdfs:label "plus3HSpectraCount" .
+
+
+###  http://schema.oceanproteinportal.org/v2/plus4HSpectraCount
+:plus4HSpectraCount rdf:type owl:DatatypeProperty ,
+                             owl:FunctionalProperty ;
+                    rdfs:domain :PeptideSpectralCountSum ;
+                    rdfs:range xsd:float ;
+                    rdfs:label "plus4HSpectraCount" .
+
+
+###  http://schema.oceanproteinportal.org/v2/proteinName
+:proteinName rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf :aminoAcidName ;
+             rdf:type owl:FunctionalProperty ;
+             rdfs:domain :ProteinIdentification ;
+             rdfs:range xsd:string ;
+             rdfs:comment "The name given to the protein being identified by some identifying agent." ;
+             rdfs:label "proteinName" .
+
+
+###  http://schema.oceanproteinportal.org/v2/proteinSequence
+:proteinSequence rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf :aminoAcidSequence ;
+                 rdf:type owl:FunctionalProperty ;
+                 rdfs:domain :Protein ;
+                 rdfs:range xsd:token ;
+                 rdfs:comment "The amino acid chain, written as a string of characters, that identifies a specific Protein." ;
+                 rdfs:label "proteinSequence" .
+
+
+###  http://schema.oceanproteinportal.org/v2/proteinSpectralCount
+:proteinSpectralCount rdf:type owl:DatatypeProperty ;
+                      rdfs:subPropertyOf <http://schema.org/value> ;
+                      rdf:type owl:FunctionalProperty ;
+                      rdfs:range xsd:float ;
+                      rdfs:comment "The observed spectral count for a single protein from a single sample" ;
+                      rdfs:label "proteinSpectralCount" .
+
+
+###  http://schema.oceanproteinportal.org/v2/scoreValue
+:scoreValue rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf <http://schema.org/value> ;
+            rdfs:domain :IdentificationScore .
+
+
+###  http://schema.oceanproteinportal.org/v2/spectralCountSum
+:spectralCountSum rdf:type owl:DatatypeProperty ;
+                  rdfs:subPropertyOf <http://schema.org/value> ;
+                  rdf:type owl:FunctionalProperty ;
+                  rdfs:domain :PeptideIdentification ;
+                  rdfs:range xsd:float ;
+                  rdfs:comment "The sum of the +2, +3, +4 spectra counts." ;
+                  rdfs:label "spectralCountSum" .
+
+
+###  http://schema.oceanproteinportal.org/v2/stationName
+:stationName rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Station ;
+             rdfs:range xsd:string ;
+             rdfs:comment "The name of some Station." ;
+             rdfs:label "stationName" .
+
+
+###  http://schema.oceanproteinportal.org/v2/totalPrecursorIntensity
+:totalPrecursorIntensity rdf:type owl:DatatypeProperty ,
+                                  owl:FunctionalProperty ;
+                         rdfs:domain :PeptideIdentification ;
+                         rdfs:range xsd:float ;
+                         rdfs:label "totalPrecursorIntensity" .
+
+
+###  http://schema.oceanproteinportal.org/v2/totalTIC
+:totalTIC rdf:type owl:DatatypeProperty ,
+                   owl:FunctionalProperty ;
+          rdfs:domain :PeptideIdentification ;
+          rdfs:range xsd:float ;
+          rdfs:label "totalTIC" .
+
+
+###  http://schema.org/maxValue
+<http://schema.org/maxValue> rdf:type owl:DatatypeProperty ;
+                             rdfs:subPropertyOf owl:topDataProperty .
+
+
+###  http://schema.org/minValue
+<http://schema.org/minValue> rdf:type owl:DatatypeProperty ;
+                             rdfs:subPropertyOf owl:topDataProperty .
+
+
+###  http://schema.org/value
+<http://schema.org/value> rdf:type owl:DatatypeProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://schema.oceanproteinportal.org/v2/Agent
+:Agent rdf:type owl:Class ;
+       :describedinConceptualModelOf :AgentRole ;
+       rdfs:comment "An abstract class for specifying a person, organization or software entity that performs some action acting in some predefined role." ;
+       rdfs:label "Agent" .
+
+
+###  http://schema.oceanproteinportal.org/v2/AgentRole
+:AgentRole rdf:type owl:Class ;
+           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                             owl:onProperty :inRole ;
+                             owl:allValuesFrom :Role
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :performedAtOrganization ;
+                             owl:allValuesFrom <http://schema.org/Organization>
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :performedBy ;
+                             owl:allValuesFrom :Agent
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :inRole ;
+                             owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onClass :Role
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :performedBy ;
+                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onClass :Agent
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :performedAtOrganization ;
+                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onClass <http://schema.org/Organization>
+                           ] ;
+           :conceptualModel "https://lucid.app/publicSegments/view/0df85414-42b6-4601-9293-956c39559249/image.png"^^xsd:anyURI ;
+           rdfs:comment "An agent performing some Role over a certain period of time (which may be unbounded)." ;
+           rdfs:label "AgentRole" .
+
+
+###  http://schema.oceanproteinportal.org/v2/AminoAcidChain
+:AminoAcidChain rdf:type owl:Class ;
+                rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                  owl:onProperty :aminoAcidSequence ;
+                                  owl:allValuesFrom xsd:token
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :aminoAcidSequence ;
+                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                  owl:onDataRange xsd:token
+                                ] ;
+                :describedinConceptualModelOf :AminoAcidIdentification ;
+                rdfs:comment "An actual amino acid. This is not to contain information that helps identify an amino acid, but represents the amino acid being identified. Any information here, should be shared by all other representations of the amino acid."^^xsd:anyURI ;
+                rdfs:label "AminoAcidChain" .
+
+
+###  http://schema.oceanproteinportal.org/v2/AminoAcidIdentification
+:AminoAcidIdentification rdf:type owl:Class ;
+                         :conceptualModel "https://lucid.app/publicSegments/view/de62351f-8e38-426f-9b35-dcfb696e8729/image.png"^^xsd:anyURI ;
+                         rdfs:comment "An information object for storing data about an amino acid." ;
+                         rdfs:label "AminoAcidIdentification" .
+
+
+###  http://schema.oceanproteinportal.org/v2/AminoAcidSampleObservation
+:AminoAcidSampleObservation rdf:type owl:Class ;
+                            rdfs:subClassOf <http://schema.org/PropertyValue> ,
+                                            <http://www.w3.org/ns/ssn/Property> ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty :observationInSample ;
+                                              owl:allValuesFrom <http://www.w3.org/ns/sosa/Sample>
+                                            ] ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty :observationInSample ;
+                                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                              owl:onClass <http://www.w3.org/ns/sosa/Sample>
+                                            ] ;
+                            :describedinConceptualModelOf :AminoAcidIdentification ;
+                            rdfs:comment "A property of some amino acid that was observed in a single Sample." ;
+                            rdfs:label "AminoAcidSampleObservation" .
+
+
+###  http://schema.oceanproteinportal.org/v2/BestProteinIdentification
+:BestProteinIdentification rdf:type owl:Class ;
+                           rdfs:subClassOf :ProteinIdentification ;
+                           rdfs:comment "The best/selected identification of a specific Protein based on information in a PeptideIdentification. This means that a PeptideIdentification may have multiple Proteins that it identifies but that one of those proteins has been selected (identifiedBy) as the best identification." ;
+                           rdfs:label "BestProteinIdentification" .
+
+
+###  http://schema.oceanproteinportal.org/v2/BestSEQUESTDCnScore
+:BestSEQUESTDCnScore rdf:type owl:Class ;
+                     rdfs:subClassOf :IdentificationScore ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :scoreValue ;
+                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onDataRange xsd:float
+                                     ] ;
+                     rdfs:comment "The best SEQUEST DCn score for identifying an amino acid."^^xsd:anyURI ;
+                     rdfs:label "BestSEQUESTDCnScore" .
+
+
+###  http://schema.oceanproteinportal.org/v2/BestSEQUESTXCorrScore
+:BestSEQUESTXCorrScore rdf:type owl:Class ;
+                       rdfs:subClassOf :IdentificationScore ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :scoreValue ;
+                                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                         owl:onDataRange xsd:float
+                                       ] ;
+                       rdfs:comment "The best SEQUEST XCorr score for identifying an amino acid."^^xsd:anyURI ;
+                       rdfs:label "BestSEQUESTXCorrScore" .
+
+
+###  http://schema.oceanproteinportal.org/v2/Cruise
+:Cruise rdf:type owl:Class ;
+        rdfs:subClassOf <http://www.w3.org/ns/sosa/Deployment> ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :cruiseID ;
+                          owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onDataRange xsd:string
+                        ] ;
+        rdfs:comment "A deployment of some seagoing vessel on which one or more scientific objectives are studied." ;
+        rdfs:label "Cruise" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DatasetIdentifierScheme
+:DatasetIdentifierScheme rdf:type owl:Class ;
+                         rdfs:subClassOf :IdentifierScheme ;
+                         rdfs:comment "The identifierScheme for a singular OPP dataset. The dataset itself is the realm in which other identifiers such as Station names, protein names, etc. are unique (but that may not be unqiue acorss other OPP datasets). This helps ensure that identifiers in a Dataset are not automatically assumed to be equivalent to each other." ;
+                         rdfs:label "DatasetIdentifierScheme" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DatasetProfile
+:DatasetProfile rdf:type owl:Class ;
+                rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                  owl:onProperty :profileObservation ;
+                                  owl:allValuesFrom <http://www.w3.org/ns/ssn/Property>
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :profileObservation ;
+                                  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                  owl:onClass <http://www.w3.org/ns/ssn/Property>
+                                ] ;
+                :describedinConceptualModelOf <http://schema.org/Dataset> ;
+                rdfs:comment "A DatasetProfile defines the type of observations to be expected." ;
+                rdfs:label "DatasetProfile" .
+
+
+###  http://schema.oceanproteinportal.org/v2/EnzymeCommissionIdentifier
+:EnzymeCommissionIdentifier rdf:type owl:Class ;
+                            rdfs:subClassOf :ProteinIdentifier ;
+                            rdfs:label "EnzymeCommissionIdentifier" .
+
+
+###  http://schema.oceanproteinportal.org/v2/FilterSize
+:FilterSize rdf:type owl:Class ;
+            rdfs:subClassOf <http://schema.org/PropertyValue> ,
+                            <http://www.w3.org/ns/ssn/systems/SystemCapability> ;
+            :describedinConceptualModelOf <http://www.w3.org/ns/sosa/Sample> ;
+            rdfs:comment "The filter size in micons of the sampler." ;
+            rdfs:label "FilterSize" .
+
+
+###  http://schema.oceanproteinportal.org/v2/IdentificationScore
+:IdentificationScore rdf:type owl:Class ;
+                     rdfs:subClassOf <http://schema.org/PropertyValue> ,
+                                     <http://www.w3.org/ns/ssn/Property> ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :scoreValue ;
+                                       owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                     ] ;
+                     :describedinConceptualModelOf :AminoAcidIdentification ;
+                     rdfs:comment "The numerical score used to identified an Amino Acid using some scoring method." ;
+                     rdfs:label "IdentificationScore" .
+
+
+###  http://schema.oceanproteinportal.org/v2/Identifier
+:Identifier rdf:type owl:Class ;
+            rdfs:subClassOf [ rdf:type owl:Restriction ;
+                              owl:onProperty :identifierScheme ;
+                              owl:allValuesFrom :IdentifierScheme
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :identifierScheme ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onClass :IdentifierScheme
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :identifierValue ;
+                              owl:allValuesFrom xsd:token
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :identifierValue ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onDataRange xsd:token
+                            ] ;
+            :conceptualModel "https://lucid.app/publicSegments/view/18f2a07c-1ddc-40cc-afeb-eff1fee6d7f3/image.png"^^xsd:anyURI ;
+            rdfs:comment "A unique identifier attributeds to some thing within some realm or domain or scheme."^^xsd:anyURI ;
+            rdfs:label "Identifier" .
+
+
+###  http://schema.oceanproteinportal.org/v2/IdentifierMetadata
+:IdentifierMetadata rdf:type owl:Class ;
+                    rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                      owl:onProperty :annotatesIdentifier ;
+                                      owl:allValuesFrom :Identifier
+                                    ] ;
+                    :describedinConceptualModelOf :Identifier ;
+                    rdfs:comment "Information about an identifier that helps comprehend, reuse, or contextualize the Thing being identified. This could be a non-unique label or description." ;
+                    rdfs:label "IdentifierMetadata" .
+
+
+###  http://schema.oceanproteinportal.org/v2/IdentifierScheme
+:IdentifierScheme rdf:type owl:Class ;
+                  :describedinConceptualModelOf :Identifier ;
+                  rdfs:comment "A realm or domain in which a specific Identifier has a unqiue value from all the other possible Identifiers within that domain." ;
+                  rdfs:label "IdentifierScheme" .
+
+
+###  http://schema.oceanproteinportal.org/v2/KeggIdentifier
+:KeggIdentifier rdf:type owl:Class ;
+                rdfs:subClassOf :ProteinIdentifier ;
+                rdfs:label "KeggIdentifier" .
+
+
+###  http://schema.oceanproteinportal.org/v2/KeggPathway
+:KeggPathway rdf:type owl:Class ;
+             rdfs:subClassOf :IdentifierMetadata ;
+             rdfs:label "KeggPathway" .
+
+
+###  http://schema.oceanproteinportal.org/v2/NCBITaxonIdentifier
+:NCBITaxonIdentifier rdf:type owl:Class ;
+                     rdfs:subClassOf :ProteinIdentifier ;
+                     rdfs:label "NCBITaxonIdentifier" .
+
+
+###  http://schema.oceanproteinportal.org/v2/NCBITaxonName
+:NCBITaxonName rdf:type owl:Class ;
+               rdfs:subClassOf :IdentifierMetadata ;
+               rdfs:label "NCBITaxonName" .
+
+
+###  http://schema.oceanproteinportal.org/v2/PFamsIdentifier
+:PFamsIdentifier rdf:type owl:Class ;
+                 rdfs:subClassOf :ProteinIdentifier ;
+                 rdfs:label "PFamsIdentifier" .
+
+
+###  http://schema.oceanproteinportal.org/v2/Peptide
+:Peptide rdf:type owl:Class ;
+         rdfs:subClassOf :AminoAcidChain ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :peptideSequence ;
+                           owl:allValuesFrom xsd:token
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :peptideSequence ;
+                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onDataRange xsd:token
+                         ] ;
+         rdfs:comment "A peptide identified in a sample." ;
+         rdfs:label "Peptide" .
+
+
+###  http://schema.oceanproteinportal.org/v2/PeptideIdentification
+:PeptideIdentification rdf:type owl:Class ;
+                       rdfs:subClassOf :AminoAcidIdentification ;
+                       rdfs:comment "An information object where a dataset can store observations about an identified peptide in a sample. These observations may vary across many datasets claiming to identify the same peptide, so this entity serves as a way to store these observations separate from other peptide identifiation observations while still allowing these PeptideIdentification objeect to describe the same, singular Peptide." ;
+                       rdfs:label "PeptideIdentification" .
+
+
+###  http://schema.oceanproteinportal.org/v2/PeptideSampleObservation
+:PeptideSampleObservation rdf:type owl:Class ;
+                          rdfs:subClassOf :AminoAcidSampleObservation ;
+                          rdfs:comment "Some property of a peptide identification that was observed in a single sample." ,
+                                       "The sum of all spectra count." ;
+                          rdfs:label "PeptideSampleObservation" .
+
+
+###  http://schema.oceanproteinportal.org/v2/PeptideSpectralCountSum
+:PeptideSpectralCountSum rdf:type owl:Class ;
+                         rdfs:subClassOf :PeptideSampleObservation .
+
+
+###  http://schema.oceanproteinportal.org/v2/Protein
+:Protein rdf:type owl:Class ;
+         rdfs:subClassOf :AminoAcidChain ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :proteinSequence ;
+                           owl:allValuesFrom xsd:token
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :proteinSequence ;
+                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onDataRange xsd:token
+                         ] ;
+         rdfs:comment "The actual Protein being identified in datasets. This real-world Protein is identified by a single amino acid sequence regardless of variations across  ProteinIdentifications that describe this same, single Protein" ;
+         rdfs:label "Protein" .
+
+
+###  http://schema.oceanproteinportal.org/v2/ProteinIdentification
+:ProteinIdentification rdf:type owl:Class ;
+                       rdfs:subClassOf :AminoAcidIdentification ;
+                       rdfs:comment "A protein identification made based on information of a peptide identification. This entity serves as an information object used within a Dataset to identify and describe an actual Protein. Where a Protein has a single amino acid sequence that will not vary across datasets submitted to the OPP, th ereported protien names, molecular weights, etc may slightly vary across these datasets. ProteinIdentification exists so that individual datasets can report their findings and remain separate from other ProteinIdentification while still describing the exact same Protein with the same amino acid sequence." ;
+                       rdfs:label "ProteinIdentification" .
+
+
+###  http://schema.oceanproteinportal.org/v2/ProteinIdentifier
+:ProteinIdentifier rdf:type owl:Class ;
+                   rdfs:subClassOf :Identifier ;
+                   rdfs:label "ProteinIdentifier" .
+
+
+###  http://schema.oceanproteinportal.org/v2/ProteinIdentifierScheme
+:ProteinIdentifierScheme rdf:type owl:Class ;
+                         rdfs:subClassOf :IdentifierScheme ;
+                         rdfs:comment "A class of identifier schemes used to unqiuely identify proteins." ;
+                         rdfs:label "ProteinIdentifierScheme" .
+
+
+###  http://schema.oceanproteinportal.org/v2/ProteinSampleObservation
+:ProteinSampleObservation rdf:type owl:Class ;
+                          rdfs:subClassOf :AminoAcidSampleObservation ;
+                          rdfs:comment "Some property of a protein identification that was observed in a single sample." ;
+                          rdfs:label "ProteinSampleObservation" .
+
+
+###  http://schema.oceanproteinportal.org/v2/ProteinTotalSpectralCount
+:ProteinTotalSpectralCount rdf:type owl:Class ;
+                           rdfs:subClassOf :ProteinSampleObservation .
+
+
+###  http://schema.oceanproteinportal.org/v2/Role
+:Role rdf:type owl:Class ;
+      :describedinConceptualModelOf :AgentRole ;
+      rdfs:comment "A certain status, or position, played by some Agent that qualifies/contextualizes the actions performed by that Agent." ;
+      rdfs:label "Role" .
+
+
+###  http://schema.oceanproteinportal.org/v2/SampleIdentifier
+:SampleIdentifier rdf:type owl:Class ;
+                  rdfs:subClassOf :Identifier ;
+                  rdfs:comment "An identifier for a sample within a Dataset. The IdentifierScheme for this sample would be provides by the Dataset. See opp:definesIdentifierScheme" ;
+                  rdfs:label "SampleIdentifier" .
+
+
+###  http://schema.oceanproteinportal.org/v2/Station
+:Station rdf:type owl:Class ;
+         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                           owl:onProperty :stationName ;
+                           owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onDataRange xsd:string
+                         ] ;
+         :describedinConceptualModelOf <http://www.w3.org/ns/sosa/Sample> ;
+         rdfs:comment "A generally agreed upon location at which sampling occurred. This agreement enables the comparison of collected data over different reference frames such as time." ;
+         rdfs:label "Station" .
+
+
+###  http://schema.oceanproteinportal.org/v2/UniprotIdentifier
+:UniprotIdentifier rdf:type owl:Class ;
+                   rdfs:subClassOf :ProteinIdentifier ;
+                   rdfs:label "UniprotIdentifier" .
+
+
+###  http://schema.org/Dataset
+<http://schema.org/Dataset> rdf:type owl:Class ;
+                            :conceptualModel "https://lucid.app/publicSegments/view/fafb6c1f-d32c-414f-abe7-650151c2718c/image.png"^^xsd:anyURI .
+
+
+###  http://schema.org/Organization
+<http://schema.org/Organization> rdf:type owl:Class ;
+                                 rdfs:subClassOf :Agent .
+
+
+###  http://schema.org/Person
+<http://schema.org/Person> rdf:type owl:Class ;
+                           rdfs:subClassOf :Agent .
+
+
+###  http://schema.org/PropertyValue
+<http://schema.org/PropertyValue> rdf:type owl:Class ;
+                                  :describedinConceptualModelOf :AminoAcidIdentification ,
+                                                                :Identifier ,
+                                                                <http://schema.org/Dataset> ,
+                                                                <http://www.w3.org/ns/sosa/Sample> .
+
+
+###  http://www.w3.org/ns/sosa/Deployment
+<http://www.w3.org/ns/sosa/Deployment> rdf:type owl:Class ;
+                                       :describedinConceptualModelOf <http://www.w3.org/ns/sosa/Sample> .
+
+
+###  http://www.w3.org/ns/sosa/FeatureOfInterest
+<http://www.w3.org/ns/sosa/FeatureOfInterest> rdf:type owl:Class ;
+                                              :describedinConceptualModelOf <http://www.w3.org/ns/sosa/Sample> .
+
+
+###  http://www.w3.org/ns/sosa/Sample
+<http://www.w3.org/ns/sosa/Sample> rdf:type owl:Class ;
+                                   :conceptualModel "https://lucid.app/publicSegments/view/0eceb84c-1f66-4768-813b-ac23d5aadeb9/image.png"^^xsd:anyURI .
+
+
+###  http://www.w3.org/ns/sosa/Sampler
+<http://www.w3.org/ns/sosa/Sampler> rdf:type owl:Class ;
+                                    :describedinConceptualModelOf <http://www.w3.org/ns/sosa/Sample> .
+
+
+###  http://www.w3.org/ns/ssn/Property
+<http://www.w3.org/ns/ssn/Property> rdf:type owl:Class ;
+                                    :describedinConceptualModelOf :AminoAcidIdentification ,
+                                                                  :Identifier ,
+                                                                  <http://schema.org/Dataset> ,
+                                                                  <http://www.w3.org/ns/sosa/Sample> .
+
+
+###  http://www.w3.org/ns/ssn/systems/SystemCapability
+<http://www.w3.org/ns/ssn/systems/SystemCapability> rdf:type owl:Class ;
+                                                    rdfs:subClassOf <http://www.w3.org/ns/ssn/Property> ;
+                                                    :describedinConceptualModelOf <http://www.w3.org/ns/sosa/Sample> .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://schema.oceanproteinportal.org/v2/DatasetProfile_PeptideSpectralCountSum
+:DatasetProfile_PeptideSpectralCountSum rdf:type owl:NamedIndividual ,
+                                                 :DatasetProfile ;
+                                        :profileObservation :PeptideSpectralCountSum ;
+                                        rdfs:label "Dataset Profile: Peptide Spectral Count Sum" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DatasetProfile_ProteinTotalSpectralCount
+:DatasetProfile_ProteinTotalSpectralCount rdf:type owl:NamedIndividual ,
+                                                   :DatasetProfile ;
+                                          :profileObservation :ProteinTotalSpectralCount ;
+                                          rdfs:label "Dataset Profile: Protein Total Spectral Count" .
+
+
+###  http://schema.oceanproteinportal.org/v2/PeptideSpectralCountSum
+:PeptideSpectralCountSum rdf:type owl:NamedIndividual .
+
+
+###  http://schema.oceanproteinportal.org/v2/ProteinTotalSpectralCount
+:ProteinTotalSpectralCount rdf:type owl:NamedIndividual .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+:PeptideSpectralCountSum rdfs:comment "The total spectral count of some identified peptide from a single sample." ;
+                         rdfs:label "PeptideSpectralCountSum" ;
+                         rdfs:seeAlso <http://purl.obolibrary.org/obo/MS_1002015> .
+
+
+:ProteinTotalSpectralCount rdfs:comment "The total spectral count of some identified protein from a single sample." ;
+                           rdfs:label "ProteinTotalSpectralCount" ;
+                           rdfs:seeAlso <http://purl.obolibrary.org/obo/MS_1002016> .
+
+
+:profileObservation rdfs:comment "An observation that will be present in the results." ;
+                    rdfs:label "profileObservation" .
+
+
+###  Generated by the OWL API (version 5.1.14) https://github.com/owlcs/owlapi/
