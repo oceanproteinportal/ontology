@@ -1,0 +1,25 @@
+<h3 id="sections" class="list">Table of Contents</h3>
+<div>
+  <ul>
+    <li><a href="#overview">Ontology</a>
+     <ul>
+      <li><a href="#ns">Namespaces</a></li>
+      <li><a href="#classes">Classes</a></li>
+      <li><a href="#properties">Object Properties</a></li>
+      <li><a href="#dataproperties">Data Properties</a></li>
+      <li><a href="#annotationproperties">Annotation Properties</a></li>
+      <li><a href="#namedindividuals">Named Individuals</a></li>
+      <li><a href="#legend">Legend</a></li>
+     </ul>
+   </li>
+   <li><a href="#conceptual-model">Conceptual Model</a>
+    <ul>
+      <li><a href="#conceptual-model-aminoacid">Identification of Amino Acids</a></li>
+      <li><a href="#conceptual-model-sample">Sample</a></li>
+      <li><a href="#conceptual-model-dataset">Dataset</a></li>
+      <li><a href="#conceptual-model-identifier">Identifier</a></li>
+      <li><a href="#conceptual-model-agentrole">Agent Role</a></li>
+    </ul>
+   </li>
+  </ul>
+</div>
