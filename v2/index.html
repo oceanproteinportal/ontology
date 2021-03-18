@@ -6,47 +6,47 @@
 
 
 <!-- SCHEMA.ORG METADATA -->
-<script type="application/ld+json">{"@context":"http://schema.org","@type":"TechArticle","url":"http://schema.oceanproteinportal.org/v2/","image":"http://vowl.visualdataweb.org/webvowl/#iri=http://schema.oceanproteinportal.org/v2/","name":"Ocean Protein Portal Ver. 2", "headline":"Document describing the ontology http://schema.oceanproteinportal.org/v2/", "datePublished":"Fri Feb 26 16:14:34 EST 2021", "license":"https://spdx.org/licenses/CC0-1.0", "author":[{"@type":"Person","name":"Adam Shepherd","url":"https://orcid.org/0000-0003-4486-9448"},{"@type":"Person","name":"Jaclyn Saunders","url":"https://orcid.org/0000-0003-1023-6239"},{"@type":"Person","name":"Makoto Saito","url":"https://orcid.org/0000-0002-1667-9287"},{"@type":"Person","name":"Danie Kinkade","url":"https://orcid.org/0000-0002-1134-7347"}]}</script>
+<script type="application/ld+json">{"@context":"http://schema.org","@type":"TechArticle","url":"http://schema.oceanproteinportal.org/v2/","image":"http://vowl.visualdataweb.org/webvowl/#iri=http://schema.oceanproteinportal.org/v2/","name":"Ocean Protein Portal Ver. 2", "headline":"Document describing the ontology http://schema.oceanproteinportal.org/v2/", "datePublished":"Thu Mar 18 15:54:46 EDT 2021", "license":"https://spdx.org/licenses/CC0-1.0", "author":[{"@type":"Person","name":"Adam Shepherd","url":"https://orcid.org/0000-0003-4486-9448"},{"@type":"Person","name":"Jaclyn Saunders","url":"https://orcid.org/0000-0003-1023-6239"},{"@type":"Person","name":"Makoto Saito","url":"https://orcid.org/0000-0002-1667-9287"},{"@type":"Person","name":"Danie Kinkade","url":"https://orcid.org/0000-0002-1134-7347"}]}</script>
 
-<script src="resources/jquery.js"></script> 
-<script src="resources/marked.min.js"></script> 
-    <script> 
+<script src="resources/jquery.js"></script>
+<script src="resources/marked.min.js"></script>
+    <script>
 function loadHash() {
   jQuery(".markdown").each(function(el){jQuery(this).after(marked(jQuery(this).text())).remove()});
-	var hash = location.hash;
-	if($(hash).offset()!=null){
-	  $('html, body').animate({scrollTop: $(hash).offset().top}, 0);
+   var hash = location.hash;
+   if($(hash).offset()!=null){
+     $('html, body').animate({scrollTop: $(hash).offset().top}, 0);
 }
-	loadTOC();
+   loadTOC();
 }
 function loadTOC(){
-	//process toc dynamically
-	  var t='<h2>Table of contents</h2><ul>';i = 1;j=0;
-	  jQuery(".list").each(function(){
-		if(jQuery(this).is('h2')){
-			if(j>0){
-				t+='</ul>';
-				j=0;
-			}
-			t+= '<li>'+i+'. <a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
-			i++;
-		}
-		if(jQuery(this).is('h3')){
-			if(j==0){
-				t+='<ul>';
-			}
-			j++;
-			t+= '<li>'+(i-1)+'.'+j+'. '+'<a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
-		}
-	  });
-	  t+='</ul>';
-	  $("#toc").html(t); 
+   //process toc dynamically
+     var t='<h2>Table of contents</h2><ul>';i = 1;j=0;
+     jQuery(".list").each(function(){
+      if(jQuery(this).is('h2')){
+         if(j>0){
+            t+='</ul>';
+            j=0;
+         }
+         t+= '<li>'+i+'. <a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+         i++;
+      }
+      if(jQuery(this).is('h3')){
+         if(j==0){
+            t+='<ul>';
+         }
+         j++;
+         t+= '<li>'+(i-1)+'.'+j+'. '+'<a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+      }
+     });
+     t+='</ul>';
+     $("#toc").html(t);
 }
  $.fn.ignore = function(sel){
         return this.clone().find(sel||">*").remove().end();
- }; 
-   </script> 
-  </head> 
+ };
+   </script>
+  </head>
 
 <body>
 <div class="container">
@@ -77,7 +77,7 @@ function loadTOC(){
 <dd>Shepherd, Adam and Saunders, Jaclyn (2021). Ocean Protein Portal Ontology. (Version 2). Retrieved from: http://schema.oceanproteinportal.org/v2/ontology.ttl [Date Accessed]</dd>
 </dl>
 
-<hr/>
+<a href="provenance/provenance-en.html" target="_blank">Provenance of this page</a><hr/>
 </div>
 <div class="status">
 <div>
@@ -86,7 +86,7 @@ function loadTOC(){
 </div>     <div id="abstract"><h2>Abstract</h2><span class="markdown">
 This is a place holder text for the abstract. The abstract should contain a couple of sentences summarizing the ontology and its purpose.</span>
 </div>
-<div id="toc"></div> 
+<div id="toc"></div>
 
 <!--INTRODUCTION SECTION-->
     <div id="introduction"><h2 id="intro" class="list">Introduction <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
@@ -124,6 +124,7 @@ This is a place holder text for the introduction. The introduction should briefl
 <caption> <a href="#ns"> Table 1</a>: Namespaces used in the document </caption>
 <tbody>
 <tr><td><b>opp</b></td><td>&lt;http://schema.oceanproteinportal.org/v2/&gt;</td></tr>
+<tr><td><b>registry</b></td><td>&lt;https://registry.identifiers.org/registry&gt;</td></tr>
 <tr><td><b>owl</b></td><td>&lt;http://www.w3.org/2002/07/owl&gt;</td></tr>
 <tr><td><b>rdf</b></td><td>&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns&gt;</td></tr>
 <tr><td><b>systems</b></td><td>&lt;http://www.w3.org/ns/ssn/systems&gt;</td></tr>
@@ -131,6 +132,7 @@ This is a place holder text for the introduction. The introduction should briefl
 <tr><td><b>schema-org</b></td><td>&lt;http://schema.org&gt;</td></tr>
 <tr><td><b>rdfs</b></td><td>&lt;http://www.w3.org/2000/01/rdf-schema&gt;</td></tr>
 <tr><td><b>obo</b></td><td>&lt;http://purl.obolibrary.org/obo&gt;</td></tr>
+<tr><td><b>entity</b></td><td>&lt;http://www.wikidata.org/entity&gt;</td></tr>
 <tr><td><b>default namespace</b></td><td>&lt;http://schema.oceanproteinportal.org/v2&gt;</td></tr>
 <tr><td><b>sosa</b></td><td>&lt;http://www.w3.org/ns/sosa&gt;</td></tr>
 <tr><td><b>ssn</b></td><td>&lt;http://www.w3.org/ns/ssn&gt;</td></tr>
@@ -139,7 +141,7 @@ This is a place holder text for the introduction. The introduction should briefl
 </div>
 </div>
 </div>
-  
+
 
 <!--OVERVIEW SECTION-->
     <div id="overview"><h2 id="overv" class="list">Ocean Protein Portal Ver. 2: Overview <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
@@ -149,6 +151,10 @@ This ontology has the following classes and properties.</span>
 <ul class="hlist">
    <li>
       <a href="#Agent" title="http://schema.oceanproteinportal.org/v2/Agent">Agent</a>
+   </li>
+   <li>
+      <a href="#AgentIdentifier"
+         title="http://schema.oceanproteinportal.org/v2/AgentIdentifier">AgentIdentifier</a>
    </li>
    <li>
       <a href="#AgentRole"
@@ -245,9 +251,17 @@ This ontology has the following classes and properties.</span>
          title="http://schema.oceanproteinportal.org/v2/NCBITaxonName">NCBITaxonName</a>
    </li>
    <li>
+      <a href="#OPPGeneratedSampleIdentifier"
+         title="http://schema.oceanproteinportal.org/v2/OPPGeneratedSampleIdentifier">OPPGeneratedSampleIdentifier</a>
+   </li>
+   <li>
       <a href="#http://schema.org/Organization" title="http://schema.org/Organization">
          <span>organization</span>
       </a>
+   </li>
+   <li>
+      <a href="#OrganizationIdentifier"
+         title="http://schema.oceanproteinportal.org/v2/OrganizationIdentifier">OrganizationIdentifier</a>
    </li>
    <li>
       <a href="#Peptide" title="http://schema.oceanproteinportal.org/v2/Peptide">Peptide</a>
@@ -270,6 +284,14 @@ This ontology has the following classes and properties.</span>
       <a href="#http://schema.org/Person" title="http://schema.org/Person">
          <span>person</span>
       </a>
+   </li>
+   <li>
+      <a href="#PersonIdentifier"
+         title="http://schema.oceanproteinportal.org/v2/PersonIdentifier">PersonIdentifier</a>
+   </li>
+   <li>
+      <a href="#PFamsDescription"
+         title="http://schema.oceanproteinportal.org/v2/PFamsDescription">PFamsDescription</a>
    </li>
    <li>
       <a href="#PFamsIdentifier"
@@ -339,6 +361,10 @@ This ontology has the following classes and properties.</span>
    <li>
       <a href="#UniprotIdentifier"
          title="http://schema.oceanproteinportal.org/v2/UniprotIdentifier">UniprotIdentifier</a>
+   </li>
+   <li>
+      <a href="#UserDefinedSampleIdentifier"
+         title="http://schema.oceanproteinportal.org/v2/UserDefinedSampleIdentifier">UserDefinedSampleIdentifier</a>
    </li>
 </ul><h4>Object Properties</h4><ul class="hlist">
    <li>
@@ -483,6 +509,14 @@ This ontology has the following classes and properties.</span>
       <a href="#storesResultsForSample"
          title="http://schema.oceanproteinportal.org/v2/storesResultsForSample">storesResultsForSample</a>
    </li>
+   <li>
+      <a href="#sugggestedByPeptideIdentification"
+         title="http://schema.oceanproteinportal.org/v2/sugggestedByPeptideIdentification">suggestedByPeptideIdentification</a>
+   </li>
+   <li>
+      <a href="#suggestsProteinIdentification"
+         title="http://schema.oceanproteinportal.org/v2/suggestsProteinIdentification">suggestsProteinIdentification</a>
+   </li>
 </ul><h4>Data Properties</h4><ul class="hlist">
    <li>
       <a href="#absoluteUnits"
@@ -577,6 +611,10 @@ This ontology has the following classes and properties.</span>
          title="http://schema.oceanproteinportal.org/v2/scoreValue">scoreValue</a>
    </li>
    <li>
+      <a href="#selectedAminoAcidIdentification"
+         title="http://schema.oceanproteinportal.org/v2/selectedAminoAcidIdentification">selectedAminoAcidIdentification</a>
+   </li>
+   <li>
       <a href="#spectralCountSum"
          title="http://schema.oceanproteinportal.org/v2/spectralCountSum">spectralCountSum</a>
    </li>
@@ -607,6 +645,11 @@ This ontology has the following classes and properties.</span>
          <span>profileObservation</span>
       </a>
    </li>
+   <li>
+      <a href="#http://www.w3.org/2002/07/owl#sameAs" title="http://www.w3.org/2002/07/owl#sameAs">
+         <span>same as</span>
+      </a>
+   </li>
 </ul><h4>Named Individuals</h4><ul class="hlist">
    <li>
       <a href="#DatasetProfile_PeptideSpectralCountSum"
@@ -616,9 +659,51 @@ This ontology has the following classes and properties.</span>
       <a href="#DatasetProfile_ProteinTotalSpectralCount"
          title="http://schema.oceanproteinportal.org/v2/DatasetProfile_ProteinTotalSpectralCount">Dataset Profile: Protein Total Spectral Count</a>
    </li>
-</ul><iframe align="center" width="100%" height ="500px" src="webvowl/index.html"></iframe> 
+   <li>
+      <a href="#IdentifierScheme_Uniprot"
+         title="http://schema.oceanproteinportal.org/v2/IdentifierScheme_Uniprot">
+         <span>identifier scheme uniprot</span>
+      </a>
+   </li>
+   <li>
+      <a href="#IdentifierScheme_EnzymeCommission"
+         title="http://schema.oceanproteinportal.org/v2/IdentifierScheme_EnzymeCommission">Identifier Scheme: EnzymeCommission</a>
+   </li>
+   <li>
+      <a href="#IdentifierScheme_Kegg"
+         title="http://schema.oceanproteinportal.org/v2/IdentifierScheme_Kegg">Identifier Scheme: Kegg</a>
+   </li>
+   <li>
+      <a href="#IdentifierScheme_NCBIProtein"
+         title="http://schema.oceanproteinportal.org/v2/IdentifierScheme_NCBIProtein">Identifier Scheme: NCBI Protein</a>
+   </li>
+   <li>
+      <a href="#IdentifierScheme_ORCID"
+         title="http://schema.oceanproteinportal.org/v2/IdentifierScheme_ORCID">Identifier Scheme: ORCID</a>
+   </li>
+   <li>
+      <a href="#IdentifierScheme_PFam"
+         title="http://schema.oceanproteinportal.org/v2/IdentifierScheme_PFam">Identifier Scheme: PFam</a>
+   </li>
+   <li>
+      <a href="#Role_Author"
+         title="http://schema.oceanproteinportal.org/v2/Role_Author">Role: Author</a>
+   </li>
+   <li>
+      <a href="#Role_Contact"
+         title="http://schema.oceanproteinportal.org/v2/Role_Contact">Role: Contact</a>
+   </li>
+   <li>
+      <a href="#Role_Contributor"
+         title="http://schema.oceanproteinportal.org/v2/Role_Contributor">Role: Contributor</a>
+   </li>
+   <li>
+      <a href="#Role_Publisher"
+         title="http://schema.oceanproteinportal.org/v2/Role_Publisher">Role: Publisher</a>
+   </li>
+</ul><iframe align="center" width="100%" height ="500px" src="webvowl/index.html"></iframe>
 </div>
-  
+
 
 <!--DESCRIPTION SECTION-->
     <div id="description"><h2 id="desc" class="list">Ocean Protein Portal Ver. 2: Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
@@ -626,7 +711,7 @@ This ontology has the following classes and properties.</span>
 This is a placeholder text for the description of your ontology. The description should include an explanation and a diagram explaining how the classes are related, examples of usage, etc.</span>
 
 </div>
-   
+
 
 <!--CROSSREF SECTION-->
    <div id="crossref"><h2 id="crossreference" class="list">Cross reference for Ocean Protein Portal Ver. 2 classes, properties and dataproperties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
@@ -636,6 +721,10 @@ This section provides details for each class and property defined by Ocean Prote
    <ul class="hlist">
       <li>
          <a href="#Agent" title="http://schema.oceanproteinportal.org/v2/Agent">Agent</a>
+      </li>
+      <li>
+         <a href="#AgentIdentifier"
+            title="http://schema.oceanproteinportal.org/v2/AgentIdentifier">AgentIdentifier</a>
       </li>
       <li>
          <a href="#AgentRole"
@@ -732,9 +821,17 @@ This section provides details for each class and property defined by Ocean Prote
             title="http://schema.oceanproteinportal.org/v2/NCBITaxonName">NCBITaxonName</a>
       </li>
       <li>
+         <a href="#OPPGeneratedSampleIdentifier"
+            title="http://schema.oceanproteinportal.org/v2/OPPGeneratedSampleIdentifier">OPPGeneratedSampleIdentifier</a>
+      </li>
+      <li>
          <a href="#http://schema.org/Organization" title="http://schema.org/Organization">
             <span>organization</span>
          </a>
+      </li>
+      <li>
+         <a href="#OrganizationIdentifier"
+            title="http://schema.oceanproteinportal.org/v2/OrganizationIdentifier">OrganizationIdentifier</a>
       </li>
       <li>
          <a href="#Peptide" title="http://schema.oceanproteinportal.org/v2/Peptide">Peptide</a>
@@ -757,6 +854,14 @@ This section provides details for each class and property defined by Ocean Prote
          <a href="#http://schema.org/Person" title="http://schema.org/Person">
             <span>person</span>
          </a>
+      </li>
+      <li>
+         <a href="#PersonIdentifier"
+            title="http://schema.oceanproteinportal.org/v2/PersonIdentifier">PersonIdentifier</a>
+      </li>
+      <li>
+         <a href="#PFamsDescription"
+            title="http://schema.oceanproteinportal.org/v2/PFamsDescription">PFamsDescription</a>
       </li>
       <li>
          <a href="#PFamsIdentifier"
@@ -827,6 +932,10 @@ This section provides details for each class and property defined by Ocean Prote
          <a href="#UniprotIdentifier"
             title="http://schema.oceanproteinportal.org/v2/UniprotIdentifier">UniprotIdentifier</a>
       </li>
+      <li>
+         <a href="#UserDefinedSampleIdentifier"
+            title="http://schema.oceanproteinportal.org/v2/UserDefinedSampleIdentifier">UserDefinedSampleIdentifier</a>
+      </li>
    </ul>
    <div class="entity" id="Agent">
       <h3>Agent<sup class="type-c" title="class">c</sup>
@@ -864,6 +973,33 @@ This section provides details for each class and property defined by Ocean Prote
             <a href="#AgentRole"
                title="http://schema.oceanproteinportal.org/v2/AgentRole">AgentRole</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Role" title="http://schema.oceanproteinportal.org/v2/Role">Role</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="AgentIdentifier">
+      <h3>AgentIdentifier<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://schema.oceanproteinportal.org/v2/AgentIdentifier</p>
+      <div class="comment">
+         <span class="markdown">An identifier for an Agent</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Identifier"
+               title="http://schema.oceanproteinportal.org/v2/Identifier">Identifier</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#OrganizationIdentifier"
+               title="http://schema.oceanproteinportal.org/v2/OrganizationIdentifier">OrganizationIdentifier</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#PersonIdentifier"
+               title="http://schema.oceanproteinportal.org/v2/PersonIdentifier">PersonIdentifier</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -987,7 +1123,9 @@ This section provides details for each class and property defined by Ocean Prote
                title="http://schema.oceanproteinportal.org/v2/molecularWeight">molecularWeight</a>
             <sup class="type-dp" title="data property">dp</sup>, <a href="#sampleAminoAcidProperty"
                title="http://schema.oceanproteinportal.org/v2/sampleAminoAcidProperty">sampleAminoAcidProperty</a>
-            <sup class="type-op" title="object property">op</sup>
+            <sup class="type-op" title="object property">op</sup>, <a href="#selectedAminoAcidIdentification"
+               title="http://schema.oceanproteinportal.org/v2/selectedAminoAcidIdentification">selectedAminoAcidIdentification</a>
+            <sup class="type-dp" title="data property">dp</sup>
          </dd>
          <dt>is in range of</dt>
          <dd>
@@ -1335,7 +1473,9 @@ This section provides details for each class and property defined by Ocean Prote
          <dd/>
          <dt>has sub-classes</dt>
          <dd>
-            <a href="#ProteinIdentifier"
+            <a href="#AgentIdentifier"
+               title="http://schema.oceanproteinportal.org/v2/AgentIdentifier">AgentIdentifier</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#ProteinIdentifier"
                title="http://schema.oceanproteinportal.org/v2/ProteinIdentifier">ProteinIdentifier</a>
             <sup class="type-c" title="class">c</sup>, <a href="#SampleIdentifier"
                title="http://schema.oceanproteinportal.org/v2/SampleIdentifier">SampleIdentifier</a>
@@ -1394,6 +1534,8 @@ This section provides details for each class and property defined by Ocean Prote
                title="http://schema.oceanproteinportal.org/v2/KeggPathway">KeggPathway</a>
             <sup class="type-c" title="class">c</sup>, <a href="#NCBITaxonName"
                title="http://schema.oceanproteinportal.org/v2/NCBITaxonName">NCBITaxonName</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#PFamsDescription"
+               title="http://schema.oceanproteinportal.org/v2/PFamsDescription">PFamsDescription</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>is in domain of</dt>
@@ -1452,6 +1594,12 @@ This section provides details for each class and property defined by Ocean Prote
             <sup class="type-op" title="object property">op</sup>, <a href="#identifierScheme"
                title="http://schema.oceanproteinportal.org/v2/identifierScheme">identifierScheme</a>
             <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>has members</dt>
+         <dd>
+            <a href="#IdentifierScheme_ORCID"
+               title="http://schema.oceanproteinportal.org/v2/IdentifierScheme_ORCID">Identifier Scheme: ORCID</a>
+            <sup class="type-ni" title="named individual">ni</sup>
          </dd>
          <dt>is disjoint with</dt>
          <dd>
@@ -1551,6 +1699,31 @@ This section provides details for each class and property defined by Ocean Prote
          </dd>
       </dl>
    </div>
+   <div class="entity" id="OPPGeneratedSampleIdentifier">
+      <h3>OPPGeneratedSampleIdentifier<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://schema.oceanproteinportal.org/v2/OPPGeneratedSampleIdentifier</p>
+      <div class="comment">
+         <span class="markdown">A sample identifier that was generated by the OPP</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#SampleIdentifier"
+               title="http://schema.oceanproteinportal.org/v2/SampleIdentifier">SampleIdentifier</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is disjoint with</dt>
+         <dd>
+            <a href="#UserDefinedSampleIdentifier"
+               title="http://schema.oceanproteinportal.org/v2/UserDefinedSampleIdentifier">UserDefinedSampleIdentifier</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
    <div class="entity" id="http://schema.org/Organization">
       <h3>organization<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
@@ -1569,6 +1742,25 @@ This section provides details for each class and property defined by Ocean Prote
             <a href="#performedAtOrganization"
                title="http://schema.oceanproteinportal.org/v2/performedAtOrganization">performedAtOrganization</a>
             <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="OrganizationIdentifier">
+      <h3>OrganizationIdentifier<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://schema.oceanproteinportal.org/v2/OrganizationIdentifier</p>
+      <div class="comment">
+         <span class="markdown">An identifier for an Organization</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#AgentIdentifier"
+               title="http://schema.oceanproteinportal.org/v2/AgentIdentifier">AgentIdentifier</a>
+            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -1644,6 +1836,8 @@ This section provides details for each class and property defined by Ocean Prote
          <dd>
             <a href="#observedPeptide"
                title="http://schema.oceanproteinportal.org/v2/observedPeptide">observedPeptide</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#suggestsProteinIdentification"
+               title="http://schema.oceanproteinportal.org/v2/suggestsProteinIdentification">suggestsProteinIdentification</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
@@ -1718,6 +1912,44 @@ This section provides details for each class and property defined by Ocean Prote
          <dt>has super-classes</dt>
          <dd>
             <a href="#Agent" title="http://schema.oceanproteinportal.org/v2/Agent">Agent</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="PersonIdentifier">
+      <h3>PersonIdentifier<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://schema.oceanproteinportal.org/v2/PersonIdentifier</p>
+      <div class="comment">
+         <span class="markdown">An identifier for a Person</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#AgentIdentifier"
+               title="http://schema.oceanproteinportal.org/v2/AgentIdentifier">AgentIdentifier</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="PFamsDescription">
+      <h3>PFamsDescription<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://schema.oceanproteinportal.org/v2/PFamsDescription</p>
+      <div class="comment">
+         <span class="markdown">The PFams description for this Protein</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#IdentifierMetadata"
+               title="http://schema.oceanproteinportal.org/v2/IdentifierMetadata">IdentifierMetadata</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1846,6 +2078,8 @@ This section provides details for each class and property defined by Ocean Prote
                title="http://schema.oceanproteinportal.org/v2/proteinName">proteinName</a>
             <sup class="type-dp" title="data property">dp</sup>, <a href="#sampleProteinProperty"
                title="http://schema.oceanproteinportal.org/v2/sampleProteinProperty">sampleProteinProperty</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#suggestsProteinIdentification"
+               title="http://schema.oceanproteinportal.org/v2/suggestsProteinIdentification">suggestsProteinIdentification</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
@@ -1896,6 +2130,20 @@ This section provides details for each class and property defined by Ocean Prote
             <a href="#IdentifierScheme"
                title="http://schema.oceanproteinportal.org/v2/IdentifierScheme">IdentifierScheme</a>
             <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has members</dt>
+         <dd>
+            <a href="#IdentifierScheme_EnzymeCommission"
+               title="http://schema.oceanproteinportal.org/v2/IdentifierScheme_EnzymeCommission">Identifier Scheme: EnzymeCommission</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#IdentifierScheme_Kegg"
+               title="http://schema.oceanproteinportal.org/v2/IdentifierScheme_Kegg">Identifier Scheme: Kegg</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#IdentifierScheme_NCBIProtein"
+               title="http://schema.oceanproteinportal.org/v2/IdentifierScheme_NCBIProtein">Identifier Scheme: NCBI Protein</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#IdentifierScheme_PFam"
+               title="http://schema.oceanproteinportal.org/v2/IdentifierScheme_PFam">Identifier Scheme: PFam</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#IdentifierScheme_Uniprot"
+               title="http://schema.oceanproteinportal.org/v2/IdentifierScheme_Uniprot">identifier scheme uniprot</a>
+            <sup class="type-ni" title="named individual">ni</sup>
          </dd>
       </dl>
    </div>
@@ -1971,6 +2219,18 @@ This section provides details for each class and property defined by Ocean Prote
                title="http://schema.oceanproteinportal.org/v2/providesRole">providesRole</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
+         <dt>has members</dt>
+         <dd>
+            <a href="#Role_Author"
+               title="http://schema.oceanproteinportal.org/v2/Role_Author">Role: Author</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#Role_Contact"
+               title="http://schema.oceanproteinportal.org/v2/Role_Contact">Role: Contact</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#Role_Contributor"
+               title="http://schema.oceanproteinportal.org/v2/Role_Contributor">Role: Contributor</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#Role_Publisher"
+               title="http://schema.oceanproteinportal.org/v2/Role_Publisher">Role: Publisher</a>
+            <sup class="type-ni" title="named individual">ni</sup>
+         </dd>
          <dt>is disjoint with</dt>
          <dd>
             <a href="#Agent" title="http://schema.oceanproteinportal.org/v2/Agent">Agent</a>
@@ -2019,6 +2279,14 @@ This section provides details for each class and property defined by Ocean Prote
          <dd>
             <a href="#Identifier"
                title="http://schema.oceanproteinportal.org/v2/Identifier">Identifier</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#OPPGeneratedSampleIdentifier"
+               title="http://schema.oceanproteinportal.org/v2/OPPGeneratedSampleIdentifier">OPPGeneratedSampleIdentifier</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#UserDefinedSampleIdentifier"
+               title="http://schema.oceanproteinportal.org/v2/UserDefinedSampleIdentifier">UserDefinedSampleIdentifier</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -2104,6 +2372,31 @@ This section provides details for each class and property defined by Ocean Prote
          <dd>
             <a href="#ProteinIdentifier"
                title="http://schema.oceanproteinportal.org/v2/ProteinIdentifier">ProteinIdentifier</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="UserDefinedSampleIdentifier">
+      <h3>UserDefinedSampleIdentifier<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://schema.oceanproteinportal.org/v2/UserDefinedSampleIdentifier</p>
+      <div class="comment">
+         <span class="markdown">A sample identifier specified and defined by the dataset's authors.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#SampleIdentifier"
+               title="http://schema.oceanproteinportal.org/v2/SampleIdentifier">SampleIdentifier</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is disjoint with</dt>
+         <dd>
+            <a href="#OPPGeneratedSampleIdentifier"
+               title="http://schema.oceanproteinportal.org/v2/OPPGeneratedSampleIdentifier">OPPGeneratedSampleIdentifier</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -2252,6 +2545,14 @@ This section provides details for each class and property defined by Ocean Prote
       <li>
          <a href="#storesResultsForSample"
             title="http://schema.oceanproteinportal.org/v2/storesResultsForSample">storesResultsForSample</a>
+      </li>
+      <li>
+         <a href="#sugggestedByPeptideIdentification"
+            title="http://schema.oceanproteinportal.org/v2/sugggestedByPeptideIdentification">suggestedByPeptideIdentification</a>
+      </li>
+      <li>
+         <a href="#suggestsProteinIdentification"
+            title="http://schema.oceanproteinportal.org/v2/suggestsProteinIdentification">suggestsProteinIdentification</a>
       </li>
    </ul>
    <div class="entity" id="aboutIdentifier">
@@ -3386,6 +3687,52 @@ This section provides details for each class and property defined by Ocean Prote
          </dl>
       </div>
    </div>
+   <div class="entity" id="sugggestedByPeptideIdentification">
+      <h3>suggestedByPeptideIdentification<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://schema.oceanproteinportal.org/v2/sugggestedByPeptideIdentification</p>
+      <div class="comment">
+         <span class="markdown">A ProteinIdentification was made based on this PeptideIdentification. The peptide suggests that the identified Protein may be contained in the Sample.</span>
+      </div>
+   </div>
+   <div class="entity" id="suggestsProteinIdentification">
+      <h3>suggestsProteinIdentification<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://schema.oceanproteinportal.org/v2/suggestsProteinIdentification</p>
+      <div class="comment">
+         <span class="markdown">A peptide identification suggests this identified protein as possibly being contained within the related Sample.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#ProteinIdentification"
+                  title="http://schema.oceanproteinportal.org/v2/ProteinIdentification">ProteinIdentification</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#PeptideIdentification"
+                  title="http://schema.oceanproteinportal.org/v2/PeptideIdentification">PeptideIdentification</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#suggestsProteinIdentification"
+                  title="http://schema.oceanproteinportal.org/v2/suggestsProteinIdentification">suggestsProteinIdentification</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#suggestsProteinIdentification"
+                  title="http://schema.oceanproteinportal.org/v2/suggestsProteinIdentification">suggestsProteinIdentification</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
 </div><div id="dataproperties">
    <h3 id="dataproperties-headline" class="list">Data Properties</h3>
    <ul class="hlist">
@@ -3480,6 +3827,10 @@ This section provides details for each class and property defined by Ocean Prote
       <li>
          <a href="#scoreValue"
             title="http://schema.oceanproteinportal.org/v2/scoreValue">scoreValue</a>
+      </li>
+      <li>
+         <a href="#selectedAminoAcidIdentification"
+            title="http://schema.oceanproteinportal.org/v2/selectedAminoAcidIdentification">selectedAminoAcidIdentification</a>
       </li>
       <li>
          <a href="#spectralCountSum"
@@ -4134,6 +4485,31 @@ This section provides details for each class and property defined by Ocean Prote
          </dl>
       </div>
    </div>
+   <div class="entity" id="selectedAminoAcidIdentification">
+      <h3>selectedAminoAcidIdentification<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://schema.oceanproteinportal.org/v2/selectedAminoAcidIdentification</p>
+      <div class="comment">
+         <span class="markdown">Has the identification been selected or chosen by the dataset's interpreter? The interpreter in most cases is typically its author</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#AminoAcidIdentification"
+                  title="http://schema.oceanproteinportal.org/v2/AminoAcidIdentification">AminoAcidIdentification</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
    <div class="entity" id="spectralCountSum">
       <h3>spectralCountSum<sup class="type-dp" title="data property">dp</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
@@ -4255,6 +4631,11 @@ This section provides details for each class and property defined by Ocean Prote
             <span>profileObservation</span>
          </a>
       </li>
+      <li>
+         <a href="#http://www.w3.org/2002/07/owl#sameAs" title="http://www.w3.org/2002/07/owl#sameAs">
+            <span>same as</span>
+         </a>
+      </li>
    </ul>
    <div class="entity" id="conceptualModel">
       <h3>conceptualModel<sup class="type-ap" title="annotation property">ap</sup>
@@ -4326,6 +4707,14 @@ This section provides details for each class and property defined by Ocean Prote
          </dl>
       </div>
    </div>
+   <div class="entity" id="http://www.w3.org/2002/07/owl#sameAs">
+      <h3>same as<sup class="type-ap" title="annotation property">ap</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.w3.org/2002/07/owl#sameAs</p>
+   </div>
 </div><div id="namedindividuals">
    <h3 id="namedindividuals" class="list">Named Individuals</h3>
    <ul class="hlist">
@@ -4336,6 +4725,48 @@ This section provides details for each class and property defined by Ocean Prote
       <li>
          <a href="#DatasetProfile_ProteinTotalSpectralCount"
             title="http://schema.oceanproteinportal.org/v2/DatasetProfile_ProteinTotalSpectralCount">Dataset Profile: Protein Total Spectral Count</a>
+      </li>
+      <li>
+         <a href="#IdentifierScheme_Uniprot"
+            title="http://schema.oceanproteinportal.org/v2/IdentifierScheme_Uniprot">
+            <span>identifier scheme uniprot</span>
+         </a>
+      </li>
+      <li>
+         <a href="#IdentifierScheme_EnzymeCommission"
+            title="http://schema.oceanproteinportal.org/v2/IdentifierScheme_EnzymeCommission">Identifier Scheme: EnzymeCommission</a>
+      </li>
+      <li>
+         <a href="#IdentifierScheme_Kegg"
+            title="http://schema.oceanproteinportal.org/v2/IdentifierScheme_Kegg">Identifier Scheme: Kegg</a>
+      </li>
+      <li>
+         <a href="#IdentifierScheme_NCBIProtein"
+            title="http://schema.oceanproteinportal.org/v2/IdentifierScheme_NCBIProtein">Identifier Scheme: NCBI Protein</a>
+      </li>
+      <li>
+         <a href="#IdentifierScheme_ORCID"
+            title="http://schema.oceanproteinportal.org/v2/IdentifierScheme_ORCID">Identifier Scheme: ORCID</a>
+      </li>
+      <li>
+         <a href="#IdentifierScheme_PFam"
+            title="http://schema.oceanproteinportal.org/v2/IdentifierScheme_PFam">Identifier Scheme: PFam</a>
+      </li>
+      <li>
+         <a href="#Role_Author"
+            title="http://schema.oceanproteinportal.org/v2/Role_Author">Role: Author</a>
+      </li>
+      <li>
+         <a href="#Role_Contact"
+            title="http://schema.oceanproteinportal.org/v2/Role_Contact">Role: Contact</a>
+      </li>
+      <li>
+         <a href="#Role_Contributor"
+            title="http://schema.oceanproteinportal.org/v2/Role_Contributor">Role: Contributor</a>
+      </li>
+      <li>
+         <a href="#Role_Publisher"
+            title="http://schema.oceanproteinportal.org/v2/Role_Publisher">Role: Publisher</a>
       </li>
    </ul>
    <div class="entity" id="DatasetProfile_PeptideSpectralCountSum">
@@ -4356,7 +4787,7 @@ This section provides details for each class and property defined by Ocean Prote
          <dd>
             <a href="#profileObservation"
                title="http://schema.oceanproteinportal.org/v2/profileObservation">profileObservation</a>
-            <sup class="type-op" title="object property">op</sup> 
+            <sup class="type-op" title="object property">op</sup>
             <a href="#PeptideSpectralCountSum"
                title="http://schema.oceanproteinportal.org/v2/PeptideSpectralCountSum">PeptideSpectralCountSum</a>
          </dd>
@@ -4380,9 +4811,165 @@ This section provides details for each class and property defined by Ocean Prote
          <dd>
             <a href="#profileObservation"
                title="http://schema.oceanproteinportal.org/v2/profileObservation">profileObservation</a>
-            <sup class="type-op" title="object property">op</sup> 
+            <sup class="type-op" title="object property">op</sup>
             <a href="#ProteinTotalSpectralCount"
                title="http://schema.oceanproteinportal.org/v2/ProteinTotalSpectralCount">ProteinTotalSpectralCount</a>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="IdentifierScheme_Uniprot">
+      <h3>identifier scheme uniprot<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://schema.oceanproteinportal.org/v2/IdentifierScheme_Uniprot</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#ProteinIdentifierScheme"
+               title="http://schema.oceanproteinportal.org/v2/ProteinIdentifierScheme">ProteinIdentifierScheme</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="IdentifierScheme_EnzymeCommission">
+      <h3>Identifier Scheme: EnzymeCommission<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://schema.oceanproteinportal.org/v2/IdentifierScheme_EnzymeCommission</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#ProteinIdentifierScheme"
+               title="http://schema.oceanproteinportal.org/v2/ProteinIdentifierScheme">ProteinIdentifierScheme</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="IdentifierScheme_Kegg">
+      <h3>Identifier Scheme: Kegg<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://schema.oceanproteinportal.org/v2/IdentifierScheme_Kegg</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#ProteinIdentifierScheme"
+               title="http://schema.oceanproteinportal.org/v2/ProteinIdentifierScheme">ProteinIdentifierScheme</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="IdentifierScheme_NCBIProtein">
+      <h3>Identifier Scheme: NCBI Protein<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://schema.oceanproteinportal.org/v2/IdentifierScheme_NCBIProtein</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#ProteinIdentifierScheme"
+               title="http://schema.oceanproteinportal.org/v2/ProteinIdentifierScheme">ProteinIdentifierScheme</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="IdentifierScheme_ORCID">
+      <h3>Identifier Scheme: ORCID<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://schema.oceanproteinportal.org/v2/IdentifierScheme_ORCID</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#IdentifierScheme"
+               title="http://schema.oceanproteinportal.org/v2/IdentifierScheme">IdentifierScheme</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="IdentifierScheme_PFam">
+      <h3>Identifier Scheme: PFam<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://schema.oceanproteinportal.org/v2/IdentifierScheme_PFam</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#ProteinIdentifierScheme"
+               title="http://schema.oceanproteinportal.org/v2/ProteinIdentifierScheme">ProteinIdentifierScheme</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Role_Author">
+      <h3>Role: Author<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://schema.oceanproteinportal.org/v2/Role_Author</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#Role" title="http://schema.oceanproteinportal.org/v2/Role">Role</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Role_Contact">
+      <h3>Role: Contact<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://schema.oceanproteinportal.org/v2/Role_Contact</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#Role" title="http://schema.oceanproteinportal.org/v2/Role">Role</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Role_Contributor">
+      <h3>Role: Contributor<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://schema.oceanproteinportal.org/v2/Role_Contributor</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#Role" title="http://schema.oceanproteinportal.org/v2/Role">Role</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Role_Publisher">
+      <h3>Role: Publisher<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://schema.oceanproteinportal.org/v2/Role_Publisher</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#Role" title="http://schema.oceanproteinportal.org/v2/Role">Role</a>
+            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -4401,7 +4988,7 @@ This section provides details for each class and property defined by Ocean Prote
  <div id="conceptual-model-sample"><h3>Sample <span class="backlink"> back to <a href="#toc">ToC</a></span></h3><img src="https://lucid.app/publicSegments/view/0eceb84c-1f66-4768-813b-ac23d5aadeb9/image.png"></div>
  <div id="conceptual-model-dataset"><h3>Dataset <span class="backlink"> back to <a href="#toc">ToC</a></span></h3><img src="https://lucid.app/publicSegments/view/fafb6c1f-d32c-414f-abe7-650151c2718c/image.png"></div>
  <div id="conceptual-model-identifier"><h3>Identifier <span class="backlink"> back to <a href="#toc">ToC</a></span></h3><img src="https://lucid.app/publicSegments/view/18f2a07c-1ddc-40cc-afeb-eff1fee6d7f3/image.png"></div>
- <div id="conceptual-model-agentrole"><h3>Agent Role <span class="backlink"> back to <a href="#toc">ToC</a></span></h3><img src="https://lucid.app/publicSegments/view/0df85414-42b6-4601-9293-956c39559249/image.png"></div>	
+ <div id="conceptual-model-agentrole"><h3>Agent Role <span class="backlink"> back to <a href="#toc">ToC</a></span></h3><img src="https://lucid.app/publicSegments/view/0df85414-42b6-4601-9293-956c39559249/image.png"></div>
 </div>
 <div id="acknowledgements">
 <h2 id="ack" class="list">Acknowledgements <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>

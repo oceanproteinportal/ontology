@@ -34,6 +34,10 @@
                     rdfs:range <http://www.w3.org/ns/ssn/Property> .
 
 
+###  http://www.w3.org/2002/07/owl#sameAs
+owl:sameAs rdf:type owl:AnnotationProperty .
+
+
 #################################################################
 #    Object Properties
 #################################################################
@@ -348,6 +352,21 @@
                         rdfs:label "storesResultsForSample" .
 
 
+###  http://schema.oceanproteinportal.org/v2/suggestsProteinIdentification
+:suggestsProteinIdentification rdf:type owl:ObjectProperty ;
+                               owl:inverseOf :suggestsProteinIdentification ;
+                               rdfs:domain :ProteinIdentification ;
+                               rdfs:range :PeptideIdentification ;
+                               rdfs:comment "A peptide identification suggests this identified protein as possibly being contained within the related Sample." ;
+                               rdfs:label "suggestsProteinIdentification" .
+
+
+###  http://schema.oceanproteinportal.org/v2/sugggestedByPeptideIdentification
+:sugggestedByPeptideIdentification rdf:type owl:ObjectProperty ;
+                                   rdfs:comment "A ProteinIdentification was made based on this PeptideIdentification. The peptide suggests that the identified Protein may be contained in the Sample." ;
+                                   rdfs:label "suggestedByPeptideIdentification" .
+
+
 ###  http://www.w3.org/ns/sosa/hasFeatureOfInterest
 <http://www.w3.org/ns/sosa/hasFeatureOfInterest> rdf:type owl:ObjectProperty .
 
@@ -553,6 +572,14 @@
             rdfs:label "scoreValue" .
 
 
+###  http://schema.oceanproteinportal.org/v2/selectedAminoAcidIdentification
+:selectedAminoAcidIdentification rdf:type owl:DatatypeProperty ;
+                                 rdfs:domain :AminoAcidIdentification ;
+                                 rdfs:range xsd:boolean ;
+                                 rdfs:comment "Has the identification been selected or chosen by the dataset's interpreter? The interpreter in most cases is typically its author" ;
+                                 rdfs:label "selectedAminoAcidIdentification" .
+
+
 ###  http://schema.oceanproteinportal.org/v2/spectralCountSum
 :spectralCountSum rdf:type owl:DatatypeProperty ;
                   rdfs:subPropertyOf <http://schema.org/value> ;
@@ -610,6 +637,17 @@
        :describedinConceptualModelOf :AgentRole ;
        rdfs:comment "An abstract class for specifying a person, organization or software entity that performs some action acting in some predefined role." ;
        rdfs:label "Agent" .
+
+
+###  http://schema.oceanproteinportal.org/v2/AgentIdentifier
+:AgentIdentifier rdf:type owl:Class ;
+                 rdfs:subClassOf :Identifier ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :isIdentifierOf ;
+                                   owl:someValuesFrom :Agent
+                                 ] ;
+                 rdfs:comment "An identifier for an Agent" ;
+                 rdfs:label "AgentIdentifier" .
 
 
 ###  http://schema.oceanproteinportal.org/v2/AgentRole
@@ -690,7 +728,11 @@
 
 ###  http://schema.oceanproteinportal.org/v2/BestProteinIdentification
 :BestProteinIdentification rdf:type owl:Class ;
-                           rdfs:subClassOf :ProteinIdentification ;
+                           rdfs:subClassOf :ProteinIdentification ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty :selectedAminoAcidIdentification ;
+                                             owl:hasValue "true"^^xsd:boolean
+                                           ] ;
                            rdfs:comment "The best/selected identification of a specific Protein based on information in a PeptideIdentification. This means that a PeptideIdentification may have multiple Proteins that it identifies but that one of those proteins has been selected (identifiedBy) as the best identification." ;
                            rdfs:label "BestProteinIdentification" .
 
@@ -834,7 +876,11 @@
 
 ###  http://schema.oceanproteinportal.org/v2/KeggPathway
 :KeggPathway rdf:type owl:Class ;
-             rdfs:subClassOf :IdentifierMetadata ;
+             rdfs:subClassOf :IdentifierMetadata ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :annotatesIdentifier ;
+                               owl:someValuesFrom :KeggIdentifier
+                             ] ;
              rdfs:label "KeggPathway" .
 
 
@@ -846,8 +892,42 @@
 
 ###  http://schema.oceanproteinportal.org/v2/NCBITaxonName
 :NCBITaxonName rdf:type owl:Class ;
-               rdfs:subClassOf :IdentifierMetadata ;
+               rdfs:subClassOf :IdentifierMetadata ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :annotatesIdentifier ;
+                                 owl:someValuesFrom :NCBITaxonIdentifier
+                               ] ;
                rdfs:label "NCBITaxonName" .
+
+
+###  http://schema.oceanproteinportal.org/v2/OPPGeneratedSampleIdentifier
+:OPPGeneratedSampleIdentifier rdf:type owl:Class ;
+                              rdfs:subClassOf :SampleIdentifier ;
+                              owl:disjointWith :UserDefinedSampleIdentifier ;
+                              rdfs:comment "A sample identifier that was generated by the OPP" ;
+                              rdfs:label "OPPGeneratedSampleIdentifier" .
+
+
+###  http://schema.oceanproteinportal.org/v2/OrganizationIdentifier
+:OrganizationIdentifier rdf:type owl:Class ;
+                        rdfs:subClassOf :AgentIdentifier ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty :isIdentifierOf ;
+                                          owl:someValuesFrom <http://schema.org/Organization>
+                                        ] ;
+                        rdfs:comment "An identifier for an Organization" ;
+                        rdfs:label "OrganizationIdentifier" .
+
+
+###  http://schema.oceanproteinportal.org/v2/PFamsDescription
+:PFamsDescription rdf:type owl:Class ;
+                  rdfs:subClassOf :IdentifierMetadata ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :annotatesIdentifier ;
+                                    owl:someValuesFrom :PFamsIdentifier
+                                  ] ;
+                  rdfs:comment "The PFams description for this Protein" ;
+                  rdfs:label "PFamsDescription" .
 
 
 ###  http://schema.oceanproteinportal.org/v2/PFamsIdentifier
@@ -892,6 +972,21 @@
                          rdfs:subClassOf :PeptideSampleObservation .
 
 
+###  http://schema.oceanproteinportal.org/v2/PersonIdentifier
+:PersonIdentifier rdf:type owl:Class ;
+                  rdfs:subClassOf :AgentIdentifier ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :isIdentifierOf ;
+                                    owl:someValuesFrom <http://schema.org/Person>
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :identifierScheme ;
+                                    owl:hasValue :IdentifierScheme_ORCID
+                                  ] ;
+                  rdfs:comment "An identifier for a Person" ;
+                  rdfs:label "PersonIdentifier" .
+
+
 ###  http://schema.oceanproteinportal.org/v2/Protein
 :Protein rdf:type owl:Class ;
          rdfs:subClassOf :AminoAcidChain ,
@@ -917,13 +1012,21 @@
 
 ###  http://schema.oceanproteinportal.org/v2/ProteinIdentifier
 :ProteinIdentifier rdf:type owl:Class ;
-                   rdfs:subClassOf :Identifier ;
+                   rdfs:subClassOf :Identifier ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :isIdentifierOf ;
+                                     owl:someValuesFrom :ProteinIdentification
+                                   ] ;
                    rdfs:label "ProteinIdentifier" .
 
 
 ###  http://schema.oceanproteinportal.org/v2/ProteinIdentifierScheme
 :ProteinIdentifierScheme rdf:type owl:Class ;
-                         rdfs:subClassOf :IdentifierScheme ;
+                         rdfs:subClassOf :IdentifierScheme ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :isIdentifierSchemeFor ;
+                                           owl:someValuesFrom :ProteinIdentifier
+                                         ] ;
                          rdfs:comment "A class of identifier schemes used to unqiuely identify proteins." ;
                          rdfs:label "ProteinIdentifierScheme" .
 
@@ -949,7 +1052,11 @@
 
 ###  http://schema.oceanproteinportal.org/v2/SampleIdentifier
 :SampleIdentifier rdf:type owl:Class ;
-                  rdfs:subClassOf :Identifier ;
+                  rdfs:subClassOf :Identifier ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :isIdentifierOf ;
+                                    owl:someValuesFrom <http://www.w3.org/ns/sosa/Sample>
+                                  ] ;
                   rdfs:comment "An identifier for a sample within a Dataset. The IdentifierScheme for this sample would be provides by the Dataset. See opp:definesIdentifierScheme" ;
                   rdfs:label "SampleIdentifier" .
 
@@ -970,6 +1077,13 @@
 :UniprotIdentifier rdf:type owl:Class ;
                    rdfs:subClassOf :ProteinIdentifier ;
                    rdfs:label "UniprotIdentifier" .
+
+
+###  http://schema.oceanproteinportal.org/v2/UserDefinedSampleIdentifier
+:UserDefinedSampleIdentifier rdf:type owl:Class ;
+                             rdfs:subClassOf :SampleIdentifier ;
+                             rdfs:comment "A sample identifier specified and defined by the dataset's authors." ;
+                             rdfs:label "UserDefinedSampleIdentifier" .
 
 
 ###  http://schema.org/Dataset
@@ -1047,12 +1161,77 @@
                                           rdfs:label "Dataset Profile: Protein Total Spectral Count" .
 
 
+###  http://schema.oceanproteinportal.org/v2/IdentifierScheme_EnzymeCommission
+:IdentifierScheme_EnzymeCommission rdf:type owl:NamedIndividual ,
+                                            :ProteinIdentifierScheme ;
+                                   rdfs:label "Identifier Scheme: EnzymeCommission" ;
+                                   rdfs:seeAlso <http://www.wikidata.org/entity/Q741108> .
+
+
+###  http://schema.oceanproteinportal.org/v2/IdentifierScheme_Kegg
+:IdentifierScheme_Kegg rdf:type owl:NamedIndividual ,
+                                :ProteinIdentifierScheme ;
+                       rdfs:label "Identifier Scheme: Kegg" ;
+                       rdfs:seeAlso <https://registry.identifiers.org/registry/kegg> .
+
+
+###  http://schema.oceanproteinportal.org/v2/IdentifierScheme_NCBIProtein
+:IdentifierScheme_NCBIProtein rdf:type owl:NamedIndividual ,
+                                       :ProteinIdentifierScheme ;
+                              rdfs:label "Identifier Scheme: NCBI Protein" ;
+                              rdfs:seeAlso <https://registry.identifiers.org/registry/ncbiprotein> .
+
+
+###  http://schema.oceanproteinportal.org/v2/IdentifierScheme_ORCID
+:IdentifierScheme_ORCID rdf:type owl:NamedIndividual ,
+                                 :IdentifierScheme ;
+                        rdfs:label "Identifier Scheme: ORCID" ;
+                        rdfs:seeAlso <http://www.wikidata.org/entity/Q51044> .
+
+
+###  http://schema.oceanproteinportal.org/v2/IdentifierScheme_PFam
+:IdentifierScheme_PFam rdf:type owl:NamedIndividual ,
+                                :ProteinIdentifierScheme ;
+                       rdfs:label "Identifier Scheme: PFam" ;
+                       rdfs:seeAlso <https://registry.identifiers.org/registry/pfam> .
+
+
+###  http://schema.oceanproteinportal.org/v2/IdentifierScheme_Uniprot
+:IdentifierScheme_Uniprot rdf:type owl:NamedIndividual ,
+                                   :ProteinIdentifierScheme ;
+                          rdfs:seeAlso <https://registry.identifiers.org/registry/uniprot> .
+
+
 ###  http://schema.oceanproteinportal.org/v2/PeptideSpectralCountSum
 :PeptideSpectralCountSum rdf:type owl:NamedIndividual .
 
 
 ###  http://schema.oceanproteinportal.org/v2/ProteinTotalSpectralCount
 :ProteinTotalSpectralCount rdf:type owl:NamedIndividual .
+
+
+###  http://schema.oceanproteinportal.org/v2/Role_Author
+:Role_Author rdf:type owl:NamedIndividual ,
+                      :Role ;
+             rdfs:label "Role: Author" .
+
+
+###  http://schema.oceanproteinportal.org/v2/Role_Contact
+:Role_Contact rdf:type owl:NamedIndividual ,
+                       :Role ;
+              rdfs:label "Role: Contact" .
+
+
+###  http://schema.oceanproteinportal.org/v2/Role_Contributor
+:Role_Contributor rdf:type owl:NamedIndividual ,
+                           :Role ;
+                  rdfs:label "Role: Contributor" .
+
+
+###  http://schema.oceanproteinportal.org/v2/Role_Publisher
+:Role_Publisher rdf:type owl:NamedIndividual ,
+                         :Role ;
+                rdfs:label "Role: Publisher" .
 
 
 #################################################################
