@@ -136,10 +136,19 @@ owl:sameAs rdf:type owl:AnnotationProperty .
 
 ###  http://schema.oceanproteinportal.org/v2/identificationBasedOnScore
 :identificationBasedOnScore rdf:type owl:ObjectProperty ;
+                            rdfs:subPropertyOf :identificationScore ;
                             rdfs:domain :AminoAcidIdentification ;
                             rdfs:range :IdentificationScore ;
                             rdfs:comment "The score used to determine an amino acid's identification" ;
                             rdfs:label "identificationBasedOnScore" .
+
+
+###  http://schema.oceanproteinportal.org/v2/identificationScore
+:identificationScore rdf:type owl:ObjectProperty ;
+                     rdfs:domain :AminoAcidIdentification ;
+                     rdfs:range :IdentificationScore ;
+                     rdfs:comment "The score within a certain system for identifying an amino acid." ;
+                     rdfs:label "identificationScore" .
 
 
 ###  http://schema.oceanproteinportal.org/v2/identifier
@@ -226,6 +235,15 @@ owl:sameAs rdf:type owl:AnnotationProperty .
              rdfs:range :KeggPathway ;
              rdfs:comment "The Kegg Identifier for which this KeggPathway describes." ;
              rdfs:label "keggPathway" .
+
+
+###  http://schema.oceanproteinportal.org/v2/keggPathwayNames
+:keggPathwayNames rdf:type owl:ObjectProperty ,
+                           owl:FunctionalProperty ;
+                  rdfs:domain :KeggPathway ;
+                  rdfs:range :KeggPathwayNames ;
+                  rdfs:comment "A set of Kegg Orthology (KO) Entry names from a KO Entry's Pathway." ;
+                  rdfs:label "keggPathwayNames" .
 
 
 ###  http://schema.oceanproteinportal.org/v2/ncbiTaxonName
@@ -342,6 +360,25 @@ owl:sameAs rdf:type owl:AnnotationProperty .
                        rdfs:range :ProteinSampleObservation ;
                        rdfs:comment "An observation made from a single Sample about an identified protein" ;
                        rdfs:label "sampleProteinProperty" .
+
+
+###  http://schema.oceanproteinportal.org/v2/selectedBasedOnPeptideIdentification
+:selectedBasedOnPeptideIdentification rdf:type owl:ObjectProperty ;
+                                      rdfs:subPropertyOf :sugggestedByPeptideIdentification ;
+                                      owl:inverseOf :selectedProteinIdentification ;
+                                      rdfs:domain :BestProteinIdentification ;
+                                      rdfs:range :PeptideIdentification ;
+                                      rdfs:comment "This Best Identified Protein was selected by the data'sinterpreter based on  the peptide identification." ;
+                                      rdfs:label "selectedBasedOnPeptideIdentification" .
+
+
+###  http://schema.oceanproteinportal.org/v2/selectedProteinIdentification
+:selectedProteinIdentification rdf:type owl:ObjectProperty ;
+                               rdfs:subPropertyOf :suggestsProteinIdentification ;
+                               rdfs:domain :PeptideIdentification ;
+                               rdfs:range :BestProteinIdentification ;
+                               rdfs:comment "The selected protein identification is the Protein that the interpreter of the data felt was the best protein identificationout of all possible proteins it may be." ;
+                               rdfs:label "selectedProteinIdentification" .
 
 
 ###  http://schema.oceanproteinportal.org/v2/storesResultsForSample
@@ -466,6 +503,39 @@ owl:sameAs rdf:type owl:AnnotationProperty .
                  rdfs:label "identifierValue" .
 
 
+###  http://schema.oceanproteinportal.org/v2/keggDefinition
+:keggDefinition rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf <http://schema.org/description> ;
+                rdf:type owl:FunctionalProperty ;
+                rdfs:domain :KeggPathway ;
+                rdfs:range xsd:string ;
+                rdfs:comment """The Kegg Orthology Definition 
+
+Example: \"nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 1.7.99.-]\" via `https://www.genome.jp/dbget-bin/www_bget?K00370`""" ;
+                rdfs:label "keggDefinition" .
+
+
+###  http://schema.oceanproteinportal.org/v2/keggEntry
+:keggEntry rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf <http://schema.org/identifier> ;
+           rdf:type owl:FunctionalProperty ;
+           rdfs:domain :KeggPathway ;
+           rdfs:range xsd:string ;
+           rdfs:comment """The Kegg Orthology Entry value. 
+
+Example: \"K00370\" via`https://www.genome.jp/dbget-bin/www_bget?K00370`""" ;
+           rdfs:label "keggEntry" .
+
+
+###  http://schema.oceanproteinportal.org/v2/keggPathwayName
+:keggPathwayName rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf <http://schema.org/value> ;
+                 rdfs:domain :KeggPathwayNames ;
+                 rdfs:range xsd:string ;
+                 rdfs:comment "A Kegg Orthology Pathway Name" ;
+                 rdfs:label "keggPathwayName" .
+
+
 ###  http://schema.oceanproteinportal.org/v2/maximumFilterSize
 :maximumFilterSize rdf:type owl:DatatypeProperty ;
                    rdfs:subPropertyOf <http://schema.org/maxValue> ;
@@ -572,14 +642,6 @@ owl:sameAs rdf:type owl:AnnotationProperty .
             rdfs:label "scoreValue" .
 
 
-###  http://schema.oceanproteinportal.org/v2/selectedAminoAcidIdentification
-:selectedAminoAcidIdentification rdf:type owl:DatatypeProperty ;
-                                 rdfs:domain :AminoAcidIdentification ;
-                                 rdfs:range xsd:boolean ;
-                                 rdfs:comment "Has the identification been selected or chosen by the dataset's interpreter? The interpreter in most cases is typically its author" ;
-                                 rdfs:label "selectedAminoAcidIdentification" .
-
-
 ###  http://schema.oceanproteinportal.org/v2/spectralCountSum
 :spectralCountSum rdf:type owl:DatatypeProperty ;
                   rdfs:subPropertyOf <http://schema.org/value> ;
@@ -590,12 +652,28 @@ owl:sameAs rdf:type owl:AnnotationProperty .
                   rdfs:label "spectralCountSum" .
 
 
+###  http://schema.oceanproteinportal.org/v2/startIndex
+:startIndex rdf:type owl:DatatypeProperty ;
+            rdfs:domain :PeptideIdentification ;
+            rdfs:range xsd:integer ;
+            rdfs:comment "The start index" ;
+            rdfs:label "startIndex" .
+
+
 ###  http://schema.oceanproteinportal.org/v2/stationName
 :stationName rdf:type owl:DatatypeProperty ;
              rdfs:domain :Station ;
              rdfs:range xsd:string ;
              rdfs:comment "The name of some Station." ;
              rdfs:label "stationName" .
+
+
+###  http://schema.oceanproteinportal.org/v2/stopIndex
+:stopIndex rdf:type owl:DatatypeProperty ;
+           rdfs:domain :PeptideIdentification ;
+           rdfs:range xsd:integer ;
+           rdfs:comment "The stop index" ;
+           rdfs:label "stopIndex" .
 
 
 ###  http://schema.oceanproteinportal.org/v2/totalPrecursorIntensity
@@ -612,6 +690,14 @@ owl:sameAs rdf:type owl:AnnotationProperty .
           rdfs:domain :PeptideIdentification ;
           rdfs:range xsd:float ;
           rdfs:label "totalTIC" .
+
+
+###  http://schema.org/description
+<http://schema.org/description> rdf:type owl:DatatypeProperty .
+
+
+###  http://schema.org/identifier
+<http://schema.org/identifier> rdf:type owl:DatatypeProperty .
 
 
 ###  http://schema.org/maxValue
@@ -730,8 +816,8 @@ owl:sameAs rdf:type owl:AnnotationProperty .
 :BestProteinIdentification rdf:type owl:Class ;
                            rdfs:subClassOf :ProteinIdentification ,
                                            [ rdf:type owl:Restriction ;
-                                             owl:onProperty :selectedAminoAcidIdentification ;
-                                             owl:hasValue "true"^^xsd:boolean
+                                             owl:onProperty :selectedBasedOnPeptideIdentification ;
+                                             owl:someValuesFrom :PeptideIdentification
                                            ] ;
                            rdfs:comment "The best/selected identification of a specific Protein based on information in a PeptideIdentification. This means that a PeptideIdentification may have multiple Proteins that it identifies but that one of those proteins has been selected (identifiedBy) as the best identification." ;
                            rdfs:label "BestProteinIdentification" .
@@ -880,8 +966,45 @@ owl:sameAs rdf:type owl:AnnotationProperty .
                              [ rdf:type owl:Restriction ;
                                owl:onProperty :annotatesIdentifier ;
                                owl:someValuesFrom :KeggIdentifier
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :keggPathwayNames ;
+                               owl:allValuesFrom :KeggPathwayNames
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :keggPathwayNames ;
+                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onClass :KeggPathwayNames
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :keggDefinition ;
+                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onDataRange owl:rational
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :keggEntry ;
+                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onDataRange owl:rational
                              ] ;
+             rdfs:comment "Metadata about a Protein Identification's matching Kegg Orthology (KO) entry. Presently, all we receive is the KO Entry (mapped as opp-dt:KeggIdentifier), the KO Definition (mapped as odo-dt:KeggName), and an unordered list of only ceertain elements inthe KO Pathway (mapped as odo-dt:KeggDescription)." ;
              rdfs:label "KeggPathway" .
+
+
+###  http://schema.oceanproteinportal.org/v2/KeggPathwayNames
+:KeggPathwayNames rdf:type owl:Class ;
+                  rdfs:subClassOf <http://schema.org/PropertyValue> ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :keggPathwayName ;
+                                    owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onDataRange owl:rational
+                                  ] ;
+                  rdfs:comment """A unordered (missing its KO Pathway Index) list of selected Kegg Orthology Pathway Names (only the useful ones according to the data's interpreter?). The values should be an ordered list of legit KO entries, but for the sake of brevity, we model them as a multiple values of schema:value on the schema:PropertyValue since we do not currently have access to their KO entry identifiers or the patheway index values.
+
+
+_:exampleKeggPathwayNames a opp:KeggPathwayNames ;
+    schema:value \"Nitrogen metabolism\" ;
+    schema:value \"Two-component system\" .""" ;
+                  rdfs:label "KeggPathwayNames" .
 
 
 ###  http://schema.oceanproteinportal.org/v2/NCBITaxonIdentifier
@@ -1027,7 +1150,12 @@ owl:sameAs rdf:type owl:AnnotationProperty .
                                            owl:onProperty :isIdentifierSchemeFor ;
                                            owl:someValuesFrom :ProteinIdentifier
                                          ] ;
-                         rdfs:comment "A class of identifier schemes used to unqiuely identify proteins." ;
+                         rdfs:comment "A class of identifier schemes used to unqiuely identify proteins." ,
+                                      """Kegg Orthology (KO) Entry  => opp:keggEntry (schema:identifier)
+KO Definition => opp:keggDefinition (aka schema:description)
+KO Pathway => opp:keggPathwayNames (rdf:Bag of KO names)
+
+Note since the order of the pathways (or KeggPathway Index isn't provided we don't use an rdf:Seq""" ;
                          rdfs:label "ProteinIdentifierScheme" .
 
 

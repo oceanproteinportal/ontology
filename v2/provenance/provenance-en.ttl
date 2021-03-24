@@ -1,0 +1,17 @@
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix : <> .
+<http://schema.oceanproteinportal.org/v2/ontology.ttl> a prov:Entity;
+	 dc:title "Ocean Protein Portal Ver. 2";
+	 prov:wasAttributedTo <https://orcid.org/0000-0003-4486-9448>;
+	 dc:creator <https://orcid.org/0000-0003-4486-9448>;
+	 prov:wasAttributedTo <https://orcid.org/0000-0003-1023-6239>;
+	 dc:creator <https://orcid.org/0000-0003-1023-6239>;
+	 prov:wasAttributedTo <https://orcid.org/0000-0002-1667-9287>;
+	 dc:creator <https://orcid.org/0000-0002-1667-9287>;
+	 prov:wasAttributedTo <https://orcid.org/0000-0002-1134-7347>;
+	 dc:creator <https://orcid.org/0000-0002-1134-7347>;
+	 prov:wasAttributedTo <https://github.com/dgarijo/Widoco/>,<http://www.essepuntato.it/lode/>;
+	 prov:specializationOf <http://schema.oceanproteinportal.org/v2/>;
+.

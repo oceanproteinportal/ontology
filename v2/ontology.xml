@@ -213,10 +213,23 @@
 
 
     <owl:ObjectProperty rdf:about="http://schema.oceanproteinportal.org/v2/identificationBasedOnScore">
+        <rdfs:subPropertyOf rdf:resource="http://schema.oceanproteinportal.org/v2/identificationScore"/>
         <rdfs:domain rdf:resource="http://schema.oceanproteinportal.org/v2/AminoAcidIdentification"/>
         <rdfs:range rdf:resource="http://schema.oceanproteinportal.org/v2/IdentificationScore"/>
         <rdfs:comment>The score used to determine an amino acid&apos;s identification</rdfs:comment>
         <rdfs:label>identificationBasedOnScore</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/identificationScore -->
+
+
+    <owl:ObjectProperty rdf:about="http://schema.oceanproteinportal.org/v2/identificationScore">
+        <rdfs:domain rdf:resource="http://schema.oceanproteinportal.org/v2/AminoAcidIdentification"/>
+        <rdfs:range rdf:resource="http://schema.oceanproteinportal.org/v2/IdentificationScore"/>
+        <rdfs:comment>The score within a certain system for identifying an amino acid.</rdfs:comment>
+        <rdfs:label>identificationScore</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -339,6 +352,19 @@
         <rdfs:range rdf:resource="http://schema.oceanproteinportal.org/v2/KeggPathway"/>
         <rdfs:comment>The Kegg Identifier for which this KeggPathway describes.</rdfs:comment>
         <rdfs:label>keggPathway</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/keggPathwayNames -->
+
+
+    <owl:ObjectProperty rdf:about="http://schema.oceanproteinportal.org/v2/keggPathwayNames">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://schema.oceanproteinportal.org/v2/KeggPathway"/>
+        <rdfs:range rdf:resource="http://schema.oceanproteinportal.org/v2/KeggPathwayNames"/>
+        <rdfs:comment>A set of Kegg Orthology (KO) Entry names from a KO Entry&apos;s Pathway.</rdfs:comment>
+        <rdfs:label>keggPathwayNames</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -507,6 +533,33 @@
         <rdfs:range rdf:resource="http://schema.oceanproteinportal.org/v2/ProteinSampleObservation"/>
         <rdfs:comment>An observation made from a single Sample about an identified protein</rdfs:comment>
         <rdfs:label>sampleProteinProperty</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/selectedBasedOnPeptideIdentification -->
+
+
+    <owl:ObjectProperty rdf:about="http://schema.oceanproteinportal.org/v2/selectedBasedOnPeptideIdentification">
+        <rdfs:subPropertyOf rdf:resource="http://schema.oceanproteinportal.org/v2/sugggestedByPeptideIdentification"/>
+        <owl:inverseOf rdf:resource="http://schema.oceanproteinportal.org/v2/selectedProteinIdentification"/>
+        <rdfs:domain rdf:resource="http://schema.oceanproteinportal.org/v2/BestProteinIdentification"/>
+        <rdfs:range rdf:resource="http://schema.oceanproteinportal.org/v2/PeptideIdentification"/>
+        <rdfs:comment>This Best Identified Protein was selected by the data&apos;sinterpreter based on  the peptide identification.</rdfs:comment>
+        <rdfs:label>selectedBasedOnPeptideIdentification</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/selectedProteinIdentification -->
+
+
+    <owl:ObjectProperty rdf:about="http://schema.oceanproteinportal.org/v2/selectedProteinIdentification">
+        <rdfs:subPropertyOf rdf:resource="http://schema.oceanproteinportal.org/v2/suggestsProteinIdentification"/>
+        <rdfs:domain rdf:resource="http://schema.oceanproteinportal.org/v2/PeptideIdentification"/>
+        <rdfs:range rdf:resource="http://schema.oceanproteinportal.org/v2/BestProteinIdentification"/>
+        <rdfs:comment>The selected protein identification is the Protein that the interpreter of the data felt was the best protein identificationout of all possible proteins it may be.</rdfs:comment>
+        <rdfs:label>selectedProteinIdentification</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -699,6 +752,51 @@
     
 
 
+    <!-- http://schema.oceanproteinportal.org/v2/keggDefinition -->
+
+
+    <owl:DatatypeProperty rdf:about="http://schema.oceanproteinportal.org/v2/keggDefinition">
+        <rdfs:subPropertyOf rdf:resource="http://schema.org/description"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://schema.oceanproteinportal.org/v2/KeggPathway"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The Kegg Orthology Definition 
+
+Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 1.7.99.-]&quot; via `https://www.genome.jp/dbget-bin/www_bget?K00370`</rdfs:comment>
+        <rdfs:label>keggDefinition</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/keggEntry -->
+
+
+    <owl:DatatypeProperty rdf:about="http://schema.oceanproteinportal.org/v2/keggEntry">
+        <rdfs:subPropertyOf rdf:resource="http://schema.org/identifier"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://schema.oceanproteinportal.org/v2/KeggPathway"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The Kegg Orthology Entry value. 
+
+Example: &quot;K00370&quot; via`https://www.genome.jp/dbget-bin/www_bget?K00370`</rdfs:comment>
+        <rdfs:label>keggEntry</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/keggPathwayName -->
+
+
+    <owl:DatatypeProperty rdf:about="http://schema.oceanproteinportal.org/v2/keggPathwayName">
+        <rdfs:subPropertyOf rdf:resource="http://schema.org/value"/>
+        <rdfs:domain rdf:resource="http://schema.oceanproteinportal.org/v2/KeggPathwayNames"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>A Kegg Orthology Pathway Name</rdfs:comment>
+        <rdfs:label>keggPathwayName</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://schema.oceanproteinportal.org/v2/maximumFilterSize -->
 
 
@@ -853,18 +951,6 @@
     
 
 
-    <!-- http://schema.oceanproteinportal.org/v2/selectedAminoAcidIdentification -->
-
-
-    <owl:DatatypeProperty rdf:about="http://schema.oceanproteinportal.org/v2/selectedAminoAcidIdentification">
-        <rdfs:domain rdf:resource="http://schema.oceanproteinportal.org/v2/AminoAcidIdentification"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <rdfs:comment>Has the identification been selected or chosen by the dataset&apos;s interpreter? The interpreter in most cases is typically its author</rdfs:comment>
-        <rdfs:label>selectedAminoAcidIdentification</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
     <!-- http://schema.oceanproteinportal.org/v2/spectralCountSum -->
 
 
@@ -879,6 +965,18 @@
     
 
 
+    <!-- http://schema.oceanproteinportal.org/v2/startIndex -->
+
+
+    <owl:DatatypeProperty rdf:about="http://schema.oceanproteinportal.org/v2/startIndex">
+        <rdfs:domain rdf:resource="http://schema.oceanproteinportal.org/v2/PeptideIdentification"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>The start index</rdfs:comment>
+        <rdfs:label>startIndex</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://schema.oceanproteinportal.org/v2/stationName -->
 
 
@@ -887,6 +985,18 @@
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>The name of some Station.</rdfs:comment>
         <rdfs:label>stationName</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/stopIndex -->
+
+
+    <owl:DatatypeProperty rdf:about="http://schema.oceanproteinportal.org/v2/stopIndex">
+        <rdfs:domain rdf:resource="http://schema.oceanproteinportal.org/v2/PeptideIdentification"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>The stop index</rdfs:comment>
+        <rdfs:label>stopIndex</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -912,6 +1022,20 @@
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <rdfs:label>totalTIC</rdfs:label>
     </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.org/description -->
+
+
+    <owl:DatatypeProperty rdf:about="http://schema.org/description"/>
+    
+
+
+    <!-- http://schema.org/identifier -->
+
+
+    <owl:DatatypeProperty rdf:about="http://schema.org/identifier"/>
     
 
 
@@ -1099,8 +1223,8 @@
         <rdfs:subClassOf rdf:resource="http://schema.oceanproteinportal.org/v2/ProteinIdentification"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.oceanproteinportal.org/v2/selectedAminoAcidIdentification"/>
-                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:hasValue>
+                <owl:onProperty rdf:resource="http://schema.oceanproteinportal.org/v2/selectedBasedOnPeptideIdentification"/>
+                <owl:someValuesFrom rdf:resource="http://schema.oceanproteinportal.org/v2/PeptideIdentification"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>The best/selected identification of a specific Protein based on information in a PeptideIdentification. This means that a PeptideIdentification may have multiple Proteins that it identifies but that one of those proteins has been selected (identifiedBy) as the best identification.</rdfs:comment>
@@ -1327,7 +1451,58 @@
                 <owl:someValuesFrom rdf:resource="http://schema.oceanproteinportal.org/v2/KeggIdentifier"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.oceanproteinportal.org/v2/keggPathwayNames"/>
+                <owl:allValuesFrom rdf:resource="http://schema.oceanproteinportal.org/v2/KeggPathwayNames"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.oceanproteinportal.org/v2/keggPathwayNames"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://schema.oceanproteinportal.org/v2/KeggPathwayNames"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.oceanproteinportal.org/v2/keggDefinition"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2002/07/owl#rational"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.oceanproteinportal.org/v2/keggEntry"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2002/07/owl#rational"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Metadata about a Protein Identification&apos;s matching Kegg Orthology (KO) entry. Presently, all we receive is the KO Entry (mapped as opp-dt:KeggIdentifier), the KO Definition (mapped as odo-dt:KeggName), and an unordered list of only ceertain elements inthe KO Pathway (mapped as odo-dt:KeggDescription).</rdfs:comment>
         <rdfs:label>KeggPathway</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/KeggPathwayNames -->
+
+
+    <owl:Class rdf:about="http://schema.oceanproteinportal.org/v2/KeggPathwayNames">
+        <rdfs:subClassOf rdf:resource="http://schema.org/PropertyValue"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.oceanproteinportal.org/v2/keggPathwayName"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2002/07/owl#rational"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A unordered (missing its KO Pathway Index) list of selected Kegg Orthology Pathway Names (only the useful ones according to the data&apos;s interpreter?). The values should be an ordered list of legit KO entries, but for the sake of brevity, we model them as a multiple values of schema:value on the schema:PropertyValue since we do not currently have access to their KO entry identifiers or the patheway index values.
+
+
+_:exampleKeggPathwayNames a opp:KeggPathwayNames ;
+    schema:value &quot;Nitrogen metabolism&quot; ;
+    schema:value &quot;Two-component system&quot; .</rdfs:comment>
+        <rdfs:label>KeggPathwayNames</rdfs:label>
     </owl:Class>
     
 
@@ -1556,6 +1731,11 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>A class of identifier schemes used to unqiuely identify proteins.</rdfs:comment>
+        <rdfs:comment>Kegg Orthology (KO) Entry  =&gt; opp:keggEntry (schema:identifier)
+KO Definition =&gt; opp:keggDefinition (aka schema:description)
+KO Pathway =&gt; opp:keggPathwayNames (rdf:Bag of KO names)
+
+Note since the order of the pathways (or KeggPathway Index isn&apos;t provided we don&apos;t use an rdf:Seq</rdfs:comment>
         <rdfs:label>ProteinIdentifierScheme</rdfs:label>
     </owl:Class>
     
