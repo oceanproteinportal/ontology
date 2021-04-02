@@ -1,5 +1,10 @@
 # Ocean Protein Portal Ontology
 
+[![DOI](https://zenodo.org/badge/305539938.svg)](https://zenodo.org/badge/latestdoi/305539938)
+
+The Ocean Protein Portal Ontology is an application ontology used to formalize shared conceptualizations of ocean proteomics data. These shared conceptualizations exists between the portal's researchers and the software systems that describe, ingest, search and visualize the data. Their main purpose is to minimize the amount of technical debt of the underlying software used to operate the portal. Mappings to more formal ontologies such as the Protein Ontology and the Mass Spectrometer Ontology are required and should be made to enable better data sharing with other initiatives.
+
+
 ## WebVOWL Visualization
 
 http://www.visualdataweb.de/webvowl/#iri=https://raw.githubusercontent.com/oceanproteinportal/ontology/main/opp.owl
