@@ -205,21 +205,28 @@
 <http://schema.oceanproteinportal.org/v2/isIdentifierSchemeFor> <http://www.w3.org/2000/01/rdf-schema#comment> "An Identifier that bleongs within this scheme." .
 <http://schema.oceanproteinportal.org/v2/isIdentifierSchemeFor> <http://www.w3.org/2000/01/rdf-schema#label> "isIdentifierSchemeFor" .
 # 
+# http://schema.oceanproteinportal.org/v2/keggOrthology
+<http://schema.oceanproteinportal.org/v2/keggOrthology> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://schema.oceanproteinportal.org/v2/keggOrthology> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://schema.oceanproteinportal.org/v2/identifierMetadata> .
+<http://schema.oceanproteinportal.org/v2/keggOrthology> <http://www.w3.org/2000/01/rdf-schema#domain> <http://schema.oceanproteinportal.org/v2/KeggOrthologyIdentifier> .
+<http://schema.oceanproteinportal.org/v2/keggOrthology> <http://www.w3.org/2000/01/rdf-schema#range> <http://schema.oceanproteinportal.org/v2/KeggOrthology> .
+<http://schema.oceanproteinportal.org/v2/keggOrthology> <http://www.w3.org/2000/01/rdf-schema#label> "keggOrthology" .
+# 
 # http://schema.oceanproteinportal.org/v2/keggPathway
 <http://schema.oceanproteinportal.org/v2/keggPathway> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://schema.oceanproteinportal.org/v2/keggPathway> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://schema.oceanproteinportal.org/v2/identifierMetadata> .
-<http://schema.oceanproteinportal.org/v2/keggPathway> <http://www.w3.org/2000/01/rdf-schema#domain> <http://schema.oceanproteinportal.org/v2/KeggIdentifier> .
+<http://schema.oceanproteinportal.org/v2/keggPathway> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://schema.oceanproteinportal.org/v2/keggPathway> <http://www.w3.org/2002/07/owl#inverseOf> <http://schema.oceanproteinportal.org/v2/keggPathwayForOrthology> .
+<http://schema.oceanproteinportal.org/v2/keggPathway> <http://www.w3.org/2000/01/rdf-schema#domain> <http://schema.oceanproteinportal.org/v2/KeggOrthology> .
 <http://schema.oceanproteinportal.org/v2/keggPathway> <http://www.w3.org/2000/01/rdf-schema#range> <http://schema.oceanproteinportal.org/v2/KeggPathway> .
-<http://schema.oceanproteinportal.org/v2/keggPathway> <http://www.w3.org/2000/01/rdf-schema#comment> "The Kegg Identifier for which this KeggPathway describes." .
+<http://schema.oceanproteinportal.org/v2/keggPathway> <http://www.w3.org/2000/01/rdf-schema#comment> "A Pathway for some Kegg Orthology entry." .
 <http://schema.oceanproteinportal.org/v2/keggPathway> <http://www.w3.org/2000/01/rdf-schema#label> "keggPathway" .
 # 
-# http://schema.oceanproteinportal.org/v2/keggPathwayNames
-<http://schema.oceanproteinportal.org/v2/keggPathwayNames> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://schema.oceanproteinportal.org/v2/keggPathwayNames> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
-<http://schema.oceanproteinportal.org/v2/keggPathwayNames> <http://www.w3.org/2000/01/rdf-schema#domain> <http://schema.oceanproteinportal.org/v2/KeggPathway> .
-<http://schema.oceanproteinportal.org/v2/keggPathwayNames> <http://www.w3.org/2000/01/rdf-schema#range> <http://schema.oceanproteinportal.org/v2/KeggPathwayNames> .
-<http://schema.oceanproteinportal.org/v2/keggPathwayNames> <http://www.w3.org/2000/01/rdf-schema#comment> "A set of Kegg Orthology (KO) Entry names from a KO Entry's Pathway." .
-<http://schema.oceanproteinportal.org/v2/keggPathwayNames> <http://www.w3.org/2000/01/rdf-schema#label> "keggPathwayNames" .
+# http://schema.oceanproteinportal.org/v2/keggPathwayForOrthology
+<http://schema.oceanproteinportal.org/v2/keggPathwayForOrthology> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://schema.oceanproteinportal.org/v2/keggPathwayForOrthology> <http://www.w3.org/2000/01/rdf-schema#domain> <http://schema.oceanproteinportal.org/v2/KeggPathway> .
+<http://schema.oceanproteinportal.org/v2/keggPathwayForOrthology> <http://www.w3.org/2000/01/rdf-schema#range> <http://schema.oceanproteinportal.org/v2/KeggOrthology> .
+<http://schema.oceanproteinportal.org/v2/keggPathwayForOrthology> <http://www.w3.org/2000/01/rdf-schema#comment> "The orthology for which this pathway belongs" .
+<http://schema.oceanproteinportal.org/v2/keggPathwayForOrthology> <http://www.w3.org/2000/01/rdf-schema#label> "keggPathwayForOrthology" .
 # 
 # http://schema.oceanproteinportal.org/v2/ncbiTaxonName
 <http://schema.oceanproteinportal.org/v2/ncbiTaxonName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -453,31 +460,28 @@
 <http://schema.oceanproteinportal.org/v2/identifierValue> <http://www.w3.org/2000/01/rdf-schema#comment> "The unique value in some IdentifierScheme" .
 <http://schema.oceanproteinportal.org/v2/identifierValue> <http://www.w3.org/2000/01/rdf-schema#label> "identifierValue" .
 # 
-# http://schema.oceanproteinportal.org/v2/keggDefinition
-<http://schema.oceanproteinportal.org/v2/keggDefinition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://schema.oceanproteinportal.org/v2/keggDefinition> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://schema.org/description> .
-<http://schema.oceanproteinportal.org/v2/keggDefinition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
-<http://schema.oceanproteinportal.org/v2/keggDefinition> <http://www.w3.org/2000/01/rdf-schema#domain> <http://schema.oceanproteinportal.org/v2/KeggPathway> .
-<http://schema.oceanproteinportal.org/v2/keggDefinition> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<http://schema.oceanproteinportal.org/v2/keggDefinition> <http://www.w3.org/2000/01/rdf-schema#comment> "The Kegg Orthology Definition \n\nExample: \"nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 1.7.99.-]\" via `https://www.genome.jp/dbget-bin/www_bget?K00370`" .
-<http://schema.oceanproteinportal.org/v2/keggDefinition> <http://www.w3.org/2000/01/rdf-schema#label> "keggDefinition" .
+# http://schema.oceanproteinportal.org/v2/keggName
+<http://schema.oceanproteinportal.org/v2/keggName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://schema.oceanproteinportal.org/v2/keggName> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid1 .
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid1 <http://www.w3.org/2002/07/owl#unionOf> _:genid3 .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://schema.oceanproteinportal.org/v2/KeggOrthology> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid2 .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://schema.oceanproteinportal.org/v2/KeggPathway> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<http://schema.oceanproteinportal.org/v2/keggName> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://schema.oceanproteinportal.org/v2/keggName> <http://www.w3.org/2000/01/rdf-schema#comment> "The name of some Entry in the Kegg Database. This could be thee name of an Orthology or Pathway, etc." .
+<http://schema.oceanproteinportal.org/v2/keggName> <http://www.w3.org/2000/01/rdf-schema#label> "keggName" .
 # 
-# http://schema.oceanproteinportal.org/v2/keggEntry
-<http://schema.oceanproteinportal.org/v2/keggEntry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://schema.oceanproteinportal.org/v2/keggEntry> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://schema.org/identifier> .
-<http://schema.oceanproteinportal.org/v2/keggEntry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
-<http://schema.oceanproteinportal.org/v2/keggEntry> <http://www.w3.org/2000/01/rdf-schema#domain> <http://schema.oceanproteinportal.org/v2/KeggPathway> .
-<http://schema.oceanproteinportal.org/v2/keggEntry> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<http://schema.oceanproteinportal.org/v2/keggEntry> <http://www.w3.org/2000/01/rdf-schema#comment> "The Kegg Orthology Entry value. \n\nExample: \"K00370\" via`https://www.genome.jp/dbget-bin/www_bget?K00370`" .
-<http://schema.oceanproteinportal.org/v2/keggEntry> <http://www.w3.org/2000/01/rdf-schema#label> "keggEntry" .
-# 
-# http://schema.oceanproteinportal.org/v2/keggPathwayName
-<http://schema.oceanproteinportal.org/v2/keggPathwayName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://schema.oceanproteinportal.org/v2/keggPathwayName> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://schema.org/value> .
-<http://schema.oceanproteinportal.org/v2/keggPathwayName> <http://www.w3.org/2000/01/rdf-schema#domain> <http://schema.oceanproteinportal.org/v2/KeggPathwayNames> .
-<http://schema.oceanproteinportal.org/v2/keggPathwayName> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<http://schema.oceanproteinportal.org/v2/keggPathwayName> <http://www.w3.org/2000/01/rdf-schema#comment> "A Kegg Orthology Pathway Name" .
-<http://schema.oceanproteinportal.org/v2/keggPathwayName> <http://www.w3.org/2000/01/rdf-schema#label> "keggPathwayName" .
+# http://schema.oceanproteinportal.org/v2/keggOrthologyDefinition
+<http://schema.oceanproteinportal.org/v2/keggOrthologyDefinition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://schema.oceanproteinportal.org/v2/keggOrthologyDefinition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://schema.oceanproteinportal.org/v2/keggOrthologyDefinition> <http://www.w3.org/2000/01/rdf-schema#domain> <http://schema.oceanproteinportal.org/v2/KeggOrthology> .
+<http://schema.oceanproteinportal.org/v2/keggOrthologyDefinition> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://schema.oceanproteinportal.org/v2/keggOrthologyDefinition> <http://www.w3.org/2000/01/rdf-schema#comment> "The Kegg Orthology Definition\n\nExample: \"nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 1.7.99.-]\" via `https://www.genome.jp/dbget-bin/www_bget?K00370`" .
+<http://schema.oceanproteinportal.org/v2/keggOrthologyDefinition> <http://www.w3.org/2000/01/rdf-schema#label> "keggOrthologyDefinition" .
 # 
 # http://schema.oceanproteinportal.org/v2/maximumFilterSize
 <http://schema.oceanproteinportal.org/v2/maximumFilterSize> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
@@ -617,9 +621,6 @@
 <http://schema.oceanproteinportal.org/v2/totalTIC> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#float> .
 <http://schema.oceanproteinportal.org/v2/totalTIC> <http://www.w3.org/2000/01/rdf-schema#label> "totalTIC" .
 # 
-# http://schema.org/description
-<http://schema.org/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-# 
 # http://schema.org/identifier
 <http://schema.org/identifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 # 
@@ -652,57 +653,57 @@
 # http://schema.oceanproteinportal.org/v2/AgentIdentifier
 <http://schema.oceanproteinportal.org/v2/AgentIdentifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://schema.oceanproteinportal.org/v2/AgentIdentifier> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.oceanproteinportal.org/v2/Identifier> .
-<http://schema.oceanproteinportal.org/v2/AgentIdentifier> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid1 .
-_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid1 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/isIdentifierOf> .
-_:genid1 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://schema.oceanproteinportal.org/v2/Agent> .
+<http://schema.oceanproteinportal.org/v2/AgentIdentifier> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid4 .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid4 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/isIdentifierOf> .
+_:genid4 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://schema.oceanproteinportal.org/v2/Agent> .
 <http://schema.oceanproteinportal.org/v2/AgentIdentifier> <http://www.w3.org/2000/01/rdf-schema#comment> "An identifier for an Agent" .
 <http://schema.oceanproteinportal.org/v2/AgentIdentifier> <http://www.w3.org/2000/01/rdf-schema#label> "AgentIdentifier" .
 # 
 # http://schema.oceanproteinportal.org/v2/AgentRole
 <http://schema.oceanproteinportal.org/v2/AgentRole> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://schema.oceanproteinportal.org/v2/AgentRole> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid2 .
-_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid2 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/inRole> .
-_:genid2 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://schema.oceanproteinportal.org/v2/Role> .
-<http://schema.oceanproteinportal.org/v2/AgentRole> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid3 .
-_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid3 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/performedAtOrganization> .
-_:genid3 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://schema.org/Organization> .
-<http://schema.oceanproteinportal.org/v2/AgentRole> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid4 .
-_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid4 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/performedBy> .
-_:genid4 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://schema.oceanproteinportal.org/v2/Agent> .
 <http://schema.oceanproteinportal.org/v2/AgentRole> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid5 .
 _:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 _:genid5 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/inRole> .
-_:genid5 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:genid5 <http://www.w3.org/2002/07/owl#onClass> <http://schema.oceanproteinportal.org/v2/Role> .
+_:genid5 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://schema.oceanproteinportal.org/v2/Role> .
 <http://schema.oceanproteinportal.org/v2/AgentRole> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid6 .
 _:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid6 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/performedBy> .
-_:genid6 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:genid6 <http://www.w3.org/2002/07/owl#onClass> <http://schema.oceanproteinportal.org/v2/Agent> .
+_:genid6 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/performedAtOrganization> .
+_:genid6 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://schema.org/Organization> .
 <http://schema.oceanproteinportal.org/v2/AgentRole> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid7 .
 _:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid7 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/performedAtOrganization> .
-_:genid7 <http://www.w3.org/2002/07/owl#maxQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:genid7 <http://www.w3.org/2002/07/owl#onClass> <http://schema.org/Organization> .
+_:genid7 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/performedBy> .
+_:genid7 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://schema.oceanproteinportal.org/v2/Agent> .
+<http://schema.oceanproteinportal.org/v2/AgentRole> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid8 .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid8 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/inRole> .
+_:genid8 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid8 <http://www.w3.org/2002/07/owl#onClass> <http://schema.oceanproteinportal.org/v2/Role> .
+<http://schema.oceanproteinportal.org/v2/AgentRole> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid9 .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid9 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/performedBy> .
+_:genid9 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid9 <http://www.w3.org/2002/07/owl#onClass> <http://schema.oceanproteinportal.org/v2/Agent> .
+<http://schema.oceanproteinportal.org/v2/AgentRole> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid10 .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid10 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/performedAtOrganization> .
+_:genid10 <http://www.w3.org/2002/07/owl#maxQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid10 <http://www.w3.org/2002/07/owl#onClass> <http://schema.org/Organization> .
 <http://schema.oceanproteinportal.org/v2/AgentRole> <http://schema.oceanproteinportal.org/v2/conceptualModel> "https://lucid.app/publicSegments/view/0df85414-42b6-4601-9293-956c39559249/image.png"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
 <http://schema.oceanproteinportal.org/v2/AgentRole> <http://www.w3.org/2000/01/rdf-schema#comment> "An agent performing some Role over a certain period of time (which may be unbounded)." .
 <http://schema.oceanproteinportal.org/v2/AgentRole> <http://www.w3.org/2000/01/rdf-schema#label> "AgentRole" .
 # 
 # http://schema.oceanproteinportal.org/v2/AminoAcidChain
 <http://schema.oceanproteinportal.org/v2/AminoAcidChain> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://schema.oceanproteinportal.org/v2/AminoAcidChain> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid8 .
-_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid8 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/aminoAcidSequence> .
-_:genid8 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/2001/XMLSchema#token> .
-<http://schema.oceanproteinportal.org/v2/AminoAcidChain> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid9 .
-_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid9 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/aminoAcidSequence> .
-_:genid9 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:genid9 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XMLSchema#token> .
+<http://schema.oceanproteinportal.org/v2/AminoAcidChain> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid11 .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid11 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/aminoAcidSequence> .
+_:genid11 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/2001/XMLSchema#token> .
+<http://schema.oceanproteinportal.org/v2/AminoAcidChain> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid12 .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid12 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/aminoAcidSequence> .
+_:genid12 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid12 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XMLSchema#token> .
 <http://schema.oceanproteinportal.org/v2/AminoAcidChain> <http://www.w3.org/2002/07/owl#disjointWith> <http://schema.oceanproteinportal.org/v2/AminoAcidIdentification> .
 <http://schema.oceanproteinportal.org/v2/AminoAcidChain> <http://schema.oceanproteinportal.org/v2/describedinConceptualModelOf> <http://schema.oceanproteinportal.org/v2/AminoAcidIdentification> .
 <http://schema.oceanproteinportal.org/v2/AminoAcidChain> <http://www.w3.org/2000/01/rdf-schema#comment> "An actual amino acid. This is not to contain information that helps identify an amino acid, but represents the amino acid being identified. Any information here, should be shared by all other representations of the amino acid."^^<http://www.w3.org/2001/XMLSchema#anyURI> .
@@ -718,15 +719,15 @@ _:genid9 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XML
 <http://schema.oceanproteinportal.org/v2/AminoAcidSampleObservation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://schema.oceanproteinportal.org/v2/AminoAcidSampleObservation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/PropertyValue> .
 <http://schema.oceanproteinportal.org/v2/AminoAcidSampleObservation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/ssn/Property> .
-<http://schema.oceanproteinportal.org/v2/AminoAcidSampleObservation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid10 .
-_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid10 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/observationInSample> .
-_:genid10 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/ns/sosa/Sample> .
-<http://schema.oceanproteinportal.org/v2/AminoAcidSampleObservation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid11 .
-_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid11 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/observationInSample> .
-_:genid11 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:genid11 <http://www.w3.org/2002/07/owl#onClass> <http://www.w3.org/ns/sosa/Sample> .
+<http://schema.oceanproteinportal.org/v2/AminoAcidSampleObservation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid13 .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid13 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/observationInSample> .
+_:genid13 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/ns/sosa/Sample> .
+<http://schema.oceanproteinportal.org/v2/AminoAcidSampleObservation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid14 .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid14 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/observationInSample> .
+_:genid14 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid14 <http://www.w3.org/2002/07/owl#onClass> <http://www.w3.org/ns/sosa/Sample> .
 <http://schema.oceanproteinportal.org/v2/AminoAcidSampleObservation> <http://schema.oceanproteinportal.org/v2/describedinConceptualModelOf> <http://schema.oceanproteinportal.org/v2/AminoAcidIdentification> .
 <http://schema.oceanproteinportal.org/v2/AminoAcidSampleObservation> <http://www.w3.org/2000/01/rdf-schema#comment> "A property of some amino acid that was observed in a single Sample." .
 <http://schema.oceanproteinportal.org/v2/AminoAcidSampleObservation> <http://www.w3.org/2000/01/rdf-schema#label> "AminoAcidSampleObservation" .
@@ -734,43 +735,43 @@ _:genid11 <http://www.w3.org/2002/07/owl#onClass> <http://www.w3.org/ns/sosa/Sam
 # http://schema.oceanproteinportal.org/v2/BestProteinIdentification
 <http://schema.oceanproteinportal.org/v2/BestProteinIdentification> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://schema.oceanproteinportal.org/v2/BestProteinIdentification> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.oceanproteinportal.org/v2/ProteinIdentification> .
-<http://schema.oceanproteinportal.org/v2/BestProteinIdentification> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid12 .
-_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid12 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/selectedBasedOnPeptideIdentification> .
-_:genid12 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://schema.oceanproteinportal.org/v2/PeptideIdentification> .
+<http://schema.oceanproteinportal.org/v2/BestProteinIdentification> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid15 .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid15 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/selectedBasedOnPeptideIdentification> .
+_:genid15 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://schema.oceanproteinportal.org/v2/PeptideIdentification> .
 <http://schema.oceanproteinportal.org/v2/BestProteinIdentification> <http://www.w3.org/2000/01/rdf-schema#comment> "The best/selected identification of a specific Protein based on information in a PeptideIdentification. This means that a PeptideIdentification may have multiple Proteins that it identifies but that one of those proteins has been selected (identifiedBy) as the best identification." .
 <http://schema.oceanproteinportal.org/v2/BestProteinIdentification> <http://www.w3.org/2000/01/rdf-schema#label> "BestProteinIdentification" .
 # 
 # http://schema.oceanproteinportal.org/v2/BestSEQUESTDCnScore
 <http://schema.oceanproteinportal.org/v2/BestSEQUESTDCnScore> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://schema.oceanproteinportal.org/v2/BestSEQUESTDCnScore> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.oceanproteinportal.org/v2/IdentificationScore> .
-<http://schema.oceanproteinportal.org/v2/BestSEQUESTDCnScore> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid13 .
-_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid13 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/scoreValue> .
-_:genid13 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:genid13 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XMLSchema#float> .
+<http://schema.oceanproteinportal.org/v2/BestSEQUESTDCnScore> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid16 .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid16 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/scoreValue> .
+_:genid16 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid16 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XMLSchema#float> .
 <http://schema.oceanproteinportal.org/v2/BestSEQUESTDCnScore> <http://www.w3.org/2000/01/rdf-schema#comment> "The best SEQUEST DCn score for identifying an amino acid."^^<http://www.w3.org/2001/XMLSchema#anyURI> .
 <http://schema.oceanproteinportal.org/v2/BestSEQUESTDCnScore> <http://www.w3.org/2000/01/rdf-schema#label> "BestSEQUESTDCnScore" .
 # 
 # http://schema.oceanproteinportal.org/v2/BestSEQUESTXCorrScore
 <http://schema.oceanproteinportal.org/v2/BestSEQUESTXCorrScore> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://schema.oceanproteinportal.org/v2/BestSEQUESTXCorrScore> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.oceanproteinportal.org/v2/IdentificationScore> .
-<http://schema.oceanproteinportal.org/v2/BestSEQUESTXCorrScore> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid14 .
-_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid14 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/scoreValue> .
-_:genid14 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:genid14 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XMLSchema#float> .
+<http://schema.oceanproteinportal.org/v2/BestSEQUESTXCorrScore> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid17 .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid17 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/scoreValue> .
+_:genid17 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid17 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XMLSchema#float> .
 <http://schema.oceanproteinportal.org/v2/BestSEQUESTXCorrScore> <http://www.w3.org/2000/01/rdf-schema#comment> "The best SEQUEST XCorr score for identifying an amino acid."^^<http://www.w3.org/2001/XMLSchema#anyURI> .
 <http://schema.oceanproteinportal.org/v2/BestSEQUESTXCorrScore> <http://www.w3.org/2000/01/rdf-schema#label> "BestSEQUESTXCorrScore" .
 # 
 # http://schema.oceanproteinportal.org/v2/Cruise
 <http://schema.oceanproteinportal.org/v2/Cruise> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://schema.oceanproteinportal.org/v2/Cruise> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/sosa/Deployment> .
-<http://schema.oceanproteinportal.org/v2/Cruise> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid15 .
-_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid15 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/cruiseID> .
-_:genid15 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:genid15 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XMLSchema#string> .
+<http://schema.oceanproteinportal.org/v2/Cruise> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid18 .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid18 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/cruiseID> .
+_:genid18 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid18 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XMLSchema#string> .
 <http://schema.oceanproteinportal.org/v2/Cruise> <http://www.w3.org/2002/07/owl#disjointWith> <http://schema.oceanproteinportal.org/v2/Station> .
 <http://schema.oceanproteinportal.org/v2/Cruise> <http://www.w3.org/2000/01/rdf-schema#comment> "A deployment of some seagoing vessel on which one or more scientific objectives are studied." .
 <http://schema.oceanproteinportal.org/v2/Cruise> <http://www.w3.org/2000/01/rdf-schema#label> "Cruise" .
@@ -783,15 +784,15 @@ _:genid15 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XM
 # 
 # http://schema.oceanproteinportal.org/v2/DatasetProfile
 <http://schema.oceanproteinportal.org/v2/DatasetProfile> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://schema.oceanproteinportal.org/v2/DatasetProfile> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid16 .
-_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid16 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/profileObservation> .
-_:genid16 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/ns/ssn/Property> .
-<http://schema.oceanproteinportal.org/v2/DatasetProfile> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid17 .
-_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid17 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/profileObservation> .
-_:genid17 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:genid17 <http://www.w3.org/2002/07/owl#onClass> <http://www.w3.org/ns/ssn/Property> .
+<http://schema.oceanproteinportal.org/v2/DatasetProfile> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid19 .
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid19 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/profileObservation> .
+_:genid19 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/ns/ssn/Property> .
+<http://schema.oceanproteinportal.org/v2/DatasetProfile> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid20 .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid20 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/profileObservation> .
+_:genid20 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid20 <http://www.w3.org/2002/07/owl#onClass> <http://www.w3.org/ns/ssn/Property> .
 <http://schema.oceanproteinportal.org/v2/DatasetProfile> <http://schema.oceanproteinportal.org/v2/describedinConceptualModelOf> <http://schema.org/Dataset> .
 <http://schema.oceanproteinportal.org/v2/DatasetProfile> <http://www.w3.org/2000/01/rdf-schema#comment> "A DatasetProfile defines the type of observations to be expected." .
 <http://schema.oceanproteinportal.org/v2/DatasetProfile> <http://www.w3.org/2000/01/rdf-schema#label> "DatasetProfile" .
@@ -799,6 +800,11 @@ _:genid17 <http://www.w3.org/2002/07/owl#onClass> <http://www.w3.org/ns/ssn/Prop
 # http://schema.oceanproteinportal.org/v2/EnzymeCommissionIdentifier
 <http://schema.oceanproteinportal.org/v2/EnzymeCommissionIdentifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://schema.oceanproteinportal.org/v2/EnzymeCommissionIdentifier> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.oceanproteinportal.org/v2/ProteinIdentifier> .
+<http://schema.oceanproteinportal.org/v2/EnzymeCommissionIdentifier> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid21 .
+_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid21 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/identifierScheme> .
+_:genid21 <http://www.w3.org/2002/07/owl#hasValue> <http://schema.oceanproteinportal.org/v2/IdentifierScheme_EnzymeCommission> .
+<http://schema.oceanproteinportal.org/v2/EnzymeCommissionIdentifier> <http://www.w3.org/2000/01/rdf-schema#comment> "An EC identifier" .
 <http://schema.oceanproteinportal.org/v2/EnzymeCommissionIdentifier> <http://www.w3.org/2000/01/rdf-schema#label> "EnzymeCommissionIdentifier" .
 # 
 # http://schema.oceanproteinportal.org/v2/FilterSize
@@ -813,44 +819,44 @@ _:genid17 <http://www.w3.org/2002/07/owl#onClass> <http://www.w3.org/ns/ssn/Prop
 <http://schema.oceanproteinportal.org/v2/IdentificationScore> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://schema.oceanproteinportal.org/v2/IdentificationScore> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/PropertyValue> .
 <http://schema.oceanproteinportal.org/v2/IdentificationScore> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/ssn/Property> .
-<http://schema.oceanproteinportal.org/v2/IdentificationScore> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid18 .
-_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid18 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/scoreValue> .
-_:genid18 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+<http://schema.oceanproteinportal.org/v2/IdentificationScore> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid22 .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid22 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/scoreValue> .
+_:genid22 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
 <http://schema.oceanproteinportal.org/v2/IdentificationScore> <http://schema.oceanproteinportal.org/v2/describedinConceptualModelOf> <http://schema.oceanproteinportal.org/v2/AminoAcidIdentification> .
 <http://schema.oceanproteinportal.org/v2/IdentificationScore> <http://www.w3.org/2000/01/rdf-schema#comment> "The numerical score used to identified an Amino Acid using some scoring method." .
 <http://schema.oceanproteinportal.org/v2/IdentificationScore> <http://www.w3.org/2000/01/rdf-schema#label> "IdentificationScore" .
 # 
 # http://schema.oceanproteinportal.org/v2/Identifier
 <http://schema.oceanproteinportal.org/v2/Identifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://schema.oceanproteinportal.org/v2/Identifier> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid19 .
-_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid19 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/identifierScheme> .
-_:genid19 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://schema.oceanproteinportal.org/v2/IdentifierScheme> .
-<http://schema.oceanproteinportal.org/v2/Identifier> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid20 .
-_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid20 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/identifierScheme> .
-_:genid20 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:genid20 <http://www.w3.org/2002/07/owl#onClass> <http://schema.oceanproteinportal.org/v2/IdentifierScheme> .
-<http://schema.oceanproteinportal.org/v2/Identifier> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid21 .
-_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid21 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/identifierValue> .
-_:genid21 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/2001/XMLSchema#token> .
-<http://schema.oceanproteinportal.org/v2/Identifier> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid22 .
-_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid22 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/identifierValue> .
-_:genid22 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:genid22 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XMLSchema#token> .
+<http://schema.oceanproteinportal.org/v2/Identifier> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid23 .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid23 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/identifierScheme> .
+_:genid23 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://schema.oceanproteinportal.org/v2/IdentifierScheme> .
+<http://schema.oceanproteinportal.org/v2/Identifier> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid24 .
+_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid24 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/identifierScheme> .
+_:genid24 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid24 <http://www.w3.org/2002/07/owl#onClass> <http://schema.oceanproteinportal.org/v2/IdentifierScheme> .
+<http://schema.oceanproteinportal.org/v2/Identifier> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid25 .
+_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid25 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/identifierValue> .
+_:genid25 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/2001/XMLSchema#token> .
+<http://schema.oceanproteinportal.org/v2/Identifier> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid26 .
+_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid26 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/identifierValue> .
+_:genid26 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid26 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XMLSchema#token> .
 <http://schema.oceanproteinportal.org/v2/Identifier> <http://schema.oceanproteinportal.org/v2/conceptualModel> "https://lucid.app/publicSegments/view/18f2a07c-1ddc-40cc-afeb-eff1fee6d7f3/image.png"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
 <http://schema.oceanproteinportal.org/v2/Identifier> <http://www.w3.org/2000/01/rdf-schema#comment> "A unique identifier attributeds to some thing within some realm or domain or scheme."^^<http://www.w3.org/2001/XMLSchema#anyURI> .
 <http://schema.oceanproteinportal.org/v2/Identifier> <http://www.w3.org/2000/01/rdf-schema#label> "Identifier" .
 # 
 # http://schema.oceanproteinportal.org/v2/IdentifierMetadata
 <http://schema.oceanproteinportal.org/v2/IdentifierMetadata> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://schema.oceanproteinportal.org/v2/IdentifierMetadata> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid23 .
-_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid23 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/annotatesIdentifier> .
-_:genid23 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://schema.oceanproteinportal.org/v2/Identifier> .
+<http://schema.oceanproteinportal.org/v2/IdentifierMetadata> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid27 .
+_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid27 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/annotatesIdentifier> .
+_:genid27 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://schema.oceanproteinportal.org/v2/Identifier> .
 <http://schema.oceanproteinportal.org/v2/IdentifierMetadata> <http://schema.oceanproteinportal.org/v2/describedinConceptualModelOf> <http://schema.oceanproteinportal.org/v2/Identifier> .
 <http://schema.oceanproteinportal.org/v2/IdentifierMetadata> <http://www.w3.org/2000/01/rdf-schema#comment> "Information about an identifier that helps comprehend, reuse, or contextualize the Thing being identified. This could be a non-unique label or description." .
 <http://schema.oceanproteinportal.org/v2/IdentifierMetadata> <http://www.w3.org/2000/01/rdf-schema#label> "IdentifierMetadata" .
@@ -861,63 +867,74 @@ _:genid23 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://schema.oceanprot
 <http://schema.oceanproteinportal.org/v2/IdentifierScheme> <http://www.w3.org/2000/01/rdf-schema#comment> "A realm or domain in which a specific Identifier has a unqiue value from all the other possible Identifiers within that domain." .
 <http://schema.oceanproteinportal.org/v2/IdentifierScheme> <http://www.w3.org/2000/01/rdf-schema#label> "IdentifierScheme" .
 # 
-# http://schema.oceanproteinportal.org/v2/KeggIdentifier
-<http://schema.oceanproteinportal.org/v2/KeggIdentifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://schema.oceanproteinportal.org/v2/KeggIdentifier> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.oceanproteinportal.org/v2/ProteinIdentifier> .
-<http://schema.oceanproteinportal.org/v2/KeggIdentifier> <http://www.w3.org/2000/01/rdf-schema#label> "KeggIdentifier" .
+# http://schema.oceanproteinportal.org/v2/KeggDatabaseEntry
+<http://schema.oceanproteinportal.org/v2/KeggDatabaseEntry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://schema.oceanproteinportal.org/v2/KeggDatabaseEntry> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.oceanproteinportal.org/v2/IdentifierMetadata> .
+<http://schema.oceanproteinportal.org/v2/KeggDatabaseEntry> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid28 .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid28 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/annotatesIdentifier> .
+_:genid28 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://schema.oceanproteinportal.org/v2/KeggDatabaseEntryIdentifier> .
+<http://schema.oceanproteinportal.org/v2/KeggDatabaseEntry> <http://www.w3.org/2000/01/rdf-schema#comment> "An entry in thee Kegg Database" .
+<http://schema.oceanproteinportal.org/v2/KeggDatabaseEntry> <http://www.w3.org/2000/01/rdf-schema#label> "KeggDatabaseEntry" .
+# 
+# http://schema.oceanproteinportal.org/v2/KeggDatabaseEntryIdentifier
+<http://schema.oceanproteinportal.org/v2/KeggDatabaseEntryIdentifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://schema.oceanproteinportal.org/v2/KeggDatabaseEntryIdentifier> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.oceanproteinportal.org/v2/ProteinIdentifier> .
+<http://schema.oceanproteinportal.org/v2/KeggDatabaseEntryIdentifier> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid29 .
+_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid29 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/identifierScheme> .
+_:genid29 <http://www.w3.org/2002/07/owl#hasValue> <http://schema.oceanproteinportal.org/v2/IdentifierScheme_Kegg> .
+<http://schema.oceanproteinportal.org/v2/KeggDatabaseEntryIdentifier> <http://www.w3.org/2000/01/rdf-schema#comment> "A Kegg Dataset Entry Identifier" .
+<http://schema.oceanproteinportal.org/v2/KeggDatabaseEntryIdentifier> <http://www.w3.org/2000/01/rdf-schema#label> "KeggDatabaseEntryIdentifier" .
+# 
+# http://schema.oceanproteinportal.org/v2/KeggOrthology
+<http://schema.oceanproteinportal.org/v2/KeggOrthology> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://schema.oceanproteinportal.org/v2/KeggOrthology> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.oceanproteinportal.org/v2/KeggDatabaseEntry> .
+<http://schema.oceanproteinportal.org/v2/KeggOrthology> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid30 .
+_:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid30 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/annotatesIdentifier> .
+_:genid30 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://schema.oceanproteinportal.org/v2/KeggOrthologyIdentifier> .
+<http://schema.oceanproteinportal.org/v2/KeggOrthology> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid31 .
+_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid31 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/keggName> .
+_:genid31 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid31 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XMLSchema#string> .
+<http://schema.oceanproteinportal.org/v2/KeggOrthology> <http://www.w3.org/2000/01/rdf-schema#comment> "A Kegg Orthology entry from the Kegg database" .
+<http://schema.oceanproteinportal.org/v2/KeggOrthology> <http://www.w3.org/2000/01/rdf-schema#label> "KeggOrthology" .
+# 
+# http://schema.oceanproteinportal.org/v2/KeggOrthologyIdentifier
+<http://schema.oceanproteinportal.org/v2/KeggOrthologyIdentifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://schema.oceanproteinportal.org/v2/KeggOrthologyIdentifier> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.oceanproteinportal.org/v2/KeggDatabaseEntryIdentifier> .
+<http://schema.oceanproteinportal.org/v2/KeggOrthologyIdentifier> <http://www.w3.org/2000/01/rdf-schema#comment> "A Kegg Orthology Identifier" .
+<http://schema.oceanproteinportal.org/v2/KeggOrthologyIdentifier> <http://www.w3.org/2000/01/rdf-schema#label> "KeggOrthologyIdentifier" .
 # 
 # http://schema.oceanproteinportal.org/v2/KeggPathway
 <http://schema.oceanproteinportal.org/v2/KeggPathway> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://schema.oceanproteinportal.org/v2/KeggPathway> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.oceanproteinportal.org/v2/IdentifierMetadata> .
-<http://schema.oceanproteinportal.org/v2/KeggPathway> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid24 .
-_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid24 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/annotatesIdentifier> .
-_:genid24 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://schema.oceanproteinportal.org/v2/KeggIdentifier> .
-<http://schema.oceanproteinportal.org/v2/KeggPathway> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid25 .
-_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid25 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/keggPathwayNames> .
-_:genid25 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://schema.oceanproteinportal.org/v2/KeggPathwayNames> .
-<http://schema.oceanproteinportal.org/v2/KeggPathway> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid26 .
-_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid26 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/keggPathwayNames> .
-_:genid26 <http://www.w3.org/2002/07/owl#maxQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:genid26 <http://www.w3.org/2002/07/owl#onClass> <http://schema.oceanproteinportal.org/v2/KeggPathwayNames> .
-<http://schema.oceanproteinportal.org/v2/KeggPathway> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid27 .
-_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid27 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/keggDefinition> .
-_:genid27 <http://www.w3.org/2002/07/owl#maxQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:genid27 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2002/07/owl#rational> .
-<http://schema.oceanproteinportal.org/v2/KeggPathway> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid28 .
-_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid28 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/keggEntry> .
-_:genid28 <http://www.w3.org/2002/07/owl#maxQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:genid28 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2002/07/owl#rational> .
-<http://schema.oceanproteinportal.org/v2/KeggPathway> <http://www.w3.org/2000/01/rdf-schema#comment> "Metadata about a Protein Identification's matching Kegg Orthology (KO) entry. Presently, all we receive is the KO Entry (mapped as opp-dt:KeggIdentifier), the KO Definition (mapped as odo-dt:KeggName), and an unordered list of only ceertain elements inthe KO Pathway (mapped as odo-dt:KeggDescription)." .
+<http://schema.oceanproteinportal.org/v2/KeggPathway> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.oceanproteinportal.org/v2/KeggDatabaseEntry> .
+<http://schema.oceanproteinportal.org/v2/KeggPathway> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid32 .
+_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid32 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/keggPathwayForOrthology> .
+_:genid32 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://schema.oceanproteinportal.org/v2/KeggOrthology> .
+<http://schema.oceanproteinportal.org/v2/KeggPathway> <http://www.w3.org/2000/01/rdf-schema#comment> "A Kegg Orthology (KO) entry's pathway." .
 <http://schema.oceanproteinportal.org/v2/KeggPathway> <http://www.w3.org/2000/01/rdf-schema#label> "KeggPathway" .
-# 
-# http://schema.oceanproteinportal.org/v2/KeggPathwayNames
-<http://schema.oceanproteinportal.org/v2/KeggPathwayNames> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://schema.oceanproteinportal.org/v2/KeggPathwayNames> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/PropertyValue> .
-<http://schema.oceanproteinportal.org/v2/KeggPathwayNames> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid29 .
-_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid29 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/keggPathwayName> .
-_:genid29 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:genid29 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2002/07/owl#rational> .
-<http://schema.oceanproteinportal.org/v2/KeggPathwayNames> <http://www.w3.org/2000/01/rdf-schema#comment> "A unordered (missing its KO Pathway Index) list of selected Kegg Orthology Pathway Names (only the useful ones according to the data's interpreter?). The values should be an ordered list of legit KO entries, but for the sake of brevity, we model them as a multiple values of schema:value on the schema:PropertyValue since we do not currently have access to their KO entry identifiers or the patheway index values.\n\n\n_:exampleKeggPathwayNames a opp:KeggPathwayNames ;\n    schema:value \"Nitrogen metabolism\" ;\n    schema:value \"Two-component system\" ." .
-<http://schema.oceanproteinportal.org/v2/KeggPathwayNames> <http://www.w3.org/2000/01/rdf-schema#label> "KeggPathwayNames" .
 # 
 # http://schema.oceanproteinportal.org/v2/NCBITaxonIdentifier
 <http://schema.oceanproteinportal.org/v2/NCBITaxonIdentifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://schema.oceanproteinportal.org/v2/NCBITaxonIdentifier> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.oceanproteinportal.org/v2/ProteinIdentifier> .
+<http://schema.oceanproteinportal.org/v2/NCBITaxonIdentifier> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid33 .
+_:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid33 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/identifierScheme> .
+_:genid33 <http://www.w3.org/2002/07/owl#hasValue> <http://schema.oceanproteinportal.org/v2/IdentifierScheme_NCBIProtein> .
+<http://schema.oceanproteinportal.org/v2/NCBITaxonIdentifier> <http://www.w3.org/2000/01/rdf-schema#comment> "An NCBI Taxon identifier" .
 <http://schema.oceanproteinportal.org/v2/NCBITaxonIdentifier> <http://www.w3.org/2000/01/rdf-schema#label> "NCBITaxonIdentifier" .
 # 
 # http://schema.oceanproteinportal.org/v2/NCBITaxonName
 <http://schema.oceanproteinportal.org/v2/NCBITaxonName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://schema.oceanproteinportal.org/v2/NCBITaxonName> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.oceanproteinportal.org/v2/IdentifierMetadata> .
-<http://schema.oceanproteinportal.org/v2/NCBITaxonName> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid30 .
-_:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid30 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/annotatesIdentifier> .
-_:genid30 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://schema.oceanproteinportal.org/v2/NCBITaxonIdentifier> .
+<http://schema.oceanproteinportal.org/v2/NCBITaxonName> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid34 .
+_:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid34 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/annotatesIdentifier> .
+_:genid34 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://schema.oceanproteinportal.org/v2/NCBITaxonIdentifier> .
 <http://schema.oceanproteinportal.org/v2/NCBITaxonName> <http://www.w3.org/2000/01/rdf-schema#label> "NCBITaxonName" .
 # 
 # http://schema.oceanproteinportal.org/v2/OPPGeneratedSampleIdentifier
@@ -930,40 +947,45 @@ _:genid30 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://schema.oceanpro
 # http://schema.oceanproteinportal.org/v2/OrganizationIdentifier
 <http://schema.oceanproteinportal.org/v2/OrganizationIdentifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://schema.oceanproteinportal.org/v2/OrganizationIdentifier> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.oceanproteinportal.org/v2/AgentIdentifier> .
-<http://schema.oceanproteinportal.org/v2/OrganizationIdentifier> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid31 .
-_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid31 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/isIdentifierOf> .
-_:genid31 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://schema.org/Organization> .
+<http://schema.oceanproteinportal.org/v2/OrganizationIdentifier> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid35 .
+_:genid35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid35 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/isIdentifierOf> .
+_:genid35 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://schema.org/Organization> .
 <http://schema.oceanproteinportal.org/v2/OrganizationIdentifier> <http://www.w3.org/2000/01/rdf-schema#comment> "An identifier for an Organization" .
 <http://schema.oceanproteinportal.org/v2/OrganizationIdentifier> <http://www.w3.org/2000/01/rdf-schema#label> "OrganizationIdentifier" .
 # 
 # http://schema.oceanproteinportal.org/v2/PFamsDescription
 <http://schema.oceanproteinportal.org/v2/PFamsDescription> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://schema.oceanproteinportal.org/v2/PFamsDescription> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.oceanproteinportal.org/v2/IdentifierMetadata> .
-<http://schema.oceanproteinportal.org/v2/PFamsDescription> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid32 .
-_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid32 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/annotatesIdentifier> .
-_:genid32 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://schema.oceanproteinportal.org/v2/PFamsIdentifier> .
+<http://schema.oceanproteinportal.org/v2/PFamsDescription> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid36 .
+_:genid36 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid36 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/annotatesIdentifier> .
+_:genid36 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://schema.oceanproteinportal.org/v2/PFamsIdentifier> .
 <http://schema.oceanproteinportal.org/v2/PFamsDescription> <http://www.w3.org/2000/01/rdf-schema#comment> "The PFams description for this Protein" .
 <http://schema.oceanproteinportal.org/v2/PFamsDescription> <http://www.w3.org/2000/01/rdf-schema#label> "PFamsDescription" .
 # 
 # http://schema.oceanproteinportal.org/v2/PFamsIdentifier
 <http://schema.oceanproteinportal.org/v2/PFamsIdentifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://schema.oceanproteinportal.org/v2/PFamsIdentifier> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.oceanproteinportal.org/v2/ProteinIdentifier> .
+<http://schema.oceanproteinportal.org/v2/PFamsIdentifier> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid37 .
+_:genid37 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid37 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/identifierScheme> .
+_:genid37 <http://www.w3.org/2002/07/owl#hasValue> <http://schema.oceanproteinportal.org/v2/IdentifierScheme_PFam> .
+<http://schema.oceanproteinportal.org/v2/PFamsIdentifier> <http://www.w3.org/2000/01/rdf-schema#comment> "A PFams identifier" .
 <http://schema.oceanproteinportal.org/v2/PFamsIdentifier> <http://www.w3.org/2000/01/rdf-schema#label> "PFamsIdentifier" .
 # 
 # http://schema.oceanproteinportal.org/v2/Peptide
 <http://schema.oceanproteinportal.org/v2/Peptide> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://schema.oceanproteinportal.org/v2/Peptide> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.oceanproteinportal.org/v2/AminoAcidChain> .
-<http://schema.oceanproteinportal.org/v2/Peptide> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid33 .
-_:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid33 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/peptideSequence> .
-_:genid33 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/2001/XMLSchema#token> .
-<http://schema.oceanproteinportal.org/v2/Peptide> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid34 .
-_:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid34 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/peptideSequence> .
-_:genid34 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:genid34 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XMLSchema#token> .
+<http://schema.oceanproteinportal.org/v2/Peptide> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid38 .
+_:genid38 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid38 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/peptideSequence> .
+_:genid38 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/2001/XMLSchema#token> .
+<http://schema.oceanproteinportal.org/v2/Peptide> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid39 .
+_:genid39 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid39 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/peptideSequence> .
+_:genid39 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid39 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XMLSchema#token> .
 <http://schema.oceanproteinportal.org/v2/Peptide> <http://www.w3.org/2000/01/rdf-schema#comment> "A peptide identified in a sample." .
 <http://schema.oceanproteinportal.org/v2/Peptide> <http://www.w3.org/2000/01/rdf-schema#label> "Peptide" .
 # 
@@ -987,29 +1009,29 @@ _:genid34 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XM
 # http://schema.oceanproteinportal.org/v2/PersonIdentifier
 <http://schema.oceanproteinportal.org/v2/PersonIdentifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://schema.oceanproteinportal.org/v2/PersonIdentifier> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.oceanproteinportal.org/v2/AgentIdentifier> .
-<http://schema.oceanproteinportal.org/v2/PersonIdentifier> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid35 .
-_:genid35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid35 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/isIdentifierOf> .
-_:genid35 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://schema.org/Person> .
-<http://schema.oceanproteinportal.org/v2/PersonIdentifier> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid36 .
-_:genid36 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid36 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/identifierScheme> .
-_:genid36 <http://www.w3.org/2002/07/owl#hasValue> <http://schema.oceanproteinportal.org/v2/IdentifierScheme_ORCID> .
+<http://schema.oceanproteinportal.org/v2/PersonIdentifier> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid40 .
+_:genid40 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid40 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/isIdentifierOf> .
+_:genid40 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://schema.org/Person> .
+<http://schema.oceanproteinportal.org/v2/PersonIdentifier> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid41 .
+_:genid41 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid41 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/identifierScheme> .
+_:genid41 <http://www.w3.org/2002/07/owl#hasValue> <http://schema.oceanproteinportal.org/v2/IdentifierScheme_ORCID> .
 <http://schema.oceanproteinportal.org/v2/PersonIdentifier> <http://www.w3.org/2000/01/rdf-schema#comment> "An identifier for a Person" .
 <http://schema.oceanproteinportal.org/v2/PersonIdentifier> <http://www.w3.org/2000/01/rdf-schema#label> "PersonIdentifier" .
 # 
 # http://schema.oceanproteinportal.org/v2/Protein
 <http://schema.oceanproteinportal.org/v2/Protein> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://schema.oceanproteinportal.org/v2/Protein> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.oceanproteinportal.org/v2/AminoAcidChain> .
-<http://schema.oceanproteinportal.org/v2/Protein> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid37 .
-_:genid37 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid37 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/proteinSequence> .
-_:genid37 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/2001/XMLSchema#token> .
-<http://schema.oceanproteinportal.org/v2/Protein> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid38 .
-_:genid38 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid38 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/proteinSequence> .
-_:genid38 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:genid38 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XMLSchema#token> .
+<http://schema.oceanproteinportal.org/v2/Protein> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid42 .
+_:genid42 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid42 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/proteinSequence> .
+_:genid42 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/2001/XMLSchema#token> .
+<http://schema.oceanproteinportal.org/v2/Protein> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid43 .
+_:genid43 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid43 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/proteinSequence> .
+_:genid43 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid43 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XMLSchema#token> .
 <http://schema.oceanproteinportal.org/v2/Protein> <http://www.w3.org/2000/01/rdf-schema#comment> "The actual Protein being identified in datasets. This real-world Protein is identified by a single amino acid sequence regardless of variations across  ProteinIdentifications that describe this same, single Protein" .
 <http://schema.oceanproteinportal.org/v2/Protein> <http://www.w3.org/2000/01/rdf-schema#label> "Protein" .
 # 
@@ -1022,19 +1044,19 @@ _:genid38 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XM
 # http://schema.oceanproteinportal.org/v2/ProteinIdentifier
 <http://schema.oceanproteinportal.org/v2/ProteinIdentifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://schema.oceanproteinportal.org/v2/ProteinIdentifier> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.oceanproteinportal.org/v2/Identifier> .
-<http://schema.oceanproteinportal.org/v2/ProteinIdentifier> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid39 .
-_:genid39 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid39 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/isIdentifierOf> .
-_:genid39 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://schema.oceanproteinportal.org/v2/ProteinIdentification> .
+<http://schema.oceanproteinportal.org/v2/ProteinIdentifier> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid44 .
+_:genid44 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid44 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/isIdentifierOf> .
+_:genid44 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://schema.oceanproteinportal.org/v2/ProteinIdentification> .
 <http://schema.oceanproteinportal.org/v2/ProteinIdentifier> <http://www.w3.org/2000/01/rdf-schema#label> "ProteinIdentifier" .
 # 
 # http://schema.oceanproteinportal.org/v2/ProteinIdentifierScheme
 <http://schema.oceanproteinportal.org/v2/ProteinIdentifierScheme> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://schema.oceanproteinportal.org/v2/ProteinIdentifierScheme> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.oceanproteinportal.org/v2/IdentifierScheme> .
-<http://schema.oceanproteinportal.org/v2/ProteinIdentifierScheme> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid40 .
-_:genid40 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid40 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/isIdentifierSchemeFor> .
-_:genid40 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://schema.oceanproteinportal.org/v2/ProteinIdentifier> .
+<http://schema.oceanproteinportal.org/v2/ProteinIdentifierScheme> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid45 .
+_:genid45 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid45 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/isIdentifierSchemeFor> .
+_:genid45 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://schema.oceanproteinportal.org/v2/ProteinIdentifier> .
 <http://schema.oceanproteinportal.org/v2/ProteinIdentifierScheme> <http://www.w3.org/2000/01/rdf-schema#comment> "A class of identifier schemes used to unqiuely identify proteins." .
 <http://schema.oceanproteinportal.org/v2/ProteinIdentifierScheme> <http://www.w3.org/2000/01/rdf-schema#comment> "Kegg Orthology (KO) Entry  => opp:keggEntry (schema:identifier)\nKO Definition => opp:keggDefinition (aka schema:description)\nKO Pathway => opp:keggPathwayNames (rdf:Bag of KO names)\n\nNote since the order of the pathways (or KeggPathway Index isn't provided we don't use an rdf:Seq" .
 <http://schema.oceanproteinportal.org/v2/ProteinIdentifierScheme> <http://www.w3.org/2000/01/rdf-schema#label> "ProteinIdentifierScheme" .
@@ -1058,20 +1080,20 @@ _:genid40 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://schema.oceanpro
 # http://schema.oceanproteinportal.org/v2/SampleIdentifier
 <http://schema.oceanproteinportal.org/v2/SampleIdentifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://schema.oceanproteinportal.org/v2/SampleIdentifier> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.oceanproteinportal.org/v2/Identifier> .
-<http://schema.oceanproteinportal.org/v2/SampleIdentifier> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid41 .
-_:genid41 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid41 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/isIdentifierOf> .
-_:genid41 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/ns/sosa/Sample> .
+<http://schema.oceanproteinportal.org/v2/SampleIdentifier> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid46 .
+_:genid46 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid46 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/isIdentifierOf> .
+_:genid46 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/ns/sosa/Sample> .
 <http://schema.oceanproteinportal.org/v2/SampleIdentifier> <http://www.w3.org/2000/01/rdf-schema#comment> "An identifier for a sample within a Dataset. The IdentifierScheme for this sample would be provides by the Dataset. See opp:definesIdentifierScheme" .
 <http://schema.oceanproteinportal.org/v2/SampleIdentifier> <http://www.w3.org/2000/01/rdf-schema#label> "SampleIdentifier" .
 # 
 # http://schema.oceanproteinportal.org/v2/Station
 <http://schema.oceanproteinportal.org/v2/Station> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://schema.oceanproteinportal.org/v2/Station> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid42 .
-_:genid42 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid42 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/stationName> .
-_:genid42 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:genid42 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XMLSchema#string> .
+<http://schema.oceanproteinportal.org/v2/Station> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid47 .
+_:genid47 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid47 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/stationName> .
+_:genid47 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid47 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XMLSchema#string> .
 <http://schema.oceanproteinportal.org/v2/Station> <http://schema.oceanproteinportal.org/v2/describedinConceptualModelOf> <http://www.w3.org/ns/sosa/Sample> .
 <http://schema.oceanproteinportal.org/v2/Station> <http://www.w3.org/2000/01/rdf-schema#comment> "A generally agreed upon location at which sampling occurred. This agreement enables the comparison of collected data over different reference frames such as time." .
 <http://schema.oceanproteinportal.org/v2/Station> <http://www.w3.org/2000/01/rdf-schema#label> "Station" .
@@ -1079,6 +1101,11 @@ _:genid42 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XM
 # http://schema.oceanproteinportal.org/v2/UniprotIdentifier
 <http://schema.oceanproteinportal.org/v2/UniprotIdentifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://schema.oceanproteinportal.org/v2/UniprotIdentifier> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.oceanproteinportal.org/v2/ProteinIdentifier> .
+<http://schema.oceanproteinportal.org/v2/UniprotIdentifier> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid48 .
+_:genid48 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid48 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/identifierScheme> .
+_:genid48 <http://www.w3.org/2002/07/owl#hasValue> <http://schema.oceanproteinportal.org/v2/IdentifierScheme_Uniprot> .
+<http://schema.oceanproteinportal.org/v2/UniprotIdentifier> <http://www.w3.org/2000/01/rdf-schema#comment> "A Uniprot identifier" .
 <http://schema.oceanproteinportal.org/v2/UniprotIdentifier> <http://www.w3.org/2000/01/rdf-schema#label> "UniprotIdentifier" .
 # 
 # http://schema.oceanproteinportal.org/v2/UserDefinedSampleIdentifier
@@ -1094,6 +1121,7 @@ _:genid42 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XM
 # http://schema.org/Organization
 <http://schema.org/Organization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://schema.org/Organization> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.oceanproteinportal.org/v2/Agent> .
+<http://schema.org/Organization> <http://www.w3.org/2002/07/owl#disjointWith> <http://schema.org/Person> .
 # 
 # http://schema.org/Person
 <http://schema.org/Person> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -1190,6 +1218,8 @@ _:genid42 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XM
 # http://schema.oceanproteinportal.org/v2/IdentifierScheme_Uniprot
 <http://schema.oceanproteinportal.org/v2/IdentifierScheme_Uniprot> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <http://schema.oceanproteinportal.org/v2/IdentifierScheme_Uniprot> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.oceanproteinportal.org/v2/ProteinIdentifierScheme> .
+<http://schema.oceanproteinportal.org/v2/IdentifierScheme_Uniprot> <http://www.w3.org/2000/01/rdf-schema#comment> "Identifier Scheme: Uniprot" .
+<http://schema.oceanproteinportal.org/v2/IdentifierScheme_Uniprot> <http://www.w3.org/2000/01/rdf-schema#label> "Identifier Scheme: Uniprot" .
 <http://schema.oceanproteinportal.org/v2/IdentifierScheme_Uniprot> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <https://registry.identifiers.org/registry/uniprot> .
 # 
 # http://schema.oceanproteinportal.org/v2/PeptideSpectralCountSum
@@ -1245,28 +1275,28 @@ _:genid42 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XM
 # #################################################################
 # 
 # 
-_:genid43 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDisjointClasses> .
-_:genid43 <http://www.w3.org/2002/07/owl#members> _:genid46 .
-_:genid46 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid46 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://schema.oceanproteinportal.org/v2/Agent> .
-_:genid46 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid45 .
-_:genid45 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid45 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://schema.oceanproteinportal.org/v2/AgentRole> .
-_:genid45 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid44 .
-_:genid44 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid44 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://schema.oceanproteinportal.org/v2/Role> .
-_:genid44 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-# 
-_:genid47 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDisjointClasses> .
-_:genid47 <http://www.w3.org/2002/07/owl#members> _:genid50 .
+_:genid49 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDisjointClasses> .
+_:genid49 <http://www.w3.org/2002/07/owl#members> _:genid52 .
+_:genid52 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid52 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://schema.oceanproteinportal.org/v2/Agent> .
+_:genid52 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid51 .
+_:genid51 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid51 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://schema.oceanproteinportal.org/v2/AgentRole> .
+_:genid51 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid50 .
 _:genid50 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid50 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://schema.oceanproteinportal.org/v2/Identifier> .
-_:genid50 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid49 .
-_:genid49 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid49 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://schema.oceanproteinportal.org/v2/IdentifierMetadata> .
-_:genid49 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid48 .
-_:genid48 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid48 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://schema.oceanproteinportal.org/v2/IdentifierScheme> .
-_:genid48 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid50 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://schema.oceanproteinportal.org/v2/Role> .
+_:genid50 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+# 
+_:genid53 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDisjointClasses> .
+_:genid53 <http://www.w3.org/2002/07/owl#members> _:genid56 .
+_:genid56 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid56 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://schema.oceanproteinportal.org/v2/Identifier> .
+_:genid56 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid55 .
+_:genid55 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid55 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://schema.oceanproteinportal.org/v2/IdentifierMetadata> .
+_:genid55 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid54 .
+_:genid54 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid54 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://schema.oceanproteinportal.org/v2/IdentifierScheme> .
+_:genid54 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
 # 
 # Generated by the OWL API (version 5.1.14) https://github.com/owlcs/owlapi/

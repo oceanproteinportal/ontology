@@ -6,7 +6,7 @@
 
 
 <!-- SCHEMA.ORG METADATA -->
-<script type="application/ld+json">{"@context":"http://schema.org","@type":"TechArticle","url":"http://schema.oceanproteinportal.org/v2/","image":"http://vowl.visualdataweb.org/webvowl/#iri=http://schema.oceanproteinportal.org/v2/","name":"Ocean Protein Portal Ver. 2", "headline":"Document describing the ontology http://schema.oceanproteinportal.org/v2/", "datePublished":"Wed Mar 24 09:13:37 EDT 2021", "license":"https://spdx.org/licenses/CC0-1.0", "author":[{"@type":"Person","name":"Adam Shepherd","url":"https://orcid.org/0000-0003-4486-9448"},{"@type":"Person","name":"Jaclyn Saunders","url":"https://orcid.org/0000-0003-1023-6239"},{"@type":"Person","name":"Makoto Saito","url":"https://orcid.org/0000-0002-1667-9287"},{"@type":"Person","name":"Danie Kinkade","url":"https://orcid.org/0000-0002-1134-7347"}]}</script>
+<script type="application/ld+json">{"@context":"http://schema.org","@type":"TechArticle","url":"http://schema.oceanproteinportal.org/v2/","image":"http://vowl.visualdataweb.org/webvowl/#iri=http://schema.oceanproteinportal.org/v2/","name":"Ocean Protein Portal Ver. 2", "headline":"Document describing the ontology http://schema.oceanproteinportal.org/v2/", "datePublished":"Tue Apr 06 21:13:48 EDT 2021", "license":"https://spdx.org/licenses/CC0-1.0", "author":[{"@type":"Person","name":"Adam Shepherd","url":"https://orcid.org/0000-0003-4486-9448"},{"@type":"Person","name":"Jaclyn Saunders","url":"https://orcid.org/0000-0003-1023-6239"},{"@type":"Person","name":"Makoto Saito","url":"https://orcid.org/0000-0002-1667-9287"},{"@type":"Person","name":"Danie Kinkade","url":"https://orcid.org/0000-0002-1134-7347"}]}</script>
 
 <script src="resources/jquery.js"></script>
 <script src="resources/marked.min.js"></script>
@@ -51,7 +51,7 @@ function loadTOC(){
 <body>
 <div class="container">
 <div class="head">
-<div style="float:right">language <a href="index.html"><b>en</b></a> </div>
+<div style="float:right">language <a href="index-en.html"><b>en</b></a> </div>
 <h1>Ocean Protein Portal Ver. 2</h1>
 
 
@@ -114,7 +114,9 @@ This is a place holder text for the abstract. The abstract should contain a coup
    </li>
   </ul>
 </div>
-<div id="namespacedeclarations"><h3 id="ns" class="list">Namespace declarations</h3>
+<div id="namespacedeclarations">
+
+<h3 id="ns" class="list">Namespace declarations</h3>
 <div id="ns" align="center">
 <table>
 <caption> <a href="#ns"> Table 1</a>: Namespaces used in the document </caption>
@@ -231,16 +233,24 @@ This ontology has the following classes and properties.</span>
          title="http://schema.oceanproteinportal.org/v2/IdentifierScheme">IdentifierScheme</a>
    </li>
    <li>
-      <a href="#KeggIdentifier"
-         title="http://schema.oceanproteinportal.org/v2/KeggIdentifier">KeggIdentifier</a>
+      <a href="#KeggDatabaseEntry"
+         title="http://schema.oceanproteinportal.org/v2/KeggDatabaseEntry">KeggDatabaseEntry</a>
+   </li>
+   <li>
+      <a href="#KeggDatabaseEntryIdentifier"
+         title="http://schema.oceanproteinportal.org/v2/KeggDatabaseEntryIdentifier">KeggDatabaseEntryIdentifier</a>
+   </li>
+   <li>
+      <a href="#KeggOrthology"
+         title="http://schema.oceanproteinportal.org/v2/KeggOrthology">KeggOrthology</a>
+   </li>
+   <li>
+      <a href="#KeggOrthologyIdentifier"
+         title="http://schema.oceanproteinportal.org/v2/KeggOrthologyIdentifier">KeggOrthologyIdentifier</a>
    </li>
    <li>
       <a href="#KeggPathway"
          title="http://schema.oceanproteinportal.org/v2/KeggPathway">KeggPathway</a>
-   </li>
-   <li>
-      <a href="#KeggPathwayNames"
-         title="http://schema.oceanproteinportal.org/v2/KeggPathwayNames">KeggPathwayNames</a>
    </li>
    <li>
       <a href="#NCBITaxonIdentifier"
@@ -453,12 +463,16 @@ This ontology has the following classes and properties.</span>
          title="http://schema.oceanproteinportal.org/v2/isIdentifierSchemeFor">isIdentifierSchemeFor</a>
    </li>
    <li>
+      <a href="#keggOrthology"
+         title="http://schema.oceanproteinportal.org/v2/keggOrthology">keggOrthology</a>
+   </li>
+   <li>
       <a href="#keggPathway"
          title="http://schema.oceanproteinportal.org/v2/keggPathway">keggPathway</a>
    </li>
    <li>
-      <a href="#keggPathwayNames"
-         title="http://schema.oceanproteinportal.org/v2/keggPathwayNames">keggPathwayNames</a>
+      <a href="#keggPathwayForOrthology"
+         title="http://schema.oceanproteinportal.org/v2/keggPathwayForOrthology">keggPathwayForOrthology</a>
    </li>
    <li>
       <a href="#ncbiTaxonName"
@@ -569,16 +583,11 @@ This ontology has the following classes and properties.</span>
          title="http://schema.oceanproteinportal.org/v2/identifierValue">identifierValue</a>
    </li>
    <li>
-      <a href="#keggDefinition"
-         title="http://schema.oceanproteinportal.org/v2/keggDefinition">keggDefinition</a>
+      <a href="#keggName" title="http://schema.oceanproteinportal.org/v2/keggName">keggName</a>
    </li>
    <li>
-      <a href="#keggEntry"
-         title="http://schema.oceanproteinportal.org/v2/keggEntry">keggEntry</a>
-   </li>
-   <li>
-      <a href="#keggPathwayName"
-         title="http://schema.oceanproteinportal.org/v2/keggPathwayName">keggPathwayName</a>
+      <a href="#keggOrthologyDefinition"
+         title="http://schema.oceanproteinportal.org/v2/keggOrthologyDefinition">keggOrthologyDefinition</a>
    </li>
    <li>
       <a href="#http://schema.org/maxValue" title="http://schema.org/maxValue">
@@ -692,12 +701,6 @@ This ontology has the following classes and properties.</span>
          title="http://schema.oceanproteinportal.org/v2/DatasetProfile_ProteinTotalSpectralCount">Dataset Profile: Protein Total Spectral Count</a>
    </li>
    <li>
-      <a href="#IdentifierScheme_Uniprot"
-         title="http://schema.oceanproteinportal.org/v2/IdentifierScheme_Uniprot">
-         <span>identifier scheme uniprot</span>
-      </a>
-   </li>
-   <li>
       <a href="#IdentifierScheme_EnzymeCommission"
          title="http://schema.oceanproteinportal.org/v2/IdentifierScheme_EnzymeCommission">Identifier Scheme: EnzymeCommission</a>
    </li>
@@ -716,6 +719,10 @@ This ontology has the following classes and properties.</span>
    <li>
       <a href="#IdentifierScheme_PFam"
          title="http://schema.oceanproteinportal.org/v2/IdentifierScheme_PFam">Identifier Scheme: PFam</a>
+   </li>
+   <li>
+      <a href="#IdentifierScheme_Uniprot"
+         title="http://schema.oceanproteinportal.org/v2/IdentifierScheme_Uniprot">Identifier Scheme: Uniprot</a>
    </li>
    <li>
       <a href="#Role_Author"
@@ -837,16 +844,24 @@ This section provides details for each class and property defined by Ocean Prote
             title="http://schema.oceanproteinportal.org/v2/IdentifierScheme">IdentifierScheme</a>
       </li>
       <li>
-         <a href="#KeggIdentifier"
-            title="http://schema.oceanproteinportal.org/v2/KeggIdentifier">KeggIdentifier</a>
+         <a href="#KeggDatabaseEntry"
+            title="http://schema.oceanproteinportal.org/v2/KeggDatabaseEntry">KeggDatabaseEntry</a>
+      </li>
+      <li>
+         <a href="#KeggDatabaseEntryIdentifier"
+            title="http://schema.oceanproteinportal.org/v2/KeggDatabaseEntryIdentifier">KeggDatabaseEntryIdentifier</a>
+      </li>
+      <li>
+         <a href="#KeggOrthology"
+            title="http://schema.oceanproteinportal.org/v2/KeggOrthology">KeggOrthology</a>
+      </li>
+      <li>
+         <a href="#KeggOrthologyIdentifier"
+            title="http://schema.oceanproteinportal.org/v2/KeggOrthologyIdentifier">KeggOrthologyIdentifier</a>
       </li>
       <li>
          <a href="#KeggPathway"
             title="http://schema.oceanproteinportal.org/v2/KeggPathway">KeggPathway</a>
-      </li>
-      <li>
-         <a href="#KeggPathwayNames"
-            title="http://schema.oceanproteinportal.org/v2/KeggPathwayNames">KeggPathwayNames</a>
       </li>
       <li>
          <a href="#NCBITaxonIdentifier"
@@ -1407,6 +1422,9 @@ This section provides details for each class and property defined by Ocean Prote
       </h3>
       <p>
          <strong>IRI:</strong> http://schema.oceanproteinportal.org/v2/EnzymeCommissionIdentifier</p>
+      <div class="comment">
+         <span class="markdown">An EC identifier</span>
+      </div>
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
@@ -1580,8 +1598,8 @@ This section provides details for each class and property defined by Ocean Prote
          <dd/>
          <dt>has sub-classes</dt>
          <dd>
-            <a href="#KeggPathway"
-               title="http://schema.oceanproteinportal.org/v2/KeggPathway">KeggPathway</a>
+            <a href="#KeggDatabaseEntry"
+               title="http://schema.oceanproteinportal.org/v2/KeggDatabaseEntry">KeggDatabaseEntry</a>
             <sup class="type-c" title="class">c</sup>, <a href="#NCBITaxonName"
                title="http://schema.oceanproteinportal.org/v2/NCBITaxonName">NCBITaxonName</a>
             <sup class="type-c" title="class">c</sup>, <a href="#PFamsDescription"
@@ -1661,13 +1679,43 @@ This section provides details for each class and property defined by Ocean Prote
          </dd>
       </dl>
    </div>
-   <div class="entity" id="KeggIdentifier">
-      <h3>KeggIdentifier<sup class="type-c" title="class">c</sup>
+   <div class="entity" id="KeggDatabaseEntry">
+      <h3>KeggDatabaseEntry<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> http://schema.oceanproteinportal.org/v2/KeggIdentifier</p>
+         <strong>IRI:</strong> http://schema.oceanproteinportal.org/v2/KeggDatabaseEntry</p>
+      <div class="comment">
+         <span class="markdown">An entry in thee Kegg Database</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#IdentifierMetadata"
+               title="http://schema.oceanproteinportal.org/v2/IdentifierMetadata">IdentifierMetadata</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#KeggOrthology"
+               title="http://schema.oceanproteinportal.org/v2/KeggOrthology">KeggOrthology</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#KeggPathway"
+               title="http://schema.oceanproteinportal.org/v2/KeggPathway">KeggPathway</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="KeggDatabaseEntryIdentifier">
+      <h3>KeggDatabaseEntryIdentifier<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://schema.oceanproteinportal.org/v2/KeggDatabaseEntryIdentifier</p>
+      <div class="comment">
+         <span class="markdown">A Kegg Dataset Entry Identifier</span>
+      </div>
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
@@ -1675,10 +1723,70 @@ This section provides details for each class and property defined by Ocean Prote
                title="http://schema.oceanproteinportal.org/v2/ProteinIdentifier">ProteinIdentifier</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#KeggOrthologyIdentifier"
+               title="http://schema.oceanproteinportal.org/v2/KeggOrthologyIdentifier">KeggOrthologyIdentifier</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="KeggOrthology">
+      <h3>KeggOrthology<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://schema.oceanproteinportal.org/v2/KeggOrthology</p>
+      <div class="comment">
+         <span class="markdown">A Kegg Orthology entry from the Kegg database</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#KeggDatabaseEntry"
+               title="http://schema.oceanproteinportal.org/v2/KeggDatabaseEntry">KeggDatabaseEntry</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
          <dt>is in domain of</dt>
          <dd>
-            <a href="#keggPathway"
+            <a href="#keggOrthologyDefinition"
+               title="http://schema.oceanproteinportal.org/v2/keggOrthologyDefinition">keggOrthologyDefinition</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#keggPathway"
                title="http://schema.oceanproteinportal.org/v2/keggPathway">keggPathway</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#keggOrthology"
+               title="http://schema.oceanproteinportal.org/v2/keggOrthology">keggOrthology</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#keggPathwayForOrthology"
+               title="http://schema.oceanproteinportal.org/v2/keggPathwayForOrthology">keggPathwayForOrthology</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="KeggOrthologyIdentifier">
+      <h3>KeggOrthologyIdentifier<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://schema.oceanproteinportal.org/v2/KeggOrthologyIdentifier</p>
+      <div class="comment">
+         <span class="markdown">A Kegg Orthology Identifier</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#KeggDatabaseEntryIdentifier"
+               title="http://schema.oceanproteinportal.org/v2/KeggDatabaseEntryIdentifier">KeggDatabaseEntryIdentifier</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#keggOrthology"
+               title="http://schema.oceanproteinportal.org/v2/keggOrthology">keggOrthology</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
@@ -1691,64 +1799,25 @@ This section provides details for each class and property defined by Ocean Prote
       <p>
          <strong>IRI:</strong> http://schema.oceanproteinportal.org/v2/KeggPathway</p>
       <div class="comment">
-         <span class="markdown">Metadata about a Protein Identification's matching Kegg Orthology (KO) entry. Presently, all we receive is the KO Entry (mapped as opp-dt:KeggIdentifier), the KO Definition (mapped as odo-dt:KeggName), and an unordered list of only ceertain elements inthe KO Pathway (mapped as odo-dt:KeggDescription).</span>
+         <span class="markdown">A Kegg Orthology (KO) entry's pathway.</span>
       </div>
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <a href="#IdentifierMetadata"
-               title="http://schema.oceanproteinportal.org/v2/IdentifierMetadata">IdentifierMetadata</a>
+            <a href="#KeggDatabaseEntry"
+               title="http://schema.oceanproteinportal.org/v2/KeggDatabaseEntry">KeggDatabaseEntry</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>is in domain of</dt>
          <dd>
-            <a href="#keggDefinition"
-               title="http://schema.oceanproteinportal.org/v2/keggDefinition">keggDefinition</a>
-            <sup class="type-dp" title="data property">dp</sup>, <a href="#keggEntry"
-               title="http://schema.oceanproteinportal.org/v2/keggEntry">keggEntry</a>
-            <sup class="type-dp" title="data property">dp</sup>, <a href="#keggPathwayNames"
-               title="http://schema.oceanproteinportal.org/v2/keggPathwayNames">keggPathwayNames</a>
+            <a href="#keggPathwayForOrthology"
+               title="http://schema.oceanproteinportal.org/v2/keggPathwayForOrthology">keggPathwayForOrthology</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
          <dt>is in range of</dt>
          <dd>
             <a href="#keggPathway"
                title="http://schema.oceanproteinportal.org/v2/keggPathway">keggPathway</a>
-            <sup class="type-op" title="object property">op</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="KeggPathwayNames">
-      <h3>KeggPathwayNames<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://schema.oceanproteinportal.org/v2/KeggPathwayNames</p>
-      <div class="comment">
-         <span class="markdown">A unordered (missing its KO Pathway Index) list of selected Kegg Orthology Pathway Names (only the useful ones according to the data's interpreter?). The values should be an ordered list of legit KO entries, but for the sake of brevity, we model them as a multiple values of schema:value on the schema:PropertyValue since we do not currently have access to their KO entry identifiers or the patheway index values.
-
-
-_:exampleKeggPathwayNames a opp:KeggPathwayNames ;
-    schema:value "Nitrogen metabolism" ;
-    schema:value "Two-component system" .</span>
-      </div>
-      <dl class="description">
-         <dt>has super-classes</dt>
-         <dd>
-            <a href="#http://schema.org/PropertyValue" title="http://schema.org/PropertyValue">property value</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-         <dt>is in domain of</dt>
-         <dd>
-            <a href="#keggPathwayName"
-               title="http://schema.oceanproteinportal.org/v2/keggPathwayName">keggPathwayName</a>
-            <sup class="type-dp" title="data property">dp</sup>
-         </dd>
-         <dt>is in range of</dt>
-         <dd>
-            <a href="#keggPathwayNames"
-               title="http://schema.oceanproteinportal.org/v2/keggPathwayNames">keggPathwayNames</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
@@ -1760,6 +1829,9 @@ _:exampleKeggPathwayNames a opp:KeggPathwayNames ;
       </h3>
       <p>
          <strong>IRI:</strong> http://schema.oceanproteinportal.org/v2/NCBITaxonIdentifier</p>
+      <div class="comment">
+         <span class="markdown">An NCBI Taxon identifier</span>
+      </div>
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
@@ -1840,6 +1912,11 @@ _:exampleKeggPathwayNames a opp:KeggPathwayNames ;
             <a href="#performedAtOrganization"
                title="http://schema.oceanproteinportal.org/v2/performedAtOrganization">performedAtOrganization</a>
             <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is disjoint with</dt>
+         <dd>
+            <a href="#http://schema.org/Person" title="http://schema.org/Person">person</a>
+            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -2020,6 +2097,11 @@ _:exampleKeggPathwayNames a opp:KeggPathwayNames ;
             <a href="#Agent" title="http://schema.oceanproteinportal.org/v2/Agent">Agent</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
+         <dt>is disjoint with</dt>
+         <dd>
+            <a href="#http://schema.org/Organization" title="http://schema.org/Organization">organization</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
       </dl>
    </div>
    <div class="entity" id="PersonIdentifier">
@@ -2067,6 +2149,9 @@ _:exampleKeggPathwayNames a opp:KeggPathwayNames ;
       </h3>
       <p>
          <strong>IRI:</strong> http://schema.oceanproteinportal.org/v2/PFamsIdentifier</p>
+      <div class="comment">
+         <span class="markdown">A PFams identifier</span>
+      </div>
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
@@ -2118,8 +2203,6 @@ _:exampleKeggPathwayNames a opp:KeggPathwayNames ;
                title="http://schema.oceanproteinportal.org/v2/FilterSize">FilterSize</a>
             <sup class="type-c" title="class">c</sup>, <a href="#IdentificationScore"
                title="http://schema.oceanproteinportal.org/v2/IdentificationScore">IdentificationScore</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#KeggPathwayNames"
-               title="http://schema.oceanproteinportal.org/v2/KeggPathwayNames">KeggPathwayNames</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -2210,8 +2293,8 @@ _:exampleKeggPathwayNames a opp:KeggPathwayNames ;
          <dd>
             <a href="#EnzymeCommissionIdentifier"
                title="http://schema.oceanproteinportal.org/v2/EnzymeCommissionIdentifier">EnzymeCommissionIdentifier</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#KeggIdentifier"
-               title="http://schema.oceanproteinportal.org/v2/KeggIdentifier">KeggIdentifier</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#KeggDatabaseEntryIdentifier"
+               title="http://schema.oceanproteinportal.org/v2/KeggDatabaseEntryIdentifier">KeggDatabaseEntryIdentifier</a>
             <sup class="type-c" title="class">c</sup>, <a href="#NCBITaxonIdentifier"
                title="http://schema.oceanproteinportal.org/v2/NCBITaxonIdentifier">NCBITaxonIdentifier</a>
             <sup class="type-c" title="class">c</sup>, <a href="#PFamsIdentifier"
@@ -2250,7 +2333,7 @@ _:exampleKeggPathwayNames a opp:KeggPathwayNames ;
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#IdentifierScheme_PFam"
                title="http://schema.oceanproteinportal.org/v2/IdentifierScheme_PFam">Identifier Scheme: PFam</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#IdentifierScheme_Uniprot"
-               title="http://schema.oceanproteinportal.org/v2/IdentifierScheme_Uniprot">identifier scheme uniprot</a>
+               title="http://schema.oceanproteinportal.org/v2/IdentifierScheme_Uniprot">Identifier Scheme: Uniprot</a>
             <sup class="type-ni" title="named individual">ni</sup>
          </dd>
       </dl>
@@ -2475,6 +2558,9 @@ _:exampleKeggPathwayNames a opp:KeggPathwayNames ;
       </h3>
       <p>
          <strong>IRI:</strong> http://schema.oceanproteinportal.org/v2/UniprotIdentifier</p>
+      <div class="comment">
+         <span class="markdown">A Uniprot identifier</span>
+      </div>
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
@@ -2598,12 +2684,16 @@ _:exampleKeggPathwayNames a opp:KeggPathwayNames ;
             title="http://schema.oceanproteinportal.org/v2/isIdentifierSchemeFor">isIdentifierSchemeFor</a>
       </li>
       <li>
+         <a href="#keggOrthology"
+            title="http://schema.oceanproteinportal.org/v2/keggOrthology">keggOrthology</a>
+      </li>
+      <li>
          <a href="#keggPathway"
             title="http://schema.oceanproteinportal.org/v2/keggPathway">keggPathway</a>
       </li>
       <li>
-         <a href="#keggPathwayNames"
-            title="http://schema.oceanproteinportal.org/v2/keggPathwayNames">keggPathwayNames</a>
+         <a href="#keggPathwayForOrthology"
+            title="http://schema.oceanproteinportal.org/v2/keggPathwayForOrthology">keggPathwayForOrthology</a>
       </li>
       <li>
          <a href="#ncbiTaxonName"
@@ -3147,8 +3237,8 @@ _:exampleKeggPathwayNames a opp:KeggPathwayNames ;
          <dl>
             <dt>has sub-properties</dt>
             <dd>
-               <a href="#keggPathway"
-                  title="http://schema.oceanproteinportal.org/v2/keggPathway">keggPathway</a>
+               <a href="#keggOrthology"
+                  title="http://schema.oceanproteinportal.org/v2/keggOrthology">keggOrthology</a>
                <sup class="type-op" title="object property">op</sup>, <a href="#ncbiTaxonName"
                   title="http://schema.oceanproteinportal.org/v2/ncbiTaxonName">ncbiTaxonName</a>
                <sup class="type-op" title="object property">op</sup>
@@ -3376,16 +3466,13 @@ _:exampleKeggPathwayNames a opp:KeggPathwayNames ;
          </dl>
       </div>
    </div>
-   <div class="entity" id="keggPathway">
-      <h3>keggPathway<sup class="type-op" title="object property">op</sup>
+   <div class="entity" id="keggOrthology">
+      <h3>keggOrthology<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> http://schema.oceanproteinportal.org/v2/keggPathway</p>
-      <div class="comment">
-         <span class="markdown">The Kegg Identifier for which this KeggPathway describes.</span>
-      </div>
+         <strong>IRI:</strong> http://schema.oceanproteinportal.org/v2/keggOrthology</p>
       <div class="description">
          <dl>
             <dt>has super-properties</dt>
@@ -3396,8 +3483,39 @@ _:exampleKeggPathwayNames a opp:KeggPathwayNames ;
             </dd>
             <dt>has domain</dt>
             <dd>
-               <a href="#KeggIdentifier"
-                  title="http://schema.oceanproteinportal.org/v2/KeggIdentifier">KeggIdentifier</a>
+               <a href="#KeggOrthologyIdentifier"
+                  title="http://schema.oceanproteinportal.org/v2/KeggOrthologyIdentifier">KeggOrthologyIdentifier</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#KeggOrthology"
+                  title="http://schema.oceanproteinportal.org/v2/KeggOrthology">KeggOrthology</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="keggPathway">
+      <h3>keggPathway<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://schema.oceanproteinportal.org/v2/keggPathway</p>
+      <div class="comment">
+         <span class="markdown">A Pathway for some Kegg Orthology entry.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2002/07/owl#topObjectProperty">top object property</span>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#KeggOrthology"
+                  title="http://schema.oceanproteinportal.org/v2/KeggOrthology">KeggOrthology</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -3406,22 +3524,26 @@ _:exampleKeggPathwayNames a opp:KeggPathwayNames ;
                   title="http://schema.oceanproteinportal.org/v2/KeggPathway">KeggPathway</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#keggPathwayForOrthology"
+                  title="http://schema.oceanproteinportal.org/v2/keggPathwayForOrthology">keggPathwayForOrthology</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
          </dl>
       </div>
    </div>
-   <div class="entity" id="keggPathwayNames">
-      <h3>keggPathwayNames<sup class="type-op" title="object property">op</sup>
+   <div class="entity" id="keggPathwayForOrthology">
+      <h3>keggPathwayForOrthology<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> http://schema.oceanproteinportal.org/v2/keggPathwayNames</p>
+         <strong>IRI:</strong> http://schema.oceanproteinportal.org/v2/keggPathwayForOrthology</p>
       <div class="comment">
-         <span class="markdown">A set of Kegg Orthology (KO) Entry names from a KO Entry's Pathway.</span>
+         <span class="markdown">The orthology for which this pathway belongs</span>
       </div>
       <div class="description">
-         <p>
-            <strong>has characteristics:</strong> functional</p>
          <dl>
             <dt>has domain</dt>
             <dd>
@@ -3431,9 +3553,15 @@ _:exampleKeggPathwayNames a opp:KeggPathwayNames ;
             </dd>
             <dt>has range</dt>
             <dd>
-               <a href="#KeggPathwayNames"
-                  title="http://schema.oceanproteinportal.org/v2/KeggPathwayNames">KeggPathwayNames</a>
+               <a href="#KeggOrthology"
+                  title="http://schema.oceanproteinportal.org/v2/KeggOrthology">KeggOrthology</a>
                <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#keggPathway"
+                  title="http://schema.oceanproteinportal.org/v2/keggPathway">keggPathway</a>
+               <sup class="type-op" title="object property">op</sup>
             </dd>
          </dl>
       </div>
@@ -4057,16 +4185,11 @@ _:exampleKeggPathwayNames a opp:KeggPathwayNames ;
             title="http://schema.oceanproteinportal.org/v2/identifierValue">identifierValue</a>
       </li>
       <li>
-         <a href="#keggDefinition"
-            title="http://schema.oceanproteinportal.org/v2/keggDefinition">keggDefinition</a>
+         <a href="#keggName" title="http://schema.oceanproteinportal.org/v2/keggName">keggName</a>
       </li>
       <li>
-         <a href="#keggEntry"
-            title="http://schema.oceanproteinportal.org/v2/keggEntry">keggEntry</a>
-      </li>
-      <li>
-         <a href="#keggPathwayName"
-            title="http://schema.oceanproteinportal.org/v2/keggPathwayName">keggPathwayName</a>
+         <a href="#keggOrthologyDefinition"
+            title="http://schema.oceanproteinportal.org/v2/keggOrthologyDefinition">keggOrthologyDefinition</a>
       </li>
       <li>
          <a href="#http://schema.org/maxValue" title="http://schema.org/maxValue">
@@ -4411,13 +4534,42 @@ _:exampleKeggPathwayNames a opp:KeggPathwayNames ;
          </dl>
       </div>
    </div>
-   <div class="entity" id="keggDefinition">
-      <h3>keggDefinition<sup class="type-dp" title="data property">dp</sup>
+   <div class="entity" id="keggName">
+      <h3>keggName<sup class="type-dp" title="data property">dp</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> http://schema.oceanproteinportal.org/v2/keggDefinition</p>
+         <strong>IRI:</strong> http://schema.oceanproteinportal.org/v2/keggName</p>
+      <div class="comment">
+         <span class="markdown">The name of some Entry in the Kegg Database. This could be thee name of an Orthology or Pathway, etc.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#KeggOrthology"
+                  title="http://schema.oceanproteinportal.org/v2/KeggOrthology">KeggOrthology</a>
+               <sup class="type-c" title="class">c</sup>
+               <span class="logic">or</span>
+               <a href="#KeggPathway"
+                  title="http://schema.oceanproteinportal.org/v2/KeggPathway">KeggPathway</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="keggOrthologyDefinition">
+      <h3>keggOrthologyDefinition<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://schema.oceanproteinportal.org/v2/keggOrthologyDefinition</p>
       <div class="comment">
          <span class="markdown">The Kegg Orthology Definition
 
@@ -4427,79 +4579,10 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
          <p>
             <strong>has characteristics:</strong> functional</p>
          <dl>
-            <dt>has super-properties</dt>
-            <dd>
-               <span class="dotted" title="http://schema.org/description">description</span>
-               <sup class="type-dp" title="data property">dp</sup>
-            </dd>
             <dt>has domain</dt>
             <dd>
-               <a href="#KeggPathway"
-                  title="http://schema.oceanproteinportal.org/v2/KeggPathway">KeggPathway</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="keggEntry">
-      <h3>keggEntry<sup class="type-dp" title="data property">dp</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://schema.oceanproteinportal.org/v2/keggEntry</p>
-      <div class="comment">
-         <span class="markdown">The Kegg Orthology Entry value.
-
-Example: "K00370" via`https://www.genome.jp/dbget-bin/www_bget?K00370`</span>
-      </div>
-      <div class="description">
-         <p>
-            <strong>has characteristics:</strong> functional</p>
-         <dl>
-            <dt>has super-properties</dt>
-            <dd>
-               <span class="dotted" title="http://schema.org/identifier">identifier</span>
-               <sup class="type-dp" title="data property">dp</sup>
-            </dd>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#KeggPathway"
-                  title="http://schema.oceanproteinportal.org/v2/KeggPathway">KeggPathway</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="keggPathwayName">
-      <h3>keggPathwayName<sup class="type-dp" title="data property">dp</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://schema.oceanproteinportal.org/v2/keggPathwayName</p>
-      <div class="comment">
-         <span class="markdown">A Kegg Orthology Pathway Name</span>
-      </div>
-      <div class="description">
-         <dl>
-            <dt>has super-properties</dt>
-            <dd>
-               <span class="dotted" title="http://schema.org/value">value</span>
-               <sup class="type-dp" title="data property">dp</sup>
-            </dd>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#KeggPathwayNames"
-                  title="http://schema.oceanproteinportal.org/v2/KeggPathwayNames">KeggPathwayNames</a>
+               <a href="#KeggOrthology"
+                  title="http://schema.oceanproteinportal.org/v2/KeggOrthology">KeggOrthology</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -5152,12 +5235,6 @@ Example: "K00370" via`https://www.genome.jp/dbget-bin/www_bget?K00370`</span>
             title="http://schema.oceanproteinportal.org/v2/DatasetProfile_ProteinTotalSpectralCount">Dataset Profile: Protein Total Spectral Count</a>
       </li>
       <li>
-         <a href="#IdentifierScheme_Uniprot"
-            title="http://schema.oceanproteinportal.org/v2/IdentifierScheme_Uniprot">
-            <span>identifier scheme uniprot</span>
-         </a>
-      </li>
-      <li>
          <a href="#IdentifierScheme_EnzymeCommission"
             title="http://schema.oceanproteinportal.org/v2/IdentifierScheme_EnzymeCommission">Identifier Scheme: EnzymeCommission</a>
       </li>
@@ -5176,6 +5253,10 @@ Example: "K00370" via`https://www.genome.jp/dbget-bin/www_bget?K00370`</span>
       <li>
          <a href="#IdentifierScheme_PFam"
             title="http://schema.oceanproteinportal.org/v2/IdentifierScheme_PFam">Identifier Scheme: PFam</a>
+      </li>
+      <li>
+         <a href="#IdentifierScheme_Uniprot"
+            title="http://schema.oceanproteinportal.org/v2/IdentifierScheme_Uniprot">Identifier Scheme: Uniprot</a>
       </li>
       <li>
          <a href="#Role_Author"
@@ -5239,22 +5320,6 @@ Example: "K00370" via`https://www.genome.jp/dbget-bin/www_bget?K00370`</span>
             <sup class="type-op" title="object property">op</sup>
             <a href="#ProteinTotalSpectralCount"
                title="http://schema.oceanproteinportal.org/v2/ProteinTotalSpectralCount">ProteinTotalSpectralCount</a>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="IdentifierScheme_Uniprot">
-      <h3>identifier scheme uniprot<sup class="type-ni" title="named individual">ni</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://schema.oceanproteinportal.org/v2/IdentifierScheme_Uniprot</p>
-      <dl class="description">
-         <dt>belongs to</dt>
-         <dd>
-            <a href="#ProteinIdentifierScheme"
-               title="http://schema.oceanproteinportal.org/v2/ProteinIdentifierScheme">ProteinIdentifierScheme</a>
-            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -5338,6 +5403,25 @@ Example: "K00370" via`https://www.genome.jp/dbget-bin/www_bget?K00370`</span>
          </dd>
       </dl>
    </div>
+   <div class="entity" id="IdentifierScheme_Uniprot">
+      <h3>Identifier Scheme: Uniprot<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://schema.oceanproteinportal.org/v2/IdentifierScheme_Uniprot</p>
+      <div class="comment">
+         <span class="markdown">Identifier Scheme: Uniprot</span>
+      </div>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#ProteinIdentifierScheme"
+               title="http://schema.oceanproteinportal.org/v2/ProteinIdentifierScheme">ProteinIdentifierScheme</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
    <div class="entity" id="Role_Author">
       <h3>Role: Author<sup class="type-ni" title="named individual">ni</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
@@ -5407,6 +5491,15 @@ Example: "K00370" via`https://www.genome.jp/dbget-bin/www_bget?K00370`</span>
 <sup class="type-ni" title="Named Individuals">ni</sup>: Named Individuals
 </div>
 </div>
+</div>
+
+
+<!--REFERENCES SECTION-->
+  <div id="references">
+<h2 id="ref" class="list">References <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+Add your references here. It is recommended to have them as a list.</span>
+
 </div>
 <div id="conceptual-model" class="list"><h2 class="list">Conceptual Model <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
  <div id="conceptual-model-aminoacid"><h3>Identification of Amino Acids <span class="backlink"> back to <a href="#toc">ToC</a></span></h3><img src="https://lucid.app/publicSegments/view/de62351f-8e38-426f-9b35-dcfb696e8729/image.png"></div>

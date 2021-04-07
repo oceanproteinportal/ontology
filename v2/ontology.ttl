@@ -228,22 +228,30 @@ owl:sameAs rdf:type owl:AnnotationProperty .
                        rdfs:label "isIdentifierSchemeFor" .
 
 
+###  http://schema.oceanproteinportal.org/v2/keggOrthology
+:keggOrthology rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :identifierMetadata ;
+               rdfs:domain :KeggOrthologyIdentifier ;
+               rdfs:range :KeggOrthology ;
+               rdfs:label "keggOrthology" .
+
+
 ###  http://schema.oceanproteinportal.org/v2/keggPathway
 :keggPathway rdf:type owl:ObjectProperty ;
-             rdfs:subPropertyOf :identifierMetadata ;
-             rdfs:domain :KeggIdentifier ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             owl:inverseOf :keggPathwayForOrthology ;
+             rdfs:domain :KeggOrthology ;
              rdfs:range :KeggPathway ;
-             rdfs:comment "The Kegg Identifier for which this KeggPathway describes." ;
+             rdfs:comment "A Pathway for some Kegg Orthology entry." ;
              rdfs:label "keggPathway" .
 
 
-###  http://schema.oceanproteinportal.org/v2/keggPathwayNames
-:keggPathwayNames rdf:type owl:ObjectProperty ,
-                           owl:FunctionalProperty ;
-                  rdfs:domain :KeggPathway ;
-                  rdfs:range :KeggPathwayNames ;
-                  rdfs:comment "A set of Kegg Orthology (KO) Entry names from a KO Entry's Pathway." ;
-                  rdfs:label "keggPathwayNames" .
+###  http://schema.oceanproteinportal.org/v2/keggPathwayForOrthology
+:keggPathwayForOrthology rdf:type owl:ObjectProperty ;
+                         rdfs:domain :KeggPathway ;
+                         rdfs:range :KeggOrthology ;
+                         rdfs:comment "The orthology for which this pathway belongs" ;
+                         rdfs:label "keggPathwayForOrthology" .
 
 
 ###  http://schema.oceanproteinportal.org/v2/ncbiTaxonName
@@ -503,37 +511,27 @@ owl:sameAs rdf:type owl:AnnotationProperty .
                  rdfs:label "identifierValue" .
 
 
-###  http://schema.oceanproteinportal.org/v2/keggDefinition
-:keggDefinition rdf:type owl:DatatypeProperty ;
-                rdfs:subPropertyOf <http://schema.org/description> ;
-                rdf:type owl:FunctionalProperty ;
-                rdfs:domain :KeggPathway ;
-                rdfs:range xsd:string ;
-                rdfs:comment """The Kegg Orthology Definition 
+###  http://schema.oceanproteinportal.org/v2/keggName
+:keggName rdf:type owl:DatatypeProperty ;
+          rdfs:domain [ rdf:type owl:Class ;
+                        owl:unionOf ( :KeggOrthology
+                                      :KeggPathway
+                                    )
+                      ] ;
+          rdfs:range xsd:string ;
+          rdfs:comment "The name of some Entry in the Kegg Database. This could be thee name of an Orthology or Pathway, etc." ;
+          rdfs:label "keggName" .
+
+
+###  http://schema.oceanproteinportal.org/v2/keggOrthologyDefinition
+:keggOrthologyDefinition rdf:type owl:DatatypeProperty ,
+                                  owl:FunctionalProperty ;
+                         rdfs:domain :KeggOrthology ;
+                         rdfs:range xsd:string ;
+                         rdfs:comment """The Kegg Orthology Definition
 
 Example: \"nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 1.7.99.-]\" via `https://www.genome.jp/dbget-bin/www_bget?K00370`""" ;
-                rdfs:label "keggDefinition" .
-
-
-###  http://schema.oceanproteinportal.org/v2/keggEntry
-:keggEntry rdf:type owl:DatatypeProperty ;
-           rdfs:subPropertyOf <http://schema.org/identifier> ;
-           rdf:type owl:FunctionalProperty ;
-           rdfs:domain :KeggPathway ;
-           rdfs:range xsd:string ;
-           rdfs:comment """The Kegg Orthology Entry value. 
-
-Example: \"K00370\" via`https://www.genome.jp/dbget-bin/www_bget?K00370`""" ;
-           rdfs:label "keggEntry" .
-
-
-###  http://schema.oceanproteinportal.org/v2/keggPathwayName
-:keggPathwayName rdf:type owl:DatatypeProperty ;
-                 rdfs:subPropertyOf <http://schema.org/value> ;
-                 rdfs:domain :KeggPathwayNames ;
-                 rdfs:range xsd:string ;
-                 rdfs:comment "A Kegg Orthology Pathway Name" ;
-                 rdfs:label "keggPathwayName" .
+                         rdfs:label "keggOrthologyDefinition" .
 
 
 ###  http://schema.oceanproteinportal.org/v2/maximumFilterSize
@@ -690,10 +688,6 @@ Example: \"K00370\" via`https://www.genome.jp/dbget-bin/www_bget?K00370`""" ;
           rdfs:domain :PeptideIdentification ;
           rdfs:range xsd:float ;
           rdfs:label "totalTIC" .
-
-
-###  http://schema.org/description
-<http://schema.org/description> rdf:type owl:DatatypeProperty .
 
 
 ###  http://schema.org/identifier
@@ -885,7 +879,12 @@ Example: \"K00370\" via`https://www.genome.jp/dbget-bin/www_bget?K00370`""" ;
 
 ###  http://schema.oceanproteinportal.org/v2/EnzymeCommissionIdentifier
 :EnzymeCommissionIdentifier rdf:type owl:Class ;
-                            rdfs:subClassOf :ProteinIdentifier ;
+                            rdfs:subClassOf :ProteinIdentifier ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty :identifierScheme ;
+                                              owl:hasValue :IdentifierScheme_EnzymeCommission
+                                            ] ;
+                            rdfs:comment "An EC identifier" ;
                             rdfs:label "EnzymeCommissionIdentifier" .
 
 
@@ -954,62 +953,70 @@ Example: \"K00370\" via`https://www.genome.jp/dbget-bin/www_bget?K00370`""" ;
                   rdfs:label "IdentifierScheme" .
 
 
-###  http://schema.oceanproteinportal.org/v2/KeggIdentifier
-:KeggIdentifier rdf:type owl:Class ;
-                rdfs:subClassOf :ProteinIdentifier ;
-                rdfs:label "KeggIdentifier" .
+###  http://schema.oceanproteinportal.org/v2/KeggDatabaseEntry
+:KeggDatabaseEntry rdf:type owl:Class ;
+                   rdfs:subClassOf :IdentifierMetadata ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :annotatesIdentifier ;
+                                     owl:someValuesFrom :KeggDatabaseEntryIdentifier
+                                   ] ;
+                   rdfs:comment "An entry in thee Kegg Database" ;
+                   rdfs:label "KeggDatabaseEntry" .
+
+
+###  http://schema.oceanproteinportal.org/v2/KeggDatabaseEntryIdentifier
+:KeggDatabaseEntryIdentifier rdf:type owl:Class ;
+                             rdfs:subClassOf :ProteinIdentifier ,
+                                             [ rdf:type owl:Restriction ;
+                                               owl:onProperty :identifierScheme ;
+                                               owl:hasValue :IdentifierScheme_Kegg
+                                             ] ;
+                             rdfs:comment "A Kegg Dataset Entry Identifier" ;
+                             rdfs:label "KeggDatabaseEntryIdentifier" .
+
+
+###  http://schema.oceanproteinportal.org/v2/KeggOrthology
+:KeggOrthology rdf:type owl:Class ;
+               rdfs:subClassOf :KeggDatabaseEntry ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :annotatesIdentifier ;
+                                 owl:someValuesFrom :KeggOrthologyIdentifier
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :keggName ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onDataRange xsd:string
+                               ] ;
+               rdfs:comment "A Kegg Orthology entry from the Kegg database" ;
+               rdfs:label "KeggOrthology" .
+
+
+###  http://schema.oceanproteinportal.org/v2/KeggOrthologyIdentifier
+:KeggOrthologyIdentifier rdf:type owl:Class ;
+                         rdfs:subClassOf :KeggDatabaseEntryIdentifier ;
+                         rdfs:comment "A Kegg Orthology Identifier" ;
+                         rdfs:label "KeggOrthologyIdentifier" .
 
 
 ###  http://schema.oceanproteinportal.org/v2/KeggPathway
 :KeggPathway rdf:type owl:Class ;
-             rdfs:subClassOf :IdentifierMetadata ,
+             rdfs:subClassOf :KeggDatabaseEntry ,
                              [ rdf:type owl:Restriction ;
-                               owl:onProperty :annotatesIdentifier ;
-                               owl:someValuesFrom :KeggIdentifier
-                             ] ,
-                             [ rdf:type owl:Restriction ;
-                               owl:onProperty :keggPathwayNames ;
-                               owl:allValuesFrom :KeggPathwayNames
-                             ] ,
-                             [ rdf:type owl:Restriction ;
-                               owl:onProperty :keggPathwayNames ;
-                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                               owl:onClass :KeggPathwayNames
-                             ] ,
-                             [ rdf:type owl:Restriction ;
-                               owl:onProperty :keggDefinition ;
-                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                               owl:onDataRange owl:rational
-                             ] ,
-                             [ rdf:type owl:Restriction ;
-                               owl:onProperty :keggEntry ;
-                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                               owl:onDataRange owl:rational
+                               owl:onProperty :keggPathwayForOrthology ;
+                               owl:someValuesFrom :KeggOrthology
                              ] ;
-             rdfs:comment "Metadata about a Protein Identification's matching Kegg Orthology (KO) entry. Presently, all we receive is the KO Entry (mapped as opp-dt:KeggIdentifier), the KO Definition (mapped as odo-dt:KeggName), and an unordered list of only ceertain elements inthe KO Pathway (mapped as odo-dt:KeggDescription)." ;
+             rdfs:comment "A Kegg Orthology (KO) entry's pathway." ;
              rdfs:label "KeggPathway" .
-
-
-###  http://schema.oceanproteinportal.org/v2/KeggPathwayNames
-:KeggPathwayNames rdf:type owl:Class ;
-                  rdfs:subClassOf <http://schema.org/PropertyValue> ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty :keggPathwayName ;
-                                    owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                    owl:onDataRange owl:rational
-                                  ] ;
-                  rdfs:comment """A unordered (missing its KO Pathway Index) list of selected Kegg Orthology Pathway Names (only the useful ones according to the data's interpreter?). The values should be an ordered list of legit KO entries, but for the sake of brevity, we model them as a multiple values of schema:value on the schema:PropertyValue since we do not currently have access to their KO entry identifiers or the patheway index values.
-
-
-_:exampleKeggPathwayNames a opp:KeggPathwayNames ;
-    schema:value \"Nitrogen metabolism\" ;
-    schema:value \"Two-component system\" .""" ;
-                  rdfs:label "KeggPathwayNames" .
 
 
 ###  http://schema.oceanproteinportal.org/v2/NCBITaxonIdentifier
 :NCBITaxonIdentifier rdf:type owl:Class ;
-                     rdfs:subClassOf :ProteinIdentifier ;
+                     rdfs:subClassOf :ProteinIdentifier ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :identifierScheme ;
+                                       owl:hasValue :IdentifierScheme_NCBIProtein
+                                     ] ;
+                     rdfs:comment "An NCBI Taxon identifier" ;
                      rdfs:label "NCBITaxonIdentifier" .
 
 
@@ -1055,7 +1062,12 @@ _:exampleKeggPathwayNames a opp:KeggPathwayNames ;
 
 ###  http://schema.oceanproteinportal.org/v2/PFamsIdentifier
 :PFamsIdentifier rdf:type owl:Class ;
-                 rdfs:subClassOf :ProteinIdentifier ;
+                 rdfs:subClassOf :ProteinIdentifier ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :identifierScheme ;
+                                   owl:hasValue :IdentifierScheme_PFam
+                                 ] ;
+                 rdfs:comment "A PFams identifier" ;
                  rdfs:label "PFamsIdentifier" .
 
 
@@ -1203,7 +1215,12 @@ Note since the order of the pathways (or KeggPathway Index isn't provided we don
 
 ###  http://schema.oceanproteinportal.org/v2/UniprotIdentifier
 :UniprotIdentifier rdf:type owl:Class ;
-                   rdfs:subClassOf :ProteinIdentifier ;
+                   rdfs:subClassOf :ProteinIdentifier ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :identifierScheme ;
+                                     owl:hasValue :IdentifierScheme_Uniprot
+                                   ] ;
+                   rdfs:comment "A Uniprot identifier" ;
                    rdfs:label "UniprotIdentifier" .
 
 
@@ -1221,7 +1238,8 @@ Note since the order of the pathways (or KeggPathway Index isn't provided we don
 
 ###  http://schema.org/Organization
 <http://schema.org/Organization> rdf:type owl:Class ;
-                                 rdfs:subClassOf :Agent .
+                                 rdfs:subClassOf :Agent ;
+                                 owl:disjointWith <http://schema.org/Person> .
 
 
 ###  http://schema.org/Person
@@ -1327,6 +1345,8 @@ Note since the order of the pathways (or KeggPathway Index isn't provided we don
 ###  http://schema.oceanproteinportal.org/v2/IdentifierScheme_Uniprot
 :IdentifierScheme_Uniprot rdf:type owl:NamedIndividual ,
                                    :ProteinIdentifierScheme ;
+                          rdfs:comment "Identifier Scheme: Uniprot" ;
+                          rdfs:label "Identifier Scheme: Uniprot" ;
                           rdfs:seeAlso <https://registry.identifiers.org/registry/uniprot> .
 
 
