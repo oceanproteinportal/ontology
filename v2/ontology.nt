@@ -357,14 +357,16 @@
 # 
 # http://schema.oceanproteinportal.org/v2/suggestsProteinIdentification
 <http://schema.oceanproteinportal.org/v2/suggestsProteinIdentification> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<http://schema.oceanproteinportal.org/v2/suggestsProteinIdentification> <http://www.w3.org/2002/07/owl#inverseOf> <http://schema.oceanproteinportal.org/v2/suggestsProteinIdentification> .
-<http://schema.oceanproteinportal.org/v2/suggestsProteinIdentification> <http://www.w3.org/2000/01/rdf-schema#domain> <http://schema.oceanproteinportal.org/v2/ProteinIdentification> .
-<http://schema.oceanproteinportal.org/v2/suggestsProteinIdentification> <http://www.w3.org/2000/01/rdf-schema#range> <http://schema.oceanproteinportal.org/v2/PeptideIdentification> .
+<http://schema.oceanproteinportal.org/v2/suggestsProteinIdentification> <http://www.w3.org/2002/07/owl#inverseOf> <http://schema.oceanproteinportal.org/v2/sugggestedByPeptideIdentification> .
+<http://schema.oceanproteinportal.org/v2/suggestsProteinIdentification> <http://www.w3.org/2000/01/rdf-schema#domain> <http://schema.oceanproteinportal.org/v2/PeptideIdentification> .
+<http://schema.oceanproteinportal.org/v2/suggestsProteinIdentification> <http://www.w3.org/2000/01/rdf-schema#range> <http://schema.oceanproteinportal.org/v2/ProteinIdentification> .
 <http://schema.oceanproteinportal.org/v2/suggestsProteinIdentification> <http://www.w3.org/2000/01/rdf-schema#comment> "A peptide identification suggests this identified protein as possibly being contained within the related Sample." .
 <http://schema.oceanproteinportal.org/v2/suggestsProteinIdentification> <http://www.w3.org/2000/01/rdf-schema#label> "suggestsProteinIdentification" .
 # 
 # http://schema.oceanproteinportal.org/v2/sugggestedByPeptideIdentification
 <http://schema.oceanproteinportal.org/v2/sugggestedByPeptideIdentification> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://schema.oceanproteinportal.org/v2/sugggestedByPeptideIdentification> <http://www.w3.org/2000/01/rdf-schema#domain> <http://schema.oceanproteinportal.org/v2/ProteinIdentification> .
+<http://schema.oceanproteinportal.org/v2/sugggestedByPeptideIdentification> <http://www.w3.org/2000/01/rdf-schema#range> <http://schema.oceanproteinportal.org/v2/PeptideIdentification> .
 <http://schema.oceanproteinportal.org/v2/sugggestedByPeptideIdentification> <http://www.w3.org/2000/01/rdf-schema#comment> "A ProteinIdentification was made based on this PeptideIdentification. The peptide suggests that the identified Protein may be contained in the Sample." .
 <http://schema.oceanproteinportal.org/v2/sugggestedByPeptideIdentification> <http://www.w3.org/2000/01/rdf-schema#label> "suggestedByPeptideIdentification" .
 # 

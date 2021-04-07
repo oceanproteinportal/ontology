@@ -2417,16 +2417,16 @@
     "@value" : "A peptide identification suggests this identified protein as possibly being contained within the related Sample."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://schema.oceanproteinportal.org/v2/ProteinIdentification"
+    "@id" : "http://schema.oceanproteinportal.org/v2/PeptideIdentification"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "suggestsProteinIdentification"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://schema.oceanproteinportal.org/v2/PeptideIdentification"
+    "@id" : "http://schema.oceanproteinportal.org/v2/ProteinIdentification"
   } ],
   "http://www.w3.org/2002/07/owl#inverseOf" : [ {
-    "@id" : "http://schema.oceanproteinportal.org/v2/suggestsProteinIdentification"
+    "@id" : "http://schema.oceanproteinportal.org/v2/sugggestedByPeptideIdentification"
   } ]
 }, {
   "@id" : "http://schema.oceanproteinportal.org/v2/sugggestedByPeptideIdentification",
@@ -2434,8 +2434,14 @@
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "A ProteinIdentification was made based on this PeptideIdentification. The peptide suggests that the identified Protein may be contained in the Sample."
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://schema.oceanproteinportal.org/v2/ProteinIdentification"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "suggestedByPeptideIdentification"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://schema.oceanproteinportal.org/v2/PeptideIdentification"
   } ]
 }, {
   "@id" : "http://schema.oceanproteinportal.org/v2/totalPrecursorIntensity",

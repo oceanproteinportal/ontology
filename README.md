@@ -18,9 +18,8 @@ https://lucid.app/lucidchart/invitations/accept/4b8cb8d5-4beb-458f-acef-8b63de0f
 `widoco -ontFile v2/opp.owl -outFolder ./widoco -confFile widoco.cfg -htaccess -webVowl -includeAnnotationProperties -uniteSections`
 
 1. Edit the widoco/doc/index-en.html
-  a. rename the `indexx-en.html` to `index.html`
+  a. rename the `index-en.html` to `index.html`
   b. insert all sections from `/v2/_sections`
-  c. remove the line `<div style="float:right">language <a href="index-en.html"><b>en</b></a> </div>`
 
 
 2. Copy from /widoco/doc to /v2:

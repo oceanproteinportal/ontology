@@ -399,15 +399,17 @@ owl:sameAs rdf:type owl:AnnotationProperty .
 
 ###  http://schema.oceanproteinportal.org/v2/suggestsProteinIdentification
 :suggestsProteinIdentification rdf:type owl:ObjectProperty ;
-                               owl:inverseOf :suggestsProteinIdentification ;
-                               rdfs:domain :ProteinIdentification ;
-                               rdfs:range :PeptideIdentification ;
+                               owl:inverseOf :sugggestedByPeptideIdentification ;
+                               rdfs:domain :PeptideIdentification ;
+                               rdfs:range :ProteinIdentification ;
                                rdfs:comment "A peptide identification suggests this identified protein as possibly being contained within the related Sample." ;
                                rdfs:label "suggestsProteinIdentification" .
 
 
 ###  http://schema.oceanproteinportal.org/v2/sugggestedByPeptideIdentification
 :sugggestedByPeptideIdentification rdf:type owl:ObjectProperty ;
+                                   rdfs:domain :ProteinIdentification ;
+                                   rdfs:range :PeptideIdentification ;
                                    rdfs:comment "A ProteinIdentification was made based on this PeptideIdentification. The peptide suggests that the identified Protein may be contained in the Sample." ;
                                    rdfs:label "suggestedByPeptideIdentification" .
 
