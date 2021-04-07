@@ -554,9 +554,9 @@
     <!-- http://schema.oceanproteinportal.org/v2/suggestsProteinIdentification -->
 
     <owl:ObjectProperty rdf:about="http://schema.oceanproteinportal.org/v2/suggestsProteinIdentification">
-        <owl:inverseOf rdf:resource="http://schema.oceanproteinportal.org/v2/suggestsProteinIdentification"/>
-        <rdfs:domain rdf:resource="http://schema.oceanproteinportal.org/v2/ProteinIdentification"/>
-        <rdfs:range rdf:resource="http://schema.oceanproteinportal.org/v2/PeptideIdentification"/>
+        <owl:inverseOf rdf:resource="http://schema.oceanproteinportal.org/v2/sugggestedByPeptideIdentification"/>
+        <rdfs:domain rdf:resource="http://schema.oceanproteinportal.org/v2/PeptideIdentification"/>
+        <rdfs:range rdf:resource="http://schema.oceanproteinportal.org/v2/ProteinIdentification"/>
         <rdfs:comment>A peptide identification suggests this identified protein as possibly being contained within the related Sample.</rdfs:comment>
         <rdfs:label>suggestsProteinIdentification</rdfs:label>
     </owl:ObjectProperty>
@@ -566,6 +566,8 @@
     <!-- http://schema.oceanproteinportal.org/v2/sugggestedByPeptideIdentification -->
 
     <owl:ObjectProperty rdf:about="http://schema.oceanproteinportal.org/v2/sugggestedByPeptideIdentification">
+        <rdfs:domain rdf:resource="http://schema.oceanproteinportal.org/v2/ProteinIdentification"/>
+        <rdfs:range rdf:resource="http://schema.oceanproteinportal.org/v2/PeptideIdentification"/>
         <rdfs:comment>A ProteinIdentification was made based on this PeptideIdentification. The peptide suggests that the identified Protein may be contained in the Sample.</rdfs:comment>
         <rdfs:label>suggestedByPeptideIdentification</rdfs:label>
     </owl:ObjectProperty>
