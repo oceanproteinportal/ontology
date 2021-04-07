@@ -805,6 +805,8 @@
     "@value" : "IdentifierMetadata"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://schema.org/PropertyValue"
+  }, {
     "@id" : "_:genid27"
   } ]
 }, {
@@ -1810,6 +1812,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://schema.org/name"
   } ]
 }, {
   "@id" : "http://schema.oceanproteinportal.org/v2/keggOrthology",
@@ -1840,6 +1845,9 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://schema.org/description"
   } ]
 }, {
   "@id" : "http://schema.oceanproteinportal.org/v2/keggPathway",
@@ -2488,6 +2496,9 @@
     "@id" : "http://www.w3.org/ns/sosa/Sample"
   } ]
 }, {
+  "@id" : "http://schema.org/description",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ]
+}, {
   "@id" : "http://schema.org/identifier",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ]
 }, {
@@ -2502,6 +2513,9 @@
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
     "@id" : "http://www.w3.org/2002/07/owl#topDataProperty"
   } ]
+}, {
+  "@id" : "http://schema.org/name",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ]
 }, {
   "@id" : "http://schema.org/value",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ]

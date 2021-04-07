@@ -462,6 +462,7 @@
 # 
 # http://schema.oceanproteinportal.org/v2/keggName
 <http://schema.oceanproteinportal.org/v2/keggName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://schema.oceanproteinportal.org/v2/keggName> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://schema.org/name> .
 <http://schema.oceanproteinportal.org/v2/keggName> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid1 .
 _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 _:genid1 <http://www.w3.org/2002/07/owl#unionOf> _:genid3 .
@@ -477,6 +478,7 @@ _:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/19
 # 
 # http://schema.oceanproteinportal.org/v2/keggOrthologyDefinition
 <http://schema.oceanproteinportal.org/v2/keggOrthologyDefinition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://schema.oceanproteinportal.org/v2/keggOrthologyDefinition> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://schema.org/description> .
 <http://schema.oceanproteinportal.org/v2/keggOrthologyDefinition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
 <http://schema.oceanproteinportal.org/v2/keggOrthologyDefinition> <http://www.w3.org/2000/01/rdf-schema#domain> <http://schema.oceanproteinportal.org/v2/KeggOrthology> .
 <http://schema.oceanproteinportal.org/v2/keggOrthologyDefinition> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
@@ -621,6 +623,9 @@ _:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/19
 <http://schema.oceanproteinportal.org/v2/totalTIC> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#float> .
 <http://schema.oceanproteinportal.org/v2/totalTIC> <http://www.w3.org/2000/01/rdf-schema#label> "totalTIC" .
 # 
+# http://schema.org/description
+<http://schema.org/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# 
 # http://schema.org/identifier
 <http://schema.org/identifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 # 
@@ -631,6 +636,9 @@ _:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/19
 # http://schema.org/minValue
 <http://schema.org/minValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <http://schema.org/minValue> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+# 
+# http://schema.org/name
+<http://schema.org/name> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 # 
 # http://schema.org/value
 <http://schema.org/value> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
@@ -853,6 +861,7 @@ _:genid26 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XM
 # 
 # http://schema.oceanproteinportal.org/v2/IdentifierMetadata
 <http://schema.oceanproteinportal.org/v2/IdentifierMetadata> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://schema.oceanproteinportal.org/v2/IdentifierMetadata> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/PropertyValue> .
 <http://schema.oceanproteinportal.org/v2/IdentifierMetadata> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid27 .
 _:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 _:genid27 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.oceanproteinportal.org/v2/annotatesIdentifier> .

@@ -513,6 +513,7 @@ owl:sameAs rdf:type owl:AnnotationProperty .
 
 ###  http://schema.oceanproteinportal.org/v2/keggName
 :keggName rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf <http://schema.org/name> ;
           rdfs:domain [ rdf:type owl:Class ;
                         owl:unionOf ( :KeggOrthology
                                       :KeggPathway
@@ -524,8 +525,9 @@ owl:sameAs rdf:type owl:AnnotationProperty .
 
 
 ###  http://schema.oceanproteinportal.org/v2/keggOrthologyDefinition
-:keggOrthologyDefinition rdf:type owl:DatatypeProperty ,
-                                  owl:FunctionalProperty ;
+:keggOrthologyDefinition rdf:type owl:DatatypeProperty ;
+                         rdfs:subPropertyOf <http://schema.org/description> ;
+                         rdf:type owl:FunctionalProperty ;
                          rdfs:domain :KeggOrthology ;
                          rdfs:range xsd:string ;
                          rdfs:comment """The Kegg Orthology Definition
@@ -690,6 +692,10 @@ Example: \"nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1
           rdfs:label "totalTIC" .
 
 
+###  http://schema.org/description
+<http://schema.org/description> rdf:type owl:DatatypeProperty .
+
+
 ###  http://schema.org/identifier
 <http://schema.org/identifier> rdf:type owl:DatatypeProperty .
 
@@ -702,6 +708,10 @@ Example: \"nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1
 ###  http://schema.org/minValue
 <http://schema.org/minValue> rdf:type owl:DatatypeProperty ;
                              rdfs:subPropertyOf owl:topDataProperty .
+
+
+###  http://schema.org/name
+<http://schema.org/name> rdf:type owl:DatatypeProperty .
 
 
 ###  http://schema.org/value
@@ -937,7 +947,8 @@ Example: \"nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1
 
 ###  http://schema.oceanproteinportal.org/v2/IdentifierMetadata
 :IdentifierMetadata rdf:type owl:Class ;
-                    rdfs:subClassOf [ rdf:type owl:Restriction ;
+                    rdfs:subClassOf <http://schema.org/PropertyValue> ,
+                                    [ rdf:type owl:Restriction ;
                                       owl:onProperty :annotatesIdentifier ;
                                       owl:allValuesFrom :Identifier
                                     ] ;
