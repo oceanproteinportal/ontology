@@ -20,7 +20,7 @@ https://lucid.app/lucidchart/invitations/accept/4b8cb8d5-4beb-458f-acef-8b63de0f
 1. Edit the widoco/doc/index-en.html
   a. rename the `index-en.html` to `index.html`
   b. insert all sections from `/v2/_sections`
-
+  c. Remove the provenance section.
 
 2. Copy from /widoco/doc to /v2:
   a. index.html
