@@ -29,9 +29,42 @@
                               rdfs:domain owl:Thing .
 
 
-###  http://schema.oceanproteinportal.org/v2/profileObservation
-:profileObservation rdf:type owl:AnnotationProperty ;
-                    rdfs:range <http://www.w3.org/ns/ssn/Property> .
+###  http://schema.oceanproteinportal.org/v2/frictionlessDataProfile
+:frictionlessDataProfile rdf:type owl:AnnotationProperty ;
+                         rdfs:comment "A FrictionlessData profile. See specs.frictionlessdata.io" ;
+                         rdfs:label "frictionlessDataProfile" ;
+                         rdfs:range xsd:token ;
+                         rdfs:domain :FileType .
+
+
+###  http://schema.oceanproteinportal.org/v2/frictionlessDataValueType
+:frictionlessDataValueType rdf:type owl:AnnotationProperty ;
+                           rdfs:comment "The Frictionlessdata data type for a specific field (DataParameter) in a DataResource." ;
+                           rdfs:label "frictionlessDataValueType" ;
+                           rdfs:seeAlso "https://specs.frictionlessdata.io/table-schema/#types-and-formats" ;
+                           rdfs:range xsd:token ;
+                           rdfs:domain <http://schema.org/DataType> .
+
+
+###  http://schema.oceanproteinportal.org/v2/parameterValueConstraints
+:parameterValueConstraints rdf:type owl:AnnotationProperty ;
+                           rdfs:comment "Any constraints on the parameter values to help with processing a certain DataParameter. This property is used in the datapackage.json for describing a tabular-data-resource field." ;
+                           rdfs:label "parameterValueConstraints" ;
+                           rdfs:seeAlso "https://specs.frictionlessdata.io/table-schema/#constraints" .
+
+
+###  http://schema.oceanproteinportal.org/v2/parameterValueDelimiter
+:parameterValueDelimiter rdf:type owl:AnnotationProperty ;
+                         rdfs:comment "Defines a delimiter to override the multipleValuedDefaultDelimiter for a certain DataParameter. This property is used in the datapackage.json for describing a tabular-data-resource field." ;
+                         rdfs:label "parameterValueDelimiter" ;
+                         rdfs:range xsd:token .
+
+
+###  http://schema.oceanproteinportal.org/v2/parameterValueMissingValues
+:parameterValueMissingValues rdf:type owl:AnnotationProperty ;
+                             rdfs:comment "A set of values for a DataParameter that specify that no data were recorded for that instance of an observation." ;
+                             rdfs:label "parameterValueMissingValues" ;
+                             rdfs:range xsd:token .
 
 
 ###  http://www.w3.org/2002/07/owl#sameAs
@@ -53,7 +86,6 @@ owl:sameAs rdf:type owl:AnnotationProperty .
 
 ###  http://schema.oceanproteinportal.org/v2/annotatesIdentifier
 :annotatesIdentifier rdf:type owl:ObjectProperty ;
-                     rdfs:subPropertyOf owl:topObjectProperty ;
                      owl:inverseOf :identifierMetadata ;
                      rdfs:domain :IdentifierMetadata ;
                      rdfs:range :Identifier ;
@@ -63,10 +95,22 @@ owl:sameAs rdf:type owl:AnnotationProperty .
 
 ###  http://schema.oceanproteinportal.org/v2/conformsToProfile
 :conformsToProfile rdf:type owl:ObjectProperty ;
-                   rdfs:domain <http://schema.org/Dataset> ;
+                   rdfs:domain [ rdf:type owl:Class ;
+                                 owl:unionOf ( :DataResource
+                                               <http://schema.org/Dataset>
+                                             )
+                               ] ;
                    rdfs:range :DatasetProfile ;
                    rdfs:comment "The dataset conforms to the Dataset Profile. Meaning to presents the profile's expected observations." ;
                    rdfs:label "conformsToProfile" .
+
+
+###  http://schema.oceanproteinportal.org/v2/datasetType
+:datasetType rdf:type owl:ObjectProperty ;
+             rdfs:domain :DataResource ;
+             rdfs:range :DataResourceType ;
+             rdfs:comment "Defines the type of Dataset or DataResource." ;
+             rdfs:label "datasetType" .
 
 
 ###  http://schema.oceanproteinportal.org/v2/definesIdentifierScheme
@@ -75,6 +119,23 @@ owl:sameAs rdf:type owl:AnnotationProperty .
                          rdfs:range :IdentifierScheme ;
                          rdfs:comment "The IdentifierScheme defined by some Thing. In the case fo the OPP, a single Dataset defines an IdentifierScheme for its local identifiers." ;
                          rdfs:label "definesIdentifierScheme" .
+
+
+###  http://schema.oceanproteinportal.org/v2/definesValuesForParameter
+:definesValuesForParameter rdf:type owl:ObjectProperty ,
+                                    owl:FunctionalProperty ;
+                           rdfs:domain :DataResourceParameter ;
+                           rdfs:range :DataParameter ;
+                           rdfs:comment "This Specification is being defined for the following DataParameter." ;
+                           rdfs:label "definesValuesForParameter" .
+
+
+###  http://schema.oceanproteinportal.org/v2/dependsOnParameter
+:dependsOnParameter rdf:type owl:ObjectProperty ;
+                    rdfs:domain :DataResourceParameter ;
+                    rdfs:range :DataResourceParameter ;
+                    rdfs:comment "A another DataResourceParameter which must exist in a DataResource for  the DatasetProfile to be valid for a conforming Dataset." ;
+                    rdfs:label "dependsOnParameter" .
 
 
 ###  http://schema.oceanproteinportal.org/v2/describedByIdentification
@@ -117,7 +178,6 @@ owl:sameAs rdf:type owl:AnnotationProperty .
 
 ###  http://schema.oceanproteinportal.org/v2/hasAgentRole
 :hasAgentRole rdf:type owl:ObjectProperty ;
-              rdfs:subPropertyOf owl:topObjectProperty ;
               rdfs:domain owl:Thing ;
               rdfs:range :AgentRole ;
               rdfs:comment "An AgentRole in which an Agent performs some Role on this particular Thing." ;
@@ -153,7 +213,6 @@ owl:sameAs rdf:type owl:AnnotationProperty .
 
 ###  http://schema.oceanproteinportal.org/v2/identifier
 :identifier rdf:type owl:ObjectProperty ;
-            rdfs:subPropertyOf owl:topObjectProperty ;
             owl:inverseOf :isIdentifierOf ;
             rdfs:domain owl:Thing ;
             rdfs:range :Identifier ;
@@ -182,7 +241,6 @@ owl:sameAs rdf:type owl:AnnotationProperty .
 
 ###  http://schema.oceanproteinportal.org/v2/inRole
 :inRole rdf:type owl:ObjectProperty ;
-        rdfs:subPropertyOf owl:topObjectProperty ;
         owl:inverseOf :roleFor ;
         rdf:type owl:IrreflexiveProperty ;
         rdfs:domain :AgentRole ;
@@ -192,22 +250,37 @@ owl:sameAs rdf:type owl:AnnotationProperty .
 
 
 ###  http://schema.oceanproteinportal.org/v2/inVicinityOfStation
-:inVicinityOfStation rdf:type owl:ObjectProperty ;
-                     rdfs:subPropertyOf owl:topObjectProperty ;
-                     rdf:type owl:FunctionalProperty ;
+:inVicinityOfStation rdf:type owl:ObjectProperty ,
+                              owl:FunctionalProperty ;
                      rdfs:domain <http://www.w3.org/ns/sosa/FeatureOfInterest> ;
                      rdfs:range :Station ;
                      rdfs:comment "The one, named or mutally agreed upon location at which Sampling occurred. This usually means a single coordinate at which sampling occurs depsite any variance in the location of the sensor at the time of measurement. This Station helps to normalize the intent of sampling at a certain location for cross-comparison between datasets." ;
                      rdfs:label "inVicinityOfStation" .
 
 
+###  http://schema.oceanproteinportal.org/v2/includesDataParameterInSet
+:includesDataParameterInSet rdf:type owl:ObjectProperty ;
+                            rdfs:domain :DataResourceParameterSet ;
+                            rdfs:range :DataResourceParameter ;
+                            rdfs:comment "A DataResourceParameter that is included in a DataResourceParameterSet." ;
+                            rdfs:label "includesDataParameterInSet" .
+
+
 ###  http://schema.oceanproteinportal.org/v2/isAgentRoleFor
 :isAgentRoleFor rdf:type owl:ObjectProperty ;
-                rdfs:subPropertyOf owl:topObjectProperty ;
                 rdfs:domain :AgentRole ;
                 rdfs:range owl:Thing ;
                 rdfs:comment "The Thing on/in which an Agent performs some Role." ;
                 rdfs:label "isAgentRoleFor" .
+
+
+###  http://schema.oceanproteinportal.org/v2/isForeignKeyTo
+:isForeignKeyTo rdf:type owl:ObjectProperty ,
+                         owl:FunctionalProperty ;
+                rdfs:domain :DataResourceParameter ;
+                rdfs:range :DataResourceParameter ;
+                rdfs:comment "A DataResourceParameter that acts as a foreign key in some other, disjoint DataResource for the purpose of joining/linking data ." ;
+                rdfs:label "isForeignKeyTo" .
 
 
 ###  http://schema.oceanproteinportal.org/v2/isIdentifierOf
@@ -238,7 +311,6 @@ owl:sameAs rdf:type owl:AnnotationProperty .
 
 ###  http://schema.oceanproteinportal.org/v2/keggPathway
 :keggPathway rdf:type owl:ObjectProperty ;
-             rdfs:subPropertyOf owl:topObjectProperty ;
              owl:inverseOf :keggPathwayForOrthology ;
              rdfs:domain :KeggOrthology ;
              rdfs:range :KeggPathway ;
@@ -280,6 +352,24 @@ owl:sameAs rdf:type owl:AnnotationProperty .
                  rdfs:label "observedPeptide" .
 
 
+###  http://schema.oceanproteinportal.org/v2/parameterDataType
+:parameterDataType rdf:type owl:ObjectProperty ,
+                            owl:FunctionalProperty ;
+                   rdfs:domain :DataResourceParameter ;
+                   rdfs:range <http://schema.org/DataType> ;
+                   rdfs:comment "The expected data type for all values of this DataResourceParameter. This helps the OPP understand how to process, visualize, and serialize these data." ;
+                   rdfs:label "parameterDataType" .
+
+
+###  http://schema.oceanproteinportal.org/v2/parameterInResourceType
+:parameterInResourceType rdf:type owl:ObjectProperty ,
+                                  owl:FunctionalProperty ;
+                         rdfs:domain :DataResourceParameter ;
+                         rdfs:range :DataResourceType ;
+                         rdfs:comment "A the DataResourceType for which this DataResourceParameter specifies." ;
+                         rdfs:label "parameterInResourceType" .
+
+
 ###  http://schema.oceanproteinportal.org/v2/performedAgentRole
 :performedAgentRole rdf:type owl:ObjectProperty ;
                     owl:inverseOf :performedBy ;
@@ -291,9 +381,8 @@ owl:sameAs rdf:type owl:AnnotationProperty .
 
 
 ###  http://schema.oceanproteinportal.org/v2/performedAtOrganization
-:performedAtOrganization rdf:type owl:ObjectProperty ;
-                         rdfs:subPropertyOf owl:topObjectProperty ;
-                         rdf:type owl:IrreflexiveProperty ;
+:performedAtOrganization rdf:type owl:ObjectProperty ,
+                                  owl:IrreflexiveProperty ;
                          rdfs:domain :AgentRole ;
                          rdfs:range <http://schema.org/Organization> ;
                          rdfs:comment "The Organization at which the acting Agent performed the Role" ;
@@ -301,9 +390,8 @@ owl:sameAs rdf:type owl:AnnotationProperty .
 
 
 ###  http://schema.oceanproteinportal.org/v2/performedBy
-:performedBy rdf:type owl:ObjectProperty ;
-             rdfs:subPropertyOf owl:topObjectProperty ;
-             rdf:type owl:IrreflexiveProperty ;
+:performedBy rdf:type owl:ObjectProperty ,
+                      owl:IrreflexiveProperty ;
              rdfs:domain :AgentRole ;
              rdfs:range :Agent ;
              rdfs:comment "The Agent acting in some Role." ;
@@ -312,25 +400,34 @@ owl:sameAs rdf:type owl:AnnotationProperty .
 
 ###  http://schema.oceanproteinportal.org/v2/performedOnBehalfOf
 :performedOnBehalfOf rdf:type owl:ObjectProperty ;
-                     rdfs:subPropertyOf owl:topObjectProperty ;
                      rdfs:domain :AgentRole ;
                      rdfs:range :Agent ;
                      rdfs:comment "The Agent for which the performing Agent is acting in a certain Role." ;
                      rdfs:label "performedOnBehalfOf" .
 
 
-###  http://schema.oceanproteinportal.org/v2/profileObservation
-:profileObservation rdf:type owl:ObjectProperty ;
-                    rdfs:domain :DatasetProfile .
+###  http://schema.oceanproteinportal.org/v2/processableFileType
+:processableFileType rdf:type owl:ObjectProperty ;
+                     rdfs:domain :DataResourceType ;
+                     rdfs:range :FileType ;
+                     rdfs:comment "A file type for which the OPP knows how to process for ingestion" ;
+                     rdfs:label "processableFileType" .
 
 
 ###  http://schema.oceanproteinportal.org/v2/providesRole
 :providesRole rdf:type owl:ObjectProperty ;
-              rdfs:subPropertyOf owl:topObjectProperty ;
               rdfs:domain owl:Thing ;
               rdfs:range :Role ;
               rdfs:comment "The existence of some Thing provides the ability for some Agent to perform this Role." ;
               rdfs:label "providesRole" .
+
+
+###  http://schema.oceanproteinportal.org/v2/requiresOneParameterFromSet
+:requiresOneParameterFromSet rdf:type owl:ObjectProperty ;
+                             rdfs:domain :DatasetProfile ;
+                             rdfs:range :DataResourceParameterSet ;
+                             rdfs:comment "The DatasetProfile requires that at least one of the DataParameters described by this set of DataResourceParameters is required in the schema:Dataset that conforms to the DatasetProfile." ;
+                             rdfs:label "requiresOneParameterFromSet" .
 
 
 ###  http://schema.oceanproteinportal.org/v2/roleFor
@@ -414,6 +511,26 @@ owl:sameAs rdf:type owl:AnnotationProperty .
                                    rdfs:label "suggestedByPeptideIdentification" .
 
 
+###  http://schema.oceanproteinportal.org/v2/unitsReportedIn
+:unitsReportedIn rdf:type owl:ObjectProperty ;
+                 rdfs:domain :DataResourceParameter ;
+                 rdfs:range :UnitOfMeasure ;
+                 rdfs:comment "The units that are expected for a certain DataParameter within a DataResource." ;
+                 rdfs:label "unitsReportedIn" .
+
+
+###  http://schema.oceanproteinportal.org/v2/usesDataResourceParameter
+:usesDataResourceParameter rdf:type owl:ObjectProperty ;
+                           rdfs:domain :DatasetProfile ;
+                           rdfs:range :DataResourceParameter ;
+                           rdfs:comment "A DataResourceParameter for which the DatasetProfile specifies certain restrictions or expectations." ;
+                           rdfs:label "usesDataResourceParameter" .
+
+
+###  http://schema.org/variableMeasured
+<http://schema.org/variableMeasured> rdf:type owl:ObjectProperty .
+
+
 ###  http://www.w3.org/ns/sosa/hasFeatureOfInterest
 <http://www.w3.org/ns/sosa/hasFeatureOfInterest> rdf:type owl:ObjectProperty .
 
@@ -423,8 +540,7 @@ owl:sameAs rdf:type owl:AnnotationProperty .
 
 
 ###  http://www.w3.org/ns/ssn/systems/hasSystemCapability
-<http://www.w3.org/ns/ssn/systems/hasSystemCapability> rdf:type owl:ObjectProperty ;
-                                                       rdfs:subPropertyOf owl:topObjectProperty .
+<http://www.w3.org/ns/ssn/systems/hasSystemCapability> rdf:type owl:ObjectProperty .
 
 
 #################################################################
@@ -486,9 +602,8 @@ owl:sameAs rdf:type owl:AnnotationProperty .
 
 
 ###  http://schema.oceanproteinportal.org/v2/depth
-:depth rdf:type owl:DatatypeProperty ;
-       rdfs:subPropertyOf owl:topDataProperty ;
-       rdf:type owl:FunctionalProperty ;
+:depth rdf:type owl:DatatypeProperty ,
+                owl:FunctionalProperty ;
        rdfs:domain <http://www.w3.org/ns/sosa/FeatureOfInterest> ;
        rdfs:range xsd:float ;
        rdfs:comment "The depth in meters where some sample was collected." ;
@@ -573,6 +688,34 @@ Example: \"nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1
                  rdfs:label "molecularWeight" .
 
 
+###  http://schema.oceanproteinportal.org/v2/multiValuedDefaultDelimiter
+:multiValuedDefaultDelimiter rdf:type owl:DatatypeProperty ,
+                                      owl:FunctionalProperty ;
+                             rdfs:domain :DataResourceParameter ;
+                             rdfs:range xsd:token ;
+                             rdfs:comment "For a DataResourceParameter that can have multiple values (schema:multipleValues == TRUE), this is the default delimiter to be used for parsing DataResourceTypes that encode all values into one. One example might be tabular data where a cell contains multiple values separated by a semicolon." ;
+                             rdfs:label "multiValuedDefaultDelimiter" .
+
+
+###  http://schema.oceanproteinportal.org/v2/parameterNameInResource
+:parameterNameInResource rdf:type owl:DatatypeProperty ;
+                         rdfs:subPropertyOf <http://schema.org/valueName> ;
+                         rdf:type owl:FunctionalProperty ;
+                         rdfs:domain :DataResourceParameter ;
+                         rdfs:range xsd:token ;
+                         rdfs:comment "The name of the parameter within the DataResource." ;
+                         rdfs:label "parameterNameInResource" .
+
+
+###  http://schema.oceanproteinportal.org/v2/parameterValueRecommended
+:parameterValueRecommended rdf:type owl:DatatypeProperty ,
+                                    owl:FunctionalProperty ;
+                           rdfs:domain :DataResourceParameter ;
+                           rdfs:range xsd:boolean ;
+                           rdfs:comment "Specifies whether a DatasetProfile recommends that a certain DataParameter exist in a DataResource. Recommendation doesn't mean its required, but rather it would be useful for data consumers." ;
+                           rdfs:label "parameterValueRecommended" .
+
+
 ###  http://schema.oceanproteinportal.org/v2/peptideSequence
 :peptideSequence rdf:type owl:DatatypeProperty ;
                  rdfs:subPropertyOf :aminoAcidSequence ;
@@ -605,6 +748,15 @@ Example: \"nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1
                     rdfs:domain :PeptideSpectralCountSum ;
                     rdfs:range xsd:float ;
                     rdfs:label "plus4HSpectraCount" .
+
+
+###  http://schema.oceanproteinportal.org/v2/positionInDataResource
+:positionInDataResource rdf:type owl:DatatypeProperty ,
+                                 owl:FunctionalProperty ;
+                        rdfs:domain :DataResourceParameter ;
+                        rdfs:range xsd:integer ;
+                        rdfs:comment "The position in a DataResource could mean the column number in a tabular file or for FASTA files mean that the identfier = position #1 and the sequence = position #2." ;
+                        rdfs:label "positionInDataResource" .
 
 
 ###  http://schema.oceanproteinportal.org/v2/proteinName
@@ -642,6 +794,15 @@ Example: \"nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1
             rdfs:domain :IdentificationScore ;
             rdfs:comment "The value of some score using a scoring method to identify an amino acid." ;
             rdfs:label "scoreValue" .
+
+
+###  http://schema.oceanproteinportal.org/v2/shortName
+:shortName rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf <http://schema.org/alternateName> ;
+           rdfs:domain <http://schema.org/Dataset> ;
+           rdfs:range xsd:token ;
+           rdfs:comment "The name or label used in the OPP user interface to identify a schema:Dataset. This is used for readability." ;
+           rdfs:label "shortName" .
 
 
 ###  http://schema.oceanproteinportal.org/v2/spectralCountSum
@@ -694,8 +855,20 @@ Example: \"nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1
           rdfs:label "totalTIC" .
 
 
+###  http://schema.org/alternateName
+<http://schema.org/alternateName> rdf:type owl:DatatypeProperty .
+
+
+###  http://schema.org/defaultValue
+<http://schema.org/defaultValue> rdf:type owl:DatatypeProperty .
+
+
 ###  http://schema.org/description
 <http://schema.org/description> rdf:type owl:DatatypeProperty .
+
+
+###  http://schema.org/encodingFormat
+<http://schema.org/encodingFormat> rdf:type owl:DatatypeProperty .
 
 
 ###  http://schema.org/identifier
@@ -703,13 +876,15 @@ Example: \"nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1
 
 
 ###  http://schema.org/maxValue
-<http://schema.org/maxValue> rdf:type owl:DatatypeProperty ;
-                             rdfs:subPropertyOf owl:topDataProperty .
+<http://schema.org/maxValue> rdf:type owl:DatatypeProperty .
 
 
 ###  http://schema.org/minValue
-<http://schema.org/minValue> rdf:type owl:DatatypeProperty ;
-                             rdfs:subPropertyOf owl:topDataProperty .
+<http://schema.org/minValue> rdf:type owl:DatatypeProperty .
+
+
+###  http://schema.org/multipleValues
+<http://schema.org/multipleValues> rdf:type owl:DatatypeProperty .
 
 
 ###  http://schema.org/name
@@ -718,6 +893,14 @@ Example: \"nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1
 
 ###  http://schema.org/value
 <http://schema.org/value> rdf:type owl:DatatypeProperty .
+
+
+###  http://schema.org/valueName
+<http://schema.org/valueName> rdf:type owl:DatatypeProperty .
+
+
+###  http://schema.org/valueRequired
+<http://schema.org/valueRequired> rdf:type owl:DatatypeProperty .
 
 
 #################################################################
@@ -804,14 +987,17 @@ Example: \"nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1
 :AminoAcidSampleObservation rdf:type owl:Class ;
                             rdfs:subClassOf <http://schema.org/PropertyValue> ,
                                             <http://www.w3.org/ns/ssn/Property> ,
-                                            [ rdf:type owl:Restriction ;
-                                              owl:onProperty :observationInSample ;
-                                              owl:allValuesFrom <http://www.w3.org/ns/sosa/Sample>
-                                            ] ,
-                                            [ rdf:type owl:Restriction ;
-                                              owl:onProperty :observationInSample ;
-                                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                              owl:onClass <http://www.w3.org/ns/sosa/Sample>
+                                            [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty :observationInSample ;
+                                                                     owl:allValuesFrom <http://www.w3.org/ns/sosa/Sample>
+                                                                   ]
+                                                                   [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty :observationInSample ;
+                                                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                     owl:onClass <http://www.w3.org/ns/sosa/Sample>
+                                                                   ]
+                                                                 ) ;
+                                              rdf:type owl:Class
                                             ] ;
                             :describedinConceptualModelOf :AminoAcidIdentification ;
                             rdfs:comment "A property of some amino acid that was observed in a single Sample." ;
@@ -866,6 +1052,53 @@ Example: \"nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1
         rdfs:label "Cruise" .
 
 
+###  http://schema.oceanproteinportal.org/v2/DataParameter
+:DataParameter rdf:type owl:Class ;
+               rdfs:subClassOf <http://schema.org/PropertyValue> ;
+               rdfs:comment "A conceptual understanding of a particular parameter that could be observed/measured within some data resource. This parameter typically means to describe an observalbe or measurable  \"property\" (or attribute) of some \"entity\" (or object) in relation to some \"environment\" using some \"method\". This conceptual description of a parameter helps to link across datasets that may report different units or other variances outside the scope of some \"property of an entity in relation to an environment using some observational/measuring methodology\"." ;
+               rdfs:label "DataParameter" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataResource
+:DataResource rdf:type owl:Class ;
+              rdfs:subClassOf <http://schema.org/Dataset> ;
+              rdfs:comment "A Dataset witha single resource at which the observations canbe found." ;
+              rdfs:label "DataResource" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataResourceParameter
+:DataResourceParameter rdf:type owl:Class ;
+                       rdfs:subClassOf <http://schema.org/PropertyValueSpecification> ;
+                       rdfs:comment "A specification of how a DataParameter is expected to be in a DataResource in order for the DatResource to conform to a DatasetProfile." ;
+                       rdfs:label "DataResourceParameter" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataResourceParameterSet
+:DataResourceParameterSet rdf:type owl:Class ;
+                          rdfs:subClassOf <http://schema.org/Intangible> ,
+                                          [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty :includesDataParameterInSet ;
+                                                                   owl:allValuesFrom :DataResourceParameter
+                                                                 ]
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty :includesDataParameterInSet ;
+                                                                   owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                                                                   owl:onClass :DataResourceParameter
+                                                                 ]
+                                                               ) ;
+                                            rdf:type owl:Class
+                                          ] ;
+                          rdfs:comment "A set of DataResourceParameter instances for the purpose of validating a DatasetProfile. This helps the DatasetProfile set requirements or a grouping a DataResourceeParameters such as saying at least one of the group is required." ;
+                          rdfs:label "DataResourceParameterSet" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataResourceType
+:DataResourceType rdf:type owl:Class ;
+                  rdfs:subClassOf <http://schema.org/CreativeWork> ;
+                  rdfs:comment "A named type for which a DataResource can be labeled with for the sole purpose of conforming to a DatasetProfile. This is necessary becuase a DatasetProfile defines the DataParameters which must exist in a DataResource in order to properly conform." ;
+                  rdfs:label "DataResourceType" .
+
+
 ###  http://schema.oceanproteinportal.org/v2/DatasetIdentifierScheme
 :DatasetIdentifierScheme rdf:type owl:Class ;
                          rdfs:subClassOf :IdentifierScheme ;
@@ -875,14 +1108,18 @@ Example: \"nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1
 
 ###  http://schema.oceanproteinportal.org/v2/DatasetProfile
 :DatasetProfile rdf:type owl:Class ;
-                rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                  owl:onProperty :profileObservation ;
-                                  owl:allValuesFrom <http://www.w3.org/ns/ssn/Property>
-                                ] ,
-                                [ rdf:type owl:Restriction ;
-                                  owl:onProperty :profileObservation ;
-                                  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                  owl:onClass <http://www.w3.org/ns/ssn/Property>
+                rdfs:subClassOf <http://schema.org/CreativeWork> ,
+                                [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                         owl:onProperty <http://schema.org/variableMeasured> ;
+                                                         owl:allValuesFrom :DataParameter
+                                                       ]
+                                                       [ rdf:type owl:Restriction ;
+                                                         owl:onProperty <http://schema.org/variableMeasured> ;
+                                                         owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                         owl:onClass :DataParameter
+                                                       ]
+                                                     ) ;
+                                  rdf:type owl:Class
                                 ] ;
                 :describedinConceptualModelOf <http://schema.org/Dataset> ;
                 rdfs:comment "A DatasetProfile defines the type of observations to be expected." ;
@@ -898,6 +1135,26 @@ Example: \"nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1
                                             ] ;
                             rdfs:comment "An EC identifier" ;
                             rdfs:label "EnzymeCommissionIdentifier" .
+
+
+###  http://schema.oceanproteinportal.org/v2/FileType
+:FileType rdf:type owl:Class ;
+          rdfs:subClassOf <http://schema.org/CreativeWork> ,
+                          [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                   owl:onProperty <http://schema.org/encodingFormat> ;
+                                                   owl:allValuesFrom xsd:token
+                                                 ]
+                                                 [ rdf:type owl:Restriction ;
+                                                   owl:onProperty <http://schema.org/encodingFormat> ;
+                                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                   owl:onDataRange xsd:token
+                                                 ]
+                                               ) ;
+                            rdf:type owl:Class
+                          ] ;
+          :frictionlessDataProfile "data-resource" ;
+          rdfs:comment "A certain type of file for which the OPP knows how to handle inn some way (ingestion, serialization for download, etc)" ;
+          rdfs:label "FileType" .
 
 
 ###  http://schema.oceanproteinportal.org/v2/FilterSize
@@ -950,9 +1207,16 @@ Example: \"nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1
 ###  http://schema.oceanproteinportal.org/v2/IdentifierMetadata
 :IdentifierMetadata rdf:type owl:Class ;
                     rdfs:subClassOf <http://schema.org/PropertyValue> ,
-                                    [ rdf:type owl:Restriction ;
-                                      owl:onProperty :annotatesIdentifier ;
-                                      owl:allValuesFrom :Identifier
+                                    [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :annotatesIdentifier ;
+                                                             owl:allValuesFrom :Identifier
+                                                           ]
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :annotatesIdentifier ;
+                                                             owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                           ]
+                                                         ) ;
+                                      rdf:type owl:Class
                                     ] ;
                     :describedinConceptualModelOf :Identifier ;
                     rdfs:comment "Information about an identifier that helps comprehend, reuse, or contextualize the Thing being identified. This could be a non-unique label or description." ;
@@ -991,14 +1255,17 @@ Example: \"nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1
 ###  http://schema.oceanproteinportal.org/v2/KeggOrthology
 :KeggOrthology rdf:type owl:Class ;
                rdfs:subClassOf :KeggDatabaseEntry ,
-                               [ rdf:type owl:Restriction ;
-                                 owl:onProperty :annotatesIdentifier ;
-                                 owl:someValuesFrom :KeggOrthologyIdentifier
-                               ] ,
-                               [ rdf:type owl:Restriction ;
-                                 owl:onProperty :keggName ;
-                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                 owl:onDataRange xsd:string
+                               [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :annotatesIdentifier ;
+                                                        owl:someValuesFrom :KeggOrthologyIdentifier
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :keggName ;
+                                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                        owl:onDataRange xsd:string
+                                                      ]
+                                                    ) ;
+                                 rdf:type owl:Class
                                ] ;
                rdfs:comment "A Kegg Orthology entry from the Kegg database" ;
                rdfs:label "KeggOrthology" .
@@ -1117,7 +1384,10 @@ Example: \"nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1
 
 ###  http://schema.oceanproteinportal.org/v2/PeptideSpectralCountSum
 :PeptideSpectralCountSum rdf:type owl:Class ;
-                         rdfs:subClassOf :PeptideSampleObservation .
+                         rdfs:subClassOf :PeptideSampleObservation ;
+                         rdfs:comment "The total spectral count of some identified peptide from a single sample." ;
+                         rdfs:label "PeptideSpectralCountSum" ;
+                         rdfs:seeAlso <http://purl.obolibrary.org/obo/MS_1002015> .
 
 
 ###  http://schema.oceanproteinportal.org/v2/PersonIdentifier
@@ -1193,11 +1463,34 @@ Note since the order of the pathways (or KeggPathway Index isn't provided we don
 
 ###  http://schema.oceanproteinportal.org/v2/ProteinTotalSpectralCount
 :ProteinTotalSpectralCount rdf:type owl:Class ;
-                           rdfs:subClassOf :ProteinSampleObservation .
+                           rdfs:subClassOf :ProteinSampleObservation ;
+                           rdfs:comment "The total spectral count of some identified protein from a single sample." ;
+                           rdfs:label "ProteinTotalSpectralCount" ;
+                           rdfs:seeAlso <http://purl.obolibrary.org/obo/MS_1002016> .
+
+
+###  http://schema.oceanproteinportal.org/v2/RecommendedDataParameter
+:RecommendedDataParameter rdf:type owl:Class ;
+                          rdfs:subClassOf :DataResourceParameter ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty :parameterValueRecommended ;
+                                            owl:hasValue "true"^^xsd:boolean
+                                          ] .
+
+
+###  http://schema.oceanproteinportal.org/v2/RequiredDataParameter
+:RequiredDataParameter rdf:type owl:Class ;
+                       rdfs:subClassOf :DataResourceParameter ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty <http://schema.org/valueRequired> ;
+                                         owl:hasValue "true"^^xsd:boolean
+                                       ] ;
+                       rdfs:label "RequiredDataParameter" .
 
 
 ###  http://schema.oceanproteinportal.org/v2/Role
 :Role rdf:type owl:Class ;
+      rdfs:subClassOf <http://schema.org/Intangible> ;
       :describedinConceptualModelOf :AgentRole ;
       rdfs:comment "A certain status, or position, played by some Agent that qualifies/contextualizes the actions performed by that Agent." ;
       rdfs:label "Role" .
@@ -1226,6 +1519,14 @@ Note since the order of the pathways (or KeggPathway Index isn't provided we don
          rdfs:label "Station" .
 
 
+###  http://schema.oceanproteinportal.org/v2/TabularFileType
+:TabularFileType rdf:type owl:Class ;
+                 rdfs:subClassOf :FileType ;
+                 :frictionlessDataProfile "tabular-data-resource" ;
+                 rdfs:comment "A proxy for any tabular data file. This is useful for software that can detect a certain DataResource as being tabular for ingestion or serialization." ;
+                 rdfs:label "TabularFileType" .
+
+
 ###  http://schema.oceanproteinportal.org/v2/UniprotIdentifier
 :UniprotIdentifier rdf:type owl:Class ;
                    rdfs:subClassOf :ProteinIdentifier ,
@@ -1237,6 +1538,13 @@ Note since the order of the pathways (or KeggPathway Index isn't provided we don
                    rdfs:label "UniprotIdentifier" .
 
 
+###  http://schema.oceanproteinportal.org/v2/UnitOfMeasure
+:UnitOfMeasure rdf:type owl:Class ;
+               rdfs:subClassOf <http://schema.org/Intangible> ;
+               rdfs:comment "The units used to record some DataParameter in a DataResource." ;
+               rdfs:label "UnitOfMeasure" .
+
+
 ###  http://schema.oceanproteinportal.org/v2/UserDefinedSampleIdentifier
 :UserDefinedSampleIdentifier rdf:type owl:Class ;
                              rdfs:subClassOf :SampleIdentifier ;
@@ -1244,9 +1552,22 @@ Note since the order of the pathways (or KeggPathway Index isn't provided we don
                              rdfs:label "UserDefinedSampleIdentifier" .
 
 
+###  http://schema.org/CreativeWork
+<http://schema.org/CreativeWork> rdf:type owl:Class .
+
+
+###  http://schema.org/DataType
+<http://schema.org/DataType> rdf:type owl:Class .
+
+
 ###  http://schema.org/Dataset
 <http://schema.org/Dataset> rdf:type owl:Class ;
+                            rdfs:subClassOf <http://schema.org/CreativeWork> ;
                             :conceptualModel "https://lucid.app/publicSegments/view/fafb6c1f-d32c-414f-abe7-650151c2718c/image.png"^^xsd:anyURI .
+
+
+###  http://schema.org/Intangible
+<http://schema.org/Intangible> rdf:type owl:Class .
 
 
 ###  http://schema.org/Organization
@@ -1266,6 +1587,10 @@ Note since the order of the pathways (or KeggPathway Index isn't provided we don
                                                                 :Identifier ,
                                                                 <http://schema.org/Dataset> ,
                                                                 <http://www.w3.org/ns/sosa/Sample> .
+
+
+###  http://schema.org/PropertyValueSpecification
+<http://schema.org/PropertyValueSpecification> rdf:type owl:Class .
 
 
 ###  http://www.w3.org/ns/sosa/Deployment
@@ -1306,17 +1631,1087 @@ Note since the order of the pathways (or KeggPathway Index isn't provided we don
 #    Individuals
 #################################################################
 
+###  http://schema.oceanproteinportal.org/v2/DataParameter_AbsoluteUnits
+:DataParameter_AbsoluteUnits rdf:type owl:NamedIndividual ,
+                                      :DataParameter ;
+                             rdfs:label "Data Parameter: AbsoluteUnits" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataParameter_BestNCBITaxonIdentifier
+:DataParameter_BestNCBITaxonIdentifier rdf:type owl:NamedIndividual ,
+                                                :DataParameter ;
+                                       rdfs:label "Data Parameter: BestNCBITaxonIdentifier" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataParameter_BestNCBITaxonName
+:DataParameter_BestNCBITaxonName rdf:type owl:NamedIndividual ,
+                                          :DataParameter ;
+                                 rdfs:label "Data Parameter: BestNCBITaxonName" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataParameter_BestProteinIdProbability
+:DataParameter_BestProteinIdProbability rdf:type owl:NamedIndividual ,
+                                                 :DataParameter ;
+                                        rdfs:label "Data Parameter: BestProteinIdProbability" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataParameter_BestSequestDCnScore
+:DataParameter_BestSequestDCnScore rdf:type owl:NamedIndividual ,
+                                            :DataParameter ;
+                                   rdfs:label "Data Parameter: BestSequestDCnScore" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataParameter_BestSequestXCorrScore
+:DataParameter_BestSequestXCorrScore rdf:type owl:NamedIndividual ,
+                                              :DataParameter ;
+                                     rdfs:label "Data Parameter: BestSequestXCorrScore" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataParameter_CruiseIdentifier
+:DataParameter_CruiseIdentifier rdf:type owl:NamedIndividual ,
+                                         :DataParameter ;
+                                rdfs:label "Data Parameter: CruiseIdentifier" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataParameter_CruiseStationIdentifier
+:DataParameter_CruiseStationIdentifier rdf:type owl:NamedIndividual ,
+                                                :DataParameter ;
+                                       rdfs:label "Data Parameter: CruiseStationIdentifier" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataParameter_Date
+:DataParameter_Date rdf:type owl:NamedIndividual ,
+                             :DataParameter ;
+                    rdfs:label "Data Parameter: Date" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataParameter_Depth
+:DataParameter_Depth rdf:type owl:NamedIndividual ,
+                              :DataParameter ;
+                     rdfs:label "Data Parameter: Depth" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataParameter_EnzymeCommissionIdentifier
+:DataParameter_EnzymeCommissionIdentifier rdf:type owl:NamedIndividual ,
+                                                   :DataParameter ;
+                                          rdfs:label "Data Parameter: EnzymeCommissionIdentifier" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataParameter_ISODateTimeUTC
+:DataParameter_ISODateTimeUTC rdf:type owl:NamedIndividual ,
+                                       :DataParameter ;
+                              rdfs:label "Data Parameter: ISODateTimeUTC" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataParameter_KeggIdentifier
+:DataParameter_KeggIdentifier rdf:type owl:NamedIndividual ,
+                                       :DataParameter ;
+                              rdfs:label "Data Parameter: KeggIdentifier" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataParameter_KeggOrthologyDefinition
+:DataParameter_KeggOrthologyDefinition rdf:type owl:NamedIndividual ,
+                                                :DataParameter ;
+                                       rdfs:label "Data Parameter: KeggOrthologyDefinition" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataParameter_KeggOrthologyName
+:DataParameter_KeggOrthologyName rdf:type owl:NamedIndividual ,
+                                          :DataParameter ;
+                                 rdfs:label "Data Parameter: KeggOrthologyName" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataParameter_KeggOrthologyPathway
+:DataParameter_KeggOrthologyPathway rdf:type owl:NamedIndividual ,
+                                             :DataParameter ;
+                                    rdfs:label "Data Parameter: KeggOrthologyPathway" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataParameter_Latitude
+:DataParameter_Latitude rdf:type owl:NamedIndividual ,
+                                 :DataParameter ;
+                        rdfs:label "Data Parameter: Latitude" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataParameter_Longitude
+:DataParameter_Longitude rdf:type owl:NamedIndividual ,
+                                  :DataParameter ;
+                         rdfs:label "Data Parameter: Longitude" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataParameter_MaxFilterSize
+:DataParameter_MaxFilterSize rdf:type owl:NamedIndividual ,
+                                      :DataParameter ;
+                             rdfs:label "Data Parameter: MaxFilterSize" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataParameter_MedianRetentionTime
+:DataParameter_MedianRetentionTime rdf:type owl:NamedIndividual ,
+                                            :DataParameter ;
+                                   rdfs:label "Data Parameter: MedianRetentionTime" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataParameter_MinFilterSize
+:DataParameter_MinFilterSize rdf:type owl:NamedIndividual ,
+                                      :DataParameter ;
+                             rdfs:label "Data Parameter: MinFilterSize" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataParameter_MolecularWeight
+:DataParameter_MolecularWeight rdf:type owl:NamedIndividual ,
+                                        :DataParameter ;
+                               rdfs:label "Data Parameter: MolecularWeight" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataParameter_OtherIdentifiedProteins
+:DataParameter_OtherIdentifiedProteins rdf:type owl:NamedIndividual ,
+                                                :DataParameter ;
+                                       rdfs:label "Data Parameter: OtherIdentifiedProteins" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataParameter_PFamsIdentifier
+:DataParameter_PFamsIdentifier rdf:type owl:NamedIndividual ,
+                                        :DataParameter ;
+                               rdfs:label "Data Parameter: PFamsIdentifier" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataParameter_PFamsName
+:DataParameter_PFamsName rdf:type owl:NamedIndividual ,
+                                  :DataParameter ;
+                         rdfs:label "Data Parameter: PFamsName" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataParameter_Peptide-StartIndex
+:DataParameter_Peptide-StartIndex rdf:type owl:NamedIndividual ,
+                                           :DataParameter ;
+                                  rdfs:label "Data Parameter: Peptide-StartIndex" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataParameter_Peptide-StopIndex
+:DataParameter_Peptide-StopIndex rdf:type owl:NamedIndividual ,
+                                          :DataParameter ;
+                                 rdfs:label "Data Parameter: Peptide-StopIndex" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataParameter_PeptideSequence
+:DataParameter_PeptideSequence rdf:type owl:NamedIndividual ,
+                                        :DataParameter ;
+                               rdfs:label "Data Parameter: PeptideSequence" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataParameter_PeptideSpectralCountSummation
+:DataParameter_PeptideSpectralCountSummation rdf:type owl:NamedIndividual ,
+                                                      :DataParameter ;
+                                             rdfs:label "Data Parameter: PeptideSpectralCountSummation" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataParameter_Plus2HSpectraCount
+:DataParameter_Plus2HSpectraCount rdf:type owl:NamedIndividual ,
+                                           :DataParameter ;
+                                  rdfs:label "Data Parameter: Plus2HSpectraCount" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataParameter_Plus3HSpectraCount
+:DataParameter_Plus3HSpectraCount rdf:type owl:NamedIndividual ,
+                                           :DataParameter ;
+                                  rdfs:label "Data Parameter: Plus3HSpectraCount" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataParameter_Plus4HSpectraCount
+:DataParameter_Plus4HSpectraCount rdf:type owl:NamedIndividual ,
+                                           :DataParameter ;
+                                  rdfs:label "Data Parameter: Plus4HSpectraCount" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataParameter_ProteinAccessionIdentifiers
+:DataParameter_ProteinAccessionIdentifiers rdf:type owl:NamedIndividual ,
+                                                    :DataParameter ;
+                                           rdfs:label "Data Parameter: ProteinAccessionIdentifiers" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataParameter_ProteinIdentifier
+:DataParameter_ProteinIdentifier rdf:type owl:NamedIndividual ,
+                                          :DataParameter ;
+                                 rdfs:label "Data Parameter: ProteinIdentifier" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataParameter_ProteinName
+:DataParameter_ProteinName rdf:type owl:NamedIndividual ,
+                                    :DataParameter ;
+                           rdfs:label "Data Parameter: ProteinName" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataParameter_ProteinSequence
+:DataParameter_ProteinSequence rdf:type owl:NamedIndividual ,
+                                        :DataParameter ;
+                               rdfs:label "Data Parameter: ProteinSequence" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataParameter_SampleIdentifier
+:DataParameter_SampleIdentifier rdf:type owl:NamedIndividual ,
+                                         :DataParameter ;
+                                rdfs:label "Data Parameter: SampleIdentifier" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataParameter_SpectralCount
+:DataParameter_SpectralCount rdf:type owl:NamedIndividual ,
+                                      :DataParameter ;
+                             rdfs:label "Data Parameter: SpectralCount" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataParameter_Time
+:DataParameter_Time rdf:type owl:NamedIndividual ,
+                             :DataParameter ;
+                    rdfs:label "Data Parameter: Time" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataParameter_TotalPrecursorIntensity
+:DataParameter_TotalPrecursorIntensity rdf:type owl:NamedIndividual ,
+                                                :DataParameter ;
+                                       rdfs:label "Data Parameter: TotalPrecursorIntensity" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataParameter_TotalTIC
+:DataParameter_TotalTIC rdf:type owl:NamedIndividual ,
+                                 :DataParameter ;
+                        rdfs:label "Data Parameter: TotalTIC" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataParameter_UniprotIdentifier
+:DataParameter_UniprotIdentifier rdf:type owl:NamedIndividual ,
+                                          :DataParameter ;
+                                 rdfs:label "Data Parameter: UniprotIdentifier" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataResourceParameterSet_PeptideSpectralCount_DateRequirement
+:DataResourceParameterSet_PeptideSpectralCount_DateRequirement rdf:type owl:NamedIndividual ,
+                                                                        :DataResourceParameterSet ;
+                                                               :includesDataParameterInSet :DataResourceParameter_PeptideSpectralCount_Date ,
+                                                                                           :DataResourceParameter_PeptideSpectralCount_ISODateTimeUTC ;
+                                                               rdfs:label "Parameter Set: Peptide Spectral Count - Date Requirement" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataResourceParameter_FASTA-ProteinIdentifier
+:DataResourceParameter_FASTA-ProteinIdentifier rdf:type owl:NamedIndividual ,
+                                                        :DataResourceParameter ;
+                                               :definesValuesForParameter :DataParameter_ProteinIdentifier ;
+                                               :parameterDataType <http://schema.org/Text> ;
+                                               :parameterInResourceType :DataResourceType_FASTA-ProteinIdentification ;
+                                               :positionInDataResource 1 ;
+                                               <http://schema.org/description> "In the 'biopython' this parameter refers to the value at Bio.SeqIO.parse()->record.id"^^xsd:token ;
+                                               <http://schema.org/multipleValues> "false"^^xsd:boolean ;
+                                               <http://schema.org/valueRequired> "true"^^xsd:boolean ;
+                                               rdfs:label "DataResourceParameter_FASTA-ProteinIdentifier" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataResourceParameter_FASTA-ProteinSequence
+:DataResourceParameter_FASTA-ProteinSequence rdf:type owl:NamedIndividual ,
+                                                      :DataResourceParameter ;
+                                             :definesValuesForParameter :DataParameter_ProteinSequence ;
+                                             :parameterDataType <http://schema.org/Text> ;
+                                             :parameterInResourceType :DataResourceType_FASTA-ProteinIdentification ;
+                                             :positionInDataResource 2 ;
+                                             <http://schema.org/description> "In the 'biopython' this parameter refers to the value at Bio.SeqIO.parse()->record.seq"^^xsd:token ;
+                                             <http://schema.org/multipleValues> "false"^^xsd:boolean ;
+                                             <http://schema.org/valueRequired> "true"^^xsd:boolean ;
+                                             rdfs:label "DataResourceParameter_FASTA-ProteinSequence" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_AbsoluteUnits
+:DataResourceParameter_PeptideSpectralCount_AbsoluteUnits rdf:type owl:NamedIndividual ,
+                                                                   :DataResourceParameter ;
+                                                          :definesValuesForParameter :DataParameter_AbsoluteUnits ;
+                                                          :parameterDataType <http://schema.org/Float> ;
+                                                          :parameterInResourceType :DataResourceType_PeptideTotalSpectralCount ;
+                                                          :unitsReportedIn :UnitOfMeasure_Femtomoles-per-Liter ;
+                                                          :parameterNameInResource "absolute_units_fmol-L"^^xsd:token ;
+                                                          <http://schema.org/multipleValues> "false"^^xsd:boolean ;
+                                                          <http://schema.org/valueRequired> "false"^^xsd:boolean ;
+                                                          rdfs:label "DataResourceParameter_PeptideSpectralCount_AbsoluteUnits" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_BestProteinIdProbability
+:DataResourceParameter_PeptideSpectralCount_BestProteinIdProbability rdf:type owl:NamedIndividual ,
+                                                                              :DataResourceParameter ;
+                                                                     :definesValuesForParameter :DataParameter_BestProteinIdProbability ;
+                                                                     :dependsOnParameter :DataResourceParameter_PeptideSpectralCount_ProteinIdentifier ;
+                                                                     :parameterDataType <http://schema.org/Float> ;
+                                                                     :parameterInResourceType :DataResourceType_PeptideTotalSpectralCount ;
+                                                                     :parameterNameInResource "best_protein_id_probability"^^xsd:token ;
+                                                                     <http://schema.org/multipleValues> "false"^^xsd:boolean ;
+                                                                     <http://schema.org/valueRequired> "false"^^xsd:boolean ;
+                                                                     rdfs:label "DataResourceParameter_PeptideSpectralCount_BestProteinIdProbability" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_BestSequestDCnScore
+:DataResourceParameter_PeptideSpectralCount_BestSequestDCnScore rdf:type owl:NamedIndividual ,
+                                                                         :DataResourceParameter ;
+                                                                :definesValuesForParameter :DataParameter_BestSequestDCnScore ;
+                                                                :parameterDataType <http://schema.org/Float> ;
+                                                                :parameterInResourceType :DataResourceType_PeptideTotalSpectralCount ;
+                                                                :parameterNameInResource "best_sequest_DCn_score"^^xsd:token ;
+                                                                <http://schema.org/multipleValues> "false"^^xsd:boolean ;
+                                                                <http://schema.org/valueRequired> "false"^^xsd:boolean ;
+                                                                rdfs:label "DataResourceParameter_PeptideSpectralCount_BestSequestDCnScore" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_BestSequestXCorrScore
+:DataResourceParameter_PeptideSpectralCount_BestSequestXCorrScore rdf:type owl:NamedIndividual ,
+                                                                           :DataResourceParameter ;
+                                                                  :definesValuesForParameter :DataParameter_BestSequestXCorrScore ;
+                                                                  :parameterDataType <http://schema.org/Float> ;
+                                                                  :parameterInResourceType :DataResourceType_PeptideTotalSpectralCount ;
+                                                                  :parameterNameInResource "best_sequest_Xcorr_score"^^xsd:token ;
+                                                                  <http://schema.org/multipleValues> "false"^^xsd:boolean ;
+                                                                  <http://schema.org/valueRequired> "false"^^xsd:boolean ;
+                                                                  rdfs:label "DataResourceParameter_PeptideSpectralCount_BestSequestXCorrScore" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_CruiseIdentifier
+:DataResourceParameter_PeptideSpectralCount_CruiseIdentifier rdf:type owl:NamedIndividual ,
+                                                                      :DataResourceParameter ;
+                                                             :definesValuesForParameter :DataParameter_CruiseIdentifier ;
+                                                             :parameterDataType <http://schema.org/Text> ;
+                                                             :parameterInResourceType :DataResourceType_PeptideTotalSpectralCount ;
+                                                             :parameterNameInResource "cruise_id"^^xsd:token ;
+                                                             <http://schema.org/multipleValues> "false"^^xsd:boolean ;
+                                                             <http://schema.org/valueRequired> "false"^^xsd:boolean ;
+                                                             rdfs:label "DataResourceParameter_PeptideSpectralCount_CruiseIdentifier" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_CruiseStationIdentifier
+:DataResourceParameter_PeptideSpectralCount_CruiseStationIdentifier rdf:type owl:NamedIndividual ,
+                                                                             :DataResourceParameter ;
+                                                                    :definesValuesForParameter :DataParameter_CruiseStationIdentifier ;
+                                                                    :parameterDataType <http://schema.org/Text> ;
+                                                                    :parameterInResourceType :DataResourceType_PeptideTotalSpectralCount ;
+                                                                    :parameterNameInResource "station_id"^^xsd:token ;
+                                                                    <http://schema.org/multipleValues> "false"^^xsd:boolean ;
+                                                                    <http://schema.org/valueRequired> "false"^^xsd:boolean ;
+                                                                    rdfs:label "DataResourceParameter_PeptideSpectralCount_CruiseStationIdentifier" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Date
+:DataResourceParameter_PeptideSpectralCount_Date rdf:type owl:NamedIndividual ,
+                                                          :DataResourceParameter ;
+                                                 :definesValuesForParameter :DataParameter_Date ;
+                                                 :parameterDataType <http://schema.org/Date> ;
+                                                 :parameterInResourceType :DataResourceType_PeptideTotalSpectralCount ;
+                                                 :parameterNameInResource "date_y-m-d"^^xsd:token ;
+                                                 <http://schema.org/multipleValues> "false"^^xsd:boolean ;
+                                                 <http://schema.org/valueRequired> "false"^^xsd:boolean ;
+                                                 rdfs:label "DataResourceParameter_PeptideSpectralCount_Date" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Depth
+:DataResourceParameter_PeptideSpectralCount_Depth rdf:type owl:NamedIndividual ,
+                                                           :DataResourceParameter ;
+                                                  :definesValuesForParameter :DataParameter_Depth ;
+                                                  :parameterDataType <http://schema.org/Float> ;
+                                                  :parameterInResourceType :DataResourceType_PeptideTotalSpectralCount ;
+                                                  :unitsReportedIn :UnitOfMeasure_Meters ;
+                                                  :parameterNameInResource "depth_m"^^xsd:token ;
+                                                  <http://schema.org/multipleValues> "false"^^xsd:boolean ;
+                                                  <http://schema.org/valueRequired> "true"^^xsd:boolean ;
+                                                  rdfs:label "DataResourceParameter_PeptideSpectralCount_Depth" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_ISODateTimeUTC
+:DataResourceParameter_PeptideSpectralCount_ISODateTimeUTC rdf:type owl:NamedIndividual ,
+                                                                    :DataResourceParameter ;
+                                                           :definesValuesForParameter :DataParameter_ISODateTimeUTC ;
+                                                           :parameterDataType <http://schema.org/DateTime> ;
+                                                           :parameterInResourceType :DataResourceType_PeptideTotalSpectralCount ;
+                                                           :parameterNameInResource "ISO_DateTime_UTC"^^xsd:token ;
+                                                           :parameterValueRecommended "true"^^xsd:boolean ;
+                                                           <http://schema.org/multipleValues> "false"^^xsd:boolean ;
+                                                           rdfs:label "DataResourceParameter_PeptideSpectralCount_AbsoluteUnits" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Latitude
+:DataResourceParameter_PeptideSpectralCount_Latitude rdf:type owl:NamedIndividual ,
+                                                              :DataResourceParameter ;
+                                                     :definesValuesForParameter :DataParameter_Latitude ;
+                                                     :dependsOnParameter :DataResourceParameter_PeptideSpectralCount_Longitude ;
+                                                     :parameterDataType <http://schema.org/Float> ;
+                                                     :parameterInResourceType :DataResourceType_PeptideTotalSpectralCount ;
+                                                     :unitsReportedIn :UnitOfMeasure_DecimalDegrees ;
+                                                     :parameterNameInResource "latitude_dd"^^xsd:token ;
+                                                     <http://schema.org/maxValue> "90.0"^^xsd:float ;
+                                                     <http://schema.org/minValue> "-90.0"^^xsd:float ;
+                                                     <http://schema.org/multipleValues> "false"^^xsd:boolean ;
+                                                     <http://schema.org/valueRequired> "true"^^xsd:boolean ;
+                                                     rdfs:label "DataResourceParameter_PeptideSpectralCount_Latitude" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Longitude
+:DataResourceParameter_PeptideSpectralCount_Longitude rdf:type owl:NamedIndividual ,
+                                                               :DataResourceParameter ;
+                                                      :definesValuesForParameter :DataParameter_Longitude ;
+                                                      :dependsOnParameter :DataResourceParameter_PeptideSpectralCount_Latitude ;
+                                                      :parameterDataType <http://schema.org/Float> ;
+                                                      :parameterInResourceType :DataResourceType_PeptideTotalSpectralCount ;
+                                                      :unitsReportedIn :UnitOfMeasure_DecimalDegrees ;
+                                                      :parameterNameInResource "longitude_dd"^^xsd:token ;
+                                                      <http://schema.org/maxValue> "180.0"^^xsd:float ;
+                                                      <http://schema.org/minValue> "-180.0"^^xsd:float ;
+                                                      <http://schema.org/multipleValues> "false"^^xsd:boolean ;
+                                                      <http://schema.org/valueRequired> "true"^^xsd:boolean ;
+                                                      rdfs:label "DataResourceParameter_PeptideSpectralCount_Longitude" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_MaxFilterSize
+:DataResourceParameter_PeptideSpectralCount_MaxFilterSize rdf:type owl:NamedIndividual ,
+                                                                   :DataResourceParameter ;
+                                                          :definesValuesForParameter :DataParameter_MaxFilterSize ;
+                                                          :parameterDataType <http://schema.org/Float> ;
+                                                          :parameterInResourceType :DataResourceType_PeptideTotalSpectralCount ;
+                                                          :unitsReportedIn :UnitOfMeasure_Microns ;
+                                                          :parameterNameInResource "maximum_filter_size_microns"^^xsd:token ;
+                                                          <http://schema.org/multipleValues> "false"^^xsd:boolean ;
+                                                          <http://schema.org/valueRequired> "true"^^xsd:boolean ;
+                                                          rdfs:label "DataResourceParameter_PeptideSpectralCount_MaxFilterSize" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_MedianRetentionTime
+:DataResourceParameter_PeptideSpectralCount_MedianRetentionTime rdf:type owl:NamedIndividual ,
+                                                                         :DataResourceParameter ;
+                                                                :definesValuesForParameter :DataParameter_MedianRetentionTime ;
+                                                                :parameterDataType <http://schema.org/Float> ;
+                                                                :parameterInResourceType :DataResourceType_PeptideTotalSpectralCount ;
+                                                                :parameterNameInResource "median_retention_time"^^xsd:token ;
+                                                                <http://schema.org/multipleValues> "false"^^xsd:boolean ;
+                                                                <http://schema.org/valueRequired> "false"^^xsd:boolean ;
+                                                                rdfs:label "DataResourceParameter_PeptideSpectralCount_MedianRetentionTime" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_MinFilterSize
+:DataResourceParameter_PeptideSpectralCount_MinFilterSize rdf:type owl:NamedIndividual ,
+                                                                   :DataResourceParameter ;
+                                                          :definesValuesForParameter :DataParameter_MinFilterSize ;
+                                                          :parameterDataType <http://schema.org/Float> ;
+                                                          :parameterInResourceType :DataResourceType_PeptideTotalSpectralCount ;
+                                                          :unitsReportedIn :UnitOfMeasure_Microns ;
+                                                          :parameterNameInResource "minimum_filter_size_microns"^^xsd:token ;
+                                                          <http://schema.org/multipleValues> "false"^^xsd:boolean ;
+                                                          <http://schema.org/valueRequired> "true"^^xsd:boolean ;
+                                                          rdfs:label "DataResourceParameter_PeptideSpectralCount_MinFilterSize" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_MolecularWeight
+:DataResourceParameter_PeptideSpectralCount_MolecularWeight rdf:type owl:NamedIndividual ,
+                                                                     :DataResourceParameter ;
+                                                            :definesValuesForParameter :DataParameter_MolecularWeight ;
+                                                            :parameterDataType <http://schema.org/Float> ;
+                                                            :parameterInResourceType :DataResourceType_PeptideTotalSpectralCount ;
+                                                            :unitsReportedIn :UnitOfMeasure_KiloDaltons ;
+                                                            :parameterNameInResource "molecular_weight_kDa"^^xsd:token ;
+                                                            <http://schema.org/multipleValues> "false"^^xsd:boolean ;
+                                                            <http://schema.org/valueRequired> "true"^^xsd:boolean ;
+                                                            rdfs:label "DataResourceParameter_PeptideSpectralCount_MolecularWeight" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Peptide-StartIndex
+:DataResourceParameter_PeptideSpectralCount_Peptide-StartIndex rdf:type owl:NamedIndividual ,
+                                                                        :DataResourceParameter ;
+                                                               :definesValuesForParameter :DataParameter_Peptide-StartIndex ;
+                                                               :dependsOnParameter :DataResourceParameter_PeptideSpectralCount_Peptide-StopIndex ;
+                                                               :parameterDataType <http://schema.org/Integer> ;
+                                                               :parameterInResourceType :DataResourceType_PeptideTotalSpectralCount ;
+                                                               :parameterNameInResource "peptide_start_index"^^xsd:token ;
+                                                               <http://schema.org/multipleValues> "false"^^xsd:boolean ;
+                                                               <http://schema.org/valueRequired> "true"^^xsd:boolean ;
+                                                               rdfs:label "DataResourceParameter_PeptideSpectralCount_Peptide-StartIndex" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Peptide-StopIndex
+:DataResourceParameter_PeptideSpectralCount_Peptide-StopIndex rdf:type owl:NamedIndividual ,
+                                                                       :DataResourceParameter ;
+                                                              :definesValuesForParameter :DataParameter_Peptide-StopIndex ;
+                                                              :dependsOnParameter :DataResourceParameter_PeptideSpectralCount_Peptide-StartIndex ;
+                                                              :parameterDataType <http://schema.org/Integer> ;
+                                                              :parameterInResourceType :DataResourceType_PeptideTotalSpectralCount ;
+                                                              :parameterNameInResource "peptide_stop_index"^^xsd:token ;
+                                                              <http://schema.org/multipleValues> "false"^^xsd:boolean ;
+                                                              <http://schema.org/valueRequired> "true"^^xsd:boolean ;
+                                                              rdfs:label "DataResourceParameter_PeptideSpectralCount_Peptide-StopIndex" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_PeptideSequence
+:DataResourceParameter_PeptideSpectralCount_PeptideSequence rdf:type owl:NamedIndividual ,
+                                                                     :DataResourceParameter ;
+                                                            :definesValuesForParameter :DataParameter_PeptideSequence ;
+                                                            :parameterDataType <http://schema.org/Text> ;
+                                                            :parameterInResourceType :DataResourceType_PeptideTotalSpectralCount ;
+                                                            :parameterNameInResource "peptide_sequence"^^xsd:token ;
+                                                            <http://schema.org/multipleValues> "false"^^xsd:boolean ;
+                                                            <http://schema.org/valueRequired> "true"^^xsd:boolean ;
+                                                            rdfs:label "DataResourceParameter_PeptideSpectralCount_PeptideSequence" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_PeptideSpectralCountSummation
+:DataResourceParameter_PeptideSpectralCount_PeptideSpectralCountSummation rdf:type owl:NamedIndividual ,
+                                                                                   :DataResourceParameter ;
+                                                                          :definesValuesForParameter :DataParameter_PeptideSpectralCountSummation ;
+                                                                          :parameterDataType <http://schema.org/Float> ;
+                                                                          :parameterInResourceType :DataResourceType_PeptideTotalSpectralCount ;
+                                                                          :parameterNameInResource "spectral_count_sum"^^xsd:token ;
+                                                                          <http://schema.org/multipleValues> "false"^^xsd:boolean ;
+                                                                          <http://schema.org/valueRequired> "true"^^xsd:boolean ;
+                                                                          rdfs:label "DataResourceParameter_PeptideSpectralCount_PeptideSpectralCountSummation" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Plus2HSpectraCount
+:DataResourceParameter_PeptideSpectralCount_Plus2HSpectraCount rdf:type owl:NamedIndividual ,
+                                                                        :DataResourceParameter ;
+                                                               :definesValuesForParameter :DataParameter_Plus2HSpectraCount ;
+                                                               :parameterDataType <http://schema.org/Float> ;
+                                                               :parameterInResourceType :DataResourceType_PeptideTotalSpectralCount ;
+                                                               :parameterNameInResource "plus2H_spectra_count"^^xsd:token ;
+                                                               <http://schema.org/multipleValues> "false"^^xsd:boolean ;
+                                                               <http://schema.org/valueRequired> "false"^^xsd:boolean ;
+                                                               rdfs:label "DataResourceParameter_PeptideSpectralCount_Plus2HSpectraCount" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Plus3HSpectraCount
+:DataResourceParameter_PeptideSpectralCount_Plus3HSpectraCount rdf:type owl:NamedIndividual ,
+                                                                        :DataResourceParameter ;
+                                                               :definesValuesForParameter :DataParameter_Plus3HSpectraCount ;
+                                                               :parameterDataType <http://schema.org/Float> ;
+                                                               :parameterInResourceType :DataResourceType_PeptideTotalSpectralCount ;
+                                                               :parameterNameInResource "plus3H_spectra_count"^^xsd:token ;
+                                                               <http://schema.org/multipleValues> "false"^^xsd:boolean ;
+                                                               <http://schema.org/valueRequired> "false"^^xsd:boolean ;
+                                                               rdfs:label "DataResourceParameter_PeptideSpectralCount_Plus3HSpectraCount" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Plus4HSpectraCount
+:DataResourceParameter_PeptideSpectralCount_Plus4HSpectraCount rdf:type owl:NamedIndividual ,
+                                                                        :DataResourceParameter ;
+                                                               :definesValuesForParameter :DataParameter_Plus4HSpectraCount ;
+                                                               :parameterDataType <http://schema.org/Float> ;
+                                                               :parameterInResourceType :DataResourceType_PeptideTotalSpectralCount ;
+                                                               :parameterNameInResource "plus4H_spectra_count"^^xsd:token ;
+                                                               <http://schema.org/multipleValues> "false"^^xsd:boolean ;
+                                                               <http://schema.org/valueRequired> "false"^^xsd:boolean ;
+                                                               rdfs:label "DataResourceParameter_PeptideSpectralCount_Plus4HSpectraCount" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_ProteinAccessionIdentifiers
+:DataResourceParameter_PeptideSpectralCount_ProteinAccessionIdentifiers rdf:type owl:NamedIndividual ,
+                                                                                 :DataResourceParameter ;
+                                                                        :definesValuesForParameter :DataParameter_ProteinAccessionIdentifiers ;
+                                                                        :isForeignKeyTo :DataResourceParameter_FASTA-ProteinIdentifier ;
+                                                                        :parameterDataType <http://schema.org/Text> ;
+                                                                        :parameterInResourceType :DataResourceType_PeptideTotalSpectralCount ;
+                                                                        :multiValuedDefaultDelimiter "||"^^xsd:token ;
+                                                                        :parameterNameInResource "other_protein_ids"^^xsd:token ;
+                                                                        <http://schema.org/multipleValues> "true"^^xsd:boolean ;
+                                                                        <http://schema.org/valueRequired> "false"^^xsd:boolean ;
+                                                                        rdfs:label "DataResourceParameter_PeptideSpectralCount_ProteinAccessionIdentifiers" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_ProteinIdentifier
+:DataResourceParameter_PeptideSpectralCount_ProteinIdentifier rdf:type owl:NamedIndividual ,
+                                                                       :DataResourceParameter ;
+                                                              :definesValuesForParameter :DataParameter_ProteinIdentifier ;
+                                                              :isForeignKeyTo :DataResourceParameter_ProteinSpectralCount_ProteinIdentifier ;
+                                                              :parameterDataType <http://schema.org/Text> ;
+                                                              :parameterInResourceType :DataResourceType_PeptideTotalSpectralCount ;
+                                                              :parameterNameInResource "protein_id"^^xsd:token ;
+                                                              <http://schema.org/multipleValues> "false"^^xsd:boolean ;
+                                                              <http://schema.org/valueRequired> "false"^^xsd:boolean ;
+                                                              rdfs:label "DataResourceParameter_PeptideSpectralCount_ProteinIdentifier" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_SampleIdentifier
+:DataResourceParameter_PeptideSpectralCount_SampleIdentifier rdf:type owl:NamedIndividual ,
+                                                                      :DataResourceParameter ;
+                                                             :definesValuesForParameter :DataParameter_SampleIdentifier ;
+                                                             :parameterDataType <http://schema.org/Text> ;
+                                                             :parameterInResourceType :DataResourceType_PeptideTotalSpectralCount ;
+                                                             :parameterNameInResource "sample_id"^^xsd:token ;
+                                                             <http://schema.org/multipleValues> "false"^^xsd:boolean ;
+                                                             <http://schema.org/valueRequired> "false"^^xsd:boolean ;
+                                                             rdfs:label "DataResourceParameter_PeptideSpectralCount_SampleIdentifier" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Time
+:DataResourceParameter_PeptideSpectralCount_Time rdf:type owl:NamedIndividual ,
+                                                          :DataResourceParameter ;
+                                                 :definesValuesForParameter :DataParameter_Time ;
+                                                 :dependsOnParameter :DataResourceParameter_PeptideSpectralCount_Date ;
+                                                 :parameterDataType <http://schema.org/Time> ;
+                                                 :parameterInResourceType :DataResourceType_PeptideTotalSpectralCount ;
+                                                 :parameterNameInResource "time_h-m-s"^^xsd:token ;
+                                                 <http://schema.org/defaultValue> "00:00:00"^^xsd:token ;
+                                                 <http://schema.org/multipleValues> "false"^^xsd:boolean ;
+                                                 <http://schema.org/valueRequired> "false"^^xsd:boolean ;
+                                                 rdfs:label "DataResourceParameter_PeptideSpectralCount_Time" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_TotalPrecursorIntensity
+:DataResourceParameter_PeptideSpectralCount_TotalPrecursorIntensity rdf:type owl:NamedIndividual ,
+                                                                             :DataResourceParameter ;
+                                                                    :definesValuesForParameter :DataParameter_TotalPrecursorIntensity ;
+                                                                    :parameterDataType <http://schema.org/Float> ;
+                                                                    :parameterInResourceType :DataResourceType_PeptideTotalSpectralCount ;
+                                                                    :parameterNameInResource "total_precursor_intensity"^^xsd:token ;
+                                                                    <http://schema.org/multipleValues> "false"^^xsd:boolean ;
+                                                                    <http://schema.org/valueRequired> "false"^^xsd:boolean ;
+                                                                    rdfs:label "DataResourceParameter_PeptideSpectralCount_TotalPrecursorIntensity" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_TotalTIC
+:DataResourceParameter_PeptideSpectralCount_TotalTIC rdf:type owl:NamedIndividual ,
+                                                              :DataResourceParameter ;
+                                                     :definesValuesForParameter :DataParameter_TotalTIC ;
+                                                     :parameterDataType <http://schema.org/Float> ;
+                                                     :parameterInResourceType :DataResourceType_PeptideTotalSpectralCount ;
+                                                     :parameterNameInResource "TIC"^^xsd:token ;
+                                                     <http://schema.org/multipleValues> "false"^^xsd:boolean ;
+                                                     <http://schema.org/valueRequired> "false"^^xsd:boolean ;
+                                                     rdfs:label "DataResourceParameter_PeptideSpectralCount_TotalTIC" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_BestNCBITaxonIdentifier
+:DataResourceParameter_ProteinSpectralCount_BestNCBITaxonIdentifier rdf:type owl:NamedIndividual ,
+                                                                             :DataResourceParameter ;
+                                                                    :definesValuesForParameter :DataParameter_BestNCBITaxonIdentifier ;
+                                                                    :parameterDataType <http://schema.org/Text> ;
+                                                                    :parameterInResourceType :DataResourceType_ProteinTotalSpectralCount ;
+                                                                    :parameterNameInResource "ncbi_id"^^xsd:token ;
+                                                                    <http://schema.org/multipleValues> "false"^^xsd:boolean ;
+                                                                    <http://schema.org/valueRequired> "false"^^xsd:boolean ;
+                                                                    rdfs:label "DataResourceParameter_ProteinSpectralCount_BestNCBITaxonIdentifier" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_BestNCBITaxonName
+:DataResourceParameter_ProteinSpectralCount_BestNCBITaxonName rdf:type owl:NamedIndividual ,
+                                                                       :DataResourceParameter ;
+                                                              :definesValuesForParameter :DataParameter_BestNCBITaxonName ;
+                                                              :dependsOnParameter :DataResourceParameter_ProteinSpectralCount_BestNCBITaxonIdentifier ;
+                                                              :parameterDataType <http://schema.org/Text> ;
+                                                              :parameterInResourceType :DataResourceType_ProteinTotalSpectralCount ;
+                                                              :parameterNameInResource "ncbi_name"^^xsd:token ;
+                                                              <http://schema.org/multipleValues> "false"^^xsd:boolean ;
+                                                              <http://schema.org/valueRequired> "false"^^xsd:boolean ;
+                                                              rdfs:label "DataResourceParameter_ProteinSpectralCount_BestNCBITaxonName" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_CruiseIdentifier
+:DataResourceParameter_ProteinSpectralCount_CruiseIdentifier rdf:type owl:NamedIndividual ,
+                                                                      :DataResourceParameter ;
+                                                             :definesValuesForParameter :DataParameter_CruiseIdentifier ;
+                                                             :parameterDataType <http://schema.org/Text> ;
+                                                             :parameterInResourceType :DataResourceType_ProteinTotalSpectralCount ;
+                                                             :parameterNameInResource "cruise_id"^^xsd:token ;
+                                                             <http://schema.org/multipleValues> "false"^^xsd:boolean ;
+                                                             <http://schema.org/valueRequired> "false"^^xsd:boolean ;
+                                                             rdfs:label "DataResourceParameter_ProteinSpectralCount_CruiseIdentifier" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_CruiseStationIdentifier
+:DataResourceParameter_ProteinSpectralCount_CruiseStationIdentifier rdf:type owl:NamedIndividual ,
+                                                                             :DataResourceParameter ;
+                                                                    :definesValuesForParameter :DataParameter_CruiseStationIdentifier ;
+                                                                    :parameterDataType <http://schema.org/Text> ;
+                                                                    :parameterInResourceType :DataResourceType_ProteinTotalSpectralCount ;
+                                                                    :parameterNameInResource "station_id"^^xsd:token ;
+                                                                    <http://schema.org/multipleValues> "false"^^xsd:boolean ;
+                                                                    <http://schema.org/valueRequired> "false"^^xsd:boolean ;
+                                                                    rdfs:label "DataResourceParameter_ProteinSpectralCount_CruiseStationIdentifier" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_Date
+:DataResourceParameter_ProteinSpectralCount_Date rdf:type owl:NamedIndividual ,
+                                                          :DataResourceParameter ;
+                                                 :definesValuesForParameter :DataParameter_Date ;
+                                                 :parameterDataType <http://schema.org/Date> ;
+                                                 :parameterInResourceType :DataResourceType_ProteinTotalSpectralCount ;
+                                                 :parameterNameInResource "date_y-m-d"^^xsd:token ;
+                                                 <http://schema.org/multipleValues> "false"^^xsd:boolean ;
+                                                 <http://schema.org/valueRequired> "false"^^xsd:boolean ;
+                                                 rdfs:label "DataResourceParameter_ProteinSpectralCount_Date" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_Depth
+:DataResourceParameter_ProteinSpectralCount_Depth rdf:type owl:NamedIndividual ,
+                                                           :DataResourceParameter ;
+                                                  :definesValuesForParameter :DataParameter_Depth ;
+                                                  :parameterDataType <http://schema.org/Float> ;
+                                                  :parameterInResourceType :DataResourceType_ProteinTotalSpectralCount ;
+                                                  :unitsReportedIn :UnitOfMeasure_Meters ;
+                                                  :parameterNameInResource "depth_m"^^xsd:token ;
+                                                  <http://schema.org/multipleValues> "false"^^xsd:boolean ;
+                                                  <http://schema.org/valueRequired> "true"^^xsd:boolean ;
+                                                  rdfs:label "DataResourceParameter_ProteinSpectralCount_Depth" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_EnzymeCommissionIdentifier
+:DataResourceParameter_ProteinSpectralCount_EnzymeCommissionIdentifier rdf:type owl:NamedIndividual ,
+                                                                                :DataResourceParameter ;
+                                                                       :definesValuesForParameter :DataParameter_EnzymeCommissionIdentifier ;
+                                                                       :parameterDataType <http://schema.org/Text> ;
+                                                                       :parameterInResourceType :DataResourceType_ProteinTotalSpectralCount ;
+                                                                       :multiValuedDefaultDelimiter "||"^^xsd:token ;
+                                                                       :parameterNameInResource "enzyme_comm_id"^^xsd:token ;
+                                                                       <http://schema.org/multipleValues> "true"^^xsd:boolean ;
+                                                                       <http://schema.org/valueRequired> "false"^^xsd:boolean ;
+                                                                       rdfs:label "DataResourceParameter_ProteinSpectralCount_EnzymeCommissionIdentifier" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_ISODateTimeUTC
+:DataResourceParameter_ProteinSpectralCount_ISODateTimeUTC rdf:type owl:NamedIndividual ,
+                                                                    :DataResourceParameter ;
+                                                           :definesValuesForParameter :DataParameter_ISODateTimeUTC ;
+                                                           :parameterDataType <http://schema.org/DateTime> ;
+                                                           :parameterInResourceType :DataResourceType_ProteinTotalSpectralCount ;
+                                                           :parameterNameInResource "ISO_DateTime_UTC"^^xsd:token ;
+                                                           :parameterValueRecommended "true"^^xsd:boolean ;
+                                                           <http://schema.org/multipleValues> "false"^^xsd:boolean ;
+                                                           rdfs:label "DataResourceParameter_ProteinSpectralCount_ISODateTimeUTC" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_KeggIdentifier
+:DataResourceParameter_ProteinSpectralCount_KeggIdentifier rdf:type owl:NamedIndividual ,
+                                                                    :DataResourceParameter ;
+                                                           :definesValuesForParameter :DataParameter_KeggIdentifier ;
+                                                           :parameterDataType <http://schema.org/Text> ;
+                                                           :parameterInResourceType :DataResourceType_ProteinTotalSpectralCount ;
+                                                           :parameterNameInResource "kegg_id"^^xsd:token ;
+                                                           <http://schema.org/multipleValues> "false"^^xsd:boolean ;
+                                                           <http://schema.org/valueRequired> "false"^^xsd:boolean ;
+                                                           rdfs:label "DataResourceParameter_ProteinSpectralCount_KeggIdentifier" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_KeggOrthologyDefinition
+:DataResourceParameter_ProteinSpectralCount_KeggOrthologyDefinition rdf:type owl:NamedIndividual ,
+                                                                             :DataResourceParameter ;
+                                                                    :definesValuesForParameter :DataParameter_KeggOrthologyDefinition ;
+                                                                    :dependsOnParameter :DataResourceParameter_ProteinSpectralCount_KeggIdentifier ;
+                                                                    :parameterDataType <http://schema.org/Text> ;
+                                                                    :parameterInResourceType :DataResourceType_ProteinTotalSpectralCount ;
+                                                                    :parameterNameInResource "kegg_description"^^xsd:token ;
+                                                                    <http://schema.org/multipleValues> "false"^^xsd:boolean ;
+                                                                    <http://schema.org/valueRequired> "false"^^xsd:boolean ;
+                                                                    rdfs:label "DataResourceParameter_ProteinSpectralCount_KeggOrthologyDefinition" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_KeggOrthologyName
+:DataResourceParameter_ProteinSpectralCount_KeggOrthologyName rdf:type owl:NamedIndividual ,
+                                                                       :DataResourceParameter ;
+                                                              :definesValuesForParameter :DataParameter_KeggOrthologyName ;
+                                                              :dependsOnParameter :DataResourceParameter_ProteinSpectralCount_KeggIdentifier ;
+                                                              :parameterDataType <http://schema.org/Text> ;
+                                                              :parameterInResourceType :DataResourceType_ProteinTotalSpectralCount ;
+                                                              :parameterNameInResource "kegg_name"^^xsd:token ;
+                                                              <http://schema.org/multipleValues> "false"^^xsd:boolean ;
+                                                              <http://schema.org/valueRequired> "false"^^xsd:boolean ;
+                                                              rdfs:label "DataResourceParameter_ProteinSpectralCount_KeggOrthologyName" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_KeggOrthologyPathway
+:DataResourceParameter_ProteinSpectralCount_KeggOrthologyPathway rdf:type owl:NamedIndividual ,
+                                                                          :DataResourceParameter ;
+                                                                 :definesValuesForParameter :DataParameter_KeggOrthologyPathway ;
+                                                                 :dependsOnParameter :DataResourceParameter_ProteinSpectralCount_KeggIdentifier ;
+                                                                 :parameterDataType <http://schema.org/Text> ;
+                                                                 :parameterInResourceType :DataResourceType_ProteinTotalSpectralCount ;
+                                                                 :multiValuedDefaultDelimiter "||"^^xsd:token ;
+                                                                 :parameterNameInResource "kegg_pathway"^^xsd:token ;
+                                                                 <http://schema.org/multipleValues> "true"^^xsd:boolean ;
+                                                                 <http://schema.org/valueRequired> "false"^^xsd:boolean ;
+                                                                 rdfs:label "DataResourceParameter_ProteinSpectralCount_KeggOrthologyPathway" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_Latitude
+:DataResourceParameter_ProteinSpectralCount_Latitude rdf:type owl:NamedIndividual ,
+                                                              :DataResourceParameter ;
+                                                     :definesValuesForParameter :DataParameter_Latitude ;
+                                                     :dependsOnParameter :DataResourceParameter_ProteinSpectralCount_Longitude ;
+                                                     :parameterDataType <http://schema.org/Float> ;
+                                                     :parameterInResourceType :DataResourceType_ProteinTotalSpectralCount ;
+                                                     :unitsReportedIn :UnitOfMeasure_DecimalDegrees ;
+                                                     :parameterNameInResource "latitude_dd"^^xsd:token ;
+                                                     <http://schema.org/maxValue> "90.0"^^xsd:float ;
+                                                     <http://schema.org/minValue> "-90.0"^^xsd:float ;
+                                                     <http://schema.org/multipleValues> "false"^^xsd:boolean ;
+                                                     <http://schema.org/valueRequired> "true"^^xsd:boolean ;
+                                                     rdfs:label "DataResourceParameter_ProteinSpectralCount_Latitude" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_Longitude
+:DataResourceParameter_ProteinSpectralCount_Longitude rdf:type owl:NamedIndividual ,
+                                                               :DataResourceParameter ;
+                                                      :definesValuesForParameter :DataParameter_Longitude ;
+                                                      :dependsOnParameter :DataResourceParameter_ProteinSpectralCount_Latitude ;
+                                                      :parameterDataType <http://schema.org/Float> ;
+                                                      :parameterInResourceType :DataResourceType_ProteinTotalSpectralCount ;
+                                                      :unitsReportedIn :UnitOfMeasure_DecimalDegrees ;
+                                                      :parameterNameInResource "longitude_dd"^^xsd:token ;
+                                                      <http://schema.org/maxValue> "180.0"^^xsd:float ;
+                                                      <http://schema.org/minValue> "-180.0"^^xsd:float ;
+                                                      <http://schema.org/multipleValues> "false"^^xsd:boolean ;
+                                                      <http://schema.org/valueRequired> "true"^^xsd:boolean ;
+                                                      rdfs:label "DataResourceParameter_ProteinSpectralCount_Longitude" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_MaxFilterSize
+:DataResourceParameter_ProteinSpectralCount_MaxFilterSize rdf:type owl:NamedIndividual ,
+                                                                   :DataResourceParameter ;
+                                                          :definesValuesForParameter :DataParameter_MaxFilterSize ;
+                                                          :parameterDataType <http://schema.org/Float> ;
+                                                          :parameterInResourceType :DataResourceType_ProteinTotalSpectralCount ;
+                                                          :unitsReportedIn :UnitOfMeasure_Microns ;
+                                                          :parameterNameInResource "maximum_filter_size_microns"^^xsd:token ;
+                                                          <http://schema.org/multipleValues> "false"^^xsd:boolean ;
+                                                          <http://schema.org/valueRequired> "true"^^xsd:boolean ;
+                                                          rdfs:label "DataResourceParameter_ProteinSpectralCount_MaxFilterSize" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_MinFilterSize
+:DataResourceParameter_ProteinSpectralCount_MinFilterSize rdf:type owl:NamedIndividual ,
+                                                                   :DataResourceParameter ;
+                                                          :definesValuesForParameter :DataParameter_MinFilterSize ;
+                                                          :parameterDataType <http://schema.org/Float> ;
+                                                          :parameterInResourceType :DataResourceType_ProteinTotalSpectralCount ;
+                                                          :unitsReportedIn :UnitOfMeasure_Microns ;
+                                                          :parameterNameInResource "minimum_filter_size_microns"^^xsd:token ;
+                                                          <http://schema.org/multipleValues> "false"^^xsd:boolean ;
+                                                          <http://schema.org/valueRequired> "true"^^xsd:boolean ;
+                                                          rdfs:label "DataResourceParameter_ProteinSpectralCount_MinFilterSize" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_MolecularWeight
+:DataResourceParameter_ProteinSpectralCount_MolecularWeight rdf:type owl:NamedIndividual ,
+                                                                     :DataResourceParameter ;
+                                                            :definesValuesForParameter :DataParameter_MolecularWeight ;
+                                                            :parameterDataType <http://schema.org/Float> ;
+                                                            :parameterInResourceType :DataResourceType_ProteinTotalSpectralCount ;
+                                                            :unitsReportedIn :UnitOfMeasure_KiloDaltons ;
+                                                            :parameterNameInResource "molecular_weight_kDa"^^xsd:token ;
+                                                            <http://schema.org/multipleValues> "false"^^xsd:boolean ;
+                                                            <http://schema.org/valueRequired> "true"^^xsd:boolean ;
+                                                            rdfs:label "DataResourceParameter_ProteinSpectralCount_MolecularWeight" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_OtherIdentifiedProteins
+:DataResourceParameter_ProteinSpectralCount_OtherIdentifiedProteins rdf:type owl:NamedIndividual ,
+                                                                             :DataResourceParameter ;
+                                                                    :definesValuesForParameter :DataParameter_OtherIdentifiedProteins ;
+                                                                    :parameterDataType <http://schema.org/Text> ;
+                                                                    :parameterInResourceType :DataResourceType_ProteinTotalSpectralCount ;
+                                                                    :multiValuedDefaultDelimiter "||"^^xsd:token ;
+                                                                    :parameterNameInResource "other_identified_proteins"^^xsd:token ;
+                                                                    <http://schema.org/multipleValues> "true"^^xsd:boolean ;
+                                                                    <http://schema.org/valueRequired> "false"^^xsd:boolean ;
+                                                                    rdfs:label "DataResourceParameter_ProteinSpectralCount_OtherIdentifiedProteins" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_PFamsIdentifier
+:DataResourceParameter_ProteinSpectralCount_PFamsIdentifier rdf:type owl:NamedIndividual ,
+                                                                     :DataResourceParameter ;
+                                                            :definesValuesForParameter :DataParameter_PFamsIdentifier ;
+                                                            :parameterDataType <http://schema.org/Text> ;
+                                                            :parameterInResourceType :DataResourceType_ProteinTotalSpectralCount ;
+                                                            :multiValuedDefaultDelimiter "||"^^xsd:token ;
+                                                            :parameterNameInResource "pfams_id"^^xsd:token ;
+                                                            <http://schema.org/multipleValues> "true"^^xsd:boolean ;
+                                                            <http://schema.org/valueRequired> "false"^^xsd:boolean ;
+                                                            rdfs:label "DataResourceParameter_ProteinSpectralCount_PFamsIdentifier" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_PFamsName
+:DataResourceParameter_ProteinSpectralCount_PFamsName rdf:type owl:NamedIndividual ,
+                                                               :DataResourceParameter ;
+                                                      :definesValuesForParameter :DataParameter_PFamsName ;
+                                                      :dependsOnParameter :DataResourceParameter_ProteinSpectralCount_PFamsIdentifier ;
+                                                      :parameterDataType <http://schema.org/Text> ;
+                                                      :parameterInResourceType :DataResourceType_ProteinTotalSpectralCount ;
+                                                      :multiValuedDefaultDelimiter "||"^^xsd:token ;
+                                                      :parameterNameInResource "pfams_id"^^xsd:token ;
+                                                      <http://schema.org/multipleValues> "true"^^xsd:boolean ;
+                                                      <http://schema.org/valueRequired> "false"^^xsd:boolean ;
+                                                      rdfs:label "DataResourceParameter_ProteinSpectralCount_PFamsName" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_ProteinIdentifier
+:DataResourceParameter_ProteinSpectralCount_ProteinIdentifier rdf:type owl:NamedIndividual ,
+                                                                       :DataResourceParameter ;
+                                                              :definesValuesForParameter :DataParameter_ProteinIdentifier ;
+                                                              :isForeignKeyTo :DataResourceParameter_FASTA-ProteinIdentifier ;
+                                                              :parameterDataType <http://schema.org/Text> ;
+                                                              :parameterInResourceType :DataResourceType_ProteinTotalSpectralCount ;
+                                                              :parameterNameInResource "protein_id"^^xsd:token ;
+                                                              <http://schema.org/multipleValues> "false"^^xsd:boolean ;
+                                                              <http://schema.org/valueRequired> "true"^^xsd:boolean ;
+                                                              rdfs:label "DataResourceParameter_ProteinSpectralCount_ProteinIdentifier" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_SampleIdentifier
+:DataResourceParameter_ProteinSpectralCount_SampleIdentifier rdf:type owl:NamedIndividual ,
+                                                                      :DataResourceParameter ;
+                                                             :definesValuesForParameter :DataParameter_SampleIdentifier ;
+                                                             :parameterDataType <http://schema.org/Text> ;
+                                                             :parameterInResourceType :DataResourceType_ProteinTotalSpectralCount ;
+                                                             :parameterNameInResource "sample_id"^^xsd:token ;
+                                                             <http://schema.org/multipleValues> "false"^^xsd:boolean ;
+                                                             <http://schema.org/valueRequired> "false"^^xsd:boolean ;
+                                                             rdfs:label "DataResourceParameter_ProteinSpectralCount_SampleIdentifier" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_SpectralCount
+:DataResourceParameter_ProteinSpectralCount_SpectralCount rdf:type owl:NamedIndividual ,
+                                                                   :DataResourceParameter ;
+                                                          :definesValuesForParameter :DataParameter_SpectralCount ;
+                                                          :parameterDataType <http://schema.org/Text> ;
+                                                          :parameterInResourceType :DataResourceType_ProteinTotalSpectralCount ;
+                                                          :parameterNameInResource "spectral_count"^^xsd:token ;
+                                                          <http://schema.org/multipleValues> "false"^^xsd:boolean ;
+                                                          <http://schema.org/valueRequired> "true"^^xsd:boolean ;
+                                                          rdfs:label "DataResourceParameter_ProteinSpectralCount_SpectralCount" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_Time
+:DataResourceParameter_ProteinSpectralCount_Time rdf:type owl:NamedIndividual ,
+                                                          :DataResourceParameter ;
+                                                 :definesValuesForParameter :DataParameter_Time ;
+                                                 :dependsOnParameter :DataResourceParameter_ProteinSpectralCount_Date ;
+                                                 :parameterDataType <http://schema.org/Time> ;
+                                                 :parameterInResourceType :DataResourceType_ProteinTotalSpectralCount ;
+                                                 :parameterNameInResource "time_h-m-s"^^xsd:token ;
+                                                 <http://schema.org/defaultValue> "00:00:00"^^xsd:token ;
+                                                 <http://schema.org/multipleValues> "false"^^xsd:boolean ;
+                                                 <http://schema.org/valueRequired> "false"^^xsd:boolean ;
+                                                 rdfs:label "DataResourceParameter_ProteinSpectralCount_Time" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_UniprotIdentifier
+:DataResourceParameter_ProteinSpectralCount_UniprotIdentifier rdf:type owl:NamedIndividual ,
+                                                                       :DataResourceParameter ;
+                                                              :definesValuesForParameter :DataParameter_UniprotIdentifier ;
+                                                              :parameterDataType <http://schema.org/Text> ;
+                                                              :parameterInResourceType :DataResourceType_ProteinTotalSpectralCount ;
+                                                              :multiValuedDefaultDelimiter "||"^^xsd:token ;
+                                                              :parameterNameInResource "uniprot_id"^^xsd:token ;
+                                                              <http://schema.org/multipleValues> "true"^^xsd:boolean ;
+                                                              <http://schema.org/valueRequired> "false"^^xsd:boolean ;
+                                                              rdfs:label "DataResourceParameter_ProteinSpectralCount_UniprotIdentifier" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataResourceType_FASTA-ProteinIdentification
+:DataResourceType_FASTA-ProteinIdentification rdf:type owl:NamedIndividual ,
+                                                       :DataResourceType ;
+                                              rdfs:label "Data Resource Type: FASTA Protein Identification" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataResourceType_PeptideTotalSpectralCount
+:DataResourceType_PeptideTotalSpectralCount rdf:type owl:NamedIndividual ,
+                                                     :DataResourceType ;
+                                            rdfs:label "Data Resource Type: Peptide Total Spectral Count" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataResourceType_ProteinTotalSpectralCount
+:DataResourceType_ProteinTotalSpectralCount rdf:type owl:NamedIndividual ,
+                                                     :DataResourceType ;
+                                            rdfs:label "Data Resource Type: Protein Total Spectral Count" .
+
+
 ###  http://schema.oceanproteinportal.org/v2/DatasetProfile_PeptideSpectralCountSum
 :DatasetProfile_PeptideSpectralCountSum rdf:type owl:NamedIndividual ,
                                                  :DatasetProfile ;
-                                        :profileObservation :PeptideSpectralCountSum ;
+                                        :requiresOneParameterFromSet :DataResourceParameterSet_PeptideSpectralCount_DateRequirement ;
+                                        :usesDataResourceParameter :DataResourceParameter_PeptideSpectralCount_AbsoluteUnits ,
+                                                                   :DataResourceParameter_PeptideSpectralCount_BestProteinIdProbability ,
+                                                                   :DataResourceParameter_PeptideSpectralCount_BestSequestDCnScore ,
+                                                                   :DataResourceParameter_PeptideSpectralCount_BestSequestXCorrScore ,
+                                                                   :DataResourceParameter_PeptideSpectralCount_CruiseIdentifier ,
+                                                                   :DataResourceParameter_PeptideSpectralCount_CruiseStationIdentifier ,
+                                                                   :DataResourceParameter_PeptideSpectralCount_Date ,
+                                                                   :DataResourceParameter_PeptideSpectralCount_Depth ,
+                                                                   :DataResourceParameter_PeptideSpectralCount_ISODateTimeUTC ,
+                                                                   :DataResourceParameter_PeptideSpectralCount_Latitude ,
+                                                                   :DataResourceParameter_PeptideSpectralCount_Longitude ,
+                                                                   :DataResourceParameter_PeptideSpectralCount_MaxFilterSize ,
+                                                                   :DataResourceParameter_PeptideSpectralCount_MedianRetentionTime ,
+                                                                   :DataResourceParameter_PeptideSpectralCount_MinFilterSize ,
+                                                                   :DataResourceParameter_PeptideSpectralCount_MolecularWeight ,
+                                                                   :DataResourceParameter_PeptideSpectralCount_Peptide-StartIndex ,
+                                                                   :DataResourceParameter_PeptideSpectralCount_Peptide-StopIndex ,
+                                                                   :DataResourceParameter_PeptideSpectralCount_PeptideSequence ,
+                                                                   :DataResourceParameter_PeptideSpectralCount_PeptideSpectralCountSummation ,
+                                                                   :DataResourceParameter_PeptideSpectralCount_Plus2HSpectraCount ,
+                                                                   :DataResourceParameter_PeptideSpectralCount_Plus3HSpectraCount ,
+                                                                   :DataResourceParameter_PeptideSpectralCount_Plus4HSpectraCount ,
+                                                                   :DataResourceParameter_PeptideSpectralCount_ProteinAccessionIdentifiers ,
+                                                                   :DataResourceParameter_PeptideSpectralCount_ProteinIdentifier ,
+                                                                   :DataResourceParameter_PeptideSpectralCount_SampleIdentifier ,
+                                                                   :DataResourceParameter_PeptideSpectralCount_Time ,
+                                                                   :DataResourceParameter_PeptideSpectralCount_TotalPrecursorIntensity ,
+                                                                   :DataResourceParameter_PeptideSpectralCount_TotalTIC ;
                                         rdfs:label "Dataset Profile: Peptide Spectral Count Sum" .
 
 
 ###  http://schema.oceanproteinportal.org/v2/DatasetProfile_ProteinTotalSpectralCount
 :DatasetProfile_ProteinTotalSpectralCount rdf:type owl:NamedIndividual ,
                                                    :DatasetProfile ;
-                                          :profileObservation :ProteinTotalSpectralCount ;
+                                          :requiresOneParameterFromSet :DataResourceParameterSet_PeptideSpectralCount_DateRequirement ;
+                                          :usesDataResourceParameter :DataResourceParameter_FASTA-ProteinIdentifier ,
+                                                                     :DataResourceParameter_FASTA-ProteinSequence ,
+                                                                     :DataResourceParameter_PeptideSpectralCount_AbsoluteUnits ,
+                                                                     :DataResourceParameter_PeptideSpectralCount_BestProteinIdProbability ,
+                                                                     :DataResourceParameter_PeptideSpectralCount_BestSequestDCnScore ,
+                                                                     :DataResourceParameter_PeptideSpectralCount_BestSequestXCorrScore ,
+                                                                     :DataResourceParameter_PeptideSpectralCount_CruiseIdentifier ,
+                                                                     :DataResourceParameter_PeptideSpectralCount_CruiseStationIdentifier ,
+                                                                     :DataResourceParameter_PeptideSpectralCount_Date ,
+                                                                     :DataResourceParameter_PeptideSpectralCount_Depth ,
+                                                                     :DataResourceParameter_PeptideSpectralCount_ISODateTimeUTC ,
+                                                                     :DataResourceParameter_PeptideSpectralCount_Latitude ,
+                                                                     :DataResourceParameter_PeptideSpectralCount_Longitude ,
+                                                                     :DataResourceParameter_PeptideSpectralCount_MaxFilterSize ,
+                                                                     :DataResourceParameter_PeptideSpectralCount_MedianRetentionTime ,
+                                                                     :DataResourceParameter_PeptideSpectralCount_MinFilterSize ,
+                                                                     :DataResourceParameter_PeptideSpectralCount_MolecularWeight ,
+                                                                     :DataResourceParameter_PeptideSpectralCount_Peptide-StartIndex ,
+                                                                     :DataResourceParameter_PeptideSpectralCount_Peptide-StopIndex ,
+                                                                     :DataResourceParameter_PeptideSpectralCount_PeptideSequence ,
+                                                                     :DataResourceParameter_PeptideSpectralCount_PeptideSpectralCountSummation ,
+                                                                     :DataResourceParameter_PeptideSpectralCount_Plus2HSpectraCount ,
+                                                                     :DataResourceParameter_PeptideSpectralCount_Plus3HSpectraCount ,
+                                                                     :DataResourceParameter_PeptideSpectralCount_Plus4HSpectraCount ,
+                                                                     :DataResourceParameter_PeptideSpectralCount_ProteinAccessionIdentifiers ,
+                                                                     :DataResourceParameter_PeptideSpectralCount_ProteinIdentifier ,
+                                                                     :DataResourceParameter_PeptideSpectralCount_SampleIdentifier ,
+                                                                     :DataResourceParameter_PeptideSpectralCount_Time ,
+                                                                     :DataResourceParameter_PeptideSpectralCount_TotalPrecursorIntensity ,
+                                                                     :DataResourceParameter_PeptideSpectralCount_TotalTIC ,
+                                                                     :DataResourceParameter_ProteinSpectralCount_BestNCBITaxonIdentifier ,
+                                                                     :DataResourceParameter_ProteinSpectralCount_BestNCBITaxonName ,
+                                                                     :DataResourceParameter_ProteinSpectralCount_CruiseIdentifier ,
+                                                                     :DataResourceParameter_ProteinSpectralCount_CruiseStationIdentifier ,
+                                                                     :DataResourceParameter_ProteinSpectralCount_Date ,
+                                                                     :DataResourceParameter_ProteinSpectralCount_Depth ,
+                                                                     :DataResourceParameter_ProteinSpectralCount_EnzymeCommissionIdentifier ,
+                                                                     :DataResourceParameter_ProteinSpectralCount_ISODateTimeUTC ,
+                                                                     :DataResourceParameter_ProteinSpectralCount_KeggIdentifier ,
+                                                                     :DataResourceParameter_ProteinSpectralCount_KeggOrthologyDefinition ,
+                                                                     :DataResourceParameter_ProteinSpectralCount_KeggOrthologyName ,
+                                                                     :DataResourceParameter_ProteinSpectralCount_KeggOrthologyPathway ,
+                                                                     :DataResourceParameter_ProteinSpectralCount_Latitude ,
+                                                                     :DataResourceParameter_ProteinSpectralCount_Longitude ,
+                                                                     :DataResourceParameter_ProteinSpectralCount_MaxFilterSize ,
+                                                                     :DataResourceParameter_ProteinSpectralCount_MinFilterSize ,
+                                                                     :DataResourceParameter_ProteinSpectralCount_MolecularWeight ,
+                                                                     :DataResourceParameter_ProteinSpectralCount_OtherIdentifiedProteins ,
+                                                                     :DataResourceParameter_ProteinSpectralCount_PFamsIdentifier ,
+                                                                     :DataResourceParameter_ProteinSpectralCount_PFamsName ,
+                                                                     :DataResourceParameter_ProteinSpectralCount_ProteinIdentifier ,
+                                                                     :DataResourceParameter_ProteinSpectralCount_SampleIdentifier ,
+                                                                     :DataResourceParameter_ProteinSpectralCount_SpectralCount ,
+                                                                     :DataResourceParameter_ProteinSpectralCount_Time ,
+                                                                     :DataResourceParameter_ProteinSpectralCount_UniprotIdentifier ;
                                           rdfs:label "Dataset Profile: Protein Total Spectral Count" .
 
 
@@ -1363,14 +2758,6 @@ Note since the order of the pathways (or KeggPathway Index isn't provided we don
                           rdfs:seeAlso <https://registry.identifiers.org/registry/uniprot> .
 
 
-###  http://schema.oceanproteinportal.org/v2/PeptideSpectralCountSum
-:PeptideSpectralCountSum rdf:type owl:NamedIndividual .
-
-
-###  http://schema.oceanproteinportal.org/v2/ProteinTotalSpectralCount
-:ProteinTotalSpectralCount rdf:type owl:NamedIndividual .
-
-
 ###  http://schema.oceanproteinportal.org/v2/Role_Author
 :Role_Author rdf:type owl:NamedIndividual ,
                       :Role ;
@@ -1395,22 +2782,84 @@ Note since the order of the pathways (or KeggPathway Index isn't provided we don
                 rdfs:label "Role: Publisher" .
 
 
+###  http://schema.oceanproteinportal.org/v2/UnitOfMeasure_DecimalDegrees
+:UnitOfMeasure_DecimalDegrees rdf:type owl:NamedIndividual ,
+                                       :UnitOfMeasure ;
+                              rdfs:label "UnitOfMeasure: Decimal Degrees" ;
+                              rdfs:seeAlso <http://www.wikidata.org/entity/Q1798227> .
+
+
+###  http://schema.oceanproteinportal.org/v2/UnitOfMeasure_Femtomoles-per-Liter
+:UnitOfMeasure_Femtomoles-per-Liter rdf:type owl:NamedIndividual ,
+                                             :UnitOfMeasure ;
+                                    rdfs:label "UnitOfMeasure: Femtomoles per Liter" ;
+                                    rdfs:seeAlso <http://purl.obolibrary.org/obo/NCIT_C68887> .
+
+
+###  http://schema.oceanproteinportal.org/v2/UnitOfMeasure_KiloDaltons
+:UnitOfMeasure_KiloDaltons rdf:type owl:NamedIndividual ,
+                                    :UnitOfMeasure ;
+                           rdfs:label "UnitOfMeasure: KiloDaltons" ;
+                           rdfs:seeAlso <http://www.wikidata.org/entity/Q14623804> .
+
+
+###  http://schema.oceanproteinportal.org/v2/UnitOfMeasure_Meters
+:UnitOfMeasure_Meters rdf:type owl:NamedIndividual ,
+                               :UnitOfMeasure ;
+                      rdfs:label "UnitOfMeasure: Meters" ;
+                      rdfs:seeAlso <http://www.wikidata.org/entity/Q11573> .
+
+
+###  http://schema.oceanproteinportal.org/v2/UnitOfMeasure_Microns
+:UnitOfMeasure_Microns rdf:type owl:NamedIndividual ,
+                                :UnitOfMeasure ;
+                       rdfs:label "UnitOfMeasure: Microns" ;
+                       rdfs:seeAlso <http://www.wikidata.org/entity/Q175821> .
+
+
+###  http://schema.org/Date
+<http://schema.org/Date> rdf:type owl:NamedIndividual ;
+                         :frictionlessDataValueType "date" .
+
+
+###  http://schema.org/DateTime
+<http://schema.org/DateTime> rdf:type owl:NamedIndividual ;
+                             :frictionlessDataValueType "datetime" .
+
+
+###  http://schema.org/Float
+<http://schema.org/Float> rdf:type owl:NamedIndividual ;
+                          :frictionlessDataValueType "number" .
+
+
+###  http://schema.org/Integer
+<http://schema.org/Integer> rdf:type owl:NamedIndividual ;
+                            :frictionlessDataValueType "integer" .
+
+
+###  http://schema.org/Text
+<http://schema.org/Text> rdf:type owl:NamedIndividual ;
+                         :frictionlessDataValueType "string" .
+
+
+###  http://schema.org/Time
+<http://schema.org/Time> rdf:type owl:NamedIndividual ;
+                         :frictionlessDataValueType "time" .
+
+
+###  http://schema.org/URL
+<http://schema.org/URL> rdf:type owl:NamedIndividual ;
+                        :frictionlessDataValueType "uri" .
+
+
 #################################################################
 #    Annotations
 #################################################################
 
-:PeptideSpectralCountSum rdfs:comment "The total spectral count of some identified peptide from a single sample." ;
-                         rdfs:label "PeptideSpectralCountSum" ;
-                         rdfs:seeAlso <http://purl.obolibrary.org/obo/MS_1002015> .
+<http://schema.org/Boolean> :frictionlessDataValueType "boolean" .
 
 
-:ProteinTotalSpectralCount rdfs:comment "The total spectral count of some identified protein from a single sample." ;
-                           rdfs:label "ProteinTotalSpectralCount" ;
-                           rdfs:seeAlso <http://purl.obolibrary.org/obo/MS_1002016> .
-
-
-:profileObservation rdfs:comment "An observation that will be present in the results." ;
-                    rdfs:label "profileObservation" .
+<http://schema.org/Number> :frictionlessDataValueType "number" .
 
 
 #################################################################

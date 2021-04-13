@@ -6,7 +6,8 @@
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:schema="http://schema.org/">
     <owl:Ontology rdf:about="http://schema.oceanproteinportal.org/v2/">
         <owl:versionIRI rdf:resource="http://schema.oceanproteinportal.org/v2/opp.owl"/>
     </owl:Ontology>
@@ -49,11 +50,60 @@
     
 
 
-    <!-- http://schema.oceanproteinportal.org/v2/profileObservation -->
+    <!-- http://schema.oceanproteinportal.org/v2/frictionlessDataProfile -->
 
 
-    <owl:AnnotationProperty rdf:about="http://schema.oceanproteinportal.org/v2/profileObservation">
-        <rdfs:range rdf:resource="http://www.w3.org/ns/ssn/Property"/>
+    <owl:AnnotationProperty rdf:about="http://schema.oceanproteinportal.org/v2/frictionlessDataProfile">
+        <rdfs:comment>A FrictionlessData profile. See specs.frictionlessdata.io</rdfs:comment>
+        <rdfs:label>frictionlessDataProfile</rdfs:label>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#token"/>
+        <rdfs:domain rdf:resource="http://schema.oceanproteinportal.org/v2/FileType"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/frictionlessDataValueType -->
+
+
+    <owl:AnnotationProperty rdf:about="http://schema.oceanproteinportal.org/v2/frictionlessDataValueType">
+        <rdfs:comment>The Frictionlessdata data type for a specific field (DataParameter) in a DataResource.</rdfs:comment>
+        <rdfs:label>frictionlessDataValueType</rdfs:label>
+        <rdfs:seeAlso>https://specs.frictionlessdata.io/table-schema/#types-and-formats</rdfs:seeAlso>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#token"/>
+        <rdfs:domain rdf:resource="http://schema.org/DataType"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/parameterValueConstraints -->
+
+
+    <owl:AnnotationProperty rdf:about="http://schema.oceanproteinportal.org/v2/parameterValueConstraints">
+        <rdfs:comment>Any constraints on the parameter values to help with processing a certain DataParameter. This property is used in the datapackage.json for describing a tabular-data-resource field.</rdfs:comment>
+        <rdfs:label>parameterValueConstraints</rdfs:label>
+        <rdfs:seeAlso>https://specs.frictionlessdata.io/table-schema/#constraints</rdfs:seeAlso>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/parameterValueDelimiter -->
+
+
+    <owl:AnnotationProperty rdf:about="http://schema.oceanproteinportal.org/v2/parameterValueDelimiter">
+        <rdfs:comment>Defines a delimiter to override the multipleValuedDefaultDelimiter for a certain DataParameter. This property is used in the datapackage.json for describing a tabular-data-resource field.</rdfs:comment>
+        <rdfs:label>parameterValueDelimiter</rdfs:label>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#token"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/parameterValueMissingValues -->
+
+
+    <owl:AnnotationProperty rdf:about="http://schema.oceanproteinportal.org/v2/parameterValueMissingValues">
+        <rdfs:comment>A set of values for a DataParameter that specify that no data were recorded for that instance of an observation.</rdfs:comment>
+        <rdfs:label>parameterValueMissingValues</rdfs:label>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#token"/>
     </owl:AnnotationProperty>
     
 
@@ -94,7 +144,6 @@
 
 
     <owl:ObjectProperty rdf:about="http://schema.oceanproteinportal.org/v2/annotatesIdentifier">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <owl:inverseOf rdf:resource="http://schema.oceanproteinportal.org/v2/identifierMetadata"/>
         <rdfs:domain rdf:resource="http://schema.oceanproteinportal.org/v2/IdentifierMetadata"/>
         <rdfs:range rdf:resource="http://schema.oceanproteinportal.org/v2/Identifier"/>
@@ -108,10 +157,29 @@
 
 
     <owl:ObjectProperty rdf:about="http://schema.oceanproteinportal.org/v2/conformsToProfile">
-        <rdfs:domain rdf:resource="http://schema.org/Dataset"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.oceanproteinportal.org/v2/DataResource"/>
+                    <rdf:Description rdf:about="http://schema.org/Dataset"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="http://schema.oceanproteinportal.org/v2/DatasetProfile"/>
         <rdfs:comment>The dataset conforms to the Dataset Profile. Meaning to presents the profile&apos;s expected observations.</rdfs:comment>
         <rdfs:label>conformsToProfile</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/datasetType -->
+
+
+    <owl:ObjectProperty rdf:about="http://schema.oceanproteinportal.org/v2/datasetType">
+        <rdfs:domain rdf:resource="http://schema.oceanproteinportal.org/v2/DataResource"/>
+        <rdfs:range rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceType"/>
+        <rdfs:comment>Defines the type of Dataset or DataResource.</rdfs:comment>
+        <rdfs:label>datasetType</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -124,6 +192,31 @@
         <rdfs:range rdf:resource="http://schema.oceanproteinportal.org/v2/IdentifierScheme"/>
         <rdfs:comment>The IdentifierScheme defined by some Thing. In the case fo the OPP, a single Dataset defines an IdentifierScheme for its local identifiers.</rdfs:comment>
         <rdfs:label>definesIdentifierScheme</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/definesValuesForParameter -->
+
+
+    <owl:ObjectProperty rdf:about="http://schema.oceanproteinportal.org/v2/definesValuesForParameter">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter"/>
+        <rdfs:range rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
+        <rdfs:comment>This Specification is being defined for the following DataParameter.</rdfs:comment>
+        <rdfs:label>definesValuesForParameter</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/dependsOnParameter -->
+
+
+    <owl:ObjectProperty rdf:about="http://schema.oceanproteinportal.org/v2/dependsOnParameter">
+        <rdfs:domain rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter"/>
+        <rdfs:range rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter"/>
+        <rdfs:comment>A another DataResourceParameter which must exist in a DataResource for  the DatasetProfile to be valid for a conforming Dataset.</rdfs:comment>
+        <rdfs:label>dependsOnParameter</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -186,7 +279,6 @@
 
 
     <owl:ObjectProperty rdf:about="http://schema.oceanproteinportal.org/v2/hasAgentRole">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
         <rdfs:range rdf:resource="http://schema.oceanproteinportal.org/v2/AgentRole"/>
         <rdfs:comment>An AgentRole in which an Agent performs some Role on this particular Thing.</rdfs:comment>
@@ -238,7 +330,6 @@
 
 
     <owl:ObjectProperty rdf:about="http://schema.oceanproteinportal.org/v2/identifier">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <owl:inverseOf rdf:resource="http://schema.oceanproteinportal.org/v2/isIdentifierOf"/>
         <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
         <rdfs:range rdf:resource="http://schema.oceanproteinportal.org/v2/Identifier"/>
@@ -279,7 +370,6 @@
 
 
     <owl:ObjectProperty rdf:about="http://schema.oceanproteinportal.org/v2/inRole">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <owl:inverseOf rdf:resource="http://schema.oceanproteinportal.org/v2/roleFor"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
         <rdfs:domain rdf:resource="http://schema.oceanproteinportal.org/v2/AgentRole"/>
@@ -294,7 +384,6 @@
 
 
     <owl:ObjectProperty rdf:about="http://schema.oceanproteinportal.org/v2/inVicinityOfStation">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/FeatureOfInterest"/>
         <rdfs:range rdf:resource="http://schema.oceanproteinportal.org/v2/Station"/>
@@ -304,15 +393,39 @@
     
 
 
+    <!-- http://schema.oceanproteinportal.org/v2/includesDataParameterInSet -->
+
+
+    <owl:ObjectProperty rdf:about="http://schema.oceanproteinportal.org/v2/includesDataParameterInSet">
+        <rdfs:domain rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameterSet"/>
+        <rdfs:range rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter"/>
+        <rdfs:comment>A DataResourceParameter that is included in a DataResourceParameterSet.</rdfs:comment>
+        <rdfs:label>includesDataParameterInSet</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://schema.oceanproteinportal.org/v2/isAgentRoleFor -->
 
 
     <owl:ObjectProperty rdf:about="http://schema.oceanproteinportal.org/v2/isAgentRoleFor">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="http://schema.oceanproteinportal.org/v2/AgentRole"/>
         <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
         <rdfs:comment>The Thing on/in which an Agent performs some Role.</rdfs:comment>
         <rdfs:label>isAgentRoleFor</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/isForeignKeyTo -->
+
+
+    <owl:ObjectProperty rdf:about="http://schema.oceanproteinportal.org/v2/isForeignKeyTo">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter"/>
+        <rdfs:range rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter"/>
+        <rdfs:comment>A DataResourceParameter that acts as a foreign key in some other, disjoint DataResource for the purpose of joining/linking data .</rdfs:comment>
+        <rdfs:label>isForeignKeyTo</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -359,7 +472,6 @@
 
 
     <owl:ObjectProperty rdf:about="http://schema.oceanproteinportal.org/v2/keggPathway">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <owl:inverseOf rdf:resource="http://schema.oceanproteinportal.org/v2/keggPathwayForOrthology"/>
         <rdfs:domain rdf:resource="http://schema.oceanproteinportal.org/v2/KeggOrthology"/>
         <rdfs:range rdf:resource="http://schema.oceanproteinportal.org/v2/KeggPathway"/>
@@ -419,6 +531,32 @@
     
 
 
+    <!-- http://schema.oceanproteinportal.org/v2/parameterDataType -->
+
+
+    <owl:ObjectProperty rdf:about="http://schema.oceanproteinportal.org/v2/parameterDataType">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter"/>
+        <rdfs:range rdf:resource="http://schema.org/DataType"/>
+        <rdfs:comment>The expected data type for all values of this DataResourceParameter. This helps the OPP understand how to process, visualize, and serialize these data.</rdfs:comment>
+        <rdfs:label>parameterDataType</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/parameterInResourceType -->
+
+
+    <owl:ObjectProperty rdf:about="http://schema.oceanproteinportal.org/v2/parameterInResourceType">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter"/>
+        <rdfs:range rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceType"/>
+        <rdfs:comment>A the DataResourceType for which this DataResourceParameter specifies.</rdfs:comment>
+        <rdfs:label>parameterInResourceType</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://schema.oceanproteinportal.org/v2/performedAgentRole -->
 
 
@@ -437,7 +575,6 @@
 
 
     <owl:ObjectProperty rdf:about="http://schema.oceanproteinportal.org/v2/performedAtOrganization">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
         <rdfs:domain rdf:resource="http://schema.oceanproteinportal.org/v2/AgentRole"/>
         <rdfs:range rdf:resource="http://schema.org/Organization"/>
@@ -451,7 +588,6 @@
 
 
     <owl:ObjectProperty rdf:about="http://schema.oceanproteinportal.org/v2/performedBy">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
         <rdfs:domain rdf:resource="http://schema.oceanproteinportal.org/v2/AgentRole"/>
         <rdfs:range rdf:resource="http://schema.oceanproteinportal.org/v2/Agent"/>
@@ -465,7 +601,6 @@
 
 
     <owl:ObjectProperty rdf:about="http://schema.oceanproteinportal.org/v2/performedOnBehalfOf">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="http://schema.oceanproteinportal.org/v2/AgentRole"/>
         <rdfs:range rdf:resource="http://schema.oceanproteinportal.org/v2/Agent"/>
         <rdfs:comment>The Agent for which the performing Agent is acting in a certain Role.</rdfs:comment>
@@ -474,11 +609,14 @@
     
 
 
-    <!-- http://schema.oceanproteinportal.org/v2/profileObservation -->
+    <!-- http://schema.oceanproteinportal.org/v2/processableFileType -->
 
 
-    <owl:ObjectProperty rdf:about="http://schema.oceanproteinportal.org/v2/profileObservation">
-        <rdfs:domain rdf:resource="http://schema.oceanproteinportal.org/v2/DatasetProfile"/>
+    <owl:ObjectProperty rdf:about="http://schema.oceanproteinportal.org/v2/processableFileType">
+        <rdfs:domain rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceType"/>
+        <rdfs:range rdf:resource="http://schema.oceanproteinportal.org/v2/FileType"/>
+        <rdfs:comment>A file type for which the OPP knows how to process for ingestion</rdfs:comment>
+        <rdfs:label>processableFileType</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -487,11 +625,22 @@
 
 
     <owl:ObjectProperty rdf:about="http://schema.oceanproteinportal.org/v2/providesRole">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
         <rdfs:range rdf:resource="http://schema.oceanproteinportal.org/v2/Role"/>
         <rdfs:comment>The existence of some Thing provides the ability for some Agent to perform this Role.</rdfs:comment>
         <rdfs:label>providesRole</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/requiresOneParameterFromSet -->
+
+
+    <owl:ObjectProperty rdf:about="http://schema.oceanproteinportal.org/v2/requiresOneParameterFromSet">
+        <rdfs:domain rdf:resource="http://schema.oceanproteinportal.org/v2/DatasetProfile"/>
+        <rdfs:range rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameterSet"/>
+        <rdfs:comment>The DatasetProfile requires that at least one of the DataParameters described by this set of DataResourceParameters is required in the schema:Dataset that conforms to the DatasetProfile.</rdfs:comment>
+        <rdfs:label>requiresOneParameterFromSet</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -613,6 +762,37 @@
     
 
 
+    <!-- http://schema.oceanproteinportal.org/v2/unitsReportedIn -->
+
+
+    <owl:ObjectProperty rdf:about="http://schema.oceanproteinportal.org/v2/unitsReportedIn">
+        <rdfs:domain rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter"/>
+        <rdfs:range rdf:resource="http://schema.oceanproteinportal.org/v2/UnitOfMeasure"/>
+        <rdfs:comment>The units that are expected for a certain DataParameter within a DataResource.</rdfs:comment>
+        <rdfs:label>unitsReportedIn</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/usesDataResourceParameter -->
+
+
+    <owl:ObjectProperty rdf:about="http://schema.oceanproteinportal.org/v2/usesDataResourceParameter">
+        <rdfs:domain rdf:resource="http://schema.oceanproteinportal.org/v2/DatasetProfile"/>
+        <rdfs:range rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter"/>
+        <rdfs:comment>A DataResourceParameter for which the DatasetProfile specifies certain restrictions or expectations.</rdfs:comment>
+        <rdfs:label>usesDataResourceParameter</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.org/variableMeasured -->
+
+
+    <owl:ObjectProperty rdf:about="http://schema.org/variableMeasured"/>
+    
+
+
     <!-- http://www.w3.org/ns/sosa/hasFeatureOfInterest -->
 
 
@@ -630,9 +810,7 @@
     <!-- http://www.w3.org/ns/ssn/systems/hasSystemCapability -->
 
 
-    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/ssn/systems/hasSystemCapability">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/ssn/systems/hasSystemCapability"/>
     
 
 
@@ -730,7 +908,6 @@
 
 
     <owl:DatatypeProperty rdf:about="http://schema.oceanproteinportal.org/v2/depth">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/FeatureOfInterest"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
@@ -853,6 +1030,46 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
     
 
 
+    <!-- http://schema.oceanproteinportal.org/v2/multiValuedDefaultDelimiter -->
+
+
+    <owl:DatatypeProperty rdf:about="http://schema.oceanproteinportal.org/v2/multiValuedDefaultDelimiter">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#token"/>
+        <rdfs:comment>For a DataResourceParameter that can have multiple values (schema:multipleValues == TRUE), this is the default delimiter to be used for parsing DataResourceTypes that encode all values into one. One example might be tabular data where a cell contains multiple values separated by a semicolon.</rdfs:comment>
+        <rdfs:label>multiValuedDefaultDelimiter</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/parameterNameInResource -->
+
+
+    <owl:DatatypeProperty rdf:about="http://schema.oceanproteinportal.org/v2/parameterNameInResource">
+        <rdfs:subPropertyOf rdf:resource="http://schema.org/valueName"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#token"/>
+        <rdfs:comment>The name of the parameter within the DataResource.</rdfs:comment>
+        <rdfs:label>parameterNameInResource</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/parameterValueRecommended -->
+
+
+    <owl:DatatypeProperty rdf:about="http://schema.oceanproteinportal.org/v2/parameterValueRecommended">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Specifies whether a DatasetProfile recommends that a certain DataParameter exist in a DataResource. Recommendation doesn&apos;t mean its required, but rather it would be useful for data consumers.</rdfs:comment>
+        <rdfs:label>parameterValueRecommended</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://schema.oceanproteinportal.org/v2/peptideSequence -->
 
 
@@ -899,6 +1116,19 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         <rdfs:domain rdf:resource="http://schema.oceanproteinportal.org/v2/PeptideSpectralCountSum"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <rdfs:label>plus4HSpectraCount</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/positionInDataResource -->
+
+
+    <owl:DatatypeProperty rdf:about="http://schema.oceanproteinportal.org/v2/positionInDataResource">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>The position in a DataResource could mean the column number in a tabular file or for FASTA files mean that the identfier = position #1 and the sequence = position #2.</rdfs:comment>
+        <rdfs:label>positionInDataResource</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -952,6 +1182,19 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         <rdfs:domain rdf:resource="http://schema.oceanproteinportal.org/v2/IdentificationScore"/>
         <rdfs:comment>The value of some score using a scoring method to identify an amino acid.</rdfs:comment>
         <rdfs:label>scoreValue</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/shortName -->
+
+
+    <owl:DatatypeProperty rdf:about="http://schema.oceanproteinportal.org/v2/shortName">
+        <rdfs:subPropertyOf rdf:resource="http://schema.org/alternateName"/>
+        <rdfs:domain rdf:resource="http://schema.org/Dataset"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#token"/>
+        <rdfs:comment>The name or label used in the OPP user interface to identify a schema:Dataset. This is used for readability.</rdfs:comment>
+        <rdfs:label>shortName</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1030,10 +1273,31 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
     
 
 
+    <!-- http://schema.org/alternateName -->
+
+
+    <owl:DatatypeProperty rdf:about="http://schema.org/alternateName"/>
+    
+
+
+    <!-- http://schema.org/defaultValue -->
+
+
+    <owl:DatatypeProperty rdf:about="http://schema.org/defaultValue"/>
+    
+
+
     <!-- http://schema.org/description -->
 
 
     <owl:DatatypeProperty rdf:about="http://schema.org/description"/>
+    
+
+
+    <!-- http://schema.org/encodingFormat -->
+
+
+    <owl:DatatypeProperty rdf:about="http://schema.org/encodingFormat"/>
     
 
 
@@ -1047,18 +1311,21 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
     <!-- http://schema.org/maxValue -->
 
 
-    <owl:DatatypeProperty rdf:about="http://schema.org/maxValue">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="http://schema.org/maxValue"/>
     
 
 
     <!-- http://schema.org/minValue -->
 
 
-    <owl:DatatypeProperty rdf:about="http://schema.org/minValue">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="http://schema.org/minValue"/>
+    
+
+
+    <!-- http://schema.org/multipleValues -->
+
+
+    <owl:DatatypeProperty rdf:about="http://schema.org/multipleValues"/>
     
 
 
@@ -1073,6 +1340,20 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
 
 
     <owl:DatatypeProperty rdf:about="http://schema.org/value"/>
+    
+
+
+    <!-- http://schema.org/valueName -->
+
+
+    <owl:DatatypeProperty rdf:about="http://schema.org/valueName"/>
+    
+
+
+    <!-- http://schema.org/valueRequired -->
+
+
+    <owl:DatatypeProperty rdf:about="http://schema.org/valueRequired"/>
     
 
 
@@ -1209,17 +1490,19 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         <rdfs:subClassOf rdf:resource="http://schema.org/PropertyValue"/>
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/ssn/Property"/>
         <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.oceanproteinportal.org/v2/observationInSample"/>
-                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Sample"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.oceanproteinportal.org/v2/observationInSample"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="http://www.w3.org/ns/sosa/Sample"/>
-            </owl:Restriction>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://schema.oceanproteinportal.org/v2/observationInSample"/>
+                        <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Sample"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://schema.oceanproteinportal.org/v2/observationInSample"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.w3.org/ns/sosa/Sample"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
         </rdfs:subClassOf>
         <describedinConceptualModelOf rdf:resource="http://schema.oceanproteinportal.org/v2/AminoAcidIdentification"/>
         <rdfs:comment>A property of some amino acid that was observed in a single Sample.</rdfs:comment>
@@ -1300,6 +1583,76 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
     
 
 
+    <!-- http://schema.oceanproteinportal.org/v2/DataParameter -->
+
+
+    <owl:Class rdf:about="http://schema.oceanproteinportal.org/v2/DataParameter">
+        <rdfs:subClassOf rdf:resource="http://schema.org/PropertyValue"/>
+        <rdfs:comment>A conceptual understanding of a particular parameter that could be observed/measured within some data resource. This parameter typically means to describe an observalbe or measurable  &quot;property&quot; (or attribute) of some &quot;entity&quot; (or object) in relation to some &quot;environment&quot; using some &quot;method&quot;. This conceptual description of a parameter helps to link across datasets that may report different units or other variances outside the scope of some &quot;property of an entity in relation to an environment using some observational/measuring methodology&quot;.</rdfs:comment>
+        <rdfs:label>DataParameter</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataResource -->
+
+
+    <owl:Class rdf:about="http://schema.oceanproteinportal.org/v2/DataResource">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Dataset"/>
+        <rdfs:comment>A Dataset witha single resource at which the observations canbe found.</rdfs:comment>
+        <rdfs:label>DataResource</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter -->
+
+
+    <owl:Class rdf:about="http://schema.oceanproteinportal.org/v2/DataResourceParameter">
+        <rdfs:subClassOf rdf:resource="http://schema.org/PropertyValueSpecification"/>
+        <rdfs:comment>A specification of how a DataParameter is expected to be in a DataResource in order for the DatResource to conform to a DatasetProfile.</rdfs:comment>
+        <rdfs:label>DataResourceParameter</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameterSet -->
+
+
+    <owl:Class rdf:about="http://schema.oceanproteinportal.org/v2/DataResourceParameterSet">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Intangible"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://schema.oceanproteinportal.org/v2/includesDataParameterInSet"/>
+                        <owl:allValuesFrom rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://schema.oceanproteinportal.org/v2/includesDataParameterInSet"/>
+                        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minQualifiedCardinality>
+                        <owl:onClass rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:comment>A set of DataResourceParameter instances for the purpose of validating a DatasetProfile. This helps the DatasetProfile set requirements or a grouping a DataResourceeParameters such as saying at least one of the group is required.</rdfs:comment>
+        <rdfs:label>DataResourceParameterSet</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataResourceType -->
+
+
+    <owl:Class rdf:about="http://schema.oceanproteinportal.org/v2/DataResourceType">
+        <rdfs:subClassOf rdf:resource="http://schema.org/CreativeWork"/>
+        <rdfs:comment>A named type for which a DataResource can be labeled with for the sole purpose of conforming to a DatasetProfile. This is necessary becuase a DatasetProfile defines the DataParameters which must exist in a DataResource in order to properly conform.</rdfs:comment>
+        <rdfs:label>DataResourceType</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://schema.oceanproteinportal.org/v2/DatasetIdentifierScheme -->
 
 
@@ -1315,18 +1668,21 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
 
 
     <owl:Class rdf:about="http://schema.oceanproteinportal.org/v2/DatasetProfile">
+        <rdfs:subClassOf rdf:resource="http://schema.org/CreativeWork"/>
         <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.oceanproteinportal.org/v2/profileObservation"/>
-                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/ssn/Property"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.oceanproteinportal.org/v2/profileObservation"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="http://www.w3.org/ns/ssn/Property"/>
-            </owl:Restriction>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://schema.org/variableMeasured"/>
+                        <owl:allValuesFrom rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://schema.org/variableMeasured"/>
+                        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                        <owl:onClass rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
         </rdfs:subClassOf>
         <describedinConceptualModelOf rdf:resource="http://schema.org/Dataset"/>
         <rdfs:comment>A DatasetProfile defines the type of observations to be expected.</rdfs:comment>
@@ -1348,6 +1704,33 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         </rdfs:subClassOf>
         <rdfs:comment>An EC identifier</rdfs:comment>
         <rdfs:label>EnzymeCommissionIdentifier</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/FileType -->
+
+
+    <owl:Class rdf:about="http://schema.oceanproteinportal.org/v2/FileType">
+        <rdfs:subClassOf rdf:resource="http://schema.org/CreativeWork"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://schema.org/encodingFormat"/>
+                        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#token"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://schema.org/encodingFormat"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#token"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <frictionlessDataProfile>data-resource</frictionlessDataProfile>
+        <rdfs:comment>A certain type of file for which the OPP knows how to handle inn some way (ingestion, serialization for download, etc)</rdfs:comment>
+        <rdfs:label>FileType</rdfs:label>
     </owl:Class>
     
 
@@ -1427,10 +1810,18 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
     <owl:Class rdf:about="http://schema.oceanproteinportal.org/v2/IdentifierMetadata">
         <rdfs:subClassOf rdf:resource="http://schema.org/PropertyValue"/>
         <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.oceanproteinportal.org/v2/annotatesIdentifier"/>
-                <owl:allValuesFrom rdf:resource="http://schema.oceanproteinportal.org/v2/Identifier"/>
-            </owl:Restriction>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://schema.oceanproteinportal.org/v2/annotatesIdentifier"/>
+                        <owl:allValuesFrom rdf:resource="http://schema.oceanproteinportal.org/v2/Identifier"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://schema.oceanproteinportal.org/v2/annotatesIdentifier"/>
+                        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
         </rdfs:subClassOf>
         <describedinConceptualModelOf rdf:resource="http://schema.oceanproteinportal.org/v2/Identifier"/>
         <rdfs:comment>Information about an identifier that helps comprehend, reuse, or contextualize the Thing being identified. This could be a non-unique label or description.</rdfs:comment>
@@ -1490,17 +1881,19 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
     <owl:Class rdf:about="http://schema.oceanproteinportal.org/v2/KeggOrthology">
         <rdfs:subClassOf rdf:resource="http://schema.oceanproteinportal.org/v2/KeggDatabaseEntry"/>
         <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.oceanproteinportal.org/v2/annotatesIdentifier"/>
-                <owl:someValuesFrom rdf:resource="http://schema.oceanproteinportal.org/v2/KeggOrthologyIdentifier"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.oceanproteinportal.org/v2/keggName"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-            </owl:Restriction>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://schema.oceanproteinportal.org/v2/annotatesIdentifier"/>
+                        <owl:someValuesFrom rdf:resource="http://schema.oceanproteinportal.org/v2/KeggOrthologyIdentifier"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://schema.oceanproteinportal.org/v2/keggName"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
         </rdfs:subClassOf>
         <rdfs:comment>A Kegg Orthology entry from the Kegg database</rdfs:comment>
         <rdfs:label>KeggOrthology</rdfs:label>
@@ -1684,6 +2077,9 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
 
     <owl:Class rdf:about="http://schema.oceanproteinportal.org/v2/PeptideSpectralCountSum">
         <rdfs:subClassOf rdf:resource="http://schema.oceanproteinportal.org/v2/PeptideSampleObservation"/>
+        <rdfs:comment>The total spectral count of some identified peptide from a single sample.</rdfs:comment>
+        <rdfs:label>PeptideSpectralCountSum</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://purl.obolibrary.org/obo/MS_1002015"/>
     </owl:Class>
     
 
@@ -1800,6 +2196,40 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
 
     <owl:Class rdf:about="http://schema.oceanproteinportal.org/v2/ProteinTotalSpectralCount">
         <rdfs:subClassOf rdf:resource="http://schema.oceanproteinportal.org/v2/ProteinSampleObservation"/>
+        <rdfs:comment>The total spectral count of some identified protein from a single sample.</rdfs:comment>
+        <rdfs:label>ProteinTotalSpectralCount</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://purl.obolibrary.org/obo/MS_1002016"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/RecommendedDataParameter -->
+
+
+    <owl:Class rdf:about="http://schema.oceanproteinportal.org/v2/RecommendedDataParameter">
+        <rdfs:subClassOf rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.oceanproteinportal.org/v2/parameterValueRecommended"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/RequiredDataParameter -->
+
+
+    <owl:Class rdf:about="http://schema.oceanproteinportal.org/v2/RequiredDataParameter">
+        <rdfs:subClassOf rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.org/valueRequired"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>RequiredDataParameter</rdfs:label>
     </owl:Class>
     
 
@@ -1808,6 +2238,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
 
 
     <owl:Class rdf:about="http://schema.oceanproteinportal.org/v2/Role">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Intangible"/>
         <describedinConceptualModelOf rdf:resource="http://schema.oceanproteinportal.org/v2/AgentRole"/>
         <rdfs:comment>A certain status, or position, played by some Agent that qualifies/contextualizes the actions performed by that Agent.</rdfs:comment>
         <rdfs:label>Role</rdfs:label>
@@ -1850,6 +2281,18 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
     
 
 
+    <!-- http://schema.oceanproteinportal.org/v2/TabularFileType -->
+
+
+    <owl:Class rdf:about="http://schema.oceanproteinportal.org/v2/TabularFileType">
+        <rdfs:subClassOf rdf:resource="http://schema.oceanproteinportal.org/v2/FileType"/>
+        <frictionlessDataProfile>tabular-data-resource</frictionlessDataProfile>
+        <rdfs:comment>A proxy for any tabular data file. This is useful for software that can detect a certain DataResource as being tabular for ingestion or serialization.</rdfs:comment>
+        <rdfs:label>TabularFileType</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://schema.oceanproteinportal.org/v2/UniprotIdentifier -->
 
 
@@ -1867,6 +2310,17 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
     
 
 
+    <!-- http://schema.oceanproteinportal.org/v2/UnitOfMeasure -->
+
+
+    <owl:Class rdf:about="http://schema.oceanproteinportal.org/v2/UnitOfMeasure">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Intangible"/>
+        <rdfs:comment>The units used to record some DataParameter in a DataResource.</rdfs:comment>
+        <rdfs:label>UnitOfMeasure</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://schema.oceanproteinportal.org/v2/UserDefinedSampleIdentifier -->
 
 
@@ -1878,12 +2332,34 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
     
 
 
+    <!-- http://schema.org/CreativeWork -->
+
+
+    <owl:Class rdf:about="http://schema.org/CreativeWork"/>
+    
+
+
+    <!-- http://schema.org/DataType -->
+
+
+    <owl:Class rdf:about="http://schema.org/DataType"/>
+    
+
+
     <!-- http://schema.org/Dataset -->
 
 
     <owl:Class rdf:about="http://schema.org/Dataset">
+        <rdfs:subClassOf rdf:resource="http://schema.org/CreativeWork"/>
         <conceptualModel rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://lucid.app/publicSegments/view/fafb6c1f-d32c-414f-abe7-650151c2718c/image.png</conceptualModel>
     </owl:Class>
+    
+
+
+    <!-- http://schema.org/Intangible -->
+
+
+    <owl:Class rdf:about="http://schema.org/Intangible"/>
     
 
 
@@ -1915,6 +2391,13 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <describedinConceptualModelOf rdf:resource="http://schema.org/Dataset"/>
         <describedinConceptualModelOf rdf:resource="http://www.w3.org/ns/sosa/Sample"/>
     </owl:Class>
+    
+
+
+    <!-- http://schema.org/PropertyValueSpecification -->
+
+
+    <owl:Class rdf:about="http://schema.org/PropertyValueSpecification"/>
     
 
 
@@ -1988,12 +2471,1431 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
     
 
 
+    <!-- http://schema.oceanproteinportal.org/v2/DataParameter_AbsoluteUnits -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataParameter_AbsoluteUnits">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
+        <rdfs:label>Data Parameter: AbsoluteUnits</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataParameter_BestNCBITaxonIdentifier -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataParameter_BestNCBITaxonIdentifier">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
+        <rdfs:label>Data Parameter: BestNCBITaxonIdentifier</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataParameter_BestNCBITaxonName -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataParameter_BestNCBITaxonName">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
+        <rdfs:label>Data Parameter: BestNCBITaxonName</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataParameter_BestProteinIdProbability -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataParameter_BestProteinIdProbability">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
+        <rdfs:label>Data Parameter: BestProteinIdProbability</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataParameter_BestSequestDCnScore -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataParameter_BestSequestDCnScore">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
+        <rdfs:label>Data Parameter: BestSequestDCnScore</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataParameter_BestSequestXCorrScore -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataParameter_BestSequestXCorrScore">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
+        <rdfs:label>Data Parameter: BestSequestXCorrScore</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataParameter_CruiseIdentifier -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataParameter_CruiseIdentifier">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
+        <rdfs:label>Data Parameter: CruiseIdentifier</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataParameter_CruiseStationIdentifier -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataParameter_CruiseStationIdentifier">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
+        <rdfs:label>Data Parameter: CruiseStationIdentifier</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataParameter_Date -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataParameter_Date">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
+        <rdfs:label>Data Parameter: Date</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataParameter_Depth -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataParameter_Depth">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
+        <rdfs:label>Data Parameter: Depth</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataParameter_EnzymeCommissionIdentifier -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataParameter_EnzymeCommissionIdentifier">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
+        <rdfs:label>Data Parameter: EnzymeCommissionIdentifier</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataParameter_ISODateTimeUTC -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataParameter_ISODateTimeUTC">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
+        <rdfs:label>Data Parameter: ISODateTimeUTC</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataParameter_KeggIdentifier -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataParameter_KeggIdentifier">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
+        <rdfs:label>Data Parameter: KeggIdentifier</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataParameter_KeggOrthologyDefinition -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataParameter_KeggOrthologyDefinition">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
+        <rdfs:label>Data Parameter: KeggOrthologyDefinition</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataParameter_KeggOrthologyName -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataParameter_KeggOrthologyName">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
+        <rdfs:label>Data Parameter: KeggOrthologyName</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataParameter_KeggOrthologyPathway -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataParameter_KeggOrthologyPathway">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
+        <rdfs:label>Data Parameter: KeggOrthologyPathway</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataParameter_Latitude -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataParameter_Latitude">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
+        <rdfs:label>Data Parameter: Latitude</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataParameter_Longitude -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataParameter_Longitude">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
+        <rdfs:label>Data Parameter: Longitude</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataParameter_MaxFilterSize -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataParameter_MaxFilterSize">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
+        <rdfs:label>Data Parameter: MaxFilterSize</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataParameter_MedianRetentionTime -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataParameter_MedianRetentionTime">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
+        <rdfs:label>Data Parameter: MedianRetentionTime</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataParameter_MinFilterSize -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataParameter_MinFilterSize">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
+        <rdfs:label>Data Parameter: MinFilterSize</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataParameter_MolecularWeight -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataParameter_MolecularWeight">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
+        <rdfs:label>Data Parameter: MolecularWeight</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataParameter_OtherIdentifiedProteins -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataParameter_OtherIdentifiedProteins">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
+        <rdfs:label>Data Parameter: OtherIdentifiedProteins</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataParameter_PFamsIdentifier -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataParameter_PFamsIdentifier">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
+        <rdfs:label>Data Parameter: PFamsIdentifier</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataParameter_PFamsName -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataParameter_PFamsName">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
+        <rdfs:label>Data Parameter: PFamsName</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataParameter_Peptide-StartIndex -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataParameter_Peptide-StartIndex">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
+        <rdfs:label>Data Parameter: Peptide-StartIndex</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataParameter_Peptide-StopIndex -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataParameter_Peptide-StopIndex">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
+        <rdfs:label>Data Parameter: Peptide-StopIndex</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataParameter_PeptideSequence -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataParameter_PeptideSequence">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
+        <rdfs:label>Data Parameter: PeptideSequence</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataParameter_PeptideSpectralCountSummation -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataParameter_PeptideSpectralCountSummation">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
+        <rdfs:label>Data Parameter: PeptideSpectralCountSummation</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataParameter_Plus2HSpectraCount -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataParameter_Plus2HSpectraCount">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
+        <rdfs:label>Data Parameter: Plus2HSpectraCount</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataParameter_Plus3HSpectraCount -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataParameter_Plus3HSpectraCount">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
+        <rdfs:label>Data Parameter: Plus3HSpectraCount</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataParameter_Plus4HSpectraCount -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataParameter_Plus4HSpectraCount">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
+        <rdfs:label>Data Parameter: Plus4HSpectraCount</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataParameter_ProteinAccessionIdentifiers -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataParameter_ProteinAccessionIdentifiers">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
+        <rdfs:label>Data Parameter: ProteinAccessionIdentifiers</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataParameter_ProteinIdentifier -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataParameter_ProteinIdentifier">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
+        <rdfs:label>Data Parameter: ProteinIdentifier</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataParameter_ProteinName -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataParameter_ProteinName">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
+        <rdfs:label>Data Parameter: ProteinName</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataParameter_ProteinSequence -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataParameter_ProteinSequence">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
+        <rdfs:label>Data Parameter: ProteinSequence</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataParameter_SampleIdentifier -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataParameter_SampleIdentifier">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
+        <rdfs:label>Data Parameter: SampleIdentifier</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataParameter_SpectralCount -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataParameter_SpectralCount">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
+        <rdfs:label>Data Parameter: SpectralCount</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataParameter_Time -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataParameter_Time">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
+        <rdfs:label>Data Parameter: Time</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataParameter_TotalPrecursorIntensity -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataParameter_TotalPrecursorIntensity">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
+        <rdfs:label>Data Parameter: TotalPrecursorIntensity</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataParameter_TotalTIC -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataParameter_TotalTIC">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
+        <rdfs:label>Data Parameter: TotalTIC</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataParameter_UniprotIdentifier -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataParameter_UniprotIdentifier">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
+        <rdfs:label>Data Parameter: UniprotIdentifier</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameterSet_PeptideSpectralCount_DateRequirement -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataResourceParameterSet_PeptideSpectralCount_DateRequirement">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameterSet"/>
+        <includesDataParameterInSet rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Date"/>
+        <includesDataParameterInSet rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_ISODateTimeUTC"/>
+        <rdfs:label>Parameter Set: Peptide Spectral Count - Date Requirement</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_FASTA-ProteinIdentifier -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataResourceParameter_FASTA-ProteinIdentifier">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter"/>
+        <definesValuesForParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter_ProteinIdentifier"/>
+        <parameterDataType rdf:resource="http://schema.org/Text"/>
+        <parameterInResourceType rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceType_FASTA-ProteinIdentification"/>
+        <positionInDataResource rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</positionInDataResource>
+        <schema:description rdf:datatype="http://www.w3.org/2001/XMLSchema#token">In the &apos;biopython&apos; this parameter refers to the value at Bio.SeqIO.parse()-&gt;record.id</schema:description>
+        <schema:multipleValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:multipleValues>
+        <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</schema:valueRequired>
+        <rdfs:label>DataResourceParameter_FASTA-ProteinIdentifier</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_FASTA-ProteinSequence -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataResourceParameter_FASTA-ProteinSequence">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter"/>
+        <definesValuesForParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter_ProteinSequence"/>
+        <parameterDataType rdf:resource="http://schema.org/Text"/>
+        <parameterInResourceType rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceType_FASTA-ProteinIdentification"/>
+        <positionInDataResource rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</positionInDataResource>
+        <schema:description rdf:datatype="http://www.w3.org/2001/XMLSchema#token">In the &apos;biopython&apos; this parameter refers to the value at Bio.SeqIO.parse()-&gt;record.seq</schema:description>
+        <schema:multipleValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:multipleValues>
+        <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</schema:valueRequired>
+        <rdfs:label>DataResourceParameter_FASTA-ProteinSequence</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_AbsoluteUnits -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_AbsoluteUnits">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter"/>
+        <definesValuesForParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter_AbsoluteUnits"/>
+        <parameterDataType rdf:resource="http://schema.org/Float"/>
+        <parameterInResourceType rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceType_PeptideTotalSpectralCount"/>
+        <unitsReportedIn rdf:resource="http://schema.oceanproteinportal.org/v2/UnitOfMeasure_Femtomoles-per-Liter"/>
+        <parameterNameInResource rdf:datatype="http://www.w3.org/2001/XMLSchema#token">absolute_units_fmol-L</parameterNameInResource>
+        <schema:multipleValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:multipleValues>
+        <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:valueRequired>
+        <rdfs:label>DataResourceParameter_PeptideSpectralCount_AbsoluteUnits</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_BestProteinIdProbability -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_BestProteinIdProbability">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter"/>
+        <definesValuesForParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter_BestProteinIdProbability"/>
+        <dependsOnParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_ProteinIdentifier"/>
+        <parameterDataType rdf:resource="http://schema.org/Float"/>
+        <parameterInResourceType rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceType_PeptideTotalSpectralCount"/>
+        <parameterNameInResource rdf:datatype="http://www.w3.org/2001/XMLSchema#token">best_protein_id_probability</parameterNameInResource>
+        <schema:multipleValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:multipleValues>
+        <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:valueRequired>
+        <rdfs:label>DataResourceParameter_PeptideSpectralCount_BestProteinIdProbability</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_BestSequestDCnScore -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_BestSequestDCnScore">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter"/>
+        <definesValuesForParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter_BestSequestDCnScore"/>
+        <parameterDataType rdf:resource="http://schema.org/Float"/>
+        <parameterInResourceType rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceType_PeptideTotalSpectralCount"/>
+        <parameterNameInResource rdf:datatype="http://www.w3.org/2001/XMLSchema#token">best_sequest_DCn_score</parameterNameInResource>
+        <schema:multipleValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:multipleValues>
+        <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:valueRequired>
+        <rdfs:label>DataResourceParameter_PeptideSpectralCount_BestSequestDCnScore</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_BestSequestXCorrScore -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_BestSequestXCorrScore">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter"/>
+        <definesValuesForParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter_BestSequestXCorrScore"/>
+        <parameterDataType rdf:resource="http://schema.org/Float"/>
+        <parameterInResourceType rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceType_PeptideTotalSpectralCount"/>
+        <parameterNameInResource rdf:datatype="http://www.w3.org/2001/XMLSchema#token">best_sequest_Xcorr_score</parameterNameInResource>
+        <schema:multipleValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:multipleValues>
+        <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:valueRequired>
+        <rdfs:label>DataResourceParameter_PeptideSpectralCount_BestSequestXCorrScore</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_CruiseIdentifier -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_CruiseIdentifier">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter"/>
+        <definesValuesForParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter_CruiseIdentifier"/>
+        <parameterDataType rdf:resource="http://schema.org/Text"/>
+        <parameterInResourceType rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceType_PeptideTotalSpectralCount"/>
+        <parameterNameInResource rdf:datatype="http://www.w3.org/2001/XMLSchema#token">cruise_id</parameterNameInResource>
+        <schema:multipleValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:multipleValues>
+        <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:valueRequired>
+        <rdfs:label>DataResourceParameter_PeptideSpectralCount_CruiseIdentifier</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_CruiseStationIdentifier -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_CruiseStationIdentifier">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter"/>
+        <definesValuesForParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter_CruiseStationIdentifier"/>
+        <parameterDataType rdf:resource="http://schema.org/Text"/>
+        <parameterInResourceType rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceType_PeptideTotalSpectralCount"/>
+        <parameterNameInResource rdf:datatype="http://www.w3.org/2001/XMLSchema#token">station_id</parameterNameInResource>
+        <schema:multipleValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:multipleValues>
+        <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:valueRequired>
+        <rdfs:label>DataResourceParameter_PeptideSpectralCount_CruiseStationIdentifier</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Date -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Date">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter"/>
+        <definesValuesForParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter_Date"/>
+        <parameterDataType rdf:resource="http://schema.org/Date"/>
+        <parameterInResourceType rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceType_PeptideTotalSpectralCount"/>
+        <parameterNameInResource rdf:datatype="http://www.w3.org/2001/XMLSchema#token">date_y-m-d</parameterNameInResource>
+        <schema:multipleValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:multipleValues>
+        <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:valueRequired>
+        <rdfs:label>DataResourceParameter_PeptideSpectralCount_Date</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Depth -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Depth">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter"/>
+        <definesValuesForParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter_Depth"/>
+        <parameterDataType rdf:resource="http://schema.org/Float"/>
+        <parameterInResourceType rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceType_PeptideTotalSpectralCount"/>
+        <unitsReportedIn rdf:resource="http://schema.oceanproteinportal.org/v2/UnitOfMeasure_Meters"/>
+        <parameterNameInResource rdf:datatype="http://www.w3.org/2001/XMLSchema#token">depth_m</parameterNameInResource>
+        <schema:multipleValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:multipleValues>
+        <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</schema:valueRequired>
+        <rdfs:label>DataResourceParameter_PeptideSpectralCount_Depth</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_ISODateTimeUTC -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_ISODateTimeUTC">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter"/>
+        <definesValuesForParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter_ISODateTimeUTC"/>
+        <parameterDataType rdf:resource="http://schema.org/DateTime"/>
+        <parameterInResourceType rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceType_PeptideTotalSpectralCount"/>
+        <parameterNameInResource rdf:datatype="http://www.w3.org/2001/XMLSchema#token">ISO_DateTime_UTC</parameterNameInResource>
+        <parameterValueRecommended rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</parameterValueRecommended>
+        <schema:multipleValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:multipleValues>
+        <rdfs:label>DataResourceParameter_PeptideSpectralCount_AbsoluteUnits</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Latitude -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Latitude">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter"/>
+        <definesValuesForParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter_Latitude"/>
+        <dependsOnParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Longitude"/>
+        <parameterDataType rdf:resource="http://schema.org/Float"/>
+        <parameterInResourceType rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceType_PeptideTotalSpectralCount"/>
+        <unitsReportedIn rdf:resource="http://schema.oceanproteinportal.org/v2/UnitOfMeasure_DecimalDegrees"/>
+        <parameterNameInResource rdf:datatype="http://www.w3.org/2001/XMLSchema#token">latitude_dd</parameterNameInResource>
+        <schema:maxValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">90.0</schema:maxValue>
+        <schema:minValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">-90.0</schema:minValue>
+        <schema:multipleValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:multipleValues>
+        <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</schema:valueRequired>
+        <rdfs:label>DataResourceParameter_PeptideSpectralCount_Latitude</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Longitude -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Longitude">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter"/>
+        <definesValuesForParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter_Longitude"/>
+        <dependsOnParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Latitude"/>
+        <parameterDataType rdf:resource="http://schema.org/Float"/>
+        <parameterInResourceType rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceType_PeptideTotalSpectralCount"/>
+        <unitsReportedIn rdf:resource="http://schema.oceanproteinportal.org/v2/UnitOfMeasure_DecimalDegrees"/>
+        <parameterNameInResource rdf:datatype="http://www.w3.org/2001/XMLSchema#token">longitude_dd</parameterNameInResource>
+        <schema:maxValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">180.0</schema:maxValue>
+        <schema:minValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">-180.0</schema:minValue>
+        <schema:multipleValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:multipleValues>
+        <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</schema:valueRequired>
+        <rdfs:label>DataResourceParameter_PeptideSpectralCount_Longitude</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_MaxFilterSize -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_MaxFilterSize">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter"/>
+        <definesValuesForParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter_MaxFilterSize"/>
+        <parameterDataType rdf:resource="http://schema.org/Float"/>
+        <parameterInResourceType rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceType_PeptideTotalSpectralCount"/>
+        <unitsReportedIn rdf:resource="http://schema.oceanproteinportal.org/v2/UnitOfMeasure_Microns"/>
+        <parameterNameInResource rdf:datatype="http://www.w3.org/2001/XMLSchema#token">maximum_filter_size_microns</parameterNameInResource>
+        <schema:multipleValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:multipleValues>
+        <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</schema:valueRequired>
+        <rdfs:label>DataResourceParameter_PeptideSpectralCount_MaxFilterSize</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_MedianRetentionTime -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_MedianRetentionTime">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter"/>
+        <definesValuesForParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter_MedianRetentionTime"/>
+        <parameterDataType rdf:resource="http://schema.org/Float"/>
+        <parameterInResourceType rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceType_PeptideTotalSpectralCount"/>
+        <parameterNameInResource rdf:datatype="http://www.w3.org/2001/XMLSchema#token">median_retention_time</parameterNameInResource>
+        <schema:multipleValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:multipleValues>
+        <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:valueRequired>
+        <rdfs:label>DataResourceParameter_PeptideSpectralCount_MedianRetentionTime</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_MinFilterSize -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_MinFilterSize">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter"/>
+        <definesValuesForParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter_MinFilterSize"/>
+        <parameterDataType rdf:resource="http://schema.org/Float"/>
+        <parameterInResourceType rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceType_PeptideTotalSpectralCount"/>
+        <unitsReportedIn rdf:resource="http://schema.oceanproteinportal.org/v2/UnitOfMeasure_Microns"/>
+        <parameterNameInResource rdf:datatype="http://www.w3.org/2001/XMLSchema#token">minimum_filter_size_microns</parameterNameInResource>
+        <schema:multipleValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:multipleValues>
+        <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</schema:valueRequired>
+        <rdfs:label>DataResourceParameter_PeptideSpectralCount_MinFilterSize</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_MolecularWeight -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_MolecularWeight">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter"/>
+        <definesValuesForParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter_MolecularWeight"/>
+        <parameterDataType rdf:resource="http://schema.org/Float"/>
+        <parameterInResourceType rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceType_PeptideTotalSpectralCount"/>
+        <unitsReportedIn rdf:resource="http://schema.oceanproteinportal.org/v2/UnitOfMeasure_KiloDaltons"/>
+        <parameterNameInResource rdf:datatype="http://www.w3.org/2001/XMLSchema#token">molecular_weight_kDa</parameterNameInResource>
+        <schema:multipleValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:multipleValues>
+        <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</schema:valueRequired>
+        <rdfs:label>DataResourceParameter_PeptideSpectralCount_MolecularWeight</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Peptide-StartIndex -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Peptide-StartIndex">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter"/>
+        <definesValuesForParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter_Peptide-StartIndex"/>
+        <dependsOnParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Peptide-StopIndex"/>
+        <parameterDataType rdf:resource="http://schema.org/Integer"/>
+        <parameterInResourceType rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceType_PeptideTotalSpectralCount"/>
+        <parameterNameInResource rdf:datatype="http://www.w3.org/2001/XMLSchema#token">peptide_start_index</parameterNameInResource>
+        <schema:multipleValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:multipleValues>
+        <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</schema:valueRequired>
+        <rdfs:label>DataResourceParameter_PeptideSpectralCount_Peptide-StartIndex</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Peptide-StopIndex -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Peptide-StopIndex">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter"/>
+        <definesValuesForParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter_Peptide-StopIndex"/>
+        <dependsOnParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Peptide-StartIndex"/>
+        <parameterDataType rdf:resource="http://schema.org/Integer"/>
+        <parameterInResourceType rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceType_PeptideTotalSpectralCount"/>
+        <parameterNameInResource rdf:datatype="http://www.w3.org/2001/XMLSchema#token">peptide_stop_index</parameterNameInResource>
+        <schema:multipleValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:multipleValues>
+        <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</schema:valueRequired>
+        <rdfs:label>DataResourceParameter_PeptideSpectralCount_Peptide-StopIndex</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_PeptideSequence -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_PeptideSequence">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter"/>
+        <definesValuesForParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter_PeptideSequence"/>
+        <parameterDataType rdf:resource="http://schema.org/Text"/>
+        <parameterInResourceType rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceType_PeptideTotalSpectralCount"/>
+        <parameterNameInResource rdf:datatype="http://www.w3.org/2001/XMLSchema#token">peptide_sequence</parameterNameInResource>
+        <schema:multipleValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:multipleValues>
+        <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</schema:valueRequired>
+        <rdfs:label>DataResourceParameter_PeptideSpectralCount_PeptideSequence</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_PeptideSpectralCountSummation -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_PeptideSpectralCountSummation">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter"/>
+        <definesValuesForParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter_PeptideSpectralCountSummation"/>
+        <parameterDataType rdf:resource="http://schema.org/Float"/>
+        <parameterInResourceType rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceType_PeptideTotalSpectralCount"/>
+        <parameterNameInResource rdf:datatype="http://www.w3.org/2001/XMLSchema#token">spectral_count_sum</parameterNameInResource>
+        <schema:multipleValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:multipleValues>
+        <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</schema:valueRequired>
+        <rdfs:label>DataResourceParameter_PeptideSpectralCount_PeptideSpectralCountSummation</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Plus2HSpectraCount -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Plus2HSpectraCount">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter"/>
+        <definesValuesForParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter_Plus2HSpectraCount"/>
+        <parameterDataType rdf:resource="http://schema.org/Float"/>
+        <parameterInResourceType rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceType_PeptideTotalSpectralCount"/>
+        <parameterNameInResource rdf:datatype="http://www.w3.org/2001/XMLSchema#token">plus2H_spectra_count</parameterNameInResource>
+        <schema:multipleValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:multipleValues>
+        <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:valueRequired>
+        <rdfs:label>DataResourceParameter_PeptideSpectralCount_Plus2HSpectraCount</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Plus3HSpectraCount -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Plus3HSpectraCount">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter"/>
+        <definesValuesForParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter_Plus3HSpectraCount"/>
+        <parameterDataType rdf:resource="http://schema.org/Float"/>
+        <parameterInResourceType rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceType_PeptideTotalSpectralCount"/>
+        <parameterNameInResource rdf:datatype="http://www.w3.org/2001/XMLSchema#token">plus3H_spectra_count</parameterNameInResource>
+        <schema:multipleValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:multipleValues>
+        <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:valueRequired>
+        <rdfs:label>DataResourceParameter_PeptideSpectralCount_Plus3HSpectraCount</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Plus4HSpectraCount -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Plus4HSpectraCount">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter"/>
+        <definesValuesForParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter_Plus4HSpectraCount"/>
+        <parameterDataType rdf:resource="http://schema.org/Float"/>
+        <parameterInResourceType rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceType_PeptideTotalSpectralCount"/>
+        <parameterNameInResource rdf:datatype="http://www.w3.org/2001/XMLSchema#token">plus4H_spectra_count</parameterNameInResource>
+        <schema:multipleValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:multipleValues>
+        <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:valueRequired>
+        <rdfs:label>DataResourceParameter_PeptideSpectralCount_Plus4HSpectraCount</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_ProteinAccessionIdentifiers -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_ProteinAccessionIdentifiers">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter"/>
+        <definesValuesForParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter_ProteinAccessionIdentifiers"/>
+        <isForeignKeyTo rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_FASTA-ProteinIdentifier"/>
+        <parameterDataType rdf:resource="http://schema.org/Text"/>
+        <parameterInResourceType rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceType_PeptideTotalSpectralCount"/>
+        <multiValuedDefaultDelimiter rdf:datatype="http://www.w3.org/2001/XMLSchema#token">||</multiValuedDefaultDelimiter>
+        <parameterNameInResource rdf:datatype="http://www.w3.org/2001/XMLSchema#token">other_protein_ids</parameterNameInResource>
+        <schema:multipleValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</schema:multipleValues>
+        <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:valueRequired>
+        <rdfs:label>DataResourceParameter_PeptideSpectralCount_ProteinAccessionIdentifiers</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_ProteinIdentifier -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_ProteinIdentifier">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter"/>
+        <definesValuesForParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter_ProteinIdentifier"/>
+        <isForeignKeyTo rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_ProteinIdentifier"/>
+        <parameterDataType rdf:resource="http://schema.org/Text"/>
+        <parameterInResourceType rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceType_PeptideTotalSpectralCount"/>
+        <parameterNameInResource rdf:datatype="http://www.w3.org/2001/XMLSchema#token">protein_id</parameterNameInResource>
+        <schema:multipleValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:multipleValues>
+        <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:valueRequired>
+        <rdfs:label>DataResourceParameter_PeptideSpectralCount_ProteinIdentifier</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_SampleIdentifier -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_SampleIdentifier">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter"/>
+        <definesValuesForParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter_SampleIdentifier"/>
+        <parameterDataType rdf:resource="http://schema.org/Text"/>
+        <parameterInResourceType rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceType_PeptideTotalSpectralCount"/>
+        <parameterNameInResource rdf:datatype="http://www.w3.org/2001/XMLSchema#token">sample_id</parameterNameInResource>
+        <schema:multipleValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:multipleValues>
+        <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:valueRequired>
+        <rdfs:label>DataResourceParameter_PeptideSpectralCount_SampleIdentifier</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Time -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Time">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter"/>
+        <definesValuesForParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter_Time"/>
+        <dependsOnParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Date"/>
+        <parameterDataType rdf:resource="http://schema.org/Time"/>
+        <parameterInResourceType rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceType_PeptideTotalSpectralCount"/>
+        <parameterNameInResource rdf:datatype="http://www.w3.org/2001/XMLSchema#token">time_h-m-s</parameterNameInResource>
+        <schema:defaultValue rdf:datatype="http://www.w3.org/2001/XMLSchema#token">00:00:00</schema:defaultValue>
+        <schema:multipleValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:multipleValues>
+        <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:valueRequired>
+        <rdfs:label>DataResourceParameter_PeptideSpectralCount_Time</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_TotalPrecursorIntensity -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_TotalPrecursorIntensity">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter"/>
+        <definesValuesForParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter_TotalPrecursorIntensity"/>
+        <parameterDataType rdf:resource="http://schema.org/Float"/>
+        <parameterInResourceType rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceType_PeptideTotalSpectralCount"/>
+        <parameterNameInResource rdf:datatype="http://www.w3.org/2001/XMLSchema#token">total_precursor_intensity</parameterNameInResource>
+        <schema:multipleValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:multipleValues>
+        <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:valueRequired>
+        <rdfs:label>DataResourceParameter_PeptideSpectralCount_TotalPrecursorIntensity</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_TotalTIC -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_TotalTIC">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter"/>
+        <definesValuesForParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter_TotalTIC"/>
+        <parameterDataType rdf:resource="http://schema.org/Float"/>
+        <parameterInResourceType rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceType_PeptideTotalSpectralCount"/>
+        <parameterNameInResource rdf:datatype="http://www.w3.org/2001/XMLSchema#token">TIC</parameterNameInResource>
+        <schema:multipleValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:multipleValues>
+        <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:valueRequired>
+        <rdfs:label>DataResourceParameter_PeptideSpectralCount_TotalTIC</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_BestNCBITaxonIdentifier -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_BestNCBITaxonIdentifier">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter"/>
+        <definesValuesForParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter_BestNCBITaxonIdentifier"/>
+        <parameterDataType rdf:resource="http://schema.org/Text"/>
+        <parameterInResourceType rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceType_ProteinTotalSpectralCount"/>
+        <parameterNameInResource rdf:datatype="http://www.w3.org/2001/XMLSchema#token">ncbi_id</parameterNameInResource>
+        <schema:multipleValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:multipleValues>
+        <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:valueRequired>
+        <rdfs:label>DataResourceParameter_ProteinSpectralCount_BestNCBITaxonIdentifier</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_BestNCBITaxonName -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_BestNCBITaxonName">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter"/>
+        <definesValuesForParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter_BestNCBITaxonName"/>
+        <dependsOnParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_BestNCBITaxonIdentifier"/>
+        <parameterDataType rdf:resource="http://schema.org/Text"/>
+        <parameterInResourceType rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceType_ProteinTotalSpectralCount"/>
+        <parameterNameInResource rdf:datatype="http://www.w3.org/2001/XMLSchema#token">ncbi_name</parameterNameInResource>
+        <schema:multipleValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:multipleValues>
+        <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:valueRequired>
+        <rdfs:label>DataResourceParameter_ProteinSpectralCount_BestNCBITaxonName</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_CruiseIdentifier -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_CruiseIdentifier">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter"/>
+        <definesValuesForParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter_CruiseIdentifier"/>
+        <parameterDataType rdf:resource="http://schema.org/Text"/>
+        <parameterInResourceType rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceType_ProteinTotalSpectralCount"/>
+        <parameterNameInResource rdf:datatype="http://www.w3.org/2001/XMLSchema#token">cruise_id</parameterNameInResource>
+        <schema:multipleValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:multipleValues>
+        <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:valueRequired>
+        <rdfs:label>DataResourceParameter_ProteinSpectralCount_CruiseIdentifier</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_CruiseStationIdentifier -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_CruiseStationIdentifier">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter"/>
+        <definesValuesForParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter_CruiseStationIdentifier"/>
+        <parameterDataType rdf:resource="http://schema.org/Text"/>
+        <parameterInResourceType rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceType_ProteinTotalSpectralCount"/>
+        <parameterNameInResource rdf:datatype="http://www.w3.org/2001/XMLSchema#token">station_id</parameterNameInResource>
+        <schema:multipleValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:multipleValues>
+        <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:valueRequired>
+        <rdfs:label>DataResourceParameter_ProteinSpectralCount_CruiseStationIdentifier</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_Date -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_Date">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter"/>
+        <definesValuesForParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter_Date"/>
+        <parameterDataType rdf:resource="http://schema.org/Date"/>
+        <parameterInResourceType rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceType_ProteinTotalSpectralCount"/>
+        <parameterNameInResource rdf:datatype="http://www.w3.org/2001/XMLSchema#token">date_y-m-d</parameterNameInResource>
+        <schema:multipleValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:multipleValues>
+        <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:valueRequired>
+        <rdfs:label>DataResourceParameter_ProteinSpectralCount_Date</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_Depth -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_Depth">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter"/>
+        <definesValuesForParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter_Depth"/>
+        <parameterDataType rdf:resource="http://schema.org/Float"/>
+        <parameterInResourceType rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceType_ProteinTotalSpectralCount"/>
+        <unitsReportedIn rdf:resource="http://schema.oceanproteinportal.org/v2/UnitOfMeasure_Meters"/>
+        <parameterNameInResource rdf:datatype="http://www.w3.org/2001/XMLSchema#token">depth_m</parameterNameInResource>
+        <schema:multipleValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:multipleValues>
+        <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</schema:valueRequired>
+        <rdfs:label>DataResourceParameter_ProteinSpectralCount_Depth</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_EnzymeCommissionIdentifier -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_EnzymeCommissionIdentifier">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter"/>
+        <definesValuesForParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter_EnzymeCommissionIdentifier"/>
+        <parameterDataType rdf:resource="http://schema.org/Text"/>
+        <parameterInResourceType rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceType_ProteinTotalSpectralCount"/>
+        <multiValuedDefaultDelimiter rdf:datatype="http://www.w3.org/2001/XMLSchema#token">||</multiValuedDefaultDelimiter>
+        <parameterNameInResource rdf:datatype="http://www.w3.org/2001/XMLSchema#token">enzyme_comm_id</parameterNameInResource>
+        <schema:multipleValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</schema:multipleValues>
+        <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:valueRequired>
+        <rdfs:label>DataResourceParameter_ProteinSpectralCount_EnzymeCommissionIdentifier</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_ISODateTimeUTC -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_ISODateTimeUTC">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter"/>
+        <definesValuesForParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter_ISODateTimeUTC"/>
+        <parameterDataType rdf:resource="http://schema.org/DateTime"/>
+        <parameterInResourceType rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceType_ProteinTotalSpectralCount"/>
+        <parameterNameInResource rdf:datatype="http://www.w3.org/2001/XMLSchema#token">ISO_DateTime_UTC</parameterNameInResource>
+        <parameterValueRecommended rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</parameterValueRecommended>
+        <schema:multipleValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:multipleValues>
+        <rdfs:label>DataResourceParameter_ProteinSpectralCount_ISODateTimeUTC</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_KeggIdentifier -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_KeggIdentifier">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter"/>
+        <definesValuesForParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter_KeggIdentifier"/>
+        <parameterDataType rdf:resource="http://schema.org/Text"/>
+        <parameterInResourceType rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceType_ProteinTotalSpectralCount"/>
+        <parameterNameInResource rdf:datatype="http://www.w3.org/2001/XMLSchema#token">kegg_id</parameterNameInResource>
+        <schema:multipleValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:multipleValues>
+        <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:valueRequired>
+        <rdfs:label>DataResourceParameter_ProteinSpectralCount_KeggIdentifier</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_KeggOrthologyDefinition -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_KeggOrthologyDefinition">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter"/>
+        <definesValuesForParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter_KeggOrthologyDefinition"/>
+        <dependsOnParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_KeggIdentifier"/>
+        <parameterDataType rdf:resource="http://schema.org/Text"/>
+        <parameterInResourceType rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceType_ProteinTotalSpectralCount"/>
+        <parameterNameInResource rdf:datatype="http://www.w3.org/2001/XMLSchema#token">kegg_description</parameterNameInResource>
+        <schema:multipleValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:multipleValues>
+        <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:valueRequired>
+        <rdfs:label>DataResourceParameter_ProteinSpectralCount_KeggOrthologyDefinition</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_KeggOrthologyName -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_KeggOrthologyName">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter"/>
+        <definesValuesForParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter_KeggOrthologyName"/>
+        <dependsOnParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_KeggIdentifier"/>
+        <parameterDataType rdf:resource="http://schema.org/Text"/>
+        <parameterInResourceType rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceType_ProteinTotalSpectralCount"/>
+        <parameterNameInResource rdf:datatype="http://www.w3.org/2001/XMLSchema#token">kegg_name</parameterNameInResource>
+        <schema:multipleValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:multipleValues>
+        <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:valueRequired>
+        <rdfs:label>DataResourceParameter_ProteinSpectralCount_KeggOrthologyName</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_KeggOrthologyPathway -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_KeggOrthologyPathway">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter"/>
+        <definesValuesForParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter_KeggOrthologyPathway"/>
+        <dependsOnParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_KeggIdentifier"/>
+        <parameterDataType rdf:resource="http://schema.org/Text"/>
+        <parameterInResourceType rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceType_ProteinTotalSpectralCount"/>
+        <multiValuedDefaultDelimiter rdf:datatype="http://www.w3.org/2001/XMLSchema#token">||</multiValuedDefaultDelimiter>
+        <parameterNameInResource rdf:datatype="http://www.w3.org/2001/XMLSchema#token">kegg_pathway</parameterNameInResource>
+        <schema:multipleValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</schema:multipleValues>
+        <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:valueRequired>
+        <rdfs:label>DataResourceParameter_ProteinSpectralCount_KeggOrthologyPathway</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_Latitude -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_Latitude">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter"/>
+        <definesValuesForParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter_Latitude"/>
+        <dependsOnParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_Longitude"/>
+        <parameterDataType rdf:resource="http://schema.org/Float"/>
+        <parameterInResourceType rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceType_ProteinTotalSpectralCount"/>
+        <unitsReportedIn rdf:resource="http://schema.oceanproteinportal.org/v2/UnitOfMeasure_DecimalDegrees"/>
+        <parameterNameInResource rdf:datatype="http://www.w3.org/2001/XMLSchema#token">latitude_dd</parameterNameInResource>
+        <schema:maxValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">90.0</schema:maxValue>
+        <schema:minValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">-90.0</schema:minValue>
+        <schema:multipleValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:multipleValues>
+        <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</schema:valueRequired>
+        <rdfs:label>DataResourceParameter_ProteinSpectralCount_Latitude</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_Longitude -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_Longitude">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter"/>
+        <definesValuesForParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter_Longitude"/>
+        <dependsOnParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_Latitude"/>
+        <parameterDataType rdf:resource="http://schema.org/Float"/>
+        <parameterInResourceType rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceType_ProteinTotalSpectralCount"/>
+        <unitsReportedIn rdf:resource="http://schema.oceanproteinportal.org/v2/UnitOfMeasure_DecimalDegrees"/>
+        <parameterNameInResource rdf:datatype="http://www.w3.org/2001/XMLSchema#token">longitude_dd</parameterNameInResource>
+        <schema:maxValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">180.0</schema:maxValue>
+        <schema:minValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">-180.0</schema:minValue>
+        <schema:multipleValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:multipleValues>
+        <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</schema:valueRequired>
+        <rdfs:label>DataResourceParameter_ProteinSpectralCount_Longitude</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_MaxFilterSize -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_MaxFilterSize">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter"/>
+        <definesValuesForParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter_MaxFilterSize"/>
+        <parameterDataType rdf:resource="http://schema.org/Float"/>
+        <parameterInResourceType rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceType_ProteinTotalSpectralCount"/>
+        <unitsReportedIn rdf:resource="http://schema.oceanproteinportal.org/v2/UnitOfMeasure_Microns"/>
+        <parameterNameInResource rdf:datatype="http://www.w3.org/2001/XMLSchema#token">maximum_filter_size_microns</parameterNameInResource>
+        <schema:multipleValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:multipleValues>
+        <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</schema:valueRequired>
+        <rdfs:label>DataResourceParameter_ProteinSpectralCount_MaxFilterSize</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_MinFilterSize -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_MinFilterSize">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter"/>
+        <definesValuesForParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter_MinFilterSize"/>
+        <parameterDataType rdf:resource="http://schema.org/Float"/>
+        <parameterInResourceType rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceType_ProteinTotalSpectralCount"/>
+        <unitsReportedIn rdf:resource="http://schema.oceanproteinportal.org/v2/UnitOfMeasure_Microns"/>
+        <parameterNameInResource rdf:datatype="http://www.w3.org/2001/XMLSchema#token">minimum_filter_size_microns</parameterNameInResource>
+        <schema:multipleValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:multipleValues>
+        <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</schema:valueRequired>
+        <rdfs:label>DataResourceParameter_ProteinSpectralCount_MinFilterSize</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_MolecularWeight -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_MolecularWeight">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter"/>
+        <definesValuesForParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter_MolecularWeight"/>
+        <parameterDataType rdf:resource="http://schema.org/Float"/>
+        <parameterInResourceType rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceType_ProteinTotalSpectralCount"/>
+        <unitsReportedIn rdf:resource="http://schema.oceanproteinportal.org/v2/UnitOfMeasure_KiloDaltons"/>
+        <parameterNameInResource rdf:datatype="http://www.w3.org/2001/XMLSchema#token">molecular_weight_kDa</parameterNameInResource>
+        <schema:multipleValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:multipleValues>
+        <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</schema:valueRequired>
+        <rdfs:label>DataResourceParameter_ProteinSpectralCount_MolecularWeight</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_OtherIdentifiedProteins -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_OtherIdentifiedProteins">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter"/>
+        <definesValuesForParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter_OtherIdentifiedProteins"/>
+        <parameterDataType rdf:resource="http://schema.org/Text"/>
+        <parameterInResourceType rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceType_ProteinTotalSpectralCount"/>
+        <multiValuedDefaultDelimiter rdf:datatype="http://www.w3.org/2001/XMLSchema#token">||</multiValuedDefaultDelimiter>
+        <parameterNameInResource rdf:datatype="http://www.w3.org/2001/XMLSchema#token">other_identified_proteins</parameterNameInResource>
+        <schema:multipleValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</schema:multipleValues>
+        <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:valueRequired>
+        <rdfs:label>DataResourceParameter_ProteinSpectralCount_OtherIdentifiedProteins</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_PFamsIdentifier -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_PFamsIdentifier">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter"/>
+        <definesValuesForParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter_PFamsIdentifier"/>
+        <parameterDataType rdf:resource="http://schema.org/Text"/>
+        <parameterInResourceType rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceType_ProteinTotalSpectralCount"/>
+        <multiValuedDefaultDelimiter rdf:datatype="http://www.w3.org/2001/XMLSchema#token">||</multiValuedDefaultDelimiter>
+        <parameterNameInResource rdf:datatype="http://www.w3.org/2001/XMLSchema#token">pfams_id</parameterNameInResource>
+        <schema:multipleValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</schema:multipleValues>
+        <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:valueRequired>
+        <rdfs:label>DataResourceParameter_ProteinSpectralCount_PFamsIdentifier</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_PFamsName -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_PFamsName">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter"/>
+        <definesValuesForParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter_PFamsName"/>
+        <dependsOnParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_PFamsIdentifier"/>
+        <parameterDataType rdf:resource="http://schema.org/Text"/>
+        <parameterInResourceType rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceType_ProteinTotalSpectralCount"/>
+        <multiValuedDefaultDelimiter rdf:datatype="http://www.w3.org/2001/XMLSchema#token">||</multiValuedDefaultDelimiter>
+        <parameterNameInResource rdf:datatype="http://www.w3.org/2001/XMLSchema#token">pfams_id</parameterNameInResource>
+        <schema:multipleValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</schema:multipleValues>
+        <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:valueRequired>
+        <rdfs:label>DataResourceParameter_ProteinSpectralCount_PFamsName</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_ProteinIdentifier -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_ProteinIdentifier">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter"/>
+        <definesValuesForParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter_ProteinIdentifier"/>
+        <isForeignKeyTo rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_FASTA-ProteinIdentifier"/>
+        <parameterDataType rdf:resource="http://schema.org/Text"/>
+        <parameterInResourceType rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceType_ProteinTotalSpectralCount"/>
+        <parameterNameInResource rdf:datatype="http://www.w3.org/2001/XMLSchema#token">protein_id</parameterNameInResource>
+        <schema:multipleValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:multipleValues>
+        <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</schema:valueRequired>
+        <rdfs:label>DataResourceParameter_ProteinSpectralCount_ProteinIdentifier</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_SampleIdentifier -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_SampleIdentifier">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter"/>
+        <definesValuesForParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter_SampleIdentifier"/>
+        <parameterDataType rdf:resource="http://schema.org/Text"/>
+        <parameterInResourceType rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceType_ProteinTotalSpectralCount"/>
+        <parameterNameInResource rdf:datatype="http://www.w3.org/2001/XMLSchema#token">sample_id</parameterNameInResource>
+        <schema:multipleValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:multipleValues>
+        <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:valueRequired>
+        <rdfs:label>DataResourceParameter_ProteinSpectralCount_SampleIdentifier</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_SpectralCount -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_SpectralCount">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter"/>
+        <definesValuesForParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter_SpectralCount"/>
+        <parameterDataType rdf:resource="http://schema.org/Text"/>
+        <parameterInResourceType rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceType_ProteinTotalSpectralCount"/>
+        <parameterNameInResource rdf:datatype="http://www.w3.org/2001/XMLSchema#token">spectral_count</parameterNameInResource>
+        <schema:multipleValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:multipleValues>
+        <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</schema:valueRequired>
+        <rdfs:label>DataResourceParameter_ProteinSpectralCount_SpectralCount</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_Time -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_Time">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter"/>
+        <definesValuesForParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter_Time"/>
+        <dependsOnParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_Date"/>
+        <parameterDataType rdf:resource="http://schema.org/Time"/>
+        <parameterInResourceType rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceType_ProteinTotalSpectralCount"/>
+        <parameterNameInResource rdf:datatype="http://www.w3.org/2001/XMLSchema#token">time_h-m-s</parameterNameInResource>
+        <schema:defaultValue rdf:datatype="http://www.w3.org/2001/XMLSchema#token">00:00:00</schema:defaultValue>
+        <schema:multipleValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:multipleValues>
+        <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:valueRequired>
+        <rdfs:label>DataResourceParameter_ProteinSpectralCount_Time</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_UniprotIdentifier -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_UniprotIdentifier">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter"/>
+        <definesValuesForParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter_UniprotIdentifier"/>
+        <parameterDataType rdf:resource="http://schema.org/Text"/>
+        <parameterInResourceType rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceType_ProteinTotalSpectralCount"/>
+        <multiValuedDefaultDelimiter rdf:datatype="http://www.w3.org/2001/XMLSchema#token">||</multiValuedDefaultDelimiter>
+        <parameterNameInResource rdf:datatype="http://www.w3.org/2001/XMLSchema#token">uniprot_id</parameterNameInResource>
+        <schema:multipleValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</schema:multipleValues>
+        <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:valueRequired>
+        <rdfs:label>DataResourceParameter_ProteinSpectralCount_UniprotIdentifier</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataResourceType_FASTA-ProteinIdentification -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataResourceType_FASTA-ProteinIdentification">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceType"/>
+        <rdfs:label>Data Resource Type: FASTA Protein Identification</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataResourceType_PeptideTotalSpectralCount -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataResourceType_PeptideTotalSpectralCount">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceType"/>
+        <rdfs:label>Data Resource Type: Peptide Total Spectral Count</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DataResourceType_ProteinTotalSpectralCount -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataResourceType_ProteinTotalSpectralCount">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceType"/>
+        <rdfs:label>Data Resource Type: Protein Total Spectral Count</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://schema.oceanproteinportal.org/v2/DatasetProfile_PeptideSpectralCountSum -->
 
 
     <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DatasetProfile_PeptideSpectralCountSum">
         <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DatasetProfile"/>
-        <profileObservation rdf:resource="http://schema.oceanproteinportal.org/v2/PeptideSpectralCountSum"/>
+        <requiresOneParameterFromSet rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameterSet_PeptideSpectralCount_DateRequirement"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_AbsoluteUnits"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_BestProteinIdProbability"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_BestSequestDCnScore"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_BestSequestXCorrScore"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_CruiseIdentifier"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_CruiseStationIdentifier"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Date"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Depth"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_ISODateTimeUTC"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Latitude"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Longitude"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_MaxFilterSize"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_MedianRetentionTime"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_MinFilterSize"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_MolecularWeight"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Peptide-StartIndex"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Peptide-StopIndex"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_PeptideSequence"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_PeptideSpectralCountSummation"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Plus2HSpectraCount"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Plus3HSpectraCount"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Plus4HSpectraCount"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_ProteinAccessionIdentifiers"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_ProteinIdentifier"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_SampleIdentifier"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Time"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_TotalPrecursorIntensity"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_TotalTIC"/>
         <rdfs:label>Dataset Profile: Peptide Spectral Count Sum</rdfs:label>
     </owl:NamedIndividual>
     
@@ -2004,7 +3906,62 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
 
     <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DatasetProfile_ProteinTotalSpectralCount">
         <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DatasetProfile"/>
-        <profileObservation rdf:resource="http://schema.oceanproteinportal.org/v2/ProteinTotalSpectralCount"/>
+        <requiresOneParameterFromSet rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameterSet_PeptideSpectralCount_DateRequirement"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_FASTA-ProteinIdentifier"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_FASTA-ProteinSequence"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_AbsoluteUnits"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_BestProteinIdProbability"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_BestSequestDCnScore"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_BestSequestXCorrScore"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_CruiseIdentifier"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_CruiseStationIdentifier"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Date"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Depth"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_ISODateTimeUTC"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Latitude"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Longitude"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_MaxFilterSize"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_MedianRetentionTime"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_MinFilterSize"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_MolecularWeight"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Peptide-StartIndex"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Peptide-StopIndex"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_PeptideSequence"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_PeptideSpectralCountSummation"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Plus2HSpectraCount"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Plus3HSpectraCount"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Plus4HSpectraCount"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_ProteinAccessionIdentifiers"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_ProteinIdentifier"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_SampleIdentifier"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Time"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_TotalPrecursorIntensity"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_TotalTIC"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_BestNCBITaxonIdentifier"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_BestNCBITaxonName"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_CruiseIdentifier"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_CruiseStationIdentifier"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_Date"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_Depth"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_EnzymeCommissionIdentifier"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_ISODateTimeUTC"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_KeggIdentifier"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_KeggOrthologyDefinition"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_KeggOrthologyName"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_KeggOrthologyPathway"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_Latitude"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_Longitude"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_MaxFilterSize"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_MinFilterSize"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_MolecularWeight"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_OtherIdentifiedProteins"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_PFamsIdentifier"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_PFamsName"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_ProteinIdentifier"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_SampleIdentifier"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_SpectralCount"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_Time"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_UniprotIdentifier"/>
         <rdfs:label>Dataset Profile: Protein Total Spectral Count</rdfs:label>
     </owl:NamedIndividual>
     
@@ -2077,20 +4034,6 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
     
 
 
-    <!-- http://schema.oceanproteinportal.org/v2/PeptideSpectralCountSum -->
-
-
-    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/PeptideSpectralCountSum"/>
-    
-
-
-    <!-- http://schema.oceanproteinportal.org/v2/ProteinTotalSpectralCount -->
-
-
-    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/ProteinTotalSpectralCount"/>
-    
-
-
     <!-- http://schema.oceanproteinportal.org/v2/Role_Author -->
 
 
@@ -2131,6 +4074,124 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
     
 
 
+    <!-- http://schema.oceanproteinportal.org/v2/UnitOfMeasure_DecimalDegrees -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/UnitOfMeasure_DecimalDegrees">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/UnitOfMeasure"/>
+        <rdfs:label>UnitOfMeasure: Decimal Degrees</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://www.wikidata.org/entity/Q1798227"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/UnitOfMeasure_Femtomoles-per-Liter -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/UnitOfMeasure_Femtomoles-per-Liter">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/UnitOfMeasure"/>
+        <rdfs:label>UnitOfMeasure: Femtomoles per Liter</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://purl.obolibrary.org/obo/NCIT_C68887"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/UnitOfMeasure_KiloDaltons -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/UnitOfMeasure_KiloDaltons">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/UnitOfMeasure"/>
+        <rdfs:label>UnitOfMeasure: KiloDaltons</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://www.wikidata.org/entity/Q14623804"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/UnitOfMeasure_Meters -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/UnitOfMeasure_Meters">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/UnitOfMeasure"/>
+        <rdfs:label>UnitOfMeasure: Meters</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://www.wikidata.org/entity/Q11573"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/UnitOfMeasure_Microns -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/UnitOfMeasure_Microns">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/UnitOfMeasure"/>
+        <rdfs:label>UnitOfMeasure: Microns</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://www.wikidata.org/entity/Q175821"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.org/Date -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.org/Date">
+        <frictionlessDataValueType>date</frictionlessDataValueType>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.org/DateTime -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.org/DateTime">
+        <frictionlessDataValueType>datetime</frictionlessDataValueType>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.org/Float -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.org/Float">
+        <frictionlessDataValueType>number</frictionlessDataValueType>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.org/Integer -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.org/Integer">
+        <frictionlessDataValueType>integer</frictionlessDataValueType>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.org/Text -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.org/Text">
+        <frictionlessDataValueType>string</frictionlessDataValueType>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.org/Time -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.org/Time">
+        <frictionlessDataValueType>time</frictionlessDataValueType>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://schema.org/URL -->
+
+
+    <owl:NamedIndividual rdf:about="http://schema.org/URL">
+        <frictionlessDataValueType>uri</frictionlessDataValueType>
+    </owl:NamedIndividual>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -2140,19 +4201,11 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
      -->
 
 
-    <rdf:Description rdf:about="http://schema.oceanproteinportal.org/v2/PeptideSpectralCountSum">
-        <rdfs:comment>The total spectral count of some identified peptide from a single sample.</rdfs:comment>
-        <rdfs:label>PeptideSpectralCountSum</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://purl.obolibrary.org/obo/MS_1002015"/>
+    <rdf:Description rdf:about="http://schema.org/Boolean">
+        <frictionlessDataValueType>boolean</frictionlessDataValueType>
     </rdf:Description>
-    <rdf:Description rdf:about="http://schema.oceanproteinportal.org/v2/ProteinTotalSpectralCount">
-        <rdfs:comment>The total spectral count of some identified protein from a single sample.</rdfs:comment>
-        <rdfs:label>ProteinTotalSpectralCount</rdfs:label>
-        <rdfs:seeAlso rdf:resource="http://purl.obolibrary.org/obo/MS_1002016"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://schema.oceanproteinportal.org/v2/profileObservation">
-        <rdfs:comment>An observation that will be present in the results.</rdfs:comment>
-        <rdfs:label>profileObservation</rdfs:label>
+    <rdf:Description rdf:about="http://schema.org/Number">
+        <frictionlessDataValueType>number</frictionlessDataValueType>
     </rdf:Description>
     
 
