@@ -2960,7 +2960,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <parameterDataType rdf:resource="http://schema.org/Float"/>
         <parameterInResourceType rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceType_PeptideTotalSpectralCount"/>
         <unitsReportedIn rdf:resource="http://schema.oceanproteinportal.org/v2/UnitOfMeasure_KiloDaltons"/>
-        <parameterNameInResource rdf:datatype="http://www.w3.org/2001/XMLSchema#token">protein_molecular_weight_kDa </parameterNameInResource>
+        <parameterNameInResource rdf:datatype="http://www.w3.org/2001/XMLSchema#token">protein_molecular_weight_kDa</parameterNameInResource>
         <schema:multipleValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:multipleValues>
         <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:valueRequired>
     </owl:NamedIndividual>
