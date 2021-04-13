@@ -2303,6 +2303,12 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
     </owl:NamedIndividual>
 
 
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataParameter_ProteinName">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
+        <rdfs:label>Data Parameter: ProteinNamee</rdfs:label>
+    </owl:NamedIndividual>
+
+
 
     <!-- http://schema.oceanproteinportal.org/v2/DataParameter_BestNCBITaxonIdentifier -->
 
@@ -3291,6 +3297,16 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
     </owl:NamedIndividual>
 
 
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_ProteinName">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter"/>
+        <rdfs:label>DataResourceParameter_ProteinSpectralCount_ProteinName</rdfs:label>
+        <definesValuesForParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter_ProteinName"/>
+        <parameterDataType rdf:resource="http://schema.org/Text"/>
+        <parameterInResourceType rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceType_ProteinTotalSpectralCount"/>
+        <parameterNameInResource rdf:datatype="http://www.w3.org/2001/XMLSchema#token">protein_name</parameterNameInResource>
+        <schema:multipleValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:multipleValues>
+        <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</schema:valueRequired>
+    </owl:NamedIndividual>
 
     <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_KeggIdentifier -->
 
@@ -3484,7 +3500,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <parameterDataType rdf:resource="http://schema.org/Text"/>
         <parameterInResourceType rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceType_ProteinTotalSpectralCount"/>
         <multiValuedDefaultDelimiter rdf:datatype="http://www.w3.org/2001/XMLSchema#token">||</multiValuedDefaultDelimiter>
-        <parameterNameInResource rdf:datatype="http://www.w3.org/2001/XMLSchema#token">pfams_id</parameterNameInResource>
+        <parameterNameInResource rdf:datatype="http://www.w3.org/2001/XMLSchema#token">pfams_name</parameterNameInResource>
         <schema:multipleValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</schema:multipleValues>
         <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:valueRequired>
     </owl:NamedIndividual>
