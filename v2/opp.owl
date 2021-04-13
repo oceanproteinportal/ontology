@@ -2492,7 +2492,6 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
     </owl:NamedIndividual>
 
 
-
     <!-- http://schema.oceanproteinportal.org/v2/DataParameter_OtherIdentifiedProteins -->
 
     <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataParameter_OtherIdentifiedProteins">
@@ -2952,6 +2951,18 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <parameterNameInResource rdf:datatype="http://www.w3.org/2001/XMLSchema#token">molecular_weight_kDa</parameterNameInResource>
         <schema:multipleValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:multipleValues>
         <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</schema:valueRequired>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_ProteinMolecularWeight">
+        <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter"/>
+        <rdfs:label>DataResourceParameter_PeptideSpectralCount_ProteinMolecularWeight</rdfs:label>
+        <definesValuesForParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter_MolecularWeight"/>
+        <parameterDataType rdf:resource="http://schema.org/Float"/>
+        <parameterInResourceType rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceType_PeptideTotalSpectralCount"/>
+        <unitsReportedIn rdf:resource="http://schema.oceanproteinportal.org/v2/UnitOfMeasure_KiloDaltons"/>
+        <parameterNameInResource rdf:datatype="http://www.w3.org/2001/XMLSchema#token">protein_molecular_weight_kDa </parameterNameInResource>
+        <schema:multipleValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:multipleValues>
+        <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:valueRequired>
     </owl:NamedIndividual>
 
 
@@ -3669,7 +3680,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_PeptideSequence"/>
         <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Peptide-StopIndex"/>
         <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Peptide-StartIndex"/>
-        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_MolecularWeight"/>
+        <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_ProteinMolecularWeight"/>
         <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_MinFilterSize"/>
         <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_MedianRetentionTime"/>
         <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_MaxFilterSize"/>
