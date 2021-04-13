@@ -1669,6 +1669,7 @@ _:genid76 <http://www.w3.org/2002/07/owl#hasValue> <http://schema.oceanproteinpo
 <http://schema.oceanproteinportal.org/v2/DataParameter_ProteinName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <http://schema.oceanproteinportal.org/v2/DataParameter_ProteinName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.oceanproteinportal.org/v2/DataParameter> .
 <http://schema.oceanproteinportal.org/v2/DataParameter_ProteinName> <http://www.w3.org/2000/01/rdf-schema#label> "Data Parameter: ProteinName" .
+<http://schema.oceanproteinportal.org/v2/DataParameter_ProteinName> <http://www.w3.org/2000/01/rdf-schema#label> "Data Parameter: ProteinNamee" .
 # 
 # http://schema.oceanproteinportal.org/v2/DataParameter_ProteinSequence
 <http://schema.oceanproteinportal.org/v2/DataParameter_ProteinSequence> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
@@ -2019,6 +2020,18 @@ _:genid76 <http://www.w3.org/2002/07/owl#hasValue> <http://schema.oceanproteinpo
 <http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_ProteinIdentifier> <http://schema.org/valueRequired> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
 <http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_ProteinIdentifier> <http://www.w3.org/2000/01/rdf-schema#label> "DataResourceParameter_PeptideSpectralCount_ProteinIdentifier" .
 # 
+# http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_ProteinMolecularWeight
+<http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_ProteinMolecularWeight> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_ProteinMolecularWeight> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.oceanproteinportal.org/v2/DataResourceParameter> .
+<http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_ProteinMolecularWeight> <http://schema.oceanproteinportal.org/v2/definesValuesForParameter> <http://schema.oceanproteinportal.org/v2/DataParameter_MolecularWeight> .
+<http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_ProteinMolecularWeight> <http://schema.oceanproteinportal.org/v2/parameterDataType> <http://schema.org/Float> .
+<http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_ProteinMolecularWeight> <http://schema.oceanproteinportal.org/v2/parameterInResourceType> <http://schema.oceanproteinportal.org/v2/DataResourceType_PeptideTotalSpectralCount> .
+<http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_ProteinMolecularWeight> <http://schema.oceanproteinportal.org/v2/unitsReportedIn> <http://schema.oceanproteinportal.org/v2/UnitOfMeasure_KiloDaltons> .
+<http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_ProteinMolecularWeight> <http://schema.oceanproteinportal.org/v2/parameterNameInResource> "protein_molecular_weight_kDa"^^<http://www.w3.org/2001/XMLSchema#token> .
+<http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_ProteinMolecularWeight> <http://schema.org/multipleValues> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+<http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_ProteinMolecularWeight> <http://schema.org/valueRequired> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+<http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_ProteinMolecularWeight> <http://www.w3.org/2000/01/rdf-schema#label> "DataResourceParameter_PeptideSpectralCount_ProteinMolecularWeight" .
+# 
 # http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_SampleIdentifier
 <http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_SampleIdentifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_SampleIdentifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.oceanproteinportal.org/v2/DataResourceParameter> .
@@ -2302,7 +2315,7 @@ _:genid76 <http://www.w3.org/2002/07/owl#hasValue> <http://schema.oceanproteinpo
 <http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_PFamsName> <http://schema.oceanproteinportal.org/v2/parameterDataType> <http://schema.org/Text> .
 <http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_PFamsName> <http://schema.oceanproteinportal.org/v2/parameterInResourceType> <http://schema.oceanproteinportal.org/v2/DataResourceType_ProteinTotalSpectralCount> .
 <http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_PFamsName> <http://schema.oceanproteinportal.org/v2/multiValuedDefaultDelimiter> "||"^^<http://www.w3.org/2001/XMLSchema#token> .
-<http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_PFamsName> <http://schema.oceanproteinportal.org/v2/parameterNameInResource> "pfams_id"^^<http://www.w3.org/2001/XMLSchema#token> .
+<http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_PFamsName> <http://schema.oceanproteinportal.org/v2/parameterNameInResource> "pfams_name"^^<http://www.w3.org/2001/XMLSchema#token> .
 <http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_PFamsName> <http://schema.org/multipleValues> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
 <http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_PFamsName> <http://schema.org/valueRequired> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
 <http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_PFamsName> <http://www.w3.org/2000/01/rdf-schema#label> "DataResourceParameter_ProteinSpectralCount_PFamsName" .
@@ -2318,6 +2331,17 @@ _:genid76 <http://www.w3.org/2002/07/owl#hasValue> <http://schema.oceanproteinpo
 <http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_ProteinIdentifier> <http://schema.org/multipleValues> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
 <http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_ProteinIdentifier> <http://schema.org/valueRequired> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
 <http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_ProteinIdentifier> <http://www.w3.org/2000/01/rdf-schema#label> "DataResourceParameter_ProteinSpectralCount_ProteinIdentifier" .
+# 
+# http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_ProteinName
+<http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_ProteinName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_ProteinName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.oceanproteinportal.org/v2/DataResourceParameter> .
+<http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_ProteinName> <http://schema.oceanproteinportal.org/v2/definesValuesForParameter> <http://schema.oceanproteinportal.org/v2/DataParameter_ProteinName> .
+<http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_ProteinName> <http://schema.oceanproteinportal.org/v2/parameterDataType> <http://schema.org/Text> .
+<http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_ProteinName> <http://schema.oceanproteinportal.org/v2/parameterInResourceType> <http://schema.oceanproteinportal.org/v2/DataResourceType_ProteinTotalSpectralCount> .
+<http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_ProteinName> <http://schema.oceanproteinportal.org/v2/parameterNameInResource> "protein_name"^^<http://www.w3.org/2001/XMLSchema#token> .
+<http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_ProteinName> <http://schema.org/multipleValues> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+<http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_ProteinName> <http://schema.org/valueRequired> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
+<http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_ProteinName> <http://www.w3.org/2000/01/rdf-schema#label> "DataResourceParameter_ProteinSpectralCount_ProteinName" .
 # 
 # http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_SampleIdentifier
 <http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_SampleIdentifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
@@ -2435,7 +2459,6 @@ _:genid76 <http://www.w3.org/2002/07/owl#hasValue> <http://schema.oceanproteinpo
 <http://schema.oceanproteinportal.org/v2/DatasetProfile_ProteinTotalSpectralCount> <http://schema.oceanproteinportal.org/v2/usesDataResourceParameter> <http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_MaxFilterSize> .
 <http://schema.oceanproteinportal.org/v2/DatasetProfile_ProteinTotalSpectralCount> <http://schema.oceanproteinportal.org/v2/usesDataResourceParameter> <http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_MedianRetentionTime> .
 <http://schema.oceanproteinportal.org/v2/DatasetProfile_ProteinTotalSpectralCount> <http://schema.oceanproteinportal.org/v2/usesDataResourceParameter> <http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_MinFilterSize> .
-<http://schema.oceanproteinportal.org/v2/DatasetProfile_ProteinTotalSpectralCount> <http://schema.oceanproteinportal.org/v2/usesDataResourceParameter> <http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_MolecularWeight> .
 <http://schema.oceanproteinportal.org/v2/DatasetProfile_ProteinTotalSpectralCount> <http://schema.oceanproteinportal.org/v2/usesDataResourceParameter> <http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Peptide-StartIndex> .
 <http://schema.oceanproteinportal.org/v2/DatasetProfile_ProteinTotalSpectralCount> <http://schema.oceanproteinportal.org/v2/usesDataResourceParameter> <http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Peptide-StopIndex> .
 <http://schema.oceanproteinportal.org/v2/DatasetProfile_ProteinTotalSpectralCount> <http://schema.oceanproteinportal.org/v2/usesDataResourceParameter> <http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_PeptideSequence> .
@@ -2445,6 +2468,7 @@ _:genid76 <http://www.w3.org/2002/07/owl#hasValue> <http://schema.oceanproteinpo
 <http://schema.oceanproteinportal.org/v2/DatasetProfile_ProteinTotalSpectralCount> <http://schema.oceanproteinportal.org/v2/usesDataResourceParameter> <http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Plus4HSpectraCount> .
 <http://schema.oceanproteinportal.org/v2/DatasetProfile_ProteinTotalSpectralCount> <http://schema.oceanproteinportal.org/v2/usesDataResourceParameter> <http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_ProteinAccessionIdentifiers> .
 <http://schema.oceanproteinportal.org/v2/DatasetProfile_ProteinTotalSpectralCount> <http://schema.oceanproteinportal.org/v2/usesDataResourceParameter> <http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_ProteinIdentifier> .
+<http://schema.oceanproteinportal.org/v2/DatasetProfile_ProteinTotalSpectralCount> <http://schema.oceanproteinportal.org/v2/usesDataResourceParameter> <http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_ProteinMolecularWeight> .
 <http://schema.oceanproteinportal.org/v2/DatasetProfile_ProteinTotalSpectralCount> <http://schema.oceanproteinportal.org/v2/usesDataResourceParameter> <http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_SampleIdentifier> .
 <http://schema.oceanproteinportal.org/v2/DatasetProfile_ProteinTotalSpectralCount> <http://schema.oceanproteinportal.org/v2/usesDataResourceParameter> <http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Time> .
 <http://schema.oceanproteinportal.org/v2/DatasetProfile_ProteinTotalSpectralCount> <http://schema.oceanproteinportal.org/v2/usesDataResourceParameter> <http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_TotalPrecursorIntensity> .
@@ -2470,6 +2494,7 @@ _:genid76 <http://www.w3.org/2002/07/owl#hasValue> <http://schema.oceanproteinpo
 <http://schema.oceanproteinportal.org/v2/DatasetProfile_ProteinTotalSpectralCount> <http://schema.oceanproteinportal.org/v2/usesDataResourceParameter> <http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_PFamsIdentifier> .
 <http://schema.oceanproteinportal.org/v2/DatasetProfile_ProteinTotalSpectralCount> <http://schema.oceanproteinportal.org/v2/usesDataResourceParameter> <http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_PFamsName> .
 <http://schema.oceanproteinportal.org/v2/DatasetProfile_ProteinTotalSpectralCount> <http://schema.oceanproteinportal.org/v2/usesDataResourceParameter> <http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_ProteinIdentifier> .
+<http://schema.oceanproteinportal.org/v2/DatasetProfile_ProteinTotalSpectralCount> <http://schema.oceanproteinportal.org/v2/usesDataResourceParameter> <http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_ProteinName> .
 <http://schema.oceanproteinportal.org/v2/DatasetProfile_ProteinTotalSpectralCount> <http://schema.oceanproteinportal.org/v2/usesDataResourceParameter> <http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_SampleIdentifier> .
 <http://schema.oceanproteinportal.org/v2/DatasetProfile_ProteinTotalSpectralCount> <http://schema.oceanproteinportal.org/v2/usesDataResourceParameter> <http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_SpectralCount> .
 <http://schema.oceanproteinportal.org/v2/DatasetProfile_ProteinTotalSpectralCount> <http://schema.oceanproteinportal.org/v2/usesDataResourceParameter> <http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_Time> .

@@ -1838,7 +1838,8 @@ Note since the order of the pathways (or KeggPathway Index isn't provided we don
 ###  http://schema.oceanproteinportal.org/v2/DataParameter_ProteinName
 :DataParameter_ProteinName rdf:type owl:NamedIndividual ,
                                     :DataParameter ;
-                           rdfs:label "Data Parameter: ProteinName" .
+                           rdfs:label "Data Parameter: ProteinName" ,
+                                      "Data Parameter: ProteinNamee" .
 
 
 ###  http://schema.oceanproteinportal.org/v2/DataParameter_ProteinSequence
@@ -2224,6 +2225,19 @@ Note since the order of the pathways (or KeggPathway Index isn't provided we don
                                                               rdfs:label "DataResourceParameter_PeptideSpectralCount_ProteinIdentifier" .
 
 
+###  http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_ProteinMolecularWeight
+:DataResourceParameter_PeptideSpectralCount_ProteinMolecularWeight rdf:type owl:NamedIndividual ,
+                                                                            :DataResourceParameter ;
+                                                                   :definesValuesForParameter :DataParameter_MolecularWeight ;
+                                                                   :parameterDataType <http://schema.org/Float> ;
+                                                                   :parameterInResourceType :DataResourceType_PeptideTotalSpectralCount ;
+                                                                   :unitsReportedIn :UnitOfMeasure_KiloDaltons ;
+                                                                   :parameterNameInResource "protein_molecular_weight_kDa"^^xsd:token ;
+                                                                   <http://schema.org/multipleValues> "false"^^xsd:boolean ;
+                                                                   <http://schema.org/valueRequired> "false"^^xsd:boolean ;
+                                                                   rdfs:label "DataResourceParameter_PeptideSpectralCount_ProteinMolecularWeight" .
+
+
 ###  http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_SampleIdentifier
 :DataResourceParameter_PeptideSpectralCount_SampleIdentifier rdf:type owl:NamedIndividual ,
                                                                       :DataResourceParameter ;
@@ -2530,7 +2544,7 @@ Note since the order of the pathways (or KeggPathway Index isn't provided we don
                                                       :parameterDataType <http://schema.org/Text> ;
                                                       :parameterInResourceType :DataResourceType_ProteinTotalSpectralCount ;
                                                       :multiValuedDefaultDelimiter "||"^^xsd:token ;
-                                                      :parameterNameInResource "pfams_id"^^xsd:token ;
+                                                      :parameterNameInResource "pfams_name"^^xsd:token ;
                                                       <http://schema.org/multipleValues> "true"^^xsd:boolean ;
                                                       <http://schema.org/valueRequired> "false"^^xsd:boolean ;
                                                       rdfs:label "DataResourceParameter_ProteinSpectralCount_PFamsName" .
@@ -2547,6 +2561,18 @@ Note since the order of the pathways (or KeggPathway Index isn't provided we don
                                                               <http://schema.org/multipleValues> "false"^^xsd:boolean ;
                                                               <http://schema.org/valueRequired> "true"^^xsd:boolean ;
                                                               rdfs:label "DataResourceParameter_ProteinSpectralCount_ProteinIdentifier" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_ProteinName
+:DataResourceParameter_ProteinSpectralCount_ProteinName rdf:type owl:NamedIndividual ,
+                                                                 :DataResourceParameter ;
+                                                        :definesValuesForParameter :DataParameter_ProteinName ;
+                                                        :parameterDataType <http://schema.org/Text> ;
+                                                        :parameterInResourceType :DataResourceType_ProteinTotalSpectralCount ;
+                                                        :parameterNameInResource "protein_name"^^xsd:token ;
+                                                        <http://schema.org/multipleValues> "false"^^xsd:boolean ;
+                                                        <http://schema.org/valueRequired> "true"^^xsd:boolean ;
+                                                        rdfs:label "DataResourceParameter_ProteinSpectralCount_ProteinName" .
 
 
 ###  http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_SampleIdentifier
@@ -2673,7 +2699,6 @@ Note since the order of the pathways (or KeggPathway Index isn't provided we don
                                                                      :DataResourceParameter_PeptideSpectralCount_MaxFilterSize ,
                                                                      :DataResourceParameter_PeptideSpectralCount_MedianRetentionTime ,
                                                                      :DataResourceParameter_PeptideSpectralCount_MinFilterSize ,
-                                                                     :DataResourceParameter_PeptideSpectralCount_MolecularWeight ,
                                                                      :DataResourceParameter_PeptideSpectralCount_Peptide-StartIndex ,
                                                                      :DataResourceParameter_PeptideSpectralCount_Peptide-StopIndex ,
                                                                      :DataResourceParameter_PeptideSpectralCount_PeptideSequence ,
@@ -2683,6 +2708,7 @@ Note since the order of the pathways (or KeggPathway Index isn't provided we don
                                                                      :DataResourceParameter_PeptideSpectralCount_Plus4HSpectraCount ,
                                                                      :DataResourceParameter_PeptideSpectralCount_ProteinAccessionIdentifiers ,
                                                                      :DataResourceParameter_PeptideSpectralCount_ProteinIdentifier ,
+                                                                     :DataResourceParameter_PeptideSpectralCount_ProteinMolecularWeight ,
                                                                      :DataResourceParameter_PeptideSpectralCount_SampleIdentifier ,
                                                                      :DataResourceParameter_PeptideSpectralCount_Time ,
                                                                      :DataResourceParameter_PeptideSpectralCount_TotalPrecursorIntensity ,
@@ -2708,6 +2734,7 @@ Note since the order of the pathways (or KeggPathway Index isn't provided we don
                                                                      :DataResourceParameter_ProteinSpectralCount_PFamsIdentifier ,
                                                                      :DataResourceParameter_ProteinSpectralCount_PFamsName ,
                                                                      :DataResourceParameter_ProteinSpectralCount_ProteinIdentifier ,
+                                                                     :DataResourceParameter_ProteinSpectralCount_ProteinName ,
                                                                      :DataResourceParameter_ProteinSpectralCount_SampleIdentifier ,
                                                                      :DataResourceParameter_ProteinSpectralCount_SpectralCount ,
                                                                      :DataResourceParameter_ProteinSpectralCount_Time ,

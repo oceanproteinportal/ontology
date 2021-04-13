@@ -6,7 +6,7 @@
 
 
 <!-- SCHEMA.ORG METADATA -->
-<script type="application/ld+json">{"@context":"http://schema.org","@type":"TechArticle","url":"http://schema.oceanproteinportal.org/v2/","image":"http://vowl.visualdataweb.org/webvowl/#iri=http://schema.oceanproteinportal.org/v2/","name":"Ocean Protein Portal Ver. 2", "headline":"Document describing the ontology http://schema.oceanproteinportal.org/v2/", "datePublished":"Mon Apr 12 22:51:03 EDT 2021", "license":"https://spdx.org/licenses/CC0-1.0", "author":[{"@type":"Person","name":"Adam Shepherd","url":"https://orcid.org/0000-0003-4486-9448"},{"@type":"Person","name":"Jaclyn Saunders","url":"https://orcid.org/0000-0003-1023-6239"},{"@type":"Person","name":"Makoto Saito","url":"https://orcid.org/0000-0002-1667-9287"},{"@type":"Person","name":"Danie Kinkade","url":"https://orcid.org/0000-0002-1134-7347"}]}</script>
+<script type="application/ld+json">{"@context":"http://schema.org","@type":"TechArticle","url":"http://schema.oceanproteinportal.org/v2/","image":"http://vowl.visualdataweb.org/webvowl/#iri=http://schema.oceanproteinportal.org/v2/","name":"Ocean Protein Portal Ver. 2", "headline":"Document describing the ontology http://schema.oceanproteinportal.org/v2/", "datePublished":"Tue Apr 13 19:40:55 EDT 2021", "license":"https://spdx.org/licenses/CC0-1.0", "author":[{"@type":"Person","name":"Adam Shepherd","url":"https://orcid.org/0000-0003-4486-9448"},{"@type":"Person","name":"Jaclyn Saunders","url":"https://orcid.org/0000-0003-1023-6239"},{"@type":"Person","name":"Makoto Saito","url":"https://orcid.org/0000-0002-1667-9287"},{"@type":"Person","name":"Danie Kinkade","url":"https://orcid.org/0000-0002-1134-7347"}]}</script>
 
 <script src="resources/jquery.js"></script>
 <script src="resources/marked.min.js"></script>
@@ -55,6 +55,7 @@ function loadTOC(){
   <h1>Ocean Protein Portal Ver. 2</h1>
 
 
+
 <dl>
 <dt>This version:</dt>
 <dd><a href="http://schema.oceanproteinportal.org/v2/ontology.ttl">http://schema.oceanproteinportal.org/v2/ontology.ttl</a></dd>
@@ -80,6 +81,7 @@ function loadTOC(){
 <div class="status">
 <div>
 <span>Ontology Specification Draft</span>
+
 </div>
 </div>     <div id="abstract"><h2>Abstract</h2><span class="markdown">
 This is a place holder text for the abstract. The abstract should contain a couple of sentences summarizing the ontology and its purpose.</span>
@@ -113,6 +115,7 @@ This is a place holder text for the abstract. The abstract should contain a coup
   </ul>
 </div>
 <div id="namespacedeclarations">
+
 <h3 id="ns" class="list">Namespace declarations</h3>
 <div id="ns" align="center">
 <table>
@@ -1070,6 +1073,10 @@ This ontology has the following classes and properties.</span>
          title="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_ProteinIdentifier">DataResourceParameter_PeptideSpectralCount_ProteinIdentifier</a>
    </li>
    <li>
+      <a href="#DataResourceParameter_PeptideSpectralCount_ProteinMolecularWeight"
+         title="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_ProteinMolecularWeight">DataResourceParameter_PeptideSpectralCount_ProteinMolecularWeight</a>
+   </li>
+   <li>
       <a href="#DataResourceParameter_PeptideSpectralCount_SampleIdentifier"
          title="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_SampleIdentifier">DataResourceParameter_PeptideSpectralCount_SampleIdentifier</a>
    </li>
@@ -1168,6 +1175,10 @@ This ontology has the following classes and properties.</span>
    <li>
       <a href="#DataResourceParameter_ProteinSpectralCount_ProteinIdentifier"
          title="http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_ProteinIdentifier">DataResourceParameter_ProteinSpectralCount_ProteinIdentifier</a>
+   </li>
+   <li>
+      <a href="#DataResourceParameter_ProteinSpectralCount_ProteinName"
+         title="http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_ProteinName">DataResourceParameter_ProteinSpectralCount_ProteinName</a>
    </li>
    <li>
       <a href="#DataResourceParameter_ProteinSpectralCount_SampleIdentifier"
@@ -2169,6 +2180,8 @@ This section provides details for each class and property defined by Ocean Prote
                title="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_ProteinAccessionIdentifiers">DataResourceParameter_PeptideSpectralCount_ProteinAccessionIdentifiers</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#DataResourceParameter_PeptideSpectralCount_ProteinIdentifier"
                title="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_ProteinIdentifier">DataResourceParameter_PeptideSpectralCount_ProteinIdentifier</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#DataResourceParameter_PeptideSpectralCount_ProteinMolecularWeight"
+               title="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_ProteinMolecularWeight">DataResourceParameter_PeptideSpectralCount_ProteinMolecularWeight</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#DataResourceParameter_PeptideSpectralCount_SampleIdentifier"
                title="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_SampleIdentifier">DataResourceParameter_PeptideSpectralCount_SampleIdentifier</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#DataResourceParameter_PeptideSpectralCount_Time"
@@ -2219,6 +2232,8 @@ This section provides details for each class and property defined by Ocean Prote
                title="http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_PFamsName">DataResourceParameter_ProteinSpectralCount_PFamsName</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#DataResourceParameter_ProteinSpectralCount_ProteinIdentifier"
                title="http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_ProteinIdentifier">DataResourceParameter_ProteinSpectralCount_ProteinIdentifier</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#DataResourceParameter_ProteinSpectralCount_ProteinName"
+               title="http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_ProteinName">DataResourceParameter_ProteinSpectralCount_ProteinName</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#DataResourceParameter_ProteinSpectralCount_SampleIdentifier"
                title="http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_SampleIdentifier">DataResourceParameter_ProteinSpectralCount_SampleIdentifier</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#DataResourceParameter_ProteinSpectralCount_SpectralCount"
@@ -7123,6 +7138,10 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
             title="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_ProteinIdentifier">DataResourceParameter_PeptideSpectralCount_ProteinIdentifier</a>
       </li>
       <li>
+         <a href="#DataResourceParameter_PeptideSpectralCount_ProteinMolecularWeight"
+            title="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_ProteinMolecularWeight">DataResourceParameter_PeptideSpectralCount_ProteinMolecularWeight</a>
+      </li>
+      <li>
          <a href="#DataResourceParameter_PeptideSpectralCount_SampleIdentifier"
             title="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_SampleIdentifier">DataResourceParameter_PeptideSpectralCount_SampleIdentifier</a>
       </li>
@@ -7221,6 +7240,10 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
       <li>
          <a href="#DataResourceParameter_ProteinSpectralCount_ProteinIdentifier"
             title="http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_ProteinIdentifier">DataResourceParameter_ProteinSpectralCount_ProteinIdentifier</a>
+      </li>
+      <li>
+         <a href="#DataResourceParameter_ProteinSpectralCount_ProteinName"
+            title="http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_ProteinName">DataResourceParameter_ProteinSpectralCount_ProteinName</a>
       </li>
       <li>
          <a href="#DataResourceParameter_ProteinSpectralCount_SampleIdentifier"
@@ -9664,6 +9687,69 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
          </dd>
       </dl>
    </div>
+   <div class="entity" id="DataResourceParameter_PeptideSpectralCount_ProteinMolecularWeight">
+      <h3>DataResourceParameter_PeptideSpectralCount_ProteinMolecularWeight<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_ProteinMolecularWeight</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#DataResourceParameter"
+               title="http://schema.oceanproteinportal.org/v2/DataResourceParameter">DataResourceParameter</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has facts</dt>
+         <dd>
+            <a href="#definesValuesForParameter"
+               title="http://schema.oceanproteinportal.org/v2/definesValuesForParameter">definesValuesForParameter</a>
+            <sup class="type-op" title="object property">op</sup>
+            <a href="#DataParameter_MolecularWeight"
+               title="http://schema.oceanproteinportal.org/v2/DataParameter_MolecularWeight">Data Parameter: MolecularWeight</a>
+         </dd>
+         <dd>
+            <a href="#parameterDataType"
+               title="http://schema.oceanproteinportal.org/v2/parameterDataType">parameterDataType</a>
+            <sup class="type-op" title="object property">op</sup>
+            <a href="#http://schema.org/Float" title="http://schema.org/Float">float</a>
+         </dd>
+         <dd>
+            <a href="#parameterInResourceType"
+               title="http://schema.oceanproteinportal.org/v2/parameterInResourceType">parameterInResourceType</a>
+            <sup class="type-op" title="object property">op</sup>
+            <a href="#DataResourceType_PeptideTotalSpectralCount"
+               title="http://schema.oceanproteinportal.org/v2/DataResourceType_PeptideTotalSpectralCount">Data Resource Type: Peptide Total Spectral Count</a>
+         </dd>
+         <dd>
+            <a href="#unitsReportedIn"
+               title="http://schema.oceanproteinportal.org/v2/unitsReportedIn">unitsReportedIn</a>
+            <sup class="type-op" title="object property">op</sup>
+            <a href="#UnitOfMeasure_KiloDaltons"
+               title="http://schema.oceanproteinportal.org/v2/UnitOfMeasure_KiloDaltons">UnitOfMeasure: KiloDaltons</a>
+         </dd>
+         <dd>
+            <a href="#parameterNameInResource"
+               title="http://schema.oceanproteinportal.org/v2/parameterNameInResource">parameterNameInResource</a>
+            <sup class="type-dp" title="data property">dp</sup>
+            <span class="literal">"protein_molecular_weight_kDa"^^<span class="dotted" title="http://www.w3.org/2001/XMLSchema#token">token</span>
+            </span>
+         </dd>
+         <dd>
+            <span class="dotted" title="http://schema.org/multipleValues">multiple values</span>
+            <sup class="type-dp" title="data property">dp</sup>
+            <span class="literal">"false"^^<span class="dotted" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</span>
+            </span>
+         </dd>
+         <dd>
+            <span class="dotted" title="http://schema.org/valueRequired">value required</span>
+            <sup class="type-dp" title="data property">dp</sup>
+            <span class="literal">"false"^^<span class="dotted" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</span>
+            </span>
+         </dd>
+      </dl>
+   </div>
    <div class="entity" id="DataResourceParameter_PeptideSpectralCount_SampleIdentifier">
       <h3>DataResourceParameter_PeptideSpectralCount_SampleIdentifier<sup class="type-ni" title="named individual">ni</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
@@ -11155,7 +11241,7 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
             <a href="#parameterNameInResource"
                title="http://schema.oceanproteinportal.org/v2/parameterNameInResource">parameterNameInResource</a>
             <sup class="type-dp" title="data property">dp</sup>
-            <span class="literal">"pfams_id"^^<span class="dotted" title="http://www.w3.org/2001/XMLSchema#token">token</span>
+            <span class="literal">"pfams_name"^^<span class="dotted" title="http://www.w3.org/2001/XMLSchema#token">token</span>
             </span>
          </dd>
          <dd>
@@ -11219,6 +11305,62 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
                title="http://schema.oceanproteinportal.org/v2/parameterNameInResource">parameterNameInResource</a>
             <sup class="type-dp" title="data property">dp</sup>
             <span class="literal">"protein_id"^^<span class="dotted" title="http://www.w3.org/2001/XMLSchema#token">token</span>
+            </span>
+         </dd>
+         <dd>
+            <span class="dotted" title="http://schema.org/multipleValues">multiple values</span>
+            <sup class="type-dp" title="data property">dp</sup>
+            <span class="literal">"false"^^<span class="dotted" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</span>
+            </span>
+         </dd>
+         <dd>
+            <span class="dotted" title="http://schema.org/valueRequired">value required</span>
+            <sup class="type-dp" title="data property">dp</sup>
+            <span class="literal">"true"^^<span class="dotted" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</span>
+            </span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="DataResourceParameter_ProteinSpectralCount_ProteinName">
+      <h3>DataResourceParameter_ProteinSpectralCount_ProteinName<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_ProteinName</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#DataResourceParameter"
+               title="http://schema.oceanproteinportal.org/v2/DataResourceParameter">DataResourceParameter</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has facts</dt>
+         <dd>
+            <a href="#definesValuesForParameter"
+               title="http://schema.oceanproteinportal.org/v2/definesValuesForParameter">definesValuesForParameter</a>
+            <sup class="type-op" title="object property">op</sup>
+            <a href="#DataParameter_ProteinName"
+               title="http://schema.oceanproteinportal.org/v2/DataParameter_ProteinName">Data Parameter: ProteinName</a>
+         </dd>
+         <dd>
+            <a href="#parameterDataType"
+               title="http://schema.oceanproteinportal.org/v2/parameterDataType">parameterDataType</a>
+            <sup class="type-op" title="object property">op</sup>
+            <a href="#http://schema.org/Text" title="http://schema.org/Text">text</a>
+         </dd>
+         <dd>
+            <a href="#parameterInResourceType"
+               title="http://schema.oceanproteinportal.org/v2/parameterInResourceType">parameterInResourceType</a>
+            <sup class="type-op" title="object property">op</sup>
+            <a href="#DataResourceType_ProteinTotalSpectralCount"
+               title="http://schema.oceanproteinportal.org/v2/DataResourceType_ProteinTotalSpectralCount">Data Resource Type: Protein Total Spectral Count</a>
+         </dd>
+         <dd>
+            <a href="#parameterNameInResource"
+               title="http://schema.oceanproteinportal.org/v2/parameterNameInResource">parameterNameInResource</a>
+            <sup class="type-dp" title="data property">dp</sup>
+            <span class="literal">"protein_name"^^<span class="dotted" title="http://www.w3.org/2001/XMLSchema#token">token</span>
             </span>
          </dd>
          <dd>
@@ -11837,13 +11979,6 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
             <a href="#usesDataResourceParameter"
                title="http://schema.oceanproteinportal.org/v2/usesDataResourceParameter">usesDataResourceParameter</a>
             <sup class="type-op" title="object property">op</sup>
-            <a href="#DataResourceParameter_PeptideSpectralCount_MolecularWeight"
-               title="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_MolecularWeight">DataResourceParameter_PeptideSpectralCount_MolecularWeight</a>
-         </dd>
-         <dd>
-            <a href="#usesDataResourceParameter"
-               title="http://schema.oceanproteinportal.org/v2/usesDataResourceParameter">usesDataResourceParameter</a>
-            <sup class="type-op" title="object property">op</sup>
             <a href="#DataResourceParameter_PeptideSpectralCount_Peptide-StartIndex"
                title="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Peptide-StartIndex">DataResourceParameter_PeptideSpectralCount_Peptide-StartIndex</a>
          </dd>
@@ -11902,6 +12037,13 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
             <sup class="type-op" title="object property">op</sup>
             <a href="#DataResourceParameter_PeptideSpectralCount_ProteinIdentifier"
                title="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_ProteinIdentifier">DataResourceParameter_PeptideSpectralCount_ProteinIdentifier</a>
+         </dd>
+         <dd>
+            <a href="#usesDataResourceParameter"
+               title="http://schema.oceanproteinportal.org/v2/usesDataResourceParameter">usesDataResourceParameter</a>
+            <sup class="type-op" title="object property">op</sup>
+            <a href="#DataResourceParameter_PeptideSpectralCount_ProteinMolecularWeight"
+               title="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_ProteinMolecularWeight">DataResourceParameter_PeptideSpectralCount_ProteinMolecularWeight</a>
          </dd>
          <dd>
             <a href="#usesDataResourceParameter"
@@ -12077,6 +12219,13 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
             <sup class="type-op" title="object property">op</sup>
             <a href="#DataResourceParameter_ProteinSpectralCount_ProteinIdentifier"
                title="http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_ProteinIdentifier">DataResourceParameter_ProteinSpectralCount_ProteinIdentifier</a>
+         </dd>
+         <dd>
+            <a href="#usesDataResourceParameter"
+               title="http://schema.oceanproteinportal.org/v2/usesDataResourceParameter">usesDataResourceParameter</a>
+            <sup class="type-op" title="object property">op</sup>
+            <a href="#DataResourceParameter_ProteinSpectralCount_ProteinName"
+               title="http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_ProteinName">DataResourceParameter_ProteinSpectralCount_ProteinName</a>
          </dd>
          <dd>
             <a href="#usesDataResourceParameter"
