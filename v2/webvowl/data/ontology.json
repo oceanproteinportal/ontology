@@ -8,7 +8,7 @@
     },
     "iri" : "http://schema.oceanproteinportal.org/v2/",
     "version" : "2",
-    "author" : [ "Jaclyn Saunders, WHOI", "Danie Kinkade, WHOI", "Adam Shepherd, WHOI", "Makoto Saito, WHOI" ],
+    "author" : [ "Adam Shepherd, WHOI", "Jaclyn Saunders, WHOI", "Makoto Saito, WHOI", "Danie Kinkade, WHOI" ],
     "description" : {
       "undefined" : "An application ontology for operating the Ocean Protein Portal."
     },
