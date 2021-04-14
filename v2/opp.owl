@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="http://schema.oceanproteinportal.org/v2/"
      xml:base="http://schema.oceanproteinportal.org/v2/"
+     xml:dcterms="http://purl.org/dc/terms/"
      xmlns:geo="http://www.opengis.net/ont/geosparql#"
      xmlns:obo="http://purl.obolibrary.org/obo/"
      xmlns:opp="http://schema.oceanproteinportal.org/v2/"
@@ -17,6 +18,19 @@
      xmlns:ssn-system="http://www.w3.org/ns/ssn/systems/">
     <owl:Ontology rdf:about="http://schema.oceanproteinportal.org/v2/">
         <owl:versionIRI rdf:resource="http://schema.oceanproteinportal.org/v2/opp.owl"/>
+        <rdfs:label>Ocean Protein Portal Ver. 2</rdfs:label>
+        <dcterms:title>Ocean Protein Portal Ver. 2</dcterms:title>
+        <dcterms:issued>04/14/2021</dcterms:issued>
+        <dcterms:modified>04/14/2021</dcterms:modified>
+        <dcterms:creator>Adam Shepherd, WHOI</dcterms:creator>
+        <dcterms:creator>Jaclyn Saunders, WHOI</dcterms:creator>
+        <dcterms:creator>Makoto Saito, WHOI</dcterms:creator>
+        <dcterms:creator>Danie Kinkade, WHOI</dcterms:creator>
+        <dcterms:publisher>Ocean Protein Portal</dcterms:publisher>
+        <dcterms:license>Creative Commons Zero 1.0 Universal</dcterms:license>
+        <dcterms:license>https://spdx.org/licenses/CC0-1.0</dcterms:license>
+        <dcterms:description>An application ontology for operating the Ocean Protein Portal.</dcterms:description>
+        <rdfs:seeAlso>https://proteinportal.whoi.edu/</rdfs:seeAlso>
     </owl:Ontology>
 
 

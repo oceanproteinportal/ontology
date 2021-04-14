@@ -1,5 +1,18 @@
 <http://schema.oceanproteinportal.org/v2/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
 <http://schema.oceanproteinportal.org/v2/> <http://www.w3.org/2002/07/owl#versionIRI> <http://schema.oceanproteinportal.org/v2/opp.owl> .
+<http://schema.oceanproteinportal.org/v2/> <http://purl.org/dc/terms/creator> "Adam Shepherd, WHOI" .
+<http://schema.oceanproteinportal.org/v2/> <http://purl.org/dc/terms/creator> "Danie Kinkade, WHOI" .
+<http://schema.oceanproteinportal.org/v2/> <http://purl.org/dc/terms/creator> "Jaclyn Saunders, WHOI" .
+<http://schema.oceanproteinportal.org/v2/> <http://purl.org/dc/terms/creator> "Makoto Saito, WHOI" .
+<http://schema.oceanproteinportal.org/v2/> <http://purl.org/dc/terms/description> "An application ontology for operating the Ocean Protein Portal." .
+<http://schema.oceanproteinportal.org/v2/> <http://purl.org/dc/terms/issued> "04/14/2021" .
+<http://schema.oceanproteinportal.org/v2/> <http://purl.org/dc/terms/license> "Creative Commons Zero 1.0 Universal" .
+<http://schema.oceanproteinportal.org/v2/> <http://purl.org/dc/terms/license> "https://spdx.org/licenses/CC0-1.0" .
+<http://schema.oceanproteinportal.org/v2/> <http://purl.org/dc/terms/modified> "04/14/2021" .
+<http://schema.oceanproteinportal.org/v2/> <http://purl.org/dc/terms/publisher> "Ocean Protein Portal" .
+<http://schema.oceanproteinportal.org/v2/> <http://purl.org/dc/terms/title> "Ocean Protein Portal Ver. 2" .
+<http://schema.oceanproteinportal.org/v2/> <http://www.w3.org/2000/01/rdf-schema#label> "Ocean Protein Portal Ver. 2" .
+<http://schema.oceanproteinportal.org/v2/> <http://www.w3.org/2000/01/rdf-schema#seeAlso> "https://proteinportal.whoi.edu/" .
 # 
 # 
 # #################################################################
@@ -8,6 +21,27 @@
 # #
 # #################################################################
 # 
+# 
+# http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/issued
+<http://purl.org/dc/terms/issued> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/modified
+<http://purl.org/dc/terms/modified> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/publisher
+<http://purl.org/dc/terms/publisher> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
 # http://schema.oceanproteinportal.org/v2/conceptualModel
 <http://schema.oceanproteinportal.org/v2/conceptualModel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .

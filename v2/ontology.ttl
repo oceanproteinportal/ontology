@@ -7,11 +7,52 @@
 @base <http://schema.oceanproteinportal.org/v2/> .
 
 <http://schema.oceanproteinportal.org/v2/> rdf:type owl:Ontology ;
-                                            owl:versionIRI :opp.owl .
+                                            owl:versionIRI :opp.owl ;
+                                            <http://purl.org/dc/terms/creator> "Adam Shepherd, WHOI" ,
+                                                                               "Danie Kinkade, WHOI" ,
+                                                                               "Jaclyn Saunders, WHOI" ,
+                                                                               "Makoto Saito, WHOI" ;
+                                            <http://purl.org/dc/terms/description> "An application ontology for operating the Ocean Protein Portal." ;
+                                            <http://purl.org/dc/terms/issued> "04/14/2021" ;
+                                            <http://purl.org/dc/terms/license> "Creative Commons Zero 1.0 Universal" ,
+                                                                               "https://spdx.org/licenses/CC0-1.0" ;
+                                            <http://purl.org/dc/terms/modified> "04/14/2021" ;
+                                            <http://purl.org/dc/terms/publisher> "Ocean Protein Portal" ;
+                                            <http://purl.org/dc/terms/title> "Ocean Protein Portal Ver. 2" ;
+                                            rdfs:label "Ocean Protein Portal Ver. 2" ;
+                                            rdfs:seeAlso "https://proteinportal.whoi.edu/" .
 
 #################################################################
 #    Annotation properties
 #################################################################
+
+###  http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/issued
+<http://purl.org/dc/terms/issued> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/modified
+<http://purl.org/dc/terms/modified> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/publisher
+<http://purl.org/dc/terms/publisher> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> rdf:type owl:AnnotationProperty .
+
 
 ###  http://schema.oceanproteinportal.org/v2/conceptualModel
 :conceptualModel rdf:type owl:AnnotationProperty ;

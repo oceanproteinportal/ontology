@@ -7,9 +7,23 @@
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:terms="http://purl.org/dc/terms/"
      xmlns:schema="http://schema.org/">
     <owl:Ontology rdf:about="http://schema.oceanproteinportal.org/v2/">
         <owl:versionIRI rdf:resource="http://schema.oceanproteinportal.org/v2/opp.owl"/>
+        <terms:creator>Adam Shepherd, WHOI</terms:creator>
+        <terms:creator>Danie Kinkade, WHOI</terms:creator>
+        <terms:creator>Jaclyn Saunders, WHOI</terms:creator>
+        <terms:creator>Makoto Saito, WHOI</terms:creator>
+        <terms:description>An application ontology for operating the Ocean Protein Portal.</terms:description>
+        <terms:issued>04/14/2021</terms:issued>
+        <terms:license>Creative Commons Zero 1.0 Universal</terms:license>
+        <terms:license>https://spdx.org/licenses/CC0-1.0</terms:license>
+        <terms:modified>04/14/2021</terms:modified>
+        <terms:publisher>Ocean Protein Portal</terms:publisher>
+        <terms:title>Ocean Protein Portal Ver. 2</terms:title>
+        <rdfs:label>Ocean Protein Portal Ver. 2</rdfs:label>
+        <rdfs:seeAlso>https://proteinportal.whoi.edu/</rdfs:seeAlso>
     </owl:Ontology>
     
 
@@ -23,6 +37,55 @@
      -->
 
 
+    
+
+
+    <!-- http://purl.org/dc/terms/creator -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/description -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/issued -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/issued"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/license -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/modified -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/modified"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/publisher -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/publisher"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
     
 
 

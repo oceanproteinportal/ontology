@@ -643,8 +643,64 @@
     "@id" : "http://schema.oceanproteinportal.org/v2/performedAtOrganization"
   } ]
 }, {
+  "@id" : "http://purl.org/dc/terms/creator",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/description",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/issued",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/license",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/modified",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/publisher",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/title",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
   "@id" : "http://schema.oceanproteinportal.org/v2/",
   "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
+  "http://purl.org/dc/terms/creator" : [ {
+    "@value" : "Adam Shepherd, WHOI"
+  }, {
+    "@value" : "Danie Kinkade, WHOI"
+  }, {
+    "@value" : "Jaclyn Saunders, WHOI"
+  }, {
+    "@value" : "Makoto Saito, WHOI"
+  } ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@value" : "An application ontology for operating the Ocean Protein Portal."
+  } ],
+  "http://purl.org/dc/terms/issued" : [ {
+    "@value" : "04/14/2021"
+  } ],
+  "http://purl.org/dc/terms/license" : [ {
+    "@value" : "Creative Commons Zero 1.0 Universal"
+  }, {
+    "@value" : "https://spdx.org/licenses/CC0-1.0"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "04/14/2021"
+  } ],
+  "http://purl.org/dc/terms/publisher" : [ {
+    "@value" : "Ocean Protein Portal"
+  } ],
+  "http://purl.org/dc/terms/title" : [ {
+    "@value" : "Ocean Protein Portal Ver. 2"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Ocean Protein Portal Ver. 2"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#seeAlso" : [ {
+    "@value" : "https://proteinportal.whoi.edu/"
+  } ],
   "http://www.w3.org/2002/07/owl#versionIRI" : [ {
     "@id" : "http://schema.oceanproteinportal.org/v2/opp.owl"
   } ]

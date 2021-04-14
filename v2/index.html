@@ -6,7 +6,7 @@
 
 
 <!-- SCHEMA.ORG METADATA -->
-<script type="application/ld+json">{"@context":"http://schema.org","@type":"TechArticle","url":"http://schema.oceanproteinportal.org/v2/","image":"http://vowl.visualdataweb.org/webvowl/#iri=http://schema.oceanproteinportal.org/v2/","name":"Ocean Protein Portal Ver. 2", "headline":"Document describing the ontology http://schema.oceanproteinportal.org/v2/", "datePublished":"Tue Apr 13 19:40:55 EDT 2021", "license":"https://spdx.org/licenses/CC0-1.0", "author":[{"@type":"Person","name":"Adam Shepherd","url":"https://orcid.org/0000-0003-4486-9448"},{"@type":"Person","name":"Jaclyn Saunders","url":"https://orcid.org/0000-0003-1023-6239"},{"@type":"Person","name":"Makoto Saito","url":"https://orcid.org/0000-0002-1667-9287"},{"@type":"Person","name":"Danie Kinkade","url":"https://orcid.org/0000-0002-1134-7347"}]}</script>
+<script type="application/ld+json">{"@context":"http://schema.org","@type":"TechArticle","url":"http://schema.oceanproteinportal.org/v2/","image":"http://vowl.visualdataweb.org/webvowl/#iri=http://schema.oceanproteinportal.org/v2/","name":"Ocean Protein Portal Ver. 2", "headline":"Document describing the ontology http://schema.oceanproteinportal.org/v2/", "datePublished":"04/14/2021", "license":"https://spdx.org/licenses/CC0-1.0", "author":[{"@type":"Person","name":"Adam Shepherd","url":"https://orcid.org/0000-0003-4486-9448"},{"@type":"Person","name":"Jaclyn Saunders","url":"https://orcid.org/0000-0003-1023-6239"},{"@type":"Person","name":"Makoto Saito","url":"https://orcid.org/0000-0002-1667-9287"},{"@type":"Person","name":"Danie Kinkade","url":"https://orcid.org/0000-0002-1134-7347"}]}</script>
 
 <script src="resources/jquery.js"></script>
 <script src="resources/marked.min.js"></script>
@@ -54,6 +54,7 @@ function loadTOC(){
   <div id="github-fork"><a href="https://github.com/oceanproteinportal/ontology"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png"></a></div>
   <h1>Ocean Protein Portal Ver. 2</h1>
 
+<h2>Release  04/14/2021</h2>
 
 
 <dl>
@@ -81,7 +82,6 @@ function loadTOC(){
 <div class="status">
 <div>
 <span>Ontology Specification Draft</span>
-
 </div>
 </div>     <div id="abstract"><h2>Abstract</h2><span class="markdown">
 This is a place holder text for the abstract. The abstract should contain a couple of sentences summarizing the ontology and its purpose.</span>
@@ -115,7 +115,6 @@ This is a place holder text for the abstract. The abstract should contain a coup
   </ul>
 </div>
 <div id="namespacedeclarations">
-
 <h3 id="ns" class="list">Namespace declarations</h3>
 <div id="ns" align="center">
 <table>
@@ -125,15 +124,16 @@ This is a place holder text for the abstract. The abstract should contain a coup
 <tr><td><b>schema</b></td><td>&lt;http://schema.org&gt;</td></tr>
 <tr><td><b>registry</b></td><td>&lt;https://registry.identifiers.org/registry&gt;</td></tr>
 <tr><td><b>owl</b></td><td>&lt;http://www.w3.org/2002/07/owl&gt;</td></tr>
-<tr><td><b>rdf</b></td><td>&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns&gt;</td></tr>
-<tr><td><b>systems</b></td><td>&lt;http://www.w3.org/ns/ssn/systems&gt;</td></tr>
 <tr><td><b>xsd</b></td><td>&lt;http://www.w3.org/2001/XMLSchema&gt;</td></tr>
 <tr><td><b>rdfs</b></td><td>&lt;http://www.w3.org/2000/01/rdf-schema&gt;</td></tr>
+<tr><td><b>ssn</b></td><td>&lt;http://www.w3.org/ns/ssn&gt;</td></tr>
+<tr><td><b>rdf</b></td><td>&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns&gt;</td></tr>
+<tr><td><b>systems</b></td><td>&lt;http://www.w3.org/ns/ssn/systems&gt;</td></tr>
+<tr><td><b>terms</b></td><td>&lt;http://purl.org/dc/terms&gt;</td></tr>
 <tr><td><b>obo</b></td><td>&lt;http://purl.obolibrary.org/obo&gt;</td></tr>
 <tr><td><b>entity</b></td><td>&lt;http://www.wikidata.org/entity&gt;</td></tr>
 <tr><td><b>default namespace</b></td><td>&lt;http://schema.oceanproteinportal.org/v2&gt;</td></tr>
 <tr><td><b>sosa</b></td><td>&lt;http://www.w3.org/ns/sosa&gt;</td></tr>
-<tr><td><b>ssn</b></td><td>&lt;http://www.w3.org/ns/ssn&gt;</td></tr>
 </tbody>
 </table>
 </div>
@@ -759,8 +759,18 @@ This ontology has the following classes and properties.</span>
          title="http://schema.oceanproteinportal.org/v2/conceptualModel">conceptualModel</a>
    </li>
    <li>
+      <a href="#http://purl.org/dc/terms/creator" title="http://purl.org/dc/terms/creator">
+         <span>creator</span>
+      </a>
+   </li>
+   <li>
       <a href="#describedinConceptualModelOf"
          title="http://schema.oceanproteinportal.org/v2/describedinConceptualModelOf">describedinConceptualModelOf</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/description" title="http://purl.org/dc/terms/description">
+         <span>description</span>
+      </a>
    </li>
    <li>
       <a href="#frictionlessDataProfile"
@@ -769,6 +779,21 @@ This ontology has the following classes and properties.</span>
    <li>
       <a href="#frictionlessDataValueType"
          title="http://schema.oceanproteinportal.org/v2/frictionlessDataValueType">frictionlessDataValueType</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/issued" title="http://purl.org/dc/terms/issued">
+         <span>issued</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/license" title="http://purl.org/dc/terms/license">
+         <span>license</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/modified" title="http://purl.org/dc/terms/modified">
+         <span>modified</span>
+      </a>
    </li>
    <li>
       <a href="#parameterValueConstraints"
@@ -783,8 +808,18 @@ This ontology has the following classes and properties.</span>
          title="http://schema.oceanproteinportal.org/v2/parameterValueMissingValues">parameterValueMissingValues</a>
    </li>
    <li>
+      <a href="#http://purl.org/dc/terms/publisher" title="http://purl.org/dc/terms/publisher">
+         <span>publisher</span>
+      </a>
+   </li>
+   <li>
       <a href="#http://www.w3.org/2002/07/owl#sameAs" title="http://www.w3.org/2002/07/owl#sameAs">
          <span>same as</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/title" title="http://purl.org/dc/terms/title">
+         <span>title</span>
       </a>
    </li>
 </ul><h4>Named Individuals</h4><ul class="hlist">
@@ -6666,8 +6701,18 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
             title="http://schema.oceanproteinportal.org/v2/conceptualModel">conceptualModel</a>
       </li>
       <li>
+         <a href="#http://purl.org/dc/terms/creator" title="http://purl.org/dc/terms/creator">
+            <span>creator</span>
+         </a>
+      </li>
+      <li>
          <a href="#describedinConceptualModelOf"
             title="http://schema.oceanproteinportal.org/v2/describedinConceptualModelOf">describedinConceptualModelOf</a>
+      </li>
+      <li>
+         <a href="#http://purl.org/dc/terms/description" title="http://purl.org/dc/terms/description">
+            <span>description</span>
+         </a>
       </li>
       <li>
          <a href="#frictionlessDataProfile"
@@ -6676,6 +6721,21 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
       <li>
          <a href="#frictionlessDataValueType"
             title="http://schema.oceanproteinportal.org/v2/frictionlessDataValueType">frictionlessDataValueType</a>
+      </li>
+      <li>
+         <a href="#http://purl.org/dc/terms/issued" title="http://purl.org/dc/terms/issued">
+            <span>issued</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://purl.org/dc/terms/license" title="http://purl.org/dc/terms/license">
+            <span>license</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://purl.org/dc/terms/modified" title="http://purl.org/dc/terms/modified">
+            <span>modified</span>
+         </a>
       </li>
       <li>
          <a href="#parameterValueConstraints"
@@ -6690,8 +6750,18 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
             title="http://schema.oceanproteinportal.org/v2/parameterValueMissingValues">parameterValueMissingValues</a>
       </li>
       <li>
+         <a href="#http://purl.org/dc/terms/publisher" title="http://purl.org/dc/terms/publisher">
+            <span>publisher</span>
+         </a>
+      </li>
+      <li>
          <a href="#http://www.w3.org/2002/07/owl#sameAs" title="http://www.w3.org/2002/07/owl#sameAs">
             <span>same as</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://purl.org/dc/terms/title" title="http://purl.org/dc/terms/title">
+            <span>title</span>
          </a>
       </li>
    </ul>
@@ -6719,6 +6789,14 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
          </dl>
       </div>
    </div>
+   <div class="entity" id="http://purl.org/dc/terms/creator">
+      <h3>creator<sup class="type-ap" title="annotation property">ap</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/dc/terms/creator</p>
+   </div>
    <div class="entity" id="describedinConceptualModelOf">
       <h3>describedinConceptualModelOf<sup class="type-ap" title="annotation property">ap</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a>
@@ -6743,6 +6821,14 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
             </dd>
          </dl>
       </div>
+   </div>
+   <div class="entity" id="http://purl.org/dc/terms/description">
+      <h3>description<sup class="type-ap" title="annotation property">ap</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/dc/terms/description</p>
    </div>
    <div class="entity" id="frictionlessDataProfile">
       <h3>frictionlessDataProfile<sup class="type-ap" title="annotation property">ap</sup>
@@ -6793,6 +6879,30 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
          </dl>
       </div>
    </div>
+   <div class="entity" id="http://purl.org/dc/terms/issued">
+      <h3>issued<sup class="type-ap" title="annotation property">ap</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/dc/terms/issued</p>
+   </div>
+   <div class="entity" id="http://purl.org/dc/terms/license">
+      <h3>license<sup class="type-ap" title="annotation property">ap</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/dc/terms/license</p>
+   </div>
+   <div class="entity" id="http://purl.org/dc/terms/modified">
+      <h3>modified<sup class="type-ap" title="annotation property">ap</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/dc/terms/modified</p>
+   </div>
    <div class="entity" id="parameterValueConstraints">
       <h3>parameterValueConstraints<sup class="type-ap" title="annotation property">ap</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a>
@@ -6842,6 +6952,14 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
          </dl>
       </div>
    </div>
+   <div class="entity" id="http://purl.org/dc/terms/publisher">
+      <h3>publisher<sup class="type-ap" title="annotation property">ap</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/dc/terms/publisher</p>
+   </div>
    <div class="entity" id="http://www.w3.org/2002/07/owl#sameAs">
       <h3>same as<sup class="type-ap" title="annotation property">ap</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a>
@@ -6849,6 +6967,14 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
       </h3>
       <p>
          <strong>IRI:</strong> http://www.w3.org/2002/07/owl#sameAs</p>
+   </div>
+   <div class="entity" id="http://purl.org/dc/terms/title">
+      <h3>title<sup class="type-ap" title="annotation property">ap</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/dc/terms/title</p>
    </div>
 </div><div id="namedindividuals">
    <h3 id="namedindividuals" class="list">Named Individuals</h3>
@@ -12610,7 +12736,6 @@ Add your references here. It is recommended to have them as a list.</span>
  <div id="conceptual-model-agentrole"><h3>Agent Role <span class="backlink"> back to <a href="#toc">ToC</a></span></h3><img src="https://lucid.app/publicSegments/view/0df85414-42b6-4601-9293-956c39559249/image.png"></div>
 </div>
 <div id="acknowledgements">
-
 <h2 id="ack" class="list">Acknowledgements <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
 <p>
 The authors would like to thank <a href="http://www.essepuntato.it/">Silvio Peroni</a> for developing <a href="http://www.essepuntato.it/lode">LODE</a>, a Live OWL Documentation Environment, which is used for representing the Cross Referencing Section of this document and <a href="https://w3id.org/people/dgarijo">Daniel Garijo</a> for developing <a href="https://github.com/dgarijo/Widoco">Widoco</a>, the program used to create the template used in this documentation.</p>
