@@ -21,4 +21,4 @@ https://lucid.app/lucidchart/invitations/accept/4b8cb8d5-4beb-458f-acef-8b63de0f
   a. rename the `index-en.html` to `index.html`
   b. insert all sections from `/_sections`
 
-2. Copy from /widoco/doc to /v2: `cp -R widoco/doc/* v2/.`
+2. Sync from /widoco/doc to /v2: `rsync -av widoco/doc/ v2`
