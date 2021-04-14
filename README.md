@@ -21,4 +21,6 @@ https://lucid.app/lucidchart/invitations/accept/4b8cb8d5-4beb-458f-acef-8b63de0f
   a. rename the `index-en.html` to `index.html`
   b. insert all sections from `/_sections`
 
-2. Sync from /widoco/doc to /v2: `rsync -av widoco/doc/ v2`
+2. Fix the WebVOWL author order
+  a. edit widoco/doc/webvowl/data/ontology.json with `_sections/webvowl`
+3. Sync from /widoco/doc to /v2: `rsync -av widoco/doc/ v2`
