@@ -22,8 +22,9 @@
         <terms:modified>04/14/2021</terms:modified>
         <terms:publisher>Ocean Protein Portal</terms:publisher>
         <terms:title>Ocean Protein Portal Ver. 2</terms:title>
-        <rdfs:label>Ocean Protein Portal Ver. 2</rdfs:label>
+        <rdfs:label xml:lang="en-us">Ocean Protein Portal Ver. 2</rdfs:label>
         <rdfs:seeAlso>https://proteinportal.whoi.edu/</rdfs:seeAlso>
+        <owl:versionInfo>2</owl:versionInfo>
     </owl:Ontology>
     
 

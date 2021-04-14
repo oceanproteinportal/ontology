@@ -696,6 +696,7 @@
     "@value" : "Ocean Protein Portal Ver. 2"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en-us",
     "@value" : "Ocean Protein Portal Ver. 2"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#seeAlso" : [ {
@@ -703,6 +704,9 @@
   } ],
   "http://www.w3.org/2002/07/owl#versionIRI" : [ {
     "@id" : "http://schema.oceanproteinportal.org/v2/opp.owl"
+  } ],
+  "http://www.w3.org/2002/07/owl#versionInfo" : [ {
+    "@value" : "2"
   } ]
 }, {
   "@id" : "http://schema.oceanproteinportal.org/v2/Agent",

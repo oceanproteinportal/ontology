@@ -17,8 +17,9 @@
      xmlns:dcterms="http://purl.org/dc/terms/"
      xmlns:ssn-system="http://www.w3.org/ns/ssn/systems/">
     <owl:Ontology rdf:about="http://schema.oceanproteinportal.org/v2/">
+        <owl:versionInfo>2</owl:versionInfo>
         <owl:versionIRI rdf:resource="http://schema.oceanproteinportal.org/v2/opp.owl"/>
-        <rdfs:label>Ocean Protein Portal Ver. 2</rdfs:label>
+        <rdfs:label xml:lang="en-us">Ocean Protein Portal Ver. 2</rdfs:label>
         <dcterms:title>Ocean Protein Portal Ver. 2</dcterms:title>
         <dcterms:issued>04/14/2021</dcterms:issued>
         <dcterms:modified>04/14/2021</dcterms:modified>

@@ -19,8 +19,9 @@
                                             <http://purl.org/dc/terms/modified> "04/14/2021" ;
                                             <http://purl.org/dc/terms/publisher> "Ocean Protein Portal" ;
                                             <http://purl.org/dc/terms/title> "Ocean Protein Portal Ver. 2" ;
-                                            rdfs:label "Ocean Protein Portal Ver. 2" ;
-                                            rdfs:seeAlso "https://proteinportal.whoi.edu/" .
+                                            rdfs:label "Ocean Protein Portal Ver. 2"@en-us ;
+                                            rdfs:seeAlso "https://proteinportal.whoi.edu/" ;
+                                            owl:versionInfo "2" .
 
 #################################################################
 #    Annotation properties

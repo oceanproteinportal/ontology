@@ -11,8 +11,9 @@
 <http://schema.oceanproteinportal.org/v2/> <http://purl.org/dc/terms/modified> "04/14/2021" .
 <http://schema.oceanproteinportal.org/v2/> <http://purl.org/dc/terms/publisher> "Ocean Protein Portal" .
 <http://schema.oceanproteinportal.org/v2/> <http://purl.org/dc/terms/title> "Ocean Protein Portal Ver. 2" .
-<http://schema.oceanproteinportal.org/v2/> <http://www.w3.org/2000/01/rdf-schema#label> "Ocean Protein Portal Ver. 2" .
+<http://schema.oceanproteinportal.org/v2/> <http://www.w3.org/2000/01/rdf-schema#label> "Ocean Protein Portal Ver. 2"@en-us .
 <http://schema.oceanproteinportal.org/v2/> <http://www.w3.org/2000/01/rdf-schema#seeAlso> "https://proteinportal.whoi.edu/" .
+<http://schema.oceanproteinportal.org/v2/> <http://www.w3.org/2002/07/owl#versionInfo> "2" .
 # 
 # 
 # #################################################################
