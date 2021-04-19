@@ -18,7 +18,7 @@ https://lucid.app/lucidchart/invitations/accept/4b8cb8d5-4beb-458f-acef-8b63de0f
 `widoco -ontFile v2/opp.owl -outFolder ./widoco -confFile widoco.cfg -htaccess -webVowl -includeAnnotationProperties -uniteSections`
 
 1. Edit the widoco/doc/index-en.html
-  a. rename the `index-en.html` to `index.html`
+  a. Rename index-en.html: `mv widoco/doc/index-en.html widoco/doc/index.html && rm `
   b. insert all sections from `/_sections`
 
 2. Fix the WebVOWL author order

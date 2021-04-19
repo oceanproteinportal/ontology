@@ -126,6 +126,14 @@ owl:sameAs rdf:type owl:AnnotationProperty .
                  rdfs:label "aboutIdentifier" .
 
 
+###  http://schema.oceanproteinportal.org/v2/aggregatesDataFrom
+:aggregatesDataFrom rdf:type owl:ObjectProperty ;
+                    rdfs:domain :OPPDataset ;
+                    rdfs:range :DataResource ;
+                    rdfs:comment "This Dataset is comprised of the following other DataResources." ;
+                    rdfs:label "aggregatesDataFrom" .
+
+
 ###  http://schema.oceanproteinportal.org/v2/annotatesIdentifier
 :annotatesIdentifier rdf:type owl:ObjectProperty ;
                      owl:inverseOf :identifierMetadata ;
@@ -139,7 +147,7 @@ owl:sameAs rdf:type owl:AnnotationProperty .
 :conformsToProfile rdf:type owl:ObjectProperty ;
                    rdfs:domain [ rdf:type owl:Class ;
                                  owl:unionOf ( :DataResource
-                                               <http://schema.org/Dataset>
+                                               :OPPDataset
                                              )
                                ] ;
                    rdfs:range :DatasetProfile ;
@@ -187,6 +195,15 @@ owl:sameAs rdf:type owl:AnnotationProperty .
                            rdfs:range :AminoAcidIdentification ;
                            rdfs:comment "The  identification that describes this amino acid" ;
                            rdfs:label "describedByIdentification" .
+
+
+###  http://schema.oceanproteinportal.org/v2/describedByMetadataResource
+:describedByMetadataResource rdf:type owl:ObjectProperty ;
+                             owl:inverseOf :serializesMetadataFor ;
+                             rdfs:domain :OPPDataset ;
+                             rdfs:range :MetadataResource ;
+                             rdfs:comment "The MetadataResource that describes this OPPDataset" ;
+                             rdfs:label "describedByMetadataResource" .
 
 
 ###  http://schema.oceanproteinportal.org/v2/describesAminoAcid
@@ -468,7 +485,7 @@ owl:sameAs rdf:type owl:AnnotationProperty .
 :requiresOneParameterFromSet rdf:type owl:ObjectProperty ;
                              rdfs:domain :DatasetProfile ;
                              rdfs:range :DataResourceParameterSet ;
-                             rdfs:comment "The DatasetProfile requires that at least one of the DataParameters described by this set of DataResourceParameters is required in the schema:Dataset that conforms to the DatasetProfile." ;
+                             rdfs:comment "The DatasetProfile requires that at least one of the DataParameters described by this set of DataResourceParameters is required in the OPPDataset that conforms to the DatasetProfile." ;
                              rdfs:label "requiresOneParameterFromSet" .
 
 
@@ -528,9 +545,17 @@ owl:sameAs rdf:type owl:AnnotationProperty .
                                rdfs:label "selectedProteinIdentification" .
 
 
+###  http://schema.oceanproteinportal.org/v2/serializesMetadataFor
+:serializesMetadataFor rdf:type owl:ObjectProperty ;
+                       rdfs:domain :MetadataResource ;
+                       rdfs:range :OPPDataset ;
+                       rdfs:comment "The Dataset for which this MetadataResource contains a metadata description of." ;
+                       rdfs:label "serializesMetadataFor" .
+
+
 ###  http://schema.oceanproteinportal.org/v2/storesResultsForSample
 :storesResultsForSample rdf:type owl:ObjectProperty ;
-                        rdfs:domain <http://schema.org/Dataset> ;
+                        rdfs:domain :OPPDataset ;
                         rdfs:range <http://www.w3.org/ns/sosa/Sample> ;
                         rdfs:comment "A sample for which this Dataset stores observations results for." ;
                         rdfs:label "storesResultsForSample" .
@@ -841,9 +866,9 @@ Example: \"nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1
 ###  http://schema.oceanproteinportal.org/v2/shortName
 :shortName rdf:type owl:DatatypeProperty ;
            rdfs:subPropertyOf <http://schema.org/alternateName> ;
-           rdfs:domain <http://schema.org/Dataset> ;
+           rdfs:domain :OPPDataset ;
            rdfs:range xsd:token ;
-           rdfs:comment "The name or label used in the OPP user interface to identify a schema:Dataset. This is used for readability." ;
+           rdfs:comment "The name or label used in the OPP user interface to identify a OPPDataset. This is used for readability." ;
            rdfs:label "shortName" .
 
 
@@ -1163,7 +1188,7 @@ Example: \"nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1
                                                      ) ;
                                   rdf:type owl:Class
                                 ] ;
-                :describedinConceptualModelOf <http://schema.org/Dataset> ;
+                :describedinConceptualModelOf :OPPDataset ;
                 rdfs:comment "A DatasetProfile defines the type of observations to be expected." ;
                 rdfs:label "DatasetProfile" .
 
@@ -1206,6 +1231,14 @@ Example: \"nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1
             :describedinConceptualModelOf <http://www.w3.org/ns/sosa/Sample> ;
             rdfs:comment "The filter size in micons of the sampler." ;
             rdfs:label "FilterSize" .
+
+
+###  http://schema.oceanproteinportal.org/v2/FrictionlessDataPackage
+:FrictionlessDataPackage rdf:type owl:Class ;
+                         rdfs:subClassOf :MetadataResource ;
+                         rdfs:comment "A JSON file conforming to the Frictionlessdata specification for describing data resources. This file is typically named 'datapackage.json'." ;
+                         rdfs:label "FrictionlessDataPackage" ;
+                         rdfs:seeAlso "https://specs.frictionlessdata.io" .
 
 
 ###  http://schema.oceanproteinportal.org/v2/IdentificationScore
@@ -1331,6 +1364,13 @@ Example: \"nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1
              rdfs:label "KeggPathway" .
 
 
+###  http://schema.oceanproteinportal.org/v2/MetadataResource
+:MetadataResource rdf:type owl:Class ;
+                  rdfs:subClassOf <http://schema.org/DigitalDocument> ;
+                  rdfs:comment "A  file or other type of data resource that contains the metadata describing a OPPDataset" ;
+                  rdfs:label "MetadataResource" .
+
+
 ###  http://schema.oceanproteinportal.org/v2/NCBITaxonIdentifier
 :NCBITaxonIdentifier rdf:type owl:Class ;
                      rdfs:subClassOf :ProteinIdentifier ,
@@ -1350,6 +1390,42 @@ Example: \"nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1
                                  owl:someValuesFrom :NCBITaxonIdentifier
                                ] ;
                rdfs:label "NCBITaxonName" .
+
+
+###  http://schema.oceanproteinportal.org/v2/OPPDataset
+:OPPDataset rdf:type owl:Class ;
+            rdfs:subClassOf <http://schema.org/Dataset> ,
+                            [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                     owl:onProperty :aggregatesDataFrom ;
+                                                     owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                     owl:onClass :DataResource
+                                                   ]
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty :conformsToProfile ;
+                                                     owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                     owl:onClass :DatasetProfile
+                                                   ]
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty :describedByMetadataResource ;
+                                                     owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                     owl:onClass :FrictionlessDataPackage
+                                                   ]
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty :definesIdentifierScheme ;
+                                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                     owl:onClass :DatasetIdentifierScheme
+                                                   ]
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty :shortName ;
+                                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                     owl:onDataRange xsd:token
+                                                   ]
+                                                 ) ;
+                              rdf:type owl:Class
+                            ] ;
+            :conceptualModel "https://lucid.app/publicSegments/view/fafb6c1f-d32c-414f-abe7-650151c2718c/image.png"^^xsd:anyURI ;
+            rdfs:comment "A dataset suitable for the Ocean Protein Portal" ;
+            rdfs:label "OPPDataset" .
 
 
 ###  http://schema.oceanproteinportal.org/v2/OPPGeneratedSampleIdentifier
@@ -1604,8 +1680,12 @@ Note since the order of the pathways (or KeggPathway Index isn't provided we don
 
 ###  http://schema.org/Dataset
 <http://schema.org/Dataset> rdf:type owl:Class ;
-                            rdfs:subClassOf <http://schema.org/CreativeWork> ;
-                            :conceptualModel "https://lucid.app/publicSegments/view/fafb6c1f-d32c-414f-abe7-650151c2718c/image.png"^^xsd:anyURI .
+                            rdfs:subClassOf <http://schema.org/CreativeWork> .
+
+
+###  http://schema.org/DigitalDocument
+<http://schema.org/DigitalDocument> rdf:type owl:Class ;
+                                    rdfs:subClassOf <http://schema.org/CreativeWork> .
 
 
 ###  http://schema.org/Intangible
@@ -1627,7 +1707,7 @@ Note since the order of the pathways (or KeggPathway Index isn't provided we don
 <http://schema.org/PropertyValue> rdf:type owl:Class ;
                                   :describedinConceptualModelOf :AminoAcidIdentification ,
                                                                 :Identifier ,
-                                                                <http://schema.org/Dataset> ,
+                                                                :OPPDataset ,
                                                                 <http://www.w3.org/ns/sosa/Sample> .
 
 
@@ -1659,7 +1739,7 @@ Note since the order of the pathways (or KeggPathway Index isn't provided we don
 <http://www.w3.org/ns/ssn/Property> rdf:type owl:Class ;
                                     :describedinConceptualModelOf :AminoAcidIdentification ,
                                                                   :Identifier ,
-                                                                  <http://schema.org/Dataset> ,
+                                                                  :OPPDataset ,
                                                                   <http://www.w3.org/ns/sosa/Sample> .
 
 

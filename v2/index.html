@@ -115,6 +115,7 @@ This is a place holder text for the abstract. The abstract should contain a coup
   </ul>
 </div>
 <div id="namespacedeclarations">
+
 <h3 id="ns" class="list">Namespace declarations</h3>
 <div id="ns" align="center">
 <table>
@@ -224,6 +225,11 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
+      <a href="#http://schema.org/DigitalDocument" title="http://schema.org/DigitalDocument">
+         <span>digital document</span>
+      </a>
+   </li>
+   <li>
       <a href="#EnzymeCommissionIdentifier"
          title="http://schema.oceanproteinportal.org/v2/EnzymeCommissionIdentifier">EnzymeCommissionIdentifier</a>
    </li>
@@ -239,6 +245,10 @@ This ontology has the following classes and properties.</span>
    <li>
       <a href="#FilterSize"
          title="http://schema.oceanproteinportal.org/v2/FilterSize">FilterSize</a>
+   </li>
+   <li>
+      <a href="#FrictionlessDataPackage"
+         title="http://schema.oceanproteinportal.org/v2/FrictionlessDataPackage">FrictionlessDataPackage</a>
    </li>
    <li>
       <a href="#IdentificationScore"
@@ -277,12 +287,20 @@ This ontology has the following classes and properties.</span>
          title="http://schema.oceanproteinportal.org/v2/KeggPathway">KeggPathway</a>
    </li>
    <li>
+      <a href="#MetadataResource"
+         title="http://schema.oceanproteinportal.org/v2/MetadataResource">MetadataResource</a>
+   </li>
+   <li>
       <a href="#NCBITaxonIdentifier"
          title="http://schema.oceanproteinportal.org/v2/NCBITaxonIdentifier">NCBITaxonIdentifier</a>
    </li>
    <li>
       <a href="#NCBITaxonName"
          title="http://schema.oceanproteinportal.org/v2/NCBITaxonName">NCBITaxonName</a>
+   </li>
+   <li>
+      <a href="#OPPDataset"
+         title="http://schema.oceanproteinportal.org/v2/OPPDataset">OPPDataset</a>
    </li>
    <li>
       <a href="#OPPGeneratedSampleIdentifier"
@@ -420,6 +438,10 @@ This ontology has the following classes and properties.</span>
          title="http://schema.oceanproteinportal.org/v2/aboutIdentifier">aboutIdentifier</a>
    </li>
    <li>
+      <a href="#aggregatesDataFrom"
+         title="http://schema.oceanproteinportal.org/v2/aggregatesDataFrom">aggregatesDataFrom</a>
+   </li>
+   <li>
       <a href="#annotatesIdentifier"
          title="http://schema.oceanproteinportal.org/v2/annotatesIdentifier">annotatesIdentifier</a>
    </li>
@@ -446,6 +468,10 @@ This ontology has the following classes and properties.</span>
    <li>
       <a href="#describedByIdentification"
          title="http://schema.oceanproteinportal.org/v2/describedByIdentification">describedByIdentification</a>
+   </li>
+   <li>
+      <a href="#describedByMetadataResource"
+         title="http://schema.oceanproteinportal.org/v2/describedByMetadataResource">describedByMetadataResource</a>
    </li>
    <li>
       <a href="#describesAminoAcid"
@@ -596,6 +622,10 @@ This ontology has the following classes and properties.</span>
    <li>
       <a href="#selectedProteinIdentification"
          title="http://schema.oceanproteinportal.org/v2/selectedProteinIdentification">selectedProteinIdentification</a>
+   </li>
+   <li>
+      <a href="#serializesMetadataFor"
+         title="http://schema.oceanproteinportal.org/v2/serializesMetadataFor">serializesMetadataFor</a>
    </li>
    <li>
       <a href="#storesResultsForSample"
@@ -1433,6 +1463,11 @@ This section provides details for each class and property defined by Ocean Prote
          </a>
       </li>
       <li>
+         <a href="#http://schema.org/DigitalDocument" title="http://schema.org/DigitalDocument">
+            <span>digital document</span>
+         </a>
+      </li>
+      <li>
          <a href="#EnzymeCommissionIdentifier"
             title="http://schema.oceanproteinportal.org/v2/EnzymeCommissionIdentifier">EnzymeCommissionIdentifier</a>
       </li>
@@ -1448,6 +1483,10 @@ This section provides details for each class and property defined by Ocean Prote
       <li>
          <a href="#FilterSize"
             title="http://schema.oceanproteinportal.org/v2/FilterSize">FilterSize</a>
+      </li>
+      <li>
+         <a href="#FrictionlessDataPackage"
+            title="http://schema.oceanproteinportal.org/v2/FrictionlessDataPackage">FrictionlessDataPackage</a>
       </li>
       <li>
          <a href="#IdentificationScore"
@@ -1486,12 +1525,20 @@ This section provides details for each class and property defined by Ocean Prote
             title="http://schema.oceanproteinportal.org/v2/KeggPathway">KeggPathway</a>
       </li>
       <li>
+         <a href="#MetadataResource"
+            title="http://schema.oceanproteinportal.org/v2/MetadataResource">MetadataResource</a>
+      </li>
+      <li>
          <a href="#NCBITaxonIdentifier"
             title="http://schema.oceanproteinportal.org/v2/NCBITaxonIdentifier">NCBITaxonIdentifier</a>
       </li>
       <li>
          <a href="#NCBITaxonName"
             title="http://schema.oceanproteinportal.org/v2/NCBITaxonName">NCBITaxonName</a>
+      </li>
+      <li>
+         <a href="#OPPDataset"
+            title="http://schema.oceanproteinportal.org/v2/OPPDataset">OPPDataset</a>
       </li>
       <li>
          <a href="#OPPGeneratedSampleIdentifier"
@@ -2099,6 +2146,12 @@ This section provides details for each class and property defined by Ocean Prote
                title="http://schema.oceanproteinportal.org/v2/datasetType">datasetType</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#aggregatesDataFrom"
+               title="http://schema.oceanproteinportal.org/v2/aggregatesDataFrom">aggregatesDataFrom</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
       </dl>
    </div>
    <div class="entity" id="DataResourceParameter">
@@ -2376,15 +2429,9 @@ This section provides details for each class and property defined by Ocean Prote
          <dd>
             <a href="#DataResource"
                title="http://schema.oceanproteinportal.org/v2/DataResource">DataResource</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#OPPDataset"
+               title="http://schema.oceanproteinportal.org/v2/OPPDataset">OPPDataset</a>
             <sup class="type-c" title="class">c</sup>
-         </dd>
-         <dt>is in domain of</dt>
-         <dd>
-            <a href="#shortName"
-               title="http://schema.oceanproteinportal.org/v2/shortName">shortName</a>
-            <sup class="type-dp" title="data property">dp</sup>, <a href="#storesResultsForSample"
-               title="http://schema.oceanproteinportal.org/v2/storesResultsForSample">storesResultsForSample</a>
-            <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
    </div>
@@ -2458,6 +2505,27 @@ This section provides details for each class and property defined by Ocean Prote
          <dt>has sub-classes</dt>
          <dd>
             <a href="#Cruise" title="http://schema.oceanproteinportal.org/v2/Cruise">Cruise</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://schema.org/DigitalDocument">
+      <h3>digital document<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://schema.org/DigitalDocument</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <span class="dotted" title="http://schema.org/CreativeWork">creative work</span>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#MetadataResource"
+               title="http://schema.oceanproteinportal.org/v2/MetadataResource">MetadataResource</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -2564,6 +2632,25 @@ This section provides details for each class and property defined by Ocean Prote
             <a href="#hasFilterSize"
                title="http://schema.oceanproteinportal.org/v2/hasFilterSize">hasFilterSize</a>
             <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="FrictionlessDataPackage">
+      <h3>FrictionlessDataPackage<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://schema.oceanproteinportal.org/v2/FrictionlessDataPackage</p>
+      <div class="comment">
+         <span class="markdown">A JSON file conforming to the Frictionlessdata specification for describing data resources. This file is typically named 'datapackage.json'.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#MetadataResource"
+               title="http://schema.oceanproteinportal.org/v2/MetadataResource">MetadataResource</a>
+            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -2907,6 +2994,42 @@ This section provides details for each class and property defined by Ocean Prote
          </dd>
       </dl>
    </div>
+   <div class="entity" id="MetadataResource">
+      <h3>MetadataResource<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://schema.oceanproteinportal.org/v2/MetadataResource</p>
+      <div class="comment">
+         <span class="markdown">A  file or other type of data resource that contains the metadata describing a OPPDataset</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#http://schema.org/DigitalDocument" title="http://schema.org/DigitalDocument">digital document</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#FrictionlessDataPackage"
+               title="http://schema.oceanproteinportal.org/v2/FrictionlessDataPackage">FrictionlessDataPackage</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#serializesMetadataFor"
+               title="http://schema.oceanproteinportal.org/v2/serializesMetadataFor">serializesMetadataFor</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#describedByMetadataResource"
+               title="http://schema.oceanproteinportal.org/v2/describedByMetadataResource">describedByMetadataResource</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
    <div class="entity" id="NCBITaxonIdentifier">
       <h3>NCBITaxonIdentifier<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
@@ -2950,6 +3073,42 @@ This section provides details for each class and property defined by Ocean Prote
          <dd>
             <a href="#ncbiTaxonName"
                title="http://schema.oceanproteinportal.org/v2/ncbiTaxonName">ncbiTaxonName</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="OPPDataset">
+      <h3>OPPDataset<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://schema.oceanproteinportal.org/v2/OPPDataset</p>
+      <div class="comment">
+         <span class="markdown">A dataset suitable for the Ocean Protein Portal</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#http://schema.org/Dataset" title="http://schema.org/Dataset">dataset</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#aggregatesDataFrom"
+               title="http://schema.oceanproteinportal.org/v2/aggregatesDataFrom">aggregatesDataFrom</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#describedByMetadataResource"
+               title="http://schema.oceanproteinportal.org/v2/describedByMetadataResource">describedByMetadataResource</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#shortName"
+               title="http://schema.oceanproteinportal.org/v2/shortName">shortName</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#storesResultsForSample"
+               title="http://schema.oceanproteinportal.org/v2/storesResultsForSample">storesResultsForSample</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#serializesMetadataFor"
+               title="http://schema.oceanproteinportal.org/v2/serializesMetadataFor">serializesMetadataFor</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
@@ -3790,6 +3949,10 @@ This section provides details for each class and property defined by Ocean Prote
             title="http://schema.oceanproteinportal.org/v2/aboutIdentifier">aboutIdentifier</a>
       </li>
       <li>
+         <a href="#aggregatesDataFrom"
+            title="http://schema.oceanproteinportal.org/v2/aggregatesDataFrom">aggregatesDataFrom</a>
+      </li>
+      <li>
          <a href="#annotatesIdentifier"
             title="http://schema.oceanproteinportal.org/v2/annotatesIdentifier">annotatesIdentifier</a>
       </li>
@@ -3816,6 +3979,10 @@ This section provides details for each class and property defined by Ocean Prote
       <li>
          <a href="#describedByIdentification"
             title="http://schema.oceanproteinportal.org/v2/describedByIdentification">describedByIdentification</a>
+      </li>
+      <li>
+         <a href="#describedByMetadataResource"
+            title="http://schema.oceanproteinportal.org/v2/describedByMetadataResource">describedByMetadataResource</a>
       </li>
       <li>
          <a href="#describesAminoAcid"
@@ -3968,6 +4135,10 @@ This section provides details for each class and property defined by Ocean Prote
             title="http://schema.oceanproteinportal.org/v2/selectedProteinIdentification">selectedProteinIdentification</a>
       </li>
       <li>
+         <a href="#serializesMetadataFor"
+            title="http://schema.oceanproteinportal.org/v2/serializesMetadataFor">serializesMetadataFor</a>
+      </li>
+      <li>
          <a href="#storesResultsForSample"
             title="http://schema.oceanproteinportal.org/v2/storesResultsForSample">storesResultsForSample</a>
       </li>
@@ -4017,6 +4188,33 @@ This section provides details for each class and property defined by Ocean Prote
                <a href="#identifierMetadata"
                   title="http://schema.oceanproteinportal.org/v2/identifierMetadata">identifierMetadata</a>
                <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="aggregatesDataFrom">
+      <h3>aggregatesDataFrom<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://schema.oceanproteinportal.org/v2/aggregatesDataFrom</p>
+      <div class="comment">
+         <span class="markdown">This Dataset is comprised of the following other DataResources.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#OPPDataset"
+                  title="http://schema.oceanproteinportal.org/v2/OPPDataset">OPPDataset</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#DataResource"
+                  title="http://schema.oceanproteinportal.org/v2/DataResource">DataResource</a>
+               <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
       </div>
@@ -4072,7 +4270,8 @@ This section provides details for each class and property defined by Ocean Prote
                   title="http://schema.oceanproteinportal.org/v2/DataResource">DataResource</a>
                <sup class="type-c" title="class">c</sup>
                <span class="logic">or</span>
-               <a href="#http://schema.org/Dataset" title="http://schema.org/Dataset">dataset</a>
+               <a href="#OPPDataset"
+                  title="http://schema.oceanproteinportal.org/v2/OPPDataset">OPPDataset</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -4221,6 +4420,39 @@ This section provides details for each class and property defined by Ocean Prote
             <dd>
                <a href="#describesAminoAcid"
                   title="http://schema.oceanproteinportal.org/v2/describesAminoAcid">describesAminoAcid</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="describedByMetadataResource">
+      <h3>describedByMetadataResource<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://schema.oceanproteinportal.org/v2/describedByMetadataResource</p>
+      <div class="comment">
+         <span class="markdown">The MetadataResource that describes this OPPDataset</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#OPPDataset"
+                  title="http://schema.oceanproteinportal.org/v2/OPPDataset">OPPDataset</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#MetadataResource"
+                  title="http://schema.oceanproteinportal.org/v2/MetadataResource">MetadataResource</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#serializesMetadataFor"
+                  title="http://schema.oceanproteinportal.org/v2/serializesMetadataFor">serializesMetadataFor</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
          </dl>
@@ -5207,7 +5439,7 @@ This section provides details for each class and property defined by Ocean Prote
       <p>
          <strong>IRI:</strong> http://schema.oceanproteinportal.org/v2/requiresOneParameterFromSet</p>
       <div class="comment">
-         <span class="markdown">The DatasetProfile requires that at least one of the DataParameters described by this set of DataResourceParameters is required in the schema:Dataset that conforms to the DatasetProfile.</span>
+         <span class="markdown">The DatasetProfile requires that at least one of the DataParameters described by this set of DataResourceParameters is required in the OPPDataset that conforms to the DatasetProfile.</span>
       </div>
       <div class="description">
          <dl>
@@ -5445,6 +5677,39 @@ This section provides details for each class and property defined by Ocean Prote
          </dl>
       </div>
    </div>
+   <div class="entity" id="serializesMetadataFor">
+      <h3>serializesMetadataFor<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://schema.oceanproteinportal.org/v2/serializesMetadataFor</p>
+      <div class="comment">
+         <span class="markdown">The Dataset for which this MetadataResource contains a metadata description of.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#MetadataResource"
+                  title="http://schema.oceanproteinportal.org/v2/MetadataResource">MetadataResource</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#OPPDataset"
+                  title="http://schema.oceanproteinportal.org/v2/OPPDataset">OPPDataset</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#describedByMetadataResource"
+                  title="http://schema.oceanproteinportal.org/v2/describedByMetadataResource">describedByMetadataResource</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
    <div class="entity" id="storesResultsForSample">
       <h3>storesResultsForSample<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
@@ -5459,7 +5724,8 @@ This section provides details for each class and property defined by Ocean Prote
          <dl>
             <dt>has domain</dt>
             <dd>
-               <a href="#http://schema.org/Dataset" title="http://schema.org/Dataset">dataset</a>
+               <a href="#OPPDataset"
+                  title="http://schema.oceanproteinportal.org/v2/OPPDataset">OPPDataset</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -6518,7 +6784,7 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
       <p>
          <strong>IRI:</strong> http://schema.oceanproteinportal.org/v2/shortName</p>
       <div class="comment">
-         <span class="markdown">The name or label used in the OPP user interface to identify a schema:Dataset. This is used for readability.</span>
+         <span class="markdown">The name or label used in the OPP user interface to identify a OPPDataset. This is used for readability.</span>
       </div>
       <div class="description">
          <dl>
@@ -6529,7 +6795,8 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
             </dd>
             <dt>has domain</dt>
             <dd>
-               <a href="#http://schema.org/Dataset" title="http://schema.org/Dataset">dataset</a>
+               <a href="#OPPDataset"
+                  title="http://schema.oceanproteinportal.org/v2/OPPDataset">OPPDataset</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
