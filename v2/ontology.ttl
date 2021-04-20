@@ -13,10 +13,10 @@
                                                                                "Jaclyn Saunders, WHOI" ,
                                                                                "Makoto Saito, WHOI" ;
                                             <http://purl.org/dc/terms/description> "An application ontology for operating the Ocean Protein Portal." ;
-                                            <http://purl.org/dc/terms/issued> "04/14/2021" ;
+                                            <http://purl.org/dc/terms/issued> "04/20/2021" ;
                                             <http://purl.org/dc/terms/license> "Creative Commons Zero 1.0 Universal" ,
                                                                                "https://spdx.org/licenses/CC0-1.0" ;
-                                            <http://purl.org/dc/terms/modified> "04/14/2021" ;
+                                            <http://purl.org/dc/terms/modified> "04/20/2021" ;
                                             <http://purl.org/dc/terms/publisher> "Ocean Protein Portal" ;
                                             <http://purl.org/dc/terms/title> "Ocean Protein Portal Ver. 2" ;
                                             rdfs:label "Ocean Protein Portal Ver. 2"@en-us ;
@@ -358,6 +358,14 @@ owl:sameAs rdf:type owl:AnnotationProperty .
                        rdfs:range :Identifier ;
                        rdfs:comment "An Identifier that bleongs within this scheme." ;
                        rdfs:label "isIdentifierSchemeFor" .
+
+
+###  http://schema.oceanproteinportal.org/v2/isInstanceOf
+:isInstanceOf rdf:type owl:ObjectProperty ;
+              rdfs:domain owl:Thing ;
+              rdfs:range owl:Thing ;
+              rdfs:comment "An real-world instance of some conceptual thing." ;
+              rdfs:label "isInstanceOf" .
 
 
 ###  http://schema.oceanproteinportal.org/v2/keggOrthology
@@ -1128,8 +1136,20 @@ Example: \"nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1
 
 ###  http://schema.oceanproteinportal.org/v2/DataResource
 :DataResource rdf:type owl:Class ;
-              rdfs:subClassOf <http://schema.org/Dataset> ;
-              rdfs:comment "A Dataset witha single resource at which the observations canbe found." ;
+              rdfs:subClassOf <http://schema.org/Dataset> ,
+                              [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                       owl:onProperty <http://schema.org/variableMeasured> ;
+                                                       owl:someValuesFrom :DataResourceProperty
+                                                     ]
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty <http://schema.org/variableMeasured> ;
+                                                       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                       owl:onClass :DataResourceProperty
+                                                     ]
+                                                   ) ;
+                                rdf:type owl:Class
+                              ] ;
+              rdfs:comment "A Dataset witha single resource at which the observations can be found." ;
               rdfs:label "DataResource" .
 
 
@@ -1157,6 +1177,25 @@ Example: \"nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1
                                           ] ;
                           rdfs:comment "A set of DataResourceParameter instances for the purpose of validating a DatasetProfile. This helps the DatasetProfile set requirements or a grouping a DataResourceeParameters such as saying at least one of the group is required." ;
                           rdfs:label "DataResourceParameterSet" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DataResourceProperty
+:DataResourceProperty rdf:type owl:Class ;
+                      rdfs:subClassOf <http://schema.org/PropertyValue> ,
+                                      [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                               owl:onProperty :isInstanceOf ;
+                                                               owl:allValuesFrom :DataParameter
+                                                             ]
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty :isInstanceOf ;
+                                                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                               owl:onClass :DataParameter
+                                                             ]
+                                                           ) ;
+                                        rdf:type owl:Class
+                                      ] ;
+                      rdfs:comment "A single observed or measured property in a single DataResource. This property should be an instance of a DataParameter" ;
+                      rdfs:label "DataResourceProperty" .
 
 
 ###  http://schema.oceanproteinportal.org/v2/DataResourceType

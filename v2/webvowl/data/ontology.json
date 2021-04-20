@@ -19,23 +19,18 @@
       "license" : [ {
         "identifier" : "license",
         "language" : "undefined",
-        "value" : "Creative Commons Zero 1.0 Universal",
+        "value" : "https://spdx.org/licenses/CC0-1.0",
         "type" : "label"
       }, {
         "identifier" : "license",
         "language" : "undefined",
-        "value" : "https://spdx.org/licenses/CC0-1.0",
+        "value" : "Creative Commons Zero 1.0 Universal",
         "type" : "label"
       } ],
       "creator" : [ {
         "identifier" : "creator",
         "language" : "undefined",
-        "value" : "Jaclyn Saunders, WHOI",
-        "type" : "label"
-      }, {
-        "identifier" : "creator",
-        "language" : "undefined",
-        "value" : "Danie Kinkade, WHOI",
+        "value" : "Makoto Saito, WHOI",
         "type" : "label"
       }, {
         "identifier" : "creator",
@@ -45,7 +40,12 @@
       }, {
         "identifier" : "creator",
         "language" : "undefined",
-        "value" : "Makoto Saito, WHOI",
+        "value" : "Danie Kinkade, WHOI",
+        "type" : "label"
+      }, {
+        "identifier" : "creator",
+        "language" : "undefined",
+        "value" : "Jaclyn Saunders, WHOI",
         "type" : "label"
       } ],
       "publisher" : [ {
@@ -57,7 +57,7 @@
       "modified" : [ {
         "identifier" : "modified",
         "language" : "undefined",
-        "value" : "04/14/2021",
+        "value" : "04/20/2021",
         "type" : "label"
       } ],
       "versionInfo" : [ {
@@ -69,7 +69,7 @@
       "issued" : [ {
         "identifier" : "issued",
         "language" : "undefined",
-        "value" : "04/14/2021",
+        "value" : "04/20/2021",
         "type" : "label"
       } ],
       "title" : [ {
@@ -88,46 +88,46 @@
   },
   "namespace" : [ ],
   "class" : [ {
-    "id" : "32",
+    "id" : "31",
     "type" : "owl:Class"
   }, {
-    "id" : "35",
+    "id" : "34",
     "type" : "owl:Class"
   }, {
-    "id" : "39",
+    "id" : "41",
     "type" : "owl:Class"
   }, {
-    "id" : "46",
+    "id" : "45",
     "type" : "owl:Class"
   }, {
-    "id" : "54",
+    "id" : "50",
+    "type" : "owl:Class"
+  }, {
+    "id" : "62",
+    "type" : "owl:Class"
+  }, {
+    "id" : "65",
     "type" : "owl:Class"
   }, {
     "id" : "61",
     "type" : "owl:Class"
   }, {
-    "id" : "64",
-    "type" : "owl:Class"
-  }, {
-    "id" : "59",
-    "type" : "owl:Class"
-  }, {
     "id" : "88",
     "type" : "owl:Class"
   }, {
-    "id" : "82",
+    "id" : "58",
     "type" : "owl:Class"
   }, {
-    "id" : "30",
+    "id" : "33",
     "type" : "owl:Class"
   }, {
     "id" : "1",
     "type" : "owl:Class"
   }, {
-    "id" : "7",
+    "id" : "16",
     "type" : "owl:Class"
   }, {
-    "id" : "41",
+    "id" : "43",
     "type" : "owl:Class"
   }, {
     "id" : "121",
@@ -139,10 +139,13 @@
     "id" : "94",
     "type" : "owl:Class"
   }, {
-    "id" : "47",
+    "id" : "46",
     "type" : "owl:Class"
   }, {
-    "id" : "40",
+    "id" : "42",
+    "type" : "owl:Class"
+  }, {
+    "id" : "67",
     "type" : "owl:Class"
   }, {
     "id" : "140",
@@ -151,19 +154,19 @@
     "id" : "85",
     "type" : "owl:Class"
   }, {
-    "id" : "36",
+    "id" : "35",
     "type" : "owl:Class"
   }, {
-    "id" : "147",
-    "type" : "owl:Class"
-  }, {
-    "id" : "80",
-    "type" : "owl:Class"
-  }, {
-    "id" : "23",
+    "id" : "148",
     "type" : "owl:Class"
   }, {
     "id" : "83",
+    "type" : "owl:Class"
+  }, {
+    "id" : "28",
+    "type" : "owl:Class"
+  }, {
+    "id" : "59",
     "type" : "owl:Class"
   }, {
     "id" : "113",
@@ -172,229 +175,229 @@
     "id" : "5",
     "type" : "owl:Class"
   }, {
-    "id" : "200",
-    "type" : "owl:Class"
-  }, {
     "id" : "2",
     "type" : "owl:Class"
   }, {
-    "id" : "8",
+    "id" : "202",
     "type" : "owl:Class"
   }, {
-    "id" : "18",
+    "id" : "17",
+    "type" : "owl:Class"
+  }, {
+    "id" : "20",
+    "type" : "owl:Class"
+  }, {
+    "id" : "187",
     "type" : "owl:Class"
   }, {
     "id" : "99",
     "type" : "owl:Class"
   }, {
-    "id" : "184",
-    "type" : "owl:Class"
-  }, {
-    "id" : "21",
+    "id" : "23",
     "type" : "owl:Class"
   }, {
     "id" : "130",
     "type" : "owl:Class"
   }, {
-    "id" : "209",
+    "id" : "212",
     "type" : "owl:Class"
   }, {
-    "id" : "171",
+    "id" : "152",
     "type" : "owl:Class"
   }, {
-    "id" : "206",
+    "id" : "210",
     "type" : "owl:Class"
   }, {
     "id" : "73",
     "type" : "owl:Class"
   }, {
-    "id" : "211",
+    "id" : "214",
     "type" : "rdfs:Datatype"
   }, {
-    "id" : "31",
+    "id" : "4",
     "type" : "owl:Class"
   }, {
-    "id" : "212",
+    "id" : "215",
     "type" : "rdfs:Datatype"
   }, {
-    "id" : "62",
+    "id" : "63",
     "type" : "owl:Class"
   }, {
-    "id" : "188",
+    "id" : "163",
     "type" : "owl:Class"
   }, {
     "id" : "128",
     "type" : "owl:Class"
   }, {
-    "id" : "231",
+    "id" : "235",
     "type" : "rdfs:Datatype"
   }, {
     "id" : "53",
     "type" : "rdfs:Datatype"
   }, {
-    "id" : "20",
+    "id" : "22",
     "type" : "owl:Class"
   }, {
     "id" : "104",
     "type" : "rdfs:Datatype"
   }, {
-    "id" : "238",
+    "id" : "241",
     "type" : "rdfs:Datatype"
   }, {
-    "id" : "49",
+    "id" : "48",
     "type" : "owl:Class"
   }, {
-    "id" : "174",
+    "id" : "176",
     "type" : "rdfs:Datatype"
   }, {
-    "id" : "109",
+    "id" : "111",
     "type" : "rdfs:Datatype"
   }, {
     "id" : "132",
     "type" : "rdfs:Datatype"
   }, {
-    "id" : "180",
+    "id" : "182",
     "type" : "rdfs:Datatype"
   }, {
-    "id" : "154",
+    "id" : "156",
     "type" : "owl:unionOf"
-  }, {
-    "id" : "125",
-    "type" : "owl:Class"
   }, {
     "id" : "96",
     "type" : "owl:Class"
   }, {
-    "id" : "243",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "244",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "50",
+    "id" : "125",
     "type" : "owl:Class"
-  }, {
-    "id" : "4",
-    "type" : "owl:Class"
-  }, {
-    "id" : "155",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "245",
-    "type" : "rdfs:Datatype"
   }, {
     "id" : "246",
     "type" : "rdfs:Datatype"
   }, {
-    "id" : "45",
-    "type" : "owl:Class"
-  }, {
-    "id" : "28",
-    "type" : "owl:Class"
-  }, {
-    "id" : "90",
+    "id" : "247",
     "type" : "rdfs:Datatype"
   }, {
-    "id" : "177",
+    "id" : "49",
+    "type" : "owl:Class"
+  }, {
+    "id" : "7",
+    "type" : "owl:Class"
+  }, {
+    "id" : "157",
     "type" : "rdfs:Datatype"
   }, {
     "id" : "248",
     "type" : "rdfs:Datatype"
   }, {
-    "id" : "204",
+    "id" : "249",
     "type" : "rdfs:Datatype"
   }, {
-    "id" : "182",
+    "id" : "40",
+    "type" : "owl:Class"
+  }, {
+    "id" : "30",
+    "type" : "owl:Class"
+  }, {
+    "id" : "90",
     "type" : "rdfs:Datatype"
   }, {
-    "id" : "221",
+    "id" : "179",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "251",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "207",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "184",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "224",
     "type" : "rdfs:Datatype"
   }, {
     "id" : "86",
     "type" : "owl:Class"
   }, {
-    "id" : "44",
+    "id" : "39",
     "type" : "owl:unionOf"
   }, {
-    "id" : "240",
+    "id" : "243",
     "type" : "owl:Thing"
   }, {
-    "id" : "224",
+    "id" : "227",
     "type" : "rdfs:Literal"
   }, {
-    "id" : "117",
+    "id" : "119",
     "type" : "rdfs:Literal"
   }, {
     "id" : "115",
     "type" : "rdfs:Literal"
   }, {
-    "id" : "34",
+    "id" : "205",
     "type" : "owl:Class"
   }, {
-    "id" : "71",
+    "id" : "77",
     "type" : "rdfs:Literal"
   }, {
-    "id" : "165",
+    "id" : "169",
     "type" : "owl:Class"
   }, {
-    "id" : "151",
+    "id" : "154",
     "type" : "owl:Class"
   }, {
     "id" : "139",
     "type" : "owl:Class"
   }, {
-    "id" : "38",
+    "id" : "37",
     "type" : "rdfs:Literal"
   }, {
-    "id" : "17",
+    "id" : "19",
     "type" : "owl:Class"
   }, {
-    "id" : "14",
+    "id" : "13",
     "type" : "owl:Thing"
   }, {
-    "id" : "272",
+    "id" : "275",
     "type" : "rdfs:Datatype"
   }, {
-    "id" : "273",
+    "id" : "276",
     "type" : "rdfs:Datatype"
   }, {
-    "id" : "167",
+    "id" : "171",
     "type" : "owl:Class"
   }, {
-    "id" : "274",
+    "id" : "277",
     "type" : "rdfs:Datatype"
   }, {
     "id" : "52",
     "type" : "owl:Class"
   }, {
-    "id" : "194",
+    "id" : "196",
     "type" : "rdfs:Datatype"
   }, {
-    "id" : "255",
+    "id" : "258",
     "type" : "rdfs:Datatype"
   }, {
-    "id" : "267",
+    "id" : "270",
     "type" : "rdfs:Datatype"
   }, {
     "id" : "26",
     "type" : "rdfs:Datatype"
   }, {
-    "id" : "253",
+    "id" : "256",
     "type" : "rdfs:Datatype"
   }, {
     "id" : "93",
     "type" : "owl:Class"
   }, {
-    "id" : "169",
+    "id" : "173",
     "type" : "owl:Class"
   }, {
     "id" : "136",
     "type" : "rdfs:Datatype"
   }, {
-    "id" : "285",
+    "id" : "288",
     "type" : "rdfs:Datatype"
   }, {
-    "id" : "10",
+    "id" : "9",
     "type" : "owl:Class"
   }, {
     "id" : "107",
@@ -403,61 +406,61 @@
     "id" : "100",
     "type" : "rdfs:Datatype"
   }, {
-    "id" : "265",
+    "id" : "267",
     "type" : "rdfs:Datatype"
   }, {
     "id" : "134",
     "type" : "rdfs:Datatype"
   }, {
-    "id" : "77",
+    "id" : "80",
     "type" : "owl:Class"
   }, {
-    "id" : "287",
+    "id" : "290",
     "type" : "rdfs:Datatype"
   }, {
-    "id" : "79",
+    "id" : "82",
     "type" : "owl:Class"
   }, {
-    "id" : "161",
+    "id" : "166",
     "type" : "owl:Class"
   }, {
-    "id" : "303",
+    "id" : "306",
     "type" : "owl:Class"
   }, {
-    "id" : "302",
+    "id" : "305",
     "type" : "rdfs:Datatype"
   }, {
     "id" : "25",
     "type" : "owl:Class"
   }, {
-    "id" : "157",
+    "id" : "160",
     "type" : "owl:Class"
   }, {
-    "id" : "260",
+    "id" : "263",
     "type" : "owl:Class"
   }, {
-    "id" : "309",
+    "id" : "312",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "286",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "317",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "318",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "150",
     "type" : "rdfs:Literal"
   }, {
     "id" : "283",
     "type" : "rdfs:Literal"
   }, {
-    "id" : "314",
-    "type" : "rdfs:Literal"
-  }, {
-    "id" : "315",
-    "type" : "rdfs:Literal"
-  }, {
-    "id" : "149",
-    "type" : "rdfs:Literal"
-  }, {
-    "id" : "280",
-    "type" : "rdfs:Literal"
-  }, {
-    "id" : "11",
+    "id" : "10",
     "type" : "owl:Class"
   }, {
-    "id" : "271",
+    "id" : "274",
     "type" : "owl:Thing"
   }, {
     "id" : "141",
@@ -466,7 +469,7 @@
     "id" : "138",
     "type" : "owl:Thing"
   }, {
-    "id" : "42",
+    "id" : "44",
     "type" : "owl:Class"
   }, {
     "id" : "127",
@@ -475,7 +478,7 @@
     "id" : "143",
     "type" : "rdfs:Literal"
   }, {
-    "id" : "269",
+    "id" : "272",
     "type" : "rdfs:Literal"
   } ],
   "classAttribute" : [ {
@@ -494,11 +497,11 @@
       "IRI-based" : "AminoAcidIdentification",
       "undefined" : "AminoAcidIdentification"
     },
-    "subClasses" : [ "25", "10" ],
+    "subClasses" : [ "25", "9" ],
     "comment" : {
       "undefined" : "An information object for storing data about an amino acid."
     },
-    "id" : "32"
+    "id" : "31"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/BestSEQUESTDCnScore",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
@@ -510,8 +513,8 @@
     "comment" : {
       "undefined" : "The best SEQUEST DCn score for identifying an amino acid."
     },
-    "id" : "35",
-    "superClasses" : [ "36" ]
+    "id" : "34",
+    "superClasses" : [ "35" ]
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/AminoAcidSampleObservation",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
@@ -528,12 +531,12 @@
       "IRI-based" : "AminoAcidSampleObservation",
       "undefined" : "AminoAcidSampleObservation"
     },
-    "subClasses" : [ "8", "42" ],
+    "subClasses" : [ "17", "44" ],
     "comment" : {
       "undefined" : "A property of some amino acid that was observed in a single Sample."
     },
-    "id" : "39",
-    "superClasses" : [ "40", "41" ]
+    "id" : "41",
+    "superClasses" : [ "42", "43" ]
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/Peptide",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
@@ -545,8 +548,8 @@
     "comment" : {
       "undefined" : "A peptide identified in a sample."
     },
-    "id" : "46",
-    "superClasses" : [ "47" ]
+    "id" : "45",
+    "superClasses" : [ "46" ]
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/DataParameter",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
@@ -556,13 +559,6 @@
       "undefined" : "DataParameter"
     },
     "individuals" : [ {
-      "iri" : "http://schema.oceanproteinportal.org/v2/DataParameter_SpectralCount",
-      "baseIri" : "http://schema.oceanproteinportal.org/v2",
-      "labels" : {
-        "IRI-based" : "DataParameter_SpectralCount",
-        "undefined" : "Data Parameter: SpectralCount"
-      }
-    }, {
       "iri" : "http://schema.oceanproteinportal.org/v2/DataParameter_OtherIdentifiedProteins",
       "baseIri" : "http://schema.oceanproteinportal.org/v2",
       "labels" : {
@@ -570,11 +566,11 @@
         "undefined" : "Data Parameter: OtherIdentifiedProteins"
       }
     }, {
-      "iri" : "http://schema.oceanproteinportal.org/v2/DataParameter_MinFilterSize",
+      "iri" : "http://schema.oceanproteinportal.org/v2/DataParameter_SpectralCount",
       "baseIri" : "http://schema.oceanproteinportal.org/v2",
       "labels" : {
-        "IRI-based" : "DataParameter_MinFilterSize",
-        "undefined" : "Data Parameter: MinFilterSize"
+        "IRI-based" : "DataParameter_SpectralCount",
+        "undefined" : "Data Parameter: SpectralCount"
       }
     }, {
       "iri" : "http://schema.oceanproteinportal.org/v2/DataParameter_Longitude",
@@ -582,6 +578,13 @@
       "labels" : {
         "IRI-based" : "DataParameter_Longitude",
         "undefined" : "Data Parameter: Longitude"
+      }
+    }, {
+      "iri" : "http://schema.oceanproteinportal.org/v2/DataParameter_MinFilterSize",
+      "baseIri" : "http://schema.oceanproteinportal.org/v2",
+      "labels" : {
+        "IRI-based" : "DataParameter_MinFilterSize",
+        "undefined" : "Data Parameter: MinFilterSize"
       }
     }, {
       "iri" : "http://schema.oceanproteinportal.org/v2/DataParameter_UniprotIdentifier",
@@ -801,11 +804,11 @@
         "undefined" : "Data Parameter: PFamsIdentifier"
       }
     }, {
-      "iri" : "http://schema.oceanproteinportal.org/v2/DataParameter_BestSequestDCnScore",
+      "iri" : "http://schema.oceanproteinportal.org/v2/DataParameter_Plus4HSpectraCount",
       "baseIri" : "http://schema.oceanproteinportal.org/v2",
       "labels" : {
-        "IRI-based" : "DataParameter_BestSequestDCnScore",
-        "undefined" : "Data Parameter: BestSequestDCnScore"
+        "IRI-based" : "DataParameter_Plus4HSpectraCount",
+        "undefined" : "Data Parameter: Plus4HSpectraCount"
       }
     }, {
       "iri" : "http://schema.oceanproteinportal.org/v2/DataParameter_SampleIdentifier",
@@ -815,11 +818,11 @@
         "undefined" : "Data Parameter: SampleIdentifier"
       }
     }, {
-      "iri" : "http://schema.oceanproteinportal.org/v2/DataParameter_Plus4HSpectraCount",
+      "iri" : "http://schema.oceanproteinportal.org/v2/DataParameter_BestSequestDCnScore",
       "baseIri" : "http://schema.oceanproteinportal.org/v2",
       "labels" : {
-        "IRI-based" : "DataParameter_Plus4HSpectraCount",
-        "undefined" : "Data Parameter: Plus4HSpectraCount"
+        "IRI-based" : "DataParameter_BestSequestDCnScore",
+        "undefined" : "Data Parameter: BestSequestDCnScore"
       }
     }, {
       "iri" : "http://schema.oceanproteinportal.org/v2/DataParameter_KeggOrthologyDefinition",
@@ -836,25 +839,25 @@
         "undefined" : "Data Parameter: KeggOrthologyPathway"
       }
     }, {
-      "iri" : "http://schema.oceanproteinportal.org/v2/DataParameter_ProteinSequence",
-      "baseIri" : "http://schema.oceanproteinportal.org/v2",
-      "labels" : {
-        "IRI-based" : "DataParameter_ProteinSequence",
-        "undefined" : "Data Parameter: ProteinSequence"
-      }
-    }, {
       "iri" : "http://schema.oceanproteinportal.org/v2/DataParameter_Plus3HSpectraCount",
       "baseIri" : "http://schema.oceanproteinportal.org/v2",
       "labels" : {
         "IRI-based" : "DataParameter_Plus3HSpectraCount",
         "undefined" : "Data Parameter: Plus3HSpectraCount"
       }
+    }, {
+      "iri" : "http://schema.oceanproteinportal.org/v2/DataParameter_ProteinSequence",
+      "baseIri" : "http://schema.oceanproteinportal.org/v2",
+      "labels" : {
+        "IRI-based" : "DataParameter_ProteinSequence",
+        "undefined" : "Data Parameter: ProteinSequence"
+      }
     } ],
     "comment" : {
       "undefined" : "A conceptual understanding of a particular parameter that could be observed/measured within some data resource. This parameter typically means to describe an observalbe or measurable  \"property\" (or attribute) of some \"entity\" (or object) in relation to some \"environment\" using some \"method\". This conceptual description of a parameter helps to link across datasets that may report different units or other variances outside the scope of some \"property of an entity in relation to an environment using some observational/measuring methodology\"."
     },
-    "id" : "54",
-    "superClasses" : [ "40" ]
+    "id" : "50",
+    "superClasses" : [ "42" ]
   }, {
     "iri" : "http://www.w3.org/ns/ssn/systems/SystemCapability",
     "baseIri" : "http://www.w3.org/ns/ssn/systems",
@@ -870,10 +873,10 @@
     "label" : {
       "IRI-based" : "SystemCapability"
     },
-    "subClasses" : [ "62" ],
+    "subClasses" : [ "63" ],
     "attributes" : [ "external" ],
-    "id" : "61",
-    "superClasses" : [ "41" ]
+    "id" : "62",
+    "superClasses" : [ "43" ]
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/OrganizationIdentifier",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
@@ -885,8 +888,8 @@
     "comment" : {
       "undefined" : "An identifier for an Organization"
     },
-    "id" : "64",
-    "superClasses" : [ "59" ]
+    "id" : "65",
+    "superClasses" : [ "61" ]
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/AgentIdentifier",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
@@ -895,11 +898,11 @@
       "IRI-based" : "AgentIdentifier",
       "undefined" : "AgentIdentifier"
     },
-    "subClasses" : [ "64", "88" ],
+    "subClasses" : [ "65", "88" ],
     "comment" : {
       "undefined" : "An identifier for an Agent"
     },
-    "id" : "59",
+    "id" : "61",
     "superClasses" : [ "5" ]
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/PersonIdentifier",
@@ -913,7 +916,7 @@
       "undefined" : "An identifier for a Person"
     },
     "id" : "88",
-    "superClasses" : [ "59" ]
+    "superClasses" : [ "61" ]
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/KeggOrthologyIdentifier",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
@@ -925,8 +928,8 @@
     "comment" : {
       "undefined" : "A Kegg Orthology Identifier"
     },
-    "id" : "82",
-    "superClasses" : [ "83" ]
+    "id" : "58",
+    "superClasses" : [ "59" ]
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/UniprotIdentifier",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
@@ -938,8 +941,8 @@
     "comment" : {
       "undefined" : "A Uniprot identifier"
     },
-    "id" : "30",
-    "superClasses" : [ "31" ]
+    "id" : "33",
+    "superClasses" : [ "4" ]
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/KeggPathway",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
@@ -952,7 +955,7 @@
       "undefined" : "A Kegg Orthology (KO) entry's pathway."
     },
     "id" : "1",
-    "superClasses" : [ "20" ]
+    "superClasses" : [ "22" ]
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/ProteinTotalSpectralCount",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
@@ -972,14 +975,19 @@
     "comment" : {
       "undefined" : "The total spectral count of some identified protein from a single sample."
     },
-    "id" : "7",
-    "superClasses" : [ "8" ]
+    "id" : "16",
+    "superClasses" : [ "17" ]
   }, {
     "iri" : "http://www.w3.org/ns/ssn/Property",
     "baseIri" : "http://www.w3.org/ns/ssn",
     "instances" : 0,
     "annotations" : {
       "describedinConceptualModelOf" : [ {
+        "identifier" : "describedinConceptualModelOf",
+        "language" : "undefined",
+        "value" : "http://schema.oceanproteinportal.org/v2/Identifier",
+        "type" : "iri"
+      }, {
         "identifier" : "describedinConceptualModelOf",
         "language" : "undefined",
         "value" : "http://www.w3.org/ns/sosa/Sample",
@@ -994,19 +1002,14 @@
         "language" : "undefined",
         "value" : "http://schema.oceanproteinportal.org/v2/OPPDataset",
         "type" : "iri"
-      }, {
-        "identifier" : "describedinConceptualModelOf",
-        "language" : "undefined",
-        "value" : "http://schema.oceanproteinportal.org/v2/Identifier",
-        "type" : "iri"
       } ]
     },
     "label" : {
       "IRI-based" : "Property"
     },
-    "subClasses" : [ "61", "39", "36" ],
+    "subClasses" : [ "62", "41", "35" ],
     "attributes" : [ "external" ],
-    "id" : "41"
+    "id" : "43"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/Role",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
@@ -1064,7 +1067,7 @@
     "label" : {
       "IRI-based" : "Dataset"
     },
-    "subClasses" : [ "49", "96" ],
+    "subClasses" : [ "48", "96" ],
     "attributes" : [ "external" ],
     "id" : "97",
     "superClasses" : [ "128" ]
@@ -1095,22 +1098,17 @@
       "IRI-based" : "AminoAcidChain",
       "undefined" : "AminoAcidChain"
     },
-    "subClasses" : [ "11", "46" ],
+    "subClasses" : [ "10", "45" ],
     "comment" : {
       "undefined" : "An actual amino acid. This is not to contain information that helps identify an amino acid, but represents the amino acid being identified. Any information here, should be shared by all other representations of the amino acid."
     },
-    "id" : "47"
+    "id" : "46"
   }, {
     "iri" : "http://schema.org/PropertyValue",
     "baseIri" : "http://schema.org",
     "instances" : 0,
     "annotations" : {
       "describedinConceptualModelOf" : [ {
-        "identifier" : "describedinConceptualModelOf",
-        "language" : "undefined",
-        "value" : "http://www.w3.org/ns/sosa/Sample",
-        "type" : "iri"
-      }, {
         "identifier" : "describedinConceptualModelOf",
         "language" : "undefined",
         "value" : "http://schema.oceanproteinportal.org/v2/Identifier",
@@ -1125,14 +1123,32 @@
         "language" : "undefined",
         "value" : "http://schema.oceanproteinportal.org/v2/OPPDataset",
         "type" : "iri"
+      }, {
+        "identifier" : "describedinConceptualModelOf",
+        "language" : "undefined",
+        "value" : "http://www.w3.org/ns/sosa/Sample",
+        "type" : "iri"
       } ]
     },
     "label" : {
       "IRI-based" : "PropertyValue"
     },
-    "subClasses" : [ "62", "54", "39", "21", "36" ],
+    "subClasses" : [ "63", "67", "50", "41", "23", "35" ],
     "attributes" : [ "external" ],
-    "id" : "40"
+    "id" : "42"
+  }, {
+    "iri" : "http://schema.oceanproteinportal.org/v2/DataResourceProperty",
+    "baseIri" : "http://schema.oceanproteinportal.org/v2",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "DataResourceProperty",
+      "undefined" : "DataResourceProperty"
+    },
+    "comment" : {
+      "undefined" : "A single observed or measured property in a single DataResource. This property should be an instance of a DataParameter"
+    },
+    "id" : "67",
+    "superClasses" : [ "42" ]
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/ProteinIdentifierScheme",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
@@ -1221,7 +1237,7 @@
       }
     } ],
     "comment" : {
-      "undefined" : "Kegg Orthology (KO) Entry  => opp:keggEntry (schema:identifier)\nKO Definition => opp:keggDefinition (aka schema:description)\nKO Pathway => opp:keggPathwayNames (rdf:Bag of KO names)\n\nNote since the order of the pathways (or KeggPathway Index isn't provided we don't use an rdf:Seq"
+      "undefined" : "A class of identifier schemes used to unqiuely identify proteins."
     },
     "id" : "140",
     "superClasses" : [ "141" ]
@@ -1261,12 +1277,12 @@
       "IRI-based" : "IdentificationScore",
       "undefined" : "IdentificationScore"
     },
-    "subClasses" : [ "35", "77" ],
+    "subClasses" : [ "34", "80" ],
     "comment" : {
       "undefined" : "The numerical score used to identified an Amino Acid using some scoring method."
     },
-    "id" : "36",
-    "superClasses" : [ "40", "41" ]
+    "id" : "35",
+    "superClasses" : [ "42", "43" ]
   }, {
     "iri" : "http://schema.org/Organization",
     "baseIri" : "http://schema.org",
@@ -1275,7 +1291,7 @@
       "IRI-based" : "Organization"
     },
     "attributes" : [ "external" ],
-    "id" : "147",
+    "id" : "148",
     "superClasses" : [ "86" ]
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/FileType",
@@ -1293,11 +1309,11 @@
       "IRI-based" : "FileType",
       "undefined" : "FileType"
     },
-    "subClasses" : [ "79" ],
+    "subClasses" : [ "82" ],
     "comment" : {
       "undefined" : "A certain type of file for which the OPP knows how to handle inn some way (ingestion, serialization for download, etc)"
     },
-    "id" : "80",
+    "id" : "83",
     "superClasses" : [ "128" ]
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/PFamsDescription",
@@ -1310,8 +1326,8 @@
     "comment" : {
       "undefined" : "The PFams description for this Protein"
     },
-    "id" : "23",
-    "superClasses" : [ "21" ]
+    "id" : "28",
+    "superClasses" : [ "23" ]
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/KeggDatabaseEntryIdentifier",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
@@ -1320,12 +1336,12 @@
       "IRI-based" : "KeggDatabaseEntryIdentifier",
       "undefined" : "KeggDatabaseEntryIdentifier"
     },
-    "subClasses" : [ "82" ],
+    "subClasses" : [ "58" ],
     "comment" : {
       "undefined" : "A Kegg Dataset Entry Identifier"
     },
-    "id" : "83",
-    "superClasses" : [ "31" ]
+    "id" : "59",
+    "superClasses" : [ "4" ]
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/DataResourceType",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
@@ -1377,11 +1393,24 @@
       "IRI-based" : "Identifier",
       "undefined" : "Identifier"
     },
-    "subClasses" : [ "59", "31", "4" ],
+    "subClasses" : [ "61", "4", "7" ],
     "comment" : {
       "undefined" : "A unique identifier attributeds to some thing within some realm or domain or scheme."
     },
     "id" : "5"
+  }, {
+    "iri" : "http://schema.oceanproteinportal.org/v2/KeggOrthology",
+    "baseIri" : "http://schema.oceanproteinportal.org/v2",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "KeggOrthology",
+      "undefined" : "KeggOrthology"
+    },
+    "comment" : {
+      "undefined" : "A Kegg Orthology entry from the Kegg database"
+    },
+    "id" : "2",
+    "superClasses" : [ "22" ]
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/Station",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
@@ -1401,20 +1430,7 @@
     "comment" : {
       "undefined" : "A generally agreed upon location at which sampling occurred. This agreement enables the comparison of collected data over different reference frames such as time."
     },
-    "id" : "200"
-  }, {
-    "iri" : "http://schema.oceanproteinportal.org/v2/KeggOrthology",
-    "baseIri" : "http://schema.oceanproteinportal.org/v2",
-    "instances" : 0,
-    "label" : {
-      "IRI-based" : "KeggOrthology",
-      "undefined" : "KeggOrthology"
-    },
-    "comment" : {
-      "undefined" : "A Kegg Orthology entry from the Kegg database"
-    },
-    "id" : "2",
-    "superClasses" : [ "20" ]
+    "id" : "202"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/ProteinSampleObservation",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
@@ -1423,12 +1439,12 @@
       "IRI-based" : "ProteinSampleObservation",
       "undefined" : "ProteinSampleObservation"
     },
-    "subClasses" : [ "7" ],
+    "subClasses" : [ "16" ],
     "comment" : {
       "undefined" : "Some property of a protein identification that was observed in a single sample."
     },
-    "id" : "8",
-    "superClasses" : [ "39" ]
+    "id" : "17",
+    "superClasses" : [ "41" ]
   }, {
     "iri" : "http://www.w3.org/ns/sosa/Deployment",
     "baseIri" : "http://www.w3.org/ns/sosa",
@@ -1444,9 +1460,30 @@
     "label" : {
       "IRI-based" : "Deployment"
     },
-    "subClasses" : [ "17" ],
+    "subClasses" : [ "19" ],
     "attributes" : [ "external" ],
-    "id" : "18"
+    "id" : "20"
+  }, {
+    "iri" : "http://schema.oceanproteinportal.org/v2/DataResourceParameterSet",
+    "baseIri" : "http://schema.oceanproteinportal.org/v2",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "DataResourceParameterSet",
+      "undefined" : "DataResourceParameterSet"
+    },
+    "individuals" : [ {
+      "iri" : "http://schema.oceanproteinportal.org/v2/DataResourceParameterSet_PeptideSpectralCount_DateRequirement",
+      "baseIri" : "http://schema.oceanproteinportal.org/v2",
+      "labels" : {
+        "IRI-based" : "DataResourceParameterSet_PeptideSpectralCount_DateRequirement",
+        "undefined" : "Parameter Set: Peptide Spectral Count - Date Requirement"
+      }
+    } ],
+    "comment" : {
+      "undefined" : "A set of DataResourceParameter instances for the purpose of validating a DatasetProfile. This helps the DatasetProfile set requirements or a grouping a DataResourceeParameters such as saying at least one of the group is required."
+    },
+    "id" : "187",
+    "superClasses" : [ "125" ]
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/PeptideSpectralCountSum",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
@@ -1467,28 +1504,7 @@
       "undefined" : "The total spectral count of some identified peptide from a single sample."
     },
     "id" : "99",
-    "superClasses" : [ "42" ]
-  }, {
-    "iri" : "http://schema.oceanproteinportal.org/v2/DataResourceParameterSet",
-    "baseIri" : "http://schema.oceanproteinportal.org/v2",
-    "instances" : 0,
-    "label" : {
-      "IRI-based" : "DataResourceParameterSet",
-      "undefined" : "DataResourceParameterSet"
-    },
-    "individuals" : [ {
-      "iri" : "http://schema.oceanproteinportal.org/v2/DataResourceParameterSet_PeptideSpectralCount_DateRequirement",
-      "baseIri" : "http://schema.oceanproteinportal.org/v2",
-      "labels" : {
-        "IRI-based" : "DataResourceParameterSet_PeptideSpectralCount_DateRequirement",
-        "undefined" : "Parameter Set: Peptide Spectral Count - Date Requirement"
-      }
-    } ],
-    "comment" : {
-      "undefined" : "A set of DataResourceParameter instances for the purpose of validating a DatasetProfile. This helps the DatasetProfile set requirements or a grouping a DataResourceeParameters such as saying at least one of the group is required."
-    },
-    "id" : "184",
-    "superClasses" : [ "125" ]
+    "superClasses" : [ "44" ]
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/IdentifierMetadata",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
@@ -1505,12 +1521,12 @@
       "IRI-based" : "IdentifierMetadata",
       "undefined" : "IdentifierMetadata"
     },
-    "subClasses" : [ "20", "23", "28" ],
+    "subClasses" : [ "22", "28", "30" ],
     "comment" : {
       "undefined" : "Information about an identifier that helps comprehend, reuse, or contextualize the Thing being identified. This could be a non-unique label or description."
     },
-    "id" : "21",
-    "superClasses" : [ "40" ]
+    "id" : "23",
+    "superClasses" : [ "42" ]
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/UnitOfMeasure",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
@@ -1608,7 +1624,7 @@
       "IRI-based" : "DataType"
     },
     "attributes" : [ "external" ],
-    "id" : "209"
+    "id" : "212"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/RequiredDataParameter",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
@@ -1617,7 +1633,7 @@
       "IRI-based" : "RequiredDataParameter",
       "undefined" : "RequiredDataParameter"
     },
-    "id" : "171",
+    "id" : "152",
     "superClasses" : [ "52" ]
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/EnzymeCommissionIdentifier",
@@ -1630,8 +1646,8 @@
     "comment" : {
       "undefined" : "An EC identifier"
     },
-    "id" : "206",
-    "superClasses" : [ "31" ]
+    "id" : "210",
+    "superClasses" : [ "4" ]
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/BestProteinIdentification",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
@@ -1644,11 +1660,11 @@
       "undefined" : "The best/selected identification of a specific Protein based on information in a PeptideIdentification. This means that a PeptideIdentification may have multiple Proteins that it identifies but that one of those proteins has been selected (identifiedBy) as the best identification."
     },
     "id" : "73",
-    "superClasses" : [ "10" ]
+    "superClasses" : [ "9" ]
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#token",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "211",
+    "id" : "214",
     "label" : {
       "IRI-based" : "token"
     }
@@ -1660,13 +1676,13 @@
       "IRI-based" : "ProteinIdentifier",
       "undefined" : "ProteinIdentifier"
     },
-    "subClasses" : [ "30", "34", "139", "206", "83" ],
-    "id" : "31",
+    "subClasses" : [ "33", "205", "139", "210", "59" ],
+    "id" : "4",
     "superClasses" : [ "5" ]
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#token",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "212",
+    "id" : "215",
     "label" : {
       "IRI-based" : "token"
     }
@@ -1689,8 +1705,8 @@
     "comment" : {
       "undefined" : "The filter size in micons of the sampler."
     },
-    "id" : "62",
-    "superClasses" : [ "61", "40" ]
+    "id" : "63",
+    "superClasses" : [ "62", "42" ]
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/OPPGeneratedSampleIdentifier",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
@@ -1702,8 +1718,8 @@
     "comment" : {
       "undefined" : "A sample identifier that was generated by the OPP"
     },
-    "id" : "188",
-    "superClasses" : [ "4" ]
+    "id" : "163",
+    "superClasses" : [ "7" ]
   }, {
     "iri" : "http://schema.org/CreativeWork",
     "baseIri" : "http://schema.org",
@@ -1711,13 +1727,13 @@
     "label" : {
       "IRI-based" : "CreativeWork"
     },
-    "subClasses" : [ "113", "97", "45", "94", "80" ],
+    "subClasses" : [ "113", "97", "40", "94", "83" ],
     "attributes" : [ "external" ],
     "id" : "128"
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#token",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "231",
+    "id" : "235",
     "label" : {
       "IRI-based" : "token"
     }
@@ -1740,8 +1756,8 @@
     "comment" : {
       "undefined" : "An entry in thee Kegg Database"
     },
-    "id" : "20",
-    "superClasses" : [ "21" ]
+    "id" : "22",
+    "superClasses" : [ "23" ]
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#boolean",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
@@ -1752,7 +1768,7 @@
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#token",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "238",
+    "id" : "241",
     "label" : {
       "IRI-based" : "token"
     }
@@ -1775,19 +1791,19 @@
     "comment" : {
       "undefined" : "A dataset suitable for the Ocean Protein Portal"
     },
-    "id" : "49",
+    "id" : "48",
     "superClasses" : [ "97" ]
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#float",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "174",
+    "id" : "176",
     "label" : {
       "IRI-based" : "float"
     }
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#float",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "109",
+    "id" : "111",
     "label" : {
       "IRI-based" : "float"
     }
@@ -1801,7 +1817,7 @@
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#float",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "180",
+    "id" : "182",
     "label" : {
       "IRI-based" : "float"
     }
@@ -1809,17 +1825,7 @@
     "instances" : 0,
     "union" : [ "2", "1" ],
     "attributes" : [ "anonymous", "union" ],
-    "id" : "154"
-  }, {
-    "iri" : "http://schema.org/Intangible",
-    "baseIri" : "http://schema.org",
-    "instances" : 0,
-    "label" : {
-      "IRI-based" : "Intangible"
-    },
-    "subClasses" : [ "184", "121", "130" ],
-    "attributes" : [ "external" ],
-    "id" : "125"
+    "id" : "156"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/DataResource",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
@@ -1829,21 +1835,31 @@
       "undefined" : "DataResource"
     },
     "comment" : {
-      "undefined" : "A Dataset witha single resource at which the observations canbe found."
+      "undefined" : "A Dataset witha single resource at which the observations can be found."
     },
     "id" : "96",
     "superClasses" : [ "97" ]
   }, {
+    "iri" : "http://schema.org/Intangible",
+    "baseIri" : "http://schema.org",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Intangible"
+    },
+    "subClasses" : [ "187", "121", "130" ],
+    "attributes" : [ "external" ],
+    "id" : "125"
+  }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#token",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "243",
+    "id" : "246",
     "label" : {
       "IRI-based" : "token"
     }
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#string",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "244",
+    "id" : "247",
     "label" : {
       "IRI-based" : "string"
     }
@@ -1863,7 +1879,7 @@
       "IRI-based" : "Sample"
     },
     "attributes" : [ "external" ],
-    "id" : "50"
+    "id" : "49"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/SampleIdentifier",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
@@ -1872,30 +1888,30 @@
       "IRI-based" : "SampleIdentifier",
       "undefined" : "SampleIdentifier"
     },
-    "subClasses" : [ "188", "161" ],
+    "subClasses" : [ "163", "166" ],
     "comment" : {
       "undefined" : "An identifier for a sample within a Dataset. The IdentifierScheme for this sample would be provides by the Dataset. See opp:definesIdentifierScheme"
     },
-    "id" : "4",
+    "id" : "7",
     "superClasses" : [ "5" ]
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#string",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "155",
+    "id" : "157",
     "label" : {
       "IRI-based" : "string"
     }
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#float",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "245",
+    "id" : "248",
     "label" : {
       "IRI-based" : "float"
     }
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#float",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "246",
+    "id" : "249",
     "label" : {
       "IRI-based" : "float"
     }
@@ -1933,7 +1949,7 @@
     "comment" : {
       "undefined" : "A DatasetProfile defines the type of observations to be expected."
     },
-    "id" : "45",
+    "id" : "40",
     "superClasses" : [ "128" ]
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/NCBITaxonName",
@@ -1943,8 +1959,8 @@
       "IRI-based" : "NCBITaxonName",
       "undefined" : "NCBITaxonName"
     },
-    "id" : "28",
-    "superClasses" : [ "21" ]
+    "id" : "30",
+    "superClasses" : [ "23" ]
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#string",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
@@ -1955,35 +1971,35 @@
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#token",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "177",
+    "id" : "179",
     "label" : {
       "IRI-based" : "token"
     }
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#string",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "248",
+    "id" : "251",
     "label" : {
       "IRI-based" : "string"
     }
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#float",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "204",
+    "id" : "207",
     "label" : {
       "IRI-based" : "float"
     }
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#float",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "182",
+    "id" : "184",
     "label" : {
       "IRI-based" : "float"
     }
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#float",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "221",
+    "id" : "224",
     "label" : {
       "IRI-based" : "float"
     }
@@ -2003,33 +2019,33 @@
       "IRI-based" : "Agent",
       "undefined" : "Agent"
     },
-    "subClasses" : [ "147", "165" ],
+    "subClasses" : [ "148", "169" ],
     "comment" : {
       "undefined" : "An abstract class for specifying a person, organization or software entity that performs some action acting in some predefined role."
     },
     "id" : "86"
   }, {
     "instances" : 0,
-    "union" : [ "49", "96" ],
+    "union" : [ "48", "96" ],
     "attributes" : [ "anonymous", "union" ],
-    "id" : "44"
+    "id" : "39"
   }, {
     "iri" : "http://www.w3.org/2002/07/owl#Thing",
     "baseIri" : "http://owl2vowl.de",
-    "id" : "240",
+    "id" : "243",
     "label" : {
       "undefined" : "Thing"
     }
   }, {
     "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "id" : "224",
+    "id" : "227",
     "label" : {
       "IRI-based" : "Literal",
       "undefined" : "Literal"
     }
   }, {
     "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "id" : "117",
+    "id" : "119",
     "label" : {
       "IRI-based" : "Literal",
       "undefined" : "Literal"
@@ -2052,11 +2068,11 @@
     "comment" : {
       "undefined" : "A PFams identifier"
     },
-    "id" : "34",
-    "superClasses" : [ "31" ]
+    "id" : "205",
+    "superClasses" : [ "4" ]
   }, {
     "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "id" : "71",
+    "id" : "77",
     "label" : {
       "IRI-based" : "Literal",
       "undefined" : "Literal"
@@ -2069,7 +2085,7 @@
       "IRI-based" : "Person"
     },
     "attributes" : [ "external" ],
-    "id" : "165",
+    "id" : "169",
     "superClasses" : [ "86" ]
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/FrictionlessDataPackage",
@@ -2090,7 +2106,7 @@
     "comment" : {
       "undefined" : "A JSON file conforming to the Frictionlessdata specification for describing data resources. This file is typically named 'datapackage.json'."
     },
-    "id" : "151",
+    "id" : "154",
     "superClasses" : [ "93" ]
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/NCBITaxonIdentifier",
@@ -2104,10 +2120,10 @@
       "undefined" : "An NCBI Taxon identifier"
     },
     "id" : "139",
-    "superClasses" : [ "31" ]
+    "superClasses" : [ "4" ]
   }, {
     "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "id" : "38",
+    "id" : "37",
     "label" : {
       "IRI-based" : "Literal",
       "undefined" : "Literal"
@@ -2123,26 +2139,26 @@
     "comment" : {
       "undefined" : "A deployment of some seagoing vessel on which one or more scientific objectives are studied."
     },
-    "id" : "17",
-    "superClasses" : [ "18" ]
+    "id" : "19",
+    "superClasses" : [ "20" ]
   }, {
     "iri" : "http://www.w3.org/2002/07/owl#Thing",
     "baseIri" : "http://owl2vowl.de",
-    "id" : "14",
+    "id" : "13",
     "label" : {
       "undefined" : "Thing"
     }
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#integer",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "272",
+    "id" : "275",
     "label" : {
       "IRI-based" : "integer"
     }
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#string",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "273",
+    "id" : "276",
     "label" : {
       "IRI-based" : "string"
     }
@@ -2155,11 +2171,11 @@
     },
     "subClasses" : [ "52" ],
     "attributes" : [ "external" ],
-    "id" : "167"
+    "id" : "171"
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#float",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "274",
+    "id" : "277",
     "label" : {
       "IRI-based" : "float"
     }
@@ -2172,18 +2188,18 @@
       "undefined" : "DataResourceParameter"
     },
     "individuals" : [ {
-      "iri" : "http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_MinFilterSize",
-      "baseIri" : "http://schema.oceanproteinportal.org/v2",
-      "labels" : {
-        "IRI-based" : "DataResourceParameter_ProteinSpectralCount_MinFilterSize",
-        "undefined" : "DataResourceParameter_ProteinSpectralCount_MinFilterSize"
-      }
-    }, {
       "iri" : "http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_OtherIdentifiedProteins",
       "baseIri" : "http://schema.oceanproteinportal.org/v2",
       "labels" : {
         "IRI-based" : "DataResourceParameter_ProteinSpectralCount_OtherIdentifiedProteins",
         "undefined" : "DataResourceParameter_ProteinSpectralCount_OtherIdentifiedProteins"
+      }
+    }, {
+      "iri" : "http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_MinFilterSize",
+      "baseIri" : "http://schema.oceanproteinportal.org/v2",
+      "labels" : {
+        "IRI-based" : "DataResourceParameter_ProteinSpectralCount_MinFilterSize",
+        "undefined" : "DataResourceParameter_ProteinSpectralCount_MinFilterSize"
       }
     }, {
       "iri" : "http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_KeggOrthologyPathway",
@@ -2326,13 +2342,6 @@
         "undefined" : "DataResourceParameter_ProteinSpectralCount_EnzymeCommissionIdentifier"
       }
     }, {
-      "iri" : "http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Depth",
-      "baseIri" : "http://schema.oceanproteinportal.org/v2",
-      "labels" : {
-        "IRI-based" : "DataResourceParameter_PeptideSpectralCount_Depth",
-        "undefined" : "DataResourceParameter_PeptideSpectralCount_Depth"
-      }
-    }, {
       "iri" : "http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_KeggOrthologyDefinition",
       "baseIri" : "http://schema.oceanproteinportal.org/v2",
       "labels" : {
@@ -2340,11 +2349,11 @@
         "undefined" : "DataResourceParameter_ProteinSpectralCount_KeggOrthologyDefinition"
       }
     }, {
-      "iri" : "http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_MaxFilterSize",
+      "iri" : "http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Depth",
       "baseIri" : "http://schema.oceanproteinportal.org/v2",
       "labels" : {
-        "IRI-based" : "DataResourceParameter_ProteinSpectralCount_MaxFilterSize",
-        "undefined" : "DataResourceParameter_ProteinSpectralCount_MaxFilterSize"
+        "IRI-based" : "DataResourceParameter_PeptideSpectralCount_Depth",
+        "undefined" : "DataResourceParameter_PeptideSpectralCount_Depth"
       }
     }, {
       "iri" : "http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_Date",
@@ -2352,6 +2361,13 @@
       "labels" : {
         "IRI-based" : "DataResourceParameter_ProteinSpectralCount_Date",
         "undefined" : "DataResourceParameter_ProteinSpectralCount_Date"
+      }
+    }, {
+      "iri" : "http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_MaxFilterSize",
+      "baseIri" : "http://schema.oceanproteinportal.org/v2",
+      "labels" : {
+        "IRI-based" : "DataResourceParameter_ProteinSpectralCount_MaxFilterSize",
+        "undefined" : "DataResourceParameter_ProteinSpectralCount_MaxFilterSize"
       }
     }, {
       "iri" : "http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_MaxFilterSize",
@@ -2403,18 +2419,18 @@
         "undefined" : "DataResourceParameter_PeptideSpectralCount_BestSequestDCnScore"
       }
     }, {
-      "iri" : "http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_PFamsName",
-      "baseIri" : "http://schema.oceanproteinportal.org/v2",
-      "labels" : {
-        "IRI-based" : "DataResourceParameter_ProteinSpectralCount_PFamsName",
-        "undefined" : "DataResourceParameter_ProteinSpectralCount_PFamsName"
-      }
-    }, {
       "iri" : "http://schema.oceanproteinportal.org/v2/DataResourceParameter_FASTA-ProteinSequence",
       "baseIri" : "http://schema.oceanproteinportal.org/v2",
       "labels" : {
         "IRI-based" : "DataResourceParameter_FASTA-ProteinSequence",
         "undefined" : "DataResourceParameter_FASTA-ProteinSequence"
+      }
+    }, {
+      "iri" : "http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_PFamsName",
+      "baseIri" : "http://schema.oceanproteinportal.org/v2",
+      "labels" : {
+        "IRI-based" : "DataResourceParameter_ProteinSpectralCount_PFamsName",
+        "undefined" : "DataResourceParameter_ProteinSpectralCount_PFamsName"
       }
     }, {
       "iri" : "http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_Time",
@@ -2459,18 +2475,18 @@
         "undefined" : "DataResourceParameter_ProteinSpectralCount_PFamsIdentifier"
       }
     }, {
-      "iri" : "http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_SampleIdentifier",
-      "baseIri" : "http://schema.oceanproteinportal.org/v2",
-      "labels" : {
-        "IRI-based" : "DataResourceParameter_PeptideSpectralCount_SampleIdentifier",
-        "undefined" : "DataResourceParameter_PeptideSpectralCount_SampleIdentifier"
-      }
-    }, {
       "iri" : "http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_CruiseIdentifier",
       "baseIri" : "http://schema.oceanproteinportal.org/v2",
       "labels" : {
         "IRI-based" : "DataResourceParameter_PeptideSpectralCount_CruiseIdentifier",
         "undefined" : "DataResourceParameter_PeptideSpectralCount_CruiseIdentifier"
+      }
+    }, {
+      "iri" : "http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_SampleIdentifier",
+      "baseIri" : "http://schema.oceanproteinportal.org/v2",
+      "labels" : {
+        "IRI-based" : "DataResourceParameter_PeptideSpectralCount_SampleIdentifier",
+        "undefined" : "DataResourceParameter_PeptideSpectralCount_SampleIdentifier"
       }
     }, {
       "iri" : "http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_UniprotIdentifier",
@@ -2508,18 +2524,18 @@
         "undefined" : "DataResourceParameter_PeptideSpectralCount_BestSequestXCorrScore"
       }
     }, {
-      "iri" : "http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_MedianRetentionTime",
-      "baseIri" : "http://schema.oceanproteinportal.org/v2",
-      "labels" : {
-        "IRI-based" : "DataResourceParameter_PeptideSpectralCount_MedianRetentionTime",
-        "undefined" : "DataResourceParameter_PeptideSpectralCount_MedianRetentionTime"
-      }
-    }, {
       "iri" : "http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Longitude",
       "baseIri" : "http://schema.oceanproteinportal.org/v2",
       "labels" : {
         "IRI-based" : "DataResourceParameter_PeptideSpectralCount_Longitude",
         "undefined" : "DataResourceParameter_PeptideSpectralCount_Longitude"
+      }
+    }, {
+      "iri" : "http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_MedianRetentionTime",
+      "baseIri" : "http://schema.oceanproteinportal.org/v2",
+      "labels" : {
+        "IRI-based" : "DataResourceParameter_PeptideSpectralCount_MedianRetentionTime",
+        "undefined" : "DataResourceParameter_PeptideSpectralCount_MedianRetentionTime"
       }
     }, {
       "iri" : "http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_PeptideSpectralCountSummation",
@@ -2571,30 +2587,30 @@
         "undefined" : "DataResourceParameter_PeptideSpectralCount_MolecularWeight"
       }
     } ],
-    "subClasses" : [ "169", "171" ],
+    "subClasses" : [ "173", "152" ],
     "comment" : {
       "undefined" : "A specification of how a DataParameter is expected to be in a DataResource in order for the DatResource to conform to a DatasetProfile."
     },
     "id" : "52",
-    "superClasses" : [ "167" ]
+    "superClasses" : [ "171" ]
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#float",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "194",
+    "id" : "196",
     "label" : {
       "IRI-based" : "float"
     }
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#token",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "255",
+    "id" : "258",
     "label" : {
       "IRI-based" : "token"
     }
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#float",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "267",
+    "id" : "270",
     "label" : {
       "IRI-based" : "float"
     }
@@ -2608,7 +2624,7 @@
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#float",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "253",
+    "id" : "256",
     "label" : {
       "IRI-based" : "float"
     }
@@ -2620,7 +2636,7 @@
       "IRI-based" : "MetadataResource",
       "undefined" : "MetadataResource"
     },
-    "subClasses" : [ "151" ],
+    "subClasses" : [ "154" ],
     "comment" : {
       "undefined" : "A  file or other type of data resource that contains the metadata describing a OPPDataset"
     },
@@ -2633,7 +2649,7 @@
     "label" : {
       "IRI-based" : "RecommendedDataParameter"
     },
-    "id" : "169",
+    "id" : "173",
     "superClasses" : [ "52" ]
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#string",
@@ -2645,7 +2661,7 @@
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#integer",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "285",
+    "id" : "288",
     "label" : {
       "IRI-based" : "integer"
     }
@@ -2661,8 +2677,8 @@
     "comment" : {
       "undefined" : "A protein identification made based on information of a peptide identification. This entity serves as an information object used within a Dataset to identify and describe an actual Protein. Where a Protein has a single amino acid sequence that will not vary across datasets submitted to the OPP, th ereported protien names, molecular weights, etc may slightly vary across these datasets. ProteinIdentification exists so that individual datasets can report their findings and remain separate from other ProteinIdentification while still describing the exact same Protein with the same amino acid sequence."
     },
-    "id" : "10",
-    "superClasses" : [ "32" ]
+    "id" : "9",
+    "superClasses" : [ "31" ]
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#token",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
@@ -2680,7 +2696,7 @@
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#token",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "265",
+    "id" : "267",
     "label" : {
       "IRI-based" : "token"
     }
@@ -2702,12 +2718,12 @@
     "comment" : {
       "undefined" : "The best SEQUEST XCorr score for identifying an amino acid."
     },
-    "id" : "77",
-    "superClasses" : [ "36" ]
+    "id" : "80",
+    "superClasses" : [ "35" ]
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#float",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "287",
+    "id" : "290",
     "label" : {
       "IRI-based" : "float"
     }
@@ -2730,8 +2746,8 @@
     "comment" : {
       "undefined" : "A proxy for any tabular data file. This is useful for software that can detect a certain DataResource as being tabular for ingestion or serialization."
     },
-    "id" : "79",
-    "superClasses" : [ "80" ]
+    "id" : "82",
+    "superClasses" : [ "83" ]
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/UserDefinedSampleIdentifier",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
@@ -2743,8 +2759,8 @@
     "comment" : {
       "undefined" : "A sample identifier specified and defined by the dataset's authors."
     },
-    "id" : "161",
-    "superClasses" : [ "4" ]
+    "id" : "166",
+    "superClasses" : [ "7" ]
   }, {
     "iri" : "http://www.w3.org/ns/sosa/Sampler",
     "baseIri" : "http://www.w3.org/ns/sosa",
@@ -2761,11 +2777,11 @@
       "IRI-based" : "Sampler"
     },
     "attributes" : [ "external" ],
-    "id" : "303"
+    "id" : "306"
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#token",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "302",
+    "id" : "305",
     "label" : {
       "IRI-based" : "token"
     }
@@ -2781,7 +2797,7 @@
       "undefined" : "An information object where a dataset can store observations about an identified peptide in a sample. These observations may vary across many datasets claiming to identify the same peptide, so this entity serves as a way to store these observations separate from other peptide identifiation observations while still allowing these PeptideIdentification objeect to describe the same, singular Peptide."
     },
     "id" : "25",
-    "superClasses" : [ "32" ]
+    "superClasses" : [ "31" ]
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/DatasetIdentifierScheme",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
@@ -2793,7 +2809,7 @@
     "comment" : {
       "undefined" : "The identifierScheme for a singular OPP dataset. The dataset itself is the realm in which other identifiers such as Station names, protein names, etc. are unique (but that may not be unqiue acorss other OPP datasets). This helps ensure that identifiers in a Dataset are not automatically assumed to be equivalent to each other."
     },
-    "id" : "157",
+    "id" : "160",
     "superClasses" : [ "141" ]
   }, {
     "iri" : "http://www.w3.org/ns/sosa/FeatureOfInterest",
@@ -2811,10 +2827,38 @@
       "IRI-based" : "FeatureOfInterest"
     },
     "attributes" : [ "external" ],
-    "id" : "260"
+    "id" : "263"
   }, {
     "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "id" : "309",
+    "id" : "312",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "286",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "317",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "318",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "150",
     "label" : {
       "IRI-based" : "Literal",
       "undefined" : "Literal"
@@ -2822,34 +2866,6 @@
   }, {
     "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "id" : "283",
-    "label" : {
-      "IRI-based" : "Literal",
-      "undefined" : "Literal"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "id" : "314",
-    "label" : {
-      "IRI-based" : "Literal",
-      "undefined" : "Literal"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "id" : "315",
-    "label" : {
-      "IRI-based" : "Literal",
-      "undefined" : "Literal"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "id" : "149",
-    "label" : {
-      "IRI-based" : "Literal",
-      "undefined" : "Literal"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "id" : "280",
     "label" : {
       "IRI-based" : "Literal",
       "undefined" : "Literal"
@@ -2865,12 +2881,12 @@
     "comment" : {
       "undefined" : "The actual Protein being identified in datasets. This real-world Protein is identified by a single amino acid sequence regardless of variations across  ProteinIdentifications that describe this same, single Protein"
     },
-    "id" : "11",
-    "superClasses" : [ "47" ]
+    "id" : "10",
+    "superClasses" : [ "46" ]
   }, {
     "iri" : "http://www.w3.org/2002/07/owl#Thing",
     "baseIri" : "http://owl2vowl.de",
-    "id" : "271",
+    "id" : "274",
     "label" : {
       "undefined" : "Thing"
     }
@@ -2906,7 +2922,7 @@
         "undefined" : "Identifier Scheme: ORCID"
       }
     } ],
-    "subClasses" : [ "157", "140" ],
+    "subClasses" : [ "160", "140" ],
     "comment" : {
       "undefined" : "A realm or domain in which a specific Identifier has a unqiue value from all the other possible Identifiers within that domain."
     },
@@ -2930,8 +2946,8 @@
     "comment" : {
       "undefined" : "Some property of a peptide identification that was observed in a single sample."
     },
-    "id" : "42",
-    "superClasses" : [ "39" ]
+    "id" : "44",
+    "superClasses" : [ "41" ]
   }, {
     "iri" : "http://www.w3.org/2002/07/owl#Thing",
     "baseIri" : "http://owl2vowl.de",
@@ -2948,7 +2964,7 @@
     }
   }, {
     "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "id" : "269",
+    "id" : "272",
     "label" : {
       "IRI-based" : "Literal",
       "undefined" : "Literal"
@@ -2964,19 +2980,19 @@
     "id" : "6",
     "type" : "rdfs:SubClassOf"
   }, {
-    "id" : "9",
+    "id" : "8",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "13",
+    "id" : "12",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "16",
+    "id" : "15",
     "type" : "rdfs:SubClassOf"
   }, {
-    "id" : "19",
+    "id" : "18",
     "type" : "rdfs:SubClassOf"
   }, {
-    "id" : "22",
+    "id" : "21",
     "type" : "rdfs:SubClassOf"
   }, {
     "id" : "24",
@@ -2988,40 +3004,34 @@
     "id" : "29",
     "type" : "rdfs:SubClassOf"
   }, {
-    "id" : "33",
+    "id" : "32",
     "type" : "rdfs:SubClassOf"
   }, {
-    "id" : "37",
+    "id" : "36",
     "type" : "owl:datatypeProperty"
   }, {
-    "id" : "43",
+    "id" : "38",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "48",
+    "id" : "47",
     "type" : "owl:objectProperty"
   }, {
     "id" : "51",
     "type" : "owl:datatypeProperty"
   }, {
-    "id" : "55",
+    "id" : "54",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "58",
+    "id" : "57",
     "type" : "rdfs:SubClassOf"
   }, {
     "id" : "60",
     "type" : "rdfs:SubClassOf"
   }, {
-    "id" : "63",
-    "type" : "rdfs:SubClassOf"
-  }, {
-    "id" : "65",
+    "id" : "64",
     "type" : "rdfs:SubClassOf"
   }, {
     "id" : "66",
-    "type" : "rdfs:SubClassOf"
-  }, {
-    "id" : "67",
     "type" : "rdfs:SubClassOf"
   }, {
     "id" : "68",
@@ -3031,15 +3041,21 @@
     "type" : "rdfs:SubClassOf"
   }, {
     "id" : "70",
-    "type" : "owl:datatypeProperty"
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "71",
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "72",
     "type" : "owl:objectProperty"
   }, {
     "id" : "76",
-    "type" : "rdfs:SubClassOf"
+    "type" : "owl:datatypeProperty"
   }, {
     "id" : "78",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "79",
     "type" : "rdfs:SubClassOf"
   }, {
     "id" : "81",
@@ -3082,10 +3098,10 @@
     "type" : "owl:datatypeProperty"
   }, {
     "id" : "108",
-    "type" : "owl:datatypeProperty"
+    "type" : "owl:objectProperty"
   }, {
     "id" : "110",
-    "type" : "owl:objectProperty"
+    "type" : "owl:datatypeProperty"
   }, {
     "id" : "112",
     "type" : "owl:objectProperty"
@@ -3094,10 +3110,10 @@
     "type" : "owl:datatypeProperty"
   }, {
     "id" : "116",
-    "type" : "owl:datatypeProperty"
+    "type" : "owl:objectProperty"
   }, {
     "id" : "118",
-    "type" : "owl:objectProperty"
+    "type" : "owl:datatypeProperty"
   }, {
     "id" : "120",
     "type" : "owl:objectProperty"
@@ -3129,7 +3145,7 @@
     "id" : "137",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "57",
+    "id" : "56",
     "type" : "owl:objectProperty"
   }, {
     "id" : "142",
@@ -3139,22 +3155,22 @@
     "type" : "owl:objectProperty"
   }, {
     "id" : "146",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "148",
-    "type" : "owl:datatypeProperty"
-  }, {
-    "id" : "150",
     "type" : "rdfs:SubClassOf"
   }, {
-    "id" : "152",
+    "id" : "147",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "149",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "151",
     "type" : "rdfs:SubClassOf"
   }, {
     "id" : "153",
-    "type" : "owl:datatypeProperty"
-  }, {
-    "id" : "156",
     "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "155",
+    "type" : "owl:datatypeProperty"
   }, {
     "id" : "158",
     "type" : "rdfs:SubClassOf"
@@ -3162,19 +3178,19 @@
     "id" : "159",
     "type" : "rdfs:SubClassOf"
   }, {
-    "id" : "160",
+    "id" : "161",
     "type" : "rdfs:SubClassOf"
   }, {
     "id" : "162",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "163",
     "type" : "rdfs:SubClassOf"
   }, {
     "id" : "164",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "165",
     "type" : "rdfs:SubClassOf"
   }, {
-    "id" : "166",
+    "id" : "167",
     "type" : "rdfs:SubClassOf"
   }, {
     "id" : "168",
@@ -3184,28 +3200,28 @@
     "type" : "rdfs:SubClassOf"
   }, {
     "id" : "172",
-    "type" : "owl:objectProperty"
+    "type" : "rdfs:SubClassOf"
   }, {
-    "id" : "173",
-    "type" : "owl:datatypeProperty"
+    "id" : "174",
+    "type" : "owl:objectProperty"
   }, {
     "id" : "175",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "176",
     "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "177",
+    "type" : "owl:objectProperty"
   }, {
     "id" : "178",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "179",
     "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "180",
+    "type" : "owl:objectProperty"
   }, {
     "id" : "181",
     "type" : "owl:datatypeProperty"
   }, {
     "id" : "183",
-    "type" : "rdfs:SubClassOf"
+    "type" : "owl:datatypeProperty"
   }, {
     "id" : "185",
     "type" : "rdfs:SubClassOf"
@@ -3213,7 +3229,7 @@
     "id" : "186",
     "type" : "rdfs:SubClassOf"
   }, {
-    "id" : "187",
+    "id" : "188",
     "type" : "rdfs:SubClassOf"
   }, {
     "id" : "189",
@@ -3229,19 +3245,19 @@
     "type" : "rdfs:SubClassOf"
   }, {
     "id" : "193",
-    "type" : "owl:datatypeProperty"
+    "type" : "owl:objectProperty"
   }, {
-    "id" : "111",
+    "id" : "194",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "109",
     "type" : "owl:objectProperty"
   }, {
     "id" : "195",
-    "type" : "rdfs:SubClassOf"
-  }, {
-    "id" : "196",
-    "type" : "rdfs:SubClassOf"
+    "type" : "owl:datatypeProperty"
   }, {
     "id" : "197",
-    "type" : "owl:objectProperty"
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "198",
     "type" : "rdfs:SubClassOf"
@@ -3249,56 +3265,56 @@
     "id" : "199",
     "type" : "owl:objectProperty"
   }, {
+    "id" : "200",
+    "type" : "rdfs:SubClassOf"
+  }, {
     "id" : "201",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "202",
+    "id" : "203",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "204",
     "type" : "rdfs:SubClassOf"
   }, {
-    "id" : "203",
+    "id" : "206",
     "type" : "owl:datatypeProperty"
   }, {
-    "id" : "205",
-    "type" : "rdfs:SubClassOf"
-  }, {
-    "id" : "207",
-    "type" : "rdfs:SubClassOf"
-  }, {
     "id" : "208",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "209",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "211",
     "type" : "owl:someValuesFrom"
   }, {
     "id" : "145",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "210",
+    "id" : "213",
     "type" : "owl:someValuesFrom"
   }, {
     "id" : "75",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "213",
-    "type" : "owl:allValuesFrom"
-  }, {
-    "id" : "214",
-    "type" : "owl:allValuesFrom"
-  }, {
-    "id" : "215",
-    "type" : "owl:someValuesFrom"
-  }, {
     "id" : "216",
-    "type" : "owl:objectProperty"
+    "type" : "owl:allValuesFrom"
   }, {
     "id" : "217",
-    "type" : "owl:disjointWith"
+    "type" : "owl:allValuesFrom"
   }, {
     "id" : "218",
     "type" : "owl:someValuesFrom"
   }, {
     "id" : "219",
-    "type" : "owl:someValuesFrom"
+    "type" : "owl:objectProperty"
   }, {
     "id" : "220",
-    "type" : "owl:datatypeProperty"
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "221",
+    "type" : "owl:someValuesFrom"
   }, {
     "id" : "222",
     "type" : "owl:someValuesFrom"
@@ -3307,94 +3323,94 @@
     "type" : "owl:datatypeProperty"
   }, {
     "id" : "225",
-    "type" : "owl:objectProperty"
+    "type" : "owl:someValuesFrom"
   }, {
     "id" : "226",
-    "type" : "owl:someValuesFrom"
-  }, {
-    "id" : "227",
-    "type" : "owl:disjointWith"
+    "type" : "owl:datatypeProperty"
   }, {
     "id" : "228",
-    "type" : "owl:someValuesFrom"
+    "type" : "owl:objectProperty"
   }, {
     "id" : "229",
+    "type" : "owl:someValuesFrom"
+  }, {
+    "id" : "230",
     "type" : "owl:allValuesFrom"
   }, {
     "id" : "232",
-    "type" : "owl:disjointWith"
+    "type" : "owl:someValuesFrom"
   }, {
     "id" : "233",
     "type" : "owl:disjointWith"
   }, {
     "id" : "234",
-    "type" : "owl:someValuesFrom"
-  }, {
-    "id" : "235",
-    "type" : "owl:allValuesFrom"
+    "type" : "owl:disjointWith"
   }, {
     "id" : "236",
-    "type" : "owl:objectProperty"
+    "type" : "owl:allValuesFrom"
   }, {
     "id" : "237",
+    "type" : "owl:someValuesFrom"
+  }, {
+    "id" : "238",
     "type" : "owl:disjointWith"
   }, {
     "id" : "239",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "241",
-    "type" : "owl:objectProperty"
+    "id" : "240",
+    "type" : "owl:disjointWith"
   }, {
     "id" : "242",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "56",
+    "id" : "244",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "247",
-    "type" : "owl:datatypeProperty"
-  }, {
-    "id" : "12",
+    "id" : "245",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "249",
+    "id" : "55",
     "type" : "owl:objectProperty"
   }, {
     "id" : "250",
-    "type" : "owl:disjointWith"
+    "type" : "owl:datatypeProperty"
   }, {
-    "id" : "251",
-    "type" : "owl:someValuesFrom"
+    "id" : "11",
+    "type" : "owl:objectProperty"
   }, {
     "id" : "252",
-    "type" : "owl:datatypeProperty"
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "253",
+    "type" : "owl:disjointWith"
   }, {
     "id" : "254",
-    "type" : "owl:datatypeProperty"
+    "type" : "owl:someValuesFrom"
   }, {
-    "id" : "256",
-    "type" : "owl:objectProperty"
+    "id" : "255",
+    "type" : "owl:datatypeProperty"
   }, {
     "id" : "257",
     "type" : "owl:datatypeProperty"
   }, {
-    "id" : "258",
+    "id" : "259",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "259",
+    "id" : "260",
     "type" : "owl:datatypeProperty"
   }, {
     "id" : "261",
     "type" : "owl:objectProperty"
   }, {
     "id" : "262",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "263",
     "type" : "owl:datatypeProperty"
   }, {
     "id" : "264",
-    "type" : "owl:datatypeProperty"
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "265",
+    "type" : "owl:objectProperty"
   }, {
     "id" : "266",
     "type" : "owl:datatypeProperty"
@@ -3402,17 +3418,14 @@
     "id" : "268",
     "type" : "owl:datatypeProperty"
   }, {
-    "id" : "270",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "275",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "276",
+    "id" : "269",
     "type" : "owl:datatypeProperty"
   }, {
-    "id" : "277",
+    "id" : "271",
     "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "273",
+    "type" : "owl:objectProperty"
   }, {
     "id" : "278",
     "type" : "owl:objectProperty"
@@ -3420,8 +3433,11 @@
     "id" : "279",
     "type" : "owl:datatypeProperty"
   }, {
-    "id" : "281",
+    "id" : "280",
     "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "281",
+    "type" : "owl:objectProperty"
   }, {
     "id" : "282",
     "type" : "owl:datatypeProperty"
@@ -3429,23 +3445,17 @@
     "id" : "284",
     "type" : "owl:datatypeProperty"
   }, {
-    "id" : "286",
+    "id" : "285",
     "type" : "owl:datatypeProperty"
   }, {
-    "id" : "288",
-    "type" : "rdfs:SubClassOf"
+    "id" : "287",
+    "type" : "owl:datatypeProperty"
   }, {
     "id" : "289",
-    "type" : "rdfs:SubClassOf"
-  }, {
-    "id" : "290",
-    "type" : "rdfs:SubClassOf"
+    "type" : "owl:datatypeProperty"
   }, {
     "id" : "291",
     "type" : "rdfs:SubClassOf"
-  }, {
-    "id" : "15",
-    "type" : "owl:objectProperty"
   }, {
     "id" : "292",
     "type" : "rdfs:SubClassOf"
@@ -3456,79 +3466,91 @@
     "id" : "294",
     "type" : "rdfs:SubClassOf"
   }, {
-    "id" : "295",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "296",
-    "type" : "owl:datatypeProperty"
-  }, {
-    "id" : "297",
-    "type" : "owl:someValuesFrom"
-  }, {
-    "id" : "230",
+    "id" : "14",
     "type" : "owl:objectProperty"
   }, {
+    "id" : "295",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "296",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "297",
+    "type" : "rdfs:SubClassOf"
+  }, {
     "id" : "298",
-    "type" : "owl:allValuesFrom"
+    "type" : "owl:disjointWith"
   }, {
     "id" : "299",
-    "type" : "owl:allValuesFrom"
+    "type" : "owl:datatypeProperty"
   }, {
     "id" : "300",
-    "type" : "owl:allValuesFrom"
+    "type" : "owl:someValuesFrom"
+  }, {
+    "id" : "231",
+    "type" : "owl:objectProperty"
   }, {
     "id" : "301",
     "type" : "owl:allValuesFrom"
   }, {
-    "id" : "119",
-    "type" : "owl:objectProperty"
+    "id" : "302",
+    "type" : "owl:allValuesFrom"
+  }, {
+    "id" : "303",
+    "type" : "owl:allValuesFrom"
   }, {
     "id" : "304",
-    "type" : "owl:disjointWith"
+    "type" : "owl:allValuesFrom"
   }, {
-    "id" : "305",
-    "type" : "owl:disjointWith"
-  }, {
-    "id" : "306",
-    "type" : "owl:datatypeProperty"
+    "id" : "117",
+    "type" : "owl:objectProperty"
   }, {
     "id" : "307",
     "type" : "owl:disjointWith"
   }, {
     "id" : "308",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "309",
     "type" : "owl:datatypeProperty"
   }, {
     "id" : "310",
-    "type" : "rdfs:SubClassOf"
+    "type" : "owl:disjointWith"
   }, {
     "id" : "311",
-    "type" : "rdfs:SubClassOf"
-  }, {
-    "id" : "312",
-    "type" : "rdfs:SubClassOf"
+    "type" : "owl:datatypeProperty"
   }, {
     "id" : "313",
     "type" : "rdfs:SubClassOf"
   }, {
+    "id" : "314",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "315",
+    "type" : "rdfs:SubClassOf"
+  }, {
     "id" : "316",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "319",
     "type" : "owl:datatypeProperty"
   }, {
-    "id" : "317",
+    "id" : "320",
     "type" : "owl:datatypeProperty"
   }, {
     "id" : "74",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "318",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "319",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "320",
-    "type" : "owl:objectProperty"
-  }, {
     "id" : "321",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "322",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "323",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "324",
     "type" : "owl:objectProperty"
   } ],
   "propertyAttribute" : [ {
@@ -3551,51 +3573,51 @@
     "attributes" : [ "anonymous", "object" ],
     "id" : "3"
   }, {
-    "range" : "8",
+    "range" : "5",
     "domain" : "7",
     "attributes" : [ "anonymous", "object" ],
     "id" : "6"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/describesProtein",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
-    "range" : "11",
+    "range" : "10",
     "label" : {
       "IRI-based" : "describesProtein",
       "undefined" : "describesProtein"
     },
-    "superproperty" : [ "12" ],
-    "domain" : "10",
+    "superproperty" : [ "11" ],
+    "domain" : "9",
     "comment" : {
       "undefined" : "The actual Protein being described by this Protien information."
     },
     "attributes" : [ "functional", "object" ],
-    "id" : "9"
+    "id" : "8"
   }, {
     "iri" : "http://www.w3.org/ns/sosa/observedProperty",
     "baseIri" : "http://www.w3.org/ns/sosa",
-    "range" : "14",
+    "range" : "13",
     "label" : {
       "IRI-based" : "observedProperty"
     },
-    "domain" : "14",
-    "subproperty" : [ "15" ],
+    "domain" : "13",
+    "subproperty" : [ "14" ],
     "attributes" : [ "external", "object" ],
-    "id" : "13"
+    "id" : "12"
   }, {
-    "range" : "18",
-    "domain" : "17",
+    "range" : "17",
+    "domain" : "16",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "16"
+    "id" : "15"
   }, {
-    "range" : "21",
-    "domain" : "20",
+    "range" : "20",
+    "domain" : "19",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "19"
+    "id" : "18"
   }, {
-    "range" : "21",
-    "domain" : "23",
+    "range" : "23",
+    "domain" : "22",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "22"
+    "id" : "21"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/startIndex",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
@@ -3611,58 +3633,58 @@
     "attributes" : [ "datatype" ],
     "id" : "24"
   }, {
-    "range" : "21",
+    "range" : "23",
     "domain" : "28",
     "attributes" : [ "anonymous", "object" ],
     "id" : "27"
   }, {
-    "range" : "31",
+    "range" : "23",
     "domain" : "30",
     "attributes" : [ "anonymous", "object" ],
     "id" : "29"
   }, {
-    "range" : "31",
-    "domain" : "34",
+    "range" : "4",
+    "domain" : "33",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "33"
+    "id" : "32"
   }, {
     "iri" : "http://schema.org/maxValue",
     "baseIri" : "http://schema.org",
-    "range" : "38",
+    "range" : "37",
     "label" : {
       "IRI-based" : "maxValue"
     },
-    "domain" : "14",
+    "domain" : "13",
     "attributes" : [ "external", "datatype" ],
-    "id" : "37"
+    "id" : "36"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/conformsToProfile",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
-    "range" : "45",
+    "range" : "40",
     "label" : {
       "IRI-based" : "conformsToProfile",
       "undefined" : "conformsToProfile"
     },
-    "domain" : "44",
+    "domain" : "39",
     "comment" : {
       "undefined" : "The dataset conforms to the Dataset Profile. Meaning to presents the profile's expected observations."
     },
     "attributes" : [ "object" ],
-    "id" : "43"
+    "id" : "38"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/storesResultsForSample",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
-    "range" : "50",
+    "range" : "49",
     "label" : {
       "IRI-based" : "storesResultsForSample",
       "undefined" : "storesResultsForSample"
     },
-    "domain" : "49",
+    "domain" : "48",
     "comment" : {
       "undefined" : "A sample for which this Dataset stores observations results for."
     },
     "attributes" : [ "object" ],
-    "id" : "48"
+    "id" : "47"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/multiValuedDefaultDelimiter",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
@@ -3675,73 +3697,63 @@
     "comment" : {
       "undefined" : "For a DataResourceParameter that can have multiple values (schema:multipleValues == TRUE), this is the default delimiter to be used for parsing DataResourceTypes that encode all values into one. One example might be tabular data where a cell contains multiple values separated by a semicolon."
     },
-    "attributes" : [ "functional", "datatype" ],
+    "attributes" : [ "datatype", "functional" ],
     "id" : "51"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/identifierMetadata",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
-    "range" : "21",
+    "range" : "23",
     "label" : {
       "IRI-based" : "identifierMetadata",
       "undefined" : "identifierMetadata"
     },
     "domain" : "5",
-    "subproperty" : [ "56", "57" ],
+    "subproperty" : [ "55", "56" ],
     "comment" : {
       "undefined" : "An information record that annotated or further describes this Identifier."
     },
     "attributes" : [ "object" ],
-    "id" : "55"
+    "id" : "54"
   }, {
-    "range" : "5",
-    "domain" : "59",
+    "range" : "59",
+    "domain" : "58",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "58"
+    "id" : "57"
   }, {
     "range" : "5",
-    "domain" : "31",
+    "domain" : "61",
     "attributes" : [ "anonymous", "object" ],
     "id" : "60"
   }, {
-    "range" : "40",
-    "domain" : "62",
+    "range" : "42",
+    "domain" : "63",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "63"
+    "id" : "64"
   }, {
-    "range" : "40",
-    "domain" : "54",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "65"
-  }, {
-    "range" : "40",
-    "domain" : "39",
+    "range" : "42",
+    "domain" : "67",
     "attributes" : [ "anonymous", "object" ],
     "id" : "66"
   }, {
-    "range" : "40",
-    "domain" : "21",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "67"
-  }, {
-    "range" : "40",
-    "domain" : "36",
+    "range" : "42",
+    "domain" : "50",
     "attributes" : [ "anonymous", "object" ],
     "id" : "68"
   }, {
-    "range" : "36",
-    "domain" : "35",
+    "range" : "42",
+    "domain" : "41",
     "attributes" : [ "anonymous", "object" ],
     "id" : "69"
   }, {
-    "iri" : "http://schema.org/description",
-    "baseIri" : "http://schema.org",
-    "range" : "71",
-    "label" : {
-      "IRI-based" : "description"
-    },
-    "domain" : "14",
-    "attributes" : [ "external", "datatype" ],
+    "range" : "42",
+    "domain" : "23",
+    "attributes" : [ "anonymous", "object" ],
     "id" : "70"
+  }, {
+    "range" : "42",
+    "domain" : "35",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "71"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/selectedBasedOnPeptideIdentification",
     "inverse" : "74",
@@ -3759,15 +3771,25 @@
     "attributes" : [ "object" ],
     "id" : "72"
   }, {
-    "range" : "36",
-    "domain" : "77",
-    "attributes" : [ "anonymous", "object" ],
+    "iri" : "http://schema.org/description",
+    "baseIri" : "http://schema.org",
+    "range" : "77",
+    "label" : {
+      "IRI-based" : "description"
+    },
+    "domain" : "13",
+    "attributes" : [ "external", "datatype" ],
     "id" : "76"
   }, {
-    "range" : "80",
-    "domain" : "79",
+    "range" : "35",
+    "domain" : "34",
     "attributes" : [ "anonymous", "object" ],
     "id" : "78"
+  }, {
+    "range" : "35",
+    "domain" : "80",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "79"
   }, {
     "range" : "83",
     "domain" : "82",
@@ -3790,12 +3812,12 @@
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/describesPeptide",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
-    "range" : "46",
+    "range" : "45",
     "label" : {
       "IRI-based" : "describesPeptide",
       "undefined" : "describesPeptide"
     },
-    "superproperty" : [ "12" ],
+    "superproperty" : [ "11" ],
     "domain" : "25",
     "comment" : {
       "undefined" : "The actual Peptide being described by this information."
@@ -3811,7 +3833,7 @@
       "undefined" : "cruiseID"
     },
     "minCardinality" : "1",
-    "domain" : "17",
+    "domain" : "19",
     "comment" : {
       "undefined" : "Some label for a certain cruise on which an OPP Dataset was collected."
     },
@@ -3819,14 +3841,14 @@
     "id" : "89"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/describedByIdentification",
-    "inverse" : "12",
+    "inverse" : "11",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
-    "range" : "32",
+    "range" : "31",
     "label" : {
       "IRI-based" : "describedByIdentification",
       "undefined" : "describedByIdentification"
     },
-    "domain" : "47",
+    "domain" : "46",
     "comment" : {
       "undefined" : "The  identification that describes this amino acid"
     },
@@ -3851,16 +3873,16 @@
       "undefined" : "plus2HSpectraCount"
     },
     "domain" : "99",
-    "attributes" : [ "functional", "datatype" ],
+    "attributes" : [ "datatype", "functional" ],
     "id" : "98"
   }, {
-    "range" : "47",
-    "domain" : "11",
+    "range" : "46",
+    "domain" : "10",
     "attributes" : [ "anonymous", "object" ],
     "id" : "101"
   }, {
-    "range" : "47",
-    "domain" : "46",
+    "range" : "46",
+    "domain" : "45",
     "attributes" : [ "anonymous", "object" ],
     "id" : "102"
   }, {
@@ -3875,7 +3897,7 @@
     "comment" : {
       "undefined" : "Specifies whether a DatasetProfile recommends that a certain DataParameter exist in a DataResource. Recommendation doesn't mean its required, but rather it would be useful for data consumers."
     },
-    "attributes" : [ "functional", "datatype" ],
+    "attributes" : [ "datatype", "functional" ],
     "id" : "103"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/aggregatesDataFrom",
@@ -3885,7 +3907,7 @@
       "IRI-based" : "aggregatesDataFrom",
       "undefined" : "aggregatesDataFrom"
     },
-    "domain" : "49",
+    "domain" : "48",
     "comment" : {
       "undefined" : "This Dataset is comprised of the following other DataResources."
     },
@@ -3900,45 +3922,45 @@
       "undefined" : "proteinSequence"
     },
     "cardinality" : "1",
-    "domain" : "11",
+    "domain" : "10",
     "comment" : {
       "undefined" : "The amino acid chain, written as a string of characters, that identifies a specific Protein."
     },
-    "attributes" : [ "functional", "datatype" ],
+    "attributes" : [ "datatype", "functional" ],
     "id" : "106"
-  }, {
-    "iri" : "http://schema.oceanproteinportal.org/v2/maximumFilterSize",
-    "baseIri" : "http://schema.oceanproteinportal.org/v2",
-    "range" : "109",
-    "label" : {
-      "IRI-based" : "maximumFilterSize",
-      "undefined" : "maximumFilterSize"
-    },
-    "domain" : "62",
-    "comment" : {
-      "undefined" : "The maximum size of the filter used during sampling. Measured in microns."
-    },
-    "attributes" : [ "datatype" ],
-    "id" : "108"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/identificationScore",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
-    "range" : "36",
+    "range" : "35",
     "label" : {
       "IRI-based" : "identificationScore",
       "undefined" : "identificationScore"
     },
-    "domain" : "32",
-    "subproperty" : [ "111" ],
+    "domain" : "31",
+    "subproperty" : [ "109" ],
     "comment" : {
       "undefined" : "The score within a certain system for identifying an amino acid."
     },
     "attributes" : [ "object" ],
+    "id" : "108"
+  }, {
+    "iri" : "http://schema.oceanproteinportal.org/v2/maximumFilterSize",
+    "baseIri" : "http://schema.oceanproteinportal.org/v2",
+    "range" : "111",
+    "label" : {
+      "IRI-based" : "maximumFilterSize",
+      "undefined" : "maximumFilterSize"
+    },
+    "domain" : "63",
+    "comment" : {
+      "undefined" : "The maximum size of the filter used during sampling. Measured in microns."
+    },
+    "attributes" : [ "datatype" ],
     "id" : "110"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/processableFileType",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
-    "range" : "80",
+    "range" : "83",
     "label" : {
       "IRI-based" : "processableFileType",
       "undefined" : "processableFileType"
@@ -3956,29 +3978,29 @@
     "label" : {
       "IRI-based" : "defaultValue"
     },
-    "domain" : "14",
+    "domain" : "13",
     "attributes" : [ "external", "datatype" ],
     "id" : "114"
   }, {
-    "iri" : "http://schema.org/alternateName",
-    "baseIri" : "http://schema.org",
-    "range" : "117",
-    "label" : {
-      "IRI-based" : "alternateName"
-    },
-    "domain" : "14",
-    "attributes" : [ "external", "datatype" ],
-    "id" : "116"
-  }, {
     "iri" : "http://www.w3.org/ns/ssn/systems/hasSystemCapability",
     "baseIri" : "http://www.w3.org/ns/ssn/systems",
-    "range" : "14",
+    "range" : "13",
     "label" : {
       "IRI-based" : "hasSystemCapability"
     },
-    "domain" : "14",
-    "subproperty" : [ "119" ],
+    "domain" : "13",
+    "subproperty" : [ "117" ],
     "attributes" : [ "external", "object" ],
+    "id" : "116"
+  }, {
+    "iri" : "http://schema.org/alternateName",
+    "baseIri" : "http://schema.org",
+    "range" : "119",
+    "label" : {
+      "IRI-based" : "alternateName"
+    },
+    "domain" : "13",
+    "attributes" : [ "external", "datatype" ],
     "id" : "118"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/roleFor",
@@ -4003,7 +4025,7 @@
       "IRI-based" : "describedByMetadataResource",
       "undefined" : "describedByMetadataResource"
     },
-    "domain" : "49",
+    "domain" : "48",
     "comment" : {
       "undefined" : "The MetadataResource that describes this OPPDataset"
     },
@@ -4060,11 +4082,11 @@
       "IRI-based" : "molecularWeight",
       "undefined" : "molecularWeight"
     },
-    "domain" : "32",
+    "domain" : "31",
     "comment" : {
       "undefined" : "A protein's molecular weight measured in kiloDaltons"
     },
-    "attributes" : [ "functional", "datatype" ],
+    "attributes" : [ "datatype", "functional" ],
     "id" : "131"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/plus4HSpectraCount",
@@ -4075,12 +4097,12 @@
       "undefined" : "plus4HSpectraCount"
     },
     "domain" : "99",
-    "attributes" : [ "functional", "datatype" ],
+    "attributes" : [ "datatype", "functional" ],
     "id" : "133"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/serializesMetadataFor",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
-    "range" : "49",
+    "range" : "48",
     "label" : {
       "IRI-based" : "serializesMetadataFor",
       "undefined" : "serializesMetadataFor"
@@ -4099,11 +4121,11 @@
       "IRI-based" : "proteinName",
       "undefined" : "proteinName"
     },
-    "domain" : "10",
+    "domain" : "9",
     "comment" : {
       "undefined" : "The name given to the protein being identified by some identifying agent."
     },
-    "attributes" : [ "functional", "datatype" ],
+    "attributes" : [ "datatype", "functional" ],
     "id" : "135"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/isIdentifierOf",
@@ -4122,18 +4144,18 @@
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/ncbiTaxonName",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
-    "range" : "28",
+    "range" : "30",
     "label" : {
       "IRI-based" : "ncbiTaxonName",
       "undefined" : "ncbiTaxonName"
     },
-    "superproperty" : [ "55" ],
+    "superproperty" : [ "54" ],
     "domain" : "139",
     "comment" : {
       "undefined" : "The NCBI Identifier for which this name describes."
     },
     "attributes" : [ "object" ],
-    "id" : "57"
+    "id" : "56"
   }, {
     "iri" : "http://schema.org/multipleValues",
     "baseIri" : "http://schema.org",
@@ -4141,84 +4163,89 @@
     "label" : {
       "IRI-based" : "multipleValues"
     },
-    "domain" : "14",
+    "domain" : "13",
     "attributes" : [ "external", "datatype" ],
     "id" : "142"
   }, {
     "iri" : "http://www.w3.org/ns/sosa/hasFeatureOfInterest",
     "baseIri" : "http://www.w3.org/ns/sosa",
-    "range" : "14",
+    "range" : "13",
     "label" : {
       "IRI-based" : "hasFeatureOfInterest"
     },
-    "domain" : "14",
+    "domain" : "13",
     "subproperty" : [ "145" ],
     "attributes" : [ "external", "object" ],
     "id" : "144"
   }, {
+    "range" : "44",
+    "domain" : "99",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "146"
+  }, {
     "iri" : "http://schema.org/variableMeasured",
     "baseIri" : "http://schema.org",
-    "range" : "14",
+    "range" : "13",
     "label" : {
       "IRI-based" : "variableMeasured"
     },
-    "domain" : "14",
+    "domain" : "13",
     "attributes" : [ "external", "object" ],
-    "id" : "146"
+    "id" : "147"
   }, {
     "iri" : "http://schema.org/name",
     "baseIri" : "http://schema.org",
-    "range" : "149",
+    "range" : "150",
     "label" : {
       "IRI-based" : "name"
     },
-    "domain" : "14",
+    "domain" : "13",
     "attributes" : [ "external", "datatype" ],
-    "id" : "148"
+    "id" : "149"
+  }, {
+    "range" : "52",
+    "domain" : "152",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "151"
   }, {
     "range" : "93",
-    "domain" : "151",
+    "domain" : "154",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "150"
-  }, {
-    "range" : "10",
-    "domain" : "73",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "152"
+    "id" : "153"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/keggName",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
-    "range" : "155",
+    "range" : "157",
     "label" : {
       "IRI-based" : "keggName",
       "undefined" : "keggName"
     },
-    "domain" : "154",
+    "domain" : "156",
     "comment" : {
       "undefined" : "The name of some Entry in the Kegg Database. This could be thee name of an Orthology or Pathway, etc."
     },
     "attributes" : [ "datatype" ],
-    "id" : "153"
+    "id" : "155"
+  }, {
+    "range" : "9",
+    "domain" : "73",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "158"
   }, {
     "range" : "141",
-    "domain" : "157",
+    "domain" : "160",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "156"
+    "id" : "159"
   }, {
     "range" : "141",
     "domain" : "140",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "158"
+    "id" : "161"
   }, {
-    "range" : "42",
-    "domain" : "99",
+    "range" : "7",
+    "domain" : "163",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "159"
-  }, {
-    "range" : "4",
-    "domain" : "161",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "160"
+    "id" : "162"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/isForeignKeyTo",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
@@ -4232,32 +4259,32 @@
       "undefined" : "A DataResourceParameter that acts as a foreign key in some other, disjoint DataResource for the purpose of joining/linking data ."
     },
     "attributes" : [ "functional", "object" ],
-    "id" : "162"
-  }, {
-    "range" : "86",
-    "domain" : "147",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "163"
-  }, {
-    "range" : "86",
-    "domain" : "165",
-    "attributes" : [ "anonymous", "object" ],
     "id" : "164"
   }, {
-    "range" : "167",
-    "domain" : "52",
+    "range" : "7",
+    "domain" : "166",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "166"
+    "id" : "165"
   }, {
-    "range" : "52",
+    "range" : "86",
+    "domain" : "148",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "167"
+  }, {
+    "range" : "86",
     "domain" : "169",
     "attributes" : [ "anonymous", "object" ],
     "id" : "168"
   }, {
-    "range" : "52",
-    "domain" : "171",
+    "range" : "171",
+    "domain" : "52",
     "attributes" : [ "anonymous", "object" ],
     "id" : "170"
+  }, {
+    "range" : "52",
+    "domain" : "173",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "172"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/dependsOnParameter",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
@@ -4271,48 +4298,48 @@
       "undefined" : "A another DataResourceParameter which must exist in a DataResource for  the DatasetProfile to be valid for a conforming Dataset."
     },
     "attributes" : [ "object" ],
-    "id" : "172"
+    "id" : "174"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/medianRetentionTime",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
-    "range" : "174",
+    "range" : "176",
     "label" : {
       "IRI-based" : "medianRetentionTime",
       "undefined" : "medianRetentionTime"
     },
     "domain" : "25",
-    "attributes" : [ "functional", "datatype" ],
-    "id" : "173"
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "175"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/sampleProteinProperty",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
-    "range" : "8",
+    "range" : "17",
     "label" : {
       "IRI-based" : "sampleProteinProperty",
       "undefined" : "sampleProteinProperty"
     },
-    "superproperty" : [ "15" ],
-    "domain" : "10",
+    "superproperty" : [ "14" ],
+    "domain" : "9",
     "comment" : {
       "undefined" : "An observation made from a single Sample about an identified protein"
     },
     "attributes" : [ "object" ],
-    "id" : "175"
+    "id" : "177"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/aminoAcidSequence",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
-    "range" : "177",
+    "range" : "179",
     "label" : {
       "IRI-based" : "aminoAcidSequence",
       "undefined" : "aminoAcidSequence"
     },
     "cardinality" : "1",
-    "domain" : "47",
+    "domain" : "46",
     "comment" : {
       "undefined" : "The amino acid chain, written as a string of characters, that identifies a specific amino acid."
     },
-    "attributes" : [ "functional", "datatype" ],
-    "id" : "176"
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "178"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/keggPathway",
     "inverse" : "0",
@@ -4327,25 +4354,25 @@
       "undefined" : "A Pathway for some Kegg Orthology entry."
     },
     "attributes" : [ "object" ],
-    "id" : "178"
+    "id" : "180"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/minimumFilterSize",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
-    "range" : "180",
+    "range" : "182",
     "label" : {
       "IRI-based" : "minimumFilterSize",
       "undefined" : "minimumFilterSize"
     },
-    "domain" : "62",
+    "domain" : "63",
     "comment" : {
       "undefined" : "The minimum size of a filter used during sampling. Mesaured in microns."
     },
     "attributes" : [ "datatype" ],
-    "id" : "179"
+    "id" : "181"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/bestSEQUESTDCnScore",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
-    "range" : "182",
+    "range" : "184",
     "label" : {
       "IRI-based" : "bestSEQUESTDCnScore",
       "undefined" : "bestSEQUESTDCnScore"
@@ -4354,88 +4381,102 @@
     "comment" : {
       "undefined" : "The best SEQUEST DCn score"
     },
-    "attributes" : [ "functional", "datatype" ],
-    "id" : "181"
-  }, {
-    "range" : "125",
-    "domain" : "184",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "datatype", "functional" ],
     "id" : "183"
   }, {
-    "range" : "125",
-    "domain" : "121",
+    "range" : "22",
+    "domain" : "1",
     "attributes" : [ "anonymous", "object" ],
     "id" : "185"
   }, {
     "range" : "125",
-    "domain" : "130",
+    "domain" : "187",
     "attributes" : [ "anonymous", "object" ],
     "id" : "186"
   }, {
-    "range" : "4",
-    "domain" : "188",
+    "range" : "125",
+    "domain" : "121",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "187"
+    "id" : "188"
   }, {
-    "range" : "128",
-    "domain" : "113",
+    "range" : "125",
+    "domain" : "130",
     "attributes" : [ "anonymous", "object" ],
     "id" : "189"
   }, {
-    "range" : "128",
-    "domain" : "97",
+    "range" : "4",
+    "domain" : "59",
     "attributes" : [ "anonymous", "object" ],
     "id" : "190"
   }, {
     "range" : "128",
-    "domain" : "45",
+    "domain" : "113",
     "attributes" : [ "anonymous", "object" ],
     "id" : "191"
   }, {
     "range" : "128",
-    "domain" : "94",
+    "domain" : "97",
     "attributes" : [ "anonymous", "object" ],
     "id" : "192"
   }, {
+    "iri" : "http://schema.oceanproteinportal.org/v2/isInstanceOf",
+    "baseIri" : "http://schema.oceanproteinportal.org/v2",
+    "range" : "13",
+    "label" : {
+      "IRI-based" : "isInstanceOf",
+      "undefined" : "isInstanceOf"
+    },
+    "domain" : "13",
+    "comment" : {
+      "undefined" : "An real-world instance of some conceptual thing."
+    },
+    "attributes" : [ "object" ],
+    "id" : "193"
+  }, {
+    "range" : "128",
+    "domain" : "40",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "194"
+  }, {
+    "iri" : "http://schema.oceanproteinportal.org/v2/identificationBasedOnScore",
+    "baseIri" : "http://schema.oceanproteinportal.org/v2",
+    "range" : "35",
+    "label" : {
+      "IRI-based" : "identificationBasedOnScore",
+      "undefined" : "identificationBasedOnScore"
+    },
+    "superproperty" : [ "108" ],
+    "domain" : "31",
+    "comment" : {
+      "undefined" : "The score used to determine an amino acid's identification"
+    },
+    "attributes" : [ "object" ],
+    "id" : "109"
+  }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/totalPrecursorIntensity",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
-    "range" : "194",
+    "range" : "196",
     "label" : {
       "IRI-based" : "totalPrecursorIntensity",
       "undefined" : "totalPrecursorIntensity"
     },
     "domain" : "25",
-    "attributes" : [ "functional", "datatype" ],
-    "id" : "193"
-  }, {
-    "iri" : "http://schema.oceanproteinportal.org/v2/identificationBasedOnScore",
-    "baseIri" : "http://schema.oceanproteinportal.org/v2",
-    "range" : "36",
-    "label" : {
-      "IRI-based" : "identificationBasedOnScore",
-      "undefined" : "identificationBasedOnScore"
-    },
-    "superproperty" : [ "110" ],
-    "domain" : "32",
-    "comment" : {
-      "undefined" : "The score used to determine an amino acid's identification"
-    },
-    "attributes" : [ "object" ],
-    "id" : "111"
-  }, {
-    "range" : "128",
-    "domain" : "80",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "datatype", "functional" ],
     "id" : "195"
   }, {
-    "range" : "20",
-    "domain" : "2",
+    "range" : "128",
+    "domain" : "94",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "196"
+    "id" : "197"
+  }, {
+    "range" : "128",
+    "domain" : "83",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "198"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/performedAtOrganization",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
-    "range" : "147",
+    "range" : "148",
     "label" : {
       "IRI-based" : "performedAtOrganization",
       "undefined" : "performedAtOrganization"
@@ -4445,12 +4486,12 @@
       "undefined" : "The Organization at which the acting Agent performed the Role"
     },
     "attributes" : [ "irreflexive", "object" ],
-    "id" : "197"
+    "id" : "199"
   }, {
-    "range" : "20",
-    "domain" : "1",
+    "range" : "22",
+    "domain" : "2",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "198"
+    "id" : "200"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/performedOnBehalfOf",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
@@ -4464,12 +4505,12 @@
       "undefined" : "The Agent for which the performing Agent is acting in a certain Role."
     },
     "attributes" : [ "object" ],
-    "id" : "199"
+    "id" : "201"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/suggestsProteinIdentification",
     "inverse" : "75",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
-    "range" : "10",
+    "range" : "9",
     "label" : {
       "IRI-based" : "suggestsProteinIdentification",
       "undefined" : "suggestsProteinIdentification"
@@ -4480,16 +4521,16 @@
       "undefined" : "A peptide identification suggests this identified protein as possibly being contained within the related Sample."
     },
     "attributes" : [ "object" ],
-    "id" : "201"
+    "id" : "203"
   }, {
-    "range" : "31",
-    "domain" : "139",
+    "range" : "4",
+    "domain" : "205",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "202"
+    "id" : "204"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/bestSEQUESTXCorrScore",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
-    "range" : "204",
+    "range" : "207",
     "label" : {
       "IRI-based" : "bestSEQUESTXCorrScore",
       "undefined" : "bestSEQUESTXCorrScore"
@@ -4498,22 +4539,22 @@
     "comment" : {
       "undefined" : "The best SEQUEST XCorr score"
     },
-    "attributes" : [ "functional", "datatype" ],
-    "id" : "203"
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "206"
   }, {
-    "range" : "31",
-    "domain" : "206",
+    "range" : "4",
+    "domain" : "139",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "205"
+    "id" : "208"
   }, {
-    "range" : "31",
-    "domain" : "83",
+    "range" : "4",
+    "domain" : "210",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "207"
+    "id" : "209"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/isIdentifierSchemeFor",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
-    "range" : "31",
+    "range" : "4",
     "label" : {
       "IRI-based" : "isIdentifierSchemeFor",
       "undefined" : "isIdentifierSchemeFor"
@@ -4523,17 +4564,17 @@
       "undefined" : "An Identifier that bleongs within this scheme."
     },
     "attributes" : [ "someValues", "irreflexive", "inverse functional", "object" ],
-    "id" : "208"
+    "id" : "211"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/observationInSample",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
-    "range" : "50",
+    "range" : "49",
     "label" : {
       "IRI-based" : "observationInSample",
       "undefined" : "observationInSample"
     },
     "superproperty" : [ "144" ],
-    "domain" : "39",
+    "domain" : "41",
     "comment" : {
       "undefined" : "An observation made about a single Sample for some identified amino acid."
     },
@@ -4542,17 +4583,17 @@
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/isIdentifierOf",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
-    "range" : "10",
+    "range" : "9",
     "label" : {
       "IRI-based" : "isIdentifierOf",
       "undefined" : "isIdentifierOf"
     },
-    "domain" : "31",
+    "domain" : "4",
     "comment" : {
       "undefined" : "The thing being identified"
     },
     "attributes" : [ "someValues", "object" ],
-    "id" : "210"
+    "id" : "213"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/sugggestedByPeptideIdentification",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
@@ -4561,7 +4602,7 @@
       "IRI-based" : "sugggestedByPeptideIdentification",
       "undefined" : "suggestedByPeptideIdentification"
     },
-    "domain" : "10",
+    "domain" : "9",
     "subproperty" : [ "72" ],
     "comment" : {
       "undefined" : "A ProteinIdentification was made based on this PeptideIdentification. The peptide suggests that the identified Protein may be contained in the Sample."
@@ -4571,35 +4612,35 @@
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/peptideSequence",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
-    "range" : "212",
+    "range" : "215",
     "label" : {
       "IRI-based" : "peptideSequence",
       "undefined" : "peptideSequence"
     },
-    "domain" : "46",
+    "domain" : "45",
     "comment" : {
       "undefined" : "The amino acid chain, written as a string of characters, that identifies a specific Peptide."
     },
-    "attributes" : [ "functional", "allValues", "datatype" ],
-    "id" : "213"
+    "attributes" : [ "datatype", "allValues", "functional" ],
+    "id" : "216"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/proteinSequence",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
-    "range" : "211",
+    "range" : "214",
     "label" : {
       "IRI-based" : "proteinSequence",
       "undefined" : "proteinSequence"
     },
-    "domain" : "11",
+    "domain" : "10",
     "comment" : {
       "undefined" : "The amino acid chain, written as a string of characters, that identifies a specific Protein."
     },
-    "attributes" : [ "functional", "allValues", "datatype" ],
-    "id" : "214"
+    "attributes" : [ "datatype", "allValues", "functional" ],
+    "id" : "217"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/isIdentifierOf",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
-    "range" : "165",
+    "range" : "169",
     "label" : {
       "IRI-based" : "isIdentifierOf",
       "undefined" : "isIdentifierOf"
@@ -4609,7 +4650,7 @@
       "undefined" : "The thing being identified"
     },
     "attributes" : [ "someValues", "object" ],
-    "id" : "215"
+    "id" : "218"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/parameterInResourceType",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
@@ -4623,17 +4664,32 @@
       "undefined" : "A the DataResourceType for which this DataResourceParameter specifies."
     },
     "attributes" : [ "functional", "object" ],
-    "id" : "216"
+    "id" : "219"
   }, {
-    "range" : "161",
-    "domain" : "188",
+    "range" : "166",
+    "domain" : "163",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "217"
+    "id" : "220"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/annotatesIdentifier",
-    "inverse" : "55",
+    "inverse" : "54",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
     "range" : "139",
+    "label" : {
+      "IRI-based" : "annotatesIdentifier",
+      "undefined" : "annotatesIdentifier"
+    },
+    "domain" : "30",
+    "comment" : {
+      "undefined" : "The identifer for which this information object annotates"
+    },
+    "attributes" : [ "someValues", "object" ],
+    "id" : "221"
+  }, {
+    "iri" : "http://schema.oceanproteinportal.org/v2/annotatesIdentifier",
+    "inverse" : "54",
+    "baseIri" : "http://schema.oceanproteinportal.org/v2",
+    "range" : "205",
     "label" : {
       "IRI-based" : "annotatesIdentifier",
       "undefined" : "annotatesIdentifier"
@@ -4643,95 +4699,90 @@
       "undefined" : "The identifer for which this information object annotates"
     },
     "attributes" : [ "someValues", "object" ],
-    "id" : "218"
-  }, {
-    "iri" : "http://schema.oceanproteinportal.org/v2/annotatesIdentifier",
-    "inverse" : "55",
-    "baseIri" : "http://schema.oceanproteinportal.org/v2",
-    "range" : "34",
-    "label" : {
-      "IRI-based" : "annotatesIdentifier",
-      "undefined" : "annotatesIdentifier"
-    },
-    "domain" : "23",
-    "comment" : {
-      "undefined" : "The identifer for which this information object annotates"
-    },
-    "attributes" : [ "someValues", "object" ],
-    "id" : "219"
+    "id" : "222"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/absoluteUnits",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
-    "range" : "221",
+    "range" : "224",
     "label" : {
       "IRI-based" : "absoluteUnits",
       "undefined" : "absoluteUnits"
     },
-    "domain" : "32",
+    "domain" : "31",
     "comment" : {
       "undefined" : "absolute units of a peptide or protein identification measured in fmol/liter"
     },
-    "attributes" : [ "functional", "datatype" ],
-    "id" : "220"
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "223"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/isIdentifierOf",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
-    "range" : "147",
+    "range" : "148",
     "label" : {
       "IRI-based" : "isIdentifierOf",
       "undefined" : "isIdentifierOf"
     },
-    "domain" : "64",
+    "domain" : "65",
     "comment" : {
       "undefined" : "The thing being identified"
     },
     "attributes" : [ "someValues", "object" ],
-    "id" : "222"
+    "id" : "225"
   }, {
     "iri" : "http://schema.org/encodingFormat",
     "baseIri" : "http://schema.org",
-    "range" : "224",
+    "range" : "227",
     "label" : {
       "IRI-based" : "encodingFormat"
     },
-    "domain" : "14",
+    "domain" : "13",
     "attributes" : [ "external", "datatype" ],
-    "id" : "223"
+    "id" : "226"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/samplePeptideProperty",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
-    "range" : "42",
+    "range" : "44",
     "label" : {
       "IRI-based" : "samplePeptideProperty",
       "undefined" : "samplePeptideProperty"
     },
-    "superproperty" : [ "15" ],
+    "superproperty" : [ "14" ],
     "domain" : "25",
     "comment" : {
       "undefined" : "An observation made from a single Sample about an identified peptide"
     },
     "attributes" : [ "object" ],
-    "id" : "225"
+    "id" : "228"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/annotatesIdentifier",
-    "inverse" : "55",
+    "inverse" : "54",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
-    "range" : "83",
+    "range" : "59",
     "label" : {
       "IRI-based" : "annotatesIdentifier",
       "undefined" : "annotatesIdentifier"
     },
-    "domain" : "20",
+    "domain" : "22",
     "comment" : {
       "undefined" : "The identifer for which this information object annotates"
     },
     "attributes" : [ "someValues", "object" ],
-    "id" : "226"
+    "id" : "229"
   }, {
+    "iri" : "http://schema.oceanproteinportal.org/v2/identifierScheme",
+    "inverse" : "231",
+    "baseIri" : "http://schema.oceanproteinportal.org/v2",
     "range" : "141",
-    "domain" : "21",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "227"
+    "label" : {
+      "IRI-based" : "identifierScheme",
+      "undefined" : "identifierScheme"
+    },
+    "domain" : "5",
+    "comment" : {
+      "undefined" : "The scheme in which this Identifier has a unique value."
+    },
+    "attributes" : [ "irreflexive", "allValues", "functional", "object" ],
+    "id" : "230"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/keggPathwayForOrthology",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
@@ -4745,32 +4796,31 @@
       "undefined" : "The orthology for which this pathway belongs"
     },
     "attributes" : [ "someValues", "object" ],
-    "id" : "228"
+    "id" : "232"
   }, {
-    "iri" : "http://schema.oceanproteinportal.org/v2/identifierScheme",
-    "inverse" : "230",
-    "baseIri" : "http://schema.oceanproteinportal.org/v2",
     "range" : "141",
+    "domain" : "23",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "233"
+  }, {
+    "range" : "141",
+    "domain" : "5",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "234"
+  }, {
+    "iri" : "http://schema.oceanproteinportal.org/v2/identifierValue",
+    "baseIri" : "http://schema.oceanproteinportal.org/v2",
+    "range" : "235",
     "label" : {
-      "IRI-based" : "identifierScheme",
-      "undefined" : "identifierScheme"
+      "IRI-based" : "identifierValue",
+      "undefined" : "identifierValue"
     },
     "domain" : "5",
     "comment" : {
-      "undefined" : "The scheme in which this Identifier has a unique value."
+      "undefined" : "The unique value in some IdentifierScheme"
     },
-    "attributes" : [ "functional", "irreflexive", "allValues", "object" ],
-    "id" : "229"
-  }, {
-    "range" : "141",
-    "domain" : "5",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "232"
-  }, {
-    "range" : "21",
-    "domain" : "5",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "233"
+    "attributes" : [ "datatype", "allValues" ],
+    "id" : "236"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/selectedBasedOnPeptideIdentification",
     "inverse" : "74",
@@ -4786,21 +4836,12 @@
       "undefined" : "This Best Identified Protein was selected by the data'sinterpreter based on  the peptide identification."
     },
     "attributes" : [ "someValues", "object" ],
-    "id" : "234"
+    "id" : "237"
   }, {
-    "iri" : "http://schema.oceanproteinportal.org/v2/identifierValue",
-    "baseIri" : "http://schema.oceanproteinportal.org/v2",
-    "range" : "231",
-    "label" : {
-      "IRI-based" : "identifierValue",
-      "undefined" : "identifierValue"
-    },
+    "range" : "23",
     "domain" : "5",
-    "comment" : {
-      "undefined" : "The unique value in some IdentifierScheme"
-    },
-    "attributes" : [ "allValues", "datatype" ],
-    "id" : "235"
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "238"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/includesDataParameterInSet",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
@@ -4809,21 +4850,21 @@
       "IRI-based" : "includesDataParameterInSet",
       "undefined" : "includesDataParameterInSet"
     },
-    "domain" : "184",
+    "domain" : "187",
     "comment" : {
       "undefined" : "A DataResourceParameter that is included in a DataResourceParameterSet."
     },
     "attributes" : [ "object" ],
-    "id" : "236"
+    "id" : "239"
   }, {
-    "range" : "200",
-    "domain" : "17",
+    "range" : "202",
+    "domain" : "19",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "237"
+    "id" : "240"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/isAgentRoleFor",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
-    "range" : "240",
+    "range" : "243",
     "label" : {
       "IRI-based" : "isAgentRoleFor",
       "undefined" : "isAgentRoleFor"
@@ -4833,7 +4874,7 @@
       "undefined" : "The Thing on/in which an Agent performs some Role."
     },
     "attributes" : [ "object" ],
-    "id" : "239"
+    "id" : "242"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/hasAgentRole",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
@@ -4842,16 +4883,16 @@
       "IRI-based" : "hasAgentRole",
       "undefined" : "hasAgentRole"
     },
-    "domain" : "240",
+    "domain" : "243",
     "comment" : {
       "undefined" : "An AgentRole in which an Agent performs some Role on this particular Thing."
     },
     "attributes" : [ "object" ],
-    "id" : "241"
+    "id" : "244"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/definesValuesForParameter",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
-    "range" : "54",
+    "range" : "50",
     "label" : {
       "IRI-based" : "definesValuesForParameter",
       "undefined" : "definesValuesForParameter"
@@ -4861,7 +4902,7 @@
       "undefined" : "This Specification is being defined for the following DataParameter."
     },
     "attributes" : [ "functional", "object" ],
-    "id" : "242"
+    "id" : "245"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/keggOrthology",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
@@ -4870,39 +4911,39 @@
       "IRI-based" : "keggOrthology",
       "undefined" : "keggOrthology"
     },
-    "superproperty" : [ "55" ],
-    "domain" : "82",
+    "superproperty" : [ "54" ],
+    "domain" : "58",
     "attributes" : [ "object" ],
-    "id" : "56"
+    "id" : "55"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/aminoAcidName",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
-    "range" : "248",
+    "range" : "251",
     "label" : {
       "IRI-based" : "aminoAcidName",
       "undefined" : "aminoAcidName"
     },
-    "domain" : "32",
+    "domain" : "31",
     "comment" : {
       "undefined" : "The name given to the amino acid being identified by some identifying agent."
     },
-    "attributes" : [ "functional", "datatype" ],
-    "id" : "247"
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "250"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/describesAminoAcid",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
-    "range" : "47",
+    "range" : "46",
     "label" : {
       "IRI-based" : "describesAminoAcid",
       "undefined" : "describesAminoAcid"
     },
-    "domain" : "32",
-    "subproperty" : [ "9", "87" ],
+    "domain" : "31",
+    "subproperty" : [ "8", "87" ],
     "comment" : {
       "undefined" : "The AminoAcidChain being described by this information."
     },
     "attributes" : [ "functional", "object" ],
-    "id" : "12"
+    "id" : "11"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/inRole",
     "inverse" : "120",
@@ -4917,30 +4958,30 @@
       "undefined" : "Role being performed by some Agent"
     },
     "attributes" : [ "irreflexive", "object" ],
-    "id" : "249"
+    "id" : "252"
   }, {
-    "range" : "165",
-    "domain" : "147",
+    "range" : "169",
+    "domain" : "148",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "250"
+    "id" : "253"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/isIdentifierOf",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
-    "range" : "50",
+    "range" : "49",
     "label" : {
       "IRI-based" : "isIdentifierOf",
       "undefined" : "isIdentifierOf"
     },
-    "domain" : "4",
+    "domain" : "7",
     "comment" : {
       "undefined" : "The thing being identified"
     },
     "attributes" : [ "someValues", "object" ],
-    "id" : "251"
+    "id" : "254"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/spectralCountSum",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
-    "range" : "253",
+    "range" : "256",
     "label" : {
       "IRI-based" : "spectralCountSum",
       "undefined" : "spectralCountSum"
@@ -4949,26 +4990,26 @@
     "comment" : {
       "undefined" : "The sum of the +2, +3, +4 spectra counts."
     },
-    "attributes" : [ "functional", "datatype" ],
-    "id" : "252"
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "255"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/shortName",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
-    "range" : "255",
+    "range" : "258",
     "label" : {
       "IRI-based" : "shortName",
       "undefined" : "shortName"
     },
-    "domain" : "49",
+    "domain" : "48",
     "comment" : {
       "undefined" : "The name or label used in the OPP user interface to identify a OPPDataset. This is used for readability."
     },
     "attributes" : [ "datatype" ],
-    "id" : "254"
+    "id" : "257"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/parameterDataType",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
-    "range" : "209",
+    "range" : "212",
     "label" : {
       "IRI-based" : "parameterDataType",
       "undefined" : "parameterDataType"
@@ -4978,21 +5019,21 @@
       "undefined" : "The expected data type for all values of this DataResourceParameter. This helps the OPP understand how to process, visualize, and serialize these data."
     },
     "attributes" : [ "functional", "object" ],
-    "id" : "256"
+    "id" : "259"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/identificationProbability",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
-    "range" : "245",
+    "range" : "248",
     "label" : {
       "IRI-based" : "identificationProbability",
       "undefined" : "identificationProbability"
     },
-    "domain" : "32",
+    "domain" : "31",
     "comment" : {
       "undefined" : "Thee probability of the correctness/confidence of the identification"
     },
-    "attributes" : [ "functional", "datatype" ],
-    "id" : "257"
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "260"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/datasetType",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
@@ -5006,11 +5047,11 @@
       "undefined" : "Defines the type of Dataset or DataResource."
     },
     "attributes" : [ "object" ],
-    "id" : "258"
+    "id" : "261"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/depth",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
-    "range" : "246",
+    "range" : "249",
     "annotations" : {
       "seeAlso" : [ {
         "identifier" : "seeAlso",
@@ -5023,27 +5064,27 @@
       "IRI-based" : "depth",
       "undefined" : "depth"
     },
-    "domain" : "260",
+    "domain" : "263",
     "comment" : {
       "undefined" : "The depth in meters where some sample was collected."
     },
-    "attributes" : [ "functional", "datatype" ],
-    "id" : "259"
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "262"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/aboutIdentifier",
-    "inverse" : "55",
+    "inverse" : "54",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
     "range" : "5",
     "label" : {
       "IRI-based" : "aboutIdentifier",
       "undefined" : "aboutIdentifier"
     },
-    "domain" : "21",
+    "domain" : "23",
     "comment" : {
       "undefined" : "This metadata is about the specified Identifier"
     },
     "attributes" : [ "object" ],
-    "id" : "261"
+    "id" : "264"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/observedPeptide",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
@@ -5052,16 +5093,31 @@
       "IRI-based" : "observedPeptide",
       "undefined" : "observedPeptide"
     },
-    "domain" : "50",
+    "domain" : "49",
     "comment" : {
       "undefined" : "The PeptideIdentification being asserted by the observer of some Sample."
     },
     "attributes" : [ "object" ],
-    "id" : "262"
+    "id" : "265"
+  }, {
+    "iri" : "http://schema.oceanproteinportal.org/v2/peptideSequence",
+    "baseIri" : "http://schema.oceanproteinportal.org/v2",
+    "range" : "267",
+    "label" : {
+      "IRI-based" : "peptideSequence",
+      "undefined" : "peptideSequence"
+    },
+    "cardinality" : "1",
+    "domain" : "45",
+    "comment" : {
+      "undefined" : "The amino acid chain, written as a string of characters, that identifies a specific Peptide."
+    },
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "266"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/identifierValue",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
-    "range" : "243",
+    "range" : "246",
     "label" : {
       "IRI-based" : "identifierValue",
       "undefined" : "identifierValue"
@@ -5072,46 +5128,31 @@
       "undefined" : "The unique value in some IdentifierScheme"
     },
     "attributes" : [ "datatype" ],
-    "id" : "263"
-  }, {
-    "iri" : "http://schema.oceanproteinportal.org/v2/peptideSequence",
-    "baseIri" : "http://schema.oceanproteinportal.org/v2",
-    "range" : "265",
-    "label" : {
-      "IRI-based" : "peptideSequence",
-      "undefined" : "peptideSequence"
-    },
-    "cardinality" : "1",
-    "domain" : "46",
-    "comment" : {
-      "undefined" : "The amino acid chain, written as a string of characters, that identifies a specific Peptide."
-    },
-    "attributes" : [ "functional", "datatype" ],
-    "id" : "264"
+    "id" : "268"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/proteinSpectralCount",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
-    "range" : "267",
+    "range" : "270",
     "label" : {
       "IRI-based" : "proteinSpectralCount",
       "undefined" : "proteinSpectralCount"
     },
-    "domain" : "14",
+    "domain" : "13",
     "comment" : {
       "undefined" : "The observed spectral count for a single protein from a single sample"
     },
-    "attributes" : [ "functional", "datatype" ],
-    "id" : "266"
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "269"
   }, {
     "iri" : "http://schema.org/identifier",
     "baseIri" : "http://schema.org",
-    "range" : "269",
+    "range" : "272",
     "label" : {
       "IRI-based" : "identifier"
     },
-    "domain" : "14",
+    "domain" : "13",
     "attributes" : [ "external", "datatype" ],
-    "id" : "268"
+    "id" : "271"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/definesIdentifierScheme",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
@@ -5120,15 +5161,15 @@
       "IRI-based" : "definesIdentifierScheme",
       "undefined" : "definesIdentifierScheme"
     },
-    "domain" : "271",
+    "domain" : "274",
     "comment" : {
       "undefined" : "The IdentifierScheme defined by some Thing. In the case fo the OPP, a single Dataset defines an IdentifierScheme for its local identifiers."
     },
     "attributes" : [ "object" ],
-    "id" : "270"
+    "id" : "273"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/identifierScheme",
-    "inverse" : "230",
+    "inverse" : "231",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
     "range" : "141",
     "label" : {
@@ -5139,12 +5180,12 @@
     "comment" : {
       "undefined" : "The scheme in which this Identifier has a unique value."
     },
-    "attributes" : [ "functional", "irreflexive", "object" ],
-    "id" : "275"
+    "attributes" : [ "irreflexive", "functional", "object" ],
+    "id" : "278"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/keggOrthologyDefinition",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
-    "range" : "244",
+    "range" : "247",
     "label" : {
       "IRI-based" : "keggOrthologyDefinition",
       "undefined" : "keggOrthologyDefinition"
@@ -5153,12 +5194,12 @@
     "comment" : {
       "undefined" : "The Kegg Orthology Definition\n\nExample: \"nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 1.7.99.-]\" via `https://www.genome.jp/dbget-bin/www_bget?K00370`"
     },
-    "attributes" : [ "functional", "datatype" ],
-    "id" : "276"
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "279"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/parameterNameInResource",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
-    "range" : "238",
+    "range" : "241",
     "label" : {
       "IRI-based" : "parameterNameInResource",
       "undefined" : "parameterNameInResource"
@@ -5167,67 +5208,67 @@
     "comment" : {
       "undefined" : "The name of the parameter within the DataResource."
     },
-    "attributes" : [ "functional", "datatype" ],
-    "id" : "277"
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "280"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/requiresOneParameterFromSet",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
-    "range" : "184",
+    "range" : "187",
     "label" : {
       "IRI-based" : "requiresOneParameterFromSet",
       "undefined" : "requiresOneParameterFromSet"
     },
-    "domain" : "45",
+    "domain" : "40",
     "comment" : {
       "undefined" : "The DatasetProfile requires that at least one of the DataParameters described by this set of DataResourceParameters is required in the OPPDataset that conforms to the DatasetProfile."
     },
     "attributes" : [ "object" ],
-    "id" : "278"
+    "id" : "281"
   }, {
     "iri" : "http://schema.org/valueRequired",
     "baseIri" : "http://schema.org",
-    "range" : "280",
+    "range" : "283",
     "label" : {
       "IRI-based" : "valueRequired"
     },
-    "domain" : "14",
+    "domain" : "13",
     "attributes" : [ "external", "datatype" ],
-    "id" : "279"
+    "id" : "282"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/stationName",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
-    "range" : "273",
+    "range" : "276",
     "label" : {
       "IRI-based" : "stationName",
       "undefined" : "stationName"
     },
     "minCardinality" : "1",
-    "domain" : "200",
+    "domain" : "202",
     "comment" : {
       "undefined" : "The name of some Station."
     },
     "attributes" : [ "datatype" ],
-    "id" : "281"
+    "id" : "284"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/scoreValue",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
-    "range" : "283",
+    "range" : "286",
     "label" : {
       "IRI-based" : "scoreValue",
       "undefined" : "scoreValue"
     },
     "cardinality" : "1",
     "minCardinality" : "1",
-    "domain" : "36",
+    "domain" : "35",
     "comment" : {
       "undefined" : "The value of some score using a scoring method to identify an amino acid."
     },
     "attributes" : [ "datatype" ],
-    "id" : "282"
+    "id" : "285"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/stopIndex",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
-    "range" : "272",
+    "range" : "275",
     "label" : {
       "IRI-based" : "stopIndex",
       "undefined" : "stopIndex"
@@ -5237,78 +5278,78 @@
       "undefined" : "The stop index"
     },
     "attributes" : [ "datatype" ],
-    "id" : "284"
+    "id" : "287"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/plus3HSpectraCount",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
-    "range" : "287",
+    "range" : "290",
     "label" : {
       "IRI-based" : "plus3HSpectraCount",
       "undefined" : "plus3HSpectraCount"
     },
     "domain" : "99",
-    "attributes" : [ "functional", "datatype" ],
-    "id" : "286"
-  }, {
-    "range" : "41",
-    "domain" : "39",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "288"
-  }, {
-    "range" : "41",
-    "domain" : "61",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "datatype", "functional" ],
     "id" : "289"
   }, {
-    "range" : "97",
-    "domain" : "49",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "290"
-  }, {
-    "range" : "41",
-    "domain" : "36",
+    "range" : "43",
+    "domain" : "41",
     "attributes" : [ "anonymous", "object" ],
     "id" : "291"
   }, {
-    "iri" : "http://schema.oceanproteinportal.org/v2/sampleAminoAcidProperty",
-    "baseIri" : "http://schema.oceanproteinportal.org/v2",
-    "range" : "39",
-    "label" : {
-      "IRI-based" : "sampleAminoAcidProperty",
-      "undefined" : "sampleAminoAcidProperty"
-    },
-    "superproperty" : [ "13" ],
-    "domain" : "32",
-    "subproperty" : [ "225", "175" ],
-    "comment" : {
-      "undefined" : "An observation made from a single Sample about an identified amino acid"
-    },
-    "attributes" : [ "irreflexive", "object" ],
-    "id" : "15"
-  }, {
-    "range" : "61",
+    "range" : "43",
     "domain" : "62",
     "attributes" : [ "anonymous", "object" ],
     "id" : "292"
   }, {
-    "range" : "59",
-    "domain" : "88",
+    "range" : "97",
+    "domain" : "48",
     "attributes" : [ "anonymous", "object" ],
     "id" : "293"
   }, {
-    "range" : "59",
-    "domain" : "64",
+    "range" : "43",
+    "domain" : "35",
     "attributes" : [ "anonymous", "object" ],
     "id" : "294"
+  }, {
+    "iri" : "http://schema.oceanproteinportal.org/v2/sampleAminoAcidProperty",
+    "baseIri" : "http://schema.oceanproteinportal.org/v2",
+    "range" : "41",
+    "label" : {
+      "IRI-based" : "sampleAminoAcidProperty",
+      "undefined" : "sampleAminoAcidProperty"
+    },
+    "superproperty" : [ "12" ],
+    "domain" : "31",
+    "subproperty" : [ "228", "177" ],
+    "comment" : {
+      "undefined" : "An observation made from a single Sample about an identified amino acid"
+    },
+    "attributes" : [ "irreflexive", "object" ],
+    "id" : "14"
+  }, {
+    "range" : "62",
+    "domain" : "63",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "295"
+  }, {
+    "range" : "61",
+    "domain" : "88",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "296"
+  }, {
+    "range" : "61",
+    "domain" : "65",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "297"
   }, {
     "range" : "121",
     "domain" : "85",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "295"
+    "id" : "298"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/positionInDataResource",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
-    "range" : "285",
+    "range" : "288",
     "label" : {
       "IRI-based" : "positionInDataResource",
       "undefined" : "positionInDataResource"
@@ -5317,8 +5358,8 @@
     "comment" : {
       "undefined" : "The position in a DataResource could mean the column number in a tabular file or for FASTA files mean that the identfier = position #1 and the sequence = position #2."
     },
-    "attributes" : [ "functional", "datatype" ],
-    "id" : "296"
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "299"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/isIdentifierOf",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
@@ -5327,12 +5368,12 @@
       "IRI-based" : "isIdentifierOf",
       "undefined" : "isIdentifierOf"
     },
-    "domain" : "59",
+    "domain" : "61",
     "comment" : {
       "undefined" : "The thing being identified"
     },
     "attributes" : [ "someValues", "object" ],
-    "id" : "297"
+    "id" : "300"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/isIdentifierSchemeFor",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
@@ -5346,11 +5387,11 @@
       "undefined" : "An Identifier that bleongs within this scheme."
     },
     "attributes" : [ "irreflexive", "inverse functional", "object" ],
-    "id" : "230"
+    "id" : "231"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/performedAtOrganization",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
-    "range" : "147",
+    "range" : "148",
     "label" : {
       "IRI-based" : "performedAtOrganization",
       "undefined" : "performedAtOrganization"
@@ -5360,7 +5401,7 @@
       "undefined" : "The Organization at which the acting Agent performed the Role"
     },
     "attributes" : [ "irreflexive", "allValues", "object" ],
-    "id" : "298"
+    "id" : "301"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/inRole",
     "inverse" : "120",
@@ -5375,7 +5416,7 @@
       "undefined" : "Role being performed by some Agent"
     },
     "attributes" : [ "irreflexive", "allValues", "object" ],
-    "id" : "299"
+    "id" : "302"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/performedBy",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
@@ -5389,112 +5430,112 @@
       "undefined" : "The Agent acting in some Role."
     },
     "attributes" : [ "irreflexive", "allValues", "object" ],
-    "id" : "300"
+    "id" : "303"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/aminoAcidSequence",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
-    "range" : "302",
+    "range" : "305",
     "label" : {
       "IRI-based" : "aminoAcidSequence",
       "undefined" : "aminoAcidSequence"
     },
-    "domain" : "47",
+    "domain" : "46",
     "comment" : {
       "undefined" : "The amino acid chain, written as a string of characters, that identifies a specific amino acid."
     },
-    "attributes" : [ "functional", "allValues", "datatype" ],
-    "id" : "301"
+    "attributes" : [ "datatype", "allValues", "functional" ],
+    "id" : "304"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/hasFilterSize",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
-    "range" : "62",
+    "range" : "63",
     "label" : {
       "IRI-based" : "hasFilterSize",
       "undefined" : "hasFilterSize"
     },
-    "superproperty" : [ "118" ],
-    "domain" : "303",
+    "superproperty" : [ "116" ],
+    "domain" : "306",
     "comment" : {
       "undefined" : "The size of the filter(s) being used during the sampling process. This could be a single value using schema:value property or a range of sizes using schema:minValue & schema:maxValue."
     },
     "attributes" : [ "functional", "object" ],
-    "id" : "119"
+    "id" : "117"
   }, {
-    "range" : "32",
-    "domain" : "47",
+    "range" : "31",
+    "domain" : "46",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "304"
+    "id" : "307"
   }, {
     "range" : "85",
     "domain" : "86",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "305"
+    "id" : "308"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/totalTIC",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
-    "range" : "274",
+    "range" : "277",
     "label" : {
       "IRI-based" : "totalTIC",
       "undefined" : "totalTIC"
     },
     "domain" : "25",
-    "attributes" : [ "functional", "datatype" ],
-    "id" : "306"
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "309"
   }, {
     "range" : "121",
     "domain" : "86",
     "attributes" : [ "anonymous", "object" ],
-    "id" : "307"
+    "id" : "310"
   }, {
     "iri" : "http://schema.org/minValue",
     "baseIri" : "http://schema.org",
-    "range" : "309",
+    "range" : "312",
     "label" : {
       "IRI-based" : "minValue"
     },
-    "domain" : "14",
+    "domain" : "13",
     "attributes" : [ "external", "datatype" ],
-    "id" : "308"
-  }, {
-    "range" : "32",
-    "domain" : "10",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "310"
-  }, {
-    "range" : "32",
-    "domain" : "25",
-    "attributes" : [ "anonymous", "object" ],
     "id" : "311"
   }, {
-    "range" : "39",
-    "domain" : "42",
-    "attributes" : [ "anonymous", "object" ],
-    "id" : "312"
-  }, {
-    "range" : "39",
-    "domain" : "8",
+    "range" : "31",
+    "domain" : "9",
     "attributes" : [ "anonymous", "object" ],
     "id" : "313"
   }, {
+    "range" : "31",
+    "domain" : "25",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "314"
+  }, {
+    "range" : "41",
+    "domain" : "44",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "315"
+  }, {
+    "range" : "41",
+    "domain" : "17",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "316"
+  }, {
     "iri" : "http://schema.org/valueName",
     "baseIri" : "http://schema.org",
-    "range" : "315",
+    "range" : "318",
     "label" : {
       "IRI-based" : "valueName"
     },
-    "domain" : "14",
+    "domain" : "13",
     "attributes" : [ "external", "datatype" ],
-    "id" : "316"
+    "id" : "319"
   }, {
     "iri" : "http://schema.org/value",
     "baseIri" : "http://schema.org",
-    "range" : "314",
+    "range" : "317",
     "label" : {
       "IRI-based" : "value"
     },
-    "domain" : "14",
+    "domain" : "13",
     "attributes" : [ "external", "datatype" ],
-    "id" : "317"
+    "id" : "320"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/selectedProteinIdentification",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
@@ -5503,7 +5544,7 @@
       "IRI-based" : "selectedProteinIdentification",
       "undefined" : "selectedProteinIdentification"
     },
-    "superproperty" : [ "201" ],
+    "superproperty" : [ "203" ],
     "domain" : "25",
     "comment" : {
       "undefined" : "The selected protein identification is the Protein that the interpreter of the data felt was the best protein identificationout of all possible proteins it may be."
@@ -5513,17 +5554,17 @@
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/inVicinityOfStation",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
-    "range" : "200",
+    "range" : "202",
     "label" : {
       "IRI-based" : "inVicinityOfStation",
       "undefined" : "inVicinityOfStation"
     },
-    "domain" : "260",
+    "domain" : "263",
     "comment" : {
       "undefined" : "The one, named or mutally agreed upon location at which Sampling occurred. This usually means a single coordinate at which sampling occurs depsite any variance in the location of the sensor at the time of measurement. This Station helps to normalize the intent of sampling at a certain location for cross-comparison between datasets."
     },
     "attributes" : [ "functional", "object" ],
-    "id" : "318"
+    "id" : "321"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/identifier",
     "inverse" : "137",
@@ -5538,7 +5579,7 @@
       "undefined" : "An Identifier with a known IdentifierScheme for some Thing."
     },
     "attributes" : [ "object" ],
-    "id" : "319"
+    "id" : "322"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/usesDataResourceParameter",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
@@ -5547,26 +5588,26 @@
       "IRI-based" : "usesDataResourceParameter",
       "undefined" : "usesDataResourceParameter"
     },
-    "domain" : "45",
+    "domain" : "40",
     "comment" : {
       "undefined" : "A DataResourceParameter for which the DatasetProfile specifies certain restrictions or expectations."
     },
     "attributes" : [ "object" ],
-    "id" : "320"
+    "id" : "323"
   }, {
     "iri" : "http://schema.oceanproteinportal.org/v2/annotatesIdentifier",
-    "inverse" : "55",
+    "inverse" : "54",
     "baseIri" : "http://schema.oceanproteinportal.org/v2",
     "range" : "5",
     "label" : {
       "IRI-based" : "annotatesIdentifier",
       "undefined" : "annotatesIdentifier"
     },
-    "domain" : "21",
+    "domain" : "23",
     "comment" : {
       "undefined" : "The identifer for which this information object annotates"
     },
     "attributes" : [ "object" ],
-    "id" : "321"
+    "id" : "324"
   } ]
 }
