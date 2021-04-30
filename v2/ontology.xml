@@ -3408,7 +3408,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <parameterNameInResource rdf:datatype="http://www.w3.org/2001/XMLSchema#token">ISO_DateTime_UTC</parameterNameInResource>
         <parameterValueRecommended rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</parameterValueRecommended>
         <schema:multipleValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:multipleValues>
-        <rdfs:label>DataResourceParameter_PeptideSpectralCount_AbsoluteUnits</rdfs:label>
+        <rdfs:label>DataResourceParameter_PeptideSpectralCount_ISODateTimeUTC</rdfs:label>
     </owl:NamedIndividual>
     
 

@@ -1648,7 +1648,7 @@
     "@value" : "false"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "DataResourceParameter_PeptideSpectralCount_AbsoluteUnits"
+    "@value" : "DataResourceParameter_PeptideSpectralCount_ISODateTimeUTC"
   } ]
 }, {
   "@id" : "http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Latitude",
