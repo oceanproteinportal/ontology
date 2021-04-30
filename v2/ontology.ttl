@@ -1232,6 +1232,16 @@ Example: \"nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1
                 rdfs:label "DatasetProfile" .
 
 
+###  http://schema.oceanproteinportal.org/v2/DateAsString
+:DateAsString rdf:type owl:Class ;
+              rdfs:subClassOf <http://schema.org/Date> .
+
+
+###  http://schema.oceanproteinportal.org/v2/DateTimeAsString
+:DateTimeAsString rdf:type owl:Class ;
+                  rdfs:subClassOf <http://schema.org/DateTime> .
+
+
 ###  http://schema.oceanproteinportal.org/v2/EnzymeCommissionIdentifier
 :EnzymeCommissionIdentifier rdf:type owl:Class ;
                             rdfs:subClassOf :ProteinIdentifier ,
@@ -1684,6 +1694,11 @@ Note since the order of the pathways (or KeggPathway Index isn't provided we don
                  rdfs:label "TabularFileType" .
 
 
+###  http://schema.oceanproteinportal.org/v2/TimeAsString
+:TimeAsString rdf:type owl:Class ;
+              rdfs:subClassOf <http://schema.org/Time> .
+
+
 ###  http://schema.oceanproteinportal.org/v2/UniprotIdentifier
 :UniprotIdentifier rdf:type owl:Class ;
                    rdfs:subClassOf :ProteinIdentifier ,
@@ -1722,13 +1737,39 @@ Note since the order of the pathways (or KeggPathway Index isn't provided we don
                             rdfs:subClassOf <http://schema.org/CreativeWork> .
 
 
+###  http://schema.org/Date
+<http://schema.org/Date> rdf:type owl:Class ;
+                         rdfs:subClassOf <http://schema.org/DataType> .
+
+
+###  http://schema.org/DateTime
+<http://schema.org/DateTime> rdf:type owl:Class ;
+                             rdfs:subClassOf <http://schema.org/DataType> .
+
+
 ###  http://schema.org/DigitalDocument
 <http://schema.org/DigitalDocument> rdf:type owl:Class ;
                                     rdfs:subClassOf <http://schema.org/CreativeWork> .
 
 
+###  http://schema.org/Float
+<http://schema.org/Float> rdf:type owl:Class ;
+                          rdfs:subClassOf <http://schema.org/Number> .
+
+
 ###  http://schema.org/Intangible
 <http://schema.org/Intangible> rdf:type owl:Class .
+
+
+###  http://schema.org/Integer
+<http://schema.org/Integer> rdf:type owl:Class ;
+                            rdfs:subClassOf <http://schema.org/Number> .
+
+
+###  http://schema.org/Number
+<http://schema.org/Number> rdf:type owl:Class ;
+                           rdfs:subClassOf <http://schema.org/DataType> ;
+                           :frictionlessDataValueType "number" .
 
 
 ###  http://schema.org/Organization
@@ -1752,6 +1793,21 @@ Note since the order of the pathways (or KeggPathway Index isn't provided we don
 
 ###  http://schema.org/PropertyValueSpecification
 <http://schema.org/PropertyValueSpecification> rdf:type owl:Class .
+
+
+###  http://schema.org/Text
+<http://schema.org/Text> rdf:type owl:Class ;
+                         rdfs:subClassOf <http://schema.org/DataType> .
+
+
+###  http://schema.org/Time
+<http://schema.org/Time> rdf:type owl:Class ;
+                         rdfs:subClassOf <http://schema.org/DataType> .
+
+
+###  http://schema.org/URL
+<http://schema.org/URL> rdf:type owl:Class ;
+                        rdfs:subClassOf <http://schema.org/Text> .
 
 
 ###  http://www.w3.org/ns/sosa/Deployment
@@ -2157,7 +2213,7 @@ Note since the order of the pathways (or KeggPathway Index isn't provided we don
 :DataResourceParameter_PeptideSpectralCount_Date rdf:type owl:NamedIndividual ,
                                                           :DataResourceParameter ;
                                                  :definesValuesForParameter :DataParameter_Date ;
-                                                 :parameterDataType <http://schema.org/Date> ;
+                                                 :parameterDataType :DateAsString ;
                                                  :parameterInResourceType :DataResourceType_PeptideTotalSpectralCount ;
                                                  :parameterNameInResource "date_y-m-d"^^xsd:token ;
                                                  <http://schema.org/multipleValues> "false"^^xsd:boolean ;
@@ -2182,7 +2238,7 @@ Note since the order of the pathways (or KeggPathway Index isn't provided we don
 :DataResourceParameter_PeptideSpectralCount_ISODateTimeUTC rdf:type owl:NamedIndividual ,
                                                                     :DataResourceParameter ;
                                                            :definesValuesForParameter :DataParameter_ISODateTimeUTC ;
-                                                           :parameterDataType <http://schema.org/DateTime> ;
+                                                           :parameterDataType :DateTimeAsString ;
                                                            :parameterInResourceType :DataResourceType_PeptideTotalSpectralCount ;
                                                            :parameterNameInResource "ISO_DateTime_UTC"^^xsd:token ;
                                                            :parameterValueRecommended "true"^^xsd:boolean ;
@@ -2416,7 +2472,7 @@ Note since the order of the pathways (or KeggPathway Index isn't provided we don
                                                           :DataResourceParameter ;
                                                  :definesValuesForParameter :DataParameter_Time ;
                                                  :dependsOnParameter :DataResourceParameter_PeptideSpectralCount_Date ;
-                                                 :parameterDataType <http://schema.org/Time> ;
+                                                 :parameterDataType :TimeAsString ;
                                                  :parameterInResourceType :DataResourceType_PeptideTotalSpectralCount ;
                                                  :parameterNameInResource "time_h-m-s"^^xsd:token ;
                                                  <http://schema.org/defaultValue> "00:00:00"^^xsd:token ;
@@ -2502,7 +2558,7 @@ Note since the order of the pathways (or KeggPathway Index isn't provided we don
 :DataResourceParameter_ProteinSpectralCount_Date rdf:type owl:NamedIndividual ,
                                                           :DataResourceParameter ;
                                                  :definesValuesForParameter :DataParameter_Date ;
-                                                 :parameterDataType <http://schema.org/Date> ;
+                                                 :parameterDataType :DateAsString ;
                                                  :parameterInResourceType :DataResourceType_ProteinTotalSpectralCount ;
                                                  :parameterNameInResource "date_y-m-d"^^xsd:token ;
                                                  <http://schema.org/multipleValues> "false"^^xsd:boolean ;
@@ -2540,7 +2596,7 @@ Note since the order of the pathways (or KeggPathway Index isn't provided we don
 :DataResourceParameter_ProteinSpectralCount_ISODateTimeUTC rdf:type owl:NamedIndividual ,
                                                                     :DataResourceParameter ;
                                                            :definesValuesForParameter :DataParameter_ISODateTimeUTC ;
-                                                           :parameterDataType <http://schema.org/DateTime> ;
+                                                           :parameterDataType :DateTimeAsString ;
                                                            :parameterInResourceType :DataResourceType_ProteinTotalSpectralCount ;
                                                            :parameterNameInResource "ISO_DateTime_UTC"^^xsd:token ;
                                                            :parameterValueRecommended "true"^^xsd:boolean ;
@@ -2765,7 +2821,7 @@ Note since the order of the pathways (or KeggPathway Index isn't provided we don
                                                           :DataResourceParameter ;
                                                  :definesValuesForParameter :DataParameter_Time ;
                                                  :dependsOnParameter :DataResourceParameter_ProteinSpectralCount_Date ;
-                                                 :parameterDataType <http://schema.org/Time> ;
+                                                 :parameterDataType :TimeAsString ;
                                                  :parameterInResourceType :DataResourceType_ProteinTotalSpectralCount ;
                                                  :parameterNameInResource "time_h-m-s"^^xsd:token ;
                                                  <http://schema.org/defaultValue> "00:00:00"^^xsd:token ;
@@ -2903,6 +2959,14 @@ Note since the order of the pathways (or KeggPathway Index isn't provided we don
                                           rdfs:label "Dataset Profile: Protein Total Spectral Count" .
 
 
+###  http://schema.oceanproteinportal.org/v2/DateAsString
+:DateAsString rdf:type owl:NamedIndividual .
+
+
+###  http://schema.oceanproteinportal.org/v2/DateTimeAsString
+:DateTimeAsString rdf:type owl:NamedIndividual .
+
+
 ###  http://schema.oceanproteinportal.org/v2/IdentifierScheme_EnzymeCommission
 :IdentifierScheme_EnzymeCommission rdf:type owl:NamedIndividual ,
                                             :ProteinIdentifierScheme ;
@@ -2970,6 +3034,10 @@ Note since the order of the pathways (or KeggPathway Index isn't provided we don
                 rdfs:label "Role: Publisher" .
 
 
+###  http://schema.oceanproteinportal.org/v2/TimeAsString
+:TimeAsString rdf:type owl:NamedIndividual .
+
+
 ###  http://schema.oceanproteinportal.org/v2/UnitOfMeasure_DecimalDegrees
 :UnitOfMeasure_DecimalDegrees rdf:type owl:NamedIndividual ,
                                        :UnitOfMeasure ;
@@ -3006,48 +3074,74 @@ Note since the order of the pathways (or KeggPathway Index isn't provided we don
 
 
 ###  http://schema.org/Date
-<http://schema.org/Date> rdf:type owl:NamedIndividual ;
-                         :frictionlessDataValueType "date" .
+<http://schema.org/Date> rdf:type owl:NamedIndividual .
 
 
 ###  http://schema.org/DateTime
-<http://schema.org/DateTime> rdf:type owl:NamedIndividual ;
-                             :frictionlessDataValueType "datetime" .
+<http://schema.org/DateTime> rdf:type owl:NamedIndividual .
 
 
 ###  http://schema.org/Float
-<http://schema.org/Float> rdf:type owl:NamedIndividual ;
-                          :frictionlessDataValueType "number" .
+<http://schema.org/Float> rdf:type owl:NamedIndividual .
 
 
 ###  http://schema.org/Integer
-<http://schema.org/Integer> rdf:type owl:NamedIndividual ;
-                            :frictionlessDataValueType "integer" .
+<http://schema.org/Integer> rdf:type owl:NamedIndividual .
 
 
 ###  http://schema.org/Text
-<http://schema.org/Text> rdf:type owl:NamedIndividual ;
-                         :frictionlessDataValueType "string" .
+<http://schema.org/Text> rdf:type owl:NamedIndividual .
 
 
 ###  http://schema.org/Time
-<http://schema.org/Time> rdf:type owl:NamedIndividual ;
-                         :frictionlessDataValueType "time" .
+<http://schema.org/Time> rdf:type owl:NamedIndividual .
 
 
 ###  http://schema.org/URL
-<http://schema.org/URL> rdf:type owl:NamedIndividual ;
-                        :frictionlessDataValueType "uri" .
+<http://schema.org/URL> rdf:type owl:NamedIndividual .
 
 
 #################################################################
 #    Annotations
 #################################################################
 
+:DateAsString :frictionlessDataValueType "string" ;
+              rdfs:comment "A schema:Date but with a frictionlessDataValueType of string" ;
+              rdfs:label "DateAsString" .
+
+
+:DateTimeAsString :frictionlessDataValueType "string" ;
+                  rdfs:comment "A schema:DateTime but with a frictionlessDataValueType of string" ;
+                  rdfs:label "DateTimeAsString" .
+
+
+:TimeAsString :frictionlessDataValueType "string" ;
+              rdfs:comment "A schema:Time but with a frictionlessDataValueType of string" ;
+              rdfs:label "TimeAsString" .
+
+
 <http://schema.org/Boolean> :frictionlessDataValueType "boolean" .
 
 
-<http://schema.org/Number> :frictionlessDataValueType "number" .
+<http://schema.org/Date> :frictionlessDataValueType "date" .
+
+
+<http://schema.org/DateTime> :frictionlessDataValueType "datetime" .
+
+
+<http://schema.org/Float> :frictionlessDataValueType "number" .
+
+
+<http://schema.org/Integer> :frictionlessDataValueType "integer" .
+
+
+<http://schema.org/Text> :frictionlessDataValueType "string" .
+
+
+<http://schema.org/Time> :frictionlessDataValueType "time" .
+
+
+<http://schema.org/URL> :frictionlessDataValueType "uri" .
 
 
 #################################################################

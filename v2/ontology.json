@@ -1573,7 +1573,7 @@
     "@id" : "http://schema.oceanproteinportal.org/v2/DataParameter_Date"
   } ],
   "http://schema.oceanproteinportal.org/v2/parameterDataType" : [ {
-    "@id" : "http://schema.org/Date"
+    "@id" : "http://schema.oceanproteinportal.org/v2/DateAsString"
   } ],
   "http://schema.oceanproteinportal.org/v2/parameterInResourceType" : [ {
     "@id" : "http://schema.oceanproteinportal.org/v2/DataResourceType_PeptideTotalSpectralCount"
@@ -1630,7 +1630,7 @@
     "@id" : "http://schema.oceanproteinportal.org/v2/DataParameter_ISODateTimeUTC"
   } ],
   "http://schema.oceanproteinportal.org/v2/parameterDataType" : [ {
-    "@id" : "http://schema.org/DateTime"
+    "@id" : "http://schema.oceanproteinportal.org/v2/DateTimeAsString"
   } ],
   "http://schema.oceanproteinportal.org/v2/parameterInResourceType" : [ {
     "@id" : "http://schema.oceanproteinportal.org/v2/DataResourceType_PeptideTotalSpectralCount"
@@ -2175,7 +2175,7 @@
     "@id" : "http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Date"
   } ],
   "http://schema.oceanproteinportal.org/v2/parameterDataType" : [ {
-    "@id" : "http://schema.org/Time"
+    "@id" : "http://schema.oceanproteinportal.org/v2/TimeAsString"
   } ],
   "http://schema.oceanproteinportal.org/v2/parameterInResourceType" : [ {
     "@id" : "http://schema.oceanproteinportal.org/v2/DataResourceType_PeptideTotalSpectralCount"
@@ -2371,7 +2371,7 @@
     "@id" : "http://schema.oceanproteinportal.org/v2/DataParameter_Date"
   } ],
   "http://schema.oceanproteinportal.org/v2/parameterDataType" : [ {
-    "@id" : "http://schema.org/Date"
+    "@id" : "http://schema.oceanproteinportal.org/v2/DateAsString"
   } ],
   "http://schema.oceanproteinportal.org/v2/parameterInResourceType" : [ {
     "@id" : "http://schema.oceanproteinportal.org/v2/DataResourceType_ProteinTotalSpectralCount"
@@ -2459,7 +2459,7 @@
     "@id" : "http://schema.oceanproteinportal.org/v2/DataParameter_ISODateTimeUTC"
   } ],
   "http://schema.oceanproteinportal.org/v2/parameterDataType" : [ {
-    "@id" : "http://schema.org/DateTime"
+    "@id" : "http://schema.oceanproteinportal.org/v2/DateTimeAsString"
   } ],
   "http://schema.oceanproteinportal.org/v2/parameterInResourceType" : [ {
     "@id" : "http://schema.oceanproteinportal.org/v2/DataResourceType_ProteinTotalSpectralCount"
@@ -2989,7 +2989,7 @@
     "@id" : "http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_Date"
   } ],
   "http://schema.oceanproteinportal.org/v2/parameterDataType" : [ {
-    "@id" : "http://schema.org/Time"
+    "@id" : "http://schema.oceanproteinportal.org/v2/TimeAsString"
   } ],
   "http://schema.oceanproteinportal.org/v2/parameterInResourceType" : [ {
     "@id" : "http://schema.oceanproteinportal.org/v2/DataResourceType_ProteinTotalSpectralCount"
@@ -3304,6 +3304,36 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "Dataset Profile: Protein Total Spectral Count"
+  } ]
+}, {
+  "@id" : "http://schema.oceanproteinportal.org/v2/DateAsString",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://schema.oceanproteinportal.org/v2/frictionlessDataValueType" : [ {
+    "@value" : "string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A schema:Date but with a frictionlessDataValueType of string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "DateAsString"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://schema.org/Date"
+  } ]
+}, {
+  "@id" : "http://schema.oceanproteinportal.org/v2/DateTimeAsString",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://schema.oceanproteinportal.org/v2/frictionlessDataValueType" : [ {
+    "@value" : "string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A schema:DateTime but with a frictionlessDataValueType of string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "DateTimeAsString"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://schema.org/DateTime"
   } ]
 }, {
   "@id" : "http://schema.oceanproteinportal.org/v2/EnzymeCommissionIdentifier",
@@ -3932,6 +3962,21 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://schema.oceanproteinportal.org/v2/FileType"
+  } ]
+}, {
+  "@id" : "http://schema.oceanproteinportal.org/v2/TimeAsString",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://schema.oceanproteinportal.org/v2/frictionlessDataValueType" : [ {
+    "@value" : "string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A schema:Time but with a frictionlessDataValueType of string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "TimeAsString"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://schema.org/Time"
   } ]
 }, {
   "@id" : "http://schema.oceanproteinportal.org/v2/UniprotIdentifier",
@@ -5553,15 +5598,21 @@
   } ]
 }, {
   "@id" : "http://schema.org/Date",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://schema.oceanproteinportal.org/v2/frictionlessDataValueType" : [ {
     "@value" : "date"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://schema.org/DataType"
   } ]
 }, {
   "@id" : "http://schema.org/DateTime",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://schema.oceanproteinportal.org/v2/frictionlessDataValueType" : [ {
     "@value" : "datetime"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://schema.org/DataType"
   } ]
 }, {
   "@id" : "http://schema.org/DigitalDocument",
@@ -5571,23 +5622,33 @@
   } ]
 }, {
   "@id" : "http://schema.org/Float",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://schema.oceanproteinportal.org/v2/frictionlessDataValueType" : [ {
     "@value" : "number"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://schema.org/Number"
   } ]
 }, {
   "@id" : "http://schema.org/Intangible",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
   "@id" : "http://schema.org/Integer",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://schema.oceanproteinportal.org/v2/frictionlessDataValueType" : [ {
     "@value" : "integer"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://schema.org/Number"
   } ]
 }, {
   "@id" : "http://schema.org/Number",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://schema.oceanproteinportal.org/v2/frictionlessDataValueType" : [ {
     "@value" : "number"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://schema.org/DataType"
   } ]
 }, {
   "@id" : "http://schema.org/Organization",
@@ -5621,21 +5682,30 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
   "@id" : "http://schema.org/Text",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://schema.oceanproteinportal.org/v2/frictionlessDataValueType" : [ {
     "@value" : "string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://schema.org/DataType"
   } ]
 }, {
   "@id" : "http://schema.org/Time",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://schema.oceanproteinportal.org/v2/frictionlessDataValueType" : [ {
     "@value" : "time"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://schema.org/DataType"
   } ]
 }, {
   "@id" : "http://schema.org/URL",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://schema.oceanproteinportal.org/v2/frictionlessDataValueType" : [ {
     "@value" : "uri"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://schema.org/Text"
   } ]
 }, {
   "@id" : "http://schema.org/alternateName",

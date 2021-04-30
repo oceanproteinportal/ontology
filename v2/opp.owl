@@ -1709,6 +1709,28 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
 
 
 
+    <!-- http://schema.oceanproteinportal.org/v2/DateAsString -->
+
+    <owl:Class rdf:about="http://schema.oceanproteinportal.org/v2/DateAsString">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Date"/>
+        <frictionlessDataValueType>string</frictionlessDataValueType>
+        <rdfs:comment>A schema:Date but with a frictionlessDataValueType of string</rdfs:comment>
+        <rdfs:label>DateAsString</rdfs:label>
+    </owl:Class>
+
+
+
+    <!-- http://schema.oceanproteinportal.org/v2/DateTimeAsString -->
+
+    <owl:Class rdf:about="http://schema.oceanproteinportal.org/v2/DateTimeAsString">
+        <rdfs:subClassOf rdf:resource="http://schema.org/DateTime"/>
+        <frictionlessDataValueType>string</frictionlessDataValueType>
+        <rdfs:comment>A schema:DateTime but with a frictionlessDataValueType of string</rdfs:comment>
+        <rdfs:label>DateTimeAsString</rdfs:label>
+    </owl:Class>
+
+
+
     <!-- http://schema.oceanproteinportal.org/v2/EnzymeCommissionIdentifier -->
 
     <owl:Class rdf:about="http://schema.oceanproteinportal.org/v2/EnzymeCommissionIdentifier">
@@ -2339,6 +2361,17 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
 
 
 
+    <!-- http://schema.oceanproteinportal.org/v2/TimeAsString -->
+
+    <owl:Class rdf:about="http://schema.oceanproteinportal.org/v2/TimeAsString">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Time"/>
+        <frictionlessDataValueType>string</frictionlessDataValueType>
+        <rdfs:comment>A schema:Time but with a frictionlessDataValueType of string</rdfs:comment>
+        <rdfs:label>TimeAsString</rdfs:label>
+    </owl:Class>
+
+
+
     <!-- http://schema.oceanproteinportal.org/v2/UniprotIdentifier -->
 
     <owl:Class rdf:about="http://schema.oceanproteinportal.org/v2/UniprotIdentifier">
@@ -2395,6 +2428,22 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
 
 
 
+    <!-- http://schema.org/Date -->
+
+    <owl:Class rdf:about="http://schema.org/Date">
+        <rdfs:subClassOf rdf:resource="http://schema.org/DataType"/>
+    </owl:Class>
+
+
+
+    <!-- http://schema.org/DateTime -->
+
+    <owl:Class rdf:about="http://schema.org/DateTime">
+        <rdfs:subClassOf rdf:resource="http://schema.org/DataType"/>
+    </owl:Class>
+
+
+
     <!-- http://schema.org/DigitalDocument -->
 
     <owl:Class rdf:about="http://schema.org/DigitalDocument">
@@ -2403,9 +2452,34 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
 
 
 
+    <!-- http://schema.org/Float -->
+
+    <owl:Class rdf:about="http://schema.org/Float">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Number"/>
+    </owl:Class>
+
+
+
     <!-- http://schema.org/Intangible -->
 
     <owl:Class rdf:about="http://schema.org/Intangible"/>
+
+
+
+    <!-- http://schema.org/Integer -->
+
+    <owl:Class rdf:about="http://schema.org/Integer">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Number"/>
+    </owl:Class>
+
+
+
+    <!-- http://schema.org/Number -->
+
+    <owl:Class rdf:about="http://schema.org/Number">
+        <rdfs:subClassOf rdf:resource="http://schema.org/DataType"/>
+        <frictionlessDataValueType>number</frictionlessDataValueType>
+    </owl:Class>
 
 
 
@@ -2440,6 +2514,30 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
     <!-- http://schema.org/PropertyValueSpecification -->
 
     <owl:Class rdf:about="http://schema.org/PropertyValueSpecification"/>
+
+
+
+    <!-- http://schema.org/Text -->
+
+    <owl:Class rdf:about="http://schema.org/Text">
+        <rdfs:subClassOf rdf:resource="http://schema.org/DataType"/>
+    </owl:Class>
+
+
+
+    <!-- http://schema.org/Time -->
+
+    <owl:Class rdf:about="http://schema.org/Time">
+        <rdfs:subClassOf rdf:resource="http://schema.org/DataType"/>
+    </owl:Class>
+
+
+
+    <!-- http://schema.org/URL -->
+
+    <owl:Class rdf:about="http://schema.org/URL">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Text"/>
+    </owl:Class>
 
 
 
@@ -3025,7 +3123,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
     <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Date">
         <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter"/>
         <definesValuesForParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter_Date"/>
-        <parameterDataType rdf:resource="http://schema.org/Date"/>
+        <parameterDataType rdf:resource="http://schema.oceanproteinportal.org/v2/DateAsString"/>
         <parameterInResourceType rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceType_PeptideTotalSpectralCount"/>
         <parameterNameInResource rdf:datatype="http://www.w3.org/2001/XMLSchema#token">date_y-m-d</parameterNameInResource>
         <schema:multipleValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:multipleValues>
@@ -3056,7 +3154,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
     <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_ISODateTimeUTC">
         <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter"/>
         <definesValuesForParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter_ISODateTimeUTC"/>
-        <parameterDataType rdf:resource="http://schema.org/DateTime"/>
+        <parameterDataType rdf:resource="http://schema.oceanproteinportal.org/v2/DateTimeAsString"/>
         <parameterInResourceType rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceType_PeptideTotalSpectralCount"/>
         <parameterNameInResource rdf:datatype="http://www.w3.org/2001/XMLSchema#token">ISO_DateTime_UTC</parameterNameInResource>
         <parameterValueRecommended rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</parameterValueRecommended>
@@ -3344,7 +3442,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter"/>
         <definesValuesForParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter_Time"/>
         <dependsOnParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Date"/>
-        <parameterDataType rdf:resource="http://schema.org/Time"/>
+        <parameterDataType rdf:resource="http://schema.oceanproteinportal.org/v2/TimeAsString"/>
         <parameterInResourceType rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceType_PeptideTotalSpectralCount"/>
         <parameterNameInResource rdf:datatype="http://www.w3.org/2001/XMLSchema#token">time_h-m-s</parameterNameInResource>
         <schema:defaultValue rdf:datatype="http://www.w3.org/2001/XMLSchema#token">00:00:00</schema:defaultValue>
@@ -3451,7 +3549,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
     <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_Date">
         <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter"/>
         <definesValuesForParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter_Date"/>
-        <parameterDataType rdf:resource="http://schema.org/Date"/>
+        <parameterDataType rdf:resource="http://schema.oceanproteinportal.org/v2/DateAsString"/>
         <parameterInResourceType rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceType_ProteinTotalSpectralCount"/>
         <parameterNameInResource rdf:datatype="http://www.w3.org/2001/XMLSchema#token">date_y-m-d</parameterNameInResource>
         <schema:multipleValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:multipleValues>
@@ -3498,7 +3596,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
     <owl:NamedIndividual rdf:about="http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_ISODateTimeUTC">
         <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter"/>
         <definesValuesForParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter_ISODateTimeUTC"/>
-        <parameterDataType rdf:resource="http://schema.org/DateTime"/>
+        <parameterDataType rdf:resource="http://schema.oceanproteinportal.org/v2/DateTimeAsString"/>
         <parameterInResourceType rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceType_ProteinTotalSpectralCount"/>
         <parameterNameInResource rdf:datatype="http://www.w3.org/2001/XMLSchema#token">ISO_DateTime_UTC</parameterNameInResource>
         <parameterValueRecommended rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</parameterValueRecommended>
@@ -3774,7 +3872,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter"/>
         <definesValuesForParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter_Time"/>
         <dependsOnParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_Date"/>
-        <parameterDataType rdf:resource="http://schema.org/Time"/>
+        <parameterDataType rdf:resource="http://schema.oceanproteinportal.org/v2/TimeAsString"/>
         <parameterInResourceType rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceType_ProteinTotalSpectralCount"/>
         <parameterNameInResource rdf:datatype="http://www.w3.org/2001/XMLSchema#token">time_h-m-s</parameterNameInResource>
         <schema:defaultValue rdf:datatype="http://www.w3.org/2001/XMLSchema#token">00:00:00</schema:defaultValue>
@@ -4081,57 +4179,43 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
 
     <!-- http://schema.org/Date -->
 
-    <owl:NamedIndividual rdf:about="http://schema.org/Date">
-        <frictionlessDataValueType>date</frictionlessDataValueType>
-    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://schema.org/Date"/>
 
 
 
     <!-- http://schema.org/DateTime -->
 
-    <owl:NamedIndividual rdf:about="http://schema.org/DateTime">
-        <frictionlessDataValueType>datetime</frictionlessDataValueType>
-    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://schema.org/DateTime"/>
 
 
 
     <!-- http://schema.org/Float -->
 
-    <owl:NamedIndividual rdf:about="http://schema.org/Float">
-        <frictionlessDataValueType>number</frictionlessDataValueType>
-    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://schema.org/Float"/>
 
 
 
     <!-- http://schema.org/Integer -->
 
-    <owl:NamedIndividual rdf:about="http://schema.org/Integer">
-        <frictionlessDataValueType>integer</frictionlessDataValueType>
-    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://schema.org/Integer"/>
 
 
 
     <!-- http://schema.org/Text -->
 
-    <owl:NamedIndividual rdf:about="http://schema.org/Text">
-        <frictionlessDataValueType>string</frictionlessDataValueType>
-    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://schema.org/Text"/>
 
 
 
     <!-- http://schema.org/Time -->
 
-    <owl:NamedIndividual rdf:about="http://schema.org/Time">
-        <frictionlessDataValueType>time</frictionlessDataValueType>
-    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://schema.org/Time"/>
 
 
 
     <!-- http://schema.org/URL -->
 
-    <owl:NamedIndividual rdf:about="http://schema.org/URL">
-        <frictionlessDataValueType>uri</frictionlessDataValueType>
-    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://schema.org/URL"/>
 
 
 
@@ -4146,8 +4230,26 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
     <rdf:Description rdf:about="http://schema.org/Boolean">
         <frictionlessDataValueType>boolean</frictionlessDataValueType>
     </rdf:Description>
-    <rdf:Description rdf:about="http://schema.org/Number">
+    <rdf:Description rdf:about="http://schema.org/Date">
+        <frictionlessDataValueType>date</frictionlessDataValueType>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.org/DateTime">
+        <frictionlessDataValueType>datetime</frictionlessDataValueType>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.org/Float">
         <frictionlessDataValueType>number</frictionlessDataValueType>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.org/Integer">
+        <frictionlessDataValueType>integer</frictionlessDataValueType>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.org/Text">
+        <frictionlessDataValueType>string</frictionlessDataValueType>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.org/Time">
+        <frictionlessDataValueType>time</frictionlessDataValueType>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.org/URL">
+        <frictionlessDataValueType>uri</frictionlessDataValueType>
     </rdf:Description>
 
 

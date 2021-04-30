@@ -6,7 +6,7 @@
 
 
 <!-- SCHEMA.ORG METADATA -->
-<script type="application/ld+json">{"@context":"http://schema.org","@type":"TechArticle","url":"http://schema.oceanproteinportal.org/v2/","image":"http://vowl.visualdataweb.org/webvowl/#iri=http://schema.oceanproteinportal.org/v2/","name":"Ocean Protein Portal Ver. 2", "headline":"Document describing the ontology http://schema.oceanproteinportal.org/v2/", "datePublished":"04/20/2021", "license":"https://spdx.org/licenses/CC0-1.0", "author":[{"@type":"Person","name":"Adam Shepherd","url":"https://orcid.org/0000-0003-4486-9448"},{"@type":"Person","name":"Jaclyn Saunders","url":"https://orcid.org/0000-0003-1023-6239"},{"@type":"Person","name":"Makoto Saito","url":"https://orcid.org/0000-0002-1667-9287"},{"@type":"Person","name":"Danie Kinkade","url":"https://orcid.org/0000-0002-1134-7347"}]}</script>
+<script type="application/ld+json">{"@context":"http://schema.org","@type":"TechArticle","url":"http://schema.oceanproteinportal.org/v2/","image":"http://vowl.visualdataweb.org/webvowl/#iri=http://schema.oceanproteinportal.org/v2/","name":"Ocean Protein Portal Ver. 2", "headline":"Document describing the ontology http://schema.oceanproteinportal.org/v2/", "datePublished":"04/14/2021", "license":"https://spdx.org/licenses/CC0-1.0", "author":[{"@type":"Person","name":"Adam Shepherd","url":"https://orcid.org/0000-0003-4486-9448"},{"@type":"Person","name":"Jaclyn Saunders","url":"https://orcid.org/0000-0003-1023-6239"},{"@type":"Person","name":"Makoto Saito","url":"https://orcid.org/0000-0002-1667-9287"},{"@type":"Person","name":"Danie Kinkade","url":"https://orcid.org/0000-0002-1134-7347"}]}</script>
 
 <script src="resources/jquery.js"></script>
 <script src="resources/marked.min.js"></script>
@@ -53,7 +53,7 @@ function loadTOC(){
 <div class="head">
   <div id="github-fork"><a href="https://github.com/oceanproteinportal/ontology"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png"></a></div>
   <h1>Ocean Protein Portal Ver. 2</h1>
-<h2>Release  04/20/2021</h2>
+<h2>Release  04/14/2021</h2>
 
 
 <dl>
@@ -114,7 +114,7 @@ This is a place holder text for the abstract. The abstract should contain a coup
   </ul>
 </div>
 <div id="namespacedeclarations">
-<h3 id="ns" class="list">Namespace declarations</h3>
+   <h3 id="ns" class="list">Namespace declarations</h3>
 <div id="ns" align="center">
 <table>
 <caption> <a href="#ns"> Table 1</a>: Namespaces used in the document </caption>
@@ -222,6 +222,28 @@ This ontology has the following classes and properties.</span>
          title="http://schema.oceanproteinportal.org/v2/DatasetProfile">DatasetProfile</a>
    </li>
    <li>
+      <a href="#http://schema.org/Date" title="http://schema.org/Date">
+         <span>date</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://schema.org/DateTime" title="http://schema.org/DateTime">
+         <span>date time</span>
+      </a>
+   </li>
+   <li>
+      <a href="#DateAsString"
+         title="http://schema.oceanproteinportal.org/v2/DateAsString">
+         <span>DateAsString</span>
+      </a>
+   </li>
+   <li>
+      <a href="#DateTimeAsString"
+         title="http://schema.oceanproteinportal.org/v2/DateTimeAsString">
+         <span>DateTimeAsString</span>
+      </a>
+   </li>
+   <li>
       <a href="#http://www.w3.org/ns/sosa/Deployment" title="http://www.w3.org/ns/sosa/Deployment">
          <span>deployment</span>
       </a>
@@ -249,6 +271,11 @@ This ontology has the following classes and properties.</span>
          title="http://schema.oceanproteinportal.org/v2/FilterSize">FilterSize</a>
    </li>
    <li>
+      <a href="#http://schema.org/Float" title="http://schema.org/Float">
+         <span>float</span>
+      </a>
+   </li>
+   <li>
       <a href="#FrictionlessDataPackage"
          title="http://schema.oceanproteinportal.org/v2/FrictionlessDataPackage">FrictionlessDataPackage</a>
    </li>
@@ -267,6 +294,11 @@ This ontology has the following classes and properties.</span>
    <li>
       <a href="#IdentifierScheme"
          title="http://schema.oceanproteinportal.org/v2/IdentifierScheme">IdentifierScheme</a>
+   </li>
+   <li>
+      <a href="#http://schema.org/Integer" title="http://schema.org/Integer">
+         <span>integer</span>
+      </a>
    </li>
    <li>
       <a href="#KeggDatabaseEntry"
@@ -299,6 +331,11 @@ This ontology has the following classes and properties.</span>
    <li>
       <a href="#NCBITaxonName"
          title="http://schema.oceanproteinportal.org/v2/NCBITaxonName">NCBITaxonName</a>
+   </li>
+   <li>
+      <a href="#http://schema.org/Number" title="http://schema.org/Number">
+         <span>number</span>
+      </a>
    </li>
    <li>
       <a href="#OPPDataset"
@@ -421,6 +458,27 @@ This ontology has the following classes and properties.</span>
    <li>
       <a href="#TabularFileType"
          title="http://schema.oceanproteinportal.org/v2/TabularFileType">TabularFileType</a>
+   </li>
+   <li>
+      <a href="#http://schema.org/Text" title="http://schema.org/Text">
+         <span>text</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://schema.org/Time" title="http://schema.org/Time">
+         <span>time</span>
+      </a>
+   </li>
+   <li>
+      <a href="#TimeAsString"
+         title="http://schema.oceanproteinportal.org/v2/TimeAsString">
+         <span>TimeAsString</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://schema.org/URL" title="http://schema.org/URL">
+         <span>u r l</span>
+      </a>
    </li>
    <li>
       <a href="#UniprotIdentifier"
@@ -1276,21 +1334,6 @@ This ontology has the following classes and properties.</span>
          title="http://schema.oceanproteinportal.org/v2/DatasetProfile_ProteinTotalSpectralCount">Dataset Profile: Protein Total Spectral Count</a>
    </li>
    <li>
-      <a href="#http://schema.org/Date" title="http://schema.org/Date">
-         <span>date</span>
-      </a>
-   </li>
-   <li>
-      <a href="#http://schema.org/DateTime" title="http://schema.org/DateTime">
-         <span>date time</span>
-      </a>
-   </li>
-   <li>
-      <a href="#http://schema.org/Float" title="http://schema.org/Float">
-         <span>float</span>
-      </a>
-   </li>
-   <li>
       <a href="#IdentifierScheme_EnzymeCommission"
          title="http://schema.oceanproteinportal.org/v2/IdentifierScheme_EnzymeCommission">Identifier Scheme: EnzymeCommission</a>
    </li>
@@ -1315,11 +1358,6 @@ This ontology has the following classes and properties.</span>
          title="http://schema.oceanproteinportal.org/v2/IdentifierScheme_Uniprot">Identifier Scheme: Uniprot</a>
    </li>
    <li>
-      <a href="#http://schema.org/Integer" title="http://schema.org/Integer">
-         <span>integer</span>
-      </a>
-   </li>
-   <li>
       <a href="#DataResourceParameterSet_PeptideSpectralCount_DateRequirement"
          title="http://schema.oceanproteinportal.org/v2/DataResourceParameterSet_PeptideSpectralCount_DateRequirement">Parameter Set: Peptide Spectral Count - Date Requirement</a>
    </li>
@@ -1338,21 +1376,6 @@ This ontology has the following classes and properties.</span>
    <li>
       <a href="#Role_Publisher"
          title="http://schema.oceanproteinportal.org/v2/Role_Publisher">Role: Publisher</a>
-   </li>
-   <li>
-      <a href="#http://schema.org/Text" title="http://schema.org/Text">
-         <span>text</span>
-      </a>
-   </li>
-   <li>
-      <a href="#http://schema.org/Time" title="http://schema.org/Time">
-         <span>time</span>
-      </a>
-   </li>
-   <li>
-      <a href="#http://schema.org/URL" title="http://schema.org/URL">
-         <span>u r l</span>
-      </a>
    </li>
    <li>
       <a href="#UnitOfMeasure_DecimalDegrees"
@@ -1468,6 +1491,28 @@ This section provides details for each class and property defined by Ocean Prote
             title="http://schema.oceanproteinportal.org/v2/DatasetProfile">DatasetProfile</a>
       </li>
       <li>
+         <a href="#http://schema.org/Date" title="http://schema.org/Date">
+            <span>date</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://schema.org/DateTime" title="http://schema.org/DateTime">
+            <span>date time</span>
+         </a>
+      </li>
+      <li>
+         <a href="#DateAsString"
+            title="http://schema.oceanproteinportal.org/v2/DateAsString">
+            <span>DateAsString</span>
+         </a>
+      </li>
+      <li>
+         <a href="#DateTimeAsString"
+            title="http://schema.oceanproteinportal.org/v2/DateTimeAsString">
+            <span>DateTimeAsString</span>
+         </a>
+      </li>
+      <li>
          <a href="#http://www.w3.org/ns/sosa/Deployment" title="http://www.w3.org/ns/sosa/Deployment">
             <span>deployment</span>
          </a>
@@ -1495,6 +1540,11 @@ This section provides details for each class and property defined by Ocean Prote
             title="http://schema.oceanproteinportal.org/v2/FilterSize">FilterSize</a>
       </li>
       <li>
+         <a href="#http://schema.org/Float" title="http://schema.org/Float">
+            <span>float</span>
+         </a>
+      </li>
+      <li>
          <a href="#FrictionlessDataPackage"
             title="http://schema.oceanproteinportal.org/v2/FrictionlessDataPackage">FrictionlessDataPackage</a>
       </li>
@@ -1513,6 +1563,11 @@ This section provides details for each class and property defined by Ocean Prote
       <li>
          <a href="#IdentifierScheme"
             title="http://schema.oceanproteinportal.org/v2/IdentifierScheme">IdentifierScheme</a>
+      </li>
+      <li>
+         <a href="#http://schema.org/Integer" title="http://schema.org/Integer">
+            <span>integer</span>
+         </a>
       </li>
       <li>
          <a href="#KeggDatabaseEntry"
@@ -1545,6 +1600,11 @@ This section provides details for each class and property defined by Ocean Prote
       <li>
          <a href="#NCBITaxonName"
             title="http://schema.oceanproteinportal.org/v2/NCBITaxonName">NCBITaxonName</a>
+      </li>
+      <li>
+         <a href="#http://schema.org/Number" title="http://schema.org/Number">
+            <span>number</span>
+         </a>
       </li>
       <li>
          <a href="#OPPDataset"
@@ -1667,6 +1727,27 @@ This section provides details for each class and property defined by Ocean Prote
       <li>
          <a href="#TabularFileType"
             title="http://schema.oceanproteinportal.org/v2/TabularFileType">TabularFileType</a>
+      </li>
+      <li>
+         <a href="#http://schema.org/Text" title="http://schema.org/Text">
+            <span>text</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://schema.org/Time" title="http://schema.org/Time">
+            <span>time</span>
+         </a>
+      </li>
+      <li>
+         <a href="#TimeAsString"
+            title="http://schema.oceanproteinportal.org/v2/TimeAsString">
+            <span>TimeAsString</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://schema.org/URL" title="http://schema.org/URL">
+            <span>u r l</span>
+         </a>
       </li>
       <li>
          <a href="#UniprotIdentifier"
@@ -2522,6 +2603,86 @@ This section provides details for each class and property defined by Ocean Prote
          </dd>
       </dl>
    </div>
+   <div class="entity" id="http://schema.org/Date">
+      <h3>date<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://schema.org/Date</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <span class="dotted" title="http://schema.org/DataType">data type</span>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#DateAsString"
+               title="http://schema.oceanproteinportal.org/v2/DateAsString">DateAsString</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is also defined as</dt>
+         <dd>named individual</dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://schema.org/DateTime">
+      <h3>date time<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://schema.org/DateTime</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <span class="dotted" title="http://schema.org/DataType">data type</span>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#DateTimeAsString"
+               title="http://schema.oceanproteinportal.org/v2/DateTimeAsString">DateTimeAsString</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is also defined as</dt>
+         <dd>named individual</dd>
+      </dl>
+   </div>
+   <div class="entity" id="DateAsString">
+      <h3>DateAsString<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://schema.oceanproteinportal.org/v2/DateAsString</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#http://schema.org/Date" title="http://schema.org/Date">date</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is also defined as</dt>
+         <dd>named individual</dd>
+      </dl>
+   </div>
+   <div class="entity" id="DateTimeAsString">
+      <h3>DateTimeAsString<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://schema.oceanproteinportal.org/v2/DateTimeAsString</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#http://schema.org/DateTime" title="http://schema.org/DateTime">date time</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is also defined as</dt>
+         <dd>named individual</dd>
+      </dl>
+   </div>
    <div class="entity" id="http://www.w3.org/ns/sosa/Deployment">
       <h3>deployment<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
@@ -2661,6 +2822,23 @@ This section provides details for each class and property defined by Ocean Prote
                title="http://schema.oceanproteinportal.org/v2/hasFilterSize">hasFilterSize</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://schema.org/Float">
+      <h3>float<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://schema.org/Float</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#http://schema.org/Number" title="http://schema.org/Number">number</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is also defined as</dt>
+         <dd>named individual</dd>
       </dl>
    </div>
    <div class="entity" id="FrictionlessDataPackage">
@@ -2877,6 +3055,23 @@ This section provides details for each class and property defined by Ocean Prote
                title="http://schema.oceanproteinportal.org/v2/IdentifierMetadata">IdentifierMetadata</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://schema.org/Integer">
+      <h3>integer<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://schema.org/Integer</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#http://schema.org/Number" title="http://schema.org/Number">number</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is also defined as</dt>
+         <dd>named individual</dd>
       </dl>
    </div>
    <div class="entity" id="KeggDatabaseEntry">
@@ -3102,6 +3297,27 @@ This section provides details for each class and property defined by Ocean Prote
             <a href="#ncbiTaxonName"
                title="http://schema.oceanproteinportal.org/v2/ncbiTaxonName">ncbiTaxonName</a>
             <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://schema.org/Number">
+      <h3>number<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://schema.org/Number</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <span class="dotted" title="http://schema.org/DataType">data type</span>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#http://schema.org/Float" title="http://schema.org/Float">float</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#http://schema.org/Integer" title="http://schema.org/Integer">integer</a>
+            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -3887,6 +4103,85 @@ This section provides details for each class and property defined by Ocean Prote
                title="http://schema.oceanproteinportal.org/v2/FileType">FileType</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://schema.org/Text">
+      <h3>text<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://schema.org/Text</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <span class="dotted" title="http://schema.org/DataType">data type</span>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#http://schema.org/URL" title="http://schema.org/URL">u r l</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is also defined as</dt>
+         <dd>named individual</dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://schema.org/Time">
+      <h3>time<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://schema.org/Time</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <span class="dotted" title="http://schema.org/DataType">data type</span>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#TimeAsString"
+               title="http://schema.oceanproteinportal.org/v2/TimeAsString">TimeAsString</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is also defined as</dt>
+         <dd>named individual</dd>
+      </dl>
+   </div>
+   <div class="entity" id="TimeAsString">
+      <h3>TimeAsString<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://schema.oceanproteinportal.org/v2/TimeAsString</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#http://schema.org/Time" title="http://schema.org/Time">time</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is also defined as</dt>
+         <dd>named individual</dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://schema.org/URL">
+      <h3>u r l<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://schema.org/URL</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#http://schema.org/Text" title="http://schema.org/Text">text</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is also defined as</dt>
+         <dd>named individual</dd>
       </dl>
    </div>
    <div class="entity" id="UniprotIdentifier">
@@ -7722,21 +8017,6 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
             title="http://schema.oceanproteinportal.org/v2/DatasetProfile_ProteinTotalSpectralCount">Dataset Profile: Protein Total Spectral Count</a>
       </li>
       <li>
-         <a href="#http://schema.org/Date" title="http://schema.org/Date">
-            <span>date</span>
-         </a>
-      </li>
-      <li>
-         <a href="#http://schema.org/DateTime" title="http://schema.org/DateTime">
-            <span>date time</span>
-         </a>
-      </li>
-      <li>
-         <a href="#http://schema.org/Float" title="http://schema.org/Float">
-            <span>float</span>
-         </a>
-      </li>
-      <li>
          <a href="#IdentifierScheme_EnzymeCommission"
             title="http://schema.oceanproteinportal.org/v2/IdentifierScheme_EnzymeCommission">Identifier Scheme: EnzymeCommission</a>
       </li>
@@ -7761,11 +8041,6 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
             title="http://schema.oceanproteinportal.org/v2/IdentifierScheme_Uniprot">Identifier Scheme: Uniprot</a>
       </li>
       <li>
-         <a href="#http://schema.org/Integer" title="http://schema.org/Integer">
-            <span>integer</span>
-         </a>
-      </li>
-      <li>
          <a href="#DataResourceParameterSet_PeptideSpectralCount_DateRequirement"
             title="http://schema.oceanproteinportal.org/v2/DataResourceParameterSet_PeptideSpectralCount_DateRequirement">Parameter Set: Peptide Spectral Count - Date Requirement</a>
       </li>
@@ -7784,21 +8059,6 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
       <li>
          <a href="#Role_Publisher"
             title="http://schema.oceanproteinportal.org/v2/Role_Publisher">Role: Publisher</a>
-      </li>
-      <li>
-         <a href="#http://schema.org/Text" title="http://schema.org/Text">
-            <span>text</span>
-         </a>
-      </li>
-      <li>
-         <a href="#http://schema.org/Time" title="http://schema.org/Time">
-            <span>time</span>
-         </a>
-      </li>
-      <li>
-         <a href="#http://schema.org/URL" title="http://schema.org/URL">
-            <span>u r l</span>
-         </a>
       </li>
       <li>
          <a href="#UnitOfMeasure_DecimalDegrees"
@@ -8754,7 +9014,8 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
             <a href="#parameterDataType"
                title="http://schema.oceanproteinportal.org/v2/parameterDataType">parameterDataType</a>
             <sup class="type-op" title="object property">op</sup>
-            <a href="#http://schema.org/DateTime" title="http://schema.org/DateTime">date time</a>
+            <a href="#DateTimeAsString"
+               title="http://schema.oceanproteinportal.org/v2/DateTimeAsString">DateTimeAsString</a>
          </dd>
          <dd>
             <a href="#parameterInResourceType"
@@ -9098,7 +9359,8 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
             <a href="#parameterDataType"
                title="http://schema.oceanproteinportal.org/v2/parameterDataType">parameterDataType</a>
             <sup class="type-op" title="object property">op</sup>
-            <a href="#http://schema.org/Date" title="http://schema.org/Date">date</a>
+            <a href="#DateAsString"
+               title="http://schema.oceanproteinportal.org/v2/DateAsString">DateAsString</a>
          </dd>
          <dd>
             <a href="#parameterInResourceType"
@@ -10291,7 +10553,8 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
             <a href="#parameterDataType"
                title="http://schema.oceanproteinportal.org/v2/parameterDataType">parameterDataType</a>
             <sup class="type-op" title="object property">op</sup>
-            <a href="#http://schema.org/Time" title="http://schema.org/Time">time</a>
+            <a href="#TimeAsString"
+               title="http://schema.oceanproteinportal.org/v2/TimeAsString">TimeAsString</a>
          </dd>
          <dd>
             <a href="#parameterInResourceType"
@@ -10696,7 +10959,8 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
             <a href="#parameterDataType"
                title="http://schema.oceanproteinportal.org/v2/parameterDataType">parameterDataType</a>
             <sup class="type-op" title="object property">op</sup>
-            <a href="#http://schema.org/Date" title="http://schema.org/Date">date</a>
+            <a href="#DateAsString"
+               title="http://schema.oceanproteinportal.org/v2/DateAsString">DateAsString</a>
          </dd>
          <dd>
             <a href="#parameterInResourceType"
@@ -10878,7 +11142,8 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
             <a href="#parameterDataType"
                title="http://schema.oceanproteinportal.org/v2/parameterDataType">parameterDataType</a>
             <sup class="type-op" title="object property">op</sup>
-            <a href="#http://schema.org/DateTime" title="http://schema.org/DateTime">date time</a>
+            <a href="#DateTimeAsString"
+               title="http://schema.oceanproteinportal.org/v2/DateTimeAsString">DateTimeAsString</a>
          </dd>
          <dd>
             <a href="#parameterInResourceType"
@@ -11974,7 +12239,8 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
             <a href="#parameterDataType"
                title="http://schema.oceanproteinportal.org/v2/parameterDataType">parameterDataType</a>
             <sup class="type-op" title="object property">op</sup>
-            <a href="#http://schema.org/Time" title="http://schema.org/Time">time</a>
+            <a href="#TimeAsString"
+               title="http://schema.oceanproteinportal.org/v2/TimeAsString">TimeAsString</a>
          </dd>
          <dd>
             <a href="#parameterInResourceType"
@@ -12709,30 +12975,6 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
          </dd>
       </dl>
    </div>
-   <div class="entity" id="http://schema.org/Date">
-      <h3>date<sup class="type-ni" title="named individual">ni</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://schema.org/Date</p>
-   </div>
-   <div class="entity" id="http://schema.org/DateTime">
-      <h3>date time<sup class="type-ni" title="named individual">ni</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://schema.org/DateTime</p>
-   </div>
-   <div class="entity" id="http://schema.org/Float">
-      <h3>float<sup class="type-ni" title="named individual">ni</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://schema.org/Float</p>
-   </div>
    <div class="entity" id="IdentifierScheme_EnzymeCommission">
       <h3>Identifier Scheme: EnzymeCommission<sup class="type-ni" title="named individual">ni</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
@@ -12832,14 +13074,6 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
          </dd>
       </dl>
    </div>
-   <div class="entity" id="http://schema.org/Integer">
-      <h3>integer<sup class="type-ni" title="named individual">ni</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://schema.org/Integer</p>
-   </div>
    <div class="entity" id="DataResourceParameterSet_PeptideSpectralCount_DateRequirement">
       <h3>Parameter Set: Peptide Spectral Count - Date Requirement<sup class="type-ni" title="named individual">ni</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
@@ -12930,30 +13164,6 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
-   </div>
-   <div class="entity" id="http://schema.org/Text">
-      <h3>text<sup class="type-ni" title="named individual">ni</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://schema.org/Text</p>
-   </div>
-   <div class="entity" id="http://schema.org/Time">
-      <h3>time<sup class="type-ni" title="named individual">ni</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://schema.org/Time</p>
-   </div>
-   <div class="entity" id="http://schema.org/URL">
-      <h3>u r l<sup class="type-ni" title="named individual">ni</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://schema.org/URL</p>
    </div>
    <div class="entity" id="UnitOfMeasure_DecimalDegrees">
       <h3>UnitOfMeasure: Decimal Degrees<sup class="type-ni" title="named individual">ni</sup>
