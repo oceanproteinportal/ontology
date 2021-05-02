@@ -126,6 +126,19 @@
     
 
 
+    <!-- http://schema.oceanproteinportal.org/v2/frictionlessDataValueType -->
+
+
+    <owl:AnnotationProperty rdf:about="http://schema.oceanproteinportal.org/v2/frictionlessDataValueType">
+        <rdfs:comment>The Frictionlessdata data type for a specific field (DataParameter) in a DataResource.</rdfs:comment>
+        <rdfs:label>frictionlessDataValueType</rdfs:label>
+        <rdfs:seeAlso>https://specs.frictionlessdata.io/table-schema/#types-and-formats</rdfs:seeAlso>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#token"/>
+        <rdfs:domain rdf:resource="http://schema.org/DataType"/>
+    </owl:AnnotationProperty>
+    
+
+
     <!-- http://schema.oceanproteinportal.org/v2/parameterValueConstraints -->
 
 
@@ -4395,49 +4408,78 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
     <!-- http://schema.org/Date -->
 
 
-    <owl:NamedIndividual rdf:about="http://schema.org/Date"/>
+    <owl:NamedIndividual rdf:about="http://schema.org/Date">
+        <frictionlessDataValueType>string</frictionlessDataValueType>
+    </owl:NamedIndividual>
     
 
 
     <!-- http://schema.org/DateTime -->
 
 
-    <owl:NamedIndividual rdf:about="http://schema.org/DateTime"/>
+    <owl:NamedIndividual rdf:about="http://schema.org/DateTime">
+        <frictionlessDataValueType>string</frictionlessDataValueType>
+    </owl:NamedIndividual>
     
 
 
     <!-- http://schema.org/Float -->
 
 
-    <owl:NamedIndividual rdf:about="http://schema.org/Float"/>
+    <owl:NamedIndividual rdf:about="http://schema.org/Float">
+        <frictionlessDataValueType>number</frictionlessDataValueType>
+    </owl:NamedIndividual>
     
 
 
     <!-- http://schema.org/Integer -->
 
 
-    <owl:NamedIndividual rdf:about="http://schema.org/Integer"/>
+    <owl:NamedIndividual rdf:about="http://schema.org/Integer">
+        <frictionlessDataValueType>integer</frictionlessDataValueType>
+    </owl:NamedIndividual>
     
 
 
     <!-- http://schema.org/Text -->
 
 
-    <owl:NamedIndividual rdf:about="http://schema.org/Text"/>
+    <owl:NamedIndividual rdf:about="http://schema.org/Text">
+        <frictionlessDataValueType>string</frictionlessDataValueType>
+    </owl:NamedIndividual>
     
 
 
     <!-- http://schema.org/Time -->
 
 
-    <owl:NamedIndividual rdf:about="http://schema.org/Time"/>
+    <owl:NamedIndividual rdf:about="http://schema.org/Time">
+        <frictionlessDataValueType>string</frictionlessDataValueType>
+    </owl:NamedIndividual>
     
 
 
     <!-- http://schema.org/URL -->
 
 
-    <owl:NamedIndividual rdf:about="http://schema.org/URL"/>
+    <owl:NamedIndividual rdf:about="http://schema.org/URL">
+        <frictionlessDataValueType>uri</frictionlessDataValueType>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    <rdf:Description rdf:about="http://schema.org/Boolean">
+        <frictionlessDataValueType>boolean</frictionlessDataValueType>
+    </rdf:Description>
     
 
 

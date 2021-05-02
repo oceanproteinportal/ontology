@@ -65,6 +65,14 @@
 <http://schema.oceanproteinportal.org/v2/frictionlessDataProfile> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#token> .
 <http://schema.oceanproteinportal.org/v2/frictionlessDataProfile> <http://www.w3.org/2000/01/rdf-schema#domain> <http://schema.oceanproteinportal.org/v2/FileType> .
 # 
+# http://schema.oceanproteinportal.org/v2/frictionlessDataValueType
+<http://schema.oceanproteinportal.org/v2/frictionlessDataValueType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://schema.oceanproteinportal.org/v2/frictionlessDataValueType> <http://www.w3.org/2000/01/rdf-schema#comment> "The Frictionlessdata data type for a specific field (DataParameter) in a DataResource." .
+<http://schema.oceanproteinportal.org/v2/frictionlessDataValueType> <http://www.w3.org/2000/01/rdf-schema#label> "frictionlessDataValueType" .
+<http://schema.oceanproteinportal.org/v2/frictionlessDataValueType> <http://www.w3.org/2000/01/rdf-schema#seeAlso> "https://specs.frictionlessdata.io/table-schema/#types-and-formats" .
+<http://schema.oceanproteinportal.org/v2/frictionlessDataValueType> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#token> .
+<http://schema.oceanproteinportal.org/v2/frictionlessDataValueType> <http://www.w3.org/2000/01/rdf-schema#domain> <http://schema.org/DataType> .
+# 
 # http://schema.oceanproteinportal.org/v2/parameterValueConstraints
 <http://schema.oceanproteinportal.org/v2/parameterValueConstraints> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 <http://schema.oceanproteinportal.org/v2/parameterValueConstraints> <http://www.w3.org/2000/01/rdf-schema#comment> "Any constraints on the parameter values to help with processing a certain DataParameter. This property is used in the datapackage.json for describing a tabular-data-resource field." .
@@ -2753,24 +2761,42 @@ _:genid97 <http://www.w3.org/2002/07/owl#hasValue> <http://schema.oceanproteinpo
 # 
 # http://schema.org/Date
 <http://schema.org/Date> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://schema.org/Date> <http://schema.oceanproteinportal.org/v2/frictionlessDataValueType> "string" .
 # 
 # http://schema.org/DateTime
 <http://schema.org/DateTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://schema.org/DateTime> <http://schema.oceanproteinportal.org/v2/frictionlessDataValueType> "string" .
 # 
 # http://schema.org/Float
 <http://schema.org/Float> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://schema.org/Float> <http://schema.oceanproteinportal.org/v2/frictionlessDataValueType> "number" .
 # 
 # http://schema.org/Integer
 <http://schema.org/Integer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://schema.org/Integer> <http://schema.oceanproteinportal.org/v2/frictionlessDataValueType> "integer" .
 # 
 # http://schema.org/Text
 <http://schema.org/Text> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://schema.org/Text> <http://schema.oceanproteinportal.org/v2/frictionlessDataValueType> "string" .
 # 
 # http://schema.org/Time
 <http://schema.org/Time> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://schema.org/Time> <http://schema.oceanproteinportal.org/v2/frictionlessDataValueType> "string" .
 # 
 # http://schema.org/URL
 <http://schema.org/URL> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://schema.org/URL> <http://schema.oceanproteinportal.org/v2/frictionlessDataValueType> "uri" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Annotations
+# #
+# #################################################################
+# 
+# 
+<http://schema.org/Boolean> <http://schema.oceanproteinportal.org/v2/frictionlessDataValueType> "boolean" .
 # 
 # 
 # 

@@ -817,6 +817,10 @@ This ontology has the following classes and properties.</span>
          title="http://schema.oceanproteinportal.org/v2/frictionlessDataProfile">frictionlessDataProfile</a>
    </li>
    <li>
+      <a href="#frictionlessDataValueType"
+         title="http://schema.oceanproteinportal.org/v2/frictionlessDataValueType">frictionlessDataValueType</a>
+   </li>
+   <li>
       <a href="#http://purl.org/dc/terms/issued" title="http://purl.org/dc/terms/issued">
          <span>issued</span>
       </a>
@@ -1276,6 +1280,21 @@ This ontology has the following classes and properties.</span>
          title="http://schema.oceanproteinportal.org/v2/DatasetProfile_ProteinTotalSpectralCount">Dataset Profile: Protein Total Spectral Count</a>
    </li>
    <li>
+      <a href="#http://schema.org/Date" title="http://schema.org/Date">
+         <span>date</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://schema.org/DateTime" title="http://schema.org/DateTime">
+         <span>date time</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://schema.org/Float" title="http://schema.org/Float">
+         <span>float</span>
+      </a>
+   </li>
+   <li>
       <a href="#IdentifierScheme_EnzymeCommission"
          title="http://schema.oceanproteinportal.org/v2/IdentifierScheme_EnzymeCommission">Identifier Scheme: EnzymeCommission</a>
    </li>
@@ -1300,6 +1319,11 @@ This ontology has the following classes and properties.</span>
          title="http://schema.oceanproteinportal.org/v2/IdentifierScheme_Uniprot">Identifier Scheme: Uniprot</a>
    </li>
    <li>
+      <a href="#http://schema.org/Integer" title="http://schema.org/Integer">
+         <span>integer</span>
+      </a>
+   </li>
+   <li>
       <a href="#DataResourceParameterSet_PeptideSpectralCount_DateRequirement"
          title="http://schema.oceanproteinportal.org/v2/DataResourceParameterSet_PeptideSpectralCount_DateRequirement">Parameter Set: Peptide Spectral Count - Date Requirement</a>
    </li>
@@ -1318,6 +1342,21 @@ This ontology has the following classes and properties.</span>
    <li>
       <a href="#Role_Publisher"
          title="http://schema.oceanproteinportal.org/v2/Role_Publisher">Role: Publisher</a>
+   </li>
+   <li>
+      <a href="#http://schema.org/Text" title="http://schema.org/Text">
+         <span>text</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://schema.org/Time" title="http://schema.org/Time">
+         <span>time</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://schema.org/URL" title="http://schema.org/URL">
+         <span>u r l</span>
+      </a>
    </li>
    <li>
       <a href="#UnitOfMeasure_DecimalDegrees"
@@ -7047,6 +7086,10 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
             title="http://schema.oceanproteinportal.org/v2/frictionlessDataProfile">frictionlessDataProfile</a>
       </li>
       <li>
+         <a href="#frictionlessDataValueType"
+            title="http://schema.oceanproteinportal.org/v2/frictionlessDataValueType">frictionlessDataValueType</a>
+      </li>
+      <li>
          <a href="#http://purl.org/dc/terms/issued" title="http://purl.org/dc/terms/issued">
             <span>issued</span>
          </a>
@@ -7170,6 +7213,30 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
             <dd>
                <a href="#FileType"
                   title="http://schema.oceanproteinportal.org/v2/FileType">FileType</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#token">token</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="frictionlessDataValueType">
+      <h3>frictionlessDataValueType<sup class="type-ap" title="annotation property">ap</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://schema.oceanproteinportal.org/v2/frictionlessDataValueType</p>
+      <div class="comment">
+         <span class="markdown">The Frictionlessdata data type for a specific field (DataParameter) in a DataResource.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <span class="dotted" title="http://schema.org/DataType">data type</span>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -7696,6 +7763,21 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
             title="http://schema.oceanproteinportal.org/v2/DatasetProfile_ProteinTotalSpectralCount">Dataset Profile: Protein Total Spectral Count</a>
       </li>
       <li>
+         <a href="#http://schema.org/Date" title="http://schema.org/Date">
+            <span>date</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://schema.org/DateTime" title="http://schema.org/DateTime">
+            <span>date time</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://schema.org/Float" title="http://schema.org/Float">
+            <span>float</span>
+         </a>
+      </li>
+      <li>
          <a href="#IdentifierScheme_EnzymeCommission"
             title="http://schema.oceanproteinportal.org/v2/IdentifierScheme_EnzymeCommission">Identifier Scheme: EnzymeCommission</a>
       </li>
@@ -7720,6 +7802,11 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
             title="http://schema.oceanproteinportal.org/v2/IdentifierScheme_Uniprot">Identifier Scheme: Uniprot</a>
       </li>
       <li>
+         <a href="#http://schema.org/Integer" title="http://schema.org/Integer">
+            <span>integer</span>
+         </a>
+      </li>
+      <li>
          <a href="#DataResourceParameterSet_PeptideSpectralCount_DateRequirement"
             title="http://schema.oceanproteinportal.org/v2/DataResourceParameterSet_PeptideSpectralCount_DateRequirement">Parameter Set: Peptide Spectral Count - Date Requirement</a>
       </li>
@@ -7738,6 +7825,21 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
       <li>
          <a href="#Role_Publisher"
             title="http://schema.oceanproteinportal.org/v2/Role_Publisher">Role: Publisher</a>
+      </li>
+      <li>
+         <a href="#http://schema.org/Text" title="http://schema.org/Text">
+            <span>text</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://schema.org/Time" title="http://schema.org/Time">
+            <span>time</span>
+         </a>
+      </li>
+      <li>
+         <a href="#http://schema.org/URL" title="http://schema.org/URL">
+            <span>u r l</span>
+         </a>
       </li>
       <li>
          <a href="#UnitOfMeasure_DecimalDegrees"
@@ -8506,7 +8608,7 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
             <a href="#parameterDataType"
                title="http://schema.oceanproteinportal.org/v2/parameterDataType">parameterDataType</a>
             <sup class="type-op" title="object property">op</sup>
-            <span class="dotted" title="http://schema.org/Text">text</span>
+            <a href="#http://schema.org/Text" title="http://schema.org/Text">text</a>
          </dd>
          <dd>
             <a href="#parameterInResourceType"
@@ -8568,7 +8670,7 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
             <a href="#parameterDataType"
                title="http://schema.oceanproteinportal.org/v2/parameterDataType">parameterDataType</a>
             <sup class="type-op" title="object property">op</sup>
-            <span class="dotted" title="http://schema.org/Text">text</span>
+            <a href="#http://schema.org/Text" title="http://schema.org/Text">text</a>
          </dd>
          <dd>
             <a href="#parameterInResourceType"
@@ -8630,7 +8732,7 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
             <a href="#parameterDataType"
                title="http://schema.oceanproteinportal.org/v2/parameterDataType">parameterDataType</a>
             <sup class="type-op" title="object property">op</sup>
-            <span class="dotted" title="http://schema.org/Float">float</span>
+            <a href="#http://schema.org/Float" title="http://schema.org/Float">float</a>
          </dd>
          <dd>
             <a href="#parameterInResourceType"
@@ -8700,7 +8802,7 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
             <a href="#parameterDataType"
                title="http://schema.oceanproteinportal.org/v2/parameterDataType">parameterDataType</a>
             <sup class="type-op" title="object property">op</sup>
-            <span class="dotted" title="http://schema.org/Float">float</span>
+            <a href="#http://schema.org/Float" title="http://schema.org/Float">float</a>
          </dd>
          <dd>
             <a href="#parameterInResourceType"
@@ -8756,7 +8858,7 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
             <a href="#parameterDataType"
                title="http://schema.oceanproteinportal.org/v2/parameterDataType">parameterDataType</a>
             <sup class="type-op" title="object property">op</sup>
-            <span class="dotted" title="http://schema.org/Float">float</span>
+            <a href="#http://schema.org/Float" title="http://schema.org/Float">float</a>
          </dd>
          <dd>
             <a href="#parameterInResourceType"
@@ -8812,7 +8914,7 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
             <a href="#parameterDataType"
                title="http://schema.oceanproteinportal.org/v2/parameterDataType">parameterDataType</a>
             <sup class="type-op" title="object property">op</sup>
-            <span class="dotted" title="http://schema.org/Float">float</span>
+            <a href="#http://schema.org/Float" title="http://schema.org/Float">float</a>
          </dd>
          <dd>
             <a href="#parameterInResourceType"
@@ -8868,7 +8970,7 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
             <a href="#parameterDataType"
                title="http://schema.oceanproteinportal.org/v2/parameterDataType">parameterDataType</a>
             <sup class="type-op" title="object property">op</sup>
-            <span class="dotted" title="http://schema.org/Text">text</span>
+            <a href="#http://schema.org/Text" title="http://schema.org/Text">text</a>
          </dd>
          <dd>
             <a href="#parameterInResourceType"
@@ -8924,7 +9026,7 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
             <a href="#parameterDataType"
                title="http://schema.oceanproteinportal.org/v2/parameterDataType">parameterDataType</a>
             <sup class="type-op" title="object property">op</sup>
-            <span class="dotted" title="http://schema.org/Text">text</span>
+            <a href="#http://schema.org/Text" title="http://schema.org/Text">text</a>
          </dd>
          <dd>
             <a href="#parameterInResourceType"
@@ -8980,7 +9082,7 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
             <a href="#parameterDataType"
                title="http://schema.oceanproteinportal.org/v2/parameterDataType">parameterDataType</a>
             <sup class="type-op" title="object property">op</sup>
-            <span class="dotted" title="http://schema.org/Date">date</span>
+            <a href="#http://schema.org/Date" title="http://schema.org/Date">date</a>
          </dd>
          <dd>
             <a href="#parameterInResourceType"
@@ -9036,7 +9138,7 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
             <a href="#parameterDataType"
                title="http://schema.oceanproteinportal.org/v2/parameterDataType">parameterDataType</a>
             <sup class="type-op" title="object property">op</sup>
-            <span class="dotted" title="http://schema.org/Float">float</span>
+            <a href="#http://schema.org/Float" title="http://schema.org/Float">float</a>
          </dd>
          <dd>
             <a href="#parameterInResourceType"
@@ -9099,7 +9201,7 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
             <a href="#parameterDataType"
                title="http://schema.oceanproteinportal.org/v2/parameterDataType">parameterDataType</a>
             <sup class="type-op" title="object property">op</sup>
-            <span class="dotted" title="http://schema.org/DateTime">date time</span>
+            <a href="#http://schema.org/DateTime" title="http://schema.org/DateTime">date time</a>
          </dd>
          <dd>
             <a href="#parameterInResourceType"
@@ -9163,7 +9265,7 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
             <a href="#parameterDataType"
                title="http://schema.oceanproteinportal.org/v2/parameterDataType">parameterDataType</a>
             <sup class="type-op" title="object property">op</sup>
-            <span class="dotted" title="http://schema.org/Float">float</span>
+            <a href="#http://schema.org/Float" title="http://schema.org/Float">float</a>
          </dd>
          <dd>
             <a href="#parameterInResourceType"
@@ -9245,7 +9347,7 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
             <a href="#parameterDataType"
                title="http://schema.oceanproteinportal.org/v2/parameterDataType">parameterDataType</a>
             <sup class="type-op" title="object property">op</sup>
-            <span class="dotted" title="http://schema.org/Float">float</span>
+            <a href="#http://schema.org/Float" title="http://schema.org/Float">float</a>
          </dd>
          <dd>
             <a href="#parameterInResourceType"
@@ -9320,7 +9422,7 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
             <a href="#parameterDataType"
                title="http://schema.oceanproteinportal.org/v2/parameterDataType">parameterDataType</a>
             <sup class="type-op" title="object property">op</sup>
-            <span class="dotted" title="http://schema.org/Float">float</span>
+            <a href="#http://schema.org/Float" title="http://schema.org/Float">float</a>
          </dd>
          <dd>
             <a href="#parameterInResourceType"
@@ -9383,7 +9485,7 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
             <a href="#parameterDataType"
                title="http://schema.oceanproteinportal.org/v2/parameterDataType">parameterDataType</a>
             <sup class="type-op" title="object property">op</sup>
-            <span class="dotted" title="http://schema.org/Float">float</span>
+            <a href="#http://schema.org/Float" title="http://schema.org/Float">float</a>
          </dd>
          <dd>
             <a href="#parameterInResourceType"
@@ -9439,7 +9541,7 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
             <a href="#parameterDataType"
                title="http://schema.oceanproteinportal.org/v2/parameterDataType">parameterDataType</a>
             <sup class="type-op" title="object property">op</sup>
-            <span class="dotted" title="http://schema.org/Float">float</span>
+            <a href="#http://schema.org/Float" title="http://schema.org/Float">float</a>
          </dd>
          <dd>
             <a href="#parameterInResourceType"
@@ -9502,7 +9604,7 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
             <a href="#parameterDataType"
                title="http://schema.oceanproteinportal.org/v2/parameterDataType">parameterDataType</a>
             <sup class="type-op" title="object property">op</sup>
-            <span class="dotted" title="http://schema.org/Float">float</span>
+            <a href="#http://schema.org/Float" title="http://schema.org/Float">float</a>
          </dd>
          <dd>
             <a href="#parameterInResourceType"
@@ -9572,7 +9674,7 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
             <a href="#parameterDataType"
                title="http://schema.oceanproteinportal.org/v2/parameterDataType">parameterDataType</a>
             <sup class="type-op" title="object property">op</sup>
-            <span class="dotted" title="http://schema.org/Integer">integer</span>
+            <a href="#http://schema.org/Integer" title="http://schema.org/Integer">integer</a>
          </dd>
          <dd>
             <a href="#parameterInResourceType"
@@ -9635,7 +9737,7 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
             <a href="#parameterDataType"
                title="http://schema.oceanproteinportal.org/v2/parameterDataType">parameterDataType</a>
             <sup class="type-op" title="object property">op</sup>
-            <span class="dotted" title="http://schema.org/Integer">integer</span>
+            <a href="#http://schema.org/Integer" title="http://schema.org/Integer">integer</a>
          </dd>
          <dd>
             <a href="#parameterInResourceType"
@@ -9691,7 +9793,7 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
             <a href="#parameterDataType"
                title="http://schema.oceanproteinportal.org/v2/parameterDataType">parameterDataType</a>
             <sup class="type-op" title="object property">op</sup>
-            <span class="dotted" title="http://schema.org/Text">text</span>
+            <a href="#http://schema.org/Text" title="http://schema.org/Text">text</a>
          </dd>
          <dd>
             <a href="#parameterInResourceType"
@@ -9747,7 +9849,7 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
             <a href="#parameterDataType"
                title="http://schema.oceanproteinportal.org/v2/parameterDataType">parameterDataType</a>
             <sup class="type-op" title="object property">op</sup>
-            <span class="dotted" title="http://schema.org/Float">float</span>
+            <a href="#http://schema.org/Float" title="http://schema.org/Float">float</a>
          </dd>
          <dd>
             <a href="#parameterInResourceType"
@@ -9803,7 +9905,7 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
             <a href="#parameterDataType"
                title="http://schema.oceanproteinportal.org/v2/parameterDataType">parameterDataType</a>
             <sup class="type-op" title="object property">op</sup>
-            <span class="dotted" title="http://schema.org/Float">float</span>
+            <a href="#http://schema.org/Float" title="http://schema.org/Float">float</a>
          </dd>
          <dd>
             <a href="#parameterInResourceType"
@@ -9859,7 +9961,7 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
             <a href="#parameterDataType"
                title="http://schema.oceanproteinportal.org/v2/parameterDataType">parameterDataType</a>
             <sup class="type-op" title="object property">op</sup>
-            <span class="dotted" title="http://schema.org/Float">float</span>
+            <a href="#http://schema.org/Float" title="http://schema.org/Float">float</a>
          </dd>
          <dd>
             <a href="#parameterInResourceType"
@@ -9915,7 +10017,7 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
             <a href="#parameterDataType"
                title="http://schema.oceanproteinportal.org/v2/parameterDataType">parameterDataType</a>
             <sup class="type-op" title="object property">op</sup>
-            <span class="dotted" title="http://schema.org/Float">float</span>
+            <a href="#http://schema.org/Float" title="http://schema.org/Float">float</a>
          </dd>
          <dd>
             <a href="#parameterInResourceType"
@@ -9978,7 +10080,7 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
             <a href="#parameterDataType"
                title="http://schema.oceanproteinportal.org/v2/parameterDataType">parameterDataType</a>
             <sup class="type-op" title="object property">op</sup>
-            <span class="dotted" title="http://schema.org/Text">text</span>
+            <a href="#http://schema.org/Text" title="http://schema.org/Text">text</a>
          </dd>
          <dd>
             <a href="#parameterInResourceType"
@@ -10048,7 +10150,7 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
             <a href="#parameterDataType"
                title="http://schema.oceanproteinportal.org/v2/parameterDataType">parameterDataType</a>
             <sup class="type-op" title="object property">op</sup>
-            <span class="dotted" title="http://schema.org/Text">text</span>
+            <a href="#http://schema.org/Text" title="http://schema.org/Text">text</a>
          </dd>
          <dd>
             <a href="#parameterInResourceType"
@@ -10104,7 +10206,7 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
             <a href="#parameterDataType"
                title="http://schema.oceanproteinportal.org/v2/parameterDataType">parameterDataType</a>
             <sup class="type-op" title="object property">op</sup>
-            <span class="dotted" title="http://schema.org/Float">float</span>
+            <a href="#http://schema.org/Float" title="http://schema.org/Float">float</a>
          </dd>
          <dd>
             <a href="#parameterInResourceType"
@@ -10167,7 +10269,7 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
             <a href="#parameterDataType"
                title="http://schema.oceanproteinportal.org/v2/parameterDataType">parameterDataType</a>
             <sup class="type-op" title="object property">op</sup>
-            <span class="dotted" title="http://schema.org/Text">text</span>
+            <a href="#http://schema.org/Text" title="http://schema.org/Text">text</a>
          </dd>
          <dd>
             <a href="#parameterInResourceType"
@@ -10230,7 +10332,7 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
             <a href="#parameterDataType"
                title="http://schema.oceanproteinportal.org/v2/parameterDataType">parameterDataType</a>
             <sup class="type-op" title="object property">op</sup>
-            <span class="dotted" title="http://schema.org/Time">time</span>
+            <a href="#http://schema.org/Time" title="http://schema.org/Time">time</a>
          </dd>
          <dd>
             <a href="#parameterInResourceType"
@@ -10292,7 +10394,7 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
             <a href="#parameterDataType"
                title="http://schema.oceanproteinportal.org/v2/parameterDataType">parameterDataType</a>
             <sup class="type-op" title="object property">op</sup>
-            <span class="dotted" title="http://schema.org/Float">float</span>
+            <a href="#http://schema.org/Float" title="http://schema.org/Float">float</a>
          </dd>
          <dd>
             <a href="#parameterInResourceType"
@@ -10348,7 +10450,7 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
             <a href="#parameterDataType"
                title="http://schema.oceanproteinportal.org/v2/parameterDataType">parameterDataType</a>
             <sup class="type-op" title="object property">op</sup>
-            <span class="dotted" title="http://schema.org/Float">float</span>
+            <a href="#http://schema.org/Float" title="http://schema.org/Float">float</a>
          </dd>
          <dd>
             <a href="#parameterInResourceType"
@@ -10404,7 +10506,7 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
             <a href="#parameterDataType"
                title="http://schema.oceanproteinportal.org/v2/parameterDataType">parameterDataType</a>
             <sup class="type-op" title="object property">op</sup>
-            <span class="dotted" title="http://schema.org/Text">text</span>
+            <a href="#http://schema.org/Text" title="http://schema.org/Text">text</a>
          </dd>
          <dd>
             <a href="#parameterInResourceType"
@@ -10467,7 +10569,7 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
             <a href="#parameterDataType"
                title="http://schema.oceanproteinportal.org/v2/parameterDataType">parameterDataType</a>
             <sup class="type-op" title="object property">op</sup>
-            <span class="dotted" title="http://schema.org/Text">text</span>
+            <a href="#http://schema.org/Text" title="http://schema.org/Text">text</a>
          </dd>
          <dd>
             <a href="#parameterInResourceType"
@@ -10523,7 +10625,7 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
             <a href="#parameterDataType"
                title="http://schema.oceanproteinportal.org/v2/parameterDataType">parameterDataType</a>
             <sup class="type-op" title="object property">op</sup>
-            <span class="dotted" title="http://schema.org/Text">text</span>
+            <a href="#http://schema.org/Text" title="http://schema.org/Text">text</a>
          </dd>
          <dd>
             <a href="#parameterInResourceType"
@@ -10579,7 +10681,7 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
             <a href="#parameterDataType"
                title="http://schema.oceanproteinportal.org/v2/parameterDataType">parameterDataType</a>
             <sup class="type-op" title="object property">op</sup>
-            <span class="dotted" title="http://schema.org/Text">text</span>
+            <a href="#http://schema.org/Text" title="http://schema.org/Text">text</a>
          </dd>
          <dd>
             <a href="#parameterInResourceType"
@@ -10635,7 +10737,7 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
             <a href="#parameterDataType"
                title="http://schema.oceanproteinportal.org/v2/parameterDataType">parameterDataType</a>
             <sup class="type-op" title="object property">op</sup>
-            <span class="dotted" title="http://schema.org/Date">date</span>
+            <a href="#http://schema.org/Date" title="http://schema.org/Date">date</a>
          </dd>
          <dd>
             <a href="#parameterInResourceType"
@@ -10691,7 +10793,7 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
             <a href="#parameterDataType"
                title="http://schema.oceanproteinportal.org/v2/parameterDataType">parameterDataType</a>
             <sup class="type-op" title="object property">op</sup>
-            <span class="dotted" title="http://schema.org/Float">float</span>
+            <a href="#http://schema.org/Float" title="http://schema.org/Float">float</a>
          </dd>
          <dd>
             <a href="#parameterInResourceType"
@@ -10754,7 +10856,7 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
             <a href="#parameterDataType"
                title="http://schema.oceanproteinportal.org/v2/parameterDataType">parameterDataType</a>
             <sup class="type-op" title="object property">op</sup>
-            <span class="dotted" title="http://schema.org/Text">text</span>
+            <a href="#http://schema.org/Text" title="http://schema.org/Text">text</a>
          </dd>
          <dd>
             <a href="#parameterInResourceType"
@@ -10817,7 +10919,7 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
             <a href="#parameterDataType"
                title="http://schema.oceanproteinportal.org/v2/parameterDataType">parameterDataType</a>
             <sup class="type-op" title="object property">op</sup>
-            <span class="dotted" title="http://schema.org/DateTime">date time</span>
+            <a href="#http://schema.org/DateTime" title="http://schema.org/DateTime">date time</a>
          </dd>
          <dd>
             <a href="#parameterInResourceType"
@@ -10874,7 +10976,7 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
             <a href="#parameterDataType"
                title="http://schema.oceanproteinportal.org/v2/parameterDataType">parameterDataType</a>
             <sup class="type-op" title="object property">op</sup>
-            <span class="dotted" title="http://schema.org/Text">text</span>
+            <a href="#http://schema.org/Text" title="http://schema.org/Text">text</a>
          </dd>
          <dd>
             <a href="#parameterInResourceType"
@@ -10937,7 +11039,7 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
             <a href="#parameterDataType"
                title="http://schema.oceanproteinportal.org/v2/parameterDataType">parameterDataType</a>
             <sup class="type-op" title="object property">op</sup>
-            <span class="dotted" title="http://schema.org/Text">text</span>
+            <a href="#http://schema.org/Text" title="http://schema.org/Text">text</a>
          </dd>
          <dd>
             <a href="#parameterInResourceType"
@@ -11000,7 +11102,7 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
             <a href="#parameterDataType"
                title="http://schema.oceanproteinportal.org/v2/parameterDataType">parameterDataType</a>
             <sup class="type-op" title="object property">op</sup>
-            <span class="dotted" title="http://schema.org/Text">text</span>
+            <a href="#http://schema.org/Text" title="http://schema.org/Text">text</a>
          </dd>
          <dd>
             <a href="#parameterInResourceType"
@@ -11063,7 +11165,7 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
             <a href="#parameterDataType"
                title="http://schema.oceanproteinportal.org/v2/parameterDataType">parameterDataType</a>
             <sup class="type-op" title="object property">op</sup>
-            <span class="dotted" title="http://schema.org/Text">text</span>
+            <a href="#http://schema.org/Text" title="http://schema.org/Text">text</a>
          </dd>
          <dd>
             <a href="#parameterInResourceType"
@@ -11133,7 +11235,7 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
             <a href="#parameterDataType"
                title="http://schema.oceanproteinportal.org/v2/parameterDataType">parameterDataType</a>
             <sup class="type-op" title="object property">op</sup>
-            <span class="dotted" title="http://schema.org/Float">float</span>
+            <a href="#http://schema.org/Float" title="http://schema.org/Float">float</a>
          </dd>
          <dd>
             <a href="#parameterInResourceType"
@@ -11215,7 +11317,7 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
             <a href="#parameterDataType"
                title="http://schema.oceanproteinportal.org/v2/parameterDataType">parameterDataType</a>
             <sup class="type-op" title="object property">op</sup>
-            <span class="dotted" title="http://schema.org/Float">float</span>
+            <a href="#http://schema.org/Float" title="http://schema.org/Float">float</a>
          </dd>
          <dd>
             <a href="#parameterInResourceType"
@@ -11290,7 +11392,7 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
             <a href="#parameterDataType"
                title="http://schema.oceanproteinportal.org/v2/parameterDataType">parameterDataType</a>
             <sup class="type-op" title="object property">op</sup>
-            <span class="dotted" title="http://schema.org/Float">float</span>
+            <a href="#http://schema.org/Float" title="http://schema.org/Float">float</a>
          </dd>
          <dd>
             <a href="#parameterInResourceType"
@@ -11353,7 +11455,7 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
             <a href="#parameterDataType"
                title="http://schema.oceanproteinportal.org/v2/parameterDataType">parameterDataType</a>
             <sup class="type-op" title="object property">op</sup>
-            <span class="dotted" title="http://schema.org/Float">float</span>
+            <a href="#http://schema.org/Float" title="http://schema.org/Float">float</a>
          </dd>
          <dd>
             <a href="#parameterInResourceType"
@@ -11416,7 +11518,7 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
             <a href="#parameterDataType"
                title="http://schema.oceanproteinportal.org/v2/parameterDataType">parameterDataType</a>
             <sup class="type-op" title="object property">op</sup>
-            <span class="dotted" title="http://schema.org/Float">float</span>
+            <a href="#http://schema.org/Float" title="http://schema.org/Float">float</a>
          </dd>
          <dd>
             <a href="#parameterInResourceType"
@@ -11479,7 +11581,7 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
             <a href="#parameterDataType"
                title="http://schema.oceanproteinportal.org/v2/parameterDataType">parameterDataType</a>
             <sup class="type-op" title="object property">op</sup>
-            <span class="dotted" title="http://schema.org/Text">text</span>
+            <a href="#http://schema.org/Text" title="http://schema.org/Text">text</a>
          </dd>
          <dd>
             <a href="#parameterInResourceType"
@@ -11542,7 +11644,7 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
             <a href="#parameterDataType"
                title="http://schema.oceanproteinportal.org/v2/parameterDataType">parameterDataType</a>
             <sup class="type-op" title="object property">op</sup>
-            <span class="dotted" title="http://schema.org/Text">text</span>
+            <a href="#http://schema.org/Text" title="http://schema.org/Text">text</a>
          </dd>
          <dd>
             <a href="#parameterInResourceType"
@@ -11612,7 +11714,7 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
             <a href="#parameterDataType"
                title="http://schema.oceanproteinportal.org/v2/parameterDataType">parameterDataType</a>
             <sup class="type-op" title="object property">op</sup>
-            <span class="dotted" title="http://schema.org/Text">text</span>
+            <a href="#http://schema.org/Text" title="http://schema.org/Text">text</a>
          </dd>
          <dd>
             <a href="#parameterInResourceType"
@@ -11682,7 +11784,7 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
             <a href="#parameterDataType"
                title="http://schema.oceanproteinportal.org/v2/parameterDataType">parameterDataType</a>
             <sup class="type-op" title="object property">op</sup>
-            <span class="dotted" title="http://schema.org/Text">text</span>
+            <a href="#http://schema.org/Text" title="http://schema.org/Text">text</a>
          </dd>
          <dd>
             <a href="#parameterInResourceType"
@@ -11738,7 +11840,7 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
             <a href="#parameterDataType"
                title="http://schema.oceanproteinportal.org/v2/parameterDataType">parameterDataType</a>
             <sup class="type-op" title="object property">op</sup>
-            <span class="dotted" title="http://schema.org/Text">text</span>
+            <a href="#http://schema.org/Text" title="http://schema.org/Text">text</a>
          </dd>
          <dd>
             <a href="#parameterInResourceType"
@@ -11794,7 +11896,7 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
             <a href="#parameterDataType"
                title="http://schema.oceanproteinportal.org/v2/parameterDataType">parameterDataType</a>
             <sup class="type-op" title="object property">op</sup>
-            <span class="dotted" title="http://schema.org/Text">text</span>
+            <a href="#http://schema.org/Text" title="http://schema.org/Text">text</a>
          </dd>
          <dd>
             <a href="#parameterInResourceType"
@@ -11850,7 +11952,7 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
             <a href="#parameterDataType"
                title="http://schema.oceanproteinportal.org/v2/parameterDataType">parameterDataType</a>
             <sup class="type-op" title="object property">op</sup>
-            <span class="dotted" title="http://schema.org/Text">text</span>
+            <a href="#http://schema.org/Text" title="http://schema.org/Text">text</a>
          </dd>
          <dd>
             <a href="#parameterInResourceType"
@@ -11913,7 +12015,7 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
             <a href="#parameterDataType"
                title="http://schema.oceanproteinportal.org/v2/parameterDataType">parameterDataType</a>
             <sup class="type-op" title="object property">op</sup>
-            <span class="dotted" title="http://schema.org/Time">time</span>
+            <a href="#http://schema.org/Time" title="http://schema.org/Time">time</a>
          </dd>
          <dd>
             <a href="#parameterInResourceType"
@@ -11975,7 +12077,7 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
             <a href="#parameterDataType"
                title="http://schema.oceanproteinportal.org/v2/parameterDataType">parameterDataType</a>
             <sup class="type-op" title="object property">op</sup>
-            <span class="dotted" title="http://schema.org/Text">text</span>
+            <a href="#http://schema.org/Text" title="http://schema.org/Text">text</a>
          </dd>
          <dd>
             <a href="#parameterInResourceType"
@@ -12648,6 +12750,30 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
          </dd>
       </dl>
    </div>
+   <div class="entity" id="http://schema.org/Date">
+      <h3>date<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://schema.org/Date</p>
+   </div>
+   <div class="entity" id="http://schema.org/DateTime">
+      <h3>date time<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://schema.org/DateTime</p>
+   </div>
+   <div class="entity" id="http://schema.org/Float">
+      <h3>float<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://schema.org/Float</p>
+   </div>
    <div class="entity" id="IdentifierScheme_EnzymeCommission">
       <h3>Identifier Scheme: EnzymeCommission<sup class="type-ni" title="named individual">ni</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
@@ -12747,6 +12873,14 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
          </dd>
       </dl>
    </div>
+   <div class="entity" id="http://schema.org/Integer">
+      <h3>integer<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://schema.org/Integer</p>
+   </div>
    <div class="entity" id="DataResourceParameterSet_PeptideSpectralCount_DateRequirement">
       <h3>Parameter Set: Peptide Spectral Count - Date Requirement<sup class="type-ni" title="named individual">ni</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
@@ -12837,6 +12971,30 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
+   </div>
+   <div class="entity" id="http://schema.org/Text">
+      <h3>text<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://schema.org/Text</p>
+   </div>
+   <div class="entity" id="http://schema.org/Time">
+      <h3>time<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://schema.org/Time</p>
+   </div>
+   <div class="entity" id="http://schema.org/URL">
+      <h3>u r l<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://schema.org/URL</p>
    </div>
    <div class="entity" id="UnitOfMeasure_DecimalDegrees">
       <h3>UnitOfMeasure: Decimal Degrees<sup class="type-ni" title="named individual">ni</sup>

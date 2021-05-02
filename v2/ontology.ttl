@@ -79,6 +79,15 @@
                          rdfs:domain :FileType .
 
 
+###  http://schema.oceanproteinportal.org/v2/frictionlessDataValueType
+:frictionlessDataValueType rdf:type owl:AnnotationProperty ;
+                           rdfs:comment "The Frictionlessdata data type for a specific field (DataParameter) in a DataResource." ;
+                           rdfs:label "frictionlessDataValueType" ;
+                           rdfs:seeAlso "https://specs.frictionlessdata.io/table-schema/#types-and-formats" ;
+                           rdfs:range xsd:token ;
+                           rdfs:domain <http://schema.org/DataType> .
+
+
 ###  http://schema.oceanproteinportal.org/v2/parameterValueConstraints
 :parameterValueConstraints rdf:type owl:AnnotationProperty ;
                            rdfs:comment "Any constraints on the parameter values to help with processing a certain DataParameter. This property is used in the datapackage.json for describing a tabular-data-resource field." ;
@@ -3006,31 +3015,45 @@ Note since the order of the pathways (or KeggPathway Index isn't provided we don
 
 
 ###  http://schema.org/Date
-<http://schema.org/Date> rdf:type owl:NamedIndividual .
+<http://schema.org/Date> rdf:type owl:NamedIndividual ;
+                         :frictionlessDataValueType "string" .
 
 
 ###  http://schema.org/DateTime
-<http://schema.org/DateTime> rdf:type owl:NamedIndividual .
+<http://schema.org/DateTime> rdf:type owl:NamedIndividual ;
+                             :frictionlessDataValueType "string" .
 
 
 ###  http://schema.org/Float
-<http://schema.org/Float> rdf:type owl:NamedIndividual .
+<http://schema.org/Float> rdf:type owl:NamedIndividual ;
+                          :frictionlessDataValueType "number" .
 
 
 ###  http://schema.org/Integer
-<http://schema.org/Integer> rdf:type owl:NamedIndividual .
+<http://schema.org/Integer> rdf:type owl:NamedIndividual ;
+                            :frictionlessDataValueType "integer" .
 
 
 ###  http://schema.org/Text
-<http://schema.org/Text> rdf:type owl:NamedIndividual .
+<http://schema.org/Text> rdf:type owl:NamedIndividual ;
+                         :frictionlessDataValueType "string" .
 
 
 ###  http://schema.org/Time
-<http://schema.org/Time> rdf:type owl:NamedIndividual .
+<http://schema.org/Time> rdf:type owl:NamedIndividual ;
+                         :frictionlessDataValueType "string" .
 
 
 ###  http://schema.org/URL
-<http://schema.org/URL> rdf:type owl:NamedIndividual .
+<http://schema.org/URL> rdf:type owl:NamedIndividual ;
+                        :frictionlessDataValueType "uri" .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+<http://schema.org/Boolean> :frictionlessDataValueType "boolean" .
 
 
 #################################################################

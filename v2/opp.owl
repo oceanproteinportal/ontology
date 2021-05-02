@@ -1138,7 +1138,38 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         <rdfs:label>positionInDataResource</rdfs:label>
     </owl:DatatypeProperty>
 
+<owl:AnnotationProperty rdf:about="http://schema.oceanproteinportal.org/v2/frictionlessDataValueType">
+        <rdfs:comment>The Frictionlessdata data type for a specific field (DataParameter) in a DataResource.</rdfs:comment>
+        <rdfs:label>frictionlessDataValueType</rdfs:label>
+        <rdfs:seeAlso>https://specs.frictionlessdata.io/table-schema/#types-and-formats</rdfs:seeAlso>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#token"/>
+        <rdfs:domain rdf:resource="http://schema.org/DataType"/>
+    </owl:AnnotationProperty>
 
+    <rdf:Description rdf:about="http://schema.org/Boolean">
+        <frictionlessDataValueType>boolean</frictionlessDataValueType>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.org/Date">
+        <frictionlessDataValueType>string</frictionlessDataValueType>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.org/DateTime">
+        <frictionlessDataValueType>string</frictionlessDataValueType>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.org/Float">
+        <frictionlessDataValueType>number</frictionlessDataValueType>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.org/Integer">
+        <frictionlessDataValueType>integer</frictionlessDataValueType>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.org/Text">
+        <frictionlessDataValueType>string</frictionlessDataValueType>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.org/Time">
+        <frictionlessDataValueType>string</frictionlessDataValueType>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://schema.org/URL">
+        <frictionlessDataValueType>uri</frictionlessDataValueType>
+    </rdf:Description>
 
     <!-- http://schema.oceanproteinportal.org/v2/parameterValueRegexPattern -->
 
