@@ -65,14 +65,6 @@
 <http://schema.oceanproteinportal.org/v2/frictionlessDataProfile> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#token> .
 <http://schema.oceanproteinportal.org/v2/frictionlessDataProfile> <http://www.w3.org/2000/01/rdf-schema#domain> <http://schema.oceanproteinportal.org/v2/FileType> .
 # 
-# http://schema.oceanproteinportal.org/v2/frictionlessDataValueType
-<http://schema.oceanproteinportal.org/v2/frictionlessDataValueType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-<http://schema.oceanproteinportal.org/v2/frictionlessDataValueType> <http://www.w3.org/2000/01/rdf-schema#comment> "The Frictionlessdata data type for a specific field (DataParameter) in a DataResource." .
-<http://schema.oceanproteinportal.org/v2/frictionlessDataValueType> <http://www.w3.org/2000/01/rdf-schema#label> "frictionlessDataValueType" .
-<http://schema.oceanproteinportal.org/v2/frictionlessDataValueType> <http://www.w3.org/2000/01/rdf-schema#seeAlso> "https://specs.frictionlessdata.io/table-schema/#types-and-formats" .
-<http://schema.oceanproteinportal.org/v2/frictionlessDataValueType> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#token> .
-<http://schema.oceanproteinportal.org/v2/frictionlessDataValueType> <http://www.w3.org/2000/01/rdf-schema#domain> <http://schema.org/DataType> .
-# 
 # http://schema.oceanproteinportal.org/v2/parameterValueConstraints
 <http://schema.oceanproteinportal.org/v2/parameterValueConstraints> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 <http://schema.oceanproteinportal.org/v2/parameterValueConstraints> <http://www.w3.org/2000/01/rdf-schema#comment> "Any constraints on the parameter values to help with processing a certain DataParameter. This property is used in the datapackage.json for describing a tabular-data-resource field." .
@@ -711,6 +703,14 @@ _:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/19
 <http://schema.oceanproteinportal.org/v2/parameterValueRecommended> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies whether a DatasetProfile recommends that a certain DataParameter exist in a DataResource. Recommendation doesn't mean its required, but rather it would be useful for data consumers." .
 <http://schema.oceanproteinportal.org/v2/parameterValueRecommended> <http://www.w3.org/2000/01/rdf-schema#label> "parameterValueRecommended" .
 # 
+# http://schema.oceanproteinportal.org/v2/parameterValueRegexPattern
+<http://schema.oceanproteinportal.org/v2/parameterValueRegexPattern> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://schema.oceanproteinportal.org/v2/parameterValueRegexPattern> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://schema.oceanproteinportal.org/v2/parameterValueRegexPattern> <http://www.w3.org/2000/01/rdf-schema#domain> <http://schema.oceanproteinportal.org/v2/DataResourceProperty> .
+<http://schema.oceanproteinportal.org/v2/parameterValueRegexPattern> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#token> .
+<http://schema.oceanproteinportal.org/v2/parameterValueRegexPattern> <http://www.w3.org/2000/01/rdf-schema#comment> "A regex pattern defining how to find the portion of a property's value that should be used as it's actual value. Example\": a mlecular weigght property with values that contain the units in the value like '255 kDa' could be processed to obtain the numeric value with a parameterValueRegexPattern defined as \"([0-9.]+)\\ kDa\"." .
+<http://schema.oceanproteinportal.org/v2/parameterValueRegexPattern> <http://www.w3.org/2000/01/rdf-schema#label> "parameterValueRegexPattern" .
+# 
 # http://schema.oceanproteinportal.org/v2/peptideSequence
 <http://schema.oceanproteinportal.org/v2/peptideSequence> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <http://schema.oceanproteinportal.org/v2/peptideSequence> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://schema.oceanproteinportal.org/v2/aminoAcidSequence> .
@@ -1130,14 +1130,6 @@ _:genid40 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 <http://schema.oceanproteinportal.org/v2/DatasetProfile> <http://schema.oceanproteinportal.org/v2/describedinConceptualModelOf> <http://schema.oceanproteinportal.org/v2/OPPDataset> .
 <http://schema.oceanproteinportal.org/v2/DatasetProfile> <http://www.w3.org/2000/01/rdf-schema#comment> "A DatasetProfile defines the type of observations to be expected." .
 <http://schema.oceanproteinportal.org/v2/DatasetProfile> <http://www.w3.org/2000/01/rdf-schema#label> "DatasetProfile" .
-# 
-# http://schema.oceanproteinportal.org/v2/DateAsString
-<http://schema.oceanproteinportal.org/v2/DateAsString> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://schema.oceanproteinportal.org/v2/DateAsString> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/Date> .
-# 
-# http://schema.oceanproteinportal.org/v2/DateTimeAsString
-<http://schema.oceanproteinportal.org/v2/DateTimeAsString> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://schema.oceanproteinportal.org/v2/DateTimeAsString> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/DateTime> .
 # 
 # http://schema.oceanproteinportal.org/v2/EnzymeCommissionIdentifier
 <http://schema.oceanproteinportal.org/v2/EnzymeCommissionIdentifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -1571,10 +1563,6 @@ _:genid96 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XM
 <http://schema.oceanproteinportal.org/v2/TabularFileType> <http://www.w3.org/2000/01/rdf-schema#comment> "A proxy for any tabular data file. This is useful for software that can detect a certain DataResource as being tabular for ingestion or serialization." .
 <http://schema.oceanproteinportal.org/v2/TabularFileType> <http://www.w3.org/2000/01/rdf-schema#label> "TabularFileType" .
 # 
-# http://schema.oceanproteinportal.org/v2/TimeAsString
-<http://schema.oceanproteinportal.org/v2/TimeAsString> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://schema.oceanproteinportal.org/v2/TimeAsString> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/Time> .
-# 
 # http://schema.oceanproteinportal.org/v2/UniprotIdentifier
 <http://schema.oceanproteinportal.org/v2/UniprotIdentifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://schema.oceanproteinportal.org/v2/UniprotIdentifier> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.oceanproteinportal.org/v2/ProteinIdentifier> .
@@ -1607,33 +1595,12 @@ _:genid97 <http://www.w3.org/2002/07/owl#hasValue> <http://schema.oceanproteinpo
 <http://schema.org/Dataset> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://schema.org/Dataset> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/CreativeWork> .
 # 
-# http://schema.org/Date
-<http://schema.org/Date> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://schema.org/Date> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/DataType> .
-# 
-# http://schema.org/DateTime
-<http://schema.org/DateTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://schema.org/DateTime> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/DataType> .
-# 
 # http://schema.org/DigitalDocument
 <http://schema.org/DigitalDocument> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://schema.org/DigitalDocument> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/CreativeWork> .
 # 
-# http://schema.org/Float
-<http://schema.org/Float> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://schema.org/Float> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/Number> .
-# 
 # http://schema.org/Intangible
 <http://schema.org/Intangible> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-# 
-# http://schema.org/Integer
-<http://schema.org/Integer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://schema.org/Integer> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/Number> .
-# 
-# http://schema.org/Number
-<http://schema.org/Number> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://schema.org/Number> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/DataType> .
-<http://schema.org/Number> <http://schema.oceanproteinportal.org/v2/frictionlessDataValueType> "number" .
 # 
 # http://schema.org/Organization
 <http://schema.org/Organization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -1653,18 +1620,6 @@ _:genid97 <http://www.w3.org/2002/07/owl#hasValue> <http://schema.oceanproteinpo
 # 
 # http://schema.org/PropertyValueSpecification
 <http://schema.org/PropertyValueSpecification> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-# 
-# http://schema.org/Text
-<http://schema.org/Text> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://schema.org/Text> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/DataType> .
-# 
-# http://schema.org/Time
-<http://schema.org/Time> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://schema.org/Time> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/DataType> .
-# 
-# http://schema.org/URL
-<http://schema.org/URL> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://schema.org/URL> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/Text> .
 # 
 # http://www.w3.org/ns/sosa/Deployment
 <http://www.w3.org/ns/sosa/Deployment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -2017,8 +1972,7 @@ _:genid97 <http://www.w3.org/2002/07/owl#hasValue> <http://schema.oceanproteinpo
 <http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Date> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Date> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.oceanproteinportal.org/v2/DataResourceParameter> .
 <http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Date> <http://schema.oceanproteinportal.org/v2/definesValuesForParameter> <http://schema.oceanproteinportal.org/v2/DataParameter_Date> .
-<http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Date> <http://schema.oceanproteinportal.org/v2/parameterDataType> <http://schema.oceanproteinportal.org/v2/DateAsString> .
-<http://schema.oceanproteinportal.org/v2/DateAsString> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Date> <http://schema.oceanproteinportal.org/v2/parameterDataType> <http://schema.org/Date> .
 <http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Date> <http://schema.oceanproteinportal.org/v2/parameterInResourceType> <http://schema.oceanproteinportal.org/v2/DataResourceType_PeptideTotalSpectralCount> .
 <http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Date> <http://schema.oceanproteinportal.org/v2/parameterNameInResource> "date_y-m-d"^^<http://www.w3.org/2001/XMLSchema#token> .
 <http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Date> <http://schema.org/multipleValues> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
@@ -2041,8 +1995,7 @@ _:genid97 <http://www.w3.org/2002/07/owl#hasValue> <http://schema.oceanproteinpo
 <http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_ISODateTimeUTC> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_ISODateTimeUTC> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.oceanproteinportal.org/v2/DataResourceParameter> .
 <http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_ISODateTimeUTC> <http://schema.oceanproteinportal.org/v2/definesValuesForParameter> <http://schema.oceanproteinportal.org/v2/DataParameter_ISODateTimeUTC> .
-<http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_ISODateTimeUTC> <http://schema.oceanproteinportal.org/v2/parameterDataType> <http://schema.oceanproteinportal.org/v2/DateTimeAsString> .
-<http://schema.oceanproteinportal.org/v2/DateTimeAsString> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_ISODateTimeUTC> <http://schema.oceanproteinportal.org/v2/parameterDataType> <http://schema.org/DateTime> .
 <http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_ISODateTimeUTC> <http://schema.oceanproteinportal.org/v2/parameterInResourceType> <http://schema.oceanproteinportal.org/v2/DataResourceType_PeptideTotalSpectralCount> .
 <http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_ISODateTimeUTC> <http://schema.oceanproteinportal.org/v2/parameterNameInResource> "ISO_DateTime_UTC"^^<http://www.w3.org/2001/XMLSchema#token> .
 <http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_ISODateTimeUTC> <http://schema.oceanproteinportal.org/v2/parameterValueRecommended> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
@@ -2258,8 +2211,7 @@ _:genid97 <http://www.w3.org/2002/07/owl#hasValue> <http://schema.oceanproteinpo
 <http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Time> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.oceanproteinportal.org/v2/DataResourceParameter> .
 <http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Time> <http://schema.oceanproteinportal.org/v2/definesValuesForParameter> <http://schema.oceanproteinportal.org/v2/DataParameter_Time> .
 <http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Time> <http://schema.oceanproteinportal.org/v2/dependsOnParameter> <http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Date> .
-<http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Time> <http://schema.oceanproteinportal.org/v2/parameterDataType> <http://schema.oceanproteinportal.org/v2/TimeAsString> .
-<http://schema.oceanproteinportal.org/v2/TimeAsString> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Time> <http://schema.oceanproteinportal.org/v2/parameterDataType> <http://schema.org/Time> .
 <http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Time> <http://schema.oceanproteinportal.org/v2/parameterInResourceType> <http://schema.oceanproteinportal.org/v2/DataResourceType_PeptideTotalSpectralCount> .
 <http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Time> <http://schema.oceanproteinportal.org/v2/parameterNameInResource> "time_h-m-s"^^<http://www.w3.org/2001/XMLSchema#token> .
 <http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Time> <http://schema.org/defaultValue> "00:00:00"^^<http://www.w3.org/2001/XMLSchema#token> .
@@ -2338,7 +2290,7 @@ _:genid97 <http://www.w3.org/2002/07/owl#hasValue> <http://schema.oceanproteinpo
 <http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_Date> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_Date> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.oceanproteinportal.org/v2/DataResourceParameter> .
 <http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_Date> <http://schema.oceanproteinportal.org/v2/definesValuesForParameter> <http://schema.oceanproteinportal.org/v2/DataParameter_Date> .
-<http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_Date> <http://schema.oceanproteinportal.org/v2/parameterDataType> <http://schema.oceanproteinportal.org/v2/DateAsString> .
+<http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_Date> <http://schema.oceanproteinportal.org/v2/parameterDataType> <http://schema.org/Date> .
 <http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_Date> <http://schema.oceanproteinportal.org/v2/parameterInResourceType> <http://schema.oceanproteinportal.org/v2/DataResourceType_ProteinTotalSpectralCount> .
 <http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_Date> <http://schema.oceanproteinportal.org/v2/parameterNameInResource> "date_y-m-d"^^<http://www.w3.org/2001/XMLSchema#token> .
 <http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_Date> <http://schema.org/multipleValues> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
@@ -2373,7 +2325,7 @@ _:genid97 <http://www.w3.org/2002/07/owl#hasValue> <http://schema.oceanproteinpo
 <http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_ISODateTimeUTC> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_ISODateTimeUTC> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.oceanproteinportal.org/v2/DataResourceParameter> .
 <http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_ISODateTimeUTC> <http://schema.oceanproteinportal.org/v2/definesValuesForParameter> <http://schema.oceanproteinportal.org/v2/DataParameter_ISODateTimeUTC> .
-<http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_ISODateTimeUTC> <http://schema.oceanproteinportal.org/v2/parameterDataType> <http://schema.oceanproteinportal.org/v2/DateTimeAsString> .
+<http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_ISODateTimeUTC> <http://schema.oceanproteinportal.org/v2/parameterDataType> <http://schema.org/DateTime> .
 <http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_ISODateTimeUTC> <http://schema.oceanproteinportal.org/v2/parameterInResourceType> <http://schema.oceanproteinportal.org/v2/DataResourceType_ProteinTotalSpectralCount> .
 <http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_ISODateTimeUTC> <http://schema.oceanproteinportal.org/v2/parameterNameInResource> "ISO_DateTime_UTC"^^<http://www.w3.org/2001/XMLSchema#token> .
 <http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_ISODateTimeUTC> <http://schema.oceanproteinportal.org/v2/parameterValueRecommended> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
@@ -2581,7 +2533,7 @@ _:genid97 <http://www.w3.org/2002/07/owl#hasValue> <http://schema.oceanproteinpo
 <http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_Time> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.oceanproteinportal.org/v2/DataResourceParameter> .
 <http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_Time> <http://schema.oceanproteinportal.org/v2/definesValuesForParameter> <http://schema.oceanproteinportal.org/v2/DataParameter_Time> .
 <http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_Time> <http://schema.oceanproteinportal.org/v2/dependsOnParameter> <http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_Date> .
-<http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_Time> <http://schema.oceanproteinportal.org/v2/parameterDataType> <http://schema.oceanproteinportal.org/v2/TimeAsString> .
+<http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_Time> <http://schema.oceanproteinportal.org/v2/parameterDataType> <http://schema.org/Time> .
 <http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_Time> <http://schema.oceanproteinportal.org/v2/parameterInResourceType> <http://schema.oceanproteinportal.org/v2/DataResourceType_ProteinTotalSpectralCount> .
 <http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_Time> <http://schema.oceanproteinportal.org/v2/parameterNameInResource> "time_h-m-s"^^<http://www.w3.org/2001/XMLSchema#token> .
 <http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_Time> <http://schema.org/defaultValue> "00:00:00"^^<http://www.w3.org/2001/XMLSchema#token> .
@@ -2712,10 +2664,6 @@ _:genid97 <http://www.w3.org/2002/07/owl#hasValue> <http://schema.oceanproteinpo
 <http://schema.oceanproteinportal.org/v2/DatasetProfile_ProteinTotalSpectralCount> <http://schema.oceanproteinportal.org/v2/usesDataResourceParameter> <http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_UniprotIdentifier> .
 <http://schema.oceanproteinportal.org/v2/DatasetProfile_ProteinTotalSpectralCount> <http://www.w3.org/2000/01/rdf-schema#label> "Dataset Profile: Protein Total Spectral Count" .
 # 
-# http://schema.oceanproteinportal.org/v2/DateAsString
-# 
-# http://schema.oceanproteinportal.org/v2/DateTimeAsString
-# 
 # http://schema.oceanproteinportal.org/v2/IdentifierScheme_EnzymeCommission
 <http://schema.oceanproteinportal.org/v2/IdentifierScheme_EnzymeCommission> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <http://schema.oceanproteinportal.org/v2/IdentifierScheme_EnzymeCommission> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.oceanproteinportal.org/v2/ProteinIdentifierScheme> .
@@ -2773,8 +2721,6 @@ _:genid97 <http://www.w3.org/2002/07/owl#hasValue> <http://schema.oceanproteinpo
 <http://schema.oceanproteinportal.org/v2/Role_Publisher> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.oceanproteinportal.org/v2/Role> .
 <http://schema.oceanproteinportal.org/v2/Role_Publisher> <http://www.w3.org/2000/01/rdf-schema#label> "Role: Publisher" .
 # 
-# http://schema.oceanproteinportal.org/v2/TimeAsString
-# 
 # http://schema.oceanproteinportal.org/v2/UnitOfMeasure_DecimalDegrees
 <http://schema.oceanproteinportal.org/v2/UnitOfMeasure_DecimalDegrees> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <http://schema.oceanproteinportal.org/v2/UnitOfMeasure_DecimalDegrees> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.oceanproteinportal.org/v2/UnitOfMeasure> .
@@ -2825,43 +2771,6 @@ _:genid97 <http://www.w3.org/2002/07/owl#hasValue> <http://schema.oceanproteinpo
 # 
 # http://schema.org/URL
 <http://schema.org/URL> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-# 
-# 
-# 
-# #################################################################
-# #
-# #    Annotations
-# #
-# #################################################################
-# 
-# 
-<http://schema.oceanproteinportal.org/v2/DateAsString> <http://schema.oceanproteinportal.org/v2/frictionlessDataValueType> "string" .
-<http://schema.oceanproteinportal.org/v2/DateAsString> <http://www.w3.org/2000/01/rdf-schema#comment> "A schema:Date but with a frictionlessDataValueType of string" .
-<http://schema.oceanproteinportal.org/v2/DateAsString> <http://www.w3.org/2000/01/rdf-schema#label> "DateAsString" .
-# 
-<http://schema.oceanproteinportal.org/v2/DateTimeAsString> <http://schema.oceanproteinportal.org/v2/frictionlessDataValueType> "string" .
-<http://schema.oceanproteinportal.org/v2/DateTimeAsString> <http://www.w3.org/2000/01/rdf-schema#comment> "A schema:DateTime but with a frictionlessDataValueType of string" .
-<http://schema.oceanproteinportal.org/v2/DateTimeAsString> <http://www.w3.org/2000/01/rdf-schema#label> "DateTimeAsString" .
-# 
-<http://schema.oceanproteinportal.org/v2/TimeAsString> <http://schema.oceanproteinportal.org/v2/frictionlessDataValueType> "string" .
-<http://schema.oceanproteinportal.org/v2/TimeAsString> <http://www.w3.org/2000/01/rdf-schema#comment> "A schema:Time but with a frictionlessDataValueType of string" .
-<http://schema.oceanproteinportal.org/v2/TimeAsString> <http://www.w3.org/2000/01/rdf-schema#label> "TimeAsString" .
-# 
-<http://schema.org/Boolean> <http://schema.oceanproteinportal.org/v2/frictionlessDataValueType> "boolean" .
-# 
-<http://schema.org/Date> <http://schema.oceanproteinportal.org/v2/frictionlessDataValueType> "date" .
-# 
-<http://schema.org/DateTime> <http://schema.oceanproteinportal.org/v2/frictionlessDataValueType> "datetime" .
-# 
-<http://schema.org/Float> <http://schema.oceanproteinportal.org/v2/frictionlessDataValueType> "number" .
-# 
-<http://schema.org/Integer> <http://schema.oceanproteinportal.org/v2/frictionlessDataValueType> "integer" .
-# 
-<http://schema.org/Text> <http://schema.oceanproteinportal.org/v2/frictionlessDataValueType> "string" .
-# 
-<http://schema.org/Time> <http://schema.oceanproteinportal.org/v2/frictionlessDataValueType> "time" .
-# 
-<http://schema.org/URL> <http://schema.oceanproteinportal.org/v2/frictionlessDataValueType> "uri" .
 # 
 # 
 # 
