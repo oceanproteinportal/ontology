@@ -109,6 +109,12 @@
                              rdfs:range xsd:token .
 
 
+###  http://schema.oceanproteinportal.org/v2/registrySchemeTemplateReplacementToken
+:registrySchemeTemplateReplacementToken rdf:type owl:AnnotationProperty ;
+                                        rdfs:comment "The string of characters in any template value of an IdentifierRegistryScheme or IdentifierRegistryService that could be replaced with the value of an Identifier's identifierValue." ;
+                                        rdfs:label "registrySchemeTemplateReplacementToken" .
+
+
 ###  http://www.w3.org/2002/07/owl#sameAs
 owl:sameAs rdf:type owl:AnnotationProperty .
 
@@ -419,6 +425,16 @@ owl:sameAs rdf:type owl:AnnotationProperty .
                  rdfs:label "observedPeptide" .
 
 
+###  http://schema.oceanproteinportal.org/v2/offersResolvingService
+:offersResolvingService rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf <http://schema.org/potentialAction> ;
+                        owl:inverseOf :resolvesIdentifiersFor ;
+                        rdfs:domain :IdentifierRegistryScheme ;
+                        rdfs:range :IdentifierRegistryService ;
+                        rdfs:comment "The identifier resolving service offered by an identifier registry's support for some identifier scheme" ;
+                        rdfs:label "offersResolvingService" .
+
+
 ###  http://schema.oceanproteinportal.org/v2/parameterDataType
 :parameterDataType rdf:type owl:ObjectProperty ,
                             owl:FunctionalProperty ;
@@ -489,12 +505,30 @@ owl:sameAs rdf:type owl:AnnotationProperty .
               rdfs:label "providesRole" .
 
 
+###  http://schema.oceanproteinportal.org/v2/providesServicesFor
+:providesServicesFor rdf:type owl:ObjectProperty ,
+                              owl:FunctionalProperty ;
+                     rdfs:domain :IdentifierRegistryScheme ;
+                     rdfs:range :IdentifierScheme ;
+                     rdfs:comment "The IdentifierScheme for which this IdentifierRegistryScheme provides certain Identifier services for" ;
+                     rdfs:label "providesServicesFor" .
+
+
 ###  http://schema.oceanproteinportal.org/v2/requiresOneParameterFromSet
 :requiresOneParameterFromSet rdf:type owl:ObjectProperty ;
                              rdfs:domain :DatasetProfile ;
                              rdfs:range :DataResourceParameterSet ;
                              rdfs:comment "The DatasetProfile requires that at least one of the DataParameters described by this set of DataResourceParameters is required in the OPPDataset that conforms to the DatasetProfile." ;
                              rdfs:label "requiresOneParameterFromSet" .
+
+
+###  http://schema.oceanproteinportal.org/v2/resolvesIdentifiersFor
+:resolvesIdentifiersFor rdf:type owl:ObjectProperty ,
+                                 owl:FunctionalProperty ;
+                        rdfs:domain :IdentifierRegistryService ;
+                        rdfs:range :IdentifierRegistryScheme ;
+                        rdfs:comment "The identfier scheme at some registry for which this service resolves identifiers for." ;
+                        rdfs:label "resolvesIdentifiersFor" .
 
 
 ###  http://schema.oceanproteinportal.org/v2/roleFor
@@ -586,6 +620,15 @@ owl:sameAs rdf:type owl:AnnotationProperty .
                                    rdfs:label "suggestedByPeptideIdentification" .
 
 
+###  http://schema.oceanproteinportal.org/v2/supportsIdentifierSchemeWith
+:supportsIdentifierSchemeWith rdf:type owl:ObjectProperty ;
+                              rdfs:subPropertyOf <http://schema.org/offers> ;
+                              rdfs:domain :IdentifierRegistry ;
+                              rdfs:range :IdentifierRegistryScheme ;
+                              rdfs:comment "An IdentifierRegistry's interpretation of some IdentifierScheme through which thee registry offer's resolving services." ;
+                              rdfs:label "supportsIdentifierSchemeWith" .
+
+
 ###  http://schema.oceanproteinportal.org/v2/unitsReportedIn
 :unitsReportedIn rdf:type owl:ObjectProperty ;
                  rdfs:domain :DataResourceParameter ;
@@ -600,6 +643,26 @@ owl:sameAs rdf:type owl:AnnotationProperty .
                            rdfs:range :DataResourceParameter ;
                            rdfs:comment "A DataResourceParameter for which the DatasetProfile specifies certain restrictions or expectations." ;
                            rdfs:label "usesDataResourceParameter" .
+
+
+###  http://schema.org/agent
+<http://schema.org/agent> rdf:type owl:ObjectProperty .
+
+
+###  http://schema.org/location
+<http://schema.org/location> rdf:type owl:ObjectProperty .
+
+
+###  http://schema.org/offers
+<http://schema.org/offers> rdf:type owl:ObjectProperty .
+
+
+###  http://schema.org/potentialAction
+<http://schema.org/potentialAction> rdf:type owl:ObjectProperty .
+
+
+###  http://schema.org/target
+<http://schema.org/target> rdf:type owl:ObjectProperty .
 
 
 ###  http://schema.org/variableMeasured
@@ -872,6 +935,42 @@ Example: \"nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1
                       rdfs:label "proteinSpectralCount" .
 
 
+###  http://schema.oceanproteinportal.org/v2/registrySchemePrefix
+:registrySchemePrefix rdf:type owl:DatatypeProperty ;
+                      rdfs:domain :IdentifierRegistryScheme ;
+                      rdfs:range xsd:token ;
+                      rdfs:comment "The unique prefix within an IdentifierRegistry for representing identifiers for the associated IdentifierScheme" ;
+                      rdfs:label "registrySchemePrefix" .
+
+
+###  http://schema.oceanproteinportal.org/v2/registrySchemePrefixIdTemplate
+:registrySchemePrefixIdTemplate rdf:type owl:DatatypeProperty ;
+                                rdfs:domain :IdentifierRegistryScheme ;
+                                rdfs:range xsd:token ;
+                                rdfs:comment "A template to be used for injecting an identifierValue from the associated IdentifierScheme into this IdentifierRegistry's registrySchemePrefix" ;
+                                rdfs:label "registrySchemePrefixIdTemplate" ;
+                                rdfs:seeAlso :registrySchemeTemplateReplacementToken .
+
+
+###  http://schema.oceanproteinportal.org/v2/registrySchemeURI
+:registrySchemeURI rdf:type owl:DatatypeProperty ,
+                            owl:FunctionalProperty ;
+                   rdfs:domain :IdentifierRegistryScheme ;
+                   rdfs:range xsd:anyURI ;
+                   rdfs:comment "The URI that unqiuely identifies the associated IdentifierScheme within an IdentifierRegistry" ;
+                   rdfs:label "registrySchemeURI" .
+
+
+###  http://schema.oceanproteinportal.org/v2/registrySchemeURLTemplate
+:registrySchemeURLTemplate rdf:type owl:DatatypeProperty ,
+                                    owl:FunctionalProperty ;
+                           rdfs:domain :IdentifierRegistryScheme ;
+                           rdfs:range xsd:anyURI ;
+                           rdfs:comment "The URL template at which you can inject an identifierValue from the associated IdentifierScheme into for resolving the Identifier." ;
+                           rdfs:label "registrySchemeURLTemplate" ;
+                           rdfs:seeAlso :registrySchemeTemplateReplacementToken .
+
+
 ###  http://schema.oceanproteinportal.org/v2/scoreValue
 :scoreValue rdf:type owl:DatatypeProperty ;
             rdfs:subPropertyOf <http://schema.org/value> ;
@@ -973,6 +1072,10 @@ Example: \"nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1
 
 ###  http://schema.org/name
 <http://schema.org/name> rdf:type owl:DatatypeProperty .
+
+
+###  http://schema.org/url
+<http://schema.org/url> rdf:type owl:DatatypeProperty .
 
 
 ###  http://schema.org/value
@@ -1346,6 +1449,70 @@ Example: \"nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1
                     rdfs:label "IdentifierMetadata" .
 
 
+###  http://schema.oceanproteinportal.org/v2/IdentifierRegistry
+:IdentifierRegistry rdf:type owl:Class ;
+                    rdfs:subClassOf <http://schema.org/Service> ,
+                                    [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :supportsIdentifierSchemeWith ;
+                                                             owl:allValuesFrom :IdentifierRegistryScheme
+                                                           ]
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :supportsIdentifierSchemeWith ;
+                                                             owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                           ]
+                                                         ) ;
+                                      rdf:type owl:Class
+                                    ] ;
+                    rdfs:comment "A registry at which certain identifier schemes  can resolve identifiers and offers certain services or resources." ;
+                    rdfs:label "IdentifierRegistry" .
+
+
+###  http://schema.oceanproteinportal.org/v2/IdentifierRegistryScheme
+:IdentifierRegistryScheme rdf:type owl:Class ;
+                          rdfs:subClassOf <http://schema.org/Offer> ;
+                          :registrySchemeTemplateReplacementToken "{$id}"^^xsd:token ;
+                          rdfs:comment "An IndentifierRegistry's interpretation of a specific IdentifierScheme. This deescribes how a registry represents identifiers for the related scheme as URIs, URLs, etc." ;
+                          rdfs:label "IdentifierRegistryScheme" .
+
+
+###  http://schema.oceanproteinportal.org/v2/IdentifierRegistryService
+:IdentifierRegistryService rdf:type owl:Class ;
+                           rdfs:subClassOf <http://schema.org/Action> ,
+                                           [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty :resolvesIdentifiersFor ;
+                                                                    owl:allValuesFrom :IdentifierRegistryService
+                                                                  ]
+                                                                  [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty <http://schema.org/agent> ;
+                                                                    owl:allValuesFrom <http://schema.org/Organization>
+                                                                  ]
+                                                                  [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty <http://schema.org/location> ;
+                                                                    owl:allValuesFrom <http://schema.org/Place>
+                                                                  ]
+                                                                  [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty <http://schema.org/target> ;
+                                                                    owl:allValuesFrom <http://schema.org/EntryPoint>
+                                                                  ]
+                                                                  [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty :resolvesIdentifiersFor ;
+                                                                    owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                                  ]
+                                                                  [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty <http://schema.org/agent> ;
+                                                                    owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                                  ]
+                                                                  [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty <http://schema.org/target> ;
+                                                                    owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                                  ]
+                                                                ) ;
+                                             rdf:type owl:Class
+                                           ] ;
+                           rdfs:comment "A service offered by an IdentifierRegistry for all identifiers of a certain IdentifierScheme" ;
+                           rdfs:label "IdentifierRegistryService" .
+
+
 ###  http://schema.oceanproteinportal.org/v2/IdentifierScheme
 :IdentifierScheme rdf:type owl:Class ;
                   :describedinConceptualModelOf :Identifier ;
@@ -1424,7 +1591,7 @@ Example: \"nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1
                      rdfs:subClassOf :ProteinIdentifier ,
                                      [ rdf:type owl:Restriction ;
                                        owl:onProperty :identifierScheme ;
-                                       owl:hasValue :IdentifierScheme_NCBIProtein
+                                       owl:hasValue :IdentifierScheme_NCBITaxonomy
                                      ] ;
                      rdfs:comment "An NCBI Taxon identifier" ;
                      rdfs:label "NCBITaxonIdentifier" .
@@ -1474,14 +1641,6 @@ Example: \"nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1
             :conceptualModel "https://lucid.app/publicSegments/view/fafb6c1f-d32c-414f-abe7-650151c2718c/image.png"^^xsd:anyURI ;
             rdfs:comment "A dataset suitable for the Ocean Protein Portal" ;
             rdfs:label "OPPDataset" .
-
-
-###  http://schema.oceanproteinportal.org/v2/OPPGeneratedSampleIdentifier
-:OPPGeneratedSampleIdentifier rdf:type owl:Class ;
-                              rdfs:subClassOf :SampleIdentifier ;
-                              owl:disjointWith :UserDefinedSampleIdentifier ;
-                              rdfs:comment "A sample identifier that was generated by the OPP" ;
-                              rdfs:label "OPPGeneratedSampleIdentifier" .
 
 
 ###  http://schema.oceanproteinportal.org/v2/OrganizationIdentifier
@@ -1662,17 +1821,6 @@ Note since the order of the pathways (or KeggPathway Index isn't provided we don
       rdfs:label "Role" .
 
 
-###  http://schema.oceanproteinportal.org/v2/SampleIdentifier
-:SampleIdentifier rdf:type owl:Class ;
-                  rdfs:subClassOf :Identifier ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty :isIdentifierOf ;
-                                    owl:someValuesFrom <http://www.w3.org/ns/sosa/Sample>
-                                  ] ;
-                  rdfs:comment "An identifier for a sample within a Dataset. The IdentifierScheme for this sample would be provides by the Dataset. See opp:definesIdentifierScheme" ;
-                  rdfs:label "SampleIdentifier" .
-
-
 ###  http://schema.oceanproteinportal.org/v2/Station
 :Station rdf:type owl:Class ;
          rdfs:subClassOf [ rdf:type owl:Restriction ;
@@ -1711,11 +1859,8 @@ Note since the order of the pathways (or KeggPathway Index isn't provided we don
                rdfs:label "UnitOfMeasure" .
 
 
-###  http://schema.oceanproteinportal.org/v2/UserDefinedSampleIdentifier
-:UserDefinedSampleIdentifier rdf:type owl:Class ;
-                             rdfs:subClassOf :SampleIdentifier ;
-                             rdfs:comment "A sample identifier specified and defined by the dataset's authors." ;
-                             rdfs:label "UserDefinedSampleIdentifier" .
+###  http://schema.org/Action
+<http://schema.org/Action> rdf:type owl:Class .
 
 
 ###  http://schema.org/CreativeWork
@@ -1736,8 +1881,16 @@ Note since the order of the pathways (or KeggPathway Index isn't provided we don
                                     rdfs:subClassOf <http://schema.org/CreativeWork> .
 
 
+###  http://schema.org/EntryPoint
+<http://schema.org/EntryPoint> rdf:type owl:Class .
+
+
 ###  http://schema.org/Intangible
 <http://schema.org/Intangible> rdf:type owl:Class .
+
+
+###  http://schema.org/Offer
+<http://schema.org/Offer> rdf:type owl:Class .
 
 
 ###  http://schema.org/Organization
@@ -1751,6 +1904,10 @@ Note since the order of the pathways (or KeggPathway Index isn't provided we don
                            rdfs:subClassOf :Agent .
 
 
+###  http://schema.org/Place
+<http://schema.org/Place> rdf:type owl:Class .
+
+
 ###  http://schema.org/PropertyValue
 <http://schema.org/PropertyValue> rdf:type owl:Class ;
                                   :describedinConceptualModelOf :AminoAcidIdentification ,
@@ -1761,6 +1918,10 @@ Note since the order of the pathways (or KeggPathway Index isn't provided we don
 
 ###  http://schema.org/PropertyValueSpecification
 <http://schema.org/PropertyValueSpecification> rdf:type owl:Class .
+
+
+###  http://schema.org/Service
+<http://schema.org/Service> rdf:type owl:Class .
 
 
 ###  http://www.w3.org/ns/sosa/Deployment
@@ -2564,8 +2725,9 @@ Note since the order of the pathways (or KeggPathway Index isn't provided we don
                                                            :parameterDataType <http://schema.org/Text> ;
                                                            :parameterInResourceType :DataResourceType_ProteinTotalSpectralCount ;
                                                            :parameterNameInResource "kegg_id"^^xsd:token ;
-                                                           <http://schema.org/multipleValues> "false"^^xsd:boolean ;
+                                                           <http://schema.org/multipleValues> "true"^^xsd:boolean ;
                                                            <http://schema.org/valueRequired> "false"^^xsd:boolean ;
+                                                           rdfs:comment "If multiple values exist, the Kegg Pathway, Definition and other Kegg metadata are ignored because there is currently no defineed way to structure that information to ensure it logically matches to the list of identifiers here." ;
                                                            rdfs:label "DataResourceParameter_ProteinSpectralCount_KeggIdentifier" .
 
 
@@ -2926,11 +3088,11 @@ Note since the order of the pathways (or KeggPathway Index isn't provided we don
                        rdfs:seeAlso <https://registry.identifiers.org/registry/kegg> .
 
 
-###  http://schema.oceanproteinportal.org/v2/IdentifierScheme_NCBIProtein
-:IdentifierScheme_NCBIProtein rdf:type owl:NamedIndividual ,
-                                       :ProteinIdentifierScheme ;
-                              rdfs:label "Identifier Scheme: NCBI Protein" ;
-                              rdfs:seeAlso <https://registry.identifiers.org/registry/ncbiprotein> .
+###  http://schema.oceanproteinportal.org/v2/IdentifierScheme_NCBITaxonomy
+:IdentifierScheme_NCBITaxonomy rdf:type owl:NamedIndividual ,
+                                        :ProteinIdentifierScheme ;
+                               rdfs:label "Identifier Scheme: NCBI Taxonomy" ;
+                               rdfs:seeAlso <https://registry.identifiers.org/registry/taxonomy> .
 
 
 ###  http://schema.oceanproteinportal.org/v2/IdentifierScheme_ORCID

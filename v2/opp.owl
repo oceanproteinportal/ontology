@@ -3743,9 +3743,10 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <parameterDataType rdf:resource="http://schema.org/Text"/>
         <parameterInResourceType rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceType_ProteinTotalSpectralCount"/>
         <parameterNameInResource rdf:datatype="http://www.w3.org/2001/XMLSchema#token">kegg_id</parameterNameInResource>
-        <schema:multipleValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:multipleValues>
+        <schema:multipleValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</schema:multipleValues>
         <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:valueRequired>
         <rdfs:label>DataResourceParameter_ProteinSpectralCount_KeggIdentifier</rdfs:label>
+        <rdfs:comment>If multiple values exist, the Kegg Pathway, Definition and other Kegg metadata are ignored because there is currently no defineed way to structure that information to ensure it logically matches to the list of identifiers here.</rdfs:comment>
     </owl:NamedIndividual>
 
 

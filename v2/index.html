@@ -265,6 +265,18 @@ This ontology has the following classes and properties.</span>
          title="http://schema.oceanproteinportal.org/v2/IdentifierMetadata">IdentifierMetadata</a>
    </li>
    <li>
+      <a href="#IdentifierRegistry"
+         title="http://schema.oceanproteinportal.org/v2/IdentifierRegistry">IdentifierRegistry</a>
+   </li>
+   <li>
+      <a href="#IdentifierRegistryScheme"
+         title="http://schema.oceanproteinportal.org/v2/IdentifierRegistryScheme">IdentifierRegistryScheme</a>
+   </li>
+   <li>
+      <a href="#IdentifierRegistryService"
+         title="http://schema.oceanproteinportal.org/v2/IdentifierRegistryService">IdentifierRegistryService</a>
+   </li>
+   <li>
       <a href="#IdentifierScheme"
          title="http://schema.oceanproteinportal.org/v2/IdentifierScheme">IdentifierScheme</a>
    </li>
@@ -303,10 +315,6 @@ This ontology has the following classes and properties.</span>
    <li>
       <a href="#OPPDataset"
          title="http://schema.oceanproteinportal.org/v2/OPPDataset">OPPDataset</a>
-   </li>
-   <li>
-      <a href="#OPPGeneratedSampleIdentifier"
-         title="http://schema.oceanproteinportal.org/v2/OPPGeneratedSampleIdentifier">OPPGeneratedSampleIdentifier</a>
    </li>
    <li>
       <a href="#http://schema.org/Organization" title="http://schema.org/Organization">
@@ -401,10 +409,6 @@ This ontology has the following classes and properties.</span>
       </a>
    </li>
    <li>
-      <a href="#SampleIdentifier"
-         title="http://schema.oceanproteinportal.org/v2/SampleIdentifier">SampleIdentifier</a>
-   </li>
-   <li>
       <a href="#http://www.w3.org/ns/sosa/Sampler" title="http://www.w3.org/ns/sosa/Sampler">
          <span>sampler</span>
       </a>
@@ -429,10 +433,6 @@ This ontology has the following classes and properties.</span>
    <li>
       <a href="#UnitOfMeasure"
          title="http://schema.oceanproteinportal.org/v2/UnitOfMeasure">UnitOfMeasure</a>
-   </li>
-   <li>
-      <a href="#UserDefinedSampleIdentifier"
-         title="http://schema.oceanproteinportal.org/v2/UserDefinedSampleIdentifier">UserDefinedSampleIdentifier</a>
    </li>
 </ul><h4>Object Properties</h4><ul class="hlist">
    <li>
@@ -571,6 +571,10 @@ This ontology has the following classes and properties.</span>
          title="http://schema.oceanproteinportal.org/v2/observedPeptide">observedPeptide</a>
    </li>
    <li>
+      <a href="#offersResolvingService"
+         title="http://schema.oceanproteinportal.org/v2/offersResolvingService">offersResolvingService</a>
+   </li>
+   <li>
       <a href="#parameterDataType"
          title="http://schema.oceanproteinportal.org/v2/parameterDataType">parameterDataType</a>
    </li>
@@ -603,8 +607,16 @@ This ontology has the following classes and properties.</span>
          title="http://schema.oceanproteinportal.org/v2/providesRole">providesRole</a>
    </li>
    <li>
+      <a href="#providesServicesFor"
+         title="http://schema.oceanproteinportal.org/v2/providesServicesFor">providesServicesFor</a>
+   </li>
+   <li>
       <a href="#requiresOneParameterFromSet"
          title="http://schema.oceanproteinportal.org/v2/requiresOneParameterFromSet">requiresOneParameterFromSet</a>
+   </li>
+   <li>
+      <a href="#resolvesIdentifiersFor"
+         title="http://schema.oceanproteinportal.org/v2/resolvesIdentifiersFor">resolvesIdentifiersFor</a>
    </li>
    <li>
       <a href="#roleFor" title="http://schema.oceanproteinportal.org/v2/roleFor">roleFor</a>
@@ -644,6 +656,10 @@ This ontology has the following classes and properties.</span>
    <li>
       <a href="#suggestsProteinIdentification"
          title="http://schema.oceanproteinportal.org/v2/suggestsProteinIdentification">suggestsProteinIdentification</a>
+   </li>
+   <li>
+      <a href="#supportsIdentifierSchemeWith"
+         title="http://schema.oceanproteinportal.org/v2/supportsIdentifierSchemeWith">supportsIdentifierSchemeWith</a>
    </li>
    <li>
       <a href="#unitsReportedIn"
@@ -762,6 +778,22 @@ This ontology has the following classes and properties.</span>
          title="http://schema.oceanproteinportal.org/v2/proteinSpectralCount">proteinSpectralCount</a>
    </li>
    <li>
+      <a href="#registrySchemePrefix"
+         title="http://schema.oceanproteinportal.org/v2/registrySchemePrefix">registrySchemePrefix</a>
+   </li>
+   <li>
+      <a href="#registrySchemePrefixIdTemplate"
+         title="http://schema.oceanproteinportal.org/v2/registrySchemePrefixIdTemplate">registrySchemePrefixIdTemplate</a>
+   </li>
+   <li>
+      <a href="#registrySchemeURI"
+         title="http://schema.oceanproteinportal.org/v2/registrySchemeURI">registrySchemeURI</a>
+   </li>
+   <li>
+      <a href="#registrySchemeURLTemplate"
+         title="http://schema.oceanproteinportal.org/v2/registrySchemeURLTemplate">registrySchemeURLTemplate</a>
+   </li>
+   <li>
       <a href="#scoreValue"
          title="http://schema.oceanproteinportal.org/v2/scoreValue">scoreValue</a>
    </li>
@@ -851,6 +883,10 @@ This ontology has the following classes and properties.</span>
       <a href="#http://purl.org/dc/terms/publisher" title="http://purl.org/dc/terms/publisher">
          <span>publisher</span>
       </a>
+   </li>
+   <li>
+      <a href="#registrySchemeTemplateReplacementToken"
+         title="http://schema.oceanproteinportal.org/v2/registrySchemeTemplateReplacementToken">registrySchemeTemplateReplacementToken</a>
    </li>
    <li>
       <a href="#http://www.w3.org/2002/07/owl#sameAs" title="http://www.w3.org/2002/07/owl#sameAs">
@@ -1303,8 +1339,8 @@ This ontology has the following classes and properties.</span>
          title="http://schema.oceanproteinportal.org/v2/IdentifierScheme_Kegg">Identifier Scheme: Kegg</a>
    </li>
    <li>
-      <a href="#IdentifierScheme_NCBIProtein"
-         title="http://schema.oceanproteinportal.org/v2/IdentifierScheme_NCBIProtein">Identifier Scheme: NCBI Protein</a>
+      <a href="#IdentifierScheme_NCBITaxonomy"
+         title="http://schema.oceanproteinportal.org/v2/IdentifierScheme_NCBITaxonomy">Identifier Scheme: NCBI Taxonomy</a>
    </li>
    <li>
       <a href="#IdentifierScheme_ORCID"
@@ -1515,6 +1551,18 @@ This section provides details for each class and property defined by Ocean Prote
             title="http://schema.oceanproteinportal.org/v2/IdentifierMetadata">IdentifierMetadata</a>
       </li>
       <li>
+         <a href="#IdentifierRegistry"
+            title="http://schema.oceanproteinportal.org/v2/IdentifierRegistry">IdentifierRegistry</a>
+      </li>
+      <li>
+         <a href="#IdentifierRegistryScheme"
+            title="http://schema.oceanproteinportal.org/v2/IdentifierRegistryScheme">IdentifierRegistryScheme</a>
+      </li>
+      <li>
+         <a href="#IdentifierRegistryService"
+            title="http://schema.oceanproteinportal.org/v2/IdentifierRegistryService">IdentifierRegistryService</a>
+      </li>
+      <li>
          <a href="#IdentifierScheme"
             title="http://schema.oceanproteinportal.org/v2/IdentifierScheme">IdentifierScheme</a>
       </li>
@@ -1553,10 +1601,6 @@ This section provides details for each class and property defined by Ocean Prote
       <li>
          <a href="#OPPDataset"
             title="http://schema.oceanproteinportal.org/v2/OPPDataset">OPPDataset</a>
-      </li>
-      <li>
-         <a href="#OPPGeneratedSampleIdentifier"
-            title="http://schema.oceanproteinportal.org/v2/OPPGeneratedSampleIdentifier">OPPGeneratedSampleIdentifier</a>
       </li>
       <li>
          <a href="#http://schema.org/Organization" title="http://schema.org/Organization">
@@ -1651,10 +1695,6 @@ This section provides details for each class and property defined by Ocean Prote
          </a>
       </li>
       <li>
-         <a href="#SampleIdentifier"
-            title="http://schema.oceanproteinportal.org/v2/SampleIdentifier">SampleIdentifier</a>
-      </li>
-      <li>
          <a href="#http://www.w3.org/ns/sosa/Sampler" title="http://www.w3.org/ns/sosa/Sampler">
             <span>sampler</span>
          </a>
@@ -1679,10 +1719,6 @@ This section provides details for each class and property defined by Ocean Prote
       <li>
          <a href="#UnitOfMeasure"
             title="http://schema.oceanproteinportal.org/v2/UnitOfMeasure">UnitOfMeasure</a>
-      </li>
-      <li>
-         <a href="#UserDefinedSampleIdentifier"
-            title="http://schema.oceanproteinportal.org/v2/UserDefinedSampleIdentifier">UserDefinedSampleIdentifier</a>
       </li>
    </ul>
    <div class="entity" id="Agent">
@@ -2752,8 +2788,6 @@ This section provides details for each class and property defined by Ocean Prote
                title="http://schema.oceanproteinportal.org/v2/AgentIdentifier">AgentIdentifier</a>
             <sup class="type-c" title="class">c</sup>, <a href="#ProteinIdentifier"
                title="http://schema.oceanproteinportal.org/v2/ProteinIdentifier">ProteinIdentifier</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#SampleIdentifier"
-               title="http://schema.oceanproteinportal.org/v2/SampleIdentifier">SampleIdentifier</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>is in domain of</dt>
@@ -2840,6 +2874,102 @@ This section provides details for each class and property defined by Ocean Prote
          </dd>
       </dl>
    </div>
+   <div class="entity" id="IdentifierRegistry">
+      <h3>IdentifierRegistry<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://schema.oceanproteinportal.org/v2/IdentifierRegistry</p>
+      <div class="comment">
+         <span class="markdown">A registry at which certain identifier schemes  can resolve identifiers and offers certain services or resources.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <span class="dotted" title="http://schema.org/Service">service</span>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#supportsIdentifierSchemeWith"
+               title="http://schema.oceanproteinportal.org/v2/supportsIdentifierSchemeWith">supportsIdentifierSchemeWith</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="IdentifierRegistryScheme">
+      <h3>IdentifierRegistryScheme<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://schema.oceanproteinportal.org/v2/IdentifierRegistryScheme</p>
+      <div class="comment">
+         <span class="markdown">An IndentifierRegistry's interpretation of a specific IdentifierScheme. This deescribes how a registry represents identifiers for the related scheme as URIs, URLs, etc.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <span class="dotted" title="http://schema.org/Offer">offer</span>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#offersResolvingService"
+               title="http://schema.oceanproteinportal.org/v2/offersResolvingService">offersResolvingService</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#providesServicesFor"
+               title="http://schema.oceanproteinportal.org/v2/providesServicesFor">providesServicesFor</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#registrySchemePrefix"
+               title="http://schema.oceanproteinportal.org/v2/registrySchemePrefix">registrySchemePrefix</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#registrySchemePrefixIdTemplate"
+               title="http://schema.oceanproteinportal.org/v2/registrySchemePrefixIdTemplate">registrySchemePrefixIdTemplate</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#registrySchemeURI"
+               title="http://schema.oceanproteinportal.org/v2/registrySchemeURI">registrySchemeURI</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#registrySchemeURLTemplate"
+               title="http://schema.oceanproteinportal.org/v2/registrySchemeURLTemplate">registrySchemeURLTemplate</a>
+            <sup class="type-dp" title="data property">dp</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#resolvesIdentifiersFor"
+               title="http://schema.oceanproteinportal.org/v2/resolvesIdentifiersFor">resolvesIdentifiersFor</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#supportsIdentifierSchemeWith"
+               title="http://schema.oceanproteinportal.org/v2/supportsIdentifierSchemeWith">supportsIdentifierSchemeWith</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="IdentifierRegistryService">
+      <h3>IdentifierRegistryService<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://schema.oceanproteinportal.org/v2/IdentifierRegistryService</p>
+      <div class="comment">
+         <span class="markdown">A service offered by an IdentifierRegistry for all identifiers of a certain IdentifierScheme</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <span class="dotted" title="http://schema.org/Action">action</span>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#resolvesIdentifiersFor"
+               title="http://schema.oceanproteinportal.org/v2/resolvesIdentifiersFor">resolvesIdentifiersFor</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#offersResolvingService"
+               title="http://schema.oceanproteinportal.org/v2/offersResolvingService">offersResolvingService</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
    <div class="entity" id="IdentifierScheme">
       <h3>IdentifierScheme<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
@@ -2871,6 +3001,8 @@ This section provides details for each class and property defined by Ocean Prote
                title="http://schema.oceanproteinportal.org/v2/definesIdentifierScheme">definesIdentifierScheme</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#identifierScheme"
                title="http://schema.oceanproteinportal.org/v2/identifierScheme">identifierScheme</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#providesServicesFor"
+               title="http://schema.oceanproteinportal.org/v2/providesServicesFor">providesServicesFor</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
          <dt>has members</dt>
@@ -3148,31 +3280,6 @@ This section provides details for each class and property defined by Ocean Prote
             <a href="#serializesMetadataFor"
                title="http://schema.oceanproteinportal.org/v2/serializesMetadataFor">serializesMetadataFor</a>
             <sup class="type-op" title="object property">op</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="OPPGeneratedSampleIdentifier">
-      <h3>OPPGeneratedSampleIdentifier<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://schema.oceanproteinportal.org/v2/OPPGeneratedSampleIdentifier</p>
-      <div class="comment">
-         <span class="markdown">A sample identifier that was generated by the OPP</span>
-      </div>
-      <dl class="description">
-         <dt>has super-classes</dt>
-         <dd>
-            <a href="#SampleIdentifier"
-               title="http://schema.oceanproteinportal.org/v2/SampleIdentifier">SampleIdentifier</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-         <dt>is disjoint with</dt>
-         <dd>
-            <a href="#UserDefinedSampleIdentifier"
-               title="http://schema.oceanproteinportal.org/v2/UserDefinedSampleIdentifier">UserDefinedSampleIdentifier</a>
-            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -3619,8 +3726,8 @@ This section provides details for each class and property defined by Ocean Prote
                title="http://schema.oceanproteinportal.org/v2/IdentifierScheme_EnzymeCommission">Identifier Scheme: EnzymeCommission</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#IdentifierScheme_Kegg"
                title="http://schema.oceanproteinportal.org/v2/IdentifierScheme_Kegg">Identifier Scheme: Kegg</a>
-            <sup class="type-ni" title="named individual">ni</sup>, <a href="#IdentifierScheme_NCBIProtein"
-               title="http://schema.oceanproteinportal.org/v2/IdentifierScheme_NCBIProtein">Identifier Scheme: NCBI Protein</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#IdentifierScheme_NCBITaxonomy"
+               title="http://schema.oceanproteinportal.org/v2/IdentifierScheme_NCBITaxonomy">Identifier Scheme: NCBI Taxonomy</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#IdentifierScheme_PFam"
                title="http://schema.oceanproteinportal.org/v2/IdentifierScheme_PFam">Identifier Scheme: PFam</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#IdentifierScheme_Uniprot"
@@ -3784,33 +3891,6 @@ This section provides details for each class and property defined by Ocean Prote
          </dd>
       </dl>
    </div>
-   <div class="entity" id="SampleIdentifier">
-      <h3>SampleIdentifier<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://schema.oceanproteinportal.org/v2/SampleIdentifier</p>
-      <div class="comment">
-         <span class="markdown">An identifier for a sample within a Dataset. The IdentifierScheme for this sample would be provides by the Dataset. See opp:definesIdentifierScheme</span>
-      </div>
-      <dl class="description">
-         <dt>has super-classes</dt>
-         <dd>
-            <a href="#Identifier"
-               title="http://schema.oceanproteinportal.org/v2/Identifier">Identifier</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-         <dt>has sub-classes</dt>
-         <dd>
-            <a href="#OPPGeneratedSampleIdentifier"
-               title="http://schema.oceanproteinportal.org/v2/OPPGeneratedSampleIdentifier">OPPGeneratedSampleIdentifier</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#UserDefinedSampleIdentifier"
-               title="http://schema.oceanproteinportal.org/v2/UserDefinedSampleIdentifier">UserDefinedSampleIdentifier</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-      </dl>
-   </div>
    <div class="entity" id="http://www.w3.org/ns/sosa/Sampler">
       <h3>sampler<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
@@ -3956,31 +4036,6 @@ This section provides details for each class and property defined by Ocean Prote
          </dd>
       </dl>
    </div>
-   <div class="entity" id="UserDefinedSampleIdentifier">
-      <h3>UserDefinedSampleIdentifier<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://schema.oceanproteinportal.org/v2/UserDefinedSampleIdentifier</p>
-      <div class="comment">
-         <span class="markdown">A sample identifier specified and defined by the dataset's authors.</span>
-      </div>
-      <dl class="description">
-         <dt>has super-classes</dt>
-         <dd>
-            <a href="#SampleIdentifier"
-               title="http://schema.oceanproteinportal.org/v2/SampleIdentifier">SampleIdentifier</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-         <dt>is disjoint with</dt>
-         <dd>
-            <a href="#OPPGeneratedSampleIdentifier"
-               title="http://schema.oceanproteinportal.org/v2/OPPGeneratedSampleIdentifier">OPPGeneratedSampleIdentifier</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-      </dl>
-   </div>
 </div><div id="objectproperties">
    <h3 id="properties" class="list">Object Properties</h3>
    <ul class="hlist">
@@ -4120,6 +4175,10 @@ This section provides details for each class and property defined by Ocean Prote
             title="http://schema.oceanproteinportal.org/v2/observedPeptide">observedPeptide</a>
       </li>
       <li>
+         <a href="#offersResolvingService"
+            title="http://schema.oceanproteinportal.org/v2/offersResolvingService">offersResolvingService</a>
+      </li>
+      <li>
          <a href="#parameterDataType"
             title="http://schema.oceanproteinportal.org/v2/parameterDataType">parameterDataType</a>
       </li>
@@ -4152,8 +4211,16 @@ This section provides details for each class and property defined by Ocean Prote
             title="http://schema.oceanproteinportal.org/v2/providesRole">providesRole</a>
       </li>
       <li>
+         <a href="#providesServicesFor"
+            title="http://schema.oceanproteinportal.org/v2/providesServicesFor">providesServicesFor</a>
+      </li>
+      <li>
          <a href="#requiresOneParameterFromSet"
             title="http://schema.oceanproteinportal.org/v2/requiresOneParameterFromSet">requiresOneParameterFromSet</a>
+      </li>
+      <li>
+         <a href="#resolvesIdentifiersFor"
+            title="http://schema.oceanproteinportal.org/v2/resolvesIdentifiersFor">resolvesIdentifiersFor</a>
       </li>
       <li>
          <a href="#roleFor" title="http://schema.oceanproteinportal.org/v2/roleFor">roleFor</a>
@@ -4193,6 +4260,10 @@ This section provides details for each class and property defined by Ocean Prote
       <li>
          <a href="#suggestsProteinIdentification"
             title="http://schema.oceanproteinportal.org/v2/suggestsProteinIdentification">suggestsProteinIdentification</a>
+      </li>
+      <li>
+         <a href="#supportsIdentifierSchemeWith"
+            title="http://schema.oceanproteinportal.org/v2/supportsIdentifierSchemeWith">supportsIdentifierSchemeWith</a>
       </li>
       <li>
          <a href="#unitsReportedIn"
@@ -5269,6 +5340,44 @@ This section provides details for each class and property defined by Ocean Prote
          </dl>
       </div>
    </div>
+   <div class="entity" id="offersResolvingService">
+      <h3>offersResolvingService<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://schema.oceanproteinportal.org/v2/offersResolvingService</p>
+      <div class="comment">
+         <span class="markdown">The identifier resolving service offered by an identifier registry's support for some identifier scheme</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <span class="dotted" title="http://schema.org/potentialAction">potential action</span>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#IdentifierRegistryScheme"
+                  title="http://schema.oceanproteinportal.org/v2/IdentifierRegistryScheme">IdentifierRegistryScheme</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#IdentifierRegistryService"
+                  title="http://schema.oceanproteinportal.org/v2/IdentifierRegistryService">IdentifierRegistryService</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#resolvesIdentifiersFor"
+                  title="http://schema.oceanproteinportal.org/v2/resolvesIdentifiersFor">resolvesIdentifiersFor</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
    <div class="entity" id="parameterDataType">
       <h3>parameterDataType<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
@@ -5500,6 +5609,35 @@ This section provides details for each class and property defined by Ocean Prote
          </dl>
       </div>
    </div>
+   <div class="entity" id="providesServicesFor">
+      <h3>providesServicesFor<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://schema.oceanproteinportal.org/v2/providesServicesFor</p>
+      <div class="comment">
+         <span class="markdown">The IdentifierScheme for which this IdentifierRegistryScheme provides certain Identifier services for</span>
+      </div>
+      <div class="description">
+         <p>
+            <strong>has characteristics:</strong> functional</p>
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#IdentifierRegistryScheme"
+                  title="http://schema.oceanproteinportal.org/v2/IdentifierRegistryScheme">IdentifierRegistryScheme</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#IdentifierScheme"
+                  title="http://schema.oceanproteinportal.org/v2/IdentifierScheme">IdentifierScheme</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
    <div class="entity" id="requiresOneParameterFromSet">
       <h3>requiresOneParameterFromSet<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
@@ -5523,6 +5661,41 @@ This section provides details for each class and property defined by Ocean Prote
                <a href="#DataResourceParameterSet"
                   title="http://schema.oceanproteinportal.org/v2/DataResourceParameterSet">DataResourceParameterSet</a>
                <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="resolvesIdentifiersFor">
+      <h3>resolvesIdentifiersFor<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://schema.oceanproteinportal.org/v2/resolvesIdentifiersFor</p>
+      <div class="comment">
+         <span class="markdown">The identfier scheme at some registry for which this service resolves identifiers for.</span>
+      </div>
+      <div class="description">
+         <p>
+            <strong>has characteristics:</strong> functional</p>
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#IdentifierRegistryService"
+                  title="http://schema.oceanproteinportal.org/v2/IdentifierRegistryService">IdentifierRegistryService</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#IdentifierRegistryScheme"
+                  title="http://schema.oceanproteinportal.org/v2/IdentifierRegistryScheme">IdentifierRegistryScheme</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#offersResolvingService"
+                  title="http://schema.oceanproteinportal.org/v2/offersResolvingService">offersResolvingService</a>
+               <sup class="type-op" title="object property">op</sup>
             </dd>
          </dl>
       </div>
@@ -5883,6 +6056,38 @@ This section provides details for each class and property defined by Ocean Prote
          </dl>
       </div>
    </div>
+   <div class="entity" id="supportsIdentifierSchemeWith">
+      <h3>supportsIdentifierSchemeWith<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://schema.oceanproteinportal.org/v2/supportsIdentifierSchemeWith</p>
+      <div class="comment">
+         <span class="markdown">An IdentifierRegistry's interpretation of some IdentifierScheme through which thee registry offer's resolving services.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <span class="dotted" title="http://schema.org/offers">offers</span>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#IdentifierRegistry"
+                  title="http://schema.oceanproteinportal.org/v2/IdentifierRegistry">IdentifierRegistry</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#IdentifierRegistryScheme"
+                  title="http://schema.oceanproteinportal.org/v2/IdentifierRegistryScheme">IdentifierRegistryScheme</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
    <div class="entity" id="unitsReportedIn">
       <h3>unitsReportedIn<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
@@ -6046,6 +6251,22 @@ This section provides details for each class and property defined by Ocean Prote
       <li>
          <a href="#proteinSpectralCount"
             title="http://schema.oceanproteinportal.org/v2/proteinSpectralCount">proteinSpectralCount</a>
+      </li>
+      <li>
+         <a href="#registrySchemePrefix"
+            title="http://schema.oceanproteinportal.org/v2/registrySchemePrefix">registrySchemePrefix</a>
+      </li>
+      <li>
+         <a href="#registrySchemePrefixIdTemplate"
+            title="http://schema.oceanproteinportal.org/v2/registrySchemePrefixIdTemplate">registrySchemePrefixIdTemplate</a>
+      </li>
+      <li>
+         <a href="#registrySchemeURI"
+            title="http://schema.oceanproteinportal.org/v2/registrySchemeURI">registrySchemeURI</a>
+      </li>
+      <li>
+         <a href="#registrySchemeURLTemplate"
+            title="http://schema.oceanproteinportal.org/v2/registrySchemeURLTemplate">registrySchemeURLTemplate</a>
       </li>
       <li>
          <a href="#scoreValue"
@@ -6850,6 +7071,110 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
          </dl>
       </div>
    </div>
+   <div class="entity" id="registrySchemePrefix">
+      <h3>registrySchemePrefix<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://schema.oceanproteinportal.org/v2/registrySchemePrefix</p>
+      <div class="comment">
+         <span class="markdown">The unique prefix within an IdentifierRegistry for representing identifiers for the associated IdentifierScheme</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#IdentifierRegistryScheme"
+                  title="http://schema.oceanproteinportal.org/v2/IdentifierRegistryScheme">IdentifierRegistryScheme</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#token">token</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="registrySchemePrefixIdTemplate">
+      <h3>registrySchemePrefixIdTemplate<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://schema.oceanproteinportal.org/v2/registrySchemePrefixIdTemplate</p>
+      <div class="comment">
+         <span class="markdown">A template to be used for injecting an identifierValue from the associated IdentifierScheme into this IdentifierRegistry's registrySchemePrefix</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#IdentifierRegistryScheme"
+                  title="http://schema.oceanproteinportal.org/v2/IdentifierRegistryScheme">IdentifierRegistryScheme</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#token">token</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="registrySchemeURI">
+      <h3>registrySchemeURI<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://schema.oceanproteinportal.org/v2/registrySchemeURI</p>
+      <div class="comment">
+         <span class="markdown">The URI that unqiuely identifies the associated IdentifierScheme within an IdentifierRegistry</span>
+      </div>
+      <div class="description">
+         <p>
+            <strong>has characteristics:</strong> functional</p>
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#IdentifierRegistryScheme"
+                  title="http://schema.oceanproteinportal.org/v2/IdentifierRegistryScheme">IdentifierRegistryScheme</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#anyURI">any u r i</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="registrySchemeURLTemplate">
+      <h3>registrySchemeURLTemplate<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://schema.oceanproteinportal.org/v2/registrySchemeURLTemplate</p>
+      <div class="comment">
+         <span class="markdown">The URL template at which you can inject an identifierValue from the associated IdentifierScheme into for resolving the Identifier.</span>
+      </div>
+      <div class="description">
+         <p>
+            <strong>has characteristics:</strong> functional</p>
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#IdentifierRegistryScheme"
+                  title="http://schema.oceanproteinportal.org/v2/IdentifierRegistryScheme">IdentifierRegistryScheme</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#anyURI">any u r i</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
    <div class="entity" id="scoreValue">
       <h3>scoreValue<sup class="type-dp" title="data property">dp</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
@@ -7122,6 +7447,10 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
          </a>
       </li>
       <li>
+         <a href="#registrySchemeTemplateReplacementToken"
+            title="http://schema.oceanproteinportal.org/v2/registrySchemeTemplateReplacementToken">registrySchemeTemplateReplacementToken</a>
+      </li>
+      <li>
          <a href="#http://www.w3.org/2002/07/owl#sameAs" title="http://www.w3.org/2002/07/owl#sameAs">
             <span>same as</span>
          </a>
@@ -7326,6 +7655,17 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
       </h3>
       <p>
          <strong>IRI:</strong> http://purl.org/dc/terms/publisher</p>
+   </div>
+   <div class="entity" id="registrySchemeTemplateReplacementToken">
+      <h3>registrySchemeTemplateReplacementToken<sup class="type-ap" title="annotation property">ap</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://schema.oceanproteinportal.org/v2/registrySchemeTemplateReplacementToken</p>
+      <div class="comment">
+         <span class="markdown">The string of characters in any template value of an IdentifierRegistryScheme or IdentifierRegistryService that could be replaced with the value of an Identifier's identifierValue.</span>
+      </div>
    </div>
    <div class="entity" id="http://www.w3.org/2002/07/owl#sameAs">
       <h3>same as<sup class="type-ap" title="annotation property">ap</sup>
@@ -7786,8 +8126,8 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
             title="http://schema.oceanproteinportal.org/v2/IdentifierScheme_Kegg">Identifier Scheme: Kegg</a>
       </li>
       <li>
-         <a href="#IdentifierScheme_NCBIProtein"
-            title="http://schema.oceanproteinportal.org/v2/IdentifierScheme_NCBIProtein">Identifier Scheme: NCBI Protein</a>
+         <a href="#IdentifierScheme_NCBITaxonomy"
+            title="http://schema.oceanproteinportal.org/v2/IdentifierScheme_NCBITaxonomy">Identifier Scheme: NCBI Taxonomy</a>
       </li>
       <li>
          <a href="#IdentifierScheme_ORCID"
@@ -10957,6 +11297,9 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
       </h3>
       <p>
          <strong>IRI:</strong> http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_KeggIdentifier</p>
+      <div class="comment">
+         <span class="markdown">If multiple values exist, the Kegg Pathway, Definition and other Kegg metadata are ignored because there is currently no defineed way to structure that information to ensure it logically matches to the list of identifiers here.</span>
+      </div>
       <dl class="description">
          <dt>belongs to</dt>
          <dd>
@@ -10995,7 +11338,7 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
          <dd>
             <span class="dotted" title="http://schema.org/multipleValues">multiple values</span>
             <sup class="type-dp" title="data property">dp</sup>
-            <span class="literal">"false"^^<span class="dotted" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</span>
+            <span class="literal">"true"^^<span class="dotted" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</span>
             </span>
          </dd>
          <dd>
@@ -12806,13 +13149,13 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
          </dd>
       </dl>
    </div>
-   <div class="entity" id="IdentifierScheme_NCBIProtein">
-      <h3>Identifier Scheme: NCBI Protein<sup class="type-ni" title="named individual">ni</sup>
+   <div class="entity" id="IdentifierScheme_NCBITaxonomy">
+      <h3>Identifier Scheme: NCBI Taxonomy<sup class="type-ni" title="named individual">ni</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> http://schema.oceanproteinportal.org/v2/IdentifierScheme_NCBIProtein</p>
+         <strong>IRI:</strong> http://schema.oceanproteinportal.org/v2/IdentifierScheme_NCBITaxonomy</p>
       <dl class="description">
          <dt>belongs to</dt>
          <dd>
@@ -13086,7 +13429,6 @@ Example: "nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 
 </div>
 </div>
 </div>
-
 
 <!--REFERENCES SECTION-->
   <div id="references">
