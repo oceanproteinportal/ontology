@@ -1,0 +1,322 @@
+prefix opp: <http://schema.oceanproteinportal.org/v2/>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix schema: <http://schema.org/>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+
+_:IdentifierRegistry_IdentifiersOrg
+        a opp:IdentifierRegistry ;
+        schema:name "Identifiers.org"^^xsd:string ;
+        opp:supportsIdentifierSchemeWith
+            _:IdentifierRegistryScheme_IdOrg_EC-Code ,
+            _:IdentifierRegistryScheme_IdOrg_Kegg ,
+            _:IdentifierRegistryScheme_IdOrg_Taxonomy ,
+            _:IdentifierRegistryScheme_IdOrg_Pfam ,
+            _:IdentifierRegistryScheme_IdOrg_UniProt ;
+        schema:url "https://registry.identifiers.org"^^xsd:anyURI .
+
+
+### Locations ###
+_:Place_United_Kingdom a schema:Place ;
+    schema:name "United Kingdom"^^xsd:string .
+_:Place_United_States a schema:Place ;
+    schema:name "United States"^^xsd:string .
+_:Place_Japan a schema:Place ;
+    schema:name "Japan"^^xsd:string .
+
+### Organizations ###
+_:Organization_EBI a schema:Organization ;
+    schema:name "European Bioinformatics Institute"^^xsd:string ;
+    schema:identifier "https://ror.org/02catss52"^^xsd:anyURI .
+_:Organization_NCBI a schema:Organization ;
+    schema:name "National Center for Biotechnology Information"^^xsd:string ;
+    schema:identifier "https://ror.org/02meqm098"^^xsd:anyURI .
+_:Organization_UniProt a schema:Organization ;
+    schema:name "UniProt Consortium"^^xsd:string .
+_:Organization_KyotoUniversityBioinformaticsCenter a schema:Organization ;
+    schema:name "Kyoto University Bioinformatics Center"^^xsd:string .
+
+### Uniprot ###
+
+_:IdentifierRegistryScheme_IdOrg_UniProt
+        a opp:IdentifierRegistryScheme ;
+        schema:name "UniProt Knowledgebase" ;
+        schema:description "The UniProt Knowledgebase (UniProtKB) is a comprehensive resource for protein sequence and functional information with extensive cross-references to more than 120 external databases. Besides amino acid sequence and a description, it also provides taxonomic data and citation information." ;
+        schema:url "https://registry.identifiers.org/registry/pfam"^^xsd:anyURI ;
+        opp:offersResolvingService
+            _:IdentifierRegistryService_UniProt_PURL ,
+            _:IdentifierRegistryService_UniProt_NCBI ;
+        opp:providesServicesFor opp:IdentifierScheme_PFam ;
+        opp:registrySchemePrefix "uniprot"^^xsd:token ;
+        opp:registrySchemePrefixIdTemplate "uniprot:{$id}"^^xsd:token ;
+        opp:registrySchemeURI "https://registry.identifiers.org/registry/uniprot"^^xsd:anyURI ;
+        opp:registrySchemeURLTemplate "https://identifiers.org/uniprot:{$id}"^^xsd:anyURI .
+
+_:IdentifierRegistryService_UniProt_PURL
+        a opp:IdentifierRegistryService ;
+        opp:resolvesIdentifiersFor _:IdentifierRegistryScheme_IdOrg_Pfam ;
+        schema:name "Universal Protein Resource using Persistent URL system"^^xsd:string ;
+        schema:url "https://www.uniprot.org/"^^xsd:anyURI ;
+        schema:target [
+            a schema:EntryPoint ;
+            schema:urlTemplate "http://purl.uniprot.org/uniprot/{$id}"^^xsd:anyURI ;
+        ] ;
+        schema:location _:Place_United_Kingdom ;
+        schema:agent _:Organization_UniProt .
+
+_:IdentifierRegistryService_UniProt_NCBI
+        a opp:IdentifierRegistryService ;
+        opp:resolvesIdentifiersFor _:IdentifierRegistryScheme_IdOrg_Pfam ;
+        schema:name "UniProt through NCBI"^^xsd:string ;
+        schema:url "https://www.ncbi.nlm.nih.gov/protein/"^^xsd:anyURI ;
+        schema:target [
+            a schema:EntryPoint ;
+            schema:urlTemplate "https://www.ncbi.nlm.nih.gov/protein/{$id}"^^xsd:anyURI ;
+        ] ;
+        schema:location _:Place_United_States ;
+        schema:agent _:Organization_NCBI .
+
+### Pfam ###
+
+_:IdentifierRegistryScheme_IdOrg_Pfam
+        a opp:IdentifierRegistryScheme ;
+        schema:name "Pfam" ;
+        schema:description "The Pfam database contains information about protein domains and families. For each entry a protein sequence alignment and a Hidden Markov Model is stored." ;
+        schema:url "https://registry.identifiers.org/registry/pfam"^^xsd:anyURI ;
+        opp:offersResolvingService _:IdentifierRegistryService_Pfam_EBI ;
+        opp:providesServicesFor opp:IdentifierScheme_PFam ;
+        opp:registrySchemePrefix "pfam"^^xsd:token ;
+        opp:registrySchemePrefixIdTemplate "pfam:{$id}"^^xsd:token ;
+        opp:registrySchemeURI "https://registry.identifiers.org/registry/pfam"^^xsd:anyURI ;
+        opp:registrySchemeURLTemplate "https://identifiers.org/pfam:{$id}"^^xsd:anyURI .
+
+_:IdentifierRegistryService_Pfam_EBI
+        a opp:IdentifierRegistryService ;
+        opp:resolvesIdentifiersFor _:IdentifierRegistryScheme_IdOrg_Pfam ;
+        schema:name "Pfam at EMBL-EBI"^^xsd:string ;
+        schema:url "https://pfam.xfam.org/"^^xsd:anyURI ;
+        schema:target [
+            a schema:EntryPoint ;
+            schema:urlTemplate "https://pfam.xfam.org/family/{$id}"^^xsd:anyURI ;
+        ] ;
+        schema:location _:Place_United_Kingdom ;
+        schema:agent _:Organization_EBI .
+
+### NCBI Taxon ###
+
+_:IdentifierRegistryScheme_IdOrg_Taxonomy
+        a opp:IdentifierRegistryScheme ;
+        schema:name "Taxonomy" ;
+        schema:description "The taxonomy contains the relationships between all living forms for which nucleic acid or protein sequence have been determined." ;
+        schema:url "https://registry.identifiers.org/registry/taxonomy"^^xsd:anyURI ;
+        opp:offersResolvingService
+            _:IdentifierRegistryService_Taxonomy_NCBI ,
+            _:IdentifierRegistryService_Taxonomy_BioPortal ,
+            _:IdentifierRegistryService_Taxonomy_EBI ,
+            _:IdentifierRegistryService_Taxonomy_OLS ,
+            _:IdentifierRegistryService_Taxonomy_Uniprot ,
+            _:IdentifierRegistryService_Taxonomy_Bio2RDF ;
+        opp:providesServicesFor opp:IdentifierScheme_NCBITaxonomy ;
+        opp:registrySchemePrefix "taxonomy"^^xsd:token ;
+        opp:registrySchemePrefixIdTemplate "taxonomy:{$id}"^^xsd:token ;
+        opp:registrySchemeURI "https://registry.identifiers.org/registry/taxonomy"^^xsd:anyURI ;
+        opp:registrySchemeURLTemplate "https://identifiers.org/taxonomy:{$id}"^^xsd:anyURI .
+
+_:IdentifierRegistryService_Taxonomy_NCBI
+        a opp:IdentifierRegistryService ;
+        opp:resolvesIdentifiersFor _:IdentifierRegistryScheme_IdOrg_Taxonomy ;
+        schema:name "NCBI Taxonomy"^^xsd:string ;
+        schema:url "https://www.ncbi.nlm.nih.gov/Taxonomy/"^^xsd:anyURI ;
+        schema:target [
+            a schema:EntryPoint ;
+            schema:urlTemplate "https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&id={$id}"^^xsd:anyURI ;
+        ] ;
+        schema:location _:Place_United_States ;
+        schema:agent _:Organization_NCBI .
+
+_:IdentifierRegistryService_Taxonomy_BioPortal
+        a opp:IdentifierRegistryService ;
+        opp:resolvesIdentifiersFor _:IdentifierRegistryScheme_IdOrg_Taxonomy ;
+        schema:name "BioPortal"^^xsd:string ;
+        schema:url "http://bioportal.bioontology.org/ontologies/NCBITAXON"^^xsd:anyURI ;
+        schema:target [
+            a schema:EntryPoint ;
+            schema:urlTemplate "http://purl.bioontology.org/ontology/NCBITAXON/{$id}"^^xsd:anyURI ;
+        ] ;
+        schema:location _:Place_United_States ;
+        schema:agent [
+            a schema:Organization ;
+            schema:name "National Center for Biomedical Ontology, Stanford"^^xsd:string ;
+        ] .
+
+_:IdentifierRegistryService_Taxonomy_EBI
+        a opp:IdentifierRegistryService ;
+        opp:resolvesIdentifiersFor _:IdentifierRegistryScheme_IdOrg_Taxonomy ;
+        schema:name "European Nucleotide Archive (ENA)"^^xsd:string ;
+        schema:url "https://www.ebi.ac.uk/ena/"^^xsd:anyURI ;
+        schema:target [
+            a schema:EntryPoint ;
+            schema:urlTemplate "https://www.ebi.ac.uk/ena/data/view/Taxon:{$id}"^^xsd:anyURI ;
+        ] ;
+        schema:location _:Place_United_Kingdom ;
+        schema:agent _:Organization_EBI .
+
+_:IdentifierRegistryService_Taxonomy_OLS
+        a opp:IdentifierRegistryService ;
+        opp:resolvesIdentifiersFor _:IdentifierRegistryScheme_IdOrg_Taxonomy ;
+        schema:name "NCBI Taxonomy through OLS"^^xsd:string ;
+        schema:url "https://www.ebi.ac.uk/ols/ontologies/ncbitaxon/"^^xsd:anyURI ;
+        schema:target [
+            a schema:EntryPoint ;
+            schema:urlTemplate "https://www.ebi.ac.uk/ols/ontologies/ncbitaxon/terms?short_form=NCBITaxon_{$id}"^^xsd:anyURI ;
+        ] ;
+        schema:location _:Place_United_Kingdom ;
+        schema:agent _:Organization_EBI .
+
+_:IdentifierRegistryService_Taxonomy_Uniprot
+        a opp:IdentifierRegistryService ;
+        opp:resolvesIdentifiersFor _:IdentifierRegistryScheme_IdOrg_Taxonomy ;
+        schema:name "Taxonomy through UniProt PURL"^^xsd:string ;
+        schema:url "https://www.uniprot.org/taxonomy/"^^xsd:anyURI ;
+        schema:target [
+            a schema:EntryPoint ;
+            schema:urlTemplate "https://purl.uniprot.org/taxonomy/{$id}"^^xsd:anyURI ;
+        ] ;
+        schema:location _:Place_United_States ;
+        schema:agent _:Organization_UniProt .
+
+_:IdentifierRegistryService_Taxonomy_Bio2RDF
+        a opp:IdentifierRegistryService ;
+        opp:resolvesIdentifiersFor _:IdentifierRegistryScheme_IdOrg_Taxonomy ;
+        schema:name "Bio2RDF"^^xsd:string ;
+        schema:url "https://bio2rdf.org/"^^xsd:anyURI ;
+        schema:target [
+            a schema:EntryPoint ;
+            schema:urlTemplate "https://bio2rdf.org/taxonomy:{$id}"^^xsd:anyURI ;
+        ] ;
+        schema:location _:Place_United_States ;
+        schema:agent [
+            a schema:Organization ;
+            schema:name "Bio2RDF.org"^^xsd:string ;
+        ] .
+
+### Kegg ###
+
+_:IdentifierRegistryScheme_IdOrg_Kegg
+        a opp:IdentifierRegistryScheme ;
+        schema:name "Kyoto Encyclopedia of Genes and Genomes" ;
+        schema:description "Kyoto Encyclopedia of Genes and Genomes (KEGG) is a database resource for understanding high-level functions and utilities of the biological system, such as the cell, the organism and the ecosystem, from molecular-level information, especially large-scale molecular datasets generated by genome sequencing and other high-throughput experimental technologies." ;
+        schema:url "https://registry.identifiers.org/registry/kegg"^^xsd:anyURI ;
+        opp:offersResolvingService
+            _:IdentifierRegistryService_Kegg_Kegg ;
+        opp:providesServicesFor opp:IdentifierScheme_Kegg ;
+        opp:registrySchemePrefix "kegg"^^xsd:token ;
+        opp:registrySchemePrefixIdTemplate "kegg:{$id}"^^xsd:token ;
+        opp:registrySchemeURI "https://registry.identifiers.org/registry/kegg"^^xsd:anyURI ;
+        opp:registrySchemeURLTemplate "https://identifiers.org/kegg:{$id}"^^xsd:anyURI .
+
+_:IdentifierRegistryService_Kegg_Kegg
+        a opp:IdentifierRegistryService ;
+        opp:resolvesIdentifiersFor _:IdentifierRegistryScheme_IdOrg_Kegg ;
+        schema:name "KEGG at Kyoto University Bioinformatics Center"^^xsd:string ;
+        schema:url "http://www.kegg.jp/"^^xsd:anyURI ;
+        schema:target [
+            a schema:EntryPoint ;
+            schema:urlTemplate "http://www.kegg.jp/entry/{$id}"^^xsd:anyURI ;
+        ] ;
+        schema:location _:Place_Japan ;
+        schema:agent _:Organization_KyotoUniversityBioinformaticsCenter .
+
+### EnzymeCommission ###
+
+_:IdentifierRegistryScheme_IdOrg_EC-Code
+        a opp:IdentifierRegistryScheme ;
+        schema:name "Enzyme Nomenclature" ;
+        schema:description "The Enzyme Classification contains the recommendations of the Nomenclature Committee of the International Union of Biochemistry and Molecular Biology on the nomenclature and classification of enzyme-catalysed reactions." ;
+        schema:url "https://registry.identifiers.org/registry/ec-code"^^xsd:anyURI ;
+        opp:offersResolvingService
+            _:IdentifierRegistryService_EcCode_EnzymePortal ,
+            _:IdentifierRegistryService_EcCode_ExPASy ,
+            _:IdentifierRegistryService_EcCode_ExploreEnz ,
+            _:IdentifierRegistryService_EcCode_IntEnz ,
+            _:IdentifierRegistryService_EcCode_Kegg ;
+        opp:providesServicesFor opp:IdentifierScheme_EnzymeCommission ;
+        opp:registrySchemePrefix "ec-code"^^xsd:token ;
+        opp:registrySchemePrefixIdTemplate "ec-code:{$id}"^^xsd:token ;
+        opp:registrySchemeURI "https://registry.identifiers.org/registry/ec-code"^^xsd:anyURI ;
+        opp:registrySchemeURLTemplate "https://identifiers.org/ec-code:{$id}"^^xsd:anyURI .
+
+_:IdentifierRegistryService_EcCode_EnzymePortal
+        a opp:IdentifierRegistryService ;
+        opp:resolvesIdentifiersFor _:IdentifierRegistryScheme_IdOrg_EC-Code ;
+        schema:name "Enzyme Portal through EMBL-EBI"^^xsd:string ;
+        schema:url "https://www.ebi.ac.uk/enzymeportal"^^xsd:anyURI ;
+        schema:target [
+            a schema:EntryPoint ;
+            schema:urlTemplate "https://www.ebi.ac.uk/enzymeportal/ec/{$id}"^^xsd:anyURI ;
+        ] ;
+        schema:location _:Place_United_Kingdom ;
+        schema:agent [
+            a schema:Organization ;
+            schema:name "Enzyme Portal at European Bioinformatics Institute, Hinxton, Cambridge"^^xsd:string ;
+        ] .
+
+_:IdentifierRegistryService_EcCode_ExPASy
+        a opp:IdentifierRegistryService ;
+        opp:resolvesIdentifiersFor _:IdentifierRegistryScheme_IdOrg_EC-Code ;
+        schema:name "Enzyme nomenclature database, ExPASy (Expert Protein Analysis System)"^^xsd:string ;
+        schema:url "https://enzyme.expasy.org/"^^xsd:anyURI ;
+        schema:target [
+            a schema:EntryPoint ;
+            schema:urlTemplate "https://enzyme.expasy.org/EC/{$id}"^^xsd:anyURI ;
+        ] ;
+        schema:location [
+            a schema:Place ;
+            schema:name "Switzerland"^^xsd:string ;
+        ] ;
+        schema:agent [
+            a schema:Organization ;
+            schema:name "SIB Swiss Institute of Bioinformatics"^^xsd:string ;
+            schema:identifier "https://ror.org/002n09z45"^^xsd:anyURI ;
+        ] .
+
+_:IdentifierRegistryService_EcCode_ExploreEnz
+        a opp:IdentifierRegistryService ;
+        opp:resolvesIdentifiersFor _:IdentifierRegistryScheme_IdOrg_EC-Code ;
+        schema:name "ExploreEnz at Trinity College"^^xsd:string ;
+        schema:url "http://www.enzyme-database.org/"^^xsd:anyURI ;
+        schema:target [
+            a schema:EntryPoint ;
+            schema:urlTemplate "http://www.enzyme-database.org/query.php?ec={$id}"^^xsd:anyURI ;
+        ] ;
+        schema:location [
+            a schema:Place ;
+            schema:name "Ireland"^^xsd:string ;
+        ] ;
+        schema:agent [
+            a schema:Organization ;
+            schema:name "Trinity College, Dublin"^^xsd:string ;
+        ] .
+
+_:IdentifierRegistryService_EcCode_IntEnz
+        a opp:IdentifierRegistryService ;
+        opp:resolvesIdentifiersFor _:IdentifierRegistryScheme_IdOrg_EC-Code ;
+        schema:name "IntEnZ (Integrated relational Enzyme database)"^^xsd:string ;
+        schema:url "https://www.ebi.ac.uk/intenz/"^^xsd:anyURI ;
+        schema:target [
+            a schema:EntryPoint ;
+            schema:urlTemplate "https://www.ebi.ac.uk/intenz/query?cmd=SearchEC&ec={$id}"^^xsd:anyURI ;
+        ] ;
+        schema:location _:Place_United_Kingdom ;
+        schema:agent _:Organization_EBI .
+
+_:IdentifierRegistryService_EcCode_Kegg
+        a opp:IdentifierRegistryService ;
+        opp:resolvesIdentifiersFor _:IdentifierRegistryScheme_IdOrg_EC-Code ;
+        schema:name "KEGG Ligand Database for Enzyme Nomenclature"^^xsd:string ;
+        schema:url "https://www.genome.jp/dbget-bin/www_bfind?enzyme"^^xsd:anyURI ;
+        schema:target [
+            a schema:EntryPoint ;
+            schema:urlTemplate "https://www.genome.jp/dbget-bin/www_bget?ec:{$id}"^^xsd:anyURI ;
+        ] ;
+        schema:location _:Place_Japan ;
+        schema:agent _:Organization_KyotoUniversityBioinformaticsCenter .
