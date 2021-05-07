@@ -93,7 +93,7 @@
 # 
 # http://schema.oceanproteinportal.org/v2/registrySchemeTemplateReplacementToken
 <http://schema.oceanproteinportal.org/v2/registrySchemeTemplateReplacementToken> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-<http://schema.oceanproteinportal.org/v2/registrySchemeTemplateReplacementToken> <http://www.w3.org/2000/01/rdf-schema#comment> "The string of characters in any template value of an IdentifierRegistryScheme or IdentifierRegistryService that could be replaced with the value of an Identifier's identifierValue." .
+<http://schema.oceanproteinportal.org/v2/registrySchemeTemplateReplacementToken> <http://www.w3.org/2000/01/rdf-schema#comment> "The string of charactersin any template value of an IdentifierRegistryScheme or IdentifierRegistryService, encoded for regular expression,  that could be replaced with the value of an Identifier's identifierValue." .
 <http://schema.oceanproteinportal.org/v2/registrySchemeTemplateReplacementToken> <http://www.w3.org/2000/01/rdf-schema#label> "registrySchemeTemplateReplacementToken" .
 # 
 # http://www.w3.org/2002/07/owl#sameAs
@@ -1357,7 +1357,7 @@ _:genid61 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # http://schema.oceanproteinportal.org/v2/IdentifierRegistryScheme
 <http://schema.oceanproteinportal.org/v2/IdentifierRegistryScheme> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://schema.oceanproteinportal.org/v2/IdentifierRegistryScheme> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/Offer> .
-<http://schema.oceanproteinportal.org/v2/IdentifierRegistryScheme> <http://schema.oceanproteinportal.org/v2/registrySchemeTemplateReplacementToken> "{$id}"^^<http://www.w3.org/2001/XMLSchema#token> .
+<http://schema.oceanproteinportal.org/v2/IdentifierRegistryScheme> <http://schema.oceanproteinportal.org/v2/registrySchemeTemplateReplacementToken> "{\\\\$id}"^^<http://www.w3.org/2001/XMLSchema#token> .
 <http://schema.oceanproteinportal.org/v2/IdentifierRegistryScheme> <http://www.w3.org/2000/01/rdf-schema#comment> "An IndentifierRegistry's interpretation of a specific IdentifierScheme. This deescribes how a registry represents identifiers for the related scheme as URIs, URLs, etc." .
 <http://schema.oceanproteinportal.org/v2/IdentifierRegistryScheme> <http://www.w3.org/2000/01/rdf-schema#label> "IdentifierRegistryScheme" .
 # 

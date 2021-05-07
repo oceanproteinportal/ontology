@@ -111,7 +111,7 @@
 
 ###  http://schema.oceanproteinportal.org/v2/registrySchemeTemplateReplacementToken
 :registrySchemeTemplateReplacementToken rdf:type owl:AnnotationProperty ;
-                                        rdfs:comment "The string of characters in any template value of an IdentifierRegistryScheme or IdentifierRegistryService that could be replaced with the value of an Identifier's identifierValue." ;
+                                        rdfs:comment "The string of charactersin any template value of an IdentifierRegistryScheme or IdentifierRegistryService, encoded for regular expression,  that could be replaced with the value of an Identifier's identifierValue." ;
                                         rdfs:label "registrySchemeTemplateReplacementToken" .
 
 
@@ -1470,7 +1470,7 @@ Example: \"nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1
 ###  http://schema.oceanproteinportal.org/v2/IdentifierRegistryScheme
 :IdentifierRegistryScheme rdf:type owl:Class ;
                           rdfs:subClassOf <http://schema.org/Offer> ;
-                          :registrySchemeTemplateReplacementToken "{$id}"^^xsd:token ;
+                          :registrySchemeTemplateReplacementToken "{\\\\$id}"^^xsd:token ;
                           rdfs:comment "An IndentifierRegistry's interpretation of a specific IdentifierScheme. This deescribes how a registry represents identifiers for the related scheme as URIs, URLs, etc." ;
                           rdfs:label "IdentifierRegistryScheme" .
 
