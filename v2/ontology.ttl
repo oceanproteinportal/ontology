@@ -241,6 +241,15 @@ owl:sameAs rdf:type owl:AnnotationProperty .
                   rdfs:label "describesProtein" .
 
 
+###  http://schema.oceanproteinportal.org/v2/forProteinIdentification
+:forProteinIdentification rdf:type owl:ObjectProperty ,
+                                   owl:FunctionalProperty ;
+                          rdfs:domain :PeptideIdentifiedProtein ;
+                          rdfs:range :ProteinIdentification ;
+                          rdfs:comment "The ProteinIdentification suggested by the Peptide." ;
+                          rdfs:label "forProteinIdentification" .
+
+
 ###  http://schema.oceanproteinportal.org/v2/hasAgentRole
 :hasAgentRole rdf:type owl:ObjectProperty ;
               rdfs:domain owl:Thing ;
@@ -550,6 +559,14 @@ owl:sameAs rdf:type owl:AnnotationProperty .
                          rdfs:label "sampleAminoAcidProperty" .
 
 
+###  http://schema.oceanproteinportal.org/v2/sampleFromCruise
+:sampleFromCruise rdf:type owl:ObjectProperty ;
+                  rdfs:domain <http://www.w3.org/ns/sosa/Sample> ;
+                  rdfs:range :Cruise ;
+                  rdfs:comment "A pointer to the Cruise that hosted the Sampling Sensor" ;
+                  rdfs:label "sampleFromCruise" .
+
+
 ###  http://schema.oceanproteinportal.org/v2/samplePeptideProperty
 :samplePeptideProperty rdf:type owl:ObjectProperty ;
                        rdfs:subPropertyOf :sampleAminoAcidProperty ;
@@ -568,25 +585,6 @@ owl:sameAs rdf:type owl:AnnotationProperty .
                        rdfs:label "sampleProteinProperty" .
 
 
-###  http://schema.oceanproteinportal.org/v2/selectedBasedOnPeptideIdentification
-:selectedBasedOnPeptideIdentification rdf:type owl:ObjectProperty ;
-                                      rdfs:subPropertyOf :sugggestedByPeptideIdentification ;
-                                      owl:inverseOf :selectedProteinIdentification ;
-                                      rdfs:domain :BestProteinIdentification ;
-                                      rdfs:range :PeptideIdentification ;
-                                      rdfs:comment "This Best Identified Protein was selected by the data'sinterpreter based on  the peptide identification." ;
-                                      rdfs:label "selectedBasedOnPeptideIdentification" .
-
-
-###  http://schema.oceanproteinportal.org/v2/selectedProteinIdentification
-:selectedProteinIdentification rdf:type owl:ObjectProperty ;
-                               rdfs:subPropertyOf :suggestsProteinIdentification ;
-                               rdfs:domain :PeptideIdentification ;
-                               rdfs:range :BestProteinIdentification ;
-                               rdfs:comment "The selected protein identification is the Protein that the interpreter of the data felt was the best protein identificationout of all possible proteins it may be." ;
-                               rdfs:label "selectedProteinIdentification" .
-
-
 ###  http://schema.oceanproteinportal.org/v2/serializesMetadataFor
 :serializesMetadataFor rdf:type owl:ObjectProperty ;
                        rdfs:domain :MetadataResource ;
@@ -603,21 +601,12 @@ owl:sameAs rdf:type owl:AnnotationProperty .
                         rdfs:label "storesResultsForSample" .
 
 
-###  http://schema.oceanproteinportal.org/v2/suggestsProteinIdentification
-:suggestsProteinIdentification rdf:type owl:ObjectProperty ;
-                               owl:inverseOf :sugggestedByPeptideIdentification ;
-                               rdfs:domain :PeptideIdentification ;
-                               rdfs:range :ProteinIdentification ;
-                               rdfs:comment "A peptide identification suggests this identified protein as possibly being contained within the related Sample." ;
-                               rdfs:label "suggestsProteinIdentification" .
-
-
-###  http://schema.oceanproteinportal.org/v2/sugggestedByPeptideIdentification
-:sugggestedByPeptideIdentification rdf:type owl:ObjectProperty ;
-                                   rdfs:domain :ProteinIdentification ;
-                                   rdfs:range :PeptideIdentification ;
-                                   rdfs:comment "A ProteinIdentification was made based on this PeptideIdentification. The peptide suggests that the identified Protein may be contained in the Sample." ;
-                                   rdfs:label "suggestedByPeptideIdentification" .
+###  http://schema.oceanproteinportal.org/v2/suggestsProtein
+:suggestsProtein rdf:type owl:ObjectProperty ;
+                 rdfs:domain :PeptideIdentification ;
+                 rdfs:range :PeptideIdentification ;
+                 rdfs:comment "This peptide suggests that the following ProteinIdentification (linked via forProteinIdentification)." ;
+                 rdfs:label "suggestsProtein" .
 
 
 ###  http://schema.oceanproteinportal.org/v2/supportsIdentifierSchemeWith
@@ -904,6 +893,15 @@ Example: \"nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1
                         rdfs:range xsd:integer ;
                         rdfs:comment "The position in a DataResource could mean the column number in a tabular file or for FASTA files mean that the identfier = position #1 and the sequence = position #2." ;
                         rdfs:label "positionInDataResource" .
+
+
+###  http://schema.oceanproteinportal.org/v2/proteinIdentifier
+:proteinIdentifier rdf:type owl:DatatypeProperty ,
+                            owl:FunctionalProperty ;
+                   rdfs:domain :ProteinIdentification ;
+                   rdfs:range xsd:token ;
+                   rdfs:comment "A convenience property that is a proxy for opp:identifier => opp:DatasetProteinIdentifier => identifierValue" ;
+                   rdfs:label "proteinIdentifier" .
 
 
 ###  http://schema.oceanproteinportal.org/v2/proteinName
@@ -1193,11 +1191,7 @@ Example: \"nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1
 
 ###  http://schema.oceanproteinportal.org/v2/BestProteinIdentification
 :BestProteinIdentification rdf:type owl:Class ;
-                           rdfs:subClassOf :ProteinIdentification ,
-                                           [ rdf:type owl:Restriction ;
-                                             owl:onProperty :selectedBasedOnPeptideIdentification ;
-                                             owl:someValuesFrom :PeptideIdentification
-                                           ] ;
+                           rdfs:subClassOf :ProteinIdentification ;
                            rdfs:comment "The best/selected identification of a specific Protein based on information in a PeptideIdentification. This means that a PeptideIdentification may have multiple Proteins that it identifies but that one of those proteins has been selected (identifiedBy) as the best identification." ;
                            rdfs:label "BestProteinIdentification" .
 
@@ -1228,7 +1222,7 @@ Example: \"nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1
 
 ###  http://schema.oceanproteinportal.org/v2/Cruise
 :Cruise rdf:type owl:Class ;
-        rdfs:subClassOf <http://www.w3.org/ns/sosa/Deployment> ,
+        rdfs:subClassOf <http://www.w3.org/ns/ssn/Deployment> ,
                         [ rdf:type owl:Restriction ;
                           owl:onProperty :cruiseID ;
                           owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
@@ -1342,6 +1336,17 @@ Example: \"nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1
                 :describedinConceptualModelOf :OPPDataset ;
                 rdfs:comment "A DatasetProfile defines the type of observations to be expected." ;
                 rdfs:label "DatasetProfile" .
+
+
+###  http://schema.oceanproteinportal.org/v2/DatasetProteinIdentifier
+:DatasetProteinIdentifier rdf:type owl:Class ;
+                          rdfs:subClassOf :ProteinIdentifier ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty :identifierScheme ;
+                                            owl:allValuesFrom :DatasetIdentifierScheme
+                                          ] ;
+                          rdfs:comment "The identifier used to reference the protein across/within the Dataset." ;
+                          rdfs:label "DatasetProteinIdentifier" .
 
 
 ###  http://schema.oceanproteinportal.org/v2/EnzymeCommissionIdentifier
@@ -1699,6 +1704,12 @@ Example: \"nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1
                        rdfs:label "PeptideIdentification" .
 
 
+###  http://schema.oceanproteinportal.org/v2/PeptideIdentifiedProtein
+:PeptideIdentifiedProtein rdf:type owl:Class ;
+                          rdfs:comment "The peptide suggests tthat the subsequent Protein was a possible identification. The best identified protein is specified by setting the bestProtein property to TRUE." ;
+                          rdfs:label "PeptideIdentifiedProtein" .
+
+
 ###  http://schema.oceanproteinportal.org/v2/PeptideSampleObservation
 :PeptideSampleObservation rdf:type owl:Class ;
                           rdfs:subClassOf :AminoAcidSampleObservation ;
@@ -1924,11 +1935,6 @@ Note since the order of the pathways (or KeggPathway Index isn't provided we don
 <http://schema.org/Service> rdf:type owl:Class .
 
 
-###  http://www.w3.org/ns/sosa/Deployment
-<http://www.w3.org/ns/sosa/Deployment> rdf:type owl:Class ;
-                                       :describedinConceptualModelOf <http://www.w3.org/ns/sosa/Sample> .
-
-
 ###  http://www.w3.org/ns/sosa/FeatureOfInterest
 <http://www.w3.org/ns/sosa/FeatureOfInterest> rdf:type owl:Class ;
                                               :describedinConceptualModelOf <http://www.w3.org/ns/sosa/Sample> .
@@ -1942,6 +1948,11 @@ Note since the order of the pathways (or KeggPathway Index isn't provided we don
 ###  http://www.w3.org/ns/sosa/Sampler
 <http://www.w3.org/ns/sosa/Sampler> rdf:type owl:Class ;
                                     :describedinConceptualModelOf <http://www.w3.org/ns/sosa/Sample> .
+
+
+###  http://www.w3.org/ns/ssn/Deployment
+<http://www.w3.org/ns/ssn/Deployment> rdf:type owl:Class ;
+                                      :describedinConceptualModelOf <http://www.w3.org/ns/sosa/Sample> .
 
 
 ###  http://www.w3.org/ns/ssn/Property
@@ -2724,6 +2735,7 @@ Note since the order of the pathways (or KeggPathway Index isn't provided we don
                                                            :definesValuesForParameter :DataParameter_KeggIdentifier ;
                                                            :parameterDataType <http://schema.org/Text> ;
                                                            :parameterInResourceType :DataResourceType_ProteinTotalSpectralCount ;
+                                                           :multiValuedDefaultDelimiter "||"^^xsd:token ;
                                                            :parameterNameInResource "kegg_id"^^xsd:token ;
                                                            <http://schema.org/multipleValues> "true"^^xsd:boolean ;
                                                            <http://schema.org/valueRequired> "false"^^xsd:boolean ;
