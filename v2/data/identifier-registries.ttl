@@ -41,11 +41,11 @@ _:IdentifierRegistryScheme_IdOrg_UniProt
         a opp:IdentifierRegistryScheme ;
         schema:name "UniProt Knowledgebase" ;
         schema:description "The UniProt Knowledgebase (UniProtKB) is a comprehensive resource for protein sequence and functional information with extensive cross-references to more than 120 external databases. Besides amino acid sequence and a description, it also provides taxonomic data and citation information." ;
-        schema:url "https://registry.identifiers.org/registry/pfam"^^xsd:anyURI ;
+        schema:url "https://registry.identifiers.org/registry/uniprot"^^xsd:anyURI ;
         opp:offersResolvingService
             _:IdentifierRegistryService_UniProt_PURL ,
             _:IdentifierRegistryService_UniProt_NCBI ;
-        opp:providesServicesFor opp:IdentifierScheme_PFam ;
+        opp:providesServicesFor opp:IdentifierScheme_Uniprot ;
         opp:registrySchemePrefix "uniprot"^^xsd:token ;
         opp:registrySchemePrefixIdTemplate "uniprot:{$id}"^^xsd:token ;
         opp:registrySchemeURI "https://registry.identifiers.org/registry/uniprot"^^xsd:anyURI ;
@@ -53,7 +53,7 @@ _:IdentifierRegistryScheme_IdOrg_UniProt
 
 _:IdentifierRegistryService_UniProt_PURL
         a opp:IdentifierRegistryService ;
-        opp:resolvesIdentifiersFor _:IdentifierRegistryScheme_IdOrg_Pfam ;
+        opp:resolvesIdentifiersFor _:IdentifierRegistryScheme_IdOrg_UniProt ;
         schema:name "Universal Protein Resource using Persistent URL system"^^xsd:string ;
         schema:url "https://www.uniprot.org/"^^xsd:anyURI ;
         schema:target [
@@ -65,7 +65,7 @@ _:IdentifierRegistryService_UniProt_PURL
 
 _:IdentifierRegistryService_UniProt_NCBI
         a opp:IdentifierRegistryService ;
-        opp:resolvesIdentifiersFor _:IdentifierRegistryScheme_IdOrg_Pfam ;
+        opp:resolvesIdentifiersFor _:IdentifierRegistryScheme_IdOrg_UniProt ;
         schema:name "UniProt through NCBI"^^xsd:string ;
         schema:url "https://www.ncbi.nlm.nih.gov/protein/"^^xsd:anyURI ;
         schema:target [

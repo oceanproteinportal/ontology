@@ -53,7 +53,7 @@ function loadTOC(){
 <div class="head">
   <div id="github-fork"><a href="https://github.com/oceanproteinportal/ontology"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png"></a></div>
   <h1>Ocean Protein Portal Ver. 2</h1>
-<h2>Release  05/07/2021</h2>
+<h2>Release  05/21/2021</h2>
 
 
 <dl>
@@ -685,6 +685,10 @@ This ontology has the following classes and properties.</span>
    <li>
       <a href="#aminoAcidSequence"
          title="http://schema.oceanproteinportal.org/v2/aminoAcidSequence">aminoAcidSequence</a>
+   </li>
+   <li>
+      <a href="#bestProtein"
+         title="http://schema.oceanproteinportal.org/v2/bestProtein">bestProtein</a>
    </li>
    <li>
       <a href="#bestSEQUESTDCnScore"
@@ -3454,7 +3458,9 @@ This section provides details for each class and property defined by Ocean Prote
       <dl class="description">
          <dt>is in domain of</dt>
          <dd>
-            <a href="#forProteinIdentification"
+            <a href="#bestProtein"
+               title="http://schema.oceanproteinportal.org/v2/bestProtein">bestProtein</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#forProteinIdentification"
                title="http://schema.oceanproteinportal.org/v2/forProteinIdentification">forProteinIdentification</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
@@ -6127,6 +6133,10 @@ This section provides details for each class and property defined by Ocean Prote
             title="http://schema.oceanproteinportal.org/v2/aminoAcidSequence">aminoAcidSequence</a>
       </li>
       <li>
+         <a href="#bestProtein"
+            title="http://schema.oceanproteinportal.org/v2/bestProtein">bestProtein</a>
+      </li>
+      <li>
          <a href="#bestSEQUESTDCnScore"
             title="http://schema.oceanproteinportal.org/v2/bestSEQUESTDCnScore">bestSEQUESTDCnScore</a>
       </li>
@@ -6370,6 +6380,33 @@ This section provides details for each class and property defined by Ocean Prote
             <dt>has range</dt>
             <dd>
                <span class="dotted" title="http://www.w3.org/2001/XMLSchema#token">token</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="bestProtein">
+      <h3>bestProtein<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://schema.oceanproteinportal.org/v2/bestProtein</p>
+      <div class="comment">
+         <span class="markdown">Specifies that the related ProteinIdentification is the best identified protein.</span>
+      </div>
+      <div class="description">
+         <p>
+            <strong>has characteristics:</strong> functional</p>
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#PeptideIdentifiedProtein"
+                  title="http://schema.oceanproteinportal.org/v2/PeptideIdentifiedProtein">PeptideIdentifiedProtein</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</span>
             </dd>
          </dl>
       </div>

@@ -978,6 +978,18 @@
     
 
 
+    <!-- http://schema.oceanproteinportal.org/v2/bestProtein -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.oceanproteinportal.org/v2/bestProtein">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://schema.oceanproteinportal.org/v2/PeptideIdentifiedProtein"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Specifies that the related ProteinIdentification is the best identified protein.</rdfs:comment>
+        <rdfs:label>bestProtein</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://schema.oceanproteinportal.org/v2/bestSEQUESTDCnScore -->
 
     <owl:DatatypeProperty rdf:about="http://schema.oceanproteinportal.org/v2/bestSEQUESTDCnScore">

@@ -702,6 +702,15 @@ owl:sameAs rdf:type owl:AnnotationProperty .
                    rdfs:label "aminoAcidSequence" .
 
 
+###  http://schema.oceanproteinportal.org/v2/bestProtein
+:bestProtein rdf:type owl:DatatypeProperty ,
+                      owl:FunctionalProperty ;
+             rdfs:domain :PeptideIdentifiedProtein ;
+             rdfs:range xsd:boolean ;
+             rdfs:comment "Specifies that the related ProteinIdentification is the best identified protein." ;
+             rdfs:label "bestProtein" .
+
+
 ###  http://schema.oceanproteinportal.org/v2/bestSEQUESTDCnScore
 :bestSEQUESTDCnScore rdf:type owl:DatatypeProperty ,
                               owl:FunctionalProperty ;

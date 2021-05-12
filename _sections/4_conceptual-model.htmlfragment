@@ -13,3 +13,12 @@ Add your references here. It is recommended to have them as a list.</span>
  <div id="conceptual-model-agentrole"><h3>Agent Role <span class="backlink"> back to <a href="#toc">ToC</a></span></h3><img src="https://lucid.app/publicSegments/view/0df85414-42b6-4601-9293-956c39559249/image.png"></div>
 </div>
 <div id="acknowledgements">
+<h2 id="ack" class="list">Acknowledgements <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<p>
+The authors would like to thank <a href="http://www.essepuntato.it/">Silvio Peroni</a> for developing <a href="http://www.essepuntato.it/lode">LODE</a>, a Live OWL Documentation Environment, which is used for representing the Cross Referencing Section of this document and <a href="https://w3id.org/people/dgarijo">Daniel Garijo</a> for developing <a href="https://github.com/dgarijo/Widoco">Widoco</a>, the program used to create the template used in this documentation.</p>
+</div>
+
+
+</div>
+</body>
+</html>
