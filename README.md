@@ -7,7 +7,7 @@ The Ocean Protein Portal Ontology is an application ontology used to formalize s
 
 ## WebVOWL Visualization
 
-http://www.visualdataweb.de/webvowl/#iri=https://raw.githubusercontent.com/oceanproteinportal/ontology/main/opp.owl
+http://www.visualdataweb.de/webvowl/#iri=https://raw.githubusercontent.com/oceanproteinportal/ontology/main/v2/opp.owl
 
 ## Conceptual Model
 
