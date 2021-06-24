@@ -1942,13 +1942,13 @@
     "@type" : "http://www.w3.org/2001/XMLSchema#token",
     "@value" : "peptide_start_index"
   } ],
+  "http://schema.oceanproteinportal.org/v2/parameterValueRecommended" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#boolean",
+    "@value" : "true"
+  } ],
   "http://schema.org/multipleValues" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#boolean",
     "@value" : "false"
-  } ],
-  "http://schema.org/valueRequired" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#boolean",
-    "@value" : "true"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "DataResourceParameter_PeptideSpectralCount_Peptide-StartIndex"
@@ -1972,13 +1972,13 @@
     "@type" : "http://www.w3.org/2001/XMLSchema#token",
     "@value" : "peptide_stop_index"
   } ],
+  "http://schema.oceanproteinportal.org/v2/parameterValueRecommended" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#boolean",
+    "@value" : "true"
+  } ],
   "http://schema.org/multipleValues" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#boolean",
     "@value" : "false"
-  } ],
-  "http://schema.org/valueRequired" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#boolean",
-    "@value" : "true"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "DataResourceParameter_PeptideSpectralCount_Peptide-StopIndex"

@@ -31,10 +31,10 @@
         <rdfs:seeAlso>https://proteinportal.whoi.edu/</rdfs:seeAlso>
         <owl:versionInfo>2</owl:versionInfo>
     </owl:Ontology>
+    
 
 
-
-    <!--
+    <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Annotation properties
@@ -42,49 +42,49 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-
+    
 
 
     <!-- http://purl.org/dc/terms/creator -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
-
+    
 
 
     <!-- http://purl.org/dc/terms/description -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description"/>
-
+    
 
 
     <!-- http://purl.org/dc/terms/issued -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/issued"/>
-
+    
 
 
     <!-- http://purl.org/dc/terms/license -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
-
+    
 
 
     <!-- http://purl.org/dc/terms/modified -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/modified"/>
-
+    
 
 
     <!-- http://purl.org/dc/terms/publisher -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/publisher"/>
-
+    
 
 
     <!-- http://purl.org/dc/terms/title -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/conceptualModel -->
@@ -95,7 +95,7 @@
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
         <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
     </owl:AnnotationProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/describedinConceptualModelOf -->
@@ -106,7 +106,7 @@
         <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
         <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
     </owl:AnnotationProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/frictionlessDataProfile -->
@@ -117,7 +117,7 @@
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#token"/>
         <rdfs:domain rdf:resource="http://schema.oceanproteinportal.org/v2/FileType"/>
     </owl:AnnotationProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/frictionlessDataValueType -->
@@ -129,7 +129,7 @@
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#token"/>
         <rdfs:domain rdf:resource="http://schema.org/DataType"/>
     </owl:AnnotationProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/parameterValueConstraints -->
@@ -139,7 +139,7 @@
         <rdfs:label>parameterValueConstraints</rdfs:label>
         <rdfs:seeAlso>https://specs.frictionlessdata.io/table-schema/#constraints</rdfs:seeAlso>
     </owl:AnnotationProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/parameterValueDelimiter -->
@@ -149,7 +149,7 @@
         <rdfs:label>parameterValueDelimiter</rdfs:label>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#token"/>
     </owl:AnnotationProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/parameterValueMissingValues -->
@@ -159,7 +159,7 @@
         <rdfs:label>parameterValueMissingValues</rdfs:label>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#token"/>
     </owl:AnnotationProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/registrySchemeTemplateReplacementToken -->
@@ -168,16 +168,16 @@
         <rdfs:comment>The string of charactersin any template value of an IdentifierRegistryScheme or IdentifierRegistryService, encoded for regular expression,  that could be replaced with the value of an Identifier&apos;s identifierValue.</rdfs:comment>
         <rdfs:label>registrySchemeTemplateReplacementToken</rdfs:label>
     </owl:AnnotationProperty>
-
+    
 
 
     <!-- http://www.w3.org/2002/07/owl#sameAs -->
 
     <owl:AnnotationProperty rdf:about="http://www.w3.org/2002/07/owl#sameAs"/>
+    
 
 
-
-    <!--
+    <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Object Properties
@@ -185,7 +185,7 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/aboutIdentifier -->
@@ -197,7 +197,7 @@
         <rdfs:comment>This metadata is about the specified Identifier</rdfs:comment>
         <rdfs:label>aboutIdentifier</rdfs:label>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/aggregatesDataFrom -->
@@ -208,7 +208,7 @@
         <rdfs:comment>This Dataset is comprised of the following other DataResources.</rdfs:comment>
         <rdfs:label>aggregatesDataFrom</rdfs:label>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/annotatesIdentifier -->
@@ -220,7 +220,7 @@
         <rdfs:comment>The identifer for which this information object annotates</rdfs:comment>
         <rdfs:label>annotatesIdentifier</rdfs:label>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/conformsToProfile -->
@@ -238,7 +238,7 @@
         <rdfs:comment>The dataset conforms to the Dataset Profile. Meaning to presents the profile&apos;s expected observations.</rdfs:comment>
         <rdfs:label>conformsToProfile</rdfs:label>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/datasetType -->
@@ -249,7 +249,7 @@
         <rdfs:comment>Defines the type of Dataset or DataResource.</rdfs:comment>
         <rdfs:label>datasetType</rdfs:label>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/definesIdentifierScheme -->
@@ -260,7 +260,7 @@
         <rdfs:comment>The IdentifierScheme defined by some Thing. In the case fo the OPP, a single Dataset defines an IdentifierScheme for its local identifiers.</rdfs:comment>
         <rdfs:label>definesIdentifierScheme</rdfs:label>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/definesValuesForParameter -->
@@ -272,7 +272,7 @@
         <rdfs:comment>This Specification is being defined for the following DataParameter.</rdfs:comment>
         <rdfs:label>definesValuesForParameter</rdfs:label>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/dependsOnParameter -->
@@ -283,7 +283,7 @@
         <rdfs:comment>A another DataResourceParameter which must exist in a DataResource for  the DatasetProfile to be valid for a conforming Dataset.</rdfs:comment>
         <rdfs:label>dependsOnParameter</rdfs:label>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/describedByIdentification -->
@@ -295,7 +295,7 @@
         <rdfs:comment>The  identification that describes this amino acid</rdfs:comment>
         <rdfs:label>describedByIdentification</rdfs:label>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/describedByMetadataResource -->
@@ -307,7 +307,7 @@
         <rdfs:comment>The MetadataResource that describes this OPPDataset</rdfs:comment>
         <rdfs:label>describedByMetadataResource</rdfs:label>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/describesAminoAcid -->
@@ -319,7 +319,7 @@
         <rdfs:comment>The AminoAcidChain being described by this information.</rdfs:comment>
         <rdfs:label>describesAminoAcid</rdfs:label>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/describesPeptide -->
@@ -332,7 +332,7 @@
         <rdfs:comment>The actual Peptide being described by this information.</rdfs:comment>
         <rdfs:label>describesPeptide</rdfs:label>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/describesProtein -->
@@ -345,7 +345,7 @@
         <rdfs:comment>The actual Protein being described by this Protien information.</rdfs:comment>
         <rdfs:label>describesProtein</rdfs:label>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/forProteinIdentification -->
@@ -357,7 +357,7 @@
         <rdfs:comment>The ProteinIdentification suggested by the Peptide.</rdfs:comment>
         <rdfs:label>forProteinIdentification</rdfs:label>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/hasAgentRole -->
@@ -368,7 +368,7 @@
         <rdfs:comment>An AgentRole in which an Agent performs some Role on this particular Thing.</rdfs:comment>
         <rdfs:label>hasAgentRole</rdfs:label>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/hasFilterSize -->
@@ -381,7 +381,7 @@
         <rdfs:comment>The size of the filter(s) being used during the sampling process. This could be a single value using schema:value property or a range of sizes using schema:minValue &amp; schema:maxValue.</rdfs:comment>
         <rdfs:label>hasFilterSize</rdfs:label>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/identificationBasedOnScore -->
@@ -393,7 +393,7 @@
         <rdfs:comment>The score used to determine an amino acid&apos;s identification</rdfs:comment>
         <rdfs:label>identificationBasedOnScore</rdfs:label>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/identificationScore -->
@@ -404,7 +404,7 @@
         <rdfs:comment>The score within a certain system for identifying an amino acid.</rdfs:comment>
         <rdfs:label>identificationScore</rdfs:label>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/identifier -->
@@ -416,7 +416,7 @@
         <rdfs:comment>An Identifier with a known IdentifierScheme for some Thing.</rdfs:comment>
         <rdfs:label>identifier</rdfs:label>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/identifierMetadata -->
@@ -427,7 +427,7 @@
         <rdfs:comment>An information record that annotated or further describes this Identifier.</rdfs:comment>
         <rdfs:label>identifierMetadata</rdfs:label>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/identifierScheme -->
@@ -441,7 +441,7 @@
         <rdfs:comment>The scheme in which this Identifier has a unique value.</rdfs:comment>
         <rdfs:label>identifierScheme</rdfs:label>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/inRole -->
@@ -454,7 +454,7 @@
         <rdfs:comment>Role being performed by some Agent</rdfs:comment>
         <rdfs:label>inRole</rdfs:label>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/inVicinityOfStation -->
@@ -466,7 +466,7 @@
         <rdfs:comment>The one, named or mutally agreed upon location at which Sampling occurred. This usually means a single coordinate at which sampling occurs depsite any variance in the location of the sensor at the time of measurement. This Station helps to normalize the intent of sampling at a certain location for cross-comparison between datasets.</rdfs:comment>
         <rdfs:label>inVicinityOfStation</rdfs:label>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/includesDataParameterInSet -->
@@ -477,7 +477,7 @@
         <rdfs:comment>A DataResourceParameter that is included in a DataResourceParameterSet.</rdfs:comment>
         <rdfs:label>includesDataParameterInSet</rdfs:label>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/isAgentRoleFor -->
@@ -488,7 +488,7 @@
         <rdfs:comment>The Thing on/in which an Agent performs some Role.</rdfs:comment>
         <rdfs:label>isAgentRoleFor</rdfs:label>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/isForeignKeyTo -->
@@ -500,7 +500,7 @@
         <rdfs:comment>A DataResourceParameter that acts as a foreign key in some other, disjoint DataResource for the purpose of joining/linking data .</rdfs:comment>
         <rdfs:label>isForeignKeyTo</rdfs:label>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/isIdentifierOf -->
@@ -511,7 +511,7 @@
         <rdfs:comment>The thing being identified</rdfs:comment>
         <rdfs:label>isIdentifierOf</rdfs:label>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/isIdentifierSchemeFor -->
@@ -524,7 +524,7 @@
         <rdfs:comment>An Identifier that bleongs within this scheme.</rdfs:comment>
         <rdfs:label>isIdentifierSchemeFor</rdfs:label>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/isInstanceOf -->
@@ -535,7 +535,7 @@
         <rdfs:comment>An real-world instance of some conceptual thing.</rdfs:comment>
         <rdfs:label>isInstanceOf</rdfs:label>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/keggOrthology -->
@@ -546,7 +546,7 @@
         <rdfs:range rdf:resource="http://schema.oceanproteinportal.org/v2/KeggOrthology"/>
         <rdfs:label>keggOrthology</rdfs:label>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/keggPathway -->
@@ -558,7 +558,7 @@
         <rdfs:comment>A Pathway for some Kegg Orthology entry.</rdfs:comment>
         <rdfs:label>keggPathway</rdfs:label>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/keggPathwayForOrthology -->
@@ -569,7 +569,7 @@
         <rdfs:comment>The orthology for which this pathway belongs</rdfs:comment>
         <rdfs:label>keggPathwayForOrthology</rdfs:label>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/ncbiTaxonName -->
@@ -581,7 +581,7 @@
         <rdfs:comment>The NCBI Identifier for which this name describes.</rdfs:comment>
         <rdfs:label>ncbiTaxonName</rdfs:label>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/observationInSample -->
@@ -593,7 +593,7 @@
         <rdfs:comment>An observation made about a single Sample for some identified amino acid.</rdfs:comment>
         <rdfs:label>observationInSample</rdfs:label>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/observedPeptide -->
@@ -604,7 +604,7 @@
         <rdfs:comment>The PeptideIdentification being asserted by the observer of some Sample.</rdfs:comment>
         <rdfs:label>observedPeptide</rdfs:label>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/offersResolvingService -->
@@ -617,7 +617,7 @@
         <rdfs:comment>The identifier resolving service offered by an identifier registry&apos;s support for some identifier scheme</rdfs:comment>
         <rdfs:label>offersResolvingService</rdfs:label>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/parameterDataType -->
@@ -629,7 +629,7 @@
         <rdfs:comment>The expected data type for all values of this DataResourceParameter. This helps the OPP understand how to process, visualize, and serialize these data.</rdfs:comment>
         <rdfs:label>parameterDataType</rdfs:label>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/parameterInResourceType -->
@@ -641,7 +641,7 @@
         <rdfs:comment>A the DataResourceType for which this DataResourceParameter specifies.</rdfs:comment>
         <rdfs:label>parameterInResourceType</rdfs:label>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/performedAgentRole -->
@@ -654,7 +654,7 @@
         <rdfs:comment>The AgentRole which was performed by this Agent</rdfs:comment>
         <rdfs:label>performedAgentRole</rdfs:label>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/performedAtOrganization -->
@@ -666,7 +666,7 @@
         <rdfs:comment>The Organization at which the acting Agent performed the Role</rdfs:comment>
         <rdfs:label>performedAtOrganization</rdfs:label>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/performedBy -->
@@ -678,7 +678,7 @@
         <rdfs:comment>The Agent acting in some Role.</rdfs:comment>
         <rdfs:label>performedBy</rdfs:label>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/performedOnBehalfOf -->
@@ -689,7 +689,7 @@
         <rdfs:comment>The Agent for which the performing Agent is acting in a certain Role.</rdfs:comment>
         <rdfs:label>performedOnBehalfOf</rdfs:label>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/processableFileType -->
@@ -700,7 +700,7 @@
         <rdfs:comment>A file type for which the OPP knows how to process for ingestion</rdfs:comment>
         <rdfs:label>processableFileType</rdfs:label>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/providesRole -->
@@ -711,7 +711,7 @@
         <rdfs:comment>The existence of some Thing provides the ability for some Agent to perform this Role.</rdfs:comment>
         <rdfs:label>providesRole</rdfs:label>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/providesServicesFor -->
@@ -723,7 +723,7 @@
         <rdfs:comment>The IdentifierScheme for which this IdentifierRegistryScheme provides certain Identifier services for</rdfs:comment>
         <rdfs:label>providesServicesFor</rdfs:label>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/requiresOneParameterFromSet -->
@@ -734,7 +734,7 @@
         <rdfs:comment>The DatasetProfile requires that at least one of the DataParameters described by this set of DataResourceParameters is required in the OPPDataset that conforms to the DatasetProfile.</rdfs:comment>
         <rdfs:label>requiresOneParameterFromSet</rdfs:label>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/resolvesIdentifiersFor -->
@@ -746,7 +746,7 @@
         <rdfs:comment>The identfier scheme at some registry for which this service resolves identifiers for.</rdfs:comment>
         <rdfs:label>resolvesIdentifiersFor</rdfs:label>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/roleFor -->
@@ -758,7 +758,7 @@
         <rdfs:comment>An AgentRole performing this specific Role</rdfs:comment>
         <rdfs:label>roleFor</rdfs:label>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/sampleAminoAcidProperty -->
@@ -771,7 +771,7 @@
         <rdfs:comment>An observation made from a single Sample about an identified amino acid</rdfs:comment>
         <rdfs:label>sampleAminoAcidProperty</rdfs:label>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/sampleFromCruise -->
@@ -782,7 +782,7 @@
         <rdfs:comment>A pointer to the Cruise that hosted the Sampling Sensor</rdfs:comment>
         <rdfs:label>sampleFromCruise</rdfs:label>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/samplePeptideProperty -->
@@ -794,7 +794,7 @@
         <rdfs:comment>An observation made from a single Sample about an identified peptide</rdfs:comment>
         <rdfs:label>samplePeptideProperty</rdfs:label>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/sampleProteinProperty -->
@@ -806,7 +806,7 @@
         <rdfs:comment>An observation made from a single Sample about an identified protein</rdfs:comment>
         <rdfs:label>sampleProteinProperty</rdfs:label>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/serializesMetadataFor -->
@@ -817,7 +817,7 @@
         <rdfs:comment>The Dataset for which this MetadataResource contains a metadata description of.</rdfs:comment>
         <rdfs:label>serializesMetadataFor</rdfs:label>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/storesResultsForSample -->
@@ -828,7 +828,7 @@
         <rdfs:comment>A sample for which this Dataset stores observations results for.</rdfs:comment>
         <rdfs:label>storesResultsForSample</rdfs:label>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/suggestsProtein -->
@@ -839,7 +839,7 @@
         <rdfs:comment>This peptide suggests that the following ProteinIdentification (linked via forProteinIdentification).</rdfs:comment>
         <rdfs:label>suggestsProtein</rdfs:label>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/supportsIdentifierSchemeWith -->
@@ -851,7 +851,7 @@
         <rdfs:comment>An IdentifierRegistry&apos;s interpretation of some IdentifierScheme through which thee registry offer&apos;s resolving services.</rdfs:comment>
         <rdfs:label>supportsIdentifierSchemeWith</rdfs:label>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/unitsReportedIn -->
@@ -862,7 +862,7 @@
         <rdfs:comment>The units that are expected for a certain DataParameter within a DataResource.</rdfs:comment>
         <rdfs:label>unitsReportedIn</rdfs:label>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/usesDataResourceParameter -->
@@ -873,64 +873,64 @@
         <rdfs:comment>A DataResourceParameter for which the DatasetProfile specifies certain restrictions or expectations.</rdfs:comment>
         <rdfs:label>usesDataResourceParameter</rdfs:label>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- http://schema.org/agent -->
 
     <owl:ObjectProperty rdf:about="http://schema.org/agent"/>
-
+    
 
 
     <!-- http://schema.org/location -->
 
     <owl:ObjectProperty rdf:about="http://schema.org/location"/>
-
+    
 
 
     <!-- http://schema.org/offers -->
 
     <owl:ObjectProperty rdf:about="http://schema.org/offers"/>
-
+    
 
 
     <!-- http://schema.org/potentialAction -->
 
     <owl:ObjectProperty rdf:about="http://schema.org/potentialAction"/>
-
+    
 
 
     <!-- http://schema.org/target -->
 
     <owl:ObjectProperty rdf:about="http://schema.org/target"/>
-
+    
 
 
     <!-- http://schema.org/variableMeasured -->
 
     <owl:ObjectProperty rdf:about="http://schema.org/variableMeasured"/>
-
+    
 
 
     <!-- http://www.w3.org/ns/sosa/hasFeatureOfInterest -->
 
     <owl:ObjectProperty rdf:about="http://www.w3.org/ns/sosa/hasFeatureOfInterest"/>
-
+    
 
 
     <!-- http://www.w3.org/ns/sosa/observedProperty -->
 
     <owl:ObjectProperty rdf:about="http://www.w3.org/ns/sosa/observedProperty"/>
-
+    
 
 
     <!-- http://www.w3.org/ns/ssn/systems/hasSystemCapability -->
 
     <owl:ObjectProperty rdf:about="http://www.w3.org/ns/ssn/systems/hasSystemCapability"/>
+    
 
 
-
-    <!--
+    <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Data properties
@@ -938,7 +938,7 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/absoluteUnits -->
@@ -951,7 +951,7 @@
         <rdfs:comment>absolute units of a peptide or protein identification measured in fmol/liter</rdfs:comment>
         <rdfs:label>absoluteUnits</rdfs:label>
     </owl:DatatypeProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/aminoAcidName -->
@@ -963,7 +963,7 @@
         <rdfs:comment>The name given to the amino acid being identified by some identifying agent.</rdfs:comment>
         <rdfs:label>aminoAcidName</rdfs:label>
     </owl:DatatypeProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/aminoAcidSequence -->
@@ -975,7 +975,7 @@
         <rdfs:comment>The amino acid chain, written as a string of characters, that identifies a specific amino acid.</rdfs:comment>
         <rdfs:label>aminoAcidSequence</rdfs:label>
     </owl:DatatypeProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/bestProtein -->
@@ -987,7 +987,7 @@
         <rdfs:comment>Specifies that the related ProteinIdentification is the best identified protein.</rdfs:comment>
         <rdfs:label>bestProtein</rdfs:label>
     </owl:DatatypeProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/bestSEQUESTDCnScore -->
@@ -999,7 +999,7 @@
         <rdfs:comment>The best SEQUEST DCn score</rdfs:comment>
         <rdfs:label>bestSEQUESTDCnScore</rdfs:label>
     </owl:DatatypeProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/bestSEQUESTXCorrScore -->
@@ -1011,7 +1011,7 @@
         <rdfs:comment>The best SEQUEST XCorr score</rdfs:comment>
         <rdfs:label>bestSEQUESTXCorrScore</rdfs:label>
     </owl:DatatypeProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/cruiseID -->
@@ -1022,7 +1022,7 @@
         <rdfs:comment>Some label for a certain cruise on which an OPP Dataset was collected.</rdfs:comment>
         <rdfs:label>cruiseID</rdfs:label>
     </owl:DatatypeProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/depth -->
@@ -1035,7 +1035,7 @@
         <rdfs:label>depth</rdfs:label>
         <rdfs:seeAlso rdf:resource="ssn:hasProperty"/>
     </owl:DatatypeProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/identificationProbability -->
@@ -1047,7 +1047,7 @@
         <rdfs:comment>Thee probability of the correctness/confidence of the identification</rdfs:comment>
         <rdfs:label>identificationProbability</rdfs:label>
     </owl:DatatypeProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/identifierValue -->
@@ -1058,7 +1058,7 @@
         <rdfs:comment>The unique value in some IdentifierScheme</rdfs:comment>
         <rdfs:label>identifierValue</rdfs:label>
     </owl:DatatypeProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/keggName -->
@@ -1077,7 +1077,7 @@
         <rdfs:comment>The name of some Entry in the Kegg Database. This could be thee name of an Orthology or Pathway, etc.</rdfs:comment>
         <rdfs:label>keggName</rdfs:label>
     </owl:DatatypeProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/keggOrthologyDefinition -->
@@ -1092,7 +1092,7 @@
 Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1 1.7.99.-]&quot; via `https://www.genome.jp/dbget-bin/www_bget?K00370`</rdfs:comment>
         <rdfs:label>keggOrthologyDefinition</rdfs:label>
     </owl:DatatypeProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/maximumFilterSize -->
@@ -1104,7 +1104,7 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         <rdfs:comment>The maximum size of the filter used during sampling. Measured in microns.</rdfs:comment>
         <rdfs:label>maximumFilterSize</rdfs:label>
     </owl:DatatypeProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/medianRetentionTime -->
@@ -1115,7 +1115,7 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <rdfs:label>medianRetentionTime</rdfs:label>
     </owl:DatatypeProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/minimumFilterSize -->
@@ -1127,7 +1127,7 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         <rdfs:comment>The minimum size of a filter used during sampling. Mesaured in microns.</rdfs:comment>
         <rdfs:label>minimumFilterSize</rdfs:label>
     </owl:DatatypeProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/multiValuedDefaultDelimiter -->
@@ -1139,7 +1139,7 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         <rdfs:comment>For a DataResourceParameter that can have multiple values (schema:multipleValues == TRUE), this is the default delimiter to be used for parsing DataResourceTypes that encode all values into one. One example might be tabular data where a cell contains multiple values separated by a semicolon.</rdfs:comment>
         <rdfs:label>multiValuedDefaultDelimiter</rdfs:label>
     </owl:DatatypeProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/parameterNameInResource -->
@@ -1152,7 +1152,7 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         <rdfs:comment>The name of the parameter within the DataResource.</rdfs:comment>
         <rdfs:label>parameterNameInResource</rdfs:label>
     </owl:DatatypeProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/parameterValueRecommended -->
@@ -1164,7 +1164,7 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         <rdfs:comment>Specifies whether a DatasetProfile recommends that a certain DataParameter exist in a DataResource. Recommendation doesn&apos;t mean its required, but rather it would be useful for data consumers.</rdfs:comment>
         <rdfs:label>parameterValueRecommended</rdfs:label>
     </owl:DatatypeProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/parameterValueRegexPattern -->
@@ -1176,7 +1176,7 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         <rdfs:comment>A regex pattern defining how to find the portion of a property&apos;s value that should be used as it&apos;s actual value. Example&quot;: a property with values that contain the units in the value like &apos;255 kDa&apos; could be processed to obtain the numeric value with a parameterValueRegexPattern defined as &quot;([0-9.]+)\ kDa&quot;.</rdfs:comment>
         <rdfs:label>parameterValueRegexPattern</rdfs:label>
     </owl:DatatypeProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/peptideSequence -->
@@ -1189,7 +1189,7 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         <rdfs:comment>The amino acid chain, written as a string of characters, that identifies a specific Peptide.</rdfs:comment>
         <rdfs:label>peptideSequence</rdfs:label>
     </owl:DatatypeProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/plus2HSpectraCount -->
@@ -1200,7 +1200,7 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <rdfs:label>plus2HSpectraCount</rdfs:label>
     </owl:DatatypeProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/plus3HSpectraCount -->
@@ -1211,7 +1211,7 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <rdfs:label>plus3HSpectraCount</rdfs:label>
     </owl:DatatypeProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/plus4HSpectraCount -->
@@ -1222,7 +1222,7 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <rdfs:label>plus4HSpectraCount</rdfs:label>
     </owl:DatatypeProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/positionInDataResource -->
@@ -1234,7 +1234,7 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         <rdfs:comment>The position in a DataResource could mean the column number in a tabular file or for FASTA files mean that the identfier = position #1 and the sequence = position #2.</rdfs:comment>
         <rdfs:label>positionInDataResource</rdfs:label>
     </owl:DatatypeProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/proteinIdentifier -->
@@ -1246,7 +1246,7 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         <rdfs:comment>A convenience property that is a proxy for opp:identifier =&gt; opp:DatasetProteinIdentifier =&gt; identifierValue</rdfs:comment>
         <rdfs:label>proteinIdentifier</rdfs:label>
     </owl:DatatypeProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/proteinName -->
@@ -1259,7 +1259,7 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         <rdfs:comment>The name given to the protein being identified by some identifying agent.</rdfs:comment>
         <rdfs:label>proteinName</rdfs:label>
     </owl:DatatypeProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/proteinSequence -->
@@ -1272,7 +1272,7 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         <rdfs:comment>The amino acid chain, written as a string of characters, that identifies a specific Protein.</rdfs:comment>
         <rdfs:label>proteinSequence</rdfs:label>
     </owl:DatatypeProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/proteinSpectralCount -->
@@ -1284,7 +1284,7 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         <rdfs:comment>The observed spectral count for a single protein from a single sample</rdfs:comment>
         <rdfs:label>proteinSpectralCount</rdfs:label>
     </owl:DatatypeProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/registrySchemePrefix -->
@@ -1295,7 +1295,7 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         <rdfs:comment>The unique prefix within an IdentifierRegistry for representing identifiers for the associated IdentifierScheme</rdfs:comment>
         <rdfs:label>registrySchemePrefix</rdfs:label>
     </owl:DatatypeProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/registrySchemePrefixIdTemplate -->
@@ -1307,7 +1307,7 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         <rdfs:label>registrySchemePrefixIdTemplate</rdfs:label>
         <rdfs:seeAlso rdf:resource="http://schema.oceanproteinportal.org/v2/registrySchemeTemplateReplacementToken"/>
     </owl:DatatypeProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/registrySchemeURI -->
@@ -1319,7 +1319,7 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         <rdfs:comment>The URI that unqiuely identifies the associated IdentifierScheme within an IdentifierRegistry</rdfs:comment>
         <rdfs:label>registrySchemeURI</rdfs:label>
     </owl:DatatypeProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/registrySchemeURLTemplate -->
@@ -1332,7 +1332,7 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         <rdfs:label>registrySchemeURLTemplate</rdfs:label>
         <rdfs:seeAlso rdf:resource="http://schema.oceanproteinportal.org/v2/registrySchemeTemplateReplacementToken"/>
     </owl:DatatypeProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/scoreValue -->
@@ -1343,7 +1343,7 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         <rdfs:comment>The value of some score using a scoring method to identify an amino acid.</rdfs:comment>
         <rdfs:label>scoreValue</rdfs:label>
     </owl:DatatypeProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/shortName -->
@@ -1355,7 +1355,7 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         <rdfs:comment>The name or label used in the OPP user interface to identify a OPPDataset. This is used for readability.</rdfs:comment>
         <rdfs:label>shortName</rdfs:label>
     </owl:DatatypeProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/spectralCountSum -->
@@ -1368,7 +1368,7 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         <rdfs:comment>The sum of the +2, +3, +4 spectra counts.</rdfs:comment>
         <rdfs:label>spectralCountSum</rdfs:label>
     </owl:DatatypeProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/startIndex -->
@@ -1379,7 +1379,7 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         <rdfs:comment>The start index</rdfs:comment>
         <rdfs:label>startIndex</rdfs:label>
     </owl:DatatypeProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/stationName -->
@@ -1390,7 +1390,7 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         <rdfs:comment>The name of some Station.</rdfs:comment>
         <rdfs:label>stationName</rdfs:label>
     </owl:DatatypeProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/stopIndex -->
@@ -1401,7 +1401,7 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         <rdfs:comment>The stop index</rdfs:comment>
         <rdfs:label>stopIndex</rdfs:label>
     </owl:DatatypeProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/totalPrecursorIntensity -->
@@ -1412,7 +1412,7 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <rdfs:label>totalPrecursorIntensity</rdfs:label>
     </owl:DatatypeProperty>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/totalTIC -->
@@ -1423,88 +1423,88 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <rdfs:label>totalTIC</rdfs:label>
     </owl:DatatypeProperty>
-
+    
 
 
     <!-- http://schema.org/alternateName -->
 
     <owl:DatatypeProperty rdf:about="http://schema.org/alternateName"/>
-
+    
 
 
     <!-- http://schema.org/defaultValue -->
 
     <owl:DatatypeProperty rdf:about="http://schema.org/defaultValue"/>
-
+    
 
 
     <!-- http://schema.org/description -->
 
     <owl:DatatypeProperty rdf:about="http://schema.org/description"/>
-
+    
 
 
     <!-- http://schema.org/encodingFormat -->
 
     <owl:DatatypeProperty rdf:about="http://schema.org/encodingFormat"/>
-
+    
 
 
     <!-- http://schema.org/identifier -->
 
     <owl:DatatypeProperty rdf:about="http://schema.org/identifier"/>
-
+    
 
 
     <!-- http://schema.org/maxValue -->
 
     <owl:DatatypeProperty rdf:about="http://schema.org/maxValue"/>
-
+    
 
 
     <!-- http://schema.org/minValue -->
 
     <owl:DatatypeProperty rdf:about="http://schema.org/minValue"/>
-
+    
 
 
     <!-- http://schema.org/multipleValues -->
 
     <owl:DatatypeProperty rdf:about="http://schema.org/multipleValues"/>
-
+    
 
 
     <!-- http://schema.org/name -->
 
     <owl:DatatypeProperty rdf:about="http://schema.org/name"/>
-
+    
 
 
     <!-- http://schema.org/url -->
 
     <owl:DatatypeProperty rdf:about="http://schema.org/url"/>
-
+    
 
 
     <!-- http://schema.org/value -->
 
     <owl:DatatypeProperty rdf:about="http://schema.org/value"/>
-
+    
 
 
     <!-- http://schema.org/valueName -->
 
     <owl:DatatypeProperty rdf:about="http://schema.org/valueName"/>
-
+    
 
 
     <!-- http://schema.org/valueRequired -->
 
     <owl:DatatypeProperty rdf:about="http://schema.org/valueRequired"/>
+    
 
 
-
-    <!--
+    <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Classes
@@ -1512,7 +1512,7 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/Agent -->
@@ -1522,7 +1522,7 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         <rdfs:comment>An abstract class for specifying a person, organization or software entity that performs some action acting in some predefined role.</rdfs:comment>
         <rdfs:label>Agent</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/AgentIdentifier -->
@@ -1538,7 +1538,7 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         <rdfs:comment>An identifier for an Agent</rdfs:comment>
         <rdfs:label>AgentIdentifier</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/AgentRole -->
@@ -1587,7 +1587,7 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         <rdfs:comment>An agent performing some Role over a certain period of time (which may be unbounded).</rdfs:comment>
         <rdfs:label>AgentRole</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/AminoAcidChain -->
@@ -1611,7 +1611,7 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">An actual amino acid. This is not to contain information that helps identify an amino acid, but represents the amino acid being identified. Any information here, should be shared by all other representations of the amino acid.</rdfs:comment>
         <rdfs:label>AminoAcidChain</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/AminoAcidIdentification -->
@@ -1621,7 +1621,7 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         <rdfs:comment>An information object for storing data about an amino acid.</rdfs:comment>
         <rdfs:label>AminoAcidIdentification</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/AminoAcidSampleObservation -->
@@ -1648,7 +1648,7 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         <rdfs:comment>A property of some amino acid that was observed in a single Sample.</rdfs:comment>
         <rdfs:label>AminoAcidSampleObservation</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/BestProteinIdentification -->
@@ -1658,7 +1658,7 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         <rdfs:comment>The best/selected identification of a specific Protein based on information in a PeptideIdentification. This means that a PeptideIdentification may have multiple Proteins that it identifies but that one of those proteins has been selected (identifiedBy) as the best identification.</rdfs:comment>
         <rdfs:label>BestProteinIdentification</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/BestSEQUESTDCnScore -->
@@ -1675,7 +1675,7 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">The best SEQUEST DCn score for identifying an amino acid.</rdfs:comment>
         <rdfs:label>BestSEQUESTDCnScore</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/BestSEQUESTXCorrScore -->
@@ -1692,7 +1692,7 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">The best SEQUEST XCorr score for identifying an amino acid.</rdfs:comment>
         <rdfs:label>BestSEQUESTXCorrScore</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/Cruise -->
@@ -1710,7 +1710,7 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         <rdfs:comment>A deployment of some seagoing vessel on which one or more scientific objectives are studied.</rdfs:comment>
         <rdfs:label>Cruise</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataParameter -->
@@ -1720,7 +1720,7 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         <rdfs:comment>A conceptual understanding of a particular parameter that could be observed/measured within some data resource. This parameter typically means to describe an observalbe or measurable  &quot;property&quot; (or attribute) of some &quot;entity&quot; (or object) in relation to some &quot;environment&quot; using some &quot;method&quot;. This conceptual description of a parameter helps to link across datasets that may report different units or other variances outside the scope of some &quot;property of an entity in relation to an environment using some observational/measuring methodology&quot;.</rdfs:comment>
         <rdfs:label>DataParameter</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataResource -->
@@ -1745,7 +1745,7 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         <rdfs:comment>A Dataset witha single resource at which the observations can be found.</rdfs:comment>
         <rdfs:label>DataResource</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter -->
@@ -1755,7 +1755,7 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         <rdfs:comment>A specification of how a DataParameter is expected to be in a DataResource in order for the DatResource to conform to a DatasetProfile.</rdfs:comment>
         <rdfs:label>DataResourceParameter</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameterSet -->
@@ -1780,7 +1780,7 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         <rdfs:comment>A set of DataResourceParameter instances for the purpose of validating a DatasetProfile. This helps the DatasetProfile set requirements or a grouping a DataResourceeParameters such as saying at least one of the group is required.</rdfs:comment>
         <rdfs:label>DataResourceParameterSet</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataResourceProperty -->
@@ -1805,7 +1805,7 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         <rdfs:comment>A single observed or measured property in a single DataResource. This property should be an instance of a DataParameter</rdfs:comment>
         <rdfs:label>DataResourceProperty</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataResourceType -->
@@ -1815,7 +1815,7 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         <rdfs:comment>A named type for which a DataResource can be labeled with for the sole purpose of conforming to a DatasetProfile. This is necessary becuase a DatasetProfile defines the DataParameters which must exist in a DataResource in order to properly conform.</rdfs:comment>
         <rdfs:label>DataResourceType</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DatasetIdentifierScheme -->
@@ -1825,7 +1825,7 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         <rdfs:comment>The identifierScheme for a singular OPP dataset. The dataset itself is the realm in which other identifiers such as Station names, protein names, etc. are unique (but that may not be unqiue acorss other OPP datasets). This helps ensure that identifiers in a Dataset are not automatically assumed to be equivalent to each other.</rdfs:comment>
         <rdfs:label>DatasetIdentifierScheme</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DatasetProfile -->
@@ -1851,7 +1851,7 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         <rdfs:comment>A DatasetProfile defines the type of observations to be expected.</rdfs:comment>
         <rdfs:label>DatasetProfile</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DatasetProteinIdentifier -->
@@ -1867,7 +1867,7 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         <rdfs:comment>The identifier used to reference the protein across/within the Dataset.</rdfs:comment>
         <rdfs:label>DatasetProteinIdentifier</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/EnzymeCommissionIdentifier -->
@@ -1883,7 +1883,7 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         <rdfs:comment>An EC identifier</rdfs:comment>
         <rdfs:label>EnzymeCommissionIdentifier</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/FileType -->
@@ -1909,7 +1909,7 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         <rdfs:comment>A certain type of file for which the OPP knows how to handle inn some way (ingestion, serialization for download, etc)</rdfs:comment>
         <rdfs:label>FileType</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/FilterSize -->
@@ -1921,7 +1921,7 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         <rdfs:comment>The filter size in micons of the sampler.</rdfs:comment>
         <rdfs:label>FilterSize</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/FrictionlessDataPackage -->
@@ -1932,7 +1932,7 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         <rdfs:label>FrictionlessDataPackage</rdfs:label>
         <rdfs:seeAlso>https://specs.frictionlessdata.io</rdfs:seeAlso>
     </owl:Class>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/IdentificationScore -->
@@ -1950,7 +1950,7 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         <rdfs:comment>The numerical score used to identified an Amino Acid using some scoring method.</rdfs:comment>
         <rdfs:label>IdentificationScore</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/Identifier -->
@@ -1986,7 +1986,7 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">A unique identifier attributeds to some thing within some realm or domain or scheme.</rdfs:comment>
         <rdfs:label>Identifier</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/IdentifierMetadata -->
@@ -2011,7 +2011,7 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         <rdfs:comment>Information about an identifier that helps comprehend, reuse, or contextualize the Thing being identified. This could be a non-unique label or description.</rdfs:comment>
         <rdfs:label>IdentifierMetadata</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/IdentifierRegistry -->
@@ -2035,7 +2035,7 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         <rdfs:comment>A registry at which certain identifier schemes  can resolve identifiers and offers certain services or resources.</rdfs:comment>
         <rdfs:label>IdentifierRegistry</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/IdentifierRegistryScheme -->
@@ -2046,7 +2046,7 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         <rdfs:comment>An IndentifierRegistry&apos;s interpretation of a specific IdentifierScheme. This deescribes how a registry represents identifiers for the related scheme as URIs, URLs, etc.</rdfs:comment>
         <rdfs:label>IdentifierRegistryScheme</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/IdentifierRegistryService -->
@@ -2090,7 +2090,7 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         <rdfs:comment>A service offered by an IdentifierRegistry for all identifiers of a certain IdentifierScheme</rdfs:comment>
         <rdfs:label>IdentifierRegistryService</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/IdentifierScheme -->
@@ -2100,7 +2100,7 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         <rdfs:comment>A realm or domain in which a specific Identifier has a unqiue value from all the other possible Identifiers within that domain.</rdfs:comment>
         <rdfs:label>IdentifierScheme</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/KeggDatabaseEntry -->
@@ -2116,7 +2116,7 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         <rdfs:comment>An entry in thee Kegg Database</rdfs:comment>
         <rdfs:label>KeggDatabaseEntry</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/KeggDatabaseEntryIdentifier -->
@@ -2132,7 +2132,7 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         <rdfs:comment>A Kegg Dataset Entry Identifier</rdfs:comment>
         <rdfs:label>KeggDatabaseEntryIdentifier</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/KeggOrthology -->
@@ -2157,7 +2157,7 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         <rdfs:comment>A Kegg Orthology entry from the Kegg database</rdfs:comment>
         <rdfs:label>KeggOrthology</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/KeggOrthologyIdentifier -->
@@ -2167,7 +2167,7 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         <rdfs:comment>A Kegg Orthology Identifier</rdfs:comment>
         <rdfs:label>KeggOrthologyIdentifier</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/KeggPathway -->
@@ -2183,7 +2183,7 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         <rdfs:comment>A Kegg Orthology (KO) entry&apos;s pathway.</rdfs:comment>
         <rdfs:label>KeggPathway</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/MetadataResource -->
@@ -2193,7 +2193,7 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         <rdfs:comment>A  file or other type of data resource that contains the metadata describing a OPPDataset</rdfs:comment>
         <rdfs:label>MetadataResource</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/NCBITaxonIdentifier -->
@@ -2209,7 +2209,7 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         <rdfs:comment>An NCBI Taxon identifier</rdfs:comment>
         <rdfs:label>NCBITaxonIdentifier</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/NCBITaxonName -->
@@ -2224,7 +2224,7 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         </rdfs:subClassOf>
         <rdfs:label>NCBITaxonName</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/OPPDataset -->
@@ -2266,7 +2266,7 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         <rdfs:comment>A dataset suitable for the Ocean Protein Portal</rdfs:comment>
         <rdfs:label>OPPDataset</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/OrganizationIdentifier -->
@@ -2282,7 +2282,7 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         <rdfs:comment>An identifier for an Organization</rdfs:comment>
         <rdfs:label>OrganizationIdentifier</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/PFamsDescription -->
@@ -2298,7 +2298,7 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         <rdfs:comment>The PFams description for this Protein</rdfs:comment>
         <rdfs:label>PFamsDescription</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/PFamsIdentifier -->
@@ -2314,7 +2314,7 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         <rdfs:comment>A PFams identifier</rdfs:comment>
         <rdfs:label>PFamsIdentifier</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/Peptide -->
@@ -2337,7 +2337,7 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         <rdfs:comment>A peptide identified in a sample.</rdfs:comment>
         <rdfs:label>Peptide</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/PeptideIdentification -->
@@ -2347,7 +2347,7 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         <rdfs:comment>An information object where a dataset can store observations about an identified peptide in a sample. These observations may vary across many datasets claiming to identify the same peptide, so this entity serves as a way to store these observations separate from other peptide identifiation observations while still allowing these PeptideIdentification objeect to describe the same, singular Peptide.</rdfs:comment>
         <rdfs:label>PeptideIdentification</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/PeptideIdentifiedProtein -->
@@ -2356,7 +2356,7 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         <rdfs:comment>The peptide suggests tthat the subsequent Protein was a possible identification. The best identified protein is specified by setting the bestProtein property to TRUE.</rdfs:comment>
         <rdfs:label>PeptideIdentifiedProtein</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/PeptideSampleObservation -->
@@ -2367,7 +2367,7 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         <rdfs:comment>The sum of all spectra count.</rdfs:comment>
         <rdfs:label>PeptideSampleObservation</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/PeptideSpectralCountSum -->
@@ -2378,7 +2378,7 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         <rdfs:label>PeptideSpectralCountSum</rdfs:label>
         <rdfs:seeAlso rdf:resource="http://purl.obolibrary.org/obo/MS_1002015"/>
     </owl:Class>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/PersonIdentifier -->
@@ -2400,7 +2400,7 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         <rdfs:comment>An identifier for a Person</rdfs:comment>
         <rdfs:label>PersonIdentifier</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/Protein -->
@@ -2423,7 +2423,7 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         <rdfs:comment>The actual Protein being identified in datasets. This real-world Protein is identified by a single amino acid sequence regardless of variations across  ProteinIdentifications that describe this same, single Protein</rdfs:comment>
         <rdfs:label>Protein</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/ProteinIdentification -->
@@ -2433,7 +2433,7 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         <rdfs:comment>A protein identification made based on information of a peptide identification. This entity serves as an information object used within a Dataset to identify and describe an actual Protein. Where a Protein has a single amino acid sequence that will not vary across datasets submitted to the OPP, the reported protein names, etc may slightly vary across these datasets. ProteinIdentification exists so that individual datasets can report their findings and remain separate from other ProteinIdentification while still describing the exact same Protein with the same amino acid sequence.</rdfs:comment>
         <rdfs:label>ProteinIdentification</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/ProteinIdentifier -->
@@ -2448,7 +2448,7 @@ Example: &quot;nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7
         </rdfs:subClassOf>
         <rdfs:label>ProteinIdentifier</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/ProteinIdentifierScheme -->
@@ -2469,7 +2469,7 @@ KO Pathway =&gt; opp:keggPathwayNames (rdf:Bag of KO names)
 Note since the order of the pathways (or KeggPathway Index isn&apos;t provided we don&apos;t use an rdf:Seq</rdfs:comment>
         <rdfs:label>ProteinIdentifierScheme</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/ProteinSampleObservation -->
@@ -2479,7 +2479,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <rdfs:comment>Some property of a protein identification that was observed in a single sample.</rdfs:comment>
         <rdfs:label>ProteinSampleObservation</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/ProteinTotalSpectralCount -->
@@ -2490,7 +2490,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <rdfs:label>ProteinTotalSpectralCount</rdfs:label>
         <rdfs:seeAlso rdf:resource="http://purl.obolibrary.org/obo/MS_1002016"/>
     </owl:Class>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/RecommendedDataParameter -->
@@ -2504,7 +2504,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/RequiredDataParameter -->
@@ -2519,7 +2519,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         </rdfs:subClassOf>
         <rdfs:label>RequiredDataParameter</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/Role -->
@@ -2530,7 +2530,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <rdfs:comment>A certain status, or position, played by some Agent that qualifies/contextualizes the actions performed by that Agent.</rdfs:comment>
         <rdfs:label>Role</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/Station -->
@@ -2547,7 +2547,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <rdfs:comment>A generally agreed upon location at which sampling occurred. This agreement enables the comparison of collected data over different reference frames such as time.</rdfs:comment>
         <rdfs:label>Station</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/TabularFileType -->
@@ -2558,7 +2558,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <rdfs:comment>A proxy for any tabular data file. This is useful for software that can detect a certain DataResource as being tabular for ingestion or serialization.</rdfs:comment>
         <rdfs:label>TabularFileType</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/UniprotIdentifier -->
@@ -2574,7 +2574,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <rdfs:comment>A Uniprot identifier</rdfs:comment>
         <rdfs:label>UniprotIdentifier</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/UnitOfMeasure -->
@@ -2584,25 +2584,25 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <rdfs:comment>The units used to record some DataParameter in a DataResource.</rdfs:comment>
         <rdfs:label>UnitOfMeasure</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- http://schema.org/Action -->
 
     <owl:Class rdf:about="http://schema.org/Action"/>
-
+    
 
 
     <!-- http://schema.org/CreativeWork -->
 
     <owl:Class rdf:about="http://schema.org/CreativeWork"/>
-
+    
 
 
     <!-- http://schema.org/DataType -->
 
     <owl:Class rdf:about="http://schema.org/DataType"/>
-
+    
 
 
     <!-- http://schema.org/Dataset -->
@@ -2610,7 +2610,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
     <owl:Class rdf:about="http://schema.org/Dataset">
         <rdfs:subClassOf rdf:resource="http://schema.org/CreativeWork"/>
     </owl:Class>
-
+    
 
 
     <!-- http://schema.org/DigitalDocument -->
@@ -2618,25 +2618,25 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
     <owl:Class rdf:about="http://schema.org/DigitalDocument">
         <rdfs:subClassOf rdf:resource="http://schema.org/CreativeWork"/>
     </owl:Class>
-
+    
 
 
     <!-- http://schema.org/EntryPoint -->
 
     <owl:Class rdf:about="http://schema.org/EntryPoint"/>
-
+    
 
 
     <!-- http://schema.org/Intangible -->
 
     <owl:Class rdf:about="http://schema.org/Intangible"/>
-
+    
 
 
     <!-- http://schema.org/Offer -->
 
     <owl:Class rdf:about="http://schema.org/Offer"/>
-
+    
 
 
     <!-- http://schema.org/Organization -->
@@ -2645,7 +2645,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <rdfs:subClassOf rdf:resource="http://schema.oceanproteinportal.org/v2/Agent"/>
         <owl:disjointWith rdf:resource="http://schema.org/Person"/>
     </owl:Class>
-
+    
 
 
     <!-- http://schema.org/Person -->
@@ -2653,13 +2653,13 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
     <owl:Class rdf:about="http://schema.org/Person">
         <rdfs:subClassOf rdf:resource="http://schema.oceanproteinportal.org/v2/Agent"/>
     </owl:Class>
-
+    
 
 
     <!-- http://schema.org/Place -->
 
     <owl:Class rdf:about="http://schema.org/Place"/>
-
+    
 
 
     <!-- http://schema.org/PropertyValue -->
@@ -2670,19 +2670,19 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <describedinConceptualModelOf rdf:resource="http://schema.oceanproteinportal.org/v2/OPPDataset"/>
         <describedinConceptualModelOf rdf:resource="http://www.w3.org/ns/sosa/Sample"/>
     </owl:Class>
-
+    
 
 
     <!-- http://schema.org/PropertyValueSpecification -->
 
     <owl:Class rdf:about="http://schema.org/PropertyValueSpecification"/>
-
+    
 
 
     <!-- http://schema.org/Service -->
 
     <owl:Class rdf:about="http://schema.org/Service"/>
-
+    
 
 
     <!-- http://www.w3.org/ns/sosa/FeatureOfInterest -->
@@ -2690,7 +2690,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
     <owl:Class rdf:about="http://www.w3.org/ns/sosa/FeatureOfInterest">
         <describedinConceptualModelOf rdf:resource="http://www.w3.org/ns/sosa/Sample"/>
     </owl:Class>
-
+    
 
 
     <!-- http://www.w3.org/ns/sosa/Sample -->
@@ -2698,7 +2698,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
     <owl:Class rdf:about="http://www.w3.org/ns/sosa/Sample">
         <conceptualModel rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://lucid.app/publicSegments/view/0eceb84c-1f66-4768-813b-ac23d5aadeb9/image.png</conceptualModel>
     </owl:Class>
-
+    
 
 
     <!-- http://www.w3.org/ns/sosa/Sampler -->
@@ -2706,7 +2706,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
     <owl:Class rdf:about="http://www.w3.org/ns/sosa/Sampler">
         <describedinConceptualModelOf rdf:resource="http://www.w3.org/ns/sosa/Sample"/>
     </owl:Class>
-
+    
 
 
     <!-- http://www.w3.org/ns/ssn/Deployment -->
@@ -2714,7 +2714,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
     <owl:Class rdf:about="http://www.w3.org/ns/ssn/Deployment">
         <describedinConceptualModelOf rdf:resource="http://www.w3.org/ns/sosa/Sample"/>
     </owl:Class>
-
+    
 
 
     <!-- http://www.w3.org/ns/ssn/Property -->
@@ -2725,7 +2725,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <describedinConceptualModelOf rdf:resource="http://schema.oceanproteinportal.org/v2/OPPDataset"/>
         <describedinConceptualModelOf rdf:resource="http://www.w3.org/ns/sosa/Sample"/>
     </owl:Class>
-
+    
 
 
     <!-- http://www.w3.org/ns/ssn/systems/SystemCapability -->
@@ -2734,10 +2734,10 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/ssn/Property"/>
         <describedinConceptualModelOf rdf:resource="http://www.w3.org/ns/sosa/Sample"/>
     </owl:Class>
+    
 
 
-
-    <!--
+    <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Individuals
@@ -2745,7 +2745,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataParameter_AbsoluteUnits -->
@@ -2754,7 +2754,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
         <rdfs:label>Data Parameter: AbsoluteUnits</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataParameter_BestNCBITaxonIdentifier -->
@@ -2763,7 +2763,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
         <rdfs:label>Data Parameter: BestNCBITaxonIdentifier</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataParameter_BestNCBITaxonName -->
@@ -2772,7 +2772,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
         <rdfs:label>Data Parameter: BestNCBITaxonName</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataParameter_BestProteinIdProbability -->
@@ -2781,7 +2781,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
         <rdfs:label>Data Parameter: BestProteinIdProbability</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataParameter_BestSequestDCnScore -->
@@ -2790,7 +2790,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
         <rdfs:label>Data Parameter: BestSequestDCnScore</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataParameter_BestSequestXCorrScore -->
@@ -2799,7 +2799,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
         <rdfs:label>Data Parameter: BestSequestXCorrScore</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataParameter_CruiseIdentifier -->
@@ -2808,7 +2808,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
         <rdfs:label>Data Parameter: CruiseIdentifier</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataParameter_CruiseStationIdentifier -->
@@ -2817,7 +2817,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
         <rdfs:label>Data Parameter: CruiseStationIdentifier</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataParameter_Date -->
@@ -2826,7 +2826,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
         <rdfs:label>Data Parameter: Date</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataParameter_Depth -->
@@ -2835,7 +2835,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
         <rdfs:label>Data Parameter: Depth</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataParameter_EnzymeCommissionIdentifier -->
@@ -2844,7 +2844,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
         <rdfs:label>Data Parameter: EnzymeCommissionIdentifier</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataParameter_ISODateTimeUTC -->
@@ -2853,7 +2853,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
         <rdfs:label>Data Parameter: ISODateTimeUTC</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataParameter_KeggIdentifier -->
@@ -2862,7 +2862,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
         <rdfs:label>Data Parameter: KeggIdentifier</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataParameter_KeggOrthologyDefinition -->
@@ -2871,7 +2871,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
         <rdfs:label>Data Parameter: KeggOrthologyDefinition</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataParameter_KeggOrthologyName -->
@@ -2880,7 +2880,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
         <rdfs:label>Data Parameter: KeggOrthologyName</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataParameter_KeggOrthologyPathway -->
@@ -2889,7 +2889,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
         <rdfs:label>Data Parameter: KeggOrthologyPathway</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataParameter_Latitude -->
@@ -2898,7 +2898,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
         <rdfs:label>Data Parameter: Latitude</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataParameter_Longitude -->
@@ -2907,7 +2907,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
         <rdfs:label>Data Parameter: Longitude</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataParameter_MaxFilterSize -->
@@ -2916,7 +2916,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
         <rdfs:label>Data Parameter: MaxFilterSize</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataParameter_MedianRetentionTime -->
@@ -2925,7 +2925,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
         <rdfs:label>Data Parameter: MedianRetentionTime</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataParameter_MinFilterSize -->
@@ -2934,7 +2934,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
         <rdfs:label>Data Parameter: MinFilterSize</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataParameter_MolecularWeight -->
@@ -2943,7 +2943,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
         <rdfs:label>Data Parameter: MolecularWeight</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataParameter_OtherIdentifiedProteins -->
@@ -2952,7 +2952,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
         <rdfs:label>Data Parameter: OtherIdentifiedProteins</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataParameter_PFamsIdentifier -->
@@ -2961,7 +2961,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
         <rdfs:label>Data Parameter: PFamsIdentifier</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataParameter_PFamsName -->
@@ -2970,7 +2970,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
         <rdfs:label>Data Parameter: PFamsName</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataParameter_Peptide-StartIndex -->
@@ -2979,7 +2979,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
         <rdfs:label>Data Parameter: Peptide-StartIndex</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataParameter_Peptide-StopIndex -->
@@ -2988,7 +2988,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
         <rdfs:label>Data Parameter: Peptide-StopIndex</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataParameter_PeptideSequence -->
@@ -2997,7 +2997,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
         <rdfs:label>Data Parameter: PeptideSequence</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataParameter_PeptideSpectralCountSummation -->
@@ -3006,7 +3006,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
         <rdfs:label>Data Parameter: PeptideSpectralCountSummation</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataParameter_Plus2HSpectraCount -->
@@ -3015,7 +3015,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
         <rdfs:label>Data Parameter: Plus2HSpectraCount</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataParameter_Plus3HSpectraCount -->
@@ -3024,7 +3024,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
         <rdfs:label>Data Parameter: Plus3HSpectraCount</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataParameter_Plus4HSpectraCount -->
@@ -3033,7 +3033,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
         <rdfs:label>Data Parameter: Plus4HSpectraCount</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataParameter_ProteinAccessionIdentifiers -->
@@ -3042,7 +3042,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
         <rdfs:label>Data Parameter: ProteinAccessionIdentifiers</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataParameter_ProteinIdentifier -->
@@ -3051,7 +3051,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
         <rdfs:label>Data Parameter: ProteinIdentifier</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataParameter_ProteinName -->
@@ -3061,7 +3061,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <rdfs:label>Data Parameter: ProteinName</rdfs:label>
         <rdfs:label>Data Parameter: ProteinNamee</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataParameter_ProteinSequence -->
@@ -3070,7 +3070,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
         <rdfs:label>Data Parameter: ProteinSequence</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataParameter_SampleIdentifier -->
@@ -3079,7 +3079,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
         <rdfs:label>Data Parameter: SampleIdentifier</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataParameter_SpectralCount -->
@@ -3088,7 +3088,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
         <rdfs:label>Data Parameter: SpectralCount</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataParameter_Time -->
@@ -3097,7 +3097,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
         <rdfs:label>Data Parameter: Time</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataParameter_TotalPrecursorIntensity -->
@@ -3106,7 +3106,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
         <rdfs:label>Data Parameter: TotalPrecursorIntensity</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataParameter_TotalTIC -->
@@ -3115,7 +3115,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
         <rdfs:label>Data Parameter: TotalTIC</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataParameter_UniprotIdentifier -->
@@ -3124,7 +3124,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataParameter"/>
         <rdfs:label>Data Parameter: UniprotIdentifier</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameterSet_PeptideSpectralCount_DateRequirement -->
@@ -3135,7 +3135,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <includesDataParameterInSet rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_ISODateTimeUTC"/>
         <rdfs:label>Parameter Set: Peptide Spectral Count - Date Requirement</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_FASTA-ProteinIdentifier -->
@@ -3151,7 +3151,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</schema:valueRequired>
         <rdfs:label>DataResourceParameter_FASTA-ProteinIdentifier</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_FASTA-ProteinSequence -->
@@ -3167,7 +3167,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</schema:valueRequired>
         <rdfs:label>DataResourceParameter_FASTA-ProteinSequence</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_AbsoluteUnits -->
@@ -3183,7 +3183,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:valueRequired>
         <rdfs:label>DataResourceParameter_PeptideSpectralCount_AbsoluteUnits</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_BestProteinIdProbability -->
@@ -3199,7 +3199,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:valueRequired>
         <rdfs:label>DataResourceParameter_PeptideSpectralCount_BestProteinIdProbability</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_BestSequestDCnScore -->
@@ -3214,7 +3214,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:valueRequired>
         <rdfs:label>DataResourceParameter_PeptideSpectralCount_BestSequestDCnScore</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_BestSequestXCorrScore -->
@@ -3229,7 +3229,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:valueRequired>
         <rdfs:label>DataResourceParameter_PeptideSpectralCount_BestSequestXCorrScore</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_CruiseIdentifier -->
@@ -3244,7 +3244,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:valueRequired>
         <rdfs:label>DataResourceParameter_PeptideSpectralCount_CruiseIdentifier</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_CruiseStationIdentifier -->
@@ -3259,7 +3259,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:valueRequired>
         <rdfs:label>DataResourceParameter_PeptideSpectralCount_CruiseStationIdentifier</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Date -->
@@ -3274,7 +3274,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:valueRequired>
         <rdfs:label>DataResourceParameter_PeptideSpectralCount_Date</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Depth -->
@@ -3290,7 +3290,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</schema:valueRequired>
         <rdfs:label>DataResourceParameter_PeptideSpectralCount_Depth</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_ISODateTimeUTC -->
@@ -3305,7 +3305,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <schema:multipleValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:multipleValues>
         <rdfs:label>DataResourceParameter_PeptideSpectralCount_ISODateTimeUTC</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Latitude -->
@@ -3324,7 +3324,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</schema:valueRequired>
         <rdfs:label>DataResourceParameter_PeptideSpectralCount_Latitude</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Longitude -->
@@ -3343,7 +3343,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</schema:valueRequired>
         <rdfs:label>DataResourceParameter_PeptideSpectralCount_Longitude</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_MaxFilterSize -->
@@ -3359,7 +3359,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</schema:valueRequired>
         <rdfs:label>DataResourceParameter_PeptideSpectralCount_MaxFilterSize</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_MedianRetentionTime -->
@@ -3374,7 +3374,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:valueRequired>
         <rdfs:label>DataResourceParameter_PeptideSpectralCount_MedianRetentionTime</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_MinFilterSize -->
@@ -3390,7 +3390,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</schema:valueRequired>
         <rdfs:label>DataResourceParameter_PeptideSpectralCount_MinFilterSize</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Peptide-StartIndex -->
@@ -3402,11 +3402,11 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <parameterDataType rdf:resource="http://schema.org/Integer"/>
         <parameterInResourceType rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceType_PeptideTotalSpectralCount"/>
         <parameterNameInResource rdf:datatype="http://www.w3.org/2001/XMLSchema#token">peptide_start_index</parameterNameInResource>
+        <parameterValueRecommended rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</parameterValueRecommended>
         <schema:multipleValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:multipleValues>
-        <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</schema:valueRequired>
         <rdfs:label>DataResourceParameter_PeptideSpectralCount_Peptide-StartIndex</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Peptide-StopIndex -->
@@ -3418,11 +3418,11 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <parameterDataType rdf:resource="http://schema.org/Integer"/>
         <parameterInResourceType rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceType_PeptideTotalSpectralCount"/>
         <parameterNameInResource rdf:datatype="http://www.w3.org/2001/XMLSchema#token">peptide_stop_index</parameterNameInResource>
+        <parameterValueRecommended rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</parameterValueRecommended>
         <schema:multipleValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:multipleValues>
-        <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</schema:valueRequired>
         <rdfs:label>DataResourceParameter_PeptideSpectralCount_Peptide-StopIndex</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_PeptideSequence -->
@@ -3437,7 +3437,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</schema:valueRequired>
         <rdfs:label>DataResourceParameter_PeptideSpectralCount_PeptideSequence</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_PeptideSpectralCountSummation -->
@@ -3452,7 +3452,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</schema:valueRequired>
         <rdfs:label>DataResourceParameter_PeptideSpectralCount_PeptideSpectralCountSummation</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Plus2HSpectraCount -->
@@ -3467,7 +3467,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:valueRequired>
         <rdfs:label>DataResourceParameter_PeptideSpectralCount_Plus2HSpectraCount</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Plus3HSpectraCount -->
@@ -3482,7 +3482,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:valueRequired>
         <rdfs:label>DataResourceParameter_PeptideSpectralCount_Plus3HSpectraCount</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Plus4HSpectraCount -->
@@ -3497,7 +3497,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:valueRequired>
         <rdfs:label>DataResourceParameter_PeptideSpectralCount_Plus4HSpectraCount</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_ProteinAccessionIdentifiers -->
@@ -3514,7 +3514,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:valueRequired>
         <rdfs:label>DataResourceParameter_PeptideSpectralCount_ProteinAccessionIdentifiers</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_ProteinIdentifier -->
@@ -3530,7 +3530,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:valueRequired>
         <rdfs:label>DataResourceParameter_PeptideSpectralCount_ProteinIdentifier</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_SampleIdentifier -->
@@ -3545,7 +3545,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:valueRequired>
         <rdfs:label>DataResourceParameter_PeptideSpectralCount_SampleIdentifier</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Time -->
@@ -3562,7 +3562,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:valueRequired>
         <rdfs:label>DataResourceParameter_PeptideSpectralCount_Time</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_TotalPrecursorIntensity -->
@@ -3577,7 +3577,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:valueRequired>
         <rdfs:label>DataResourceParameter_PeptideSpectralCount_TotalPrecursorIntensity</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_TotalTIC -->
@@ -3592,7 +3592,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:valueRequired>
         <rdfs:label>DataResourceParameter_PeptideSpectralCount_TotalTIC</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_BestNCBITaxonIdentifier -->
@@ -3607,7 +3607,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:valueRequired>
         <rdfs:label>DataResourceParameter_ProteinSpectralCount_BestNCBITaxonIdentifier</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_BestNCBITaxonName -->
@@ -3623,7 +3623,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:valueRequired>
         <rdfs:label>DataResourceParameter_ProteinSpectralCount_BestNCBITaxonName</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_CruiseIdentifier -->
@@ -3638,7 +3638,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:valueRequired>
         <rdfs:label>DataResourceParameter_ProteinSpectralCount_CruiseIdentifier</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_CruiseStationIdentifier -->
@@ -3653,7 +3653,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:valueRequired>
         <rdfs:label>DataResourceParameter_ProteinSpectralCount_CruiseStationIdentifier</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_Date -->
@@ -3668,7 +3668,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:valueRequired>
         <rdfs:label>DataResourceParameter_ProteinSpectralCount_Date</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_Depth -->
@@ -3684,7 +3684,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</schema:valueRequired>
         <rdfs:label>DataResourceParameter_ProteinSpectralCount_Depth</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_EnzymeCommissionIdentifier -->
@@ -3700,7 +3700,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:valueRequired>
         <rdfs:label>DataResourceParameter_ProteinSpectralCount_EnzymeCommissionIdentifier</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_ISODateTimeUTC -->
@@ -3715,7 +3715,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <schema:multipleValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:multipleValues>
         <rdfs:label>DataResourceParameter_ProteinSpectralCount_ISODateTimeUTC</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_KeggIdentifier -->
@@ -3732,7 +3732,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <rdfs:comment>If multiple values exist, the Kegg Pathway, Definition and other Kegg metadata are ignored because there is currently no defineed way to structure that information to ensure it logically matches to the list of identifiers here.</rdfs:comment>
         <rdfs:label>DataResourceParameter_ProteinSpectralCount_KeggIdentifier</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_KeggOrthologyDefinition -->
@@ -3748,7 +3748,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:valueRequired>
         <rdfs:label>DataResourceParameter_ProteinSpectralCount_KeggOrthologyDefinition</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_KeggOrthologyName -->
@@ -3764,7 +3764,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:valueRequired>
         <rdfs:label>DataResourceParameter_ProteinSpectralCount_KeggOrthologyName</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_KeggOrthologyPathway -->
@@ -3781,7 +3781,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:valueRequired>
         <rdfs:label>DataResourceParameter_ProteinSpectralCount_KeggOrthologyPathway</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_Latitude -->
@@ -3800,7 +3800,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</schema:valueRequired>
         <rdfs:label>DataResourceParameter_ProteinSpectralCount_Latitude</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_Longitude -->
@@ -3819,7 +3819,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</schema:valueRequired>
         <rdfs:label>DataResourceParameter_ProteinSpectralCount_Longitude</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_MaxFilterSize -->
@@ -3835,7 +3835,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</schema:valueRequired>
         <rdfs:label>DataResourceParameter_ProteinSpectralCount_MaxFilterSize</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_MinFilterSize -->
@@ -3851,7 +3851,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</schema:valueRequired>
         <rdfs:label>DataResourceParameter_ProteinSpectralCount_MinFilterSize</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_OtherIdentifiedProteins -->
@@ -3867,7 +3867,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:valueRequired>
         <rdfs:label>DataResourceParameter_ProteinSpectralCount_OtherIdentifiedProteins</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_PFamsIdentifier -->
@@ -3883,7 +3883,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:valueRequired>
         <rdfs:label>DataResourceParameter_ProteinSpectralCount_PFamsIdentifier</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_PFamsName -->
@@ -3900,7 +3900,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:valueRequired>
         <rdfs:label>DataResourceParameter_ProteinSpectralCount_PFamsName</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_ProteinIdentifier -->
@@ -3916,7 +3916,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</schema:valueRequired>
         <rdfs:label>DataResourceParameter_ProteinSpectralCount_ProteinIdentifier</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_ProteinName -->
@@ -3931,7 +3931,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</schema:valueRequired>
         <rdfs:label>DataResourceParameter_ProteinSpectralCount_ProteinName</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_SampleIdentifier -->
@@ -3946,7 +3946,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:valueRequired>
         <rdfs:label>DataResourceParameter_ProteinSpectralCount_SampleIdentifier</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_SpectralCount -->
@@ -3961,7 +3961,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</schema:valueRequired>
         <rdfs:label>DataResourceParameter_ProteinSpectralCount_SpectralCount</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_Time -->
@@ -3978,7 +3978,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:valueRequired>
         <rdfs:label>DataResourceParameter_ProteinSpectralCount_Time</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_UniprotIdentifier -->
@@ -3994,7 +3994,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:valueRequired>
         <rdfs:label>DataResourceParameter_ProteinSpectralCount_UniprotIdentifier</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataResourceType_FASTA-ProteinIdentification -->
@@ -4003,7 +4003,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceType"/>
         <rdfs:label>Data Resource Type: FASTA Protein Identification</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataResourceType_PeptideTotalSpectralCount -->
@@ -4012,7 +4012,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceType"/>
         <rdfs:label>Data Resource Type: Peptide Total Spectral Count</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DataResourceType_ProteinTotalSpectralCount -->
@@ -4021,7 +4021,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceType"/>
         <rdfs:label>Data Resource Type: Protein Total Spectral Count</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DatasetProfile_PeptideSpectralCountSum -->
@@ -4058,7 +4058,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_TotalTIC"/>
         <rdfs:label>Dataset Profile: Peptide Spectral Count Sum</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/DatasetProfile_ProteinTotalSpectralCount -->
@@ -4122,7 +4122,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <usesDataResourceParameter rdf:resource="http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_UniprotIdentifier"/>
         <rdfs:label>Dataset Profile: Protein Total Spectral Count</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/IdentifierScheme_EnzymeCommission -->
@@ -4132,7 +4132,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <rdfs:label>Identifier Scheme: EnzymeCommission</rdfs:label>
         <rdfs:seeAlso rdf:resource="http://www.wikidata.org/entity/Q741108"/>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/IdentifierScheme_Kegg -->
@@ -4142,7 +4142,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <rdfs:label>Identifier Scheme: Kegg</rdfs:label>
         <rdfs:seeAlso rdf:resource="https://registry.identifiers.org/registry/kegg"/>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/IdentifierScheme_NCBITaxonomy -->
@@ -4152,7 +4152,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <rdfs:label>Identifier Scheme: NCBI Taxonomy</rdfs:label>
         <rdfs:seeAlso rdf:resource="https://registry.identifiers.org/registry/taxonomy"/>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/IdentifierScheme_ORCID -->
@@ -4162,7 +4162,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <rdfs:label>Identifier Scheme: ORCID</rdfs:label>
         <rdfs:seeAlso rdf:resource="http://www.wikidata.org/entity/Q51044"/>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/IdentifierScheme_PFam -->
@@ -4172,7 +4172,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <rdfs:label>Identifier Scheme: PFam</rdfs:label>
         <rdfs:seeAlso rdf:resource="https://registry.identifiers.org/registry/pfam"/>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/IdentifierScheme_Uniprot -->
@@ -4183,7 +4183,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <rdfs:label>Identifier Scheme: Uniprot</rdfs:label>
         <rdfs:seeAlso rdf:resource="https://registry.identifiers.org/registry/uniprot"/>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/Role_Author -->
@@ -4192,7 +4192,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/Role"/>
         <rdfs:label>Role: Author</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/Role_Contact -->
@@ -4201,7 +4201,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/Role"/>
         <rdfs:label>Role: Contact</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/Role_Contributor -->
@@ -4210,7 +4210,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/Role"/>
         <rdfs:label>Role: Contributor</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/Role_Publisher -->
@@ -4219,7 +4219,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <rdf:type rdf:resource="http://schema.oceanproteinportal.org/v2/Role"/>
         <rdfs:label>Role: Publisher</rdfs:label>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/UnitOfMeasure_DecimalDegrees -->
@@ -4229,7 +4229,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <rdfs:label>UnitOfMeasure: Decimal Degrees</rdfs:label>
         <rdfs:seeAlso rdf:resource="http://www.wikidata.org/entity/Q1798227"/>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/UnitOfMeasure_Femtomoles-per-Liter -->
@@ -4239,7 +4239,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <rdfs:label>UnitOfMeasure: Femtomoles per Liter</rdfs:label>
         <rdfs:seeAlso rdf:resource="http://purl.obolibrary.org/obo/NCIT_C68887"/>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/UnitOfMeasure_KiloDaltons -->
@@ -4249,7 +4249,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <rdfs:label>UnitOfMeasure: KiloDaltons</rdfs:label>
         <rdfs:seeAlso rdf:resource="http://www.wikidata.org/entity/Q14623804"/>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/UnitOfMeasure_Meters -->
@@ -4259,7 +4259,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <rdfs:label>UnitOfMeasure: Meters</rdfs:label>
         <rdfs:seeAlso rdf:resource="http://www.wikidata.org/entity/Q11573"/>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.oceanproteinportal.org/v2/UnitOfMeasure_Microns -->
@@ -4269,7 +4269,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <rdfs:label>UnitOfMeasure: Microns</rdfs:label>
         <rdfs:seeAlso rdf:resource="http://www.wikidata.org/entity/Q175821"/>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.org/Date -->
@@ -4277,7 +4277,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
     <owl:NamedIndividual rdf:about="http://schema.org/Date">
         <frictionlessDataValueType>string</frictionlessDataValueType>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.org/DateTime -->
@@ -4285,7 +4285,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
     <owl:NamedIndividual rdf:about="http://schema.org/DateTime">
         <frictionlessDataValueType>string</frictionlessDataValueType>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.org/Float -->
@@ -4293,7 +4293,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
     <owl:NamedIndividual rdf:about="http://schema.org/Float">
         <frictionlessDataValueType>number</frictionlessDataValueType>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.org/Integer -->
@@ -4301,7 +4301,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
     <owl:NamedIndividual rdf:about="http://schema.org/Integer">
         <frictionlessDataValueType>integer</frictionlessDataValueType>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.org/Text -->
@@ -4309,7 +4309,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
     <owl:NamedIndividual rdf:about="http://schema.org/Text">
         <frictionlessDataValueType>string</frictionlessDataValueType>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.org/Time -->
@@ -4317,7 +4317,7 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
     <owl:NamedIndividual rdf:about="http://schema.org/Time">
         <frictionlessDataValueType>string</frictionlessDataValueType>
     </owl:NamedIndividual>
-
+    
 
 
     <!-- http://schema.org/URL -->
@@ -4325,10 +4325,10 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
     <owl:NamedIndividual rdf:about="http://schema.org/URL">
         <frictionlessDataValueType>uri</frictionlessDataValueType>
     </owl:NamedIndividual>
+    
 
 
-
-    <!--
+    <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Annotations
@@ -4339,10 +4339,10 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
     <rdf:Description rdf:about="http://schema.org/Boolean">
         <frictionlessDataValueType>boolean</frictionlessDataValueType>
     </rdf:Description>
+    
 
 
-
-    <!--
+    <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // General axioms

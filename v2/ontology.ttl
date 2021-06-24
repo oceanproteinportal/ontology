@@ -2449,8 +2449,8 @@ Note since the order of the pathways (or KeggPathway Index isn't provided we don
                                                                :parameterDataType <http://schema.org/Integer> ;
                                                                :parameterInResourceType :DataResourceType_PeptideTotalSpectralCount ;
                                                                :parameterNameInResource "peptide_start_index"^^xsd:token ;
+                                                               :parameterValueRecommended "true"^^xsd:boolean ;
                                                                <http://schema.org/multipleValues> "false"^^xsd:boolean ;
-                                                               <http://schema.org/valueRequired> "true"^^xsd:boolean ;
                                                                rdfs:label "DataResourceParameter_PeptideSpectralCount_Peptide-StartIndex" .
 
 
@@ -2462,8 +2462,8 @@ Note since the order of the pathways (or KeggPathway Index isn't provided we don
                                                               :parameterDataType <http://schema.org/Integer> ;
                                                               :parameterInResourceType :DataResourceType_PeptideTotalSpectralCount ;
                                                               :parameterNameInResource "peptide_stop_index"^^xsd:token ;
+                                                              :parameterValueRecommended "true"^^xsd:boolean ;
                                                               <http://schema.org/multipleValues> "false"^^xsd:boolean ;
-                                                              <http://schema.org/valueRequired> "true"^^xsd:boolean ;
                                                               rdfs:label "DataResourceParameter_PeptideSpectralCount_Peptide-StopIndex" .
 
 

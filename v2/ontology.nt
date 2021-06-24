@@ -2251,8 +2251,8 @@ _:genid116 <http://www.w3.org/2002/07/owl#hasValue> <http://schema.oceanproteinp
 <http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Peptide-StartIndex> <http://schema.oceanproteinportal.org/v2/parameterDataType> <http://schema.org/Integer> .
 <http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Peptide-StartIndex> <http://schema.oceanproteinportal.org/v2/parameterInResourceType> <http://schema.oceanproteinportal.org/v2/DataResourceType_PeptideTotalSpectralCount> .
 <http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Peptide-StartIndex> <http://schema.oceanproteinportal.org/v2/parameterNameInResource> "peptide_start_index"^^<http://www.w3.org/2001/XMLSchema#token> .
+<http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Peptide-StartIndex> <http://schema.oceanproteinportal.org/v2/parameterValueRecommended> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
 <http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Peptide-StartIndex> <http://schema.org/multipleValues> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
-<http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Peptide-StartIndex> <http://schema.org/valueRequired> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
 <http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Peptide-StartIndex> <http://www.w3.org/2000/01/rdf-schema#label> "DataResourceParameter_PeptideSpectralCount_Peptide-StartIndex" .
 # 
 # http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Peptide-StopIndex
@@ -2263,8 +2263,8 @@ _:genid116 <http://www.w3.org/2002/07/owl#hasValue> <http://schema.oceanproteinp
 <http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Peptide-StopIndex> <http://schema.oceanproteinportal.org/v2/parameterDataType> <http://schema.org/Integer> .
 <http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Peptide-StopIndex> <http://schema.oceanproteinportal.org/v2/parameterInResourceType> <http://schema.oceanproteinportal.org/v2/DataResourceType_PeptideTotalSpectralCount> .
 <http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Peptide-StopIndex> <http://schema.oceanproteinportal.org/v2/parameterNameInResource> "peptide_stop_index"^^<http://www.w3.org/2001/XMLSchema#token> .
+<http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Peptide-StopIndex> <http://schema.oceanproteinportal.org/v2/parameterValueRecommended> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
 <http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Peptide-StopIndex> <http://schema.org/multipleValues> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
-<http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Peptide-StopIndex> <http://schema.org/valueRequired> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
 <http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Peptide-StopIndex> <http://www.w3.org/2000/01/rdf-schema#label> "DataResourceParameter_PeptideSpectralCount_Peptide-StopIndex" .
 # 
 # http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_PeptideSequence
