@@ -1924,36 +1924,6 @@
     "@value" : "DataResourceParameter_PeptideSpectralCount_MinFilterSize"
   } ]
 }, {
-  "@id" : "http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_MolecularWeight",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://schema.oceanproteinportal.org/v2/DataResourceParameter" ],
-  "http://schema.oceanproteinportal.org/v2/definesValuesForParameter" : [ {
-    "@id" : "http://schema.oceanproteinportal.org/v2/DataParameter_MolecularWeight"
-  } ],
-  "http://schema.oceanproteinportal.org/v2/parameterDataType" : [ {
-    "@id" : "http://schema.org/Float"
-  } ],
-  "http://schema.oceanproteinportal.org/v2/parameterInResourceType" : [ {
-    "@id" : "http://schema.oceanproteinportal.org/v2/DataResourceType_PeptideTotalSpectralCount"
-  } ],
-  "http://schema.oceanproteinportal.org/v2/parameterNameInResource" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#token",
-    "@value" : "molecular_weight_kDa"
-  } ],
-  "http://schema.oceanproteinportal.org/v2/unitsReportedIn" : [ {
-    "@id" : "http://schema.oceanproteinportal.org/v2/UnitOfMeasure_KiloDaltons"
-  } ],
-  "http://schema.org/multipleValues" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#boolean",
-    "@value" : "false"
-  } ],
-  "http://schema.org/valueRequired" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#boolean",
-    "@value" : "true"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "DataResourceParameter_PeptideSpectralCount_MolecularWeight"
-  } ]
-}, {
   "@id" : "http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Peptide-StartIndex",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://schema.oceanproteinportal.org/v2/DataResourceParameter" ],
   "http://schema.oceanproteinportal.org/v2/definesValuesForParameter" : [ {
@@ -2211,36 +2181,6 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "DataResourceParameter_PeptideSpectralCount_ProteinIdentifier"
-  } ]
-}, {
-  "@id" : "http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_ProteinMolecularWeight",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://schema.oceanproteinportal.org/v2/DataResourceParameter" ],
-  "http://schema.oceanproteinportal.org/v2/definesValuesForParameter" : [ {
-    "@id" : "http://schema.oceanproteinportal.org/v2/DataParameter_MolecularWeight"
-  } ],
-  "http://schema.oceanproteinportal.org/v2/parameterDataType" : [ {
-    "@id" : "http://schema.org/Float"
-  } ],
-  "http://schema.oceanproteinportal.org/v2/parameterInResourceType" : [ {
-    "@id" : "http://schema.oceanproteinportal.org/v2/DataResourceType_PeptideTotalSpectralCount"
-  } ],
-  "http://schema.oceanproteinportal.org/v2/parameterNameInResource" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#token",
-    "@value" : "protein_molecular_weight_kDa"
-  } ],
-  "http://schema.oceanproteinportal.org/v2/unitsReportedIn" : [ {
-    "@id" : "http://schema.oceanproteinportal.org/v2/UnitOfMeasure_KiloDaltons"
-  } ],
-  "http://schema.org/multipleValues" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#boolean",
-    "@value" : "false"
-  } ],
-  "http://schema.org/valueRequired" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#boolean",
-    "@value" : "false"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "DataResourceParameter_PeptideSpectralCount_ProteinMolecularWeight"
   } ]
 }, {
   "@id" : "http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_SampleIdentifier",
@@ -2854,32 +2794,6 @@
     "@value" : "DataResourceParameter_ProteinSpectralCount_MinFilterSize"
   } ]
 }, {
-  "@id" : "http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_MolecularWeight",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://schema.oceanproteinportal.org/v2/DataResourceParameter" ],
-  "http://schema.oceanproteinportal.org/v2/definesValuesForParameter" : [ {
-    "@id" : "http://schema.oceanproteinportal.org/v2/DataParameter_MolecularWeight"
-  } ],
-  "http://schema.oceanproteinportal.org/v2/parameterDataType" : [ {
-    "@id" : "http://schema.org/Float"
-  } ],
-  "http://schema.oceanproteinportal.org/v2/parameterInResourceType" : [ {
-    "@id" : "http://schema.oceanproteinportal.org/v2/DataResourceType_ProteinTotalSpectralCount"
-  } ],
-  "http://schema.oceanproteinportal.org/v2/parameterNameInResource" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#token",
-    "@value" : "molecular_weight_kDa"
-  } ],
-  "http://schema.oceanproteinportal.org/v2/unitsReportedIn" : [ {
-    "@id" : "http://schema.oceanproteinportal.org/v2/UnitOfMeasure_KiloDaltons"
-  } ],
-  "http://schema.org/multipleValues" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#boolean",
-    "@value" : "false"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "DataResourceParameter_ProteinSpectralCount_MolecularWeight"
-  } ]
-}, {
   "@id" : "http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_OtherIdentifiedProteins",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://schema.oceanproteinportal.org/v2/DataResourceParameter" ],
   "http://schema.oceanproteinportal.org/v2/definesValuesForParameter" : [ {
@@ -3259,8 +3173,6 @@
   }, {
     "@id" : "http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_MinFilterSize"
   }, {
-    "@id" : "http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_MolecularWeight"
-  }, {
     "@id" : "http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Peptide-StartIndex"
   }, {
     "@id" : "http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Peptide-StopIndex"
@@ -3347,8 +3259,6 @@
   }, {
     "@id" : "http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_ProteinIdentifier"
   }, {
-    "@id" : "http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_ProteinMolecularWeight"
-  }, {
     "@id" : "http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_SampleIdentifier"
   }, {
     "@id" : "http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Time"
@@ -3388,8 +3298,6 @@
     "@id" : "http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_MaxFilterSize"
   }, {
     "@id" : "http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_MinFilterSize"
-  }, {
-    "@id" : "http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_MolecularWeight"
   }, {
     "@id" : "http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_OtherIdentifiedProteins"
   }, {
@@ -3928,7 +3836,7 @@
   "@id" : "http://schema.oceanproteinportal.org/v2/ProteinIdentification",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "A protein identification made based on information of a peptide identification. This entity serves as an information object used within a Dataset to identify and describe an actual Protein. Where a Protein has a single amino acid sequence that will not vary across datasets submitted to the OPP, th ereported protien names, molecular weights, etc may slightly vary across these datasets. ProteinIdentification exists so that individual datasets can report their findings and remain separate from other ProteinIdentification while still describing the exact same Protein with the same amino acid sequence."
+    "@value" : "A protein identification made based on information of a peptide identification. This entity serves as an information object used within a Dataset to identify and describe an actual Protein. Where a Protein has a single amino acid sequence that will not vary across datasets submitted to the OPP, the reported protein names, etc may slightly vary across these datasets. ProteinIdentification exists so that individual datasets can report their findings and remain separate from other ProteinIdentification while still describing the exact same Protein with the same amino acid sequence."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "ProteinIdentification"
@@ -4969,21 +4877,6 @@
     "@id" : "http://schema.org/minValue"
   } ]
 }, {
-  "@id" : "http://schema.oceanproteinportal.org/v2/molecularWeight",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "A protein's molecular weight measured in kiloDaltons"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://schema.oceanproteinportal.org/v2/AminoAcidIdentification"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@value" : "molecularWeight"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#float"
-  } ]
-}, {
   "@id" : "http://schema.oceanproteinportal.org/v2/multiValuedDefaultDelimiter",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -5173,7 +5066,7 @@
   "@id" : "http://schema.oceanproteinportal.org/v2/parameterValueRegexPattern",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#FunctionalProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@value" : "A regex pattern defining how to find the portion of a property's value that should be used as it's actual value. Example\": a mlecular weigght property with values that contain the units in the value like '255 kDa' could be processed to obtain the numeric value with a parameterValueRegexPattern defined as \"([0-9.]+)\\ kDa\"."
+    "@value" : "A regex pattern defining how to find the portion of a property's value that should be used as it's actual value. Example\": a property with values that contain the units in the value like '255 kDa' could be processed to obtain the numeric value with a parameterValueRegexPattern defined as \"([0-9.]+)\\ kDa\"."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://schema.oceanproteinportal.org/v2/DataResourceProperty"

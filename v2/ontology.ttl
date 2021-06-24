@@ -815,15 +815,6 @@ Example: \"nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1
                    rdfs:label "minimumFilterSize" .
 
 
-###  http://schema.oceanproteinportal.org/v2/molecularWeight
-:molecularWeight rdf:type owl:DatatypeProperty ,
-                          owl:FunctionalProperty ;
-                 rdfs:domain :AminoAcidIdentification ;
-                 rdfs:range xsd:float ;
-                 rdfs:comment "A protein's molecular weight measured in kiloDaltons" ;
-                 rdfs:label "molecularWeight" .
-
-
 ###  http://schema.oceanproteinportal.org/v2/multiValuedDefaultDelimiter
 :multiValuedDefaultDelimiter rdf:type owl:DatatypeProperty ,
                                       owl:FunctionalProperty ;
@@ -857,7 +848,7 @@ Example: \"nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1
                                      owl:FunctionalProperty ;
                             rdfs:domain :DataResourceProperty ;
                             rdfs:range xsd:token ;
-                            rdfs:comment "A regex pattern defining how to find the portion of a property's value that should be used as it's actual value. Example\": a mlecular weigght property with values that contain the units in the value like '255 kDa' could be processed to obtain the numeric value with a parameterValueRegexPattern defined as \"([0-9.]+)\\ kDa\"." ;
+                            rdfs:comment "A regex pattern defining how to find the portion of a property's value that should be used as it's actual value. Example\": a property with values that contain the units in the value like '255 kDa' could be processed to obtain the numeric value with a parameterValueRegexPattern defined as \"([0-9.]+)\\ kDa\"." ;
                             rdfs:label "parameterValueRegexPattern" .
 
 
@@ -1769,7 +1760,7 @@ Example: \"nitrate reductase / nitrite oxidoreductase, alpha subunit [EC:1.7.5.1
 ###  http://schema.oceanproteinportal.org/v2/ProteinIdentification
 :ProteinIdentification rdf:type owl:Class ;
                        rdfs:subClassOf :AminoAcidIdentification ;
-                       rdfs:comment "A protein identification made based on information of a peptide identification. This entity serves as an information object used within a Dataset to identify and describe an actual Protein. Where a Protein has a single amino acid sequence that will not vary across datasets submitted to the OPP, th ereported protien names, molecular weights, etc may slightly vary across these datasets. ProteinIdentification exists so that individual datasets can report their findings and remain separate from other ProteinIdentification while still describing the exact same Protein with the same amino acid sequence." ;
+                       rdfs:comment "A protein identification made based on information of a peptide identification. This entity serves as an information object used within a Dataset to identify and describe an actual Protein. Where a Protein has a single amino acid sequence that will not vary across datasets submitted to the OPP, the reported protein names, etc may slightly vary across these datasets. ProteinIdentification exists so that individual datasets can report their findings and remain separate from other ProteinIdentification while still describing the exact same Protein with the same amino acid sequence." ;
                        rdfs:label "ProteinIdentification" .
 
 
@@ -2450,19 +2441,6 @@ Note since the order of the pathways (or KeggPathway Index isn't provided we don
                                                           rdfs:label "DataResourceParameter_PeptideSpectralCount_MinFilterSize" .
 
 
-###  http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_MolecularWeight
-:DataResourceParameter_PeptideSpectralCount_MolecularWeight rdf:type owl:NamedIndividual ,
-                                                                     :DataResourceParameter ;
-                                                            :definesValuesForParameter :DataParameter_MolecularWeight ;
-                                                            :parameterDataType <http://schema.org/Float> ;
-                                                            :parameterInResourceType :DataResourceType_PeptideTotalSpectralCount ;
-                                                            :unitsReportedIn :UnitOfMeasure_KiloDaltons ;
-                                                            :parameterNameInResource "molecular_weight_kDa"^^xsd:token ;
-                                                            <http://schema.org/multipleValues> "false"^^xsd:boolean ;
-                                                            <http://schema.org/valueRequired> "true"^^xsd:boolean ;
-                                                            rdfs:label "DataResourceParameter_PeptideSpectralCount_MolecularWeight" .
-
-
 ###  http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_Peptide-StartIndex
 :DataResourceParameter_PeptideSpectralCount_Peptide-StartIndex rdf:type owl:NamedIndividual ,
                                                                         :DataResourceParameter ;
@@ -2574,19 +2552,6 @@ Note since the order of the pathways (or KeggPathway Index isn't provided we don
                                                               <http://schema.org/multipleValues> "false"^^xsd:boolean ;
                                                               <http://schema.org/valueRequired> "false"^^xsd:boolean ;
                                                               rdfs:label "DataResourceParameter_PeptideSpectralCount_ProteinIdentifier" .
-
-
-###  http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_ProteinMolecularWeight
-:DataResourceParameter_PeptideSpectralCount_ProteinMolecularWeight rdf:type owl:NamedIndividual ,
-                                                                            :DataResourceParameter ;
-                                                                   :definesValuesForParameter :DataParameter_MolecularWeight ;
-                                                                   :parameterDataType <http://schema.org/Float> ;
-                                                                   :parameterInResourceType :DataResourceType_PeptideTotalSpectralCount ;
-                                                                   :unitsReportedIn :UnitOfMeasure_KiloDaltons ;
-                                                                   :parameterNameInResource "protein_molecular_weight_kDa"^^xsd:token ;
-                                                                   <http://schema.org/multipleValues> "false"^^xsd:boolean ;
-                                                                   <http://schema.org/valueRequired> "false"^^xsd:boolean ;
-                                                                   rdfs:label "DataResourceParameter_PeptideSpectralCount_ProteinMolecularWeight" .
 
 
 ###  http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_SampleIdentifier
@@ -2850,18 +2815,6 @@ Note since the order of the pathways (or KeggPathway Index isn't provided we don
                                                           rdfs:label "DataResourceParameter_ProteinSpectralCount_MinFilterSize" .
 
 
-###  http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_MolecularWeight
-:DataResourceParameter_ProteinSpectralCount_MolecularWeight rdf:type owl:NamedIndividual ,
-                                                                     :DataResourceParameter ;
-                                                            :definesValuesForParameter :DataParameter_MolecularWeight ;
-                                                            :parameterDataType <http://schema.org/Float> ;
-                                                            :parameterInResourceType :DataResourceType_ProteinTotalSpectralCount ;
-                                                            :unitsReportedIn :UnitOfMeasure_KiloDaltons ;
-                                                            :parameterNameInResource "molecular_weight_kDa"^^xsd:token ;
-                                                            <http://schema.org/multipleValues> "false"^^xsd:boolean ;
-                                                            rdfs:label "DataResourceParameter_ProteinSpectralCount_MolecularWeight" .
-
-
 ###  http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_OtherIdentifiedProteins
 :DataResourceParameter_ProteinSpectralCount_OtherIdentifiedProteins rdf:type owl:NamedIndividual ,
                                                                              :DataResourceParameter ;
@@ -3014,7 +2967,6 @@ Note since the order of the pathways (or KeggPathway Index isn't provided we don
                                                                    :DataResourceParameter_PeptideSpectralCount_MaxFilterSize ,
                                                                    :DataResourceParameter_PeptideSpectralCount_MedianRetentionTime ,
                                                                    :DataResourceParameter_PeptideSpectralCount_MinFilterSize ,
-                                                                   :DataResourceParameter_PeptideSpectralCount_MolecularWeight ,
                                                                    :DataResourceParameter_PeptideSpectralCount_Peptide-StartIndex ,
                                                                    :DataResourceParameter_PeptideSpectralCount_Peptide-StopIndex ,
                                                                    :DataResourceParameter_PeptideSpectralCount_PeptideSequence ,
@@ -3060,7 +3012,6 @@ Note since the order of the pathways (or KeggPathway Index isn't provided we don
                                                                      :DataResourceParameter_PeptideSpectralCount_Plus4HSpectraCount ,
                                                                      :DataResourceParameter_PeptideSpectralCount_ProteinAccessionIdentifiers ,
                                                                      :DataResourceParameter_PeptideSpectralCount_ProteinIdentifier ,
-                                                                     :DataResourceParameter_PeptideSpectralCount_ProteinMolecularWeight ,
                                                                      :DataResourceParameter_PeptideSpectralCount_SampleIdentifier ,
                                                                      :DataResourceParameter_PeptideSpectralCount_Time ,
                                                                      :DataResourceParameter_PeptideSpectralCount_TotalPrecursorIntensity ,
@@ -3081,7 +3032,6 @@ Note since the order of the pathways (or KeggPathway Index isn't provided we don
                                                                      :DataResourceParameter_ProteinSpectralCount_Longitude ,
                                                                      :DataResourceParameter_ProteinSpectralCount_MaxFilterSize ,
                                                                      :DataResourceParameter_ProteinSpectralCount_MinFilterSize ,
-                                                                     :DataResourceParameter_ProteinSpectralCount_MolecularWeight ,
                                                                      :DataResourceParameter_ProteinSpectralCount_OtherIdentifiedProteins ,
                                                                      :DataResourceParameter_ProteinSpectralCount_PFamsIdentifier ,
                                                                      :DataResourceParameter_ProteinSpectralCount_PFamsName ,
