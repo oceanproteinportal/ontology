@@ -4217,7 +4217,6 @@ Note since the order of the pathways (or KeggPathway Index isn&apos;t provided w
         <unitsReportedIn rdf:resource="http://schema.oceanproteinportal.org/v2/UnitOfMeasure_KiloDaltons"/>
         <parameterNameInResource rdf:datatype="http://www.w3.org/2001/XMLSchema#token">molecular_weight_kDa</parameterNameInResource>
         <schema:multipleValues rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</schema:multipleValues>
-        <schema:valueRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</schema:valueRequired>
         <rdfs:label>DataResourceParameter_ProteinSpectralCount_MolecularWeight</rdfs:label>
     </owl:NamedIndividual>
     

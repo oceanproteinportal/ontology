@@ -2629,7 +2629,6 @@ _:genid116 <http://www.w3.org/2002/07/owl#hasValue> <http://schema.oceanproteinp
 <http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_MolecularWeight> <http://schema.oceanproteinportal.org/v2/unitsReportedIn> <http://schema.oceanproteinportal.org/v2/UnitOfMeasure_KiloDaltons> .
 <http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_MolecularWeight> <http://schema.oceanproteinportal.org/v2/parameterNameInResource> "molecular_weight_kDa"^^<http://www.w3.org/2001/XMLSchema#token> .
 <http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_MolecularWeight> <http://schema.org/multipleValues> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
-<http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_MolecularWeight> <http://schema.org/valueRequired> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
 <http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_MolecularWeight> <http://www.w3.org/2000/01/rdf-schema#label> "DataResourceParameter_ProteinSpectralCount_MolecularWeight" .
 # 
 # http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_OtherIdentifiedProteins

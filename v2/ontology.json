@@ -2876,10 +2876,6 @@
     "@type" : "http://www.w3.org/2001/XMLSchema#boolean",
     "@value" : "false"
   } ],
-  "http://schema.org/valueRequired" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#boolean",
-    "@value" : "true"
-  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "DataResourceParameter_ProteinSpectralCount_MolecularWeight"
   } ]

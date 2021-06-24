@@ -15,6 +15,7 @@
    </li>
    <li><a href="#conceptual-model">Conceptual Model</a>
     <ul>
+      <li><a href="#conceptual-model-graphicalnotation">Graphical Notation</a></li>
       <li><a href="#conceptual-model-aminoacid">Identification of Amino Acids</a></li>
       <li><a href="#conceptual-model-sample">Sample</a></li>
       <li><a href="#conceptual-model-dataset">Dataset</a></li>
