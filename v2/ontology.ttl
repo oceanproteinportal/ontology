@@ -2259,6 +2259,17 @@ Note since the order of the pathways (or KeggPathway Index isn't provided we don
                                              <http://schema.org/valueRequired> "true"^^xsd:boolean ;
                                              rdfs:label "DataResourceParameter_FASTA-ProteinSequence" .
 
+###  http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_MolecularWeight
+:DataResourceParameter_PeptideSpectralCount_MolecularWeight rdf:type owl:NamedIndividual ,
+                                                                   :DataResourceParameter ;
+                                                          :definesValuesForParameter :DataParameter_MolecularWeight ;
+                                                          :parameterDataType <http://schema.org/Float> ;
+                                                          :parameterInResourceType :DataResourceType_PeptideTotalSpectralCount ;
+                                                          :unitsReportedIn :UnitOfMeasure_KiloDaltons ;
+                                                          :parameterNameInResource "protein_molecular_weight_kDa"^^xsd:token ;
+                                                          <http://schema.org/multipleValues> "false"^^xsd:boolean ;
+                                                          <http://schema.org/valueRequired> "false"^^xsd:boolean ;
+                                                          rdfs:label "DataResourceParameter_PeptideSpectralCount_MolecularWeight" .
 
 ###  http://schema.oceanproteinportal.org/v2/DataResourceParameter_PeptideSpectralCount_AbsoluteUnits
 :DataResourceParameter_PeptideSpectralCount_AbsoluteUnits rdf:type owl:NamedIndividual ,
@@ -2652,6 +2663,18 @@ Note since the order of the pathways (or KeggPathway Index isn't provided we don
                                                                     <http://schema.org/valueRequired> "false"^^xsd:boolean ;
                                                                     rdfs:label "DataResourceParameter_ProteinSpectralCount_CruiseStationIdentifier" .
 
+
+###  http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_MolecularWeight
+:DataResourceParameter_ProteinSpectralCount_MolecularWeight rdf:type owl:NamedIndividual ,
+                                                                   :DataResourceParameter ;
+                                                          :definesValuesForParameter :DataParameter_MolecularWeight ;
+                                                          :parameterDataType <http://schema.org/Float> ;
+                                                          :parameterInResourceType :DataResourceType_ProteinTotalSpectralCount ;
+                                                          :unitsReportedIn :UnitOfMeasure_KiloDaltons ;
+                                                          :parameterNameInResource "molecular_weight_kDa"^^xsd:token ;
+                                                          <http://schema.org/multipleValues> "false"^^xsd:boolean ;
+                                                          <http://schema.org/valueRequired> "false"^^xsd:boolean ;
+                                                          rdfs:label "DataResourceParameter_ProteinSpectralCount_MolecularWeight" .
 
 ###  http://schema.oceanproteinportal.org/v2/DataResourceParameter_ProteinSpectralCount_Date
 :DataResourceParameter_ProteinSpectralCount_Date rdf:type owl:NamedIndividual ,
